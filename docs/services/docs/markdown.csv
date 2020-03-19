@@ -1,3 +1,4 @@
+01_binding_functions/concepts.md
 01_binding_functions/funcref_state.md
 01_binding_functions/funcref_diagnostics.md
 01_binding_functions/funcref_distributions.md
@@ -9,7 +10,6 @@
 01_binding_functions/funcref_collections.md
 01_binding_functions/funcref_general.md
 01_binding_functions/funcref_premade.md
-01_binding_functions/concepts.md
 01_binding_functions/using_bindings.md
 00_nosqlbench/02_downloading.md
 00_nosqlbench/04_support_options.md
@@ -52,9 +52,9 @@
 04_builtins/cql-iot.md
 04_builtins/index.md
 04_builtins/cql-widerows.md
+03_basics/06_core_stmt_params.md
 03_basics/05_core_activity_params.md
 03_basics/03_parameter_types.md
 03_basics/index.md
 03_basics/02_grafana_metrics.md
-03_basics/06_core_stmt_params.md
 03_basics/01_command_line.md
