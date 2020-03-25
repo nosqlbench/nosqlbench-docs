@@ -3,14 +3,14 @@
 05_activitytypes/06_stdout_at.md
 05_activitytypes/index.md
 05_activitytypes/06_cql_at.md
+02_getting_started/02_example_results.md
 02_getting_started/01_example_commands.md
+02_getting_started/index.md
 02_getting_started/04_next_steps.md
 02_getting_started/03_reading_metrics.md
-02_getting_started/02_example_results.md
-02_getting_started/index.md
-09_reference/02_cli_scripting.md
 09_reference/06_advanced_metrics.md
 09_reference/index.md
+09_reference/02_cli_scripting.md
 09_reference/03_scenario_scripting.md
 09_reference/04_standard_metrics.md
 09_reference/05_timing_terms.md
