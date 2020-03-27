@@ -1,8 +1,8 @@
 00_nosqlbench/04_support_options.md
 00_nosqlbench/index.md
-05_activitytypes/06_cql_at.md
 05_activitytypes/06_stdout_at.md
 05_activitytypes/index.md
+05_activitytypes/06_cql_at.md
 02_getting_started/02_example_results.md
 02_getting_started/01_example_commands.md
 02_getting_started/index.md
@@ -47,10 +47,10 @@
 03_basics/01_command_line.md
 01_binding_functions/funcref_state.md
 01_binding_functions/funcref_diagnostics.md
-01_binding_functions/concepts.md
 01_binding_functions/funcref_distributions.md
 01_binding_functions/funcref_datetime.md
 01_binding_functions/funcref_functional.md
+01_binding_functions/concepts.md
 01_binding_functions/funcref_conversion.md
 01_binding_functions/funcref_nulls.md
 01_binding_functions/index.md
