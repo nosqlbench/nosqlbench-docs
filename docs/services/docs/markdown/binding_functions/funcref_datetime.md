@@ -15,15 +15,15 @@ idea. Yet, in testing, this determinism is quite useful.
 Return the epoch milliseconds at the start of the most recent day that falls on the given weekday for the given epoch milliseconds, including the current day if valid.
 
 - long -> ToMillisAtStartOfNamedWeekDay() -> long
-  - *ex:* `ToMillisAtStartOfNamedWeekDay()`
+  - *example:* `ToMillisAtStartOfNamedWeekDay()`
   - *return millisecond epoch time of the start of the most recent Monday (possibly the day-of) of the provided millisecond epoch time, assuming UTC*
 
 - long -> ToMillisAtStartOfNamedWeekDay(java.lang.String: weekday) -> long
-  - *ex:* `ToMillisAtStartOfNamedWeekDay('Wednesday')`
+  - *example:* `ToMillisAtStartOfNamedWeekDay('Wednesday')`
   - *return millisecond epoch time of the start of the most recent Wednesday (possibly the day-of) of the provided millisecond epoch time, assuming UTC*
 
 - long -> ToMillisAtStartOfNamedWeekDay(java.lang.String: weekday, java.lang.String: timezoneId) -> long
-  - *ex:* `ToMillisAtStartOfNamedWeekDay('Saturday','America/Chicago'')`
+  - *example:* `ToMillisAtStartOfNamedWeekDay('Saturday','America/Chicago'')`
   - *return millisecond epoch time of the start of the most recent Saturday (possibly the day-of) of the provided millisecond epoch time, using timezone America/Chicago*
 
 ## ToMillisAtStartOfDay
@@ -31,11 +31,11 @@ Return the epoch milliseconds at the start of the most recent day that falls on 
 Return the epoch milliseconds at the start of the day for the given epoch milliseconds.
 
 - long -> ToMillisAtStartOfDay() -> long
-  - *ex:* `ToMillisAtStartOfDay()`
+  - *example:* `ToMillisAtStartOfDay()`
   - *return millisecond epoch time of the start of the day of the provided millisecond epoch time, assuming UTC*
 
 - long -> ToMillisAtStartOfDay(java.lang.String: timezoneId) -> long
-  - *ex:* `ToMillisAtStartOfDay('America/Chicago')`
+  - *example:* `ToMillisAtStartOfDay('America/Chicago')`
   - *return millisecond epoch time of the start of the day of the provided millisecond epoch time, using timezone America/Chicago*
 
 ## DateTimeParser
@@ -51,7 +51,7 @@ yyyy-MM-dd HH:mm:ss.SSSZ
 - java.lang.String -> DateTimeParser() -> org.joda.time.DateTime
   - *notes:* Initialize the parser with the default pattern of <pre>yyyy-MM-dd HH:mm:ss.SSSZ</pre>.
 
-  - *ex:* `DateTimeParser()`
+  - *example:* `DateTimeParser()`
   - *parse any date in the yyyy-MM-dd HH:mm:ss.SSSZ format*
 
 - java.lang.String -> DateTimeParser(java.lang.String: dateTimePattern) -> org.joda.time.DateTime
@@ -59,7 +59,7 @@ yyyy-MM-dd HH:mm:ss.SSSZ
 or is null or empty, then an exception is thrown.
 @param dateTimePattern The pattern which represents the incoming format.
 
-  - *ex:* `DateTimeParser('yyyy-MM-dd')`
+  - *example:* `DateTimeParser('yyyy-MM-dd')`
   - *parse any date in the yyyy-MM-dd format*
 
 - java.lang.String -> DateTimeParser(java.lang.String: dateTimePattern, java.lang.String: defaultTime) -> org.joda.time.DateTime
@@ -69,7 +69,7 @@ At initialization, the default is parsed as a sanity check.
 @param dateTimePattern The pattern which represents the incoming format.
 @param defaultTime An example of a formatted datetime string which is used as a default.
 
-  - *ex:* `DateTimeParser('yyyy-MM-dd','1999-12-31')`
+  - *example:* `DateTimeParser('yyyy-MM-dd','1999-12-31')`
   - *parse any date in the yyyy-MM-dd format, or return the DateTime represented by 1999-12-31*
 
 ## ToMillisAtStartOfHour
@@ -77,11 +77,11 @@ At initialization, the default is parsed as a sanity check.
 Return the epoch milliseconds at the start of the hour for the given epoch milliseconds.
 
 - long -> ToMillisAtStartOfHour() -> long
-  - *ex:* `ToMillisAtStartOfHour()`
+  - *example:* `ToMillisAtStartOfHour()`
   - *return millisecond epoch time of the start of the hour of the provided millisecond epoch time, assuming UTC*
 
 - long -> ToMillisAtStartOfHour(java.lang.String: timezoneId) -> long
-  - *ex:* `ToMillisAtStartOfHour('America/Chicago')`
+  - *example:* `ToMillisAtStartOfHour('America/Chicago')`
   - *return millisecond epoch time of the start of the hour of the provided millisecond epoch time, using timezone America/Chicago*
 
 ## ToFinestTimeUUID
@@ -102,7 +102,7 @@ Converts a count of 100ns intervals from 1582 Julian to a Type1 TimeUUID accordi
 The node and clock components are seeded from network interface data. In this case,
 the clock data is not seeded uniquely.
 
-  - *ex:* `ToFinestTimeUUID()`
+  - *example:* `ToFinestTimeUUID()`
   - *basetime 0, computed node data, empty clock data*
 
 - long -> ToFinestTimeUUID(long: node) -> java.util.UUID
@@ -113,7 +113,7 @@ more practical dispersion of values over reboots, etc.
 
 @param node a fixture value for testing that replaces node and clock bits
 
-  - *ex:* `ToFinestTimeUUID(5234)`
+  - *example:* `ToFinestTimeUUID(5234)`
   - *basetime 0, specified node data (5234), empty clock data*
 
 - long -> ToFinestTimeUUID(long: node, long: clock) -> java.util.UUID
@@ -125,7 +125,7 @@ more practical dispersion of values over reboots, etc.
 @param node  a fixture value for testing that replaces node bits
 @param clock a fixture value for testing that replaces clock bits
 
-  - *ex:* `ToFinestTimeUUID(31,337)`
+  - *example:* `ToFinestTimeUUID(31,337)`
   - *basetime 0, specified node data (31) and clock data (337)*
 
 - long -> ToFinestTimeUUID(java.lang.String: baseTimeSpec) -> java.util.UUID
@@ -135,7 +135,7 @@ the clock data is not seeded uniquely.
 
 @param baseTimeSpec - a string specification for the base time value
 
-  - *ex:* `ToFinestTimeUUID('2017-01-01T23:59:59')`
+  - *example:* `ToFinestTimeUUID('2017-01-01T23:59:59')`
   - *specified basetime, computed node data, empty clock data*
 
 - long -> ToFinestTimeUUID(java.lang.String: baseTimeSpec, long: node) -> java.util.UUID
@@ -147,7 +147,7 @@ more practical dispersion of values over reboots, etc.
 @param baseTimeSpec - a string specification for the base time value
 @param node         a fixture value for testing that replaces node and clock bits
 
-  - *ex:* `ToFinestTimeUUID('2012',12345)`
+  - *example:* `ToFinestTimeUUID('2012',12345)`
   - *basetime at start if 2012, with node data 12345, empty clock data*
 
 - long -> ToFinestTimeUUID(java.lang.String: baseTimeSpec, long: node, long: clock) -> java.util.UUID
@@ -160,38 +160,22 @@ more practical dispersion of values over reboots, etc.
 @param clock        a fixture value for testing that replaces clock bits
 @param baseTimeSpec - a string specification for the base time value
 
-  - *ex:* `ToFinestTimeUUID('20171231T1015.243',123,456)`
+  - *example:* `ToFinestTimeUUID('20171231T1015.243',123,456)`
   - *ms basetime, specified node and clock data*
 
 ## DateRangeOnOrBefore
 
-Takes an input as a reference point in epoch time, and converts it to a DateRange, with the upper bound set to the upper bound of the precision and millisecond provided, and with no lower bound. You can use any of these precisions to control the bounds around the provided timestamp:
-
-* millisecond
-* second
-* minute
-* hour
-* day
-* month
-* year
+Takes an input as a reference point in epoch time, and converts it to a DateRange, with the upper bound set to the upper bound of the precision and millisecond provided, and with no lower bound. You can use any of these precisions to control the bounds around the provided timestamp: millisecond, second, minute, hour, day, month, or year.
 
 - long -> DateRangeOnOrBefore(java.lang.String: precision) -> com.datastax.driver.dse.search.DateRange
-  - *ex:* `DateRangeOnOrBefore('millisecond')}`
+  - *example:* `DateRangeOnOrBefore('millisecond')}`
   - *Convert the incoming millisecond to match anything on or before it.*
-  - *ex:* `DateRangeOnOrBefore('minute')}`
+  - *example:* `DateRangeOnOrBefore('minute')}`
   - *Convert the incoming millisecond to match anything on or before the minute in which the millisecond falls*
 
 ## DateRangeFunc
 
-Uses the precision and the two functions provided to create a DateRange. You can use any of these precisions to control the bounds around the provided timestamp:
-
-* millisecond
-* second
-* minute
-* hour
-* day
-* month
-* year
+Uses the precision and the two functions provided to create a DateRange. You can use any of these precisions to control the bounds around the provided timestamp: millisecond, second, minute, hour, day, month, or year.
 
 - long -> DateRangeFunc(java.lang.String: precision, java.util.function.LongUnaryOperator: lower, java.util.function.LongUnaryOperator: upper) -> com.datastax.driver.dse.search.DateRange
 
@@ -213,20 +197,12 @@ This function wraps an epoch time in milliseconds into a String as specified in 
 
 ## DateRangeOnOrAfter
 
-Takes an input as a reference point in epoch time, and converts it to a DateRange, with the lower bounds set to the lower bound of the precision and millisecond provided, and with no upper bound. You can use any of these precisions to control the bounds around the provided timestamp:
-
-* millisecond
-* second
-* minute
-* hour
-* day
-* month
-* year
+Takes an input as a reference point in epoch time, and converts it to a DateRange, with the lower bounds set to the lower bound of the precision and millisecond provided, and with no upper bound. You can use any of these precisions to control the bounds around the provided timestamp: millisecond, second, minute, hour, day, month, or year.
 
 - long -> DateRangeOnOrAfter(java.lang.String: precision) -> com.datastax.driver.dse.search.DateRange
-  - *ex:* `DateRangeOnOrAfter('millisecond')}`
+  - *example:* `DateRangeOnOrAfter('millisecond')}`
   - *Convert the incoming millisecond to an match any time on or after*
-  - *ex:* `DateRangeOnOrAfter('minute')}`
+  - *example:* `DateRangeOnOrAfter('minute')}`
   - *Convert the incoming millisecond to mach any time on or after the minute in which the millisecond falls*
 
 ## ToTimeUUIDMax
@@ -251,7 +227,7 @@ Parses the DateRange format according to [Date Range Formatting](https://lucene.
 .html#WorkingwithDates-DateRangeFormatting). When possible it is more efficient to use the other DateRange methods since they do not require parsing.
 
 - java.lang.String -> DateRangeParser(java.lang.String: precision) -> com.datastax.driver.dse.search.DateRange
-  - *ex:* `DateRangeParser()}`
+  - *example:* `DateRangeParser()}`
   - *Convert inputs like '[1970-01-01T00:00:00 TO 1970-01-01T00:00:00]' into DateRanges *
 
 ## ToEpochTimeUUID
@@ -280,7 +256,7 @@ The valid formats, in joda specifier form are:
 The node and clock components are seeded from network interface data. In this case,
 the clock data is not seeded uniquely.
 
-  - *ex:* `ToEpochTimeUUID()`
+  - *example:* `ToEpochTimeUUID()`
   - *basetime 0, computed node data, empty clock data*
 
 - long -> ToEpochTimeUUID(long: node) -> java.util.UUID
@@ -291,7 +267,7 @@ more practical dispersion of values over reboots, etc.
 
 @param node a fixture value for testing that replaces node and clock bits
 
-  - *ex:* `ToEpochTimeUUID(5234)`
+  - *example:* `ToEpochTimeUUID(5234)`
   - *basetime 0, specified node data (5234), empty clock data*
 
 - long -> ToEpochTimeUUID(long: node, long: clock) -> java.util.UUID
@@ -303,7 +279,7 @@ more practical dispersion of values over reboots, etc.
 @param node  a fixture value for testing that replaces node bits
 @param clock a fixture value for testing that replaces clock bits
 
-  - *ex:* `ToEpochTimeUUID(31,337)`
+  - *example:* `ToEpochTimeUUID(31,337)`
   - *basetime 0, specified node data (31) and clock data (337)*
 
 - long -> ToEpochTimeUUID(java.lang.String: baseSpec) -> java.util.UUID
@@ -313,7 +289,7 @@ the clock data is not seeded uniquely.
 
 @param baseSpec - a string specification for the base time value
 
-  - *ex:* `ToEpochTimeUUID('2017-01-01T23:59:59')`
+  - *example:* `ToEpochTimeUUID('2017-01-01T23:59:59')`
   - *specified basetime, computed node data, empty clock data*
 
 - long -> ToEpochTimeUUID(java.lang.String: baseSpec, long: node) -> java.util.UUID
@@ -325,7 +301,7 @@ more practical dispersion of values over reboots, etc.
 @param baseSpec - a string specification for the base time value
 @param node     a fixture value for testing that replaces node and clock bits
 
-  - *ex:* `ToEpochTimeUUID('2012',12345)`
+  - *example:* `ToEpochTimeUUID('2012',12345)`
   - *basetime at start if 2012, with node data 12345, empty clock data*
 
 - long -> ToEpochTimeUUID(java.lang.String: baseSpec, long: node, long: clock) -> java.util.UUID
@@ -338,7 +314,7 @@ more practical dispersion of values over reboots, etc.
 @param node     a fixture value for testing that replaces node bits
 @param clock    a fixture value for testing that replaces clock bits
 
-  - *ex:* `ToEpochTimeUUID('20171231T1015.243',123,456)`
+  - *example:* `ToEpochTimeUUID('20171231T1015.243',123,456)`
   - *ms basetime, specified node and clock data*
 
 ## StartingEpochMillis
@@ -346,7 +322,7 @@ more practical dispersion of values over reboots, etc.
 This function sets the minimum long value to the equivalent unix epoch time in milliseconds. It simply adds the input value to this base value as determined by the provided time specifier. It wraps any overflow within this range as well.
 
 - long -> StartingEpochMillis(java.lang.String: baseTimeSpec) -> long
-  - *ex:* `StartingEpochMillis('2017-01-01 23:59:59')`
+  - *example:* `StartingEpochMillis('2017-01-01 23:59:59')`
   - *add the millisecond epoch time of 2017-01-01 23:59:59 to all input values*
 
 ## ToMillisAtStartOfYear
@@ -354,11 +330,11 @@ This function sets the minimum long value to the equivalent unix epoch time in m
 Return the epoch milliseconds at the start of the year for the given epoch milliseconds.
 
 - long -> ToMillisAtStartOfYear() -> long
-  - *ex:* `ToMillisAtStartOfYear()`
+  - *example:* `ToMillisAtStartOfYear()`
   - *return millisecond epoch time of the start of the year of the provided millisecond epoch time, assuming UTC*
 
 - long -> ToMillisAtStartOfYear(java.lang.String: timezoneId) -> long
-  - *ex:* `ToMillisAtStartOfYear('America/Chicago')`
+  - *example:* `ToMillisAtStartOfYear('America/Chicago')`
   - *return millisecond epoch time of the start of the year of the provided millisecond epoch time, using timezone America/Chicago*
 
 ## ToMillisAtStartOfNextNamedWeekDay
@@ -366,33 +342,25 @@ Return the epoch milliseconds at the start of the year for the given epoch milli
 Return the epoch milliseconds at the start of the next day that falls on the given weekday for the given epoch milliseconds, not including the current day.
 
 - long -> ToMillisAtStartOfNextNamedWeekDay() -> long
-  - *ex:* `ToMillisAtStartOfNextNamedWeekDay()`
+  - *example:* `ToMillisAtStartOfNextNamedWeekDay()`
   - *return millisecond epoch time of the start of the next Monday (not the day-of) of the provided millisecond epoch time, assuming UTC*
 
 - long -> ToMillisAtStartOfNextNamedWeekDay(java.lang.String: weekday) -> long
-  - *ex:* `ToMillisAtStartOfNextNamedWeekDay('Wednesday')`
+  - *example:* `ToMillisAtStartOfNextNamedWeekDay('Wednesday')`
   - *return millisecond epoch time of the start of the next Wednesday (not the day-of) of the provided millisecond epoch time, assuming UTC*
 
 - long -> ToMillisAtStartOfNextNamedWeekDay(java.lang.String: weekday, java.lang.String: timezoneId) -> long
-  - *ex:* `ToMillisAtStartOfNextNamedWeekDay('Saturday','America/Chicago'')`
+  - *example:* `ToMillisAtStartOfNextNamedWeekDay('Saturday','America/Chicago'')`
   - *return millisecond epoch time of the start of the next Saturday (not the day-of) of the provided millisecond epoch time, using timezone America/Chicago*
 
 ## DateRangeDuring
 
-Takes an input as a reference point in epoch time, and converts it to a DateRange, with the bounds set to the lower and upper timestamps which align to the specified precision. You can use any of these precisions to control the bounds around the provided timestamp:
-
-* millisecond
-* second
-* minute
-* hour
-* day
-* month
-* year
+Takes an input as a reference point in epoch time, and converts it to a DateRange, with the bounds set to the lower and upper timestamps which align to the specified precision. You can use any of these precisions to control the bounds around the provided timestamp: millisecond, second, minute, hour, day, month, or year.
 
 - long -> DateRangeDuring(java.lang.String: precision) -> com.datastax.driver.dse.search.DateRange
-  - *ex:* `DateRangeDuring('millisecond')}`
+  - *example:* `DateRangeDuring('millisecond')}`
   - *Convert the incoming millisecond to an equivalent DateRange*
-  - *ex:* `DateRangeDuring('minute')}`
+  - *example:* `DateRangeDuring('minute')}`
   - *Convert the incoming millisecond to a DateRange for the minute in which the millisecond falls*
 
 ## ToMillisAtStartOfMinute
@@ -400,11 +368,11 @@ Takes an input as a reference point in epoch time, and converts it to a DateRang
 Return the epoch milliseconds at the start of the minute for the given epoch milliseconds.
 
 - long -> ToMillisAtStartOfMinute() -> long
-  - *ex:* `ToMillisAtStartOfMinute()`
+  - *example:* `ToMillisAtStartOfMinute()`
   - *return millisecond epoch time of the start of the minute of the provided millisecond epoch time, assuming UTC*
 
 - long -> ToMillisAtStartOfMinute(java.lang.String: timezoneId) -> long
-  - *ex:* `ToMillisAtStartOfMinute('America/Chicago')`
+  - *example:* `ToMillisAtStartOfMinute('America/Chicago')`
   - *return millisecond epoch time of the start of the minute of the provided millisecond epoch time, using timezone America/Chicago*
 
 ## ToMillisAtStartOfSecond
@@ -412,11 +380,11 @@ Return the epoch milliseconds at the start of the minute for the given epoch mil
 Return the epoch milliseconds at the start of the second for the given epoch milliseconds.
 
 - long -> ToMillisAtStartOfSecond() -> long
-  - *ex:* `ToMillisAtStartOfSecond()`
+  - *example:* `ToMillisAtStartOfSecond()`
   - *return millisecond epoch time of the start of the second of the provided millisecond epoch time, assuming UTC*
 
 - long -> ToMillisAtStartOfSecond(java.lang.String: timezoneId) -> long
-  - *ex:* `ToMillisAtStartOfSecond('America/Chicago')`
+  - *example:* `ToMillisAtStartOfSecond('America/Chicago')`
   - *return millisecond epoch time of the start of the second of the provided millisecond epoch time, using timezone America/Chicago*
 
 ## ToJodaDateTime
@@ -444,11 +412,11 @@ Convert the input value to a {@code Date}
 Return the epoch milliseconds at the start of the day after the day for the given epoch milliseconds.
 
 - long -> ToMillisAtStartOfNextDay() -> long
-  - *ex:* `ToMillisAtStartOfNextDay()`
+  - *example:* `ToMillisAtStartOfNextDay()`
   - *return millisecond epoch time of the start of next day (not including day-of) of the provided millisecond epoch time, assuming UTC*
 
 - long -> ToMillisAtStartOfNextDay(java.lang.String: timezoneId) -> long
-  - *ex:* `ToMillisAtStartOfNextDay('America/Chicago')`
+  - *example:* `ToMillisAtStartOfNextDay('America/Chicago')`
   - *return millisecond epoch time of the start of the next day (not including day-of) of the provided millisecond epoch time, using timezone America/Chicago*
 
 ## ToMillisAtStartOfMonth
@@ -456,10 +424,10 @@ Return the epoch milliseconds at the start of the day after the day for the give
 Return the epoch milliseconds at the start of the month for the given epoch milliseconds.
 
 - long -> ToMillisAtStartOfMonth() -> long
-  - *ex:* `ToMillisAtStartOfMonth()`
+  - *example:* `ToMillisAtStartOfMonth()`
   - *return millisecond epoch time of the start of the month of the provided millisecond epoch time, assuming UTC*
 
 - long -> ToMillisAtStartOfMonth(java.lang.String: timezoneId) -> long
-  - *ex:* `ToMillisAtStartOfMonth('America/Chicago')`
+  - *example:* `ToMillisAtStartOfMonth('America/Chicago')`
   - *return millisecond epoch time of the start of the month of the provided millisecond epoch time, using timezone America/Chicago*
 

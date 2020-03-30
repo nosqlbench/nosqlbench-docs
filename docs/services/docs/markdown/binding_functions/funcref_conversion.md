@@ -8,19 +8,7 @@ to be converted to another type in an obvious way.
 
 ## DigestToByteBuffer
 
-Computes the digest of the ByteBuffer on input and stores it in the output ByteBuffer. The digestTypes available are:
-
-* MD2
-* MD5
-* SHA-1
-* SHA-224
-* SHA-256
-* SHA-384
-* SHA-512
-* SHA3-224
-* SHA3-256
-* SHA3-384
-* SHA3-512
+Computes the digest of the ByteBuffer on input and stores it in the output ByteBuffer. The digestTypes available are: MD2 MD5 SHA-1 SHA-224 SHA-256 SHA-384 SHA-512 SHA3-224 SHA3-256 SHA3-384 SHA3-512
 
 - long -> DigestToByteBuffer(java.lang.String: digestType) -> java.nio.ByteBuffer
 
@@ -91,11 +79,11 @@ Convert the input value to an int with long modulus remainder. If the scale is c
 - java.lang.String -> ToInt() -> java.lang.Integer
 
 - long -> ToInt(int: scale) -> int
-  - *ex:* `ToInt(1000)`
+  - *example:* `ToInt(1000)`
   - *converts a long input value to an int between 0 and 999, inclusive*
 
 - long -> ToInt() -> int
-  - *ex:* `ToInt()`
+  - *example:* `ToInt()`
   - *converts a long input value to an int between 0 and 2147483647, inclusive *
 
 ## StringDateWrapper
@@ -109,7 +97,7 @@ This function wraps an epoch time in milliseconds into a String as specified in 
 Converts the byte image of the input long to a MD5 digest in ByteBuffer form.
 
 - long -> ToMD5ByteBuffer() -> java.nio.ByteBuffer
-  - *ex:* `MD5ByteBuffer()`
+  - *example:* `MD5ByteBuffer()`
   - *convert the a input to an md5 digest of its bytes*
 
 ## ToByte
@@ -143,7 +131,7 @@ Convert the input value to a {@code Byte}.
 Apply the Java String.format method to an incoming object. @see [Java 8 String.format(...) javadoc](https://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html#syntax) Note: This function can often be quite slow, so more direct methods are generally preferrable.
 
 - java.lang.Object -> Format(java.lang.String: format) -> java.lang.String
-  - *ex:* `Format('Y')`
+  - *example:* `Format('Y')`
   - *Yield the formatted year from a Java date object.*
 
 ## ToShort
@@ -248,7 +236,7 @@ Converts the input ByteBuffer to a hexadecimal String.
 Computes the MD5 digest of the byte image of the input long, and returns it in hexadecimal String form.
 
 - long -> MD5HexString() -> java.lang.String
-  - *ex:* `MD5String()`
+  - *example:* `MD5String()`
   - *Convert a long input to an md5 digest over its bytes, and then to a hexadecimal string.*
 
 ## LongToShort
@@ -307,11 +295,11 @@ Convert the input value to a {@code ByteBuffer}
 - long -> ToString(io.nosqlbench.virtdata.library.basics.shared.from_long.to_short.LongToShort: f) -> java.lang.String
 
 - double -> ToString() -> java.lang.String
-  - *ex:* `ToString()`
+  - *example:* `ToString()`
   - *map the double input value to a String*
 
 - double -> ToString(java.util.function.DoubleUnaryOperator: df) -> java.lang.String
-  - *ex:* `ToString(Add(5.7D))`
+  - *example:* `ToString(Add(5.7D))`
   - *map the double input value X to X+5.7D and then to a String*
 
 - double -> ToString(java.util.function.DoubleFunction<java.lang.Double>: df) -> java.lang.String
@@ -325,10 +313,10 @@ Convert the input value to a {@code ByteBuffer}
 Computes the Base64 representation of the byte image of the input long.
 
 - java.lang.String -> ToBase64String() -> java.lang.String
-  - *ex:* `ToBase64String()`
+  - *example:* `ToBase64String()`
   - *encode any input as Base64*
 
 - long -> ToBase64String() -> java.lang.String
-  - *ex:* `ToBase64String()`
+  - *example:* `ToBase64String()`
   - *Convert the bytes of a long input into a base64 String*
 

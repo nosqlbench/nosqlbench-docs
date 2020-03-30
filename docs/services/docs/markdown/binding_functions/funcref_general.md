@@ -40,7 +40,7 @@ as its first line.
 @param filename The name of the file to be read into the sampler buffer
 @param columnName The name of the column to be sampled
 
-  - *ex:* `CSVFrequencySampler('values.csv','modelno')`
+  - *example:* `CSVFrequencySampler('values.csv','modelno')`
   - *Read values.csv, count the frequency of values in 'modelno' column, and sample from this column proportionally*
 
 ## DelimFrequencySampler
@@ -54,6 +54,6 @@ as its first line.
 @param columnName The name of the column to be sampled
 @param delimiter delimmiter
 
-  - *ex:* `DelimFrequencySampler('values.csv','modelno', '|')`
+  - *example:* `DelimFrequencySampler('values.csv','modelno', '|')`
   - *Read values.csv, count the frequency of values in 'modelno' column, and sample from this column proportionally*
 

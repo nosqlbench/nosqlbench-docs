@@ -37,14 +37,14 @@ designing_workloads/10_named_scenarios.md
 designing_workloads/03_stmt_params.md
 designing_workloads/07_multi_docs.md
 designing_workloads/08_template_params.md
-reference/standard_metrics.md
+reference/cli_scripting.md
 reference/scenario_scripting.md
 reference/advanced_metrics.md
 reference/timing_terms.md
 reference/command_line.md
 reference/parameter_types.md
 reference/index.md
-reference/cli_scripting.md
+reference/standard_metrics.md
 binding_functions/funcref_state.md
 binding_functions/funcref_diagnostics.md
 binding_functions/funcref_distributions.md

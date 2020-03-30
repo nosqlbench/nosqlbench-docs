@@ -14,11 +14,11 @@ their longer-form equivalents.
 Return a pseudo-randomly sampled last name from the last US census data on last names occurring more than 100 times.
 
 - long -> LastNames() -> java.lang.String
-  - *ex:* `LastNames()`
+  - *example:* `LastNames()`
   - *select a random last name based on the chance of seeing it in the census data*
 
 - long -> LastNames(java.lang.String: modifier) -> java.lang.String
-  - *ex:* `LastNames('map')`
+  - *example:* `LastNames('map')`
   - *select over the last names by probability as input varies from 1L to Long.MAX_VALUE*
 
 ## FullNames
@@ -32,10 +32,10 @@ Combines the FirstNames and LastNames functions into one that simply concatenate
 Return a pseudo-randomly sampled first name from the last US census data on first names occurring more than 100 times. Both male and female names are combined in this function.
 
 - long -> FirstNames() -> java.lang.String
-  - *ex:* `FirstNames()`
+  - *example:* `FirstNames()`
   - *select a random first name based on the chance of seeing it in the census data*
 
 - long -> FirstNames(java.lang.String: modifier) -> java.lang.String
-  - *ex:* `FirstNames('map')`
+  - *example:* `FirstNames('map')`
   - *select over the first names by probability as input varies from 1L to Long.MAX_VALUE*
 

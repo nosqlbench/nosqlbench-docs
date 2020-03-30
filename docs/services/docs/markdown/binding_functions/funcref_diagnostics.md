@@ -40,22 +40,22 @@ Yields the class of the resulting type in String form.
 Show diagnostic values for the thread-local variable map. Show diagnostic values for the thread-local variable map.
 
 - long -> Show() -> java.lang.String
-  - *ex:* `Show()`
+  - *example:* `Show()`
   - *Show all values in a json-like format*
 
 - long -> Show(java.lang.String[]...: names) -> java.lang.String
-  - *ex:* `Show('foo')`
+  - *example:* `Show('foo')`
   - *Show only the 'foo' value in a json-like format*
-  - *ex:* `Show('foo','bar')`
+  - *example:* `Show('foo','bar')`
   - *Show the 'foo' and 'bar' values in a json-like format*
 
 - java.lang.Object -> Show() -> java.lang.String
-  - *ex:* `Show()`
+  - *example:* `Show()`
   - *Show all values in a json-like format*
 
 - java.lang.Object -> Show(java.lang.String[]...: names) -> java.lang.String
-  - *ex:* `Show('foo')`
+  - *example:* `Show('foo')`
   - *Show only the 'foo' value in a json-like format*
-  - *ex:* `Show('foo','bar')`
+  - *example:* `Show('foo','bar')`
   - *Show the 'foo' and 'bar' values in a json-like format*
 

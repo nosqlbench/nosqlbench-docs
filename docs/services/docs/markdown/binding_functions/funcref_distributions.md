@@ -133,7 +133,7 @@ including hashing functions.
 This is a higher-order function which takes an input value, and flips a coin. The first parameter is used as the threshold for choosing a function. If the sample values derived from the input is lower than the threshold value, then the first following function is used, and otherwise the second is used. For example, if the threshold is 0.23, and the input value is hashed and sampled in the unit interval to 0.43, then the second of the two provided functions will be used. The input value does not need to be hashed beforehand, since the user may need to use the full input value before hashing as the input to one or both of the functions. This function will accept either a LongFunction or a {@link Function} or a LongUnaryOperator in either position. If necessary, use {@link java.util.function.ToLongFunction} to adapt other function forms to be compatible with these signatures.
 
 - java.lang.Long -> CoinFunc(double: threshold, java.lang.Object: first, java.lang.Object: second) -> java.lang.Object
-  - *ex:* `CoinFunc(0.15,NumberNameToString(),Combinations('A:1:B:23'))`
+  - *example:* `CoinFunc(0.15,NumberNameToString(),Combinations('A:1:B:23'))`
   - *use the first function 15% of the time*
 
 ## Beta
@@ -153,9 +153,9 @@ This is a higher-order function which takes an input value, and flips a coin. Th
 Creates a probability density given the values and optional weights provided, in "value:weight value:weight ..." form. The weight can be elided for any value to use the default weight of 1.0d. @see [Commons JavaDoc: EnumeratedRealDistribution](http://commons.apache.org/proper/commons-math/apidocs/org/apache/commons/math4/distribution/EnumeratedRealDistribution.html)
 
 - int -> Enumerated(java.lang.String: data, java.lang.String[]...: mods) -> double
-  - *ex:* `Enumerated('1 2 3 4 5 6')`
+  - *example:* `Enumerated('1 2 3 4 5 6')`
   - *a fair six-sided die roll*
-  - *ex:* `Enumerated('1:2.0 2 3 4 5 6')`
+  - *example:* `Enumerated('1:2.0 2 3 4 5 6')`
   - *an unfair six-sided die roll, where 1 has probability mass 2.0, and everything else has only 1.0*
 
 ## T
