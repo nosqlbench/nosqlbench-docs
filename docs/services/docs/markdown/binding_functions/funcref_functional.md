@@ -8,7 +8,7 @@ These functions help combine other functions into higher-order functions when ne
 
 Combine multiple LongUnaryOperators into a single function.
 
-- long -> LongFlow(java.util.function.LongUnaryOperator[]...: ops) -> long
+- long -> LongFlow(function.LongUnaryOperator[]...: ops) -> long
   - *example:* `StringFlow(Add(3),Mul(6))`
   - *Create an integer operator which adds 3 and multiplies the result by 6*
 
@@ -16,11 +16,11 @@ Combine multiple LongUnaryOperators into a single function.
 
 Combine multiple String functions together into one function.
 
-- java.lang.String -> StringFlow(java.util.function.Function<java.lang.String,java.lang.String>[]...: funcs) -> java.lang.String
+- String -> StringFlow(function.Function<String,String>[]...: funcs) -> String
 
 ## IntFlow
 
 Combine multiple IntUnaryOperators into a single function.
 
-- int -> IntFlow(java.util.function.IntUnaryOperator[]...: ops) -> int
+- int -> IntFlow(function.IntUnaryOperator[]...: ops) -> int
 
