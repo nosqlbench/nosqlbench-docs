@@ -2,16 +2,6 @@ basics/activity_parameters.md
 basics/core_stmt_params.md
 basics/grafana_metrics.md
 basics/index.md
-binding_functions/funcref_collections.md
-binding_functions/funcref_conversion.md
-binding_functions/funcref_datetime.md
-binding_functions/funcref_diagnostics.md
-binding_functions/funcref_distributions.md
-binding_functions/funcref_functional.md
-binding_functions/funcref_general.md
-binding_functions/funcref_nulls.md
-binding_functions/funcref_premade.md
-binding_functions/funcref_state.md
 bindings/concepts.md
 bindings/funcref_collections.md
 bindings/funcref_conversion.md

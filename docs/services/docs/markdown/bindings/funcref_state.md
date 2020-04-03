@@ -3,271 +3,191 @@ title: state functions
 weight: 30
 ---
 
-## Clear
+Functions in the state category allow you to do things with side-effects in the function flow. Specifically, they allow
+you to save or load values of named variables to thread-local registers. These work best when used with non-async
+activities, since the normal statement grouping allows you to share data between statements in the sequence. It is not
+advised to use these with async activities.
 
-Clears the per-thread map which is used by the Expr function.
+When using these functions, be careful that you call them when needed. For example, if you have a named binding which
+will save a value, that action only occurs if some statement with this named binding is used.
 
-- java.lang.Object -> Clear() -> java.lang.Object
-  - *notes:* Clear all named entries from the per-thread map.
-  - *ex:* `Clear()` - *clear all thread-local variables*
-- java.lang.Object -> Clear(java.lang.String[]...: names) -> java.lang.Object
-  - *notes:* Clear the specified names from the per-thread map.
-@param names The names to be removed from the map.
-  - *ex:* `Clear('foo')` - *clear the thread-local variable 'foo'*
-  - *ex:* `Clear('foo','bar')` - *clear the thread-local variables 'foo' and 'bar'*
-- long -> Clear() -> long
-  - *notes:* Clear all named entries from the per-thread map.
-  - *ex:* `Clear()` - *clear all thread-local variables*
-- long -> Clear(java.lang.String[]...: names) -> long
-  - *notes:* Clear the specified names from the per-thread map.
-@param names The names to be removed from the map.
-  - *ex:* `Clear('foo')` - *clear the thread-local variable 'foo'*
-  - *ex:* `Clear('foo','bar')` - *clear the thread-local variables 'foo' and 'bar'*
+For example, if you have an account records and transaction records, where you want to save the account identifier to
+use within the transaction inserts, you must ensure that each account binding is used within the thread first.
 
 
-## Load
-
-Load a named value from the per-thread state map. The previous input value will be forgotten, and the named value will replace it before the next function in the chain.
-
-- double -> Load(java.lang.String: name) -> double
-  - *ex:* `Load('foo')` - *for the current thread, load a double value from the named variable*
-- double -> Load(java.lang.String: name, double: defaultValue) -> double
-  - *ex:* `Load('foo',432.0D)` - *for the current thread, load a double value from the named variable, or the defaultvalue if it is not yet defined.*
-- double -> Load(java.util.function.Function<java.lang.Object,java.lang.Object>: nameFunc) -> double
-  - *ex:* `Load(NumberNameToString())` - *for the current thread, load a double value from the named variable, where the variablename is provided by a function.*
-- double -> Load(java.util.function.Function<java.lang.Object,java.lang.Object>: nameFunc, double: defaultValue) -> double
-  - *ex:* `Load(NumberNameToString(),1234.5D)` - *for the current thread, load a double value from the named variable, where the variablename is provided by a function, or the default value if the named value is not yet defined.*
-- long -> Load(java.lang.String: name) -> long
-  - *ex:* `Load('foo')` - *for the current thread, load a long value from the named variable*
-- long -> Load(java.lang.String: name, long: defaultValue) -> long
-  - *ex:* `Load('foo', 423L)` - *for the current thread, load a long value from the named variable, or the default value if the variable is not yet defined*
-- long -> Load(java.util.function.Function<java.lang.Object,java.lang.Object>: nameFunc) -> long
-  - *ex:* `Load(NumberNameToString())` - *for the current thread, load a long value from the named variable, where the variable name is provided by the provided by a function.*
-- long -> Load(java.util.function.Function<java.lang.Object,java.lang.Object>: nameFunc, long: defaultvalue) -> long
-  - *ex:* `Load(NumberNameToString(),22L)` - *for the current thread, load a long value from the named variable, where the variable name is provided by the provided by a function, or the default value if the variable is not yet defined*
-- java.lang.Object -> Load(java.lang.String: name) -> java.lang.Object
-  - *ex:* `Load('foo')` - *for the current thread, load an Object value from the named variable*
-- java.lang.Object -> Load(java.util.function.Function<java.lang.Object,java.lang.Object>: nameFunc) -> java.lang.Object
-  - *ex:* `Load(NumberNameToString())` - *for the current thread, load an Object value from the named variable, where the variable name is returned by the provided function*
-- java.lang.Object -> Load(java.lang.String: name, java.lang.Object: defaultValue) -> java.lang.Object
-  - *ex:* `Load('foo','testvalue')` - *for the current thread, load an Object value from the named variable, or the default value if the variable is not yet defined.*
-- java.lang.Object -> Load(java.util.function.Function<java.lang.Object,java.lang.Object>: nameFunc, java.lang.Object: defaultValue) -> java.lang.Object
-  - *ex:* `Load(NumberNameToString(),'testvalue')` - *for the current thread, load an Object value from the named variable, where the variable name is returned by the provided function, or thedefault value if the variable is not yet defined.*
-- long -> Load(java.lang.String: name) -> java.lang.Object
-  - *ex:* `Load('foo')` - *for the current thread, load an Object value from the named variable*
-- long -> Load(java.util.function.LongFunction<java.lang.Object>: nameFunc) -> java.lang.Object
-  - *ex:* `Load(NumberNameToString())` - *for the current thread, load an Object value from the named variable, where the variable name is returned by the provided function*
-- long -> Load(java.lang.String: name, java.lang.Object: defaultValue) -> java.lang.Object
-  - *ex:* `Load('foo','testvalue')` - *for the current thread, load an Object value from the named variable, or the default value if the variable is not yet defined.*
-- long -> Load(java.util.function.LongFunction<java.lang.Object>: nameFunc, java.lang.Object: defaultValue) -> java.lang.Object
-  - *ex:* `Load(NumberNameToString(),'testvalue')` - *for the current thread, load an Object value from the named variable, where the variable name is returned by the provided function, or thedefault value if the variable is not yet defined.*
-- int -> Load(java.lang.String: name) -> int
-  - *ex:* `Load('foo')` - *for the current thread, load an int value from the named variable*
-- int -> Load(java.lang.String: name, int: defaultValue) -> int
-  - *ex:* `Load('foo',42)` - *for the current thread, load an int value from the named variable, or return the default value if it is undefined.*
-- int -> Load(java.util.function.Function<java.lang.Object,java.lang.Object>: nameFunc) -> int
-  - *ex:* `Load(NumberNameToString())` - *for the current thread, load an int value from the named variable, where the variable name is provided by a function.*
-- int -> Load(java.util.function.Function<java.lang.Object,java.lang.Object>: nameFunc, int: defaultValue) -> int
-  - *ex:* `Load(NumberNameToString(),42)` - *for the current thread, load an int value from the named variable, where the variable name is provided by a function, or the default value if the named variable is undefined.*
-- java.lang.String -> Load(java.lang.String: name) -> java.lang.String
-  - *ex:* `Load('foo')` - *for the current thread, load a String value from the named variable*
-- java.lang.String -> Load(java.lang.String: name, java.lang.String: defaultvalue) -> java.lang.String
-  - *ex:* `Load('foo','track05')` - *for the current thread, load a String value from the named variable, or teh default value if the variable is not yet defined.*
-- java.lang.String -> Load(java.util.function.Function<java.lang.Object,java.lang.Object>: nameFunc) -> java.lang.String
-  - *ex:* `Load(NumberNameToString())` - *for the current thread, load a String value from the named variable, where the variable name is provided by a function*
-- java.lang.String -> Load(java.util.function.Function<java.lang.Object,java.lang.Object>: nameFunc, java.lang.String: defaultValue) -> java.lang.String
-  - *ex:* `Load(NumberNameToString(),'track05')` - *for the current thread, load a String value from the named variable, where the variable name is provided by a function, or the default value if the variable is not yet defined.*
 
 
 ## LoadDouble
 
-Load a value from a named thread-local variable, where the variable name is fixed or a generated variable name from a provided function. If the named variable is not defined, then the default value is returned.
+Load a value from a named thread-local variable, where the variable name is fixed or a generated variable name from a provided function. If the named variable is not defined, then the default value is returned. Load a value from a named thread-local variable, where the variable name is fixed or a generated variable name from a provided function. If the named variable is not defined, then the default value is returned.
 
-- java.lang.Object -> LoadDouble(java.lang.String: name) -> java.lang.Double
-  - *ex:* `LoadDouble('foo')` - *for the current thread, load a double value from the named variable.*
-- java.lang.Object -> LoadDouble(java.lang.String: name, double: defaultValue) -> java.lang.Double
-  - *ex:* `LoadDouble('foo',23D)` - *for the current thread, load a double value from the named variable,or the default value if the named variable is not defined.*
-- java.lang.Object -> LoadDouble(java.util.function.Function<java.lang.Object,java.lang.Object>: nameFunc) -> java.lang.Double
-  - *ex:* `LoadDouble(NumberNameToString())` - *for the current thread, load a double value from the named variable, where the variable name is provided by a function.*
-- java.lang.Object -> LoadDouble(java.util.function.Function<java.lang.Object,java.lang.Object>: nameFunc, double: defaultValue) -> java.lang.Double
-  - *ex:* `LoadDouble(NumberNameToString(),23D)` - *for the current thread, load a double value from the named variable,where the variable name is provided by a function, or the default value if the namedvariable is not defined.*
-- long -> LoadDouble(java.lang.String: name) -> double
-  - *ex:* `LoadDouble('foo')` - *for the current thread, load a double value from the named variable.*
-- long -> LoadDouble(java.lang.String: name, double: defaultValue) -> double
-  - *ex:* `LoadDouble('foo',23D)` - *for the current thread, load a double value from the named variable,or the default value if the named variable is not defined.*
-- long -> LoadDouble(java.util.function.LongFunction<java.lang.Object>: nameFunc) -> double
-  - *ex:* `LoadDouble(NumberNameToString())` - *for the current thread, load a double value from the named variable, where the variable name is provided by a function.*
-- long -> LoadDouble(java.util.function.LongFunction<java.lang.Object>: nameFunc, double: defaultValue) -> double
-  - *ex:* `LoadDouble(NumberNameToString(),23D)` - *for the current thread, load a double value from the named variable,where the variable name is provided by a function, or the default value if the namedvariable is not defined.*
+- long -> LoadDouble(String: name) -> double
+  - *example:* `LoadDouble('foo')`
+  - *for the current thread, load a double value from the named variable.*
 
+- long -> LoadDouble(String: name, double: defaultValue) -> double
+  - *example:* `LoadDouble('foo',23D)`
+  - *for the current thread, load a double value from the named variable,or the default value if the named variable is not defined.*
 
-## LoadFloat
+- long -> LoadDouble(function.LongFunction<Object>: nameFunc) -> double
+  - *example:* `LoadDouble(NumberNameToString())`
+  - *for the current thread, load a double value from the named variable, where the variable name is provided by a function.*
 
-Load a value from a named thread-local variable, where the variable name is fixed or a generated variable name from a provided function. If the named variable is not defined, then the default value is returned.
+- long -> LoadDouble(function.LongFunction<Object>: nameFunc, double: defaultValue) -> double
+  - *example:* `LoadDouble(NumberNameToString(),23D)`
+  - *for the current thread, load a double value from the named variable,where the variable name is provided by a function, or the default value if the namedvariable is not defined.*
 
-- java.lang.Object -> LoadFloat(java.lang.String: name) -> java.lang.Float
-  - *ex:* `LoadFloat('foo')` - *for the current thread, load a float value from the named variable.*
-- java.lang.Object -> LoadFloat(java.lang.String: name, float: defaultValue) -> java.lang.Float
-  - *ex:* `LoadFloat('foo',23F)` - *for the current thread, load a float value from the named variable,or the default value if the named variable is not defined.*
-- java.lang.Object -> LoadFloat(java.util.function.Function<java.lang.Object,java.lang.Object>: nameFunc) -> java.lang.Float
-  - *ex:* `LoadFloat(NumberNameToString())` - *for the current thread, load a float value from the named variable,where the variable name is provided by a function.*
-- java.lang.Object -> LoadFloat(java.util.function.Function<java.lang.Object,java.lang.Object>: nameFunc, float: defaultValue) -> java.lang.Float
-  - *ex:* `LoadFloat(NumberNameToString(),23F)` - *for the current thread, load a float value from the named variable,where the variable name is provided by a function, or the default value if the namedvariable is not defined.*
-- long -> LoadFloat(java.lang.String: name) -> java.lang.Float
-  - *ex:* `LoadFloat('foo')` - *for the current thread, load a float value from the named variable.*
-- long -> LoadFloat(java.lang.String: name, float: defaultValue) -> java.lang.Float
-  - *ex:* `LoadFloat('foo',23F)` - *for the current thread, load a float value from the named variable,or the default value if the named variable is not defined.*
-- long -> LoadFloat(java.util.function.LongFunction<java.lang.Object>: nameFunc) -> java.lang.Float
-  - *ex:* `LoadFloat(NumberNameToString())` - *for the current thread, load a float value from the named variable,where the variable name is provided by a function.*
-- long -> LoadFloat(java.util.function.LongFunction<java.lang.Object>: nameFunc, float: defaultValue) -> java.lang.Float
-  - *ex:* `LoadFloat(NumberNameToString(),23F)` - *for the current thread, load a float value from the named variable,where the variable name is provided by a function, or the default value if the namedvariable is not defined.*
+- Object -> LoadDouble(String: name) -> Double
+  - *example:* `LoadDouble('foo')`
+  - *for the current thread, load a double value from the named variable.*
 
+- Object -> LoadDouble(String: name, double: defaultValue) -> Double
+  - *example:* `LoadDouble('foo',23D)`
+  - *for the current thread, load a double value from the named variable,or the default value if the named variable is not defined.*
 
-## LoadInteger
+- Object -> LoadDouble(function.Function<Object,Object>: nameFunc) -> Double
+  - *example:* `LoadDouble(NumberNameToString())`
+  - *for the current thread, load a double value from the named variable, where the variable name is provided by a function.*
 
-Load a value from a named thread-local variable, where the variable name is fixed or a generated variable name from a provided function. If the named variable is not defined, then the default value is returned.
-
-- java.lang.Object -> LoadInteger(java.lang.String: name) -> java.lang.Integer
-  - *ex:* `LoadInteger('foo')` - *for the current thread, load an integer value from the named variable.*
-- java.lang.Object -> LoadInteger(java.lang.String: name, int: defaultValue) -> java.lang.Integer
-  - *ex:* `LoadInteger('foo',42)` - *for the current thread, load an integer value from the named variable, or the default value if the named variable is not defined.*
-- java.lang.Object -> LoadInteger(java.util.function.Function<java.lang.Object,java.lang.Object>: nameFunc) -> java.lang.Integer
-  - *ex:* `LoadInteger(NumberNameToString())` - *for the current thread, load an integer value from the named variable,where the variable name is provided by a function.*
-- java.lang.Object -> LoadInteger(java.util.function.Function<java.lang.Object,java.lang.Object>: nameFunc, int: defaultValue) -> java.lang.Integer
-  - *ex:* `LoadInteger(NumberNameToString(),42)` - *for the current thread, load an integer value from the named variable,where the variable name is provided by a function, or the default value if the namedvariable is not defined.*
-- long -> LoadInteger(java.lang.String: name) -> int
-  - *ex:* `LoadInteger('foo')` - *for the current thread, load an integer value from the named variable.*
-- long -> LoadInteger(java.lang.String: name, int: defaultValue) -> int
-  - *ex:* `LoadInteger('foo',42)` - *for the current thread, load an integer value from the named variable, or the default value if the named variable is not defined.*
-- long -> LoadInteger(java.util.function.LongFunction<java.lang.Object>: nameFunc) -> int
-  - *ex:* `LoadInteger(NumberNameToString())` - *for the current thread, load an integer value from the named variable,where the variable name is provided by a function.*
-- long -> LoadInteger(java.util.function.LongFunction<java.lang.Object>: nameFunc, int: defaultValue) -> int
-  - *ex:* `LoadInteger(NumberNameToString(),42)` - *for the current thread, load an integer value from the named variable,where the variable name is provided by a function, or the default value if the namedvariable is not defined.*
-
-
-## LoadLong
-
-Load a value from a named thread-local variable, where the variable name is fixed or a generated variable name from a provided function. If the named variable is not defined, then the default value is returned.
-
-- java.lang.Object -> LoadLong(java.lang.String: name) -> java.lang.Long
-  - *ex:* `LoadLong('foo',42L)` - *for the current thread, load a long value from the named variable.*
-- java.lang.Object -> LoadLong(java.lang.String: name, long: defaultValue) -> java.lang.Long
-  - *ex:* `LoadLong('foo',42L)` - *for the current thread, load a long value from the named variable, or the default value if the named variable is not defined.*
-- java.lang.Object -> LoadLong(java.util.function.Function<java.lang.Object,java.lang.Object>: nameFunc) -> java.lang.Long
-  - *ex:* `LoadLong(NumberNameToString(),42L)` - *for the current thread, load a long value from the named variable,where the variable name is provided by a function.*
-- java.lang.Object -> LoadLong(java.util.function.Function<java.lang.Object,java.lang.Object>: nameFunc, long: defaultValue) -> java.lang.Long
-  - *ex:* `LoadLong(NumberNameToString(),42L)` - *for the current thread, load a long value from the named variable,where the variable name is provided by a function, or the default value if the namedvariable is not defined.*
-- long -> LoadLong(java.lang.String: name) -> long
-  - *ex:* `LoadLong('foo',42L)` - *for the current thread, load a long value from the named variable.*
-- long -> LoadLong(java.lang.String: name, long: defaultValue) -> long
-  - *ex:* `LoadLong('foo',42L)` - *for the current thread, load a long value from the named variable, or the default value if the named variable is not defined.*
-- long -> LoadLong(java.util.function.LongFunction<java.lang.Object>: nameFunc) -> long
-  - *ex:* `LoadLong(NumberNameToString(),42L)` - *for the current thread, load a long value from the named variable,where the variable name is provided by a function.*
-- long -> LoadLong(java.util.function.LongFunction<java.lang.Object>: nameFunc, long: defaultValue) -> long
-  - *ex:* `LoadLong(NumberNameToString(),42L)` - *for the current thread, load a long value from the named variable,where the variable name is provided by a function, or the default value if the namedvariable is not defined.*
-
+- Object -> LoadDouble(function.Function<Object,Object>: nameFunc, double: defaultValue) -> Double
+  - *example:* `LoadDouble(NumberNameToString(),23D)`
+  - *for the current thread, load a double value from the named variable,where the variable name is provided by a function, or the default value if the namedvariable is not defined.*
 
 ## LoadString
 
-Load a value from a named thread-local variable, where the variable name is fixed or a generated variable name from a provided function. If the named variable is not defined, then the default value is returned.
+Load a value from a named thread-local variable, where the variable name is fixed or a generated variable name from a provided function. If the named variable is not defined, then the default value is returned. Load a value from a named thread-local variable, where the variable name is fixed or a generated variable name from a provided function. If the named variable is not defined, then the default value is returned.
 
-- java.lang.Object -> LoadString(java.lang.String: name) -> java.lang.String
-  - *ex:* `LoadString('foo','examplevalue')` - *for the current thread, load a String value from the named variable.*
-- java.lang.Object -> LoadString(java.lang.String: name, java.lang.String: defaultValue) -> java.lang.String
-  - *ex:* `LoadString('foo','examplevalue')` - *for the current thread, load a String value from the named variable, or the default value if the named variable is not defined.*
-- java.lang.Object -> LoadString(java.util.function.Function<java.lang.Object,java.lang.Object>: nameFunc) -> java.lang.String
-  - *ex:* `LoadString(NumberNameToString(),'examplevalue')` - *for the current thread, load a String value from the named variable, or the default value if the named variable is not defined.*
-- java.lang.Object -> LoadString(java.util.function.Function<java.lang.Object,java.lang.Object>: nameFunc, java.lang.String: defaultValue) -> java.lang.String
-  - *ex:* `LoadString(NumberNameToString(),'examplevalue')` - *for the current thread, load a String value from the named variable,where the variable name is provided by a function, or the default value if the namedvariable is not defined.*
-- long -> LoadString(java.lang.String: name) -> java.lang.String
-  - *ex:* `LoadString('foo','examplevalue')` - *for the current thread, load a String value from the named variable.*
-- long -> LoadString(java.lang.String: name, java.lang.String: defaultValue) -> java.lang.String
-  - *ex:* `LoadString('foo','examplevalue')` - *for the current thread, load a String value from the named variable, or the default value if the named variable is not defined.*
-- long -> LoadString(java.util.function.LongFunction<java.lang.Object>: nameFunc) -> java.lang.String
-  - *ex:* `LoadString(NumberNameToString(),'examplevalue')` - *for the current thread, load a String value from the named variable, or the default value if the named variable is not defined.*
-- long -> LoadString(java.util.function.LongFunction<java.lang.Object>: nameFunc, java.lang.String: defaultValue) -> java.lang.String
-  - *ex:* `LoadString(NumberNameToString(),'examplevalue')` - *for the current thread, load a String value from the named variable,where the variable name is provided by a function, or the default value if the namedvariable is not defined.*
+- Object -> LoadString(String: name) -> String
+  - *example:* `LoadString('foo','examplevalue')`
+  - *for the current thread, load a String value from the named variable.*
 
+- Object -> LoadString(String: name, String: defaultValue) -> String
+  - *example:* `LoadString('foo','examplevalue')`
+  - *for the current thread, load a String value from the named variable, or the default value if the named variable is not defined.*
 
-## NullOrLoad
+- Object -> LoadString(function.Function<Object,Object>: nameFunc) -> String
+  - *example:* `LoadString(NumberNameToString(),'examplevalue')`
+  - *for the current thread, load a String value from the named variable, or the default value if the named variable is not defined.*
 
-Reads a long variable from the input, hashes and scales it to the unit interval 0.0d - 1.0d, then uses the result to determine whether to return null object or a loaded value.
+- Object -> LoadString(function.Function<Object,Object>: nameFunc, String: defaultValue) -> String
+  - *example:* `LoadString(NumberNameToString(),'examplevalue')`
+  - *for the current thread, load a String value from the named variable,where the variable name is provided by a function, or the default value if the namedvariable is not defined.*
 
-- long -> NullOrLoad(double: ratio, java.lang.String: varname) -> java.lang.Object
+- long -> LoadString(String: name) -> String
+  - *example:* `LoadString('foo','examplevalue')`
+  - *for the current thread, load a String value from the named variable.*
 
+- long -> LoadString(String: name, String: defaultValue) -> String
+  - *example:* `LoadString('foo','examplevalue')`
+  - *for the current thread, load a String value from the named variable, or the default value if the named variable is not defined.*
 
-## NullOrPass
+- long -> LoadString(function.LongFunction<Object>: nameFunc) -> String
+  - *example:* `LoadString(NumberNameToString(),'examplevalue')`
+  - *for the current thread, load a String value from the named variable, or the default value if the named variable is not defined.*
 
-Reads a long variable from the thread local variable map, hashes and scales it to the unit interval 0.0d - 1.0d, then uses the result to determine whether to return a null object or the input value.
+- long -> LoadString(function.LongFunction<Object>: nameFunc, String: defaultValue) -> String
+  - *example:* `LoadString(NumberNameToString(),'examplevalue')`
+  - *for the current thread, load a String value from the named variable,where the variable name is provided by a function, or the default value if the namedvariable is not defined.*
 
-- java.lang.Object -> NullOrPass(double: ratio, java.lang.String: varname) -> java.lang.Object
+## Load
 
+Load a named value from the per-thread state map. The previous input value will be forgotten, and the named value will replace it before the next function in the chain. Load a named value from the per-thread state map. The previous input value will be forgotten, and the named value will replace it before the next function in the chain.
 
-## Save
+- String -> Load(String: name) -> String
+  - *example:* `Load('foo')`
+  - *for the current thread, load a String value from the named variable*
 
-Save the current input value at this point in the function chain to a thread-local variable name. The input value is unchanged, and available for the next function in the chain to use as-is.
+- String -> Load(String: name, String: defaultvalue) -> String
+  - *example:* `Load('foo','track05')`
+  - *for the current thread, load a String value from the named variable, or teh default value if the variable is not yet defined.*
 
-- double -> Save(java.lang.String: name) -> double
-  - *ex:* `Save('foo')` - *for the current thread, save the current double value to the named variable.*
-- double -> Save(java.util.function.Function<java.lang.Object,java.lang.Object>: nameFunc) -> double
-  - *ex:* `Save(NumberNameToString())` - *for the current thread, save the current double value to the name 'foo' in this thread, where the variable name is provided by a function.*
-- long -> Save(java.lang.String: name) -> long
-  - *ex:* `Save('foo')` - *save the current long value to the name 'foo' in this thread*
-- long -> Save(java.util.function.Function<java.lang.Object,java.lang.Object>: nameFunc) -> long
-  - *ex:* `Save(NumberNameToString())` - *save the current long value to the name generated by the function given.*
-- java.lang.Object -> Save(java.lang.String: name) -> java.lang.Object
-  - *ex:* `Save('foo')` - *for the current thread, save the input object value to the named variable*
-- java.lang.Object -> Save(java.util.function.Function<java.lang.Object,java.lang.Object>: nameFunc) -> java.lang.Object
-  - *ex:* `Save(NumberNameToString())` - *for the current thread, save the current input object value to the named variable,where the variable name is provided by a function.*
-- long -> Save(java.lang.String: name) -> long
-  - *ex:* `Save('foo')` - *for the current thread, save the input object value to the named variable*
-- long -> Save(java.util.function.LongFunction<java.lang.Object>: nameFunc) -> long
-  - *ex:* `Save(NumberNameToString())` - *for the current thread, save the current input object value to the named variable,where the variable name is provided by a function.*
-- int -> Save(java.lang.String: name) -> int
-  - *ex:* `Save('foo')` - *save the current int value to the name 'foo' in this thread*
-- int -> Save(java.util.function.Function<java.lang.Object,java.lang.Object>: nameFunc) -> int
-  - *ex:* `Save(NumberNameToString())` - *save the current int value to a named variable in this thread,where the variable name is provided by a function.*
-- java.lang.String -> Save(java.lang.String: name) -> java.lang.String
-  - *ex:* `Save('foo')` - *save the current String value to the name 'foo' in this thread*
-- java.lang.String -> Save(java.util.function.Function<java.lang.Object,java.lang.Object>: nameFunc) -> java.lang.String
-  - *ex:* `Save(NumberNameToString())` - *save the current String value to a named variable in this thread, where the variable name is provided by a function*
+- String -> Load(function.Function<Object,Object>: nameFunc) -> String
+  - *example:* `Load(NumberNameToString())`
+  - *for the current thread, load a String value from the named variable, where the variable name is provided by a function*
 
+- String -> Load(function.Function<Object,Object>: nameFunc, String: defaultValue) -> String
+  - *example:* `Load(NumberNameToString(),'track05')`
+  - *for the current thread, load a String value from the named variable, where the variable name is provided by a function, or the default value if the variable is not yet defined.*
 
-## SaveDouble
+- int -> Load(String: name) -> int
+  - *example:* `Load('foo')`
+  - *for the current thread, load an int value from the named variable*
 
-Save a value to a named thread-local variable, where the variable name is fixed or a generated variable name from a provided function. Note that the input type is not that suitable for constructing names, so this is more likely to be used in an indirect naming pattern like
+- int -> Load(String: name, int: defaultValue) -> int
+  - *example:* `Load('foo',42)`
+  - *for the current thread, load an int value from the named variable, or return the default value if it is undefined.*
 
-```
-SaveDouble(Load('id'))
-```
+- int -> Load(function.Function<Object,Object>: nameFunc) -> int
+  - *example:* `Load(NumberNameToString())`
+  - *for the current thread, load an int value from the named variable, where the variable name is provided by a function.*
 
-- double -> SaveDouble(java.lang.String: name) -> double
-  - *ex:* `Save('foo')` - *save the current double value to the name 'foo' in this thread*
-- double -> SaveDouble(java.util.function.Function<java.lang.Object,java.lang.Object>: nameFunc) -> double
-  - *ex:* `Save(NumberNameToString())` - *save a double value to a named variable in the current thread, where the variable name is provided by a function.*
-- long -> SaveDouble(java.lang.String: name) -> double
-  - *ex:* `Save('foo')` - *save the current double value to the name 'foo' in this thread*
-- long -> SaveDouble(java.util.function.LongFunction<java.lang.Object>: nameFunc) -> double
-  - *ex:* `Save(NumberNameToString())` - *save a double value to a named variable in the current thread, where the variable name is provided by a function.*
+- int -> Load(function.Function<Object,Object>: nameFunc, int: defaultValue) -> int
+  - *example:* `Load(NumberNameToString(),42)`
+  - *for the current thread, load an int value from the named variable, where the variable name is provided by a function, or the default value if the named variable is undefined.*
 
+- double -> Load(String: name) -> double
+  - *example:* `Load('foo')`
+  - *for the current thread, load a double value from the named variable*
 
-## SaveFloat
+- double -> Load(String: name, double: defaultValue) -> double
+  - *example:* `Load('foo',432.0D)`
+  - *for the current thread, load a double value from the named variable, or the defaultvalue if it is not yet defined.*
 
-Save a value to a named thread-local variable, where the variable name is fixed or a generated variable name from a provided function. Note that the input type is not that suitable for constructing names, so this is more likely to be used in an indirect naming pattern like
+- double -> Load(function.Function<Object,Object>: nameFunc) -> double
+  - *example:* `Load(NumberNameToString())`
+  - *for the current thread, load a double value from the named variable, where the variablename is provided by a function.*
 
-```
-SaveDouble(Load('id'))
-```
+- double -> Load(function.Function<Object,Object>: nameFunc, double: defaultValue) -> double
+  - *example:* `Load(NumberNameToString(),1234.5D)`
+  - *for the current thread, load a double value from the named variable, where the variablename is provided by a function, or the default value if the named value is not yet defined.*
 
-- java.lang.Float -> SaveFloat(java.lang.String: name) -> java.lang.Float
-  - *ex:* `SaveFloat('foo')` - *save the current float value to a named variable in this thread.*
-- java.lang.Float -> SaveFloat(java.util.function.Function<java.lang.Object,java.lang.Object>: nameFunc) -> java.lang.Float
-  - *ex:* `SaveFloat(NumberNameToString())` - *save the current float value to a named variable in this thread, where the variable name is provided by a function.*
-- long -> SaveFloat(java.lang.String: name) -> java.lang.Float
-  - *ex:* `SaveFloat('foo')` - *save the current float value to a named variable in this thread.*
-- long -> SaveFloat(java.util.function.LongFunction<java.lang.Object>: nameFunc) -> java.lang.Float
-  - *ex:* `SaveFloat(NumberNameToString())` - *save the current float value to a named variable in this thread, where the variable name is provided by a function.*
+- long -> Load(String: name) -> long
+  - *example:* `Load('foo')`
+  - *for the current thread, load a long value from the named variable*
 
+- long -> Load(String: name, long: defaultValue) -> long
+  - *example:* `Load('foo', 423L)`
+  - *for the current thread, load a long value from the named variable, or the default value if the variable is not yet defined*
+
+- long -> Load(function.Function<Object,Object>: nameFunc) -> long
+  - *example:* `Load(NumberNameToString())`
+  - *for the current thread, load a long value from the named variable, where the variable name is provided by the provided by a function.*
+
+- long -> Load(function.Function<Object,Object>: nameFunc, long: defaultvalue) -> long
+  - *example:* `Load(NumberNameToString(),22L)`
+  - *for the current thread, load a long value from the named variable, where the variable name is provided by the provided by a function, or the default value if the variable is not yet defined*
+
+- long -> Load(String: name) -> Object
+  - *example:* `Load('foo')`
+  - *for the current thread, load an Object value from the named variable*
+
+- long -> Load(function.LongFunction<Object>: nameFunc) -> Object
+  - *example:* `Load(NumberNameToString())`
+  - *for the current thread, load an Object value from the named variable, where the variable name is returned by the provided function*
+
+- long -> Load(String: name, Object: defaultValue) -> Object
+  - *example:* `Load('foo','testvalue')`
+  - *for the current thread, load an Object value from the named variable, or the default value if the variable is not yet defined.*
+
+- long -> Load(function.LongFunction<Object>: nameFunc, Object: defaultValue) -> Object
+  - *example:* `Load(NumberNameToString(),'testvalue')`
+  - *for the current thread, load an Object value from the named variable, where the variable name is returned by the provided function, or thedefault value if the variable is not yet defined.*
+
+- Object -> Load(String: name) -> Object
+  - *example:* `Load('foo')`
+  - *for the current thread, load an Object value from the named variable*
+
+- Object -> Load(function.Function<Object,Object>: nameFunc) -> Object
+  - *example:* `Load(NumberNameToString())`
+  - *for the current thread, load an Object value from the named variable, where the variable name is returned by the provided function*
+
+- Object -> Load(String: name, Object: defaultValue) -> Object
+  - *example:* `Load('foo','testvalue')`
+  - *for the current thread, load an Object value from the named variable, or the default value if the variable is not yet defined.*
+
+- Object -> Load(function.Function<Object,Object>: nameFunc, Object: defaultValue) -> Object
+  - *example:* `Load(NumberNameToString(),'testvalue')`
+  - *for the current thread, load an Object value from the named variable, where the variable name is returned by the provided function, or thedefault value if the variable is not yet defined.*
 
 ## SaveInteger
 
@@ -277,15 +197,110 @@ Save a value to a named thread-local variable, where the variable name is fixed 
 SaveDouble(Load('id'))
 ```
 
-- int -> SaveInteger(java.lang.String: name) -> int
-  - *ex:* `SaveInteger('foo')` - *save the current integer value to a named variable in this thread.*
-- int -> SaveInteger(java.util.function.Function<java.lang.Object,java.lang.Object>: nameFunc) -> int
-  - *ex:* `SaveInteger(NumberNameToString())` - *save the current integer value to a named variable in this thread, where the variable name is provided by a function.*
-- long -> SaveInteger(java.lang.String: name) -> int
-  - *ex:* `SaveInteger('foo')` - *save the current integer value to a named variable in this thread.*
-- long -> SaveInteger(java.util.function.LongFunction<java.lang.Object>: nameFunc) -> int
-  - *ex:* `SaveInteger(NumberNameToString())` - *save the current integer value to a named variable in this thread, where the variable name is provided by a function.*
+Save a value to a named thread-local variable, where the variable name is fixed or a generated variable name from a provided function. Note that the input type is not that suitable for constructing names, so this is more likely to be used in an indirect naming pattern like
 
+```
+SaveDouble(Load('id'))
+```
+
+
+- int -> SaveInteger(String: name) -> int
+  - *example:* `SaveInteger('foo')`
+  - *save the current integer value to a named variable in this thread.*
+
+- int -> SaveInteger(function.Function<Object,Object>: nameFunc) -> int
+  - *example:* `SaveInteger(NumberNameToString())`
+  - *save the current integer value to a named variable in this thread, where the variable name is provided by a function.*
+
+- long -> SaveInteger(String: name) -> int
+  - *example:* `SaveInteger('foo')`
+  - *save the current integer value to a named variable in this thread.*
+
+- long -> SaveInteger(function.LongFunction<Object>: nameFunc) -> int
+  - *example:* `SaveInteger(NumberNameToString())`
+  - *save the current integer value to a named variable in this thread, where the variable name is provided by a function.*
+
+## UnsetOrLoad
+
+Reads a long variable from the input, hashes and scales it to the unit interval 0.0d - 1.0d, then uses the result to determine whether to return UNSET.value or a loaded value.
+
+- long -> UnsetOrLoad(double: ratio, String: varname) -> Object
+
+## Clear
+
+Clears the per-thread map which is used by the Expr function. Clears the per-thread map which is used by the Expr function.
+
+- Object -> Clear() -> Object
+  - *notes:* Clear all named entries from the per-thread map.
+
+  - *example:* `Clear()`
+  - *clear all thread-local variables*
+
+- Object -> Clear(String[]...: names) -> Object
+  - *notes:* Clear the specified names from the per-thread map.
+@param names The names to be removed from the map.
+
+  - *example:* `Clear('foo')`
+  - *clear the thread-local variable 'foo'*
+  - *example:* `Clear('foo','bar')`
+  - *clear the thread-local variables 'foo' and 'bar'*
+
+- long -> Clear() -> long
+  - *notes:* Clear all named entries from the per-thread map.
+
+  - *example:* `Clear()`
+  - *clear all thread-local variables*
+
+- long -> Clear(String[]...: names) -> long
+  - *notes:* Clear the specified names from the per-thread map.
+@param names The names to be removed from the map.
+
+  - *example:* `Clear('foo')`
+  - *clear the thread-local variable 'foo'*
+  - *example:* `Clear('foo','bar')`
+  - *clear the thread-local variables 'foo' and 'bar'*
+
+## NullOrLoad
+
+Reads a long variable from the input, hashes and scales it to the unit interval 0.0d - 1.0d, then uses the result to determine whether to return null object or a loaded value.
+
+- long -> NullOrLoad(double: ratio, String: varname) -> Object
+
+## Swap
+
+Load a named value from the per-thread state map. The previous input value will be stored in the named value, and the previously stored value will be returned. A default value to return may be provided in case there was no previously stored value under the given name. Load a named value from the per-thread state map. The previous input value will be stored in the named value, and the previously stored value will be returned. A default value to return may be provided in case there was no previously stored value under the given name.
+
+- Object -> Swap(String: name) -> Object
+  - *example:* `Swap('foo')`
+  - *for the current thread, swap the input value with the named variable and returned the named variable*
+
+- Object -> Swap(String: name, Object: defaultValue) -> Object
+  - *example:* `Swap('foo','examplevalue')`
+  - *for the current thread, swap the input value with the named variable and returned the named variable, or return the default value if the named value is not defined.*
+
+- Object -> Swap(function.Function<Object,Object>: nameFunc) -> Object
+  - *example:* `Swap(NumberNameToString())`
+  - *for the current thread, swap the input value with the named variable and returned the named variable, where the variable name is generated by the provided function.*
+
+- Object -> Swap(function.Function<Object,Object>: nameFunc, Object: defaultValue) -> Object
+  - *example:* `Swap(NumberNameToString(),'examplevalue')`
+  - *for the current thread, swap the input value with the named variable and returned the named variable, where the variable name is generated by the provided function, or the default value if the named value is not defined.*
+
+- long -> Swap(String: name) -> Object
+  - *example:* `Swap('foo')`
+  - *for the current thread, swap the input value with the named variable and returned the named variable*
+
+- long -> Swap(String: name, Object: defaultValue) -> Object
+  - *example:* `Swap('foo','examplevalue')`
+  - *for the current thread, swap the input value with the named variable and returned the named variable, or return the default value if the named value is not defined.*
+
+- long -> Swap(function.LongFunction<Object>: nameFunc) -> Object
+  - *example:* `Swap(NumberNameToString())`
+  - *for the current thread, swap the input value with the named variable and returned the named variable, where the variable name is generated by the provided function.*
+
+- long -> Swap(function.LongFunction<Object>: nameFunc, Object: defaultValue) -> Object
+  - *example:* `Swap(NumberNameToString(),'examplevalue')`
+  - *for the current thread, swap the input value with the named variable and returned the named variable, where the variable name is generated by the provided function, or the default value if the named value is not defined.*
 
 ## SaveLong
 
@@ -295,15 +310,59 @@ Save a value to a named thread-local variable, where the variable name is fixed 
 SaveDouble(Load('id'))
 ```
 
-- long -> SaveLong(java.lang.String: name) -> long
-  - *ex:* `SaveLong('foo')` - *save the current long value to a named variable in this thread.*
-- long -> SaveLong(java.util.function.Function<java.lang.Object,java.lang.Object>: nameFunc) -> long
-  - *ex:* `SaveLong(NumberNameToString())` - *save the current long value to a named variable in this thread, where the variable name is provided by a function.*
-- long -> SaveLong(java.lang.String: name) -> long
-  - *ex:* `SaveLong('foo')` - *save the current long value to a named variable in this thread.*
-- long -> SaveLong(java.util.function.Function<java.lang.Object,java.lang.Object>: nameFunc) -> long
-  - *ex:* `SaveLong(NumberNameToString())` - *save the current long value to a named variable in this thread, where the variable name is provided by a function.*
+Save a value to a named thread-local variable, where the variable name is fixed or a generated variable name from a provided function. Note that the input type is not that suitable for constructing names, so this is more likely to be used in an indirect naming pattern like
 
+```
+SaveDouble(Load('id'))
+```
+
+
+- long -> SaveLong(String: name) -> long
+  - *example:* `SaveLong('foo')`
+  - *save the current long value to a named variable in this thread.*
+
+- long -> SaveLong(function.Function<Object,Object>: nameFunc) -> long
+  - *example:* `SaveLong(NumberNameToString())`
+  - *save the current long value to a named variable in this thread, where the variable name is provided by a function.*
+
+- long -> SaveLong(String: name) -> long
+  - *example:* `SaveLong('foo')`
+  - *save the current long value to a named variable in this thread.*
+
+- long -> SaveLong(function.Function<Object,Object>: nameFunc) -> long
+  - *example:* `SaveLong(NumberNameToString())`
+  - *save the current long value to a named variable in this thread, where the variable name is provided by a function.*
+
+## SaveDouble
+
+Save a value to a named thread-local variable, where the variable name is fixed or a generated variable name from a provided function. Note that the input type is not that suitable for constructing names, so this is more likely to be used in an indirect naming pattern like
+
+```
+SaveDouble(Load('id'))
+```
+
+Save a value to a named thread-local variable, where the variable name is fixed or a generated variable name from a provided function. Note that the input type is not that suitable for constructing names, so this is more likely to be used in an indirect naming pattern like
+
+```
+SaveDouble(Load('id'))
+```
+
+
+- double -> SaveDouble(String: name) -> double
+  - *example:* `Save('foo')`
+  - *save the current double value to the name 'foo' in this thread*
+
+- double -> SaveDouble(function.Function<Object,Object>: nameFunc) -> double
+  - *example:* `Save(NumberNameToString())`
+  - *save a double value to a named variable in the current thread, where the variable name is provided by a function.*
+
+- long -> SaveDouble(String: name) -> double
+  - *example:* `Save('foo')`
+  - *save the current double value to the name 'foo' in this thread*
+
+- long -> SaveDouble(function.LongFunction<Object>: nameFunc) -> double
+  - *example:* `Save(NumberNameToString())`
+  - *save a double value to a named variable in the current thread, where the variable name is provided by a function.*
 
 ## SaveString
 
@@ -313,73 +372,253 @@ Save a value to a named thread-local variable, where the variable name is fixed 
 SaveDouble(Load('id'))
 ```
 
-- java.lang.String -> SaveString(java.lang.String: name) -> java.lang.String
-  - *ex:* `SaveString('foo')` - *save the current String value to a named variable in this thread.*
-- java.lang.String -> SaveString(java.util.function.Function<java.lang.Object,java.lang.Object>: nameFunc) -> java.lang.String
-  - *ex:* `SaveString(NumberNameToString())` - *save the current String value to a named variable in this thread, where the variable name is provided by a function.*
-- long -> SaveString(java.lang.String: name) -> java.lang.String
-  - *ex:* `SaveString('foo')` - *save the current String value to a named variable in this thread.*
-- long -> SaveString(java.util.function.LongFunction<java.lang.Object>: nameFunc) -> java.lang.String
-  - *ex:* `SaveString(NumberNameToString())` - *save the current String value to a named variable in this thread, where the variable name is provided by a function.*
+Save a value to a named thread-local variable, where the variable name is fixed or a generated variable name from a provided function. Note that the input type is not that suitable for constructing names, so this is more likely to be used in an indirect naming pattern like
 
+```
+SaveDouble(Load('id'))
+```
+
+
+- long -> SaveString(String: name) -> String
+  - *example:* `SaveString('foo')`
+  - *save the current String value to a named variable in this thread.*
+
+- long -> SaveString(function.LongFunction<Object>: nameFunc) -> String
+  - *example:* `SaveString(NumberNameToString())`
+  - *save the current String value to a named variable in this thread, where the variable name is provided by a function.*
+
+- String -> SaveString(String: name) -> String
+  - *example:* `SaveString('foo')`
+  - *save the current String value to a named variable in this thread.*
+
+- String -> SaveString(function.Function<Object,Object>: nameFunc) -> String
+  - *example:* `SaveString(NumberNameToString())`
+  - *save the current String value to a named variable in this thread, where the variable name is provided by a function.*
+
+## LoadInteger
+
+Load a value from a named thread-local variable, where the variable name is fixed or a generated variable name from a provided function. If the named variable is not defined, then the default value is returned. Load a value from a named thread-local variable, where the variable name is fixed or a generated variable name from a provided function. If the named variable is not defined, then the default value is returned.
+
+- Object -> LoadInteger(String: name) -> Integer
+  - *example:* `LoadInteger('foo')`
+  - *for the current thread, load an integer value from the named variable.*
+
+- Object -> LoadInteger(String: name, int: defaultValue) -> Integer
+  - *example:* `LoadInteger('foo',42)`
+  - *for the current thread, load an integer value from the named variable, or the default value if the named variable is not defined.*
+
+- Object -> LoadInteger(function.Function<Object,Object>: nameFunc) -> Integer
+  - *example:* `LoadInteger(NumberNameToString())`
+  - *for the current thread, load an integer value from the named variable,where the variable name is provided by a function.*
+
+- Object -> LoadInteger(function.Function<Object,Object>: nameFunc, int: defaultValue) -> Integer
+  - *example:* `LoadInteger(NumberNameToString(),42)`
+  - *for the current thread, load an integer value from the named variable,where the variable name is provided by a function, or the default value if the namedvariable is not defined.*
+
+- long -> LoadInteger(String: name) -> int
+  - *example:* `LoadInteger('foo')`
+  - *for the current thread, load an integer value from the named variable.*
+
+- long -> LoadInteger(String: name, int: defaultValue) -> int
+  - *example:* `LoadInteger('foo',42)`
+  - *for the current thread, load an integer value from the named variable, or the default value if the named variable is not defined.*
+
+- long -> LoadInteger(function.LongFunction<Object>: nameFunc) -> int
+  - *example:* `LoadInteger(NumberNameToString())`
+  - *for the current thread, load an integer value from the named variable,where the variable name is provided by a function.*
+
+- long -> LoadInteger(function.LongFunction<Object>: nameFunc, int: defaultValue) -> int
+  - *example:* `LoadInteger(NumberNameToString(),42)`
+  - *for the current thread, load an integer value from the named variable,where the variable name is provided by a function, or the default value if the namedvariable is not defined.*
+
+## LoadFloat
+
+Load a value from a named thread-local variable, where the variable name is fixed or a generated variable name from a provided function. If the named variable is not defined, then the default value is returned. Load a value from a named thread-local variable, where the variable name is fixed or a generated variable name from a provided function. If the named variable is not defined, then the default value is returned.
+
+- Object -> LoadFloat(String: name) -> Float
+  - *example:* `LoadFloat('foo')`
+  - *for the current thread, load a float value from the named variable.*
+
+- Object -> LoadFloat(String: name, float: defaultValue) -> Float
+  - *example:* `LoadFloat('foo',23F)`
+  - *for the current thread, load a float value from the named variable,or the default value if the named variable is not defined.*
+
+- Object -> LoadFloat(function.Function<Object,Object>: nameFunc) -> Float
+  - *example:* `LoadFloat(NumberNameToString())`
+  - *for the current thread, load a float value from the named variable,where the variable name is provided by a function.*
+
+- Object -> LoadFloat(function.Function<Object,Object>: nameFunc, float: defaultValue) -> Float
+  - *example:* `LoadFloat(NumberNameToString(),23F)`
+  - *for the current thread, load a float value from the named variable,where the variable name is provided by a function, or the default value if the namedvariable is not defined.*
+
+- long -> LoadFloat(String: name) -> Float
+  - *example:* `LoadFloat('foo')`
+  - *for the current thread, load a float value from the named variable.*
+
+- long -> LoadFloat(String: name, float: defaultValue) -> Float
+  - *example:* `LoadFloat('foo',23F)`
+  - *for the current thread, load a float value from the named variable,or the default value if the named variable is not defined.*
+
+- long -> LoadFloat(function.LongFunction<Object>: nameFunc) -> Float
+  - *example:* `LoadFloat(NumberNameToString())`
+  - *for the current thread, load a float value from the named variable,where the variable name is provided by a function.*
+
+- long -> LoadFloat(function.LongFunction<Object>: nameFunc, float: defaultValue) -> Float
+  - *example:* `LoadFloat(NumberNameToString(),23F)`
+  - *for the current thread, load a float value from the named variable,where the variable name is provided by a function, or the default value if the namedvariable is not defined.*
+
+## SaveFloat
+
+Save a value to a named thread-local variable, where the variable name is fixed or a generated variable name from a provided function. Note that the input type is not that suitable for constructing names, so this is more likely to be used in an indirect naming pattern like
+
+```
+SaveDouble(Load('id'))
+```
+
+Save a value to a named thread-local variable, where the variable name is fixed or a generated variable name from a provided function. Note that the input type is not that suitable for constructing names, so this is more likely to be used in an indirect naming pattern like
+
+```
+SaveDouble(Load('id'))
+```
+
+
+- long -> SaveFloat(String: name) -> Float
+  - *example:* `SaveFloat('foo')`
+  - *save the current float value to a named variable in this thread.*
+
+- long -> SaveFloat(function.LongFunction<Object>: nameFunc) -> Float
+  - *example:* `SaveFloat(NumberNameToString())`
+  - *save the current float value to a named variable in this thread, where the variable name is provided by a function.*
+
+- Float -> SaveFloat(String: name) -> Float
+  - *example:* `SaveFloat('foo')`
+  - *save the current float value to a named variable in this thread.*
+
+- Float -> SaveFloat(function.Function<Object,Object>: nameFunc) -> Float
+  - *example:* `SaveFloat(NumberNameToString())`
+  - *save the current float value to a named variable in this thread, where the variable name is provided by a function.*
+
+## NullOrPass
+
+Reads a long variable from the thread local variable map, hashes and scales it to the unit interval 0.0d - 1.0d, then uses the result to determine whether to return a null object or the input value.
+
+- Object -> NullOrPass(double: ratio, String: varname) -> Object
 
 ## Show
 
-Show diagnostic values for the thread-local variable map.
+Show diagnostic values for the thread-local variable map. Show diagnostic values for the thread-local variable map.
 
-- java.lang.Object -> Show() -> java.lang.String
-  - *ex:* `Show()` - *Show all values in a json-like format*
-- java.lang.Object -> Show(java.lang.String[]...: names) -> java.lang.String
-  - *ex:* `Show('foo')` - *Show only the 'foo' value in a json-like format*
-  - *ex:* `Show('foo','bar')` - *Show the 'foo' and 'bar' values in a json-like format*
-- long -> Show() -> java.lang.String
-  - *ex:* `Show()` - *Show all values in a json-like format*
-- long -> Show(java.lang.String[]...: names) -> java.lang.String
-  - *ex:* `Show('foo')` - *Show only the 'foo' value in a json-like format*
-  - *ex:* `Show('foo','bar')` - *Show the 'foo' and 'bar' values in a json-like format*
+- long -> Show() -> String
+  - *example:* `Show()`
+  - *Show all values in a json-like format*
 
+- long -> Show(String[]...: names) -> String
+  - *example:* `Show('foo')`
+  - *Show only the 'foo' value in a json-like format*
+  - *example:* `Show('foo','bar')`
+  - *Show the 'foo' and 'bar' values in a json-like format*
 
-## Swap
+- Object -> Show() -> String
+  - *example:* `Show()`
+  - *Show all values in a json-like format*
 
-Load a named value from the per-thread state map. The previous input value will be stored in the named value, and the previously stored value will be returned. A default value to return may be provided in case there was no previously stored value under the given name.
+- Object -> Show(String[]...: names) -> String
+  - *example:* `Show('foo')`
+  - *Show only the 'foo' value in a json-like format*
+  - *example:* `Show('foo','bar')`
+  - *Show the 'foo' and 'bar' values in a json-like format*
 
-- long -> Swap(java.lang.String: name) -> long
-  - *ex:* `Swap('foo')` - *for the current thread, swap the input value with the named variable and returned the named variable.*
-- long -> Swap(java.lang.String: name, long: defaultValue) -> long
-  - *ex:* `Swap('foo',234L)` - *for the current thread, swap the input value with the named variable and returned the named variable,or the default value if the named variable is not defined.*
-- long -> Swap(java.util.function.LongFunction<java.lang.String>: nameFunc) -> long
-  - *ex:* `Swap(NumberNameToString())` - *for the current thread, swap the input value with the named variable and returned the named variable, where the variable name is generated by the provided function.*
-- long -> Swap(java.util.function.LongFunction<java.lang.String>: nameFunc, long: defaultValue) -> long
-  - *ex:* `Swap(NumberNameToString(), 234L)` - *for the current thread, swap the input value with the named variable and returned the named variable, where the variable name is generated by the provided function, or the default value if the named variable is not defined.*
-- java.lang.Object -> Swap(java.lang.String: name) -> java.lang.Object
-  - *ex:* `Swap('foo')` - *for the current thread, swap the input value with the named variable and returned the named variable*
-- java.lang.Object -> Swap(java.lang.String: name, java.lang.Object: defaultValue) -> java.lang.Object
-  - *ex:* `Swap('foo','examplevalue')` - *for the current thread, swap the input value with the named variable and returned the named variable, or return the default value if the named value is not defined.*
-- java.lang.Object -> Swap(java.util.function.Function<java.lang.Object,java.lang.Object>: nameFunc) -> java.lang.Object
-  - *ex:* `Swap(NumberNameToString())` - *for the current thread, swap the input value with the named variable and returned the named variable, where the variable name is generated by the provided function.*
-- java.lang.Object -> Swap(java.util.function.Function<java.lang.Object,java.lang.Object>: nameFunc, java.lang.Object: defaultValue) -> java.lang.Object
-  - *ex:* `Swap(NumberNameToString(),'examplevalue')` - *for the current thread, swap the input value with the named variable and returned the named variable, where the variable name is generated by the provided function, or the default value if the named value is not defined.*
-- long -> Swap(java.lang.String: name) -> java.lang.Object
-  - *ex:* `Swap('foo')` - *for the current thread, swap the input value with the named variable and returned the named variable*
-- long -> Swap(java.lang.String: name, java.lang.Object: defaultValue) -> java.lang.Object
-  - *ex:* `Swap('foo','examplevalue')` - *for the current thread, swap the input value with the named variable and returned the named variable, or return the default value if the named value is not defined.*
-- long -> Swap(java.util.function.LongFunction<java.lang.Object>: nameFunc) -> java.lang.Object
-  - *ex:* `Swap(NumberNameToString())` - *for the current thread, swap the input value with the named variable and returned the named variable, where the variable name is generated by the provided function.*
-- long -> Swap(java.util.function.LongFunction<java.lang.Object>: nameFunc, java.lang.Object: defaultValue) -> java.lang.Object
-  - *ex:* `Swap(NumberNameToString(),'examplevalue')` - *for the current thread, swap the input value with the named variable and returned the named variable, where the variable name is generated by the provided function, or the default value if the named value is not defined.*
+## LoadLong
 
+Load a value from a named thread-local variable, where the variable name is fixed or a generated variable name from a provided function. If the named variable is not defined, then the default value is returned. Load a value from a named thread-local variable, where the variable name is fixed or a generated variable name from a provided function. If the named variable is not defined, then the default value is returned.
 
-## UnsetOrLoad
+- long -> LoadLong(String: name) -> long
+  - *example:* `LoadLong('foo',42L)`
+  - *for the current thread, load a long value from the named variable.*
 
-Reads a long variable from the input, hashes and scales it to the unit interval 0.0d - 1.0d, then uses the result to determine whether to return UNSET.value or a loaded value.
+- long -> LoadLong(String: name, long: defaultValue) -> long
+  - *example:* `LoadLong('foo',42L)`
+  - *for the current thread, load a long value from the named variable, or the default value if the named variable is not defined.*
 
-- long -> UnsetOrLoad(double: ratio, java.lang.String: varname) -> java.lang.Object
+- long -> LoadLong(function.LongFunction<Object>: nameFunc) -> long
+  - *example:* `LoadLong(NumberNameToString(),42L)`
+  - *for the current thread, load a long value from the named variable,where the variable name is provided by a function.*
 
+- long -> LoadLong(function.LongFunction<Object>: nameFunc, long: defaultValue) -> long
+  - *example:* `LoadLong(NumberNameToString(),42L)`
+  - *for the current thread, load a long value from the named variable,where the variable name is provided by a function, or the default value if the namedvariable is not defined.*
+
+- Object -> LoadLong(String: name) -> Long
+  - *example:* `LoadLong('foo',42L)`
+  - *for the current thread, load a long value from the named variable.*
+
+- Object -> LoadLong(String: name, long: defaultValue) -> Long
+  - *example:* `LoadLong('foo',42L)`
+  - *for the current thread, load a long value from the named variable, or the default value if the named variable is not defined.*
+
+- Object -> LoadLong(function.Function<Object,Object>: nameFunc) -> Long
+  - *example:* `LoadLong(NumberNameToString(),42L)`
+  - *for the current thread, load a long value from the named variable,where the variable name is provided by a function.*
+
+- Object -> LoadLong(function.Function<Object,Object>: nameFunc, long: defaultValue) -> Long
+  - *example:* `LoadLong(NumberNameToString(),42L)`
+  - *for the current thread, load a long value from the named variable,where the variable name is provided by a function, or the default value if the namedvariable is not defined.*
+
+## Save
+
+Save the current input value at this point in the function chain to a thread-local variable name. The input value is unchanged, and available for the next function in the chain to use as-is. Save the current input value at this point in the function chain to a thread-local variable name. The input value is unchanged, and available for the next function in the chain to use as-is.
+
+- long -> Save(String: name) -> long
+  - *example:* `Save('foo')`
+  - *for the current thread, save the input object value to the named variable*
+
+- long -> Save(function.LongFunction<Object>: nameFunc) -> long
+  - *example:* `Save(NumberNameToString())`
+  - *for the current thread, save the current input object value to the named variable,where the variable name is provided by a function.*
+
+- long -> Save(String: name) -> long
+  - *example:* `Save('foo')`
+  - *save the current long value to the name 'foo' in this thread*
+
+- long -> Save(function.Function<Object,Object>: nameFunc) -> long
+  - *example:* `Save(NumberNameToString())`
+  - *save the current long value to the name generated by the function given.*
+
+- String -> Save(String: name) -> String
+  - *example:* `Save('foo')`
+  - *save the current String value to the name 'foo' in this thread*
+
+- String -> Save(function.Function<Object,Object>: nameFunc) -> String
+  - *example:* `Save(NumberNameToString())`
+  - *save the current String value to a named variable in this thread, where the variable name is provided by a function*
+
+- Object -> Save(String: name) -> Object
+  - *example:* `Save('foo')`
+  - *for the current thread, save the input object value to the named variable*
+
+- Object -> Save(function.Function<Object,Object>: nameFunc) -> Object
+  - *example:* `Save(NumberNameToString())`
+  - *for the current thread, save the current input object value to the named variable,where the variable name is provided by a function.*
+
+- double -> Save(String: name) -> double
+  - *example:* `Save('foo')`
+  - *for the current thread, save the current double value to the named variable.*
+
+- double -> Save(function.Function<Object,Object>: nameFunc) -> double
+  - *example:* `Save(NumberNameToString())`
+  - *for the current thread, save the current double value to the name 'foo' in this thread, where the variable name is provided by a function.*
+
+- int -> Save(String: name) -> int
+  - *example:* `Save('foo')`
+  - *save the current int value to the name 'foo' in this thread*
+
+- int -> Save(function.Function<Object,Object>: nameFunc) -> int
+  - *example:* `Save(NumberNameToString())`
+  - *save the current int value to a named variable in this thread,where the variable name is provided by a function.*
 
 ## UnsetOrPass
 
 Reads a long variable from the thread local variable map, hashes and scales it to the unit interval 0.0d - 1.0d, then uses the result to determine whether to return UNSET.value or the input value.
 
-- java.lang.Object -> UnsetOrPass(double: ratio, java.lang.String: varname) -> java.lang.Object
-
+- Object -> UnsetOrPass(double: ratio, String: varname) -> Object
 
