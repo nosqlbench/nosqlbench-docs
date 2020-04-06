@@ -15,10 +15,6 @@ bindings/funcref_premade.md
 bindings/funcref_state.md
 bindings/index.md
 bindings/using_bindings.md
-builtins/cql-iot.md
-builtins/cql-keyvalue.md
-builtins/cql-widerows.md
-builtins/index.md
 designing_workloads/00_yaml_org.md
 designing_workloads/01_statement_templates.md
 designing_workloads/02_data_bindings.md
@@ -63,3 +59,7 @@ showcase/modular_architecture.md
 showcase/portable_workloads.md
 showcase/scripting_environment.md
 showcase/virtual_datasets.md
+workloads/cql-iot.md
+workloads/cql-keyvalue.md
+workloads/cql-widerows.md
+workloads/index.md
