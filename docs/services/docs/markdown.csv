@@ -59,7 +59,4 @@ showcase/modular_architecture.md
 showcase/portable_workloads.md
 showcase/scripting_environment.md
 showcase/virtual_datasets.md
-workloads/cql-iot.md
-workloads/cql-keyvalue.md
-workloads/cql-widerows.md
 workloads/index.md
