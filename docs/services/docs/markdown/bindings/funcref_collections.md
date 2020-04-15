@@ -8,6 +8,22 @@ These functions often take the form of a higher-order function, where
 the inner function definitions are called to determine the size of
 the collection, the individual values to be added, etc.
 
+## ListStepped
+
+Create a {@code List} from a long input based on two functions, the first to determine the list size, and the second to populate the list with object values. The input fed to the second function is incremented between elements. To directly create Lists of Strings from the String version of the same mapping functions, simply use {@link StringList} instead.
+
+- long -> ListStepped(function.LongToIntFunction: sizeFunc, function.LongFunction<? extends Object>[]...: funcs) -> List<Object>
+  - *example:* `ListFunctions(NumberNameToString(),NumberNameToString())`
+  - *Create a list of ['one','one']*
+
+- long -> ListStepped(function.LongToIntFunction: sizeFunc, function.LongUnaryOperator[]...: funcs) -> List<Object>
+  - *example:* `ListFunctions(NumberNameToString(),NumberNameToString())`
+  - *Create a list of ['one','one']*
+
+- long -> ListStepped(function.LongToIntFunction: sizeFunc, function.Function<Long,Object>[]...: funcs) -> List<Object>
+  - *example:* `ListFunctions(NumberNameToString(),NumberNameToString())`
+  - *Create a list of ['one','one']*
+
 ## StringMap
 
 Create a {@code Map} from a long input based on three functions, the first to determine the map size, and the second to populate the map with key objects, and the third to populate the map with value objects. The long input fed to the second and third functions is incremented between entries. Regardless of the object type provided by the second and third functions, {@link Object#toString()} is used to determine the key and value to add to the map. To create Maps of any key and value types, simply use {@link Map} with an specific key and value mapping functions.
@@ -54,6 +70,76 @@ Create a {@code Map} from a long input based on three functions, the first to de
   - *example:* `StringMapClob(NumberNameToString(),HashRange(1300,1700),NumberNameToString(),HashRange(3,7))`
   - *create a map of size 2, with a specific function for each key and each value*
 
+## HashedRangeToLongList
+
+Create a list of longs.
+
+- long -> HashedRangeToLongList(int: minVal, int: maxVal, int: minSize, int: maxSize) -> List<Long>
+
+## ListHashed
+
+Create a {@code List} from a long input based on two functions, the first to determine the list size, and the second to populate the list with object values. The input fed to the second function is incremented between elements. To directly create Lists of Strings from the String version of the same mapping functions, simply use {@link StringList} instead.
+
+- long -> ListHashed(function.LongToIntFunction: sizeFunc, function.LongFunction<? extends Object>[]...: funcs) -> List<Object>
+  - *example:* `ListFunctions(NumberNameToString(),NumberNameToString())`
+  - *Create a list of ['one','one']*
+
+- long -> ListHashed(function.LongToIntFunction: sizeFunc, function.LongUnaryOperator[]...: funcs) -> List<Object>
+  - *example:* `ListFunctions(NumberNameToString(),NumberNameToString())`
+  - *Create a list of ['one','one']*
+
+- long -> ListHashed(function.LongToIntFunction: sizeFunc, function.Function<Long,Object>[]...: funcs) -> List<Object>
+  - *example:* `ListFunctions(NumberNameToString(),NumberNameToString())`
+  - *Create a list of ['one','one']*
+
+## ListFunctions
+
+Create a {@code List} from a long input based on two functions, the first to determine the list size, and the second to populate the list with object values. The input fed to the second function is incremented between elements. To directly create Lists of Strings from the String version of the same mapping functions, simply use {@link StringList} instead.
+
+- long -> ListFunctions(function.LongFunction<? extends Object>[]...: funcs) -> List<Object>
+  - *example:* `ListFunctions(NumberNameToString(),NumberNameToString())`
+  - *Create a list of ['one','one']*
+
+- long -> ListFunctions(function.LongUnaryOperator[]...: funcs) -> List<Object>
+  - *example:* `ListFunctions(NumberNameToString(),NumberNameToString())`
+  - *Create a list of ['one','one']*
+
+- long -> ListFunctions(function.Function<Long,Object>[]...: funcs) -> List<Object>
+  - *example:* `ListFunctions(NumberNameToString(),NumberNameToString())`
+  - *Create a list of ['one','one']*
+
+## ListSized
+
+Create a {@code List} from a long input based on two functions, the first to determine the list size, and the second to populate the list with object values. The input fed to the second function is incremented between elements. To directly create Lists of Strings from the String version of the same mapping functions, simply use {@link StringList} instead.
+
+- long -> ListSized(function.LongToIntFunction: sizeFunc, function.LongFunction<? extends Object>[]...: funcs) -> List<Object>
+  - *example:* `ListFunctions(NumberNameToString(),NumberNameToString())`
+  - *Create a list of ['one','one']*
+
+- long -> ListSized(function.LongToIntFunction: sizeFunc, function.LongUnaryOperator[]...: funcs) -> List<Object>
+  - *example:* `ListFunctions(NumberNameToString(),NumberNameToString())`
+  - *Create a list of ['one','one']*
+
+- long -> ListSized(function.LongToIntFunction: sizeFunc, function.Function<Long,Object>[]...: funcs) -> List<Object>
+  - *example:* `ListFunctions(NumberNameToString(),NumberNameToString())`
+  - *Create a list of ['one','one']*
+
+## ListSizedHashed
+
+Create a {@code List} from a long input based on two functions, the first to determine the list size, and the second to populate the list with object values. The input fed to the second function is incremented between elements. To directly create Lists of Strings from the String version of the same mapping functions, simply use {@link StringList} instead.
+
+- long -> ListSizedHashed(function.LongToIntFunction: sizeFunc, function.LongFunction<? extends Object>[]...: funcs) -> List<Object>
+  - *example:* `ListFunctions(NumberNameToString(),NumberNameToString())`
+  - *Create a list of ['one','one']*
+
+- long -> ListSizedHashed(function.LongToIntFunction: sizeFunc, function.LongUnaryOperator[]...: funcs) -> List<Object>
+  - *example:* `ListFunctions(NumberNameToString(),NumberNameToString())`
+  - *Create a list of ['one','one']*
+
+- long -> ListSizedHashed(function.LongToIntFunction: sizeFunc, function.Function<Long,Object>[]...: funcs) -> List<Object>
+  - *example:* `ListFunctions(NumberNameToString(),NumberNameToString())`
+  - *Create a list of ['one','one']*
+
 ## StringSet
 
 Create a {@code Set} from a long based on two functions, the first to determine the set size, and the second to populate the set with String values. The input fed to the second function is incremented between elements. Regardless of the object type provided by the second function, {@link Object#toString()} is used to get the value to add to the list. To create Sets of any type of object simply use {@link Set} with a specific value mapping function.
@@ -61,12 +147,6 @@ Create a {@code Set} from a long based on two functions, the first to determine 
 - long -> StringSet(function.LongToIntFunction: sizeFunc, function.LongFunction<Object>: valueFunc) -> Set<String>
   - *example:* `StringSet(HashRange(3,7),Add(15L))`
   - *create a set between 3 and 7 elements of String representations of Long values*
-
-## HashedRangeToLongList
-
-Create a list of longs.
-
-- long -> HashedRangeToLongList(int: minVal, int: maxVal, int: minSize, int: maxSize) -> List<Long>
 
 ## List
 
@@ -101,4 +181,20 @@ Create a {@code Map} from a long input based on three functions, the first to de
 - long -> Map(function.LongFunction<Object>[]...: objfuncs) -> Map<Object,Object>
   - *example:* `Map(NumberNameToString(),HashRange(1300,1700),NumberNameToString(),HashRange(3,7))`
   - *create a map of size 2, with a specific function for each key and each value*
+
+## ListSizedStepped
+
+Create a {@code List} from a long input based on two functions, the first to determine the list size, and the second to populate the list with object values. The input fed to the second function is incremented between elements. To directly create Lists of Strings from the String version of the same mapping functions, simply use {@link StringList} instead.
+
+- long -> ListSizedStepped(function.LongToIntFunction: sizeFunc, function.LongFunction<? extends Object>[]...: funcs) -> List<Object>
+  - *example:* `ListFunctions(NumberNameToString(),NumberNameToString())`
+  - *Create a list of ['one','one']*
+
+- long -> ListSizedStepped(function.LongToIntFunction: sizeFunc, function.LongUnaryOperator[]...: funcs) -> List<Object>
+  - *example:* `ListFunctions(NumberNameToString(),NumberNameToString())`
+  - *Create a list of ['one','one']*
+
+- long -> ListSizedStepped(function.LongToIntFunction: sizeFunc, function.Function<Long,Object>[]...: funcs) -> List<Object>
+  - *example:* `ListFunctions(NumberNameToString(),NumberNameToString())`
+  - *Create a list of ['one','one']*
 

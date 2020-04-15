@@ -1,7 +1,3 @@
-basics/activity_parameters.md
-basics/core_stmt_params.md
-basics/grafana_metrics.md
-basics/index.md
 bindings/concepts.md
 bindings/funcref_collections.md
 bindings/funcref_conversion.md
@@ -43,9 +39,12 @@ getting_started/04_next_steps.md
 getting_started/index.md
 nosqlbench/getting_support.md
 nosqlbench/index.md
+reference/activity_parameters.md
 reference/advanced_metrics.md
 reference/cli_scripting.md
 reference/command_line.md
+reference/core_stmt_params.md
+reference/grafana_metrics.md
 reference/index.md
 reference/parameter_types.md
 reference/scenario_scripting.md
