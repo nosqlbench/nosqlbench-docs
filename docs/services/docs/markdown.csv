@@ -32,6 +32,7 @@ drivers/index.md
 drivers/stdout.md
 drivers/tcpclient.md
 drivers/tcpserver.md
+drivers/webdriver.md
 getting_started/01_example_commands.md
 getting_started/02_example_results.md
 getting_started/03_reading_metrics.md
