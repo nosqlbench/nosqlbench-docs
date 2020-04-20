@@ -54,3 +54,4 @@ curly braces are used to refer to binding names, as in the following example:
 
     statements:
      - "/{path}?{queryparam1}"
+

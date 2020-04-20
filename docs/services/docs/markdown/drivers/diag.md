@@ -26,3 +26,4 @@ active motor.
   ( default: errormodule=1000 )
 - phases - The number of phases to run.
   ( default: phases=1 )
+

@@ -339,3 +339,4 @@ now **they are limited to a YAML params block**:
 ## YAML Examples
 
 Please see the bundled activities with nosqlbench for examples.
+
