@@ -12,15 +12,15 @@ the collection, the individual values to be added, etc.
 
 Create a {@code List} from a long input based on two functions, the first to determine the list size, and the second to populate the list with object values. The input fed to the second function is incremented between elements. To directly create Lists of Strings from the String version of the same mapping functions, simply use {@link StringList} instead.
 
-- long -> ListStepped(function.LongToIntFunction: sizeFunc, function.LongFunction<? extends Object>[]...: funcs) -> List<Object>
+- long -> ListStepped(function.LongFunction<? extends Object>[]...: funcs) -> List<Object>
   - *example:* `ListFunctions(NumberNameToString(),NumberNameToString())`
   - *Create a list of ['one','one']*
 
-- long -> ListStepped(function.LongToIntFunction: sizeFunc, function.LongUnaryOperator[]...: funcs) -> List<Object>
+- long -> ListStepped(function.LongUnaryOperator[]...: funcs) -> List<Object>
   - *example:* `ListFunctions(NumberNameToString(),NumberNameToString())`
   - *Create a list of ['one','one']*
 
-- long -> ListStepped(function.LongToIntFunction: sizeFunc, function.Function<Long,Object>[]...: funcs) -> List<Object>
+- long -> ListStepped(function.Function<Long,Object>[]...: funcs) -> List<Object>
   - *example:* `ListFunctions(NumberNameToString(),NumberNameToString())`
   - *Create a list of ['one','one']*
 
@@ -80,15 +80,15 @@ Create a list of longs.
 
 Create a {@code List} from a long input based on two functions, the first to determine the list size, and the second to populate the list with object values. The input fed to the second function is incremented between elements. To directly create Lists of Strings from the String version of the same mapping functions, simply use {@link StringList} instead.
 
-- long -> ListHashed(function.LongToIntFunction: sizeFunc, function.LongFunction<? extends Object>[]...: funcs) -> List<Object>
+- long -> ListHashed(function.LongFunction<? extends Object>[]...: funcs) -> List<Object>
   - *example:* `ListFunctions(NumberNameToString(),NumberNameToString())`
   - *Create a list of ['one','one']*
 
-- long -> ListHashed(function.LongToIntFunction: sizeFunc, function.LongUnaryOperator[]...: funcs) -> List<Object>
+- long -> ListHashed(function.LongUnaryOperator[]...: funcs) -> List<Object>
   - *example:* `ListFunctions(NumberNameToString(),NumberNameToString())`
   - *Create a list of ['one','one']*
 
-- long -> ListHashed(function.LongToIntFunction: sizeFunc, function.Function<Long,Object>[]...: funcs) -> List<Object>
+- long -> ListHashed(function.Function<Long,Object>[]...: funcs) -> List<Object>
   - *example:* `ListFunctions(NumberNameToString(),NumberNameToString())`
   - *Create a list of ['one','one']*
 

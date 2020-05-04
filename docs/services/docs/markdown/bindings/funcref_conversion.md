@@ -173,6 +173,102 @@ Convert the input value to a double.
 
 - long -> ToDouble() -> double
 
+## ToBigDecimal
+
+Convert values to BigDecimals at configurable scale or precision.
+
+
+ToBigDecimal(...) functions which take whole-numbered inputs may have
+a scale parameter or a custom MathContext, but not both. The scale parameter
+is not supported for String or Double input forms.
+
+- double -> ToBigDecimal() -> java.math.BigDecimal
+  - *example:* `ToBigDecimal()`
+  - *Convert all double values to BigDecimal values with no limits (using MathContext.UNLIMITED)*
+
+- double -> ToBigDecimal(String: context) -> java.math.BigDecimal
+  - *notes:* Convert all input values to BigDecimal values with a specific MathContext.
+The value for context can be one of UNLIMITED,
+DECIMAL32, DECIMAL64, DECIMAL128, or any valid configuration supported by
+{@link MathContext#MathContext(String)}, such as {@code "precision=32 roundingMode=CEILING"}.
+In the latter form, roundingMode can be any valid value for {@link RoundingMode}, like
+UP, DOWN, CEILING, FLOOR, HALF_UP, HALF_DOWN, HALF_EVEN, or UNNECESSARY.
+
+  - *example:* `ToBigDecimal('DECIMAL32')`
+  - *IEEE 754R Decimal32 format, 7 digits, HALF_EVEN*
+  - *example:* `ToBigDecimal('DECIMAL64'),`
+  - *IEEE 754R Decimal64 format, 16 digits, HALF_EVEN*
+  - *example:* `ToBigDecimal('DECIMAL128')`
+  - *IEEE 754R Decimal128 format, 34 digits, HALF_EVEN*
+  - *example:* `ToBigDecimal('UNLIMITED')`
+  - *unlimited precision, HALF_UP*
+  - *example:* `ToBigDecimal('precision=17 roundingMode=UNNECESSARY')`
+  - *Custom precision with no rounding performed*
+
+- long -> ToBigDecimal() -> java.math.BigDecimal
+  - *example:* `ToBigDecimal()`
+  - *Convert all long values to whole-numbered BigDecimal values*
+
+- long -> ToBigDecimal(int: scale) -> java.math.BigDecimal
+  - *example:* `ToBigDecimal(0)`
+  - *Convert all long values to whole-numbered BigDecimal values*
+  - *example:* `ToBigDecimal(2)`
+  - *Convert long 'pennies' BigDecimal with 2 digits after decimal point*
+
+- long -> ToBigDecimal(String: context) -> java.math.BigDecimal
+  - *notes:* Convert all input values to BigDecimal values with a specific MathContext. This form is only
+supported for scale=0, meaning whole numbers. The value for context can be one of UNLIMITED,
+DECIMAL32, DECIMAL64, DECIMAL128, or any valid configuration supported by
+{@link MathContext#MathContext(String)}, such as {@code "precision=32 roundingMode=CEILING"}.
+In the latter form, roundingMode can be any valid value for {@link RoundingMode}, like
+UP, DOWN, CEILING, FLOOR, HALF_UP, HALF_DOWN, HALF_EVEN, or UNNECESSARY.
+
+  - *example:* `ToBigDecimal('DECIMAL32')`
+  - *IEEE 754R Decimal32 format, 7 digits, HALF_EVEN*
+  - *example:* `ToBigDecimal('DECIMAL64'),`
+  - *IEEE 754R Decimal64 format, 16 digits, HALF_EVEN*
+  - *example:* `ToBigDecimal('DECIMAL128')`
+  - *IEEE 754R Decimal128 format, 34 digits, HALF_EVEN*
+  - *example:* `ToBigDecimal('UNLIMITED')`
+  - *unlimited precision, HALF_UP*
+  - *example:* `ToBigDecimal('precision=17 roundingMode=UNNECESSARY')`
+  - *Custom precision with no rounding performed*
+
+- int -> ToBigDecimal() -> java.math.BigDecimal
+  - *example:* `ToBigDecimal()`
+  - *Convert all int values to BigDecimal values with no limits (using MathContext.UNLIMITED)*
+
+- int -> ToBigDecimal(String: context) -> java.math.BigDecimal
+  - *notes:* Convert all input values to BigDecimal values with a specific MathContext.
+The value for context can be one of UNLIMITED,
+DECIMAL32, DECIMAL64, DECIMAL128, or any valid configuration supported by
+{@link MathContext#MathContext(String)}, such as {@code "precision=32 roundingMode=CEILING"}.
+In the latter form, roundingMode can be any valid value for {@link RoundingMode}, like
+UP, DOWN, CEILING, FLOOR, HALF_UP, HALF_DOWN, HALF_EVEN, or UNNECESSARY.
+
+  - *example:* `ToBigDecimal('DECIMAL32')`
+  - *IEEE 754R Decimal32 format, 7 digits, HALF_EVEN*
+  - *example:* `ToBigDecimal('DECIMAL64'),`
+  - *IEEE 754R Decimal64 format, 16 digits, HALF_EVEN*
+  - *example:* `ToBigDecimal('DECIMAL128')`
+  - *IEEE 754R Decimal128 format, 34 digits, HALF_EVEN*
+  - *example:* `ToBigDecimal('UNLIMITED')`
+  - *unlimited precision, HALF_UP*
+  - *example:* `ToBigDecimal('precision=17 roundingMode=UNNECESSARY')`
+  - *Custom precision with no rounding performed*
+
+- String -> ToBigDecimal() -> java.math.BigDecimal
+  - *example:* `Convert strings to BigDecimal according to default precision (unlimited) and rounding (HALF_UP)`
+
+- String -> ToBigDecimal(String: context) -> java.math.BigDecimal
+  - *notes:* Convert all input values to BigDecimal values with a specific MathContext. This form is only
+supported for scale=0, meaning whole numbers. The value for context can be one of UNLIMITED,
+DECIMAL32, DECIMAL64, DECIMAL128, or any valid configuration supported by
+{@link MathContext#MathContext(String)}, such as {@code "precision=32 roundingMode=CEILING"}.
+In the latter form, roundingMode can be any valid value for {@link RoundingMode}, like
+UP, DOWN, CEILING, FLOOR, HALF_UP, HALF_DOWN, HALF_EVEN, or UNNECESSARY.
+
+
 ## ToLong
 
 Convert the input value to a long.
