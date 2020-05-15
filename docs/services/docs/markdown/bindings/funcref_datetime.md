@@ -178,10 +178,24 @@ Takes an input as a reference point in epoch time, and converts it to a DateRang
 Uses the precision and the two functions provided to create a DateRange. You can use any of these precisions to control the bounds around the provided timestamp: millisecond, second, minute, hour, day, month, or year.
 
 - long -> DateRangeFunc(String: precision, function.LongUnaryOperator: lower, function.LongUnaryOperator: upper) -> com.datastax.driver.dse.search.DateRange
+  - *example:* `StartingEpochMillis('2017-01-01 23:59:59'); DateRangeFunc('second',Identity(),Add(3600000L)`
+  - *Create 1-minute date ranges starting at 2017-01-01 23:59:59*
 
 - long -> DateRangeFunc(String: precision, function.LongFunction<Long>: lower, function.LongFunction<Long>: upper) -> com.datastax.driver.dse.search.DateRange
 
 - long -> DateRangeFunc(String: precision, function.Function<Long,Long>: lower, function.Function<Long,Long>: upper) -> com.datastax.driver.dse.search.DateRange
+
+- long -> DateRangeFunc(String: precision, function.LongUnaryOperator: lower, function.Function<Long,Long>: upper) -> com.datastax.driver.dse.search.DateRange
+
+- long -> DateRangeFunc(String: precision, function.LongFunction<Long>: lower, function.LongUnaryOperator: upper) -> com.datastax.driver.dse.search.DateRange
+
+- long -> DateRangeFunc(String: precision, function.Function<Long,Long>: lower, function.LongFunction<Long>: upper) -> com.datastax.driver.dse.search.DateRange
+
+- long -> DateRangeFunc(String: precision, function.LongUnaryOperator: lower, function.LongFunction<Long>: upper) -> com.datastax.driver.dse.search.DateRange
+
+- long -> DateRangeFunc(String: precision, function.LongFunction<Long>: lower, function.Function<Long,Long>: upper) -> com.datastax.driver.dse.search.DateRange
+
+- long -> DateRangeFunc(String: precision, function.Function<Long,Long>: lower, function.LongUnaryOperator: upper) -> com.datastax.driver.dse.search.DateRange
 
 ## ToTimeUUIDMin
 

@@ -9,7 +9,7 @@ These functions help combine other functions into higher-order functions when ne
 Combine multiple LongUnaryOperators into a single function.
 
 - long -> LongFlow(function.LongUnaryOperator[]...: ops) -> long
-  - *example:* `StringFlow(Add(3),Mul(6))`
+  - *example:* `LongFlow(Add(3),Mul(6))`
   - *Create an integer operator which adds 3 and multiplies the result by 6*
 
 ## StringFlow
