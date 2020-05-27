@@ -29,6 +29,7 @@ drivers/cqlverify.md
 drivers/diag.md
 drivers/http.md
 drivers/index.md
+drivers/kafkaproducer.md
 drivers/stdout.md
 drivers/tcpclient.md
 drivers/tcpserver.md
