@@ -30,6 +30,7 @@ drivers/diag.md
 drivers/http.md
 drivers/index.md
 drivers/kafkaproducer.md
+drivers/mongodb.md
 drivers/stdout.md
 drivers/tcpclient.md
 drivers/tcpserver.md
