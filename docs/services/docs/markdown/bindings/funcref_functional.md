@@ -4,6 +4,12 @@ weight: 40
 ---
 
 These functions help combine other functions into higher-order functions when needed.
+## IntFlow
+
+Combine multiple IntUnaryOperators into a single function.
+
+- int -> IntFlow(function.IntUnaryOperator[]...: ops) -> int
+
 ## LongFlow
 
 Combine multiple LongUnaryOperators into a single function.
@@ -17,10 +23,4 @@ Combine multiple LongUnaryOperators into a single function.
 Combine multiple String functions together into one function.
 
 - String -> StringFlow(function.Function<String,String>[]...: funcs) -> String
-
-## IntFlow
-
-Combine multiple IntUnaryOperators into a single function.
-
-- int -> IntFlow(function.IntUnaryOperator[]...: ops) -> int
 

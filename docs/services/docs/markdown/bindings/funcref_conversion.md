@@ -14,117 +14,21 @@ Computes the digest of the ByteBuffer on input and stores it in the output ByteB
 
 - java.nio.ByteBuffer -> DigestToByteBuffer(String: digestType) -> java.nio.ByteBuffer
 
-## ToFloat
+## Flow
 
-Convert the input value into a float.
+Combine functions into one.
 
-- long -> ToFloat(long: scale) -> Float
+This function allows you to combine multiple other functions into one. This is often useful
+for constructing more sophisticated recipes, when you don't have the ability to use
+control flow or non-functional forms.
 
-- long -> ToFloat() -> Float
+The functions will be stitched together using the same logic that VirtData uses when
+combining flows outside functions. That said, if the functions selected are not the right ones,
+then it is possible to end up with the wrong data type at the end. To remedy this, be sure
+to add input and output qualifiers, like `long->` or `->String` where
+appropriate, to ensure that VirtData selects the right functions within the flow.
 
-- double -> ToFloat(double: scale) -> Float
-
-- double -> ToFloat() -> Float
-
-- int -> ToFloat(int: scale) -> Float
-
-- int -> ToFloat() -> Float
-
-- String -> ToFloat() -> Float
-
-- Short -> ToFloat() -> Float
-
-## ModuloToShort
-
-Return a boolean value as the result of modulo division with the specified divisor.
-
-- long -> ModuloToShort(long: modulo) -> Short
-
-## ModuloToBigInt
-
-Return a {@code BigInteger} value as the result of modulo division with the specified divisor.
-
-- long -> ModuloToBigInt() -> java.math.BigInteger
-
-- long -> ModuloToBigInt(long: modulo) -> java.math.BigInteger
-
-## ToInetAddress
-
-Convert the input value to a {@code InetAddress}
-
-- long -> ToInetAddress() -> InetAddress
-
-## ToBigInt
-
-Convert the input value to a {@code BigInteger}
-
-- long -> ToBigInt() -> java.math.BigInteger
-
-## ToInt
-
-Convert the input value to an int with long modulus remainder. If the scale is chosen, then the value is wrapped at this value. Otherwise, {@link Integer#MAX_VALUE} is used.
-
-- Object -> ToInt() -> Integer
-
-- Double -> ToInt(int: scale) -> Integer
-
-- Double -> ToInt() -> Integer
-
-- double -> ToInt(int: scale) -> int
-
-- double -> ToInt() -> int
-
-- long -> ToInt() -> int
-
-- String -> ToInt() -> Integer
-
-- long -> ToInt(int: scale) -> int
-  - *example:* `ToInt(1000)`
-  - *converts a long input value to an int between 0 and 999, inclusive*
-
-- long -> ToInt() -> int
-  - *example:* `ToInt()`
-  - *converts a long input value to an int between 0 and 2147483647, inclusive *
-
-## StringDateWrapper
-
-This function wraps an epoch time in milliseconds into a String as specified in the format. The valid formatters are documented at @see [DateTimeFormat API Docs](https://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html)
-
-- long -> StringDateWrapper(String: format) -> String
-
-## ToMD5ByteBuffer
-
-Converts the byte image of the input long to a MD5 digest in ByteBuffer form.
-
-- long -> ToMD5ByteBuffer() -> java.nio.ByteBuffer
-  - *example:* `MD5ByteBuffer()`
-  - *convert the a input to an md5 digest of its bytes*
-
-## ToByte
-
-Convert the input value to a {@code Byte}.
-
-- Float -> ToByte() -> Byte
-
-- Float -> ToByte(int: modulo) -> Byte
-
-- Short -> ToByte(int: scale) -> Byte
-
-- Short -> ToByte() -> Byte
-
-- String -> ToByte() -> Byte
-
-- long -> ToByte() -> Byte
-
-- long -> ToByte(int: modulo) -> Byte
-
-- int -> ToByte() -> Byte
-
-- int -> ToByte(int: modulo) -> Byte
-
-- double -> ToByte() -> Byte
-
-- double -> ToByte(int: modulo) -> Byte
+- long -> Flow(Object[]...: funcs) -> Object
 
 ## Format
 
@@ -134,30 +38,25 @@ Apply the Java String.format method to an incoming object. @see [Java 8 String.f
   - *example:* `Format('Y')`
   - *Yield the formatted year from a Java date object.*
 
-## ToShort
+## LongToByte
 
-Convert the input value to a short.
+Convert the input long value to a byte, with negative values masked away.
 
-- String -> ToShort() -> Short
+- long -> LongToByte() -> Byte
 
-- Float -> ToShort() -> Short
+## LongToShort
 
-- Float -> ToShort(int: modulo) -> Short
+Convert the input value from long to short.
 
-- long -> ToShort() -> Short
+- long -> LongToShort() -> Short
 
-- long -> ToShort(int: wrapat) -> Short
-  - *notes:* This form allows for limiting the short values at a lower limit than Short.MAX_VALUE.
-@param wrapat The maximum value to return.
+## MD5HexString
 
+Computes the MD5 digest of the byte image of the input long, and returns it in hexadecimal String form.
 
-- int -> ToShort() -> Short
-
-- int -> ToShort(int: scale) -> Short
-
-- double -> ToShort() -> Short
-
-- double -> ToShort(int: modulo) -> Short
+- long -> MD5HexString() -> String
+  - *example:* `MD5String()`
+  - *Convert a long input to an md5 digest over its bytes, and then to a hexadecimal string.*
 
 ## ModuloToBigDecimal
 
@@ -167,11 +66,49 @@ Return a {@code BigDecimal} value as the result of modulo division with the spec
 
 - long -> ModuloToBigDecimal(long: modulo) -> java.math.BigDecimal
 
-## ToDouble
+## ModuloToBigInt
 
-Convert the input value to a double.
+Return a {@code BigInteger} value as the result of modulo division with the specified divisor.
 
-- long -> ToDouble() -> double
+- long -> ModuloToBigInt() -> java.math.BigInteger
+
+- long -> ModuloToBigInt(long: modulo) -> java.math.BigInteger
+
+## ModuloToBoolean
+
+Return a boolean value as the result of modulo division with the specified divisor.
+
+- long -> ModuloToBoolean() -> Boolean
+
+## ModuloToByte
+
+Return a byte value as the result of modulo division with the specified divisor.
+
+- long -> ModuloToByte(long: modulo) -> Byte
+
+## ModuloToShort
+
+Return a boolean value as the result of modulo division with the specified divisor.
+
+- long -> ModuloToShort(long: modulo) -> Short
+
+## StringDateWrapper
+
+This function wraps an epoch time in milliseconds into a String as specified in the format. The valid formatters are documented at @see [DateTimeFormat API Docs](https://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html)
+
+- long -> StringDateWrapper(String: format) -> String
+
+## ToBase64String
+
+Computes the Base64 representation of the byte image of the input long.
+
+- String -> ToBase64String() -> String
+  - *example:* `ToBase64String()`
+  - *encode any input as Base64*
+
+- long -> ToBase64String() -> String
+  - *example:* `ToBase64String()`
+  - *Convert the bytes of a long input into a base64 String*
 
 ## ToBigDecimal
 
@@ -269,19 +206,11 @@ In the latter form, roundingMode can be any valid value for {@link RoundingMode}
 UP, DOWN, CEILING, FLOOR, HALF_UP, HALF_DOWN, HALF_EVEN, or UNNECESSARY.
 
 
-## ToLong
+## ToBigInt
 
-Convert the input value to a long.
+Convert the input value to a {@code BigInteger}
 
-- Float -> ToLong(long: scale) -> Long
-
-- Float -> ToLong() -> Long
-
-- String -> ToLong() -> Long
-
-- double -> ToLong(long: scale) -> long
-
-- double -> ToLong() -> long
+- long -> ToBigInt() -> java.math.BigInteger
 
 ## ToBoolean
 
@@ -295,63 +224,31 @@ Convert the input value to a {@code boolean}
 
 - Integer -> ToBoolean() -> Boolean
 
-## ModuloToByte
+## ToByte
 
-Return a byte value as the result of modulo division with the specified divisor.
+Convert the input value to a {@code Byte}.
 
-- long -> ModuloToByte(long: modulo) -> Byte
+- Float -> ToByte() -> Byte
 
-## Flow
+- Float -> ToByte(int: modulo) -> Byte
 
-Combine functions into one.
+- Short -> ToByte(int: scale) -> Byte
 
-This function allows you to combine multiple other functions into one. This is often useful
-for constructing more sophisticated recipes, when you don't have the ability to use
-control flow or non-functional forms.
+- Short -> ToByte() -> Byte
 
-The functions will be stitched together using the same logic that VirtData uses when
-combining flows outside functions. That said, if the functions selected are not the right ones,
-then it is possible to end up with the wrong data type at the end. To remedy this, be sure
-to add input and output qualifiers, like `long->` or `->String` where
-appropriate, to ensure that VirtData selects the right functions within the flow.
+- String -> ToByte() -> Byte
 
-- long -> Flow(Object[]...: funcs) -> Object
+- long -> ToByte() -> Byte
 
-## ToHexString
+- long -> ToByte(int: modulo) -> Byte
 
-Converts the input ByteBuffer to a hexadecimal String.
+- int -> ToByte() -> Byte
 
-- long -> ToHexString() -> String
+- int -> ToByte(int: modulo) -> Byte
 
-- java.nio.ByteBuffer -> ToHexString() -> String
+- double -> ToByte() -> Byte
 
-- java.nio.ByteBuffer -> ToHexString(boolean: useUpperCase) -> String
-
-## MD5HexString
-
-Computes the MD5 digest of the byte image of the input long, and returns it in hexadecimal String form.
-
-- long -> MD5HexString() -> String
-  - *example:* `MD5String()`
-  - *Convert a long input to an md5 digest over its bytes, and then to a hexadecimal string.*
-
-## LongToShort
-
-Convert the input value from long to short.
-
-- long -> LongToShort() -> Short
-
-## LongToByte
-
-Convert the input long value to a byte, with negative values masked away.
-
-- long -> LongToByte() -> Byte
-
-## ModuloToBoolean
-
-Return a boolean value as the result of modulo division with the specified divisor.
-
-- long -> ModuloToBoolean() -> Boolean
+- double -> ToByte(int: modulo) -> Byte
 
 ## ToByteBuffer
 
@@ -368,6 +265,121 @@ Convert the input value to a {@code ByteBuffer}
 - Short -> ToByteBuffer() -> java.nio.ByteBuffer
 
 - double -> ToByteBuffer() -> java.nio.ByteBuffer
+
+## ToDouble
+
+Convert the input value to a double.
+
+- long -> ToDouble() -> double
+
+## ToFloat
+
+Convert the input value into a float.
+
+- long -> ToFloat(long: scale) -> Float
+
+- long -> ToFloat() -> Float
+
+- double -> ToFloat(double: scale) -> Float
+
+- double -> ToFloat() -> Float
+
+- int -> ToFloat(int: scale) -> Float
+
+- int -> ToFloat() -> Float
+
+- String -> ToFloat() -> Float
+
+- Short -> ToFloat() -> Float
+
+## ToHexString
+
+Converts the input ByteBuffer to a hexadecimal String.
+
+- long -> ToHexString() -> String
+
+- java.nio.ByteBuffer -> ToHexString() -> String
+
+- java.nio.ByteBuffer -> ToHexString(boolean: useUpperCase) -> String
+
+## ToInetAddress
+
+Convert the input value to a {@code InetAddress}
+
+- long -> ToInetAddress() -> InetAddress
+
+## ToInt
+
+Convert the input value to an int with long modulus remainder. If the scale is chosen, then the value is wrapped at this value. Otherwise, {@link Integer#MAX_VALUE} is used.
+
+- Object -> ToInt() -> Integer
+
+- Double -> ToInt(int: scale) -> Integer
+
+- Double -> ToInt() -> Integer
+
+- double -> ToInt(int: scale) -> int
+
+- double -> ToInt() -> int
+
+- long -> ToInt() -> int
+
+- String -> ToInt() -> Integer
+
+- long -> ToInt(int: scale) -> int
+  - *example:* `ToInt(1000)`
+  - *converts a long input value to an int between 0 and 999, inclusive*
+
+- long -> ToInt() -> int
+  - *example:* `ToInt()`
+  - *converts a long input value to an int between 0 and 2147483647, inclusive *
+
+## ToLong
+
+Convert the input value to a long.
+
+- Float -> ToLong(long: scale) -> Long
+
+- Float -> ToLong() -> Long
+
+- String -> ToLong() -> Long
+
+- double -> ToLong(long: scale) -> long
+
+- double -> ToLong() -> long
+
+## ToMD5ByteBuffer
+
+Converts the byte image of the input long to a MD5 digest in ByteBuffer form.
+
+- long -> ToMD5ByteBuffer() -> java.nio.ByteBuffer
+  - *example:* `MD5ByteBuffer()`
+  - *convert the a input to an md5 digest of its bytes*
+
+## ToShort
+
+Convert the input value to a short.
+
+- String -> ToShort() -> Short
+
+- Float -> ToShort() -> Short
+
+- Float -> ToShort(int: modulo) -> Short
+
+- long -> ToShort() -> Short
+
+- long -> ToShort(int: wrapat) -> Short
+  - *notes:* This form allows for limiting the short values at a lower limit than Short.MAX_VALUE.
+@param wrapat The maximum value to return.
+
+
+- int -> ToShort() -> Short
+
+- int -> ToShort(int: scale) -> Short
+
+- double -> ToShort() -> Short
+
+- double -> ToShort(int: modulo) -> Short
 
 ## ToString
 
@@ -403,16 +415,4 @@ Convert the input value to a {@code ByteBuffer}
 - double -> ToString(function.Function<Double,Double>: df) -> String
 
 - int -> ToString() -> String
-
-## ToBase64String
-
-Computes the Base64 representation of the byte image of the input long.
-
-- String -> ToBase64String() -> String
-  - *example:* `ToBase64String()`
-  - *encode any input as Base64*
-
-- long -> ToBase64String() -> String
-  - *example:* `ToBase64String()`
-  - *Convert the bytes of a long input into a base64 String*
 

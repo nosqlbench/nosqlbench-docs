@@ -81,43 +81,29 @@ VirtData, including hashing functions. Internally, this value is automatically c
 needed to work well with the distributions from Apache Math.
 
 
-## Gumbel
+## Beta
 
-@see [Wikipedia: Gumbel distribution](https://en.wikipedia.org/wiki/Gumbel_distribution) @see [Commons JavaDoc: GumbelDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/GumbelDistribution.html)
+@see [Wikipedia: Beta distribution](https://en.wikipedia.org/wiki/Beta_distribution) @see [Commons JavaDoc: BetaDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/BetaDistribution.html)
 
-- int -> Gumbel(double: mu, double: beta, String[]...: mods) -> double
+- int -> Beta(double: alpha, double: beta, String[]...: mods) -> double
 
-## Weibull
+## Binomial
 
-@see [Wikipedia: Weibull distribution](https://en.wikipedia.org/wiki/Weibull_distribution) @see [Wolfram Mathworld: Weibull Distribution](http://mathworld.wolfram.com/WeibullDistribution.html) @see [Commons Javadoc: WeibullDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/WeibullDistribution.html)
+@see [Wikipedia: Binomial distribution](http://en.wikipedia.org/wiki/Binomial_distribution) @see [Commons JavaDoc: BinomialDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/BinomialDistribution.html)
 
-- int -> Weibull(double: alpha, double: beta, String[]...: mods) -> double
+- int -> Binomial(int: trials, double: p, String[]...: modslist) -> int
 
-## F
+## Cauchy
 
-@see [Wikipedia: F-distribution](https://en.wikipedia.org/wiki/F-distribution) @see [Commons JavaDoc: FDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/FDistribution.html) @see [Mathworld: F-Distribution](http://mathworld.wolfram.com/F-Distribution.html)
+@see [Wikipedia: Cauchy_distribution](http://en.wikipedia.org/wiki/Cauchy_distribution) @see [Commons Javadoc: CauchyDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/CauchyDistribution.html)
 
-- int -> F(double: numeratorDegreesOfFreedom, double: denominatorDegreesOfFreedom, String[]...: mods) -> double
+- int -> Cauchy(double: median, double: scale, String[]...: mods) -> double
 
-## Geometric
+## ChiSquared
 
-@see [Wikipedia: Geometric distribution](http://en.wikipedia.org/wiki/Geometric_distribution) @see [Commons JavaDoc: GeometricDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/GeometricDistribution.html)
+@see [Wikipedia: Chi-squared distribution](https://en.wikipedia.org/wiki/Chi-squared_distribution) @see [Commons JavaDoc: ChiSquaredDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/ChiSquaredDistribution.html)
 
-- int -> Geometric(double: p, String[]...: modslist) -> int
-
-## Uniform
-
-@see [Wikipedia: Uniform distribution (continuous)](https://en.wikipedia.org/wiki/Uniform_distribution_(continuous)) @see [Commons JavaDoc: UniformContinuousDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/UniformContinuousDistribution.html)
-
-- int -> Uniform(double: lower, double: upper, String[]...: mods) -> double
-
-- int -> Uniform(int: lower, int: upper, String[]...: modslist) -> int
-
-## Exponential
-
-@see [Wikipedia: Exponential distribution](https://en.wikipedia.org/wiki/Exponential_distribution) @see [Commons JavaDoc: ExponentialDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/ExponentialDistribution.html)
-
-- int -> Exponential(double: mean, String[]...: mods) -> double
+- int -> ChiSquared(double: degreesOfFreedom, String[]...: mods) -> double
 
 ## CoinFunc
 
@@ -127,17 +113,11 @@ This is a higher-order function which takes an input value, and flips a coin. Th
   - *example:* `CoinFunc(0.15,NumberNameToString(),Combinations('A:1:B:23'))`
   - *use the first function 15% of the time*
 
-## Beta
+## ConstantContinuous
 
-@see [Wikipedia: Beta distribution](https://en.wikipedia.org/wiki/Beta_distribution) @see [Commons JavaDoc: BetaDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/BetaDistribution.html)
+Always yields the same value. @see [Commons JavaDoc: ConstantContinuousDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/ConstantContinuousDistribution.html)
 
-- int -> Beta(double: alpha, double: beta, String[]...: mods) -> double
-
-## Gamma
-
-@see [Wikipedia: Gamma distribution](https://en.wikipedia.org/wiki/Gamma_distribution) @see [Commons JavaDoc: GammaDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/GammaDistribution.html)
-
-- int -> Gamma(double: shape, double: scale, String[]...: mods) -> double
+- int -> ConstantContinuous(double: value, String[]...: mods) -> double
 
 ## Enumerated
 
@@ -149,11 +129,35 @@ Creates a probability density given the values and optional weights provided, in
   - *example:* `Enumerated('1:2.0 2 3 4 5 6')`
   - *an unfair six-sided die roll, where 1 has probability mass 2.0, and everything else has only 1.0*
 
-## T
+## Exponential
 
-@see [Wikipedia: Student's t-distribution](https://en.wikipedia.org/wiki/Student's_t-distribution) @see [Commons JavaDoc: TDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/TDistribution.html)
+@see [Wikipedia: Exponential distribution](https://en.wikipedia.org/wiki/Exponential_distribution) @see [Commons JavaDoc: ExponentialDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/ExponentialDistribution.html)
 
-- int -> T(double: degreesOfFreedom, String[]...: mods) -> double
+- int -> Exponential(double: mean, String[]...: mods) -> double
+
+## F
+
+@see [Wikipedia: F-distribution](https://en.wikipedia.org/wiki/F-distribution) @see [Commons JavaDoc: FDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/FDistribution.html) @see [Mathworld: F-Distribution](http://mathworld.wolfram.com/F-Distribution.html)
+
+- int -> F(double: numeratorDegreesOfFreedom, double: denominatorDegreesOfFreedom, String[]...: mods) -> double
+
+## Gamma
+
+@see [Wikipedia: Gamma distribution](https://en.wikipedia.org/wiki/Gamma_distribution) @see [Commons JavaDoc: GammaDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/GammaDistribution.html)
+
+- int -> Gamma(double: shape, double: scale, String[]...: mods) -> double
+
+## Geometric
+
+@see [Wikipedia: Geometric distribution](http://en.wikipedia.org/wiki/Geometric_distribution) @see [Commons JavaDoc: GeometricDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/GeometricDistribution.html)
+
+- int -> Geometric(double: p, String[]...: modslist) -> int
+
+## Gumbel
+
+@see [Wikipedia: Gumbel distribution](https://en.wikipedia.org/wiki/Gumbel_distribution) @see [Commons JavaDoc: GumbelDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/GumbelDistribution.html)
+
+- int -> Gumbel(double: mu, double: beta, String[]...: mods) -> double
 
 ## Hypergeometric
 
@@ -161,83 +165,11 @@ Creates a probability density given the values and optional weights provided, in
 
 - int -> Hypergeometric(int: populationSize, int: numberOfSuccesses, int: sampleSize, String[]...: modslist) -> int
 
-## Pascal
-
-@see [Commons JavaDoc: PascalDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/PascalDistribution.html) @see [Wikipedia: Negative binomial distribution](https://en.wikipedia.org/wiki/Negative_binomial_distribution)
-
-- int -> Pascal(int: r, double: p, String[]...: modslist) -> int
-
-## Nakagami
-
-@see [Wikipedia: Nakagami distribution](https://en.wikipedia.org/wiki/Nakagami_distribution) @see [Commons JavaDoc: NakagamiDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/NakagamiDistribution.html)
-
-- int -> Nakagami(double: mu, double: omega, String[]...: mods) -> double
-
-## ConstantContinuous
-
-Always yields the same value. @see [Commons JavaDoc: ConstantContinuousDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/ConstantContinuousDistribution.html)
-
-- int -> ConstantContinuous(double: value, String[]...: mods) -> double
-
-## LogNormal
-
-@see [Wikipedia: Log-normal distribution](https://en.wikipedia.org/wiki/Log-normal_distribution) @see [Commons JavaDoc: LogNormalDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/LogNormalDistribution.html)
-
-- int -> LogNormal(double: scale, double: shape, String[]...: mods) -> double
-
-## Normal
-
-@see [Wikipedia: Normal distribution](https://en.wikipedia.org/wiki/Normal_distribution) @see [Commons JavaDoc: NormalDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/NormalDistribution.html)
-
-- int -> Normal(double: mean, double: sd, String[]...: mods) -> double
-
-## Logistic
-
-@see [Wikipedia: Logistic distribution](https://en.wikipedia.org/wiki/Logistic_distribution) @see [Commons JavaDoc: LogisticDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/LogisticDistribution.html)
-
-- int -> Logistic(double: mu, double: scale, String[]...: mods) -> double
-
 ## Laplace
 
 @see [Wikipedia: Laplace distribution](https://en.wikipedia.org/wiki/Laplace_distribution) @see [Commons JavaDoc: LaplaceDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/LaplaceDistribution.html)
 
 - int -> Laplace(double: mu, double: beta, String[]...: mods) -> double
-
-## Zipf
-
-@see [Wikipedia: Zipf's Law](https://en.wikipedia.org/wiki/Zipf's_law) @see [Commons JavaDoc: ZipfDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/ZipfDistribution.html)
-
-- int -> Zipf(int: numberOfElements, double: exponent, String[]...: modslist) -> int
-
-## Binomial
-
-@see [Wikipedia: Binomial distribution](http://en.wikipedia.org/wiki/Binomial_distribution) @see [Commons JavaDoc: BinomialDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/BinomialDistribution.html)
-
-- int -> Binomial(int: trials, double: p, String[]...: modslist) -> int
-
-## WeightedFuncs
-
-Allows for easy branching over multiple functions with specific weights.
-
-- long -> WeightedFuncs(Object[]...: weightsAndFuncs) -> Object
-
-## Pareto
-
-@see [Wikipedia: Pareto distribution](https://en.wikipedia.org/wiki/Pareto_distribution) @see [Commons JavaDoc: ParetoDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/ParetoDistribution.html)
-
-- int -> Pareto(double: scale, double: shape, String[]...: mods) -> double
-
-## Poisson
-
-@see [Wikipedia: Poisson distribution](http://en.wikipedia.org/wiki/Poisson_distribution) @see [Commons JavaDoc: PoissonDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/PoissonDistribution.html)
-
-- int -> Poisson(double: p, String[]...: modslist) -> int
-
-## Triangular
-
-@see [Wikipedia: Triangular distribution](https://en.wikipedia.org/wiki/Triangular_distribution) @see [Commons JavaDoc: TriangularDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/TriangularDistribution.html)
-
-- int -> Triangular(double: a, double: c, double: b, String[]...: mods) -> double
 
 ## Levy
 
@@ -245,15 +177,83 @@ Allows for easy branching over multiple functions with specific weights.
 
 - int -> Levy(double: mu, double: c, String[]...: mods) -> double
 
-## ChiSquared
+## LogNormal
 
-@see [Wikipedia: Chi-squared distribution](https://en.wikipedia.org/wiki/Chi-squared_distribution) @see [Commons JavaDoc: ChiSquaredDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/ChiSquaredDistribution.html)
+@see [Wikipedia: Log-normal distribution](https://en.wikipedia.org/wiki/Log-normal_distribution) @see [Commons JavaDoc: LogNormalDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/LogNormalDistribution.html)
 
-- int -> ChiSquared(double: degreesOfFreedom, String[]...: mods) -> double
+- int -> LogNormal(double: scale, double: shape, String[]...: mods) -> double
 
-## Cauchy
+## Logistic
 
-@see [Wikipedia: Cauchy_distribution](http://en.wikipedia.org/wiki/Cauchy_distribution) @see [Commons Javadoc: CauchyDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/CauchyDistribution.html)
+@see [Wikipedia: Logistic distribution](https://en.wikipedia.org/wiki/Logistic_distribution) @see [Commons JavaDoc: LogisticDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/LogisticDistribution.html)
 
-- int -> Cauchy(double: median, double: scale, String[]...: mods) -> double
+- int -> Logistic(double: mu, double: scale, String[]...: mods) -> double
+
+## Nakagami
+
+@see [Wikipedia: Nakagami distribution](https://en.wikipedia.org/wiki/Nakagami_distribution) @see [Commons JavaDoc: NakagamiDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/NakagamiDistribution.html)
+
+- int -> Nakagami(double: mu, double: omega, String[]...: mods) -> double
+
+## Normal
+
+@see [Wikipedia: Normal distribution](https://en.wikipedia.org/wiki/Normal_distribution) @see [Commons JavaDoc: NormalDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/NormalDistribution.html)
+
+- int -> Normal(double: mean, double: sd, String[]...: mods) -> double
+
+## Pareto
+
+@see [Wikipedia: Pareto distribution](https://en.wikipedia.org/wiki/Pareto_distribution) @see [Commons JavaDoc: ParetoDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/ParetoDistribution.html)
+
+- int -> Pareto(double: scale, double: shape, String[]...: mods) -> double
+
+## Pascal
+
+@see [Commons JavaDoc: PascalDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/PascalDistribution.html) @see [Wikipedia: Negative binomial distribution](https://en.wikipedia.org/wiki/Negative_binomial_distribution)
+
+- int -> Pascal(int: r, double: p, String[]...: modslist) -> int
+
+## Poisson
+
+@see [Wikipedia: Poisson distribution](http://en.wikipedia.org/wiki/Poisson_distribution) @see [Commons JavaDoc: PoissonDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/PoissonDistribution.html)
+
+- int -> Poisson(double: p, String[]...: modslist) -> int
+
+## T
+
+@see [Wikipedia: Student's t-distribution](https://en.wikipedia.org/wiki/Student's_t-distribution) @see [Commons JavaDoc: TDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/TDistribution.html)
+
+- int -> T(double: degreesOfFreedom, String[]...: mods) -> double
+
+## Triangular
+
+@see [Wikipedia: Triangular distribution](https://en.wikipedia.org/wiki/Triangular_distribution) @see [Commons JavaDoc: TriangularDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/TriangularDistribution.html)
+
+- int -> Triangular(double: a, double: c, double: b, String[]...: mods) -> double
+
+## Uniform
+
+@see [Wikipedia: Uniform distribution (continuous)](https://en.wikipedia.org/wiki/Uniform_distribution_(continuous)) @see [Commons JavaDoc: UniformContinuousDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/UniformContinuousDistribution.html)
+
+- int -> Uniform(double: lower, double: upper, String[]...: mods) -> double
+
+- int -> Uniform(int: lower, int: upper, String[]...: modslist) -> int
+
+## Weibull
+
+@see [Wikipedia: Weibull distribution](https://en.wikipedia.org/wiki/Weibull_distribution) @see [Wolfram Mathworld: Weibull Distribution](http://mathworld.wolfram.com/WeibullDistribution.html) @see [Commons Javadoc: WeibullDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/WeibullDistribution.html)
+
+- int -> Weibull(double: alpha, double: beta, String[]...: mods) -> double
+
+## WeightedFuncs
+
+Allows for easy branching over multiple functions with specific weights.
+
+- long -> WeightedFuncs(Object[]...: weightsAndFuncs) -> Object
+
+## Zipf
+
+@see [Wikipedia: Zipf's Law](https://en.wikipedia.org/wiki/Zipf's_law) @see [Commons JavaDoc: ZipfDistribution](https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/ZipfDistribution.html)
+
+- int -> Zipf(int: numberOfElements, double: exponent, String[]...: modslist) -> int
 
