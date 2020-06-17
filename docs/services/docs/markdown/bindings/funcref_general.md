@@ -378,9 +378,58 @@ This uses the Murmur3F (64-bit optimized) version of Murmur3, not as a checksum,
 
 - long -> Hash() -> int
 
+## HashInterval
+
+Return a value within a range, pseudo-randomly, using interval semantics, where the range of values return does not include the last value. This function behaves exactly like HashRange except for the exclusion of the last value. This allows you to stack intervals using known reference points without duplicating or skipping any given value. You can specify hash intervals as small as a single-element range, like (5,6), or as wide as the relevant data type allows.
+
+- int -> HashInterval(int: width) -> int
+  - *notes:* Create a hash interval based on a minimum value of 0 and a specified width.
+@param width The maximum value, which is excluded.
+
+  - *example:* `HashInterval(4)`
+  - *return values which could include 0, 1, 2, 3, but not 4*
+
+- int -> HashInterval(int: minIncl, int: maxExcl) -> int
+  - *notes:* Create a hash interval
+@param minIncl The minimum value, which is included
+@param maxExcl The maximum value, which is excluded
+
+  - *example:* `HashInterval(2,5)`
+  - *return values which could include 2, 3, 4, but not 5*
+
+- long -> HashInterval(int: width) -> int
+  - *notes:* Create a hash interval based on a minimum value of 0 and a specified width.
+@param width The maximum value, which is excluded.
+
+  - *example:* `HashInterval(4)`
+  - *return values which could include 0, 1, 2, 3, but not 4*
+
+- long -> HashInterval(int: minIncl, int: maxExcl) -> int
+  - *notes:* Create a hash interval
+@param minIncl The minimum value, which is included
+@param maxExcl The maximum value, which is excluded
+
+  - *example:* `HashInterval(2,5)`
+  - *return values which could include 2, 3, 4, but not 5*
+
+- long -> HashInterval(long: width) -> long
+  - *notes:* Create a hash interval based on a minimum value of 0 and a specified width.
+@param width The maximum value, which is excluded.
+
+  - *example:* `HashInterval(4L)`
+  - *return values which could include 0L, 1L, 2L, 3L, but not 4L*
+
+- long -> HashInterval(long: minIncl, long: maxExcl) -> long
+  - *notes:* Create a hash interval
+@param minIncl The minimum value, which is included
+@param maxExcl The maximum value, which is excluded
+
+  - *example:* `HashInterval(2L,5L)`
+  - *return values which could include 2L, 3L, 4L, but not 5L*
+
 ## HashRange
 
-Return a value within a range, pseudo-randomly. This is equivalent to returning a value with in range between 0 and some maximum value, but with a minimum value added.
+Return a value within a range, pseudo-randomly. This is equivalent to returning a value with in range between 0 and some maximum value, but with a minimum value added. You can specify hash ranges as small as a single-element range, like (5,5), or as wide as the relevant data type allows.
 
 - int -> HashRange(int: width) -> int
 

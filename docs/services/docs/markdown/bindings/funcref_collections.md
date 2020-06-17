@@ -152,11 +152,31 @@ Create a {@code Map} from a long input based on three functions, the first to de
 
 ## Set
 
-Create a {@code Set} from a long input based on two functions, the first to determine the set size, and the second to populate the set with object values. The input fed to the second function is incremented between elements. To create Sets of Strings from the String version of the same mapping functions, simply use {@link StringSet} instead.
+Create a {@code Set} from a long input based on two functions, the first to determine the set size, and the second to populate the set with object values. The input fed to the second function is incremented between elements.
+
+
+To create Sets of Strings from the String version of the same mapping functions, simply use {@link StringSet}
+instead.
 
 - long -> Set(function.LongToIntFunction: sizeFunc, function.LongFunction<Object>: valueFunc) -> Set<Object>
   - *example:* `Set(HashRange(3,7),Add(15L))`
   - *create a set between 3 and 7 elements of Long values*
+
+- long -> Set(function.LongToIntFunction: sizeFunc, function.LongUnaryOperator: valueFunc) -> Set<Object>
+
+- long -> Set(function.LongToIntFunction: sizeFunc, function.LongToIntFunction: valueFunc) -> Set<Object>
+
+- long -> Set(function.LongFunction<Object>: sizeFunc, function.LongFunction<Object>: valueFunc) -> Set<Object>
+
+- long -> Set(function.LongFunction<Object>: sizeFunc, function.LongUnaryOperator: valueFunc) -> Set<Object>
+
+- long -> Set(function.LongFunction<Object>: sizeFunc, function.LongToIntFunction: valueFunc) -> Set<Object>
+
+- long -> Set(function.LongUnaryOperator: sizeFunc, function.LongFunction<Object>: valueFunc) -> Set<Object>
+
+- long -> Set(function.LongUnaryOperator: sizeFunc, function.LongUnaryOperator: valueFunc) -> Set<Object>
+
+- long -> Set(function.LongUnaryOperator: sizeFunc, function.LongToIntFunction: valueFunc) -> Set<Object>
 
 ## StringList
 
@@ -197,4 +217,8 @@ Create a {@code Set} from a long based on two functions, the first to determine 
 - long -> StringSet(function.LongToIntFunction: sizeFunc, function.LongFunction<Object>: valueFunc) -> Set<String>
   - *example:* `StringSet(HashRange(3,7),Add(15L))`
   - *create a set between 3 and 7 elements of String representations of Long values*
+
+- long -> StringSet(function.LongToIntFunction: sizeFunc, function.LongUnaryOperator: valueFunc) -> Set<String>
+
+- long -> StringSet(function.LongToIntFunction: sizeFunc, function.LongToIntFunction: valueFunc) -> Set<String>
 
