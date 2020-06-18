@@ -222,3 +222,15 @@ Create a {@code Set} from a long based on two functions, the first to determine 
 
 - long -> StringSet(function.LongToIntFunction: sizeFunc, function.LongToIntFunction: valueFunc) -> Set<String>
 
+- long -> StringSet(function.LongFunction<?>: sizeFunc, function.LongFunction<Object>: valueFunc) -> Set<String>
+
+- long -> StringSet(function.LongFunction<?>: sizeFunc, function.LongUnaryOperator: valueFunc) -> Set<String>
+
+- long -> StringSet(function.LongFunction<?>: sizeFunc, function.LongToIntFunction: valueFunc) -> Set<String>
+
+- long -> StringSet(function.LongUnaryOperator: sizeFunc, function.LongFunction<Object>: valueFunc) -> Set<String>
+
+- long -> StringSet(function.LongUnaryOperator: sizeFunc, function.LongUnaryOperator: valueFunc) -> Set<String>
+
+- long -> StringSet(function.LongUnaryOperator: sizeFunc, function.LongToIntFunction: valueFunc) -> Set<String>
+
