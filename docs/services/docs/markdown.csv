@@ -29,6 +29,7 @@ drivers/cqlverify.md
 drivers/diag.md
 drivers/http.md
 drivers/index.md
+drivers/jmx.md
 drivers/kafkaproducer.md
 drivers/mongodb.md
 drivers/stdout.md
