@@ -17,9 +17,14 @@ In the first version of this driver, only reads are supported.
 
 JMX transports can be configured in a myriad of ways. The options below allow you to add
 connection options such as SSL and authentication.
-
-- **ssl** - Use SSL settings provided. Thes SSL settings are from the NoSQLBench standard
-  SSL support
+- **username** - The username to authenticate to the JMX server as. This can be specifed as the
+  actual username to use, or 'file:...' to indicate a filename to load the user name from, or as
+   'console:' to force the user name to be prompted for on the console. If an empty value is provided,
+   then the console is used by default.
+- **password** - The password to authentiate to the JMX server with. This can be specifed as the
+  actual password to use, or 'file:...' to indicate a filename to load the user name from, or as
+  'console:' to force the user name to be prompted for on the console. If an empty value is provided,
+   then the console is used by default.
 
 # Example Operations
 
@@ -36,10 +41,14 @@ statements:
      readvar: Value
      as_type: int
      as_name: pending_tasks     
+     # process or thread, process is default
+     scope: process
+     
 ```
 
-The `as_type` and `as_name` are optional, and if provided will set the name and data type used in
-the thread local variable map.
+The `as_type` and `as_name`, and `scope` are optional, and if provided will set the name and
+data type used in the thread local variable map, and whether the variable is stored in the
+thread scope or the process (global) scope.
 
 - *as_type* can be any of long, int, double, float, byte, short, or String. If the original type
 is convertable to a number, then it will be converted to a number and then to the desired type. If it
@@ -47,15 +56,39 @@ is not, it will be converted to String form first and then to the desired type. 
 contains dots, as in a fully-qualified class name, then direct class casting will be used if the
 types are compatible.
 
+- *as_name* will change the name used to store the value in the map.
+
+- *scope* can be either `thread` or `process` and determines the scope of the varaible map
+  which is used to store the variable.
+
 A combined format is available if you don't want to put every command property on a separate line.
 In this format, the first entry in the command map is taken as the command name and a set of key=value
 command arguments. It is semantically equivalent to the above example, only more compact.
 
 ```
 statements:
-  - read1: readvar=Value as_type=int as_name=pending_tasks     
+  - read1: readvar=Value as_type=int as_name=pending_tasks    
     url: service:jmx:rmi:///jndi/rmi://dsehost:7199/jmxrmi
     object: org.apache.cassandra.metrics:type=Compaction,name=PendingTasks
+```
+
+## printvar
+
+If you want to simply read a value from a metric and print it out on stdout, you can do it with
+the `printvar` command. This is identical to the readvar command except that it puts the resulting
+variable (after any as_name and as_type options are applied) on the console.
+
+```
+statements:
+  - read1: printvar=Value as_type=int as_name=pending_tasks     
+    url: service:jmx:rmi:///jndi/rmi://dsehost:7199/jmxrmi
+    object: org.apache.cassandra.metrics:type=Compaction,name=PendingTasks
+```
+
+This will produce an output like this:
+```
+# read JMX attribute ' Value' as class java.lang.Integer as_type=int as_name=pending_tasks
+pending_tasks=0
 ```
 
 ## explain
@@ -73,3 +106,18 @@ statements:
 This will use the MBeanInfo to interrogate the named management bean and provide a summary
 of it's available attriburtes, operations, notifications, and constructors to stdout.
 This is not meant for bulk testing, but more for explaining and documenting JMX beans.
+
+The above example will produce an output like this:
+
+```
+### MBeanInfo for 'org.apache.cassandra.metrics:type=Compaction,name=PendingTasks'
+# classname: org.apache.cassandra.metrics.CassandraMetricsRegistry$JmxGauge
+# Information on the management interface of the MBean
+## attributes:
+# Attribute exposed for management
+- 'Value' type=java.lang.Objectreadable=true writable=false is_is=false
+## operations:
+# Operation exposed for management
+- objectName() -> javax.management.ObjectName impact=UNKNOWN
+```
+
