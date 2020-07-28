@@ -65,4 +65,8 @@ showcase/modular_architecture.md
 showcase/portable_workloads.md
 showcase/scripting_environment.md
 showcase/virtual_datasets.md
+testing_practice/index.md
+testing_practice/multiple_clients.md
+testing_practice/random_data.md
+testing_practice/vantage_points.md
 workloads/index.md
