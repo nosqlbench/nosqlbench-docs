@@ -33,7 +33,7 @@ connection options such as SSL and authentication.
 The readvar operation is used to read a named attribute of the named object and store it in the
 thread local variable map.
 
-```
+```yaml
 statements:
   - read1:
      url: service:jmx:rmi:///jndi/rmi://dsehost:7199/jmxrmi
@@ -43,7 +43,6 @@ statements:
      as_name: pending_tasks     
      # process or thread, process is default
      scope: process
-     
 ```
 
 The `as_type` and `as_name`, and `scope` are optional, and if provided will set the name and
@@ -65,7 +64,7 @@ A combined format is available if you don't want to put every command property o
 In this format, the first entry in the command map is taken as the command name and a set of key=value
 command arguments. It is semantically equivalent to the above example, only more compact.
 
-```
+```yaml
 statements:
   - read1: readvar=Value as_type=int as_name=pending_tasks    
     url: service:jmx:rmi:///jndi/rmi://dsehost:7199/jmxrmi
@@ -78,7 +77,7 @@ If you want to simply read a value from a metric and print it out on stdout, you
 the `printvar` command. This is identical to the readvar command except that it puts the resulting
 variable (after any as_name and as_type options are applied) on the console.
 
-```
+```yaml
 statements:
   - read1: printvar=Value as_type=int as_name=pending_tasks     
     url: service:jmx:rmi:///jndi/rmi://dsehost:7199/jmxrmi
@@ -86,7 +85,8 @@ statements:
 ```
 
 This will produce an output like this:
-```
+
+```yaml
 # read JMX attribute ' Value' as class java.lang.Integer as_type=int as_name=pending_tasks
 pending_tasks=0
 ```
@@ -95,7 +95,7 @@ pending_tasks=0
 
 If you want to see the details about a managed object, you can use the explain command:
 
-```
+```yaml
 statements:
   - explain1:
      url: service:jmx:rmi:///jndi/rmi://dsehost:7199/jmxrmi
@@ -109,7 +109,7 @@ This is not meant for bulk testing, but more for explaining and documenting JMX 
 
 The above example will produce an output like this:
 
-```
+```text
 ### MBeanInfo for 'org.apache.cassandra.metrics:type=Compaction,name=PendingTasks'
 # classname: org.apache.cassandra.metrics.CassandraMetricsRegistry$JmxGauge
 # Information on the management interface of the MBean

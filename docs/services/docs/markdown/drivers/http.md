@@ -67,7 +67,6 @@ statements:
      Content-Type: application/json
     ok-status: 2[0-9][0-9]
     ok-body: ^(OK, account id is.*)$ 
-
 ```
 
 Of course, in the above form, the response validators are still separate parameters.
