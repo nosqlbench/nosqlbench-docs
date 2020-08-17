@@ -953,15 +953,7 @@ Converts the input to the most obvious string representation with String.valueOf
 
 ## ToUUID
 
-This function creates a non-random UUID in the type 4 version (Random). It always puts the same value in the MSB position of the UUID format. The input value is put in the LSB position.
-
-```
-xxxxxxxx-xxxx-Mxxx-Nxxx-xxxxxxxxxxxx
-mmmmmmmm-mmmm-Mmmm-Llll-llllllllllll
-              4    3
-```
-
-As shown above, the LSB position does not have the complication of having a version identifier (position M) dividing the dynamic range of the data type. For this reason, only the LSB side is used for this mapper, which allows an effective range of Long.MAX_VALUE/8, given the loss of 3 digits of precision. This function is suitable for deterministic testing of scenarios which depend on type 4 UUIDs, but without the mandated randomness that makes testing difficult. Just be aware that the MSB will always contain value 0x0123456789ABCDEFL unless you specify a different long value to pre-fill it with.
+This function creates a non-random UUID in the type 4 version (Random). It always puts the same value in the MSB position of the UUID format. The input value is put in the LSB position. This function is suitable for deterministic testing of scenarios which depend on type 4 UUIDs, but without the mandated randomness that makes testing difficult. Just be aware that the MSB will always contain value 0x0123456789ABCDEFL unless you specify a different long value to pre-fill it with.
 
 - long -> ToUUID() -> UUID
 

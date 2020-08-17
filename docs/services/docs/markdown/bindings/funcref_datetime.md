@@ -75,13 +75,7 @@ Parses the DateRange format according to [Date Range Formatting](https://lucene.
 
 ## DateTimeParser
 
-This function will parse a String containing a formatted date time, yielding a DateTime object. If no arguments are provided, then the format is set to
-
-```
-yyyy-MM-dd HH:mm:ss.SSSZ
-```
-
-. For details on formatting options, see @see [DateTimeFormat](https://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html)
+This function will parse a String containing a formatted date time, yielding a DateTime object. If no arguments are provided, then the format is set to "yyyy-MM-dd HH:mm:ss.SSSZ". For details on formatting options, see @see [DateTimeFormat](https://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html)
 
 - String -> DateTimeParser() -> org.joda.time.DateTime
   - *notes:* Initialize the parser with the default pattern of <pre>yyyy-MM-dd HH:mm:ss.SSSZ</pre>.

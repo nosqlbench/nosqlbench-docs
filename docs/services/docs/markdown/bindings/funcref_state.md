@@ -397,18 +397,7 @@ Save the current input value at this point in the function chain to a thread-loc
 
 ## SaveDouble
 
-Save a value to a named thread-local variable, where the variable name is fixed or a generated variable name from a provided function. Note that the input type is not that suitable for constructing names, so this is more likely to be used in an indirect naming pattern like
-
-```
-SaveDouble(Load('id'))
-```
-
-Save a value to a named thread-local variable, where the variable name is fixed or a generated variable name from a provided function. Note that the input type is not that suitable for constructing names, so this is more likely to be used in an indirect naming pattern like
-
-```
-SaveDouble(Load('id'))
-```
-
+Save a value to a named thread-local variable, where the variable name is fixed or a generated variable name from a provided function. Note that the input type is not that suitable for constructing names, so this is more likely to be used in an indirect naming pattern like SaveDouble(Load('id')) Save a value to a named thread-local variable, where the variable name is fixed or a generated variable name from a provided function. Note that the input type is not that suitable for constructing names, so this is more likely to be used in an indirect naming pattern like SaveDouble(Load('id'))
 
 - double -> SaveDouble(String: name) -> double
   - *example:* `Save('foo')`
@@ -428,18 +417,7 @@ SaveDouble(Load('id'))
 
 ## SaveFloat
 
-Save a value to a named thread-local variable, where the variable name is fixed or a generated variable name from a provided function. Note that the input type is not that suitable for constructing names, so this is more likely to be used in an indirect naming pattern like
-
-```
-SaveDouble(Load('id'))
-```
-
-Save a value to a named thread-local variable, where the variable name is fixed or a generated variable name from a provided function. Note that the input type is not that suitable for constructing names, so this is more likely to be used in an indirect naming pattern like
-
-```
-SaveDouble(Load('id'))
-```
-
+Save a value to a named thread-local variable, where the variable name is fixed or a generated variable name from a provided function. Note that the input type is not that suitable for constructing names, so this is more likely to be used in an indirect naming pattern like SaveFloat(Load('id')) Save a value to a named thread-local variable, where the variable name is fixed or a generated variable name from a provided function. Note that the input type is not that suitable for constructing names, so this is more likely to be used in an indirect naming pattern like SaveFloat(Load('id'))
 
 - long -> SaveFloat(String: name) -> Float
   - *example:* `SaveFloat('foo')`
@@ -459,18 +437,7 @@ SaveDouble(Load('id'))
 
 ## SaveInteger
 
-Save a value to a named thread-local variable, where the variable name is fixed or a generated variable name from a provided function. Note that the input type is not that suitable for constructing names, so this is more likely to be used in an indirect naming pattern like
-
-```
-SaveDouble(Load('id'))
-```
-
-Save a value to a named thread-local variable, where the variable name is fixed or a generated variable name from a provided function. Note that the input type is not that suitable for constructing names, so this is more likely to be used in an indirect naming pattern like
-
-```
-SaveDouble(Load('id'))
-```
-
+Save a value to a named thread-local variable, where the variable name is fixed or a generated variable name from a provided function. Note that the input type is not that suitable for constructing names, so this is more likely to be used in an indirect naming pattern like SaveInteger(Load('id')) Save a value to a named thread-local variable, where the variable name is fixed or a generated variable name from a provided function. Note that the input type is not that suitable for constructing names, so this is more likely to be used in an indirect naming pattern like SaveInteger(Load('id'))
 
 - int -> SaveInteger(String: name) -> int
   - *example:* `SaveInteger('foo')`
@@ -490,18 +457,7 @@ SaveDouble(Load('id'))
 
 ## SaveLong
 
-Save a value to a named thread-local variable, where the variable name is fixed or a generated variable name from a provided function. Note that the input type is not that suitable for constructing names, so this is more likely to be used in an indirect naming pattern like
-
-```
-SaveDouble(Load('id'))
-```
-
-Save a value to a named thread-local variable, where the variable name is fixed or a generated variable name from a provided function. Note that the input type is not that suitable for constructing names, so this is more likely to be used in an indirect naming pattern like
-
-```
-SaveDouble(Load('id'))
-```
-
+Save a value to a named thread-local variable, where the variable name is fixed or a generated variable name from a provided function. Note that the input type is not that suitable for constructing names, so this is more likely to be used in an indirect naming pattern like SaveLong(Load('id')) Save a value to a named thread-local variable, where the variable name is fixed or a generated variable name from a provided function. Note that the input type is not that suitable for constructing names, so this is more likely to be used in an indirect naming pattern like SaveLong(Load('id'))
 
 - long -> SaveLong(String: name) -> long
   - *example:* `SaveLong('foo')`
@@ -521,18 +477,7 @@ SaveDouble(Load('id'))
 
 ## SaveString
 
-Save a value to a named thread-local variable, where the variable name is fixed or a generated variable name from a provided function. Note that the input type is not that suitable for constructing names, so this is more likely to be used in an indirect naming pattern like
-
-```
-SaveDouble(Load('id'))
-```
-
-Save a value to a named thread-local variable, where the variable name is fixed or a generated variable name from a provided function. Note that the input type is not that suitable for constructing names, so this is more likely to be used in an indirect naming pattern like
-
-```
-SaveDouble(Load('id'))
-```
-
+Save a value to a named thread-local variable, where the variable name is fixed or a generated variable name from a provided function. Note that the input type is not that suitable for constructing names, so this is more likely to be used in an indirect naming pattern like SaveString(Load('id')) Save a value to a named thread-local variable, where the variable name is fixed or a generated variable name from a provided function. Note that the input type is not that suitable for constructing names, so this is more likely to be used in an indirect naming pattern like SaveString(Load('id'))
 
 - long -> SaveString(String: name) -> String
   - *example:* `SaveString('foo')`
