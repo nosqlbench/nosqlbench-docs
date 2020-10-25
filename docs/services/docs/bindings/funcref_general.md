@@ -754,6 +754,12 @@ Provides the spelled-out name of a number. For example, an input of 7 would yiel
 
 - long -> Pareto(double: scale, double: shape, String[]...: mods) -> double
 
+## PartitionLongs
+
+Split the value range of Java longs into a number of offsets, starting with Long.MIN_VALUE. This method makes it easy to construct a set of offsets for testing, or to limit the values used a subset. The outputs will range from Long.MIN_VALUE (-2\^63) up. This is not an exactly emulation of token range splits in Apache Cassandra.
+
+- long -> PartitionLongs(int: partitions) -> long
+
 ## Pascal
 
 

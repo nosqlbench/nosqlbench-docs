@@ -416,3 +416,35 @@ Convert the input value to a short.
 
 - int -> ToString() -> String
 
+## URLDecode
+
+URLDecode string data
+
+- String -> URLDecode(String: charset) -> String
+  - *notes:* URLDecode any incoming string using the specified charset.
+
+@param charset A valid character set name from {@link Charset}
+
+  - *example:* `URLDecode('UTF-16')`
+  - *URLDecode using the UTF-16 charset.*
+
+- String -> URLDecode() -> String
+  - *example:* `URLDecode()`
+  - *URLDecode using the default UTF-8 charset.*
+
+## URLEncode
+
+URLEncode string data
+
+- String -> URLEncode(String: charset) -> String
+  - *notes:* UrlEncode any incoming string using the specified charset.
+
+@param charset A valid character set name from {@link Charset}
+
+  - *example:* `URLEncode('UTF-16')`
+  - *URLEncode using the UTF-16 charset.*
+
+- String -> URLEncode() -> String
+  - *example:* `URLEncode()`
+  - *URLEncode using the default UTF-8 charset.*
+
