@@ -27,6 +27,7 @@ designing_workloads/index.md
 drivers/cql.md
 drivers/cqlverify.md
 drivers/diag.md
+drivers/dsegraph.md
 drivers/http.md
 drivers/index.md
 drivers/jmx.md
