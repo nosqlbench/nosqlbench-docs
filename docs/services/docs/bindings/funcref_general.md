@@ -339,10 +339,6 @@ Yield one of the specified values, rotating through them as the input value incr
 
 - long -> FixedValues(int[]...: values) -> int
 
-- long -> FixedValues(long[]...: values) -> double
-  - *example:* `FixedValues(3D,53D,73d)`
-  - *Yield 3D, 53D, 73D, 3D, 53D, 73D, 3D, ...*
-
 - long -> FixedValues(long[]...: values) -> long
   - *example:* `FixedValues(3L,53L,73L)`
   - *Yield 3L, 53L, 73L, 3L, 53L, 73L, 3L, ...*
