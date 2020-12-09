@@ -260,6 +260,10 @@ Convert the input value to a {@code ByteBuffer}
 
 - long -> ToByteBuffer() -> java.nio.ByteBuffer
 
+- long -> ToByteBuffer(int: size) -> java.nio.ByteBuffer
+  - *example:* `ToByteBuffer(13)`
+  - *Repeat the input long value to make a 13byte buffer*
+
 - Float -> ToByteBuffer() -> java.nio.ByteBuffer
 
 - Short -> ToByteBuffer() -> java.nio.ByteBuffer
