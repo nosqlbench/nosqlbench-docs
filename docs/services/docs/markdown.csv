@@ -24,6 +24,7 @@ designing_workloads/09_stmt_naming.md
 designing_workloads/10_named_scenarios.md
 designing_workloads/99_yaml_diagnostics.md
 designing_workloads/index.md
+drivers/cockroachdb.md
 drivers/cql.md
 drivers/cqlverify.md
 drivers/diag.md
