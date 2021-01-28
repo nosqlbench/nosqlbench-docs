@@ -6,6 +6,18 @@ weight: 30
 Conversion functions simply allow values of one type
 to be converted to another type in an obvious way.
 
+## ByteBufferSizedHashed
+
+Create a ByteBuffer from a long input based on a provided size function. As a 'Sized' function, the first argument is a function which determines the size of the resulting ByteBuffer. As a 'Hashed' function, the input value is hashed again before being used as value.
+
+- long -> ByteBufferSizedHashed(int: size) -> java.nio.ByteBuffer
+  - *example:* `ByteBufferSizedHashed(16)`
+  - *Functionally identical to HashedtoByteBuffer(16) but using dynamic sizing implementation*
+  - *example:* `ByteBufferSizedHashed(HashRange(10, 14))`
+  - *Create a ByteBuffer with variable limit (10 to 14)*
+
+- long -> ByteBufferSizedHashed(Object: sizeFunc) -> java.nio.ByteBuffer
+
 ## DigestToByteBuffer
 
 Computes the digest of the ByteBuffer on input and stores it in the output ByteBuffer. The digestTypes available are: MD2 MD5 SHA-1 SHA-224 SHA-256 SHA-384 SHA-512 SHA3-224 SHA3-256 SHA3-384 SHA3-512
