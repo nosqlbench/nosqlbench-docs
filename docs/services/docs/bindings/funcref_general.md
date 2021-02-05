@@ -819,6 +819,22 @@ Add the specified prefix String to the input value and return the result.
   - *example:* `Prefix('PREFIX:')`
   - *Prepend 'PREFIX:' to every input value*
 
+## ReplaceAll
+
+Replace all occurrences of the extant string with the replacement string.
+
+- String -> ReplaceAll(String: extant, String: replacement) -> String
+  - *example:* `ReplaceAll('one','two')`
+  - *Replace all occurrences of 'one' with 'two'*
+
+## ReplaceRegex
+
+Replace all occurrences of the regular expression with the replacement string. Note, this is much less efficient than using the simple ReplaceAll for most cases.
+
+- String -> ReplaceRegex(String: regex, String: replacement) -> String
+  - *example:* `ReplaceRegex('[one]','two')`
+  - *Replace all occurrences of 'o' or 'n' or 'e' with 'two'*
+
 ## Scale
 
 Scale the input to the Scale the input to the
