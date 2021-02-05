@@ -34,6 +34,7 @@ drivers/index.md
 drivers/jmx.md
 drivers/kafkaproducer.md
 drivers/mongodb.md
+drivers/pulsar.md
 drivers/stdout.md
 drivers/tcpclient.md
 drivers/tcpserver.md
