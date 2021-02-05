@@ -50,6 +50,22 @@ Apply the Java String.format method to an incoming object. @see [Java 8 String.f
   - *example:* `Format('Y')`
   - *Yield the formatted year from a Java date object.*
 
+## HTMLEntityDecode
+
+encode HTML Entities
+
+- String -> HTMLEntityDecode() -> String
+  - *example:* `HTMLEntityEncode()`
+  - *Decode/Unescape input from HTML4 valid to text.*
+
+## HTMLEntityEncode
+
+encode HTML Entities
+
+- String -> HTMLEntityEncode() -> String
+  - *example:* `HTMLEntityEncode()`
+  - *Encode/Escape input into HTML4 valid entties.*
+
 ## LongToByte
 
 Convert the input long value to a byte, with negative values masked away.
