@@ -471,9 +471,19 @@ Return a double value within the specified range. This function uses an intermed
 
 Pseudo-randomly extract a section of a text file and return it according to some minimum and maximum extract size. The file is loaded into memory as a shared text image. It is then indexed into as a character buffer to find a pseudo-randomly sized fragment.
 
-- long -> HashedFileExtractToString(String: fileName, int: minsize, int: maxsize) -> String
+- long -> HashedFileExtractToString(String: filename, int: minsize, int: maxsize) -> String
   - *example:* `HashedFileExtractToString('data/adventures.txt',100,200)`
   - *return a fragment from adventures.txt between 100 and 200 characters long*
+
+- long -> HashedFileExtractToString(String: filename, Object: sizefunc) -> String
+  - *notes:* Provide a size function for the fragment to be extracted. In this form, if the size function specifies a string
+size which is larger than the text image, it is truncated via modulo to fall within the text image size.
+
+@param filename The file name to be loaded
+@param sizefunc A function which determines the size of the data to be loaded.
+
+  - *example:* `HashedFileExtractToString('data/adventures.txt',Uniform())`
+  - *return a fragment from adventures.txt from a random offset, based on the size function provided.*
 
 ## HashedLineToInt
 
