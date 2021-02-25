@@ -453,11 +453,17 @@ Return a value within a range, pseudo-randomly. This is equivalent to returning 
 
 ## HashRangeScaled
 
-Return a pseudo-random value which can only be as large as the input.
+Return a pseudo-random value which can only be as large as the input times a scale factor, with a default scale factor of 1.0d
+
+- int -> HashRangeScaled(double: scalefactor) -> int
 
 - int -> HashRangeScaled() -> int
 
+- long -> HashRangeScaled(double: scalefactor) -> long
+
 - long -> HashRangeScaled() -> long
+
+- long -> HashRangeScaled(double: scalefactor) -> int
 
 - long -> HashRangeScaled() -> int
 
