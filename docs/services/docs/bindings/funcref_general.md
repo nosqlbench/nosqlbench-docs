@@ -339,10 +339,6 @@ Yield one of the specified values, rotating through them as the input value incr
 
 - long -> FixedValues(int[]...: values) -> int
 
-- long -> FixedValues(long[]...: values) -> double
-  - *example:* `FixedValues(3D,53D,73d)`
-  - *Yield 3D, 53D, 73D, 3D, 53D, 73D, 3D, ...*
-
 - long -> FixedValues(long[]...: values) -> long
   - *example:* `FixedValues(3L,53L,73L)`
   - *Yield 3L, 53L, 73L, 3L, 53L, 73L, 3L, ...*
@@ -453,17 +449,11 @@ Return a value within a range, pseudo-randomly. This is equivalent to returning 
 
 ## HashRangeScaled
 
-Return a pseudo-random value which can only be as large as the input times a scale factor, with a default scale factor of 1.0d
-
-- int -> HashRangeScaled(double: scalefactor) -> int
+Return a pseudo-random value which can only be as large as the input.
 
 - int -> HashRangeScaled() -> int
 
-- long -> HashRangeScaled(double: scalefactor) -> long
-
 - long -> HashRangeScaled() -> long
-
-- long -> HashRangeScaled(double: scalefactor) -> int
 
 - long -> HashRangeScaled() -> int
 
@@ -477,19 +467,9 @@ Return a double value within the specified range. This function uses an intermed
 
 Pseudo-randomly extract a section of a text file and return it according to some minimum and maximum extract size. The file is loaded into memory as a shared text image. It is then indexed into as a character buffer to find a pseudo-randomly sized fragment.
 
-- long -> HashedFileExtractToString(String: filename, int: minsize, int: maxsize) -> String
+- long -> HashedFileExtractToString(String: fileName, int: minsize, int: maxsize) -> String
   - *example:* `HashedFileExtractToString('data/adventures.txt',100,200)`
   - *return a fragment from adventures.txt between 100 and 200 characters long*
-
-- long -> HashedFileExtractToString(String: filename, Object: sizefunc) -> String
-  - *notes:* Provide a size function for the fragment to be extracted. In this form, if the size function specifies a string
-size which is larger than the text image, it is truncated via modulo to fall within the text image size.
-
-@param filename The file name to be loaded
-@param sizefunc A function which determines the size of the data to be loaded.
-
-  - *example:* `HashedFileExtractToString('data/adventures.txt',Uniform())`
-  - *return a fragment from adventures.txt from a random offset, based on the size function provided.*
 
 ## HashedLineToInt
 
@@ -834,22 +814,6 @@ Add the specified prefix String to the input value and return the result.
 - String -> Prefix(String: prefix) -> String
   - *example:* `Prefix('PREFIX:')`
   - *Prepend 'PREFIX:' to every input value*
-
-## ReplaceAll
-
-Replace all occurrences of the extant string with the replacement string.
-
-- String -> ReplaceAll(String: extant, String: replacement) -> String
-  - *example:* `ReplaceAll('one','two')`
-  - *Replace all occurrences of 'one' with 'two'*
-
-## ReplaceRegex
-
-Replace all occurrences of the regular expression with the replacement string. Note, this is much less efficient than using the simple ReplaceAll for most cases.
-
-- String -> ReplaceRegex(String: regex, String: replacement) -> String
-  - *example:* `ReplaceRegex('[one]','two')`
-  - *Replace all occurrences of 'o' or 'n' or 'e' with 'two'*
 
 ## Scale
 
