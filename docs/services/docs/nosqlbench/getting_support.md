@@ -24,7 +24,7 @@ To read any topic, simply use the command:
 The documentation system you are looking at right now includes the same docs you can find above already and more. They
 are automatically included when NoSQLBench is built.
 
-## NoSQLBench Slack
+## NoSQLBench Discord
 
 Please click the
 [Invite Link for Discord](https://discord.gg/dBHRakusMN)
