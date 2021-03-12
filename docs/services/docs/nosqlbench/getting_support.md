@@ -27,7 +27,7 @@ are automatically included when NoSQLBench is built.
 ## NoSQLBench Slack
 
 Please click the
-[Invite Link for nosqlbench.slack.com](https://join.slack.com/t/nosqlbench/shared_invite/zt-grrg64g3-6SeVi2jaum0cxp51WnvOVA)
+[Invite Link for Discord](https://discord.gg/dBHRakusMN)
 to join us.
 
 Please join it if you are a new or existing NoSQLBench user and help us get it going!
@@ -55,3 +55,4 @@ If you would like to see something in nosqlbench that is not there yet,please
 If you would like to see a specific nosqlbench or testing topic added to the guidebook, please
 [request docs content](https://github.com/nosqlbench/nosqlbench/issues/new?labels=docs).
 
+---
