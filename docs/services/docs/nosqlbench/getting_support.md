@@ -1,6 +1,5 @@
 ---
-title: Getting Support
-weight: 10
+title: Getting Support weight: 10
 ---
 
 # Getting Support
