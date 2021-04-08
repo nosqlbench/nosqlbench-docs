@@ -10,6 +10,25 @@ determinism. This makes it possible to test systems which depend on UUIDs but wh
 This is strictly for testing use. Breaking the universally-unique properties of UUIDs in production systems is a bad
 idea. Yet, in testing, this determinism is quite useful.
 
+## CqlDurationFunctions
+
+Map a long value into a CQL Duration object based on a set of field functions.
+
+- long -> CqlDurationFunctions(Object: monthsFunc, Object: daysFunc, Object: nanosFunc) -> com.datastax.driver.core.Duration
+  - *notes:* Create a CQL Duration object from the two provided field functions. The months field is always set to
+zero in this form.
+@param monthsFunc A function that will yield the months value
+@param daysFunc A function that will yield the days value
+@param nanosFunc A function that will yeild the nanos value
+
+
+- long -> CqlDurationFunctions(Object: daysFunc, Object: nanosFunc) -> com.datastax.driver.core.Duration
+  - *notes:* Create a CQL Duration object from the two provided field functions. The months field is always set to
+zero in this form.
+@param daysFunc A function that will yield the days value
+@param nanosFunc A function that will yeild the nanos value
+
+
 ## DateRangeDuring
 
 Takes an input as a reference point in epoch time, and converts it to a DateRange, with the bounds set to the lower and upper timestamps which align to the specified precision. You can use any of these precisions to control the bounds around the provided timestamp: millisecond, second, minute, hour, day, month, or year.
@@ -114,6 +133,12 @@ This function sets the minimum long value to the equivalent unix epoch time in m
 This function wraps an epoch time in milliseconds into a String as specified in the format. The valid formatters are documented at @see [DateTimeFormat API Docs](https://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html)
 
 - long -> StringDateWrapper(String: format) -> String
+
+## ToCqlDurationNanos
+
+Convert the input value into a {@link com.datastax.driver.core.Duration} by reading the input as total nanoseconds, assuming 30-month days.
+
+- long -> ToCqlDurationNanos() -> com.datastax.driver.core.Duration
 
 ## ToDate
 

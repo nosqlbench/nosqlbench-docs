@@ -298,6 +298,12 @@ Convert the input value to a {@code ByteBuffer}
 
 - double -> ToByteBuffer() -> java.nio.ByteBuffer
 
+## ToCqlDurationNanos
+
+Convert the input value into a {@link com.datastax.driver.core.Duration} by reading the input as total nanoseconds, assuming 30-month days.
+
+- long -> ToCqlDurationNanos() -> com.datastax.driver.core.Duration
+
 ## ToDouble
 
 Convert the input value to a double.
