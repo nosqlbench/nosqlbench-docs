@@ -80,6 +80,7 @@ activity types.
     version, you can set this to match.
 
 - **pooling** default: none - Applies the connection pooling options to
+  the policy. Examples:
     - `pooling=4:10`
       keep between 4 and 10 connections to LOCAL hosts
     - `pooling=4:10,2:5`
