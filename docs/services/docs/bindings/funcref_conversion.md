@@ -372,6 +372,18 @@ Convert the input value to an int with long modulus remainder. If the scale is c
   - *example:* `ToInt()`
   - *converts a long input value to an int between 0 and 2147483647, inclusive *
 
+## ToJSON
+
+Convert the input object to a JSON string with Gson.
+
+- Object -> ToJSON() -> String
+
+## ToJSONPretty
+
+Convert the input object to a JSON string with Gson, with pretty printing enabled.
+
+- Object -> ToJSONPretty() -> String
+
 ## ToLong
 
 Convert the input value to a long.

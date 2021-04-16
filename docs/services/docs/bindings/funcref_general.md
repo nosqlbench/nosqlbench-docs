@@ -71,6 +71,12 @@ Create an alpha-numeric string of the specified length, character-by-character.
 
 - long -> Binomial(int: trials, double: p, String[]...: modslist) -> int
 
+## ByteBufferToHex
+
+Convert the contents of the input ByteBuffer to a String as hexadecimal.
+
+- java.nio.ByteBuffer -> ByteBufferToHex() -> String
+
 ## CSVFrequencySampler
 
 Takes a CSV with sample data and generates random values based on the relative frequencies of the values in the file. The CSV file must have headers which can be used to find the named columns. I.E. take the following imaginary \`animals.csv\` file: animal,count,country puppy,1,usa puppy,2,colombia puppy,3,senegal kitten,2,colombia \`CSVFrequencySampler('animals.csv', animal)\` will return \`puppy\` or \`kitten\` randomly. \`puppy\` will be 3x more frequent than \`kitten\`. \`CSVFrequencySampler('animals.csv', country)\` will return \`usa\`, \`colombia\`, or \`senegal\` randomly. \`colombia\` will be 2x more frequent than \`usa\` or \`senegal\`. Use this function to infer frequencies of categorical values from CSVs.

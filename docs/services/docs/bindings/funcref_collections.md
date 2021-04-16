@@ -249,7 +249,7 @@ Create a Map from a long input based on a set of provided key and value function
 Create a Map from a long input based on a set of provided key and value functions. Any duplicate entries produced by the key functions are elided. As a 'Pair-wise' function, the size of the resulting collection is determined directly by the number of provided element functions. Since this is a map, the functions come in pairs, each even numbered function is a key function and each odd numbered function is the corresponding value function. As a 'Stepped' function, the input value is incremented before being used by each key or value function.
 
 - long -> MapStepped(Object[]...: funcs) -> Map<Object,Object>
-  - *example:* `MapStepped(1, NumberNameToString(),NumberNameToString(),ToString(),ToString())`
+  - *example:* `MapStepped(NumberNameToString(),NumberNameToString(),ToString(),ToString())`
   - *Create a map of object values. Produces values like {'one':'one'1:1}.*
 
 ## Set
