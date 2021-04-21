@@ -39,3 +39,11 @@ Return a pseudo-randomly sampled last name from the last US census data on last 
   - *example:* `LastNames('map')`
   - *select over the last names by probability as input varies from 1L to Long.MAX_VALUE*
 
+## ToMD5ByteBuffer
+
+Converts the byte image of the input long to a MD5 digest in ByteBuffer form.
+
+- long -> ToMD5ByteBuffer() -> java.nio.ByteBuffer
+  - *example:* `MD5ByteBuffer()`
+  - *convert the a input to an md5 digest of its bytes*
+

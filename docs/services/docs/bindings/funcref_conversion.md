@@ -18,6 +18,12 @@ Create a ByteBuffer from a long input based on a provided size function. As a 'S
 
 - long -> ByteBufferSizedHashed(Object: sizeFunc) -> java.nio.ByteBuffer
 
+## ByteBufferToHex
+
+Convert the contents of the input ByteBuffer to a String as hexadecimal. This function is retained to avoid breaking previous workload definitions, but you should use {@link ToHexString} instead.
+
+- java.nio.ByteBuffer -> ByteBufferToHex() -> String
+
 ## DigestToByteBuffer
 
 Computes the digest of the ByteBuffer on input and stores it in the output ByteBuffer. The digestTypes available are: MD2 MD5 SHA-1 SHA-224 SHA-256 SHA-384 SHA-512 SHA3-224 SHA3-256 SHA3-384 SHA3-512
@@ -284,6 +290,8 @@ Convert the input value to a {@code ByteBuffer}
 
 - String -> ToByteBuffer() -> java.nio.ByteBuffer
 
+- java.nio.CharBuffer -> ToByteBuffer() -> java.nio.ByteBuffer
+
 - int -> ToByteBuffer() -> java.nio.ByteBuffer
 
 - long -> ToByteBuffer() -> java.nio.ByteBuffer
@@ -297,6 +305,11 @@ Convert the input value to a {@code ByteBuffer}
 - Short -> ToByteBuffer() -> java.nio.ByteBuffer
 
 - double -> ToByteBuffer() -> java.nio.ByteBuffer
+
+## ToCharBuffer
+
+
+- String -> ToCharBuffer() -> java.nio.CharBuffer
 
 ## ToCqlDurationNanos
 
@@ -337,8 +350,12 @@ Converts the input ByteBuffer to a hexadecimal String.
 - long -> ToHexString() -> String
 
 - java.nio.ByteBuffer -> ToHexString() -> String
+  - *notes:* Convert the ByteBuffer's contents to a hex string using upper case by default.
+
 
 - java.nio.ByteBuffer -> ToHexString(boolean: useUpperCase) -> String
+  - *notes:* Convert the ByteBuffer's contents to a hex string upper or lower case.
+
 
 ## ToInetAddress
 

@@ -71,11 +71,17 @@ Create an alpha-numeric string of the specified length, character-by-character.
 
 - long -> Binomial(int: trials, double: p, String[]...: modslist) -> int
 
-## ByteBufferToHex
+## ByteBufferSizedHashed
 
-Convert the contents of the input ByteBuffer to a String as hexadecimal.
+Create a ByteBuffer from a long input based on a provided size function. As a 'Sized' function, the first argument is a function which determines the size of the resulting ByteBuffer. As a 'Hashed' function, the input value is hashed again before being used as value.
 
-- java.nio.ByteBuffer -> ByteBufferToHex() -> String
+- long -> ByteBufferSizedHashed(int: size) -> java.nio.ByteBuffer
+  - *example:* `ByteBufferSizedHashed(16)`
+  - *Functionally identical to HashedtoByteBuffer(16) but using dynamic sizing implementation*
+  - *example:* `ByteBufferSizedHashed(HashRange(10, 14))`
+  - *Create a ByteBuffer with variable limit (10 to 14)*
+
+- long -> ByteBufferSizedHashed(Object: sizeFunc) -> java.nio.ByteBuffer
 
 ## CSVFrequencySampler
 
@@ -94,6 +100,52 @@ as its first line.
 
 
 - long -> Cauchy(double: median, double: scale, String[]...: mods) -> double
+
+## CharBufImage
+
+Builds a shared text image in memory and samples from it pseudo-randomly with hashing. The characters provided can be listed like a string (abc123), or can include range specifiers like a hyphen (a-zA-Z0-9). These characters are used to build an image of the specified size in memory that is sampled from according to the size function. The extracted value is sized according to either a provided function, a size range, or otherwise the whole image. The image can be varied between tests if you want by specifying a seed value. If no seed value is specified, then the image length is used also as a seed.
+
+- long -> CharBufImage(int: size) -> java.nio.CharBuffer
+  - *notes:* Shortcut constructor for building a simple text image
+from A-Z, a-z, 0-9 and a space, of the specified size.
+When this function is used, it always returns the full image
+if constructed in this way.
+@param size length in characters of the image.
+
+
+- long -> CharBufImage(Object: charsFunc, int: imgsize) -> java.nio.CharBuffer
+  - *notes:* This is the same as {@link CharBufImage(Object,int,Object)} except that the
+extracted sample length is fixed to the buffer size, thus the function will
+always return the full buffer.
+@param charsFunc The function which produces objects, which toString() is used to collect their input
+@param imgsize The size of the CharBuffer to build at startup
+
+
+- long -> CharBufImage(Object: charsFunc, int: imgsize, Object: sizespec) -> java.nio.CharBuffer
+  - *notes:* This is the same as {@link CharBufImage(Object, int, Object, long)} excep that
+the seed is defaulted to 0L
+@param charsFunc The function which produces objects, which toString() is used to collect their input
+@param imgsize The size of the CharBuffer to build at startup
+@param sizespec The specifier for how long samples should be. If this is a number, then it is static. If
+                it is a function, then the size is determined for each call.
+
+
+- long -> CharBufImage(Object: charsFunc, int: imgsize, Object: sizespec, long: seed) -> java.nio.CharBuffer
+  - *notes:* Create a CharBuffer full of the contents of the results of calling a source
+function until it is full. Then allow it to be sampled with random extracts
+as determined by the sizespec.
+@param charsFunc The function which produces objects, which toString() is used to collect their input
+@param imgsize The size of the CharBuffer to build at startup
+@param sizespec The specifier for how long samples should be. If this is a number, then it is static. If
+                it is a function, then the size is determined for each call.
+@param seed      A seed that can be used to change up the rendered content.
+
+
+## CharBufferExtract
+
+Create a CharBuffer from the first function, and then sample data from that buffer according to the size function. The initFunction can be given as simply a size, in which case ByteBufferSizedHash is used with Hex String conversion. If the size function yields a size larger than the available buffer size, then it is lowered to that size automatically. If it is lower, then a random offset is used within the buffer image. This function behaves slightly differently than most in that it creates and caches as source byte buffer during initialization.
+
+- long -> CharBufferExtract(Object: initFunc, Object: sizeFunc) -> java.nio.CharBuffer
 
 ## ChiSquared
 
@@ -472,6 +524,12 @@ Return a pseudo-random value which can only be as large as the input times a sca
 - long -> HashRangeScaled(double: scalefactor) -> int
 
 - long -> HashRangeScaled() -> int
+
+## HashedByteBufferExtract
+
+Create a ByteBuffer from the first function, and then sample data from that bytebuffer according to the size function. The initFunction can be given as simply a size, in which case ByteBufferSizedHash is used. If the size function yields a size larger than the available buffer size, then it is lowered to that size automatically. If it is lower, then a random offset is used within the buffer image. This function behaves slightly differently than most in that it creates and caches as source byte buffer during initialization.
+
+- long -> HashedByteBufferExtract(Object: initFunc, Object: sizeFunc) -> java.nio.ByteBuffer
 
 ## HashedDoubleRange
 
