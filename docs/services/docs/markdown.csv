@@ -26,11 +26,13 @@ designing_workloads/99_yaml_diagnostics.md
 designing_workloads/index.md
 drivers/cockroachdb.md
 drivers/cql.md
+drivers/cqld3.md
 drivers/cqlverify.md
 drivers/diag.md
 drivers/dsegraph.md
 drivers/http.md
 drivers/index.md
+drivers/jms.md
 drivers/jmx.md
 drivers/kafkaproducer.md
 drivers/mongodb.md
