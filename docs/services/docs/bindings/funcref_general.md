@@ -96,6 +96,34 @@ as its first line.
   - *example:* `CSVFrequencySampler('values.csv','modelno')`
   - *Read values.csv, count the frequency of values in 'modelno' column, and sample from this column proportionally*
 
+## CSVSampler
+
+This function is a toolkit version of the {@link WeightedStringsFromCSV} function. It is more capable and should be the preferred function for alias sampling over any CSV data. This sampler uses a named column in the CSV data as the value. This is also referred to as the *labelColumn* . The frequency of this label depends on the weight assigned to it in another named CSV column, known as the *weightColumn* .
+
+### Combining duplicate labels
+
+When you have CSV data which is not organized around the specific identifier that you want to sample by, you can use some combining functions to tabulate these prior to sampling. In that case, you can use any of "sum", "avg", "count", "min", or "max" as the reducing function on the value in the weight column. If none are specified, then "sum" is used by default. All modes except "count" and "name" require a valid weight column to be specified.
+
+* sum, avg, min, max - takes the given stat for the weight of each distinct label
+* count - takes the number of occurrences of a given label as the weight
+* name - sets the weight of all distinct labels to 1.0d
+
+### Map vs Hash mode
+
+As with some of the other statistical functions, you can use this one to pick through the sample values by using the *map* mode. This is distinct from the default *hash* mode. When map mode is used, the values will appear monotonically as you scan through the unit interval of all long values. Specifically, 0L represents 0.0d in the unit interval on input, and Long.MAX_VALUE represents 1.0 on the unit interval.) This mode is only recommended for advanced scenarios and should otherwise be avoided. You will know if you need this mode.
+
+- long -> CSVSampler(String: labelColumn, String: weightColumn, String[]...: data) -> String
+  - *notes:* Build an efficient O(1) sampler for the given column values with respect to the weights,
+combining equal values by summing the weights.
+
+@param labelColumn   The CSV column name containing the value
+@param weightColumn  The CSV column name containing a double weight
+@param data Sampling modes or file names. Any of map, hash, sum, avg, count are taken
+            as configuration modes, and all others are taken as CSV filenames.
+
+  - *example:* `CSVSampler('USPS','n/a','name','census_state_abbrev')`
+  - **
+
 ## Cauchy
 
 

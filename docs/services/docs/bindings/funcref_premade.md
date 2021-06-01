@@ -9,6 +9,55 @@ libraries. However, they are provided here for simplicity in workload constructi
 their longer-form equivalents.
 
 
+## Cities
+
+Return a valid city name.
+
+- long -> Cities() -> String
+  - *example:* `Cities()`
+
+## CitiesByDensity
+
+Return a city name, weighted by population density.
+
+- long -> CitiesByDensity() -> String
+  - *example:* `CitiesByDensity()`
+
+## CitiesByPopulation
+
+Return a city name, weighted by total population.
+
+- long -> CitiesByPopulation() -> String
+  - *example:* `CitiesByPopulation()`
+
+## Counties
+
+Return a valid county name.
+
+- long -> Counties() -> String
+  - *example:* `Counties()`
+
+## CountiesByDensity
+
+Return a county name weighted by population density.
+
+- long -> CountiesByDensity() -> String
+  - *example:* `CountiesByDensity()`
+
+## CountiesByPopulation
+
+Return a county name weighted by total population.
+
+- long -> CountiesByPopulation() -> String
+  - *example:* `CountiesByPopulation()`
+
+## CountryCodes
+
+Return a valid country code.
+
+- long -> CountryCodes() -> String
+  - *example:* `CountryCodes()`
+
 ## FirstNames
 
 Return a pseudo-randomly sampled first name from the last US census data on first names occurring more than 100 times. Both male and female names are combined in this function.
@@ -39,6 +88,62 @@ Return a pseudo-randomly sampled last name from the last US census data on last 
   - *example:* `LastNames('map')`
   - *select over the last names by probability as input varies from 1L to Long.MAX_VALUE*
 
+## StateCodes
+
+Return a valid state code. (abbreviation)
+
+- long -> StateCodes() -> String
+  - *example:* `StateCodes()`
+
+## StateCodesByDensity
+
+Return a state code (abbreviation), weighted by population density.
+
+- long -> StateCodesByDensity() -> String
+  - *example:* `StateCodesByDensity()`
+
+## StateCodesByPopulation
+
+Return a state code (abbreviation), weighted by population.
+
+- long -> StateCodesByPopulation() -> String
+  - *example:* `StateCodesByPopulation()`
+
+## StateNames
+
+Return a valid state name.
+
+- long -> StateNames() -> String
+  - *example:* `StateNames()`
+
+## StateNamesByDensity
+
+Return a state name, weighted by population density.
+
+- long -> StateNamesByDensity() -> String
+  - *example:* `StateNamesByDensity()`
+
+## StateNamesByPopulation
+
+Return a state name, weighted by total population.
+
+- long -> StateNamesByPopulation() -> String
+  - *example:* `StateNamesByPopulation()`
+
+## TimeZones
+
+Return a state name, weighted by population density.
+
+- long -> TimeZones() -> String
+  - *example:* `Timezones()`
+
+## TimeZonesByPopulation
+
+Return a state name, weighted by population.
+
+- long -> TimeZonesByPopulation() -> String
+  - *example:* `TimezonesByPopulation()`
+
 ## ToMD5ByteBuffer
 
 Converts the byte image of the input long to a MD5 digest in ByteBuffer form.
@@ -46,4 +151,18 @@ Converts the byte image of the input long to a MD5 digest in ByteBuffer form.
 - long -> ToMD5ByteBuffer() -> java.nio.ByteBuffer
   - *example:* `MD5ByteBuffer()`
   - *convert the a input to an md5 digest of its bytes*
+
+## ZipCodes
+
+Return a valid zip code.
+
+- long -> ZipCodes() -> String
+  - *example:* `ZipCodes()`
+
+## ZipCodesByPopulation
+
+Return a zip code, weighted by population.
+
+- long -> ZipCodesByPopulation() -> String
+  - *example:* `ZipCodesByPopulation()`
 
