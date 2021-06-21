@@ -142,11 +142,15 @@ Convert the input value into a {@link com.datastax.driver.core.Duration} by read
 
 ## ToDate
 
-Convert the input value to a {@code Date}
+Convert the input value to a {@code Date}, by multiplying and then dividing the input by the provided parameters.
 
-- long -> ToDate(int: spacing, int: repeat_count) -> Date
+- long -> ToDate(int: millis_multiplier, int: millis_divisor) -> Date
+  - *example:* `ToDate(86400000,2)`
+  - *produce two Date values per day*
 
 - long -> ToDate(int: spacing) -> Date
+  - *example:* `ToDate(86400000)`
+  - *produce a single Date() per day*
 
 - long -> ToDate() -> Date
 
