@@ -144,8 +144,22 @@ activity types.
 
 - **ssl** - specifies the type of the SSL implementation.
     Disabled by default, possible values are `jdk` and `openssl`.
-
-    [Additional parameters may need to be provided](ssl.md).
+    _ssl=jdk_
+    | parameter      | description                  |
+    |----------------|------------------------------|
+    | keyPassword    | password of SSL key          |
+    | keystore       | keystore path (.jks, .p12)   |
+    | kspass         | keystore password            |
+    | truststore     | truststore path (.jks, .p12) |
+    | tspass         | truststore password          |
+    
+    _ssl=openssl_
+    | parameter      | description                  |
+    |----------------|------------------------------|
+    | tlsversion     | TlS version ("TLSv1.2")      |
+    | caCertFilePath | CA cert path (.crt)          |
+    | certFilePath   | cert path (.pem, .crt)       |
+    | keyFilePath    | private key path (.key)      |
 
 - **jmxreporting** - enable JMX reporting if needed.
     Examples:
