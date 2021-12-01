@@ -1,0 +1,51 @@
+#!/bin/bash
+# set -x
+if [ "$0" != "./get_zola.Linux" ]
+then
+ printf "You must run this from the bin directory of the standardization project.\n"
+ exit 3
+fi
+
+if ! which jq > /dev/null 2>&1
+then
+ printf "Install the jq command first\n"
+ exit 2
+fi
+
+if [ -x "./zola" ]
+then
+ printf "The zola binary exists. To force fetching it, remove it first.\n"
+ exit 1
+fi
+
+distributor=$(lsb_release -i)
+if ! echo $distributor | grep Ubuntu >/dev/null 2>&1
+then
+ printf "This is not a supported system. Update the script to include your system.\n"
+fi
+
+export release=$1
+
+if [ -z "${release}" ]
+then release='latest'
+else release="tags/${release}"
+fi
+
+ORGNAME="getzola"
+PROJECT="zola"
+
+export download_url=$(
+ curl -s https://api.github.com/repos/${ORGNAME}/${PROJECT}/releases/${release} | \
+ jq -r '{assets} | .[] | .[] | {url: .browser_download_url} | .url' | \
+ egrep '.*?x86_64-unknown-linux-gnu.tar.gz'
+)
+
+printf "url: %s\n" ${download_url}
+
+curl -L -O "${download_url}"
+tar -xvf zola-v*-x86_64-unknown-linux-gnu.tar.gz
+rm zola-v*-x86_64-unknown-linux-gnu.tar.gz
+chmod +x zola
+
+
+

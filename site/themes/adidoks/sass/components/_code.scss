@@ -1,0 +1,89 @@
+pre {
+  padding: 1rem;
+  overflow: auto;
+}
+// The line numbers already provide some kind of left/right padding
+pre[data-linenos] {
+  padding: 1rem 0;
+}
+pre table td {
+  padding: 0;
+}
+// The line number cells
+pre table td:nth-of-type(1) {
+  text-align: center;
+  user-select: none;
+}
+pre mark {
+  // If you want your highlights to take the full width.
+  display: block;
+  // The default background colour of a mark is bright yellow
+  background-color: rgba(254, 252, 232, 0.9);
+}
+pre table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+// pre,
+// code,
+// kbd,
+// samp {
+//   font-family: $font-family-monospace;
+//   font-size: $font-size-sm;
+//   border-radius: $border-radius;
+// }
+//
+// code {
+//   background: $beige;
+//   color: $black;
+//   padding: 0.25rem 0.5rem;
+// }
+//
+// pre {
+//   margin: 2rem 0;
+// }
+//
+// pre code {
+//   display: block;
+//   overflow-x: auto;
+//   line-height: $line-height-base;
+//   padding: 1.25rem 1.5rem;
+//   tab-size: 4;
+//   scrollbar-width: thin;
+//   scrollbar-color: transparent transparent;
+// }
+//
+// .hljs {
+//   padding: 1.25rem 1.5rem;
+// }
+//
+// @include media-breakpoint-down(sm) {
+//   pre,
+//   code,
+//   kbd,
+//   samp {
+//     border-radius: 0;
+//   }
+//
+//   pre {
+//     margin: 2rem -1.5rem;
+//   }
+// }
+//
+// pre code::-webkit-scrollbar {
+//   height: 5px;
+// }
+//
+// pre code::-webkit-scrollbar-thumb {
+//   background: $gray-200;
+// }
+//
+// pre code:hover {
+//   scrollbar-width: thin;
+//   scrollbar-color: $gray-200 transparent;
+// }
+//
+// pre code::-webkit-scrollbar-thumb:hover {
+//   background: $gray-200;
+// }
