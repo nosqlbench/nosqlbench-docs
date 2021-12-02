@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "https://nosqlbench.github.io/nbdocs_v5/"
+base_url = "https://docs.nosqlbench.io/"
 title = "NoSQLBench"
 theme = "adidoks"
 # Whether to automatically compile all Sass files in the sass directory
