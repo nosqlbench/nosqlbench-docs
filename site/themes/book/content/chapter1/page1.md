@@ -24,7 +24,7 @@ permalink: String;
 summary: String?;
 tags: Array<String>;
 category: String?;
-extra: HashMap<String, Any>;
+extra: HashMap&lt;String, Any&gt;;
 // Naive word count, will not work for languages without whitespace
 word_count: Number;
 // Based on https://help.medium.com/hc/en-us/articles/214991667-Read-time
@@ -52,7 +52,7 @@ date: String?;
 slug: String;
 path: String;
 permalink: String;
-extra: HashMap<String, Any>;
+extra: HashMap&lt;String, Any&gt;;
 // Pages directly in this section, sorted if asked
 pages: Array<Pages>;
 // Direct subsections to this section, sorted by subsections weight

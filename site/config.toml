@@ -8,6 +8,11 @@ compile_sass = true
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
 
+[slugify]
+paths = "on"
+taxonomies = "on"
+anchors = "on"
+
 [search]
 # Whether to include the title of the page/section in the index
 include_title = true

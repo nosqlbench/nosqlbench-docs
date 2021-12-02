@@ -4,6 +4,7 @@
 			{% set index_path = current_section ~ "/_index.md" | trim_start_matches(pat="/") %}
 			{% set index = get_section(path=index_path) %}
 			{% if index.pages %}
+		      <!-- index.pages! -->
 					<h3>{{ index.title }}</h3>
 					<ul class="list-unstyled">
 					{% for page in index.pages %}                           
