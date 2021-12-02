@@ -14,7 +14,7 @@ toc = false
 
 [[extra.list]]
 title = 'Join our Community'
-content = '<a href="https://discord.gg/dBHRakusMN"><img src="/Discord-Logo-Wordmark-Color.png" style="width:117px;height:32px;"></img></a>'
+content = '<a href="https://discord.gg/dBHRakusMN"><img src="Discord-Logo-Wordmark-Color.png" style="width:117px;height:32px;"></img></a>'
 
 [[extra.list]]
 title = "WHY NoSQLBench?"
