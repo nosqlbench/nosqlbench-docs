@@ -158,7 +158,7 @@ activity types.
 - **ssl** - specifies the type of the SSL implementation.
     Disabled by default, possible values are `jdk` and `openssl`.
 
-    [Additional parameters may need to be provided](ssl.md).
+    [Additional parameters may need to be provided](./ssl.md).
 
 - **jmxreporting** - enable JMX reporting if needed.
     Examples:
