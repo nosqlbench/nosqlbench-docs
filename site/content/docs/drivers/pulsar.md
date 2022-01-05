@@ -29,7 +29,7 @@ weight: 50
 - [11. NB Pulsar Driver Execution Example](#11-nb-pulsar-driver-execution-example)
 - [12. Appendix A. Template Global Setting File (config.properties)](#12-appendix-a-template-global-setting-file-configproperties)
 
-# 1. Overview
+# 1. Overview {#1-overview}
 
 This driver allows you to simulate and run different types of workloads (as below) against a Pulsar cluster through NoSQLBench (NB).
 * Admin API - create/delete tenants
@@ -41,11 +41,11 @@ This driver allows you to simulate and run different types of workloads (as belo
 * (Future) WebSocket Producer
 * (Future) Managed Ledger
 
-## 1.1. Issues Tracker
+## 1.1. Issues Tracker {#11-issues-tracker}
 
 If you have issues or new requirements for this driver, please add them at the [pulsar issues tracker](https://github.com/nosqlbench/nosqlbench/issues/new?labels=pulsar).
 
-# 2. NB Pulsar Driver Workload Definition Yaml File - High Level Structure
+# 2. NB Pulsar Driver Workload Definition Yaml File - High Level Structure {#2-nb-pulsar-driver-workload-definition-yaml-file---high-level-structure}
 
 Just like other NB driver types, the actual Pulsar workload generation is determined by the statement blocks in an NB driver Yaml file. Depending on the Pulsar workload type, the corresponding statement block may have different contents.
 
@@ -127,7 +127,8 @@ The NB Pulsar driver configuration parameters can be set at 3 different levels:
 
 **NOTE**: If one configuration parameters shows up in multiple levels (e.g. Pulsar topic name), the parameter at lower level will take precedence.
 
-## 3.1. Global Level Parameters
+## 3.1. Global Level Parameters {#31-global-level-parameters}
+
 **Global Level** parameters are set in an external property file (e.g. ***config.properties*** file). When running a NB Pulsar workload, we need to specify the path of this file.
 ```
 <nb_cmd> driver=pulsar config=</path/to/config.properties> yaml=<pulsar_workload.yaml>...
@@ -135,7 +136,8 @@ The NB Pulsar driver configuration parameters can be set at 3 different levels:
 
 The global level parameters are most related with fine-tuning the behaviors of a Pulsar client connection and/or an object (producer, consumer, etc.). They will impact all the Pulsar workloads types as supported in the NB Pulsar Driver. We'll cover the details of these parameters in section 4.
 
-## 3.2. Document Level Parameters
+## 3.2. Document Level Parameters {#32-document-level-parameters}
+
 **Document Level** parameters are set within NB yaml file and under the ***params*** section. These settings will impact multiple workload types as supported in the NB Pulsar Driver.
 
 Currently, the following configuration parameters are available at this level:
@@ -145,10 +147,11 @@ Currently, the following configuration parameters are available at this level:
 * **admin_delop**: For Admin tasks, whether to execute delete operation instead of the default create operation. This can only be statically bound.
 * **seq_tracking**: Whether to do message sequence tracking. This is used for abnormal message processing error detection such as message loss, message duplication, or message out-of-order. This can only be statically bound.
 
-## 3.3. Statement Level Parameters
+## 3.3. Statement Level Parameters {#33-statement-level-parameters}
+
 **Statement Level** parameters are set within the NB yaml file under different statement blocks. Each workload type/statement block has its own set of statement level configuration parameters. We'll cover these parameters in section 5.
 
-# 4. Global Level Pulsar Configuration Parameters
+# 4. Global Level Pulsar Configuration Parameters {#4-global-level-pulsar-configuration-parameters}
 
 The NB Pulsar driver relies on Pulsar's [Java Client API](https://pulsar.apache.org/docs/en/client-libraries-java/) to publish messages to and consume messages from a Pulsar cluster. In order to do so, a [PulsarClient](https://pulsar.incubator.apache.org/api/client/2.8.0-SNAPSHOT/org/apache/pulsar/client/api/PulsarClient) object needs to be created first in order to establish the connection to the Pulsar cluster; then a workload-specific object (e.g. [Producer](https://pulsar.incubator.apache.org/api/client/2.8.0-SNAPSHOT/org/apache/pulsar/client/api/Producer) or [Consumer](https://pulsar.incubator.apache.org/api/client/2.8.0-SNAPSHOT/org/apache/pulsar/client/api/Consumer)) is required in order to execute workload related actions (e.g. publishing or consuming messages).
 
@@ -194,9 +197,9 @@ There are multiple sections in this file that correspond to different groups of 
     * This section defines all configuration parameters that are related with defining a Pulsar Reader object.
         * See [Pulsar Doc Reference](https://pulsar.apache.org/docs/en/client-libraries-java/#reader)
 
-# 5. NB Pulsar Driver Yaml File - Statement Blocks
+# 5. NB Pulsar Driver Yaml File - Statement Blocks {#5-nb-pulsar-driver-yaml-file---statement-blocks}
 
-## 5.1. Pulsar Admin API Statement Block - Create/Delete Tenants
+## 5.1. Pulsar Admin API Statement Block - Create/Delete Tenants {#51-pulsar-admin-api-statement-block---createdelete-tenants}
 
 This workload type is used to create or delete Pulsar tenants. It has the following format.
 ```yaml
@@ -221,7 +224,7 @@ In this statement block, there is only one statement (s1):
 
 Please note that when document level parameter **admin_delop** is set to be true, then this statement block will delete Pulsar tenants instead. Similarly, this applies to other Admin API blocks for namespace and topic management.
 
-## 5.2. Pulsar Admin API Command Block - Create/Delete Namespaces
+## 5.2. Pulsar Admin API Command Block - Create/Delete Namespaces {#52-pulsar-admin-api-command-block---createdelete-namespaces}
 
 This Pulsar Admin API Block is used to create Pulsar namespaces. It has the following format:
 ```yaml
@@ -242,7 +245,7 @@ In this statement block, there is only one statement (s1):
       for this statement
     * (Mandatory) **namespace** is the Pulsar namespace name to be created/deleted under a tenant. It can be either statically or dynamically bound.
 
-## 5.3. Pulsar Admin API Command Block - Create/Delete Topics, Partitioned or Not
+## 5.3. Pulsar Admin API Command Block - Create/Delete Topics, Partitioned or Not {#53-pulsar-admin-api-command-block---createdelete-topics-partitioned-or-not}
 
 This Pulsar Admin API Block is used to create Pulsar topics. It has the following format:
 ```yaml
@@ -266,7 +269,7 @@ In this statement block, there is only one statement (s1):
 
 **NOTE**: The topic name is bound by the document level parameter "topic_uri".
 
-## 5.4. Batch Producer Command Block (Only Applicable with Pulsar Synchronous API)
+## 5.4. Batch Producer Command Block (Only Applicable with Pulsar Synchronous API) {#54-batch-producer-command-block-only-applicable-with-pulsar-synchronous-api}
 
 **NOTE**: This statement block is only applicable when Pulsar Synchronous API is used as defined by the document level setting ***async_api***.
 ```
@@ -325,7 +328,7 @@ This statement block has three statements (s1, s2, and s3) with the following ra
 
 **NOTE**: the topic that the producer needs to publish messages to is specified by the document level parameter ***topic_uri***.
 
-## 5.5. Producer Statement Block
+## 5.5. Producer Statement Block {#55-producer-statement-block}
 
 This is the regular Pulsar producer statement block that produces one Pulsar message per NB execution cycle. A typical format of this statement block is as below:
 
@@ -363,7 +366,7 @@ This statement block only has one statement (s1):
 
 **NOTE**: the topic that the producer needs to publish messages to is specified by the document level parameter ***topic_uri***.
 
-## 5.6. Consumer Statement Block
+## 5.6. Consumer Statement Block {#56-consumer-statement-block}
 
 This is the regular Pulsar consumer statement block that consumes one message per NB execution cycle. A typical format of this statement block is as below:
 
@@ -389,7 +392,7 @@ This statement block only has one statement (s1):
 
 **NOTE**: the topic that the consumer receives messages from is specified by the document level parameter ***topic_uri***.
 
-## 5.7. Reader Statement Block
+## 5.7. Reader Statement Block {#57-reader-statement-block}
 
 This is the regular Pulsar reader statement block that reads one message per NB cycle execution. It has  a typical format as below:
 
@@ -416,7 +419,7 @@ This statement block only has one statement (s1):
 
 **NOTE**: the topic that the reader needs to read messages from is specified by the document level parameter ***topic_uri***.
 
-## 5.8. Multi-topic Consumer Statement Block
+## 5.8. Multi-topic Consumer Statement Block {#58-multi-topic-consumer-statement-block}
 
 This is the Pulsar consumer statement block that consumes messages from multiple Pulsar topics per NB execution. It has a typical format as below:
 
@@ -449,7 +452,7 @@ This statement block only has one statement (s1):
 
 **NOTE 2**: when both **topic_names** and **topics_pattern** are provided, **topic_names** takes precedence over **topics_pattern**.
 
-## 5.9. End-to-end Message Latency Statement Block
+## 5.9. End-to-end Message Latency Statement Block {#59-end-to-end-message-latency-statement-block}
 
 End-to-end message latency statement block is used to simplify the task of measuring the end-to-end message processing (from being published to being consumed)latency. It has a typical format as below:
 
@@ -492,7 +495,7 @@ This statement block has two statements (s1 and s2) with the following ratios: 1
 
 **NOTE**: the topic that the producer/consumer needs to publish messages to/consume messages from is specified by the document level parameter ***topic_uri***.
 
-# 6. Generate Message Content
+# 6. Generate Message Content {#6-generate-message-content}
 
 A Pulsar message has three main components: message key, message properties, and message payload. The former two are optional and the last one is mandatory for each message.
 
@@ -518,7 +521,7 @@ NOTE that If the **msg_property** value is not a valid JSON string, NB Pulsar dr
 
 For **msg_value**, its value could be a plain simple text or a valid JSON string, depending on whether message schema (Avro type) will be used. The message schema is defined as global level configuration parameters (see the next section).
 
-# 7. Message Schema Support
+# 7. Message Schema Support {#7-message-schema-support}
 
 Pulsar has built-in schema support. Other than primitive types, Pulsar also supports complex types like **Avro**, etc. At the moment, the NB Pulsar driver supports two schema types:
 * (Default) binary type
@@ -550,7 +553,7 @@ If the message schema type is specified as Avro, then the schema definition need
 }
 ```
 
-# 8. Measure End-to-end Message Processing Latency
+# 8. Measure End-to-end Message Processing Latency {#8-measure-end-to-end-message-processing-latency}
 
 The built-in **e2e-msg-proc-block** measures the end-to-end message latency metrics. It contains one message producing statement and one message consuming statement. When the message that is published by the producer is received by the consumer, the consumer calculates the time difference between when the time is received and when the time is published.
 
@@ -562,7 +565,7 @@ One thing to remember though if we're using multiple machines to measure the end
 1) The time of the two machines are synced up with each other, e.g. through the NTP protocol.
 2) If there is some time lag of starting the consumer, we need to count that into consideration when interpreting the end-to-end message processing latency.
 
-# 9. Detect Message Out-of-order, Message Loss, and Message Duplication
+# 9. Detect Message Out-of-order, Message Loss, and Message Duplication {#9-detect-message-out-of-order-message-loss-and-message-duplication}
 
 In order to detect abnormal message processing errors like message loss, message duplication, or message out-of-order, we need to set the following document level parameter to be true.
 ```
@@ -577,7 +580,7 @@ When this parameter is set true, the NB Pulsar consumer workload, when executed,
 * **msgErrLossCounter**
 * **msgErrDuplicateCounter**
 
-# 10. NB Activity Execution Parameters
+# 10. NB Activity Execution Parameters {#10-nb-activity-execution-parameters}
 
 At the moment, the following Pulsar driver specific** NB activity parameters are supported:
 * service_url=<pulsar_driver_url>
@@ -591,7 +594,7 @@ Some other common NB activity parameters are listed as below. Please refer to NB
 * cycles=<total_NB_cycle_execution_number>
 * --report-csv-to <metrics_output_dir_name>
 
-# 11. NB Pulsar Driver Execution Example
+# 11. NB Pulsar Driver Execution Example {#11-nb-pulsar-driver-execution-example}
 
 1. Run Pulsar producer API to produce 100K messages using 100 NB threads
 
@@ -611,7 +614,7 @@ Some other common NB activity parameters are listed as below. Please refer to NB
 <nb_cmd> run driver=pulsar tags=phase:consumer cycles=100 web_url=http://localhost:8080 service_url=pulsar://localhost:6650 config=<dir>/config.properties yaml=<dir>/pulsar.yaml
 ```
 
-# 12. Appendix A. Template Global Setting File (config.properties)
+# 12. Appendix A. Template Global Setting File (config.properties) {#12-appendix-a-template-global-setting-file-configproperties}
 ```properties
 schema.type =
 schema.definition =
