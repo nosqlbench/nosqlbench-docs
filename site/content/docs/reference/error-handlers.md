@@ -35,7 +35,12 @@ You can use any of these verbs in any order in a handler list.
 
 The structure of a handler is a list of list. In order to make this easier to discuss in terms of
 configuration, the top level is called the _Handler Chain_ and the individual handler lists at each
-link in the chain are called a _Handler Verbs_.
+link in the chain are called _Handler Verbs_.
+
+The first matching set of handler verbs is used. When an exception is thrown, the handler chain 
+is walked until a matching handler is found. If none are found, then no handlers apply, which is 
+the same as assigning `ignore`, which does nothing. If you want a default handler list to apply 
+to otherwise-unmatched exceptions, be sure to add one at the end for anything matching `.*`.
 
 The illustration below shows the handler chain structure for the handler configuration shown.
 
