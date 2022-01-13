@@ -6,9 +6,9 @@ weight: 30
 ## Overview
 
 Often, terms used to describe latency can create confusion. In fact, the term _latency_ is so
-overloaded in practice that it is not useful by itself. Because of this, nosqlbench will avoid using
-the term latency _except in a specific way_. Instead, the terms described in this section will be
-used.
+overloaded in practice that it is not useful by itself. **Because of this, nosqlbench will avoid 
+using the term latency _except in a specific way_. Instead, the terms described in this section will be
+used.**
 
 NoSQLBench is a client-centric testing tool. The measurement of operations occurs on the client,
 without visibility to what happens in transport or on the server. This means that the client *can*
