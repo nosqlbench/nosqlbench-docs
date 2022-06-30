@@ -100,8 +100,8 @@ Add the contents of the next argument to the scenario script buffer.
 start driver=stdout alias=a cycles=100K workload=cql-iot tags=phase:main\
 start driver=stdout alias=b cycles=200K workload=cql-iot tags=phase:main\
 waitmillis 10000 \
-await one \
-stop two
+await a \
+stop b
 ```
 
 in this CLI script, the backslashes are necessary in order keep everything on the same command line.
@@ -110,9 +110,9 @@ Here is a narrative of what happens when it is run.
 1. An activity named 'a' is started, with 100K cycles of work.
 2. An activity named 'b' is started, with 200K cycles of work.
 3. While these activities run, the scenario script waits for ten seconds.
-4. If a is complete, the await returns immediately. If not, the script waits for a to complete its
-   100K cycles.
-5. b is immediately stopped.
+4. If a is complete, the await returns immediately. If not, the script waits for activity a to 
+   complete its 100K cycles.
+5. After that, activity b is immediately stopped.
 6. Because all activities are stopped or complete, and the script is complete, the scenario exits.
 
 
