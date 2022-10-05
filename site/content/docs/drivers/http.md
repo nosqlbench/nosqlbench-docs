@@ -64,7 +64,7 @@ For those familiar with what an HTTP request looks like on the wire, the
 format below may be familiar. This isn't actually the content that is
 submitted, but it is recognized as a valid way to express the request
 parameters in a familiar and condensed form. A custom config parser makes
-this form available fo rhose who want to emulate a well-known pattern:
+this form available for those who want to emulate a well-known pattern:
 
 ```yaml
 statements:

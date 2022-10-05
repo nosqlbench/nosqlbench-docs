@@ -97,7 +97,7 @@ Return a pseudo-randomly sampled last name from the last US census data on last 
 
 ## NumberNameToString
 
-Provides the spelled-out name of a number. For example, an input of 7 would yield "seven". An input of 4234 yields the value "four thousand thirty four". The maximum value is limited at 999,999,999.
+Provides the spelled-out name of a number. For example, an input of 7 would yield "seven". An input of 4234 yields the value "four thousand thirty-four". The maximum value is limited at 999,999,999.
 
 - long -> NumberNameToString() -> String
 
@@ -170,7 +170,7 @@ Converts the byte image of the input long to a MD5 digest in ByteBuffer form.
 
 - long -> ToMD5ByteBuffer() -> java.nio.ByteBuffer
   - *example:* `MD5ByteBuffer()`
-  - *convert the a input to an md5 digest of its bytes*
+  - *convert the input to an md5 digest of its bytes*
 
 ## ZipCodes
 

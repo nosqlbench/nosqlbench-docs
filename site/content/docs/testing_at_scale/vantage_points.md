@@ -34,7 +34,7 @@ endpoint", "service", "web app", "app server", there is a ton of subjectivity. a
 change, the underlying mechanisms are generally the same. The naming conventions come more from
 local norms within a tech space or community of builders. One person's "App Server" is another's "
 RESTful endpoint". What is important to notice is how the layers form a cascade of dependencies down
-to some physical device which is reponsible for storing data. This pattern will be durable in nearly
+to some physical device which is responsible for storing data. This pattern will be durable in nearly
 every system you look at.
 
 Between each layer is a type of messaging component. These are sometimes called "media", or "
@@ -77,7 +77,7 @@ layers.
 
 When constructing layered views of your metrics, it is useful to add the elements you need and can
 instrument for metrics first. The above diagram goes to a degree of detail that may be too much to
-be useful in a practical analysis scenario. You could add place holders to capture elements of the
+be useful in a practical analysis scenario. You could add placeholders to capture elements of the
 transport and inter-connections, additional internal subsystems of layers, etc. This is only useful
 if it helps tell an important story about the details of your system, i.e. details that you can use
 to take action for an improvement or to help you focus effort in the right place.

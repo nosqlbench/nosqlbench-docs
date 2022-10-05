@@ -354,7 +354,7 @@ error? You can configure for that if you need.
 
 ##### Cycle Logging
 
-It is possible to record the result status of each and every cycles in a NoSQLBench test run. If the
+It is possible to record the result status of each and every cycle in a NoSQLBench test run. If the
 results are mostly homogeneous, the RLE encoding of the results will reduce the output file down to
 a small fraction of the number of cycles. The errors are mapped to ordinals by error type, and these
 ordinals are stored into a direct RLE-encoded log file. For most testing where most of the results
@@ -367,5 +367,5 @@ The way that operations are planned for execution in NoSQLBench is based on a st
 is configurable. The statement forms are mixed together based on their relative ratios. The three
 schemes currently supported are round-robin with exhaustion (bucket), duplicate in order
 (concat), and a way to spread each statement out over the unit interval
-(interval). These account for most configuration scenarios without users having to micro-manage
+(interval). These account for most configuration scenarios without users having to micromanage
 their statement templates.

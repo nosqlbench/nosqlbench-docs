@@ -50,7 +50,7 @@ In this example, that is the DDL portion of the `cql-keyvalue`
 workload. `host=...` tells NoSQLBench how to connect to your database,
 only one host is necessary.
 
-If you like, you can verify the result of this command by decribing your
+If you like, you can verify the result of this command by describing your
 keyspace in cqlsh or DataStax Studio with
 `DESCRIBE KEYSPACE baselines`.
 
@@ -189,6 +189,6 @@ rate limit the workload and here we are running at 5000 ops/sec.
 Note in the above output, we
 see `Logging to logs/scenario_20190812_154431_028.log`.
 
-By default NoSQLBench records the metrics from the run in this file, we
+By default, NoSQLBench records the metrics from the run in this file, we
 will go into detail about these metrics in the next section Viewing
 Results.

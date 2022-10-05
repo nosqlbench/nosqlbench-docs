@@ -135,7 +135,7 @@ activity types.
 
 - **maxpages** - default: 1 - how many pages can be read from a query which
     is larger than the fetchsize. If more than this number of pages
-    is required for such a query, then an UnexpectedPaging excpetion
+    is required for such a query, then an UnexpectedPaging exception
     is passed to the error handler as explained below.
 
 - **fetchsize** - controls the driver parameter of the same name.
@@ -248,7 +248,7 @@ activity types.
   out [Astra Documentation](https://docs.astra.datastax.com/docs/test-loading-data-with-nosqlbench)
   for samples
 
-- **insights** - Set to false to disable the driver from sending insights
+- **insights** - Set false to disable the driver from sending insights
   monitoring information
     - `insights=false`
 
@@ -266,7 +266,7 @@ activity types.
     and should only be done to troubleshoot workloads. Do not use `showcql` for your tests.
 
 - **lbp** - configures the load balancing policies for the Java driver. With this parameter, you can
-  configure nested load balancing policies in short-hand form.
+  configure nested load balancing policies in shorthand form.
 
   The policies available are documented in detail under the help topic `cql-loadbalancing`. See that
   guide if you need more than the examples below.

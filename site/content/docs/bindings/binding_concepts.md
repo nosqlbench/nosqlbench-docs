@@ -88,7 +88,7 @@ a generator function will always provide the same result given the same input.
 The parameters that you will see on some binding recipes are not representative
 of volatile state. These parameters are initializer values which are part of a
 function's definition. For example a `Mod(5)` will always behave like a `Mod(5)`,
-as a pure function. But a `Mod(7)` will be have differently than a `Mod(5)`, although
+as a pure function. But a `Mod(7)` will behave differently than a `Mod(5)`, although
 each function will always produce its own stable result for a given input.
 
 ## Combining RNGs and Data Mapping Functions

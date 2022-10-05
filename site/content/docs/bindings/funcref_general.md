@@ -222,7 +222,7 @@ Takes a CSV with sample data and generates random values based on the relative f
 as its first line.
 @param filename The name of the file to be read into the sampler buffer
 @param columnName The name of the column to be sampled
-@param delimiter delimmiter
+@param delimiter The delimiter used
 
   - *example:* `DelimFrequencySampler('values.csv','modelno', '|')`
   - *Read values.csv, count the frequency of values in 'modelno' column, and sample from this column proportionally*
@@ -799,7 +799,7 @@ other unsorted and stable order as input values vary from 0L to Long.MAX_VALUE.
 Generally, you want to leave out the 'map' directive to get "random sampling"
 of these values.
 
-This function works the same as the three-parametered form of WeightedStrings,
+This function works the same as the three-parameter form of WeightedStrings,
 which is deprecated in lieu of this one. Use this one instead.
 
 - long -> WeightedStringsFromCSV(String: valueColumn, String: weightColumn, String[]...: filenames) -> String

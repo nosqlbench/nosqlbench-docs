@@ -13,7 +13,7 @@ can be attached to a statement, or a block or a document level parameter
 block. It sets the relative ratio of a statement in the op sequence before
 an activity is started.
 
-When an activity is initialized, all of the active statements are combined
+When an activity is initialized, all the active statements are combined
 into a sequence based on their relative ratios. By default, all statement
 templates are initialized with a ratio of 1 if non is specified by the
 user.

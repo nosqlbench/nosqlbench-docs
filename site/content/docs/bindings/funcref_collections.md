@@ -12,7 +12,7 @@ function arguments are used to set the values into the collection.
 
 ## Sized or Pair-wise functions
 
-Any function in this category with `Sized` occuring in its name must be initialized with a sizing
+Any function in this category with `Sized` occurring in its name must be initialized with a sizing
 function as an argument. For example, `ListSized(Mod(5),NumberNameToString())` will create a list
 which is sized by the first function -- a list between 0 and 4 elements in this case. With an input
 value of `3L`, the resulting List will contain 3 elements. With an input of `7L`, it will contain 2
@@ -37,7 +37,7 @@ collection that vary significantly with respect of their common seed value. For 
 `ListHashed(NumberNameToString(),NumberNameToString(),NumberNameToString())` will always provide a
 three element List with values that are not obviously related to each other. For each additional
 element added to the collection, the previous input is hashed, so there is a relationship, but it
-will not be obvious nor discernable for most testing purposes.
+will not be obvious nor discernible for most testing purposes.
 
 If neither `Stepped` nor `Hashed` occurs in the function name, then every element function gets the
 exact value given to the main function.
@@ -159,7 +159,7 @@ As a 'Hashed' function, the input value is hashed again before being used by eac
 
 This is an example of a mapping function that can create a list of objects from another internal
 mapping function. The input value for each function is incremented by one from the initial input
-value this this overall function.
+value provided to the overall function.
 
 - long -> ListMapper(int: size, String: genSpec) -> List&lt;?&gt;
     - *example:* `ListMapper(5,NumberNameToString())`
@@ -194,7 +194,7 @@ function, the input value is hashed again before being used by each element func
     - *
       example:* `ListSizedHashed(FixedValue(5),long->ToString(),long->WeightedStrings('text:1'),long->ToString())`
     - *Create a sized hash list of object values of each function output. List size function will
-      recursively call the last function tillend of the list size functions*
+      recursively call the last function until the end of the list size functions*
 
 - long -> ListSizedHashed(int: size, Object[]...: funcs) -> List&lt;Object&gt;
 
@@ -459,7 +459,7 @@ size, and the second to populate the list with String values. The input fed to t
 is incremented between elements. Regardless of the object type provided by the second function,
 {@link Object#toString()} is used to get the value to add to the list.
 
-To create Lists of any type of object simply use {@link List} with an specific value mapping
+To create Lists of any type of object simply use {@link List} with a specific value mapping
 function.
 
 - long -> StringList(function.LongToIntFunction: sizeFunc, function.LongFunction&lt;Object&gt;: valueFunc)
@@ -494,7 +494,7 @@ size, and the second to populate the map with key objects, and the third to popu
 value objects. The long input fed to the second and third functions is incremented between entries.
 Regardless of the object type provided by the second and third functions, {@link Object#toString()}
 is used to determine the key and value to add to the map. To create Maps of any key and value types,
-simply use {@link Map} with an specific key and value mapping functions.
+simply use {@link Map} with a specific key and value mapping functions.
 
 - long -> StringMapClob(function.LongToIntFunction: sizeFunc, function.LongFunction&lt;Object&gt;:
   keyFunc, function.LongFunction&lt;Object&gt;: valueFunc) -> String

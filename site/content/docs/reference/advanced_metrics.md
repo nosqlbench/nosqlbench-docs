@@ -53,7 +53,7 @@ Metrics associated with a specific activity will have the activity alias in thei
 set of core metrics which are always present regardless of the activity type. The names and types of
 additional metrics provided for each activity type vary.
 
-Sometimes, an activity type will expose metrics on a per statement basis, measuring over all
+Sometimes, an activity type will expose metrics on a per-statement basis, measuring over all
 invocations of a given statement as defined in the YAML. In these cases, you will see `--`
 separating the name components of the metric. At the most verbose, a metric name could take on the
 form like

@@ -52,7 +52,7 @@ is free to read the performance metrics from a live activity and make changes to
 
 For users who want to tap into the programmatic power of NoSQLBench, it's easy to get started by
 using the `--show-script` option. For any normal command line that you might use with NoSQLBench,
-this option causes it to dump the scenario script to stdout and exist instead of running the
+this option causes it to dump the scenario script to stdout and exit instead of running the
 scenario.
 
 You can store this into a file with a `.js` extension, and then use a command line like

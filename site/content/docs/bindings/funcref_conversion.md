@@ -84,7 +84,7 @@ encode HTML Entities
 
 - String -> HTMLEntityEncode() -> String
   - *example:* `HTMLEntityEncode()`
-  - *Encode/Escape input into HTML4 valid entties.*
+  - *Encode/Escape input into HTML4 valid entities.*
 
 ## LongToByte
 

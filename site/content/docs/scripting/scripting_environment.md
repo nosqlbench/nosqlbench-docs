@@ -102,7 +102,7 @@ explicitly stop a script, you must stop all activities.
 ## Strategies
 
 You can use nosqlbench in the classic form with `run driver=<activity_type> param=value ...` command
-line syntax. There are reasons, however, that you will sometimes want customize and modify your
+line syntax. There are reasons, however, that you will sometimes want to customize and modify your
 scripts directly, such as:
 
 - Permute test variables to cover many sub-conditions in a test.

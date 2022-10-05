@@ -160,7 +160,7 @@ also the defaults that are used if you do not specify otherwise:
 ## YAML Format
 
 The YAML file for a DSE Graph activity has one or more logical yaml documents,
-each separted by tree dashes: --- the standard yaml document separator. Each
+each separated by tree dashes: --- the standard yaml document separator. Each
 yaml document may contain a tags section for the purpose of including or 
 excluding statements for a given activity: 
 

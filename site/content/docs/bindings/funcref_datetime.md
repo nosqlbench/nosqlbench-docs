@@ -19,14 +19,14 @@ Map a long value into a CQL Duration object based on a set of field functions.
 zero in this form.
 @param monthsFunc A function that will yield the months value
 @param daysFunc A function that will yield the days value
-@param nanosFunc A function that will yeild the nanos value
+@param nanosFunc A function that will yield the nanos value
 
 
 - long -> CqlDurationFunctions(Object: daysFunc, Object: nanosFunc) -> com.datastax.driver.core.Duration
   - *notes:* Create a CQL Duration object from the two provided field functions. The months field is always set to
 zero in this form.
 @param daysFunc A function that will yield the days value
-@param nanosFunc A function that will yeild the nanos value
+@param nanosFunc A function that will yield the nanos value
 
 
 ## CurrentEpochMillis

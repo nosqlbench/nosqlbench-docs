@@ -68,13 +68,13 @@ nb scenario myworkloads longrun default longrun scenario another.yaml name1 name
 The examples above contain no reference to a workload (formerly called _
 yaml_). They don't need to, as they refer to themselves implicitly. You may add a `workload=`
 parameter to the command templates if you like, but this is never needed for basic use, and it is
-error prone to keep the filename matched to the command template. Just leave it out by default.
+error-prone to keep the filename matched to the command template. Just leave it out by default.
 
 _However_, if you are doing advanced scripting across multiple systems, you can actually provide
 a `workload=` parameter particularly to use another workload description in your test.
 
 **NOTE:**
-This is a powerful feature for workload automation and organization. However, it can get unweildy
+This is a powerful feature for workload automation and organization. However, it can get unwieldy
 quickly. Caution is advised for deep-linking too many scenarios in a workspace, as there is no
 mechanism for keeping them in sync when small changes are made.
 

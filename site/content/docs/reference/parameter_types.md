@@ -7,7 +7,7 @@ To configure a NoSQLBench activity to do something meaningful, you have to provi
 This can occur in one of several ways. This section is a guide on NoSQLBench parameters, how they
 layer together, and when to use one form over another.
 
-The command line is used to configure both the overall runtime (logging, etc) as well as the
+The command line is used to configure both the overall runtime (logging, etc.) as well as the
 individual activities and scripts. Global options can be distinguished from scenario commands and
 their parameters because global options always start with a `-single` or `--double-hyphen`.
 
@@ -72,7 +72,7 @@ loaded from the command line or script, the parameters are resolved in the follo
 
 Some activities make use of named parameters for op templates. These are called _op params_ and are
 completely different than _activity parameters_. Op params in a YAML allow you to affect *how* an
-opeation executes as part of a workload. Just as with activity level parameters, op
+operation executes as part of a workload. Just as with activity level parameters, op
 params may be supported by the core runtime or by an activity type. These are also documented in
 the respective driver's documentation.
 

@@ -43,7 +43,7 @@ inferred from a substring match against the alias and/or yaml parameters.
 If there is more than one valid match for a valid type value, then you
 must set the type parameter directly.
 
-Telling nosqlbench what type of an activity will be run also determines
+Telling nosqlbench what type of activity will be run also determines
 what other parameters are considered valid and how they will be used. So
 in this way, the type parameter is actually the base parameter for any
 activity. When used with scenario commands like `run` or `start`, an
@@ -89,7 +89,7 @@ of this setting and adjust it to a reasonable value for their workloads.
 `threads=auto` : When you set `threads=auto`, it will set the number of
 threads to 10x the number of cores in your system. There is no distinction
 here between full cores and hardware threads. This is generally a
-reasonable number of threads to tap into the procesing power of a client
+reasonable number of threads to tap into the processing power of a client
 system.
 
 `threads=__x` : When you set `threads=5x` or `threads=10x`, you will set
@@ -231,7 +231,7 @@ tracked: the wait time and the response time. See the 'Reference|Timing
 Terms' section for more details on these metrics.
 
 _default_: None. When the cyclerate parameter is not provided, an activity
-runs as fast as it can given how fast operations can complete.
+runs as fast as it can, given how fast operations can complete.
 
 Examples:
 
@@ -310,7 +310,7 @@ throughput. The stride rate limiter applies to the whole activity
 irrespective of how many threads it has.
 
 **WARNING:**
-When using the cyclerate an striderate options together, operations are
+When using the cyclerate and striderate options together, operations are
 delayed based on both rate limiters. If the relative rates are not
 synchronised with the side of a stride, then one rate limiter will
 artificially throttle the other. Thus, it usually doesn't make sense to
@@ -350,7 +350,7 @@ There are three schemes to pick from:
 
 **bucket**
 
-This is a round robin planner which draws operations from buckets in
+This is a round-robin planner which draws operations from buckets in
 circular fashion, removing each bucket as it is exhausted. For example,
 the ratios A:4, B:2, C:1 would yield the sequence A B C A B A A. The
 ratios A:1, B5 would yield the sequence A B B B B B.
@@ -380,7 +380,7 @@ as `0.0(A), 0.0(B), 0.0(C), 0.25(A), 0.5(A), 0.5(B), 0.75(A)`, which
 yields `A B C A A B A` as the op sequence.
 
 This sequencer is most useful when you want a stable ordering of operation
-from a rich mix of statement types, where each operations is spaced as
+from a rich mix of statement types, where each operation is spaced as
 evenly as possible over time, and where it is not important to control the
 cycle-by-cycle sequencing of statements.
 

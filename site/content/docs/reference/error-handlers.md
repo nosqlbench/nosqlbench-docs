@@ -75,7 +75,7 @@ default wildcard error matcher.
 
 A handler definition is thus comprised of the error matching patterns and the error handling verbs
 which should be applied when an error matches the patterns. If the error matching patterns are not
-provided, then the default wildcard pattern and delimtiter `.*:`is automatically prepended.
+provided, then the default wildcard pattern and delimiter `.*:`is automatically prepended.
 
 ### Error Pattern Formats
 

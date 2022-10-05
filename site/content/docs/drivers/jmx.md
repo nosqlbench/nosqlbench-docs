@@ -16,13 +16,13 @@ In the first version of this driver, only reads are supported.
 
 JMX transports can be configured in a myriad of ways. The options below allow you to add
 connection options such as SSL and authentication.
-- **username** - The username to authenticate to the JMX server as. This can be specifed as the
-  actual username to use, or 'file:...' to indicate a filename to load the user name from, or as
-   'console:' to force the user name to be prompted for on the console. If an empty value is provided,
+- **username** - The username to authenticate to the JMX server as. This can be specified as the
+  actual username to use, or 'file:...' to indicate a filename to load the username from, or as
+   'console:' to force the username to be prompted for on the console. If an empty value is provided,
    then the console is used by default.
-- **password** - The password to authentiate to the JMX server with. This can be specifed as the
-  actual password to use, or 'file:...' to indicate a filename to load the user name from, or as
-  'console:' to force the user name to be prompted for on the console. If an empty value is provided,
+- **password** - The password to authenticate to the JMX server with. This can be specified as the
+  actual password to use, or 'file:...' to indicate a filename to load the username from, or as
+  'console:' to force the username to be prompted for on the console. If an empty value is provided,
    then the console is used by default.
 
 # Example Operations
@@ -56,7 +56,7 @@ types are compatible.
 
 - *as_name* will change the name used to store the value in the map.
 
-- *scope* can be either `thread` or `process` and determines the scope of the varaible map
+- *scope* can be either `thread` or `process` and determines the scope of the variable map
   which is used to store the variable.
 
 A combined format is available if you don't want to put every command property on a separate line.
@@ -103,7 +103,7 @@ statements:
 ```
 
 This will use the MBeanInfo to interrogate the named management bean and provide a summary
-of it's available attriburtes, operations, notifications, and constructors to stdout.
+of its available attributes, operations, notifications, and constructors to stdout.
 This is not meant for bulk testing, but more for explaining and documenting JMX beans.
 
 The above example will produce an output like this:

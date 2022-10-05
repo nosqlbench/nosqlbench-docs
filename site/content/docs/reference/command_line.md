@@ -241,6 +241,6 @@ name and log directory.
 
 The reason for the optional timing parameter is to allow for results of short scenario runs to be
 squelched. Metrics for short runs are not generally accurate nor meaningful. Spamming the console
-with boiler-plate in such cases is undesirable. If the minimum session length is not specified, it
+with boilerplate in such cases is undesirable. If the minimum session length is not specified, it
 is assumed to be 0, meaning that a report will always show on that channel.
 

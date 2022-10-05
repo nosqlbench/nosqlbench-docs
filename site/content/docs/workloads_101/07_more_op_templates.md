@@ -60,7 +60,7 @@ indentations, which are removed.
 Statements in this format can be raw statements, statement templates, or anything that is
 appropriate for the specific activity type they are being used with. Generally, the statements
 should be thought of as a statement form that you want to use in your activity -- something that has
-place holders for data bindings. These place holders are called *named anchors*. The second line
+placeholders for data bindings. These placeholders are called *named anchors*. The second line
 above is an example of a statement template, with anchors that can be replaced by data for each
 cycle of an activity.
 
@@ -154,7 +154,7 @@ The rules:
    **`stmt: <statement>`** property. It is not possible to detect if this occurs. Use caution if you
    choose to mix these forms.
 
-As explained above, `parm1: pvalue1` is a *free parameter*, and is simply short-hand for setting
+As explained above, `parm1: pvalue1` is a *free parameter*, and is simply shorthand for setting
 values in the params map for the statement.
 
 ## Named Statement Maps
