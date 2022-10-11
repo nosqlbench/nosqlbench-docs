@@ -5,7 +5,7 @@ weight: 10
 
 In general, our goals with NoSQLBench are to make the help systems and examples wrap around the
 users like a suit of armor, so that they feel capable of doing most things without having to ask for
-help. Please keep this in mind when looking for personal support form our community, and help us
+help. Please keep this in mind when looking for personal support from our community, and help us
 find those places where the docs are lacking. Maybe you can help us by adding some missing docs!
 
 ## Doc Site
