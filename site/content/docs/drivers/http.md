@@ -1,7 +1,8 @@
 ---
-title: http driver
-weight: 50
+title: HTTP driver
+weight: 0
 ---
+# HTTP driver
 
 This driver allows you to make http requests using the native HTTP client
 that is bundled with the JVM. It supports free-form construction of
@@ -18,14 +19,14 @@ parameters and executed.
 The simplest possible statement form looks like this:
 
 ```yaml
-statement: http://google.com/
+op: http://google.com/
 ```
 
 Or, you can have a list:
 
 ```yaml
 # A list of statements
-statements:
+ops:
     - http://google.com/
     - http://amazon.com/
 ```
@@ -34,7 +35,7 @@ Or you can template the values used in the URI, and even add ratios:
 
 ```yaml
 # A list of named statements with variable fields and specific ratios:
-statements:
+ops:
     - s1: http://google.com/search?query={query}
       ratio: 3
     - s2: https://www.amazon.com/s?k={query}
@@ -50,7 +51,7 @@ verification conditions:
 
 ```yaml
 # Require that the result be status code 200-299 match regex "OK, account id is .*" in the body
-statements:
+ops:
     - get-from-google:
       method: GET
       uri: "https://google.com/"
@@ -64,10 +65,10 @@ For those familiar with what an HTTP request looks like on the wire, the
 format below may be familiar. This isn't actually the content that is
 submitted, but it is recognized as a valid way to express the request
 parameters in a familiar and condensed form. A custom config parser makes
-this form available for those who want to emulate a well-known pattern:
+this form available fo rhose who want to emulate a well-known pattern:
 
 ```yaml
-statements:
+ops:
     - s1: |
           GET https://google.com/ HTTP/1.1
           Content-Type: application/json
@@ -84,7 +85,7 @@ All request fields can be made dynamic with binding functions. To make a
 request that has all dynamic fields, you can do something like this:
 
 ```yaml
-statements:
+ops:
     - s1: |
           {method} {scheme}://{host}:{port}/{path}?{query} {version}
           Content-Type: {content_type}
@@ -98,7 +99,7 @@ interpreted internally as if you had configured your op template like
 this:
 
 ```yaml
-statements:
+ops:
     - method: { method }
       uri: { scheme }://{host}:{port}/{path}?{query}
       version: { version }
@@ -132,7 +133,6 @@ defaults:
 - **uri** - This is the URI that you might put into the URL bar of your
   browser. There is no default.
   Example: `https://en.wikipedia.org/wiki/Leonhard_Euler`
-
   If the uri contains a question mark '?' as a query delimiter, then all
   embedded sections which are contained within `URLENCODE[[` ... `]]`
   sections are preprocessed by the HTTP driver. This allows you to keep
@@ -210,10 +210,6 @@ undefined results.
 
 ## HTTP Activity Parameters
 
-- **client_scope** - default: activity - One of activity, or thread. This
-  controls how many clients instances you use with an HTTP activity. By
-  default, all threads will use the same client instance.
-
 - **follow_redirects** - default: normal - One of never, always, or
   normal. Normal redirects are those which do not redirect from HTTPS to
   HTTP.
@@ -262,4 +258,3 @@ undefined results.
 
 - **timeout** - default: forever - Sets the timeout of each request in
   milliseconds.
-

@@ -18,7 +18,7 @@ content = '<a href="https://discord.gg/dBHRakusMN"><img src="Discord-Logo-Wordma
 
 [[extra.list]]
 title = "Binding Functions"
-content = '<a href="docs/nosqlbench/core-concepts">What are the high-level function concepts?</a>'
+content = '<a href="docs/bindings">What are the high-level function concepts?</a>'
 
 [[extra.list]]
 title = "NoSQLBench Drivers"

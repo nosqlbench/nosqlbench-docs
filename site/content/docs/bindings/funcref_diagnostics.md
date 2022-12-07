@@ -5,6 +5,13 @@ weight: 40
 
 Diagnostic functions can be used to help you construct the right VirtData recipe.
 
+---
+title: diagnostic functions
+weight: 40
+---
+
+Diagnostic functions can be used to help you construct the right VirtData recipe.
+
 ## Show
 
 Show diagnostic values for the thread-local variable map.
@@ -28,12 +35,6 @@ Show diagnostic values for the thread-local variable map.
   - *Show only the 'foo' value in a json-like format*
   - *example:* `Show('foo','bar')`
   - *Show the 'foo' and 'bar' values in a json-like format*
-
-## ToCqlType
-
-Shows the compatible CQL type most associated with the incoming Java type.
-
-- Object -> ToCqlType() -> String
 
 ## ToLongFunction
 

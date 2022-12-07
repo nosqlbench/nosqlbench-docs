@@ -1,9 +1,14 @@
 ---
-title: mongodb driver
-weight: 50
+title: MongoDB Driver
+weight: 0
 ---
+# MongoDB Driver
 
 This is a driver for MongoDB. It supports the `db.runCommand` API described in [here](https://docs.mongodb.com/manual/reference/command/).
+
+Consult
+[MongoDB commands](https://www.mongodb.com/docs/manual/reference/command/)
+for details on command structure.
 
 ### Example activity definitions
 
@@ -20,4 +25,3 @@ Run a mongodb activity with definitions from activities/mongodb-basic.yaml
 - **database** (Mandatory) - target database
 
     Example: `testdb`
-

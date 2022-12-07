@@ -1,8 +1,3 @@
----
-title: Statistics functions
-weight: 40
----
-
 ## LongStats
 
 Provide a moving aggregate (min,max,avg,sum,count) of long values presented. This allows for sanity checks on values during prototyping, primarily. Using it for other purposes in actual workloads is not generally desirable, as this does not produce purely functional (deterministic) values.

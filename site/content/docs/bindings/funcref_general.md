@@ -5,6 +5,13 @@ weight: 20
 
 These functions have no particular category, so they ended up here by default.
 
+---
+title: general functions
+weight: 20
+---
+
+These functions have no particular category, so they ended up here by default.
+
 ## Add
 
 Adds a value to the input.
@@ -63,7 +70,7 @@ Create a ByteBuffer from a long input based on a provided size function. As a 'S
 
 - long -> ByteBufferSizedHashed(int: size) -> java.nio.ByteBuffer
   - *example:* `ByteBufferSizedHashed(16)`
-  - *Functionally identical to HashedtoByteBuffer(16) but using dynamic sizing implementation*
+  - *Functionally identical to HashedToByteBuffer(16) but using dynamic sizing implementation*
   - *example:* `ByteBufferSizedHashed(HashRange(10, 14))`
   - *Create a ByteBuffer with variable limit (10 to 14)*
 
@@ -222,7 +229,7 @@ Takes a CSV with sample data and generates random values based on the relative f
 as its first line.
 @param filename The name of the file to be read into the sampler buffer
 @param columnName The name of the column to be sampled
-@param delimiter The delimiter used
+@param delimiter delimmiter
 
   - *example:* `DelimFrequencySampler('values.csv','modelno', '|')`
   - *Read values.csv, count the frequency of values in 'modelno' column, and sample from this column proportionally*
@@ -260,6 +267,26 @@ This is equivalent to `Div(...)`, but returns the result after String.valueOf(..
 Provide the elapsed nano time since the process started. CAUTION: This does not produce deterministic test data.
 
 - long -> ElapsedNanoTime() -> long
+
+## EscapeJSON
+
+Escape all special characters which are required to be escaped when found within JSON content according to the JSON spec
+
+```
+{@code
+\b  Backspace (ascii code 08)
+\f  Form feed (ascii code 0C)
+\n  New line
+\r  Carriage return
+\t  Tab
+\"  Double quote
+\\  Backslash character
+\/  Forward slash
+}
+```
+
+
+- String -> EscapeJSON() -> String
 
 ## FieldExtractor
 
@@ -504,7 +531,7 @@ Combine the result of the specified functions together with the specified delimi
 
 Create a {@code List} based on two functions, the first to determine the list size, and the second to populate the list with string values. The input fed to the second function is incremented between elements.
 
-- long -> ListTemplate(function.LongToIntFunction: sizeFunc, function.LongFunction<String>: valueFunc) -> List&lt;String&gt;
+- long -> ListTemplate(function.LongToIntFunction: sizeFunc, function.LongFunction<String>: valueFunc) -> List<String>
   - *example:* `ListTemplate(HashRange(3,7),NumberNameToString())`
   - *create a list between 3 and 7 elements, with number names as the values*
 
@@ -582,14 +609,6 @@ Select a value from a CSV file line by modulo division against the number of lin
 
 - long -> ModuloCSVLineToString(String: filename, String: fieldname) -> String
   - *example:* `ModuloCSVLineToString('data/myfile.csv','lat')`
-  - *load values for 'lat' from the CSV file myfile.csv.*
-
-## ModuloCSVLineToUUID
-
-Select a value from a CSV file line by modulo division against the number of lines in the file. The second parameter is the field name, and this must be provided in the CSV header line as written. This version of the function is a type-safe getter for UUID values. @deprecated Use ModuloCSVLineToString(); ToUUID() instead
-
-- long -> ModuloCSVLineToUUID(String: filename, String: fieldname) -> UUID
-  - *example:* `ModuloCSVLineToUUID('data/myfile.csv','lat')`
   - *load values for 'lat' from the CSV file myfile.csv.*
 
 ## ModuloLineToString
@@ -757,6 +776,12 @@ Matches a digit sequence in the current thread name and caches it in a thread lo
 
 - long -> ThreadNumToLong() -> long
 
+## ToBase64
+
+Takes a bytebuffer and turns it into a base64 string
+
+- java.nio.ByteBuffer -> ToBase64() -> String
+
 ## ToHashedUUID
 
 This function provides a stable hashing of the input value to a version 4 (Random) UUID.
@@ -799,7 +824,7 @@ other unsorted and stable order as input values vary from 0L to Long.MAX_VALUE.
 Generally, you want to leave out the 'map' directive to get "random sampling"
 of these values.
 
-This function works the same as the three-parameter form of WeightedStrings,
+This function works the same as the three-parametered form of WeightedStrings,
 which is deprecated in lieu of this one. Use this one instead.
 
 - long -> WeightedStringsFromCSV(String: valueColumn, String: weightColumn, String[]...: filenames) -> String

@@ -10,23 +10,35 @@ determinism. This makes it possible to test systems which depend on UUIDs but wh
 This is strictly for testing use. Breaking the universally-unique properties of UUIDs in production systems is a bad
 idea. Yet, in testing, this determinism is quite useful.
 
+---
+title: datetime functions
+weight: 20
+---
+
+Functions in this category know about times and dates, datetimes, seconds or millisecond epoch times, and so forth.
+
+Some of the functions in this category are designed to allow testing of UUID types which are usually designed to avoid
+determinism. This makes it possible to test systems which depend on UUIDs but which require determinism in test data.
+This is strictly for testing use. Breaking the universally-unique properties of UUIDs in production systems is a bad
+idea. Yet, in testing, this determinism is quite useful.
+
 ## CqlDurationFunctions
 
 Map a long value into a CQL Duration object based on a set of field functions.
 
-- long -> CqlDurationFunctions(Object: monthsFunc, Object: daysFunc, Object: nanosFunc) -> com.datastax.driver.core.Duration
+- long -> CqlDurationFunctions(Object: monthsFunc, Object: daysFunc, Object: nanosFunc) -> com.datastax.oss.driver.api.core.data.CqlDuration
   - *notes:* Create a CQL Duration object from the two provided field functions. The months field is always set to
 zero in this form.
 @param monthsFunc A function that will yield the months value
 @param daysFunc A function that will yield the days value
-@param nanosFunc A function that will yield the nanos value
+@param nanosFunc A function that will yeild the nanos value
 
 
-- long -> CqlDurationFunctions(Object: daysFunc, Object: nanosFunc) -> com.datastax.driver.core.Duration
+- long -> CqlDurationFunctions(Object: daysFunc, Object: nanosFunc) -> com.datastax.oss.driver.api.core.data.CqlDuration
   - *notes:* Create a CQL Duration object from the two provided field functions. The months field is always set to
 zero in this form.
 @param daysFunc A function that will yield the days value
-@param nanosFunc A function that will yield the nanos value
+@param nanosFunc A function that will yeild the nanos value
 
 
 ## CurrentEpochMillis
@@ -43,43 +55,33 @@ CAUTION: This does not produce deterministic test data.
 
 ## DateRangeDuring
 
-Takes an input as a reference point in epoch time, and converts it to a DateRange, with the bounds set to the lower and upper timestamps which align to the specified precision. You can use any of these precisions to control the bounds around the provided timestamp: millisecond, second, minute, hour, day, month, or year.
+Takes an input as a reference point in epoch time, and converts it to a DateRange, with the bounds set to the lower and upper timestamps which align to the specified precision. You can use any of these precisions to control the bounds around the provided timestamp: millisecond, second, minute, hour, day, month, or year. If the zoneid is not specified, it defaults to "GMT". If the zoneid is set to "default", then the zoneid is set to the default for the JVM. Otherwise, the specified zone is used.
 
-- long -> DateRangeDuring(String: precision) -> com.datastax.driver.dse.search.DateRange
+- long -> DateRangeDuring(String: precision) -> com.datastax.dse.driver.api.core.data.time.DateRange
   - *example:* `DateRangeDuring('millisecond')}`
   - *Convert the incoming millisecond to an equivalent DateRange*
   - *example:* `DateRangeDuring('minute')}`
   - *Convert the incoming millisecond to a DateRange for the minute in which the millisecond falls*
 
+- long -> DateRangeDuring(String: precision, String: zoneid) -> com.datastax.dse.driver.api.core.data.time.DateRange
+
 ## DateRangeFunc
 
-Uses the precision and the two functions provided to create a DateRange. You can use any of these precisions to control the bounds around the provided timestamp: millisecond, second, minute, hour, day, month, or year.
+Uses the precision and the two functions provided to create a DateRange. You can use any of these precisions to control the bounds around the provided timestamp: millisecond, second, minute, hour, day, month, or year. If the zoneid is not specified, it defaults to "GMT". If the zoneid is set to "default", then the zoneid is set to the default for the JVM. Otherwise, the specified zone is used.
 
-- long -> DateRangeFunc(String: precision, function.LongUnaryOperator: lower, function.LongUnaryOperator: upper) -> com.datastax.driver.dse.search.DateRange
+- long -> DateRangeFunc(String: precision, Object: lowerFunc, Object: upperFunc) -> com.datastax.dse.driver.api.core.data.time.DateRange
   - *example:* `StartingEpochMillis('2017-01-01 23:59:59'); DateRangeFunc('second',Identity(),Add(3600000L)`
   - *Create 1-minute date ranges starting at 2017-01-01 23:59:59*
 
-- long -> DateRangeFunc(String: precision, function.LongFunction<Long>: lower, function.LongFunction<Long>: upper) -> com.datastax.driver.dse.search.DateRange
-
-- long -> DateRangeFunc(String: precision, function.Function<Long,Long>: lower, function.Function<Long,Long>: upper) -> com.datastax.driver.dse.search.DateRange
-
-- long -> DateRangeFunc(String: precision, function.LongUnaryOperator: lower, function.Function<Long,Long>: upper) -> com.datastax.driver.dse.search.DateRange
-
-- long -> DateRangeFunc(String: precision, function.LongFunction<Long>: lower, function.LongUnaryOperator: upper) -> com.datastax.driver.dse.search.DateRange
-
-- long -> DateRangeFunc(String: precision, function.Function<Long,Long>: lower, function.LongFunction<Long>: upper) -> com.datastax.driver.dse.search.DateRange
-
-- long -> DateRangeFunc(String: precision, function.LongUnaryOperator: lower, function.LongFunction<Long>: upper) -> com.datastax.driver.dse.search.DateRange
-
-- long -> DateRangeFunc(String: precision, function.LongFunction<Long>: lower, function.Function<Long,Long>: upper) -> com.datastax.driver.dse.search.DateRange
-
-- long -> DateRangeFunc(String: precision, function.Function<Long,Long>: lower, function.LongUnaryOperator: upper) -> com.datastax.driver.dse.search.DateRange
+- long -> DateRangeFunc(String: precision, Object: lowerFunc, Object: upperFunc, String: zoneid) -> com.datastax.dse.driver.api.core.data.time.DateRange
 
 ## DateRangeOnOrAfter
 
-Takes an input as a reference point in epoch time, and converts it to a DateRange, with the lower bounds set to the lower bound of the precision and millisecond provided, and with no upper bound. You can use any of these precisions to control the bounds around the provided timestamp: millisecond, second, minute, hour, day, month, or year.
+Takes an input as a reference point in epoch time, and converts it to a DateRange, with the lower bounds set to the lower bound of the precision and millisecond provided, and with no upper bound. You can use any of these precisions to control the bounds around the provided timestamp: millisecond, second, minute, hour, day, month, or year. If the zoneid is not specified, it defaults to "GMT". If the zoneid is set to "default", then the zoneid is set to the default for the JVM. Otherwise, the specified zone is used.
 
-- long -> DateRangeOnOrAfter(String: precision) -> com.datastax.driver.dse.search.DateRange
+- long -> DateRangeOnOrAfter(String: precision, String: zoneid) -> com.datastax.dse.driver.api.core.data.time.DateRange
+
+- long -> DateRangeOnOrAfter(String: precision) -> com.datastax.dse.driver.api.core.data.time.DateRange
   - *example:* `DateRangeOnOrAfter('millisecond')}`
   - *Convert the incoming millisecond to an match any time on or after*
   - *example:* `DateRangeOnOrAfter('minute')}`
@@ -87,20 +89,22 @@ Takes an input as a reference point in epoch time, and converts it to a DateRang
 
 ## DateRangeOnOrBefore
 
-Takes an input as a reference point in epoch time, and converts it to a DateRange, with the upper bound set to the upper bound of the precision and millisecond provided, and with no lower bound. You can use any of these precisions to control the bounds around the provided timestamp: millisecond, second, minute, hour, day, month, or year.
+Takes an input as a reference point in epoch time, and converts it to a DateRange, with the upper bound set to the upper bound of the precision and millisecond provided, and with no lower bound. You can use any of these precisions to control the bounds around the provided timestamp: millisecond, second, minute, hour, day, month, or year. If the zoneid is not specified, it defaults to "GMT". If the zoneid is set to "default", then the zoneid is set to the default for the JVM. Otherwise, the specified zone is used.
 
-- long -> DateRangeOnOrBefore(String: precision) -> com.datastax.driver.dse.search.DateRange
+- long -> DateRangeOnOrBefore(String: precision) -> com.datastax.dse.driver.api.core.data.time.DateRange
   - *example:* `DateRangeOnOrBefore('millisecond')}`
   - *Convert the incoming millisecond to match anything on or before it.*
   - *example:* `DateRangeOnOrBefore('minute')}`
   - *Convert the incoming millisecond to match anything on or before the minute in which the millisecond falls*
+
+- long -> DateRangeOnOrBefore(String: precision, String: zoneid) -> com.datastax.dse.driver.api.core.data.time.DateRange
 
 ## DateRangeParser
 
 Parses the DateRange format according to [Date Range Formatting](https://lucene.apache.org/solr/guide/6_6/working-with-dates
 .html#WorkingwithDates-DateRangeFormatting). When possible it is more efficient to use the other DateRange methods since they do not require parsing.
 
-- String -> DateRangeParser(String: precision) -> com.datastax.driver.dse.search.DateRange
+- String -> DateRangeParser(String: precision) -> com.datastax.dse.driver.api.core.data.time.DateRange
   - *example:* `DateRangeParser()}`
   - *Convert inputs like '[1970-01-01T00:00:00 TO 1970-01-01T00:00:00]' into DateRanges *
 
@@ -134,9 +138,11 @@ At initialization, the default is parsed as a sanity check.
 
 ## EpochMillisToCqlLocalDate
 
-Converts epoch millis to a com.datastax.driver.core.{@link LocalDate} object, as the number of milliseconds since January 1st, 1970 GMT.
+Converts epoch millis to a java.time.LocalDate, which takes the place of the previous CQL-specific LocalDate. if a zoneid of 'default' is provided, then the time zone is set by the default for the JVM. If not, then a valid ZoneId is looked up. The no-args version uses GMT.
 
-- long -> EpochMillisToCqlLocalDate() -> com.datastax.driver.core.LocalDate
+- long -> EpochMillisToCqlLocalDate(String: zoneid) -> java.time.LocalDate
+
+- long -> EpochMillisToCqlLocalDate() -> java.time.LocalDate
   - *example:* `EpochMillisToJavaLocalDate()`
   - *Yields the LocalDate for the millis in GMT*
 
@@ -168,7 +174,7 @@ Converts epoch millis to a java.time.{@link LocalDateTime} object, using either 
 
 Days since Jan 1st 1970
 
-- long -> LongToLocalDateDays() -> com.datastax.driver.core.LocalDate
+- long -> LongToLocalDateDays() -> java.time.LocalDate
   - *example:* `LongToLocalDateDays()`
   - *take the cycle number and turn it into a LocalDate based on days since 1970*
 
@@ -186,11 +192,17 @@ This function wraps an epoch time in milliseconds into a String as specified in 
 
 - long -> StringDateWrapper(String: format) -> String
 
+## ToCqlDuration
+
+Convert the input double value into a CQL {@link CqlDuration} object, by setting months to zero, and using the fractional part as part of a day, assuming 24-hour days.
+
+- double -> ToCqlDuration() -> com.datastax.oss.driver.api.core.data.CqlDuration
+
 ## ToCqlDurationNanos
 
-Convert the input value into a {@link com.datastax.driver.core.Duration} by reading the input as total nanoseconds, assuming 30-month days.
+Convert the input value into a {@link CqlDuration} by reading the input as total nanoseconds, assuming 30-month days.
 
-- long -> ToCqlDurationNanos() -> com.datastax.driver.core.Duration
+- long -> ToCqlDurationNanos() -> com.datastax.oss.driver.api.core.data.CqlDuration
 
 ## ToDate
 
@@ -384,6 +396,20 @@ more practical dispersion of values over reboots, etc.
   - *example:* `ToFinestTimeUUID('20171231T1015.243',123,456)`
   - *ms basetime, specified node and clock data*
 
+## ToJavaInstant
+
+Convert the input epoch millisecond to a {@code Java Instant}, by multiplying and then dividing by the provided parameters. This is in contrast to the ToJodaInstant function which does the same thing using the Joda API Type.
+
+- long -> ToJavaInstant(int: millis_multiplier, int: millis_divisor) -> java.time.Instant
+  - *example:* `ToDate(86400000,2)`
+  - *produce two Date values per day*
+
+- long -> ToJavaInstant(int: spacing) -> java.time.Instant
+  - *example:* `ToDate(86400000)`
+  - *produce a single Date() per day*
+
+- long -> ToJavaInstant() -> java.time.Instant
+
 ## ToJodaDateTime
 
 Convert the input value to a {@code org.joda.time.DateTime}
@@ -393,6 +419,36 @@ Convert the input value to a {@code org.joda.time.DateTime}
 - long -> ToJodaDateTime(String: spacing) -> org.joda.time.DateTime
 
 - long -> ToJodaDateTime() -> org.joda.time.DateTime
+
+## ToJodaInstant
+
+Convert the input epoch millisecond to a {@code JodaTime Instant}, by multiplying and then dividing by the provided parameters. This is in contrast to the ToJavaInstant function which does the same thing, only using the Java API type.
+
+- long -> ToJodaInstant(int: millis_multiplier, int: millis_divisor) -> org.joda.time.Instant
+  - *example:* `ToDate(86400000,2)`
+  - *produce two Date values per day*
+
+- long -> ToJodaInstant(int: spacing) -> org.joda.time.Instant
+  - *example:* `ToDate(86400000)`
+  - *produce a single Date() per day*
+
+- long -> ToJodaInstant() -> org.joda.time.Instant
+
+## ToLocalTime
+
+Convert the input epoch millisecond to a {@code Java Instant}, by multiplying and then dividing by the provided parameters, then convert the result to a java {@link LocalTime}.
+
+- long -> ToLocalTime(int: millis_multiplier, int: millis_divisor, String: zoneid) -> java.time.LocalTime
+
+- long -> ToLocalTime(int: millis_multiplier, int: millis_divisor) -> java.time.LocalTime
+  - *example:* `ToLocalTime(86400000,2)`
+  - *produce two LocalTime values per day*
+
+- long -> ToLocalTime(int: spacing) -> java.time.LocalTime
+  - *example:* `ToLocalTime(86400000)`
+  - *produce a single LocalTime per day*
+
+- long -> ToLocalTime() -> java.time.LocalTime
 
 ## ToMillisAtStartOfDay
 
@@ -512,13 +568,13 @@ Return the epoch milliseconds at the start of the year for the given epoch milli
 
 ## ToTimeUUIDMax
 
-Converts a long timestamp in epoch millis form into a Version 1 TimeUUID according to [RFC 4122](https://www.ietf.org/rfc/rfc4122.txt). This form uses {@link UUIDs#startOf(long)}
+Converts a long timestamp in epoch millis form into a Version 1 TimeUUID according to [RFC 4122](https://www.ietf.org/rfc/rfc4122.txt). This form uses {@link Uuids#endOf(long)} (long)}
 
 - long -> ToTimeUUIDMax() -> UUID
 
 ## ToTimeUUIDMin
 
-Converts a long timestamp in epoch millis form into a Version 1 TimeUUID according to [RFC 4122](https://www.ietf.org/rfc/rfc4122.txt). This form uses {@link UUIDs#startOf(long)}
+Converts a long timestamp in epoch millis form into a Version 1 TimeUUID according to [RFC 4122](https://www.ietf.org/rfc/rfc4122.txt). This form uses {@link Uuids#startOf(long)}
 
 - long -> ToTimeUUIDMin() -> UUID
 

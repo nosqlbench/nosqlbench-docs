@@ -6,13 +6,21 @@ weight: 30
 Conversion functions simply allow values of one type
 to be converted to another type in an obvious way.
 
+---
+title: conversion functions
+weight: 30
+---
+
+Conversion functions simply allow values of one type
+to be converted to another type in an obvious way.
+
 ## ByteBufferSizedHashed
 
 Create a ByteBuffer from a long input based on a provided size function. As a 'Sized' function, the first argument is a function which determines the size of the resulting ByteBuffer. As a 'Hashed' function, the input value is hashed again before being used as value.
 
 - long -> ByteBufferSizedHashed(int: size) -> java.nio.ByteBuffer
   - *example:* `ByteBufferSizedHashed(16)`
-  - *Functionally identical to HashedtoByteBuffer(16) but using dynamic sizing implementation*
+  - *Functionally identical to HashedToByteBuffer(16) but using dynamic sizing implementation*
   - *example:* `ByteBufferSizedHashed(HashRange(10, 14))`
   - *Create a ByteBuffer with variable limit (10 to 14)*
 
@@ -45,6 +53,26 @@ Computes the digest of the ByteBuffer on input and stores it in the output ByteB
 Convert the input double value to the closest float value.
 
 - double -> DoubleToFloat() -> Float
+
+## EscapeJSON
+
+Escape all special characters which are required to be escaped when found within JSON content according to the JSON spec
+
+```
+{@code
+\b  Backspace (ascii code 08)
+\f  Form feed (ascii code 0C)
+\n  New line
+\r  Carriage return
+\t  Tab
+\"  Double quote
+\\  Backslash character
+\/  Forward slash
+}
+```
+
+
+- String -> EscapeJSON() -> String
 
 ## Flow
 
@@ -84,7 +112,7 @@ encode HTML Entities
 
 - String -> HTMLEntityEncode() -> String
   - *example:* `HTMLEntityEncode()`
-  - *Encode/Escape input into HTML4 valid entities.*
+  - *Encode/Escape input into HTML4 valid entties.*
 
 ## LongToByte
 
@@ -159,6 +187,10 @@ Computes the Base64 representation of the byte image of the input long.
 - String -> ToBase64String() -> String
   - *example:* `ToBase64String()`
   - *encode any input as Base64*
+
+- UUID -> ToBase64String() -> String
+  - *example:* `ToBase64String()`
+  - *Encode the bits of a UUID into a Base64 String*
 
 - long -> ToBase64String() -> String
   - *example:* `ToBase64String()`
@@ -334,9 +366,9 @@ Convert the input string to a character buffer
 
 ## ToCqlDurationNanos
 
-Convert the input value into a {@link com.datastax.driver.core.Duration} by reading the input as total nanoseconds, assuming 30-month days.
+Convert the input value into a {@link CqlDuration} by reading the input as total nanoseconds, assuming 30-month days.
 
-- long -> ToCqlDurationNanos() -> com.datastax.driver.core.Duration
+- long -> ToCqlDurationNanos() -> com.datastax.oss.driver.api.core.data.CqlDuration
 
 ## ToDouble
 
