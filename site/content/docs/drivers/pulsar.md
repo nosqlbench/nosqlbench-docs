@@ -1,6 +1,6 @@
 ---
-weight: 0
 title: Table of contents
+weight: 0
 ---
 # Table of contents
 - [1. Overview](#1-overview)

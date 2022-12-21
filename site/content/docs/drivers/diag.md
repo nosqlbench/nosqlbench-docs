@@ -1,6 +1,6 @@
 ---
-weight: 0
 title: diag
+weight: 0
 ---
 # diag
 

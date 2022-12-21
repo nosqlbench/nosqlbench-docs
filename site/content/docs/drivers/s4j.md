@@ -1,6 +1,6 @@
 ---
-weight: 0
 title: S4J Adapter
+weight: 0
 ---
 # S4J Adapter
 - [1. Overview](#1-overview)
