@@ -1,6 +1,6 @@
 ---
-title: stdout activity type
 weight: 0
+title: stdout activity type
 ---
 # stdout activity type
 
