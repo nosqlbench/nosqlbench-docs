@@ -689,14 +689,6 @@ Replace all occurrences of the regular expression with the replacement string. N
   - *example:* `ReplaceRegex('[one]','two')`
   - *Replace all occurrences of 'o' or 'n' or 'e' with 'two'*
 
-## Scale
-
-Scale the input by the factor provided. @deprecated use Mul(...) instead
-
-- long -> Scale(double: scaleFactor) -> int
-
-- int -> Scale(double: scaleFactor) -> int
-
 ## Shuffle
 
 This function provides a low-overhead shuffling effect without loading elements into memory. It uses a bundled dataset of pre-computed Galois LFSR shift register configurations, along with a down-sampling method to provide amortized virtual shuffling with minimal memory usage. Essentially, this guarantees that every value in the specified range will be seen at least once before the cycle repeats. However, since the order of traversal of these values is dependent on the LFSR configuration, some orders will appear much more random than others depending on where you are in the traversal cycle. This function \*does\* yield values that are deterministic.
