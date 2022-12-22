@@ -17,11 +17,23 @@ title = 'Join our Community'
 content = '<a href="https://discord.gg/dBHRakusMN"><img src="Discord-Logo-Wordmark-Color.png" style="width:117px;height:32px;"></img></a>'
 
 [[extra.list]]
-title = "Binding Functions"
-content = '<a href="docs/bindings">What are the high-level function concepts?</a>'
+title = "WHY NoSQLBench?"
+content = '<a href="docs/nosqlbench/showcase">Why NoSQLBench was created?</a>'
+
+[[extra.list]]
+title = "Concepts"
+content = '<a href="docs/nosqlbench/core-concepts">What are the high-level building blocks?</a>'
+
+[[extra.list]]
+title = "Workloads 101"
+content = '<a href="docs/workloads_101/00-designing-workloads">How can I build a custom workload?</a>'
 
 [[extra.list]]
 title = "NoSQLBench Drivers"
 content = '<a href="docs/drivers/">What drivers are available for NoSQLBench?</a>'
+
+[[extra.list]]
+title = "Contributing"
+content = '<a href="docs/nosqlbench/community">How can I contribute to NoSQLBench?</a>'
 
 +++
