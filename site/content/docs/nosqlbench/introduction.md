@@ -3,7 +3,6 @@ title: "NoSQLBench"
 description: "A high level description of NoSQLBench"
 date: "2021-11-09T15:35:37"
 updated: "2021-11-09T15:35:37"
-template: "docs/page.html"
 sort_by: "weight"
 weight: 1
 

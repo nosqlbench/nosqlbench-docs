@@ -1,6 +1,5 @@
 ---
 title: "Core Activity Parameters"
-template: "docs/page.html"
 weight: 20
 ---
 
