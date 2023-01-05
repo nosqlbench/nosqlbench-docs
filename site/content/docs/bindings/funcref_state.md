@@ -1,6 +1,6 @@
 ---
-title: state functions
 weight: 30
+title: state functions
 ---
 
 Functions in the state category allow you to do things with side-effects in the function flow. Specifically, they allow

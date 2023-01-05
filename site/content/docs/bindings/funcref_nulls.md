@@ -1,6 +1,6 @@
 ---
-title: null functions
 weight: 40
+title: null functions
 ---
 
 These functions can generate null values. When using nulls in your binding recipes, ensure that you don't generate them
