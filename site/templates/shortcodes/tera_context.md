@@ -5,15 +5,18 @@
 {# from https://github.com/ryshu/jsonpath-picker #}
 
 <div id="dests" type="text"></div>
+<div id="treeview">
 <input class="path" type="text">
 <pre id="json-renderer"></pre>
+</div>
 
 <script type="text/javascript">
 let data = {{ __tera_context | as_str }};
 source = document.querySelector('#json-renderer');
 dest = document.querySelectorAll('.path');
+JPPicker.render(source, data, dest, {outputCollapsed:true});
+document.querySelector("div#treeview a").click();
 
-JPPicker.render(source, data, dest);
 </script>
 <pre><code>
 {# { __tera_context | as_str } #}
