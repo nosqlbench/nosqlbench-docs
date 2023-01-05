@@ -1,6 +1,6 @@
 ---
-title: general functions
 weight: 20
+title: general functions
 ---
 
 These functions have no particular category, so they ended up here by default.
