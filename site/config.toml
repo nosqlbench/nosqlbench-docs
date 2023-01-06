@@ -1,13 +1,13 @@
 # do NOT include a trailing slash on the base URL for web urls
 base_url = "http://previewdocs.nosqlbench.io"
 #base_url = "/home/jieiku/.dev/abridge/public/" # for locally usable build directly from disk, also set in [extra] section uglyurls = true
-title = "Abridge"
-description = "Abridge is a fast and lightweight Zola theme using semantic html, abridge.css class-light CSS, and No Mandatory JS."
+title = "NoSQLBench Maintainers"
+description = "NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System."
 default_language = "en"
 output_dir = "public"
 compile_sass = true
 minify_html = false
-generate_feed = true
+generate_feed = false
 feed_filename = "atom.xml"
 #ignored_content = ["*.{graphml,xlsx}", "temp.*"]
 #hard_link_static = false # set to true to hard link instead of copying, useful for very large files.
@@ -54,16 +54,18 @@ meta_post = { position="top", size="s95", author=true, readtime=false, readstrin
 ## divider:    "&middot;"    "&bull;"    " "
 
 footer_size = "s90" # size: s95, s90, s85, s80, s75, s70, false(full size)
-footer_credit = true
-#footer_credit_override = '<p class="s90">Powered by <a href="https://www.getzola.org/" target="_blank">Zola</a> &#38; <a href="https://github.com/Jieiku/abridge/" target="_blank">Abridge</a></p>'
+footer_credit = false
+footer_credit_override = ''
+#footer_credit_override='<p class="s90">Powered by <a href="https://www.getzola.org/" target="_blank">Zola</a> &#38; <a href="https://github.com/Jieiku/abridge/" target="_blank">Abridge</a></p>'
 
 #uncomment one of the two lines, or neither, depending on which type of logo you want to use:
+logo = { file="nb5.png", width="64", height="65", alt="NoSQLBench5", text="NoSQLBench"}
 #logo = { file="logo.svg", width="32", height="32", alt="Abridge", text="bridge" }
 #textlogo = '<font color="#f90">A</font>bridge'
-textlogo = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#f90" viewBox="0 0 96 96" width="32" height="32"><path stroke-width="14" d="M14 99 46 7h4l32 92"/><path stroke-width="9" d="M-3 82c43-26 59-26 102 0"/><path stroke-linecap="round" stroke-width="1.5" d="M94 72v7m-5-9.8v7m-5-9.8v7.1M79 64v7M63 57.7v7m-5-8.2v7m-5-7.8v7m-5-7.2v7m-5-6.7v7m-5-6.3v7m-5-5.8v7M17 64v7m-5-4.6v7m-5-4.2v7M2 72v7"/></svg>bridge'
+#textlogo = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#f90" viewBox="0 0 96 96" width="32" height="32"><path stroke-width="14" d="M14 99 46 7h4l32 92"/><path stroke-width="9" d="M-3 82c43-26 59-26 102 0"/><path stroke-linecap="round" stroke-width="1.5" d="M94 72v7m-5-9.8v7m-5-9.8v7.1M79 64v7M63 57.7v7m-5-8.2v7m-5-7.8v7m-5-7.2v7m-5-6.7v7m-5-6.3v7m-5-5.8v7M17 64v7m-5-4.6v7m-5-4.2v7M2 72v7"/></svg>bridge'
 
 sitedesc = false # enables or disables the display of the site description below the logo.
-#copyright_start_year = 2019  # optional
+copyright_start_year = 2023  # optional
 #copyright_end_year = 2020  # optional, recommend leaving unset, zola build will set this to current year by default
 headhr = false # show or hide horizontal rule below header
 foothr = true # show or hide horizontal rule above footer
@@ -195,25 +197,25 @@ seo = true  # enable or disable seo-related meta tags: opengraph, facebook, twit
 
 # Footer social links; full options listed in macros/social.html
 [extra.social]
-feed = true
-mail_encode = true # This obfuscates your email address, javascript is used to decode it at page load.
-mail = "name@example.com"
-mastodon = "@your-user-name"
-element = "matrix.example.com"
-#matrix = "matrix.example.com"
-buymeacoffee = "your-user-name"
-twitter = "your-user-name"
-facebook = "your-user-name"
-linkedin = "your-user-name"
-gitlab = "your-user-name"
-github = "your-user-name"
-github_sponsor = "your-user-name"
-bitbucket = "your-user-name"
-python = "your-user-name"
-docker = "your-user-name"
-stack = "your-user-name"
-instagram = "your-user-name"
-pinterest = "your-user-name"
-twitch = "your-user-name"
-youtube = "channel/your-channel-id"
-researchgate = "your-profile-id"
+#feed = true
+#mail_encode = true # This obfuscates your email address, javascript is used to decode it at page load.
+#mail = "name@example.com"
+#mastodon = "@your-user-name"
+#element = "matrix.example.com"
+##matrix = "matrix.example.com"
+#buymeacoffee = "your-user-name"
+#twitter = "your-user-name"
+#facebook = "your-user-name"
+#linkedin = "your-user-name"
+#gitlab = "your-user-name"
+#github = "your-user-name"
+#github_sponsor = "your-user-name"
+#bitbucket = "your-user-name"
+#python = "your-user-name"
+#docker = "your-user-name"
+#stack = "your-user-name"
+#instagram = "your-user-name"
+#pinterest = "your-user-name"
+#twitch = "your-user-name"
+#youtube = "channel/your-channel-id"
+#researchgate = "your-profile-id"
