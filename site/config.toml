@@ -21,7 +21,7 @@ theme = "abridge"
 build_search_index = true
 [search]                # Options specific to elasticlunr search.
 include_title = true        # include title of page/section in index
-include_description = false # include description of page/section in index
+include_description = true # include description of page/section in index
 include_content = true      # include rendered content of page/section in index
 # Truncate content at nth character. Useful if index size significantly slows down the site.
 # truncate_content_length = 100
@@ -43,8 +43,9 @@ title_separator = "|"  # Separator between title and title_addition, set as |, -
 # To disable title_addition but keep built in page additions eg, Posts page: "Posts | Abridge" set title_addition to an empty string
 # To always set the page title exactly eg "Abridge" then comment out the below line (not recommend, bad for SEO)
 title_addition = "Fast & Lightweight Zola Theme" # a default value for title addition
-recent = true # TOC / index
+recent = false # TOC / index
 recent_items = 9
+toc = true
 author = "NoSQLBench Maintainers" # Put Your Name here
 
 title_size_index = "s85" # size: s95, s90, s85, s80, s75, s70, false(full size)
@@ -59,7 +60,9 @@ footer_credit_override = ''
 #footer_credit_override='<p class="s90">Powered by <a href="https://www.getzola.org/" target="_blank">Zola</a> &#38; <a href="https://github.com/Jieiku/abridge/" target="_blank">Abridge</a></p>'
 
 #uncomment one of the two lines, or neither, depending on which type of logo you want to use:
-logo = { file="nb5.png", width="64", height="65", alt="NoSQLBench5", text="NoSQLBench"}
+logo = { alt="NoSQLBench5", text="NoSQLBench"}
+#logo = { file="engine.svg", width="64", height="64", alt="NoSQLBench5", text="NoSQLBench"}
+#logo = { file="nb5.png", width=32, height="32", alt="NoSQLBench5", text="NoSQLBench"}
 #logo = { file="logo.svg", width="32", height="32", alt="Abridge", text="bridge" }
 #textlogo = '<font color="#f90">A</font>bridge'
 #textlogo = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#f90" viewBox="0 0 96 96" width="32" height="32"><path stroke-width="14" d="M14 99 46 7h4l32 92"/><path stroke-width="9" d="M-3 82c43-26 59-26 102 0"/><path stroke-linecap="round" stroke-width="1.5" d="M94 72v7m-5-9.8v7m-5-9.8v7.1M79 64v7M63 57.7v7m-5-8.2v7m-5-7.8v7m-5-7.2v7m-5-6.7v7m-5-6.3v7m-5-5.8v7M17 64v7m-5-4.6v7m-5-4.2v7M2 72v7"/></svg>bridge'
@@ -71,17 +74,17 @@ headhr = false # show or hide horizontal rule below header
 foothr = true # show or hide horizontal rule above footer
 
 menu = [
-    {url = "/about/", name = "About", slash = true, blank = false},
-    {url = "/posts/", name = "Posts", slash = true, blank = false},
-    {url = "/categories/", name = "Categories", slash = true, blank = false},
-    {url = "/tags/", name = "Tags", slash = true, blank = false},
+    {url = "/getting_started/", name = "Getting Started", slash = true, blank = false},
+#    {url = "/posts/", name = "Posts", slash = true, blank = false},
+#    {url = "/categories/", name = "Categories", slash = true, blank = false},
+#    {url = "/tags/", name = "Tags", slash = true, blank = false},
 ]
-menu_footer = [
-    {url = "/about/", name = "About", slash = true, blank = false},
-    {url = "/contact/", name = "Contact", slash = true, blank = false},
-    {url = "/privacy/", name = "Privacy", slash = true, blank = false},
-    {url = "/sitemap.xml", name = "Sitemap", slash = false, blank = true},
-]
+#menu_footer = [
+#    {url = "/about/", name = "About", slash = true, blank = false},
+#    {url = "/contact/", name = "Contact", slash = true, blank = false},
+#    {url = "/privacy/", name = "Privacy", slash = true, blank = false},
+#    {url = "/sitemap.xml", name = "Sitemap", slash = false, blank = true},
+#]
 
 # Security Headers should preferably be set by your webserver (Nginx, Apache) https://observatory.mozilla.org  https://csp-evaluator.withgoogle.com/
 # If you are unable to load your security headers with your webserver, this will load a couple of them as meta tags.
@@ -98,9 +101,9 @@ menu_footer = [
 integrity = true # setting this to false is useful for developing, should normally be true.
 js_bundle = true # multiple javascript files combined into a single file
 js_switcher = true
-js_search_facade = true # Do not load search until user interaction with search.
+js_search_facade = false # Do not load search until user interaction with search.
 # search library to use, valid values are: false, "elasticlunr", "tinysearch", "stork"
-search_library = false
+search_library = "elasticlunr"
 
 js_search_index = "search_index.en.js" # Separate Always, generated each build
 js_prestyle = "prestyle.js"# Bundleable - used to preload: FontAwesome, Katex, external Google Fonts

@@ -9,7 +9,7 @@ This section touches on topics of using randomized data within NoSQLBench tests.
 
 The benefits of using procedural generation for the purposes of load testing is taken as granted in
 this section. For a more thorough discussion on the assumed merits, please see the showcase 
-section for [Virtual DataSet](@/docs/nosqlbench/showcase.md#virtual-data-set)
+section for [Virtual DataSet](@/nosqlbench/showcase.md#virtual-data-set)
 
 ## Basic Theory
 

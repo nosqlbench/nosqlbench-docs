@@ -32,7 +32,7 @@ test to be framed and represented properly.
 Metrics which are most often used include:
 - response time, one of (or all of)
   - p99 response time (historically called _latency_, but see the section on 
-    [Timing Terms](@/docs/reference/timing_terms.md))
+    [Timing Terms](@/reference/timing_terms.md))
   - read-specific p99 response time, as read patterns in systems are often much more indicative 
     of overally scaling character
 - Dataset Size
@@ -85,7 +85,7 @@ This includes key details, like:
 - What questions you aim to answer - What is the purpose of the test?
 - A high-level outline of the testing method or workflow used.
 - Details on how metrics are measured
-  (see [Vantage Points](@/docs/testing_at_scale/vantage_points.md))
+  (see [Vantage Points](@/testing_at_scale/vantage_points.md))
 - The basic formulae (like the nominal vs saturating rates above)
 - a direct and uncomplicated visual about the fundamental relationship between 
 the test parameters
