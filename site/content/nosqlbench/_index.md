@@ -6,9 +6,7 @@ updated = 2021-11-09T15:32:00
 sort_by = "weight"
 weight = 1
 draft = false
-# template = "context_template.html"
+template = "showpages.html"
 +++
 
 # NoSQLBench
-
-{{ tera_context() }}
