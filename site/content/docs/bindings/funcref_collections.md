@@ -1,6 +1,6 @@
 ---
-weight: 40
 title: collection functions
+weight: 40
 ---
 
 Collection functions allow you to construct Java Lists, Maps or Sets.
