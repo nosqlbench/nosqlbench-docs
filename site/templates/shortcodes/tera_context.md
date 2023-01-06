@@ -18,7 +18,4 @@ JPPicker.render(source, data, dest, {outputCollapsed:true});
 document.querySelector("div#treeview a").click();
 
 </script>
-<pre><code>
-{# { __tera_context | as_str } #}
-</code></pre>
 </div>
