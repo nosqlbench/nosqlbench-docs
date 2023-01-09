@@ -1,6 +1,6 @@
 ---
-weight: 0
 title: dynamodb driver
+weight: 0
 ---
 # dynamodb driver
 
