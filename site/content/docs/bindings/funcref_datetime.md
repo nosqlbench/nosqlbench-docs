@@ -1,6 +1,6 @@
 ---
-weight: 20
 title: datetime functions
+weight: 20
 ---
 
 Functions in this category know about times and dates, datetimes, seconds or millisecond epoch times, and so forth.
