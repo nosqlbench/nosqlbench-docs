@@ -124,8 +124,8 @@
 {%- endif %}
 {%- if toc %}
 <div class="toc" aria-hidden="true">
-  <!--<h4>page topics</h4>-->
   <div class="toc-sticky">
+    <h5>{{ active_page.title }}</h5>
     {%- for h in toc %}
     <div class="toc-item">
       <a class="subtext" href="{{h.permalink | safe}}">{{ h.title }}</a>
