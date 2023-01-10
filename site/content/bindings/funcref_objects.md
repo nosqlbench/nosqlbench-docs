@@ -1,7 +1,6 @@
 ---
 weight: 0
 title: Distance
-date: "2021-11-09T15:35:37"
 ---
 ## Distance
 
