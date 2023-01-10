@@ -13,7 +13,7 @@
  {%- if section.pages is defined and section.pages | length > 0 -%}
   {{- section.relative_path -}}
  {%- elif section.subsections | length == 0 -%}
-  {{- 'none_found for section' ~ section.relative_path -}}
+  {{- 'none_found for section ' ~ section.relative_path -}}
  {%- else -%}
   {%- for subsection_name in section.subsections -%}
    {%- set subsection = get_section(path=subsection_name) -%}
