@@ -17,8 +17,8 @@ This is where blocks become useful:
 
 ## Op Blocks Example
 
-```
-[test]$ cat > stdout-test.yaml
+```yaml
+# stdout-test.yaml
 bindings:
  alpha: Identity()
  beta: Combinations('u;n;u;s;e;d;')
@@ -31,8 +31,9 @@ blocks:
    - "{alpha},{beta}\n"
    bindings:
     beta: Combinations('b;l;o;c;k;2;-;COMBINATIONS;')
-# EOF (control-D in your terminal)
+```
 
+```shell
 [test]$ ./nb run driver=stdout workload=stdout-test cycles=10
 0,block1-C
 1,block2-O

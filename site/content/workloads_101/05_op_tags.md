@@ -46,15 +46,16 @@ filtering are:
 
 A demonstration:
 
-```
-[test]$ cat > stdout-test.yaml
+```yaml
+# stdout-test.yaml
 tags:
  name: foxtrot
  unit: bravo
 statements:
  - "I'm alive!\n"
-# EOF (control-D in your terminal)
+```
 
+```shell
 # no tag filter matches any
 [test]$ ./nb run driver=stdout workload=stdout-test
 I'm alive!

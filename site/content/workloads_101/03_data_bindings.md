@@ -33,7 +33,7 @@ The above bindings block is also a valid activity YAML, at least for the _stdout
 The _stdout_ activity can construct a statement template from the provided bindings if needed, so
 this is valid:
 
-```
+```shell
 [test]$ cat > stdout-test.yaml
     bindings:
      alpha: Identity()
@@ -75,8 +75,8 @@ If you combine the op template section and the bindings sections above into one 
 get a slightly different result, as the bindings apply to the operations that are provided, rather
 than creating a default op template for all provided bindings. See the example below:
 
-```
-[test]$ cat > stdout-test.yaml
+```yaml
+# stdout-test.yaml
 statements:
  - |
   This is a statement, and the file format doesn't
@@ -88,8 +88,9 @@ bindings:
  beta: NumberNameToString()
  gamma: Combinations('0-9A-F;0-9;A-Z;_;p;r;o;')
  delta: WeightedStrings('one:1;six:6;three:3;')
-# EOF (control-D in your terminal)
+```
 
+```shell
 [test]$ ./nb run driver=stdout workload=stdout-test cycles=10
 This is a statement, and the file format doesn't
 know how statements will be used!

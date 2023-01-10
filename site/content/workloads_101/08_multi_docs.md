@@ -22,8 +22,8 @@ separate logical documents, separated by a triple-dash.
 
 For example:
 
-```
-[test]$ cat > stdout-test.yaml
+```yaml
+# stdout-test.yaml
 bindings:
  docval: WeightedStrings('doc1.1:1;doc1.2:2;')
 statements:
@@ -34,7 +34,9 @@ bindings:
  numname: NumberNameToString()
 statements:
  - "doc2.number {numname}\n"
-# EOF (control-D in your terminal)
+```
+
+```shell
 [test]$ ./nb run driver=stdout workload=stdout-test cycles=10
 doc1.form1 doc1.1
 doc1.form2 doc1.2
