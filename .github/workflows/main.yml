@@ -14,4 +14,4 @@ jobs:
         uses: shalzz/zola-deploy-action@master
         env:
           BUILD_DIR: ./site
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.NBDROID_TOKEN }}
