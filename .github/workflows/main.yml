@@ -32,6 +32,8 @@ jobs:
 
       - name: 'Import Content'
         run: |
+          set -x
+          cd nosqlbench-build-docs
           ./doimport.sh
 
       - name: "commit imported changes"
@@ -39,6 +41,8 @@ jobs:
           NBDROID_NAME: ${{ secrets.NBDROID_NAME }}
           NBDROID_TOKEN: ${{ secrets.NBDROID_TOKEN }}
         run: |
+          set -x
+          pwd
           cd nosqlbench-build-docs
           git add site
           git add -u
