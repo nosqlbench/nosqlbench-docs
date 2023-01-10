@@ -1,6 +1,6 @@
 ---
 title: "Collection Bindings"
-weight: 40
+weight: 2
 ---
 
 Collection functions allow you to construct Java Lists, Maps or Sets. These functions often take the

@@ -1,6 +1,6 @@
 ---
 title: Binding Concepts
-weight: 10
+weight: 1
 ---
 
 NoSQLBench has a built-in library for the flexible management and expressive use of
