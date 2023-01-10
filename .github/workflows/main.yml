@@ -55,7 +55,6 @@ jobs:
     needs: import-generated
     runs-on: ubuntu-latest
     if: github.ref != 'refs/heads/master'
-    requires:
     steps:
       - name: 'Checkout'
         uses: actions/checkout@master
