@@ -1,0 +1,6 @@
+[submodule "site/themes/abridge"]
+    path = site/themes/abridge
+    url = https://github.com/jieiku/abridge.git
+[submodule "site/themes/abridge2"]
+	path = site/themes/abridge2
+	url = https://github.com/jieiku/abridge.git

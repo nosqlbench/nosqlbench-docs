@@ -1,7 +1,6 @@
 # do NOT include a trailing slash on the base URL for web urls
 base_url = "http://previewdocs.nosqlbench.io"
-#base_url = "/home/jieiku/.dev/abridge/public/" # for locally usable build directly from disk, also set in [extra] section uglyurls = true
-title = "NoSQLBench Maintainers"
+title = "NoSQLBench Project"
 description = "NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System."
 default_language = "en"
 output_dir = "public"
@@ -16,7 +15,7 @@ taxonomies = [
     {name = "tags", feed = true},
 ]
 
-theme = "abridge"
+theme = "abridge_modified"
 
 build_search_index = true
 [search]                # Options specific to elasticlunr search.
