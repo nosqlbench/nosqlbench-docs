@@ -96,13 +96,6 @@
 </div>
 
 <article>
-{{- macros::title_post(page=active_page, config=config) }}
-
-{%- if config.extra.meta_post.position %}
-  {%- if config.extra.meta_post.position == "top" or config.extra.meta_post.position == "both" %}
-    {{- macros::meta_post(page=active_page, config=config) }}
-  {%- endif %}
-{%- endif %}
 
 {{ active_page.content | safe }}
 
@@ -131,7 +124,7 @@
 {%- endif %}
 {%- if toc %}
 <div class="toc" aria-hidden="true">
-  <h4>page topics</h4>
+  <!--<h4>page topics</h4>-->
   <div class="toc-sticky">
     {%- for h in toc %}
     <div class="toc-item">

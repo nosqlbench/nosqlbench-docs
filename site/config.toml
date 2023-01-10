@@ -36,6 +36,7 @@ external_links_no_referrer = false # rel="noreferrer"
 smart_punctuation = false          # `...` to `…`, `"quote"` to `“curly”` etc
 
 [extra]
+supress_titles = false
 uglyurls = false # if set to true then links are generated with the full path. eg https://abridge.netlify.app/index.html
 language_code = "en-US"
 title_separator = "|"  # Separator between title and title_addition, set as |, -, _, etc
@@ -45,7 +46,7 @@ title_addition = "Fast & Lightweight Zola Theme" # a default value for title add
 recent = false # TOC / index
 recent_items = 9
 toc = true
-author = "NoSQLBench Maintainers" # Put Your Name here
+#author = "NoSQLBench Maintainers" # Put Your Name here
 
 title_size_index = "s85" # size: s95, s90, s85, s80, s75, s70, false(full size)
 meta_index = { position="bottom", size="s90", author=false, readtime=false, readstring="min", date=true, categories_tags=true, divider=" " }
@@ -59,7 +60,7 @@ footer_credit_override = ''
 #footer_credit_override='<p class="s90">Powered by <a href="https://www.getzola.org/" target="_blank">Zola</a> &#38; <a href="https://github.com/Jieiku/abridge/" target="_blank">Abridge</a></p>'
 
 #uncomment one of the two lines, or neither, depending on which type of logo you want to use:
-logo = { alt="NoSQLBench5", text="NoSQLBench"}
+logo = { file="nb5logo.png", width="32", height="32", alt="NoSQLBench5", text="NoSQLBench v5"}
 #logo = { file="engine.svg", width="64", height="64", alt="NoSQLBench5", text="NoSQLBench"}
 #logo = { file="nb5.png", width=32, height="32", alt="NoSQLBench5", text="NoSQLBench"}
 #logo = { file="logo.svg", width="32", height="32", alt="Abridge", text="bridge" }
