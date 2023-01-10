@@ -1,123 +1,133 @@
-{# This Page Shows the Individual Blog Posts#}
-
 {%- extends "base.html" %}
-{% if page -%}{%- set node = page %}{%- elif section %}{%- set node = section %}{%- endif %}
+{%- import "macros/mapper.html" as mapper %}
 
 {%- block seo %}
+{%- set this_page = get_page(path=mapper::this_page(section=section|default(value=false),page=page|default(value=false))) -%}
+{%- set this_section=get_section(path=this_page.ancestors | reverse | first) -%}
+{%- set page=this_page -%}{%- set section=this_section -%}
+
 {{- super() }}
 {%- set title_addition = "" %}
-{%- if node.title and config.title %}
- {%- set title = node.title %}
- {%- set title_addition = title_separator ~ config.title %}
- {%- elif node.title %}
- {%- set title = node.title %}
- {%- else %}
- {%- set title = config.title %}
-{%- endif %}
-
-{%- if node.description %}
- {%- set description = node.description %}
+{%- if page.title and config.title %}
+{%- set title = page.title %}
+{%- set title_addition = title_separator ~ config.title %}
+{%- elif page.title %}
+{%- set title = page.title %}
 {%- else %}
- {%- set description = config.description %}
+{%- set title = config.title %}
 {%- endif %}
 
-{%- if node.date -%}
- {%- set created_time = node.date %}
+{%- if page.description %}
+{%- set description = page.description %}
+{%- else %}
+{%- set description = config.description %}
+{%- endif %}
+
+{%- if page.date -%}
+{%- set created_time = page.date %}
 {%- else -%}
- {%- set created_time = "" %}
+{%- set created_time = "" %}
 {% endif %}
 
-{%- if node.updated -%}
- {%- set updated_time = node.updated %}
+{%- if page.updated -%}
+{%- set updated_time = page.updated %}
 {%- else -%}
- {%- set updated_time = "" %}
+{%- set updated_time = "" %}
 {%- endif -%}
 
-{%- if current_section %}
- {%- set page_section = current_section %}
-{%- else %}
- {%- set page_section = "" %}
-{%- endif %}
-
-{{- macros_head::seo(config=config, title=title, title_addition=title_addition, description=description, type="article", is_page=true, created_time=created_time, updated_time=updated_time, page_section=page_section) }}
+{{- macros_head::seo(config=config, title=title, title_addition=title_addition, description=description, type="article", is_page=true, created_time=created_time, updated_time=updated_time) }}
 {%- endblock seo %}
 
+{# CONTENT #}
 {%- block content -%}
-{%- if section is defined -%}
-{%- set type="section" -%}
- {%- set node = section -%}
- {%- set page = section.pages | first -%}
-{%- elif page is defined -%}
- {%- set type="page" -%}
- {%- set node = page -%}
- {%- set section = get_section(path=page.ancestors | reverse | first) -%}
-{%- else -%}
- {%- set_global type="unknown" -%}
-{%- endif -%}
 
-<div class="toc" aria-hidden="true">
+{%- set active_page = get_page(path=mapper::this_page(section=section|default(value=false),page=page|default(value=false))) -%}
+{%- set active_section=get_section(path=active_page.ancestors | reverse | first) -%}
 
-  {# Topics in this Section #}
-  <h4>{{ section.extra.topicheader | default(value=section.title) }} topics</h4>
+<!-- active_page: {{ active_page.relative_path }} -->
+<!-- active_section: {{ active_section.relative_path }} -->
+
+<div class="toc" aria-hidden="true" id="">
+  <!-- <h4>{# active_section.extra.topicheader | default(value=active_section.title) #} topics</h4>-->
+  {%- set root_section = get_section(path="_index.md") -%}
   <div class="toc-sticky">
-    {% for subnode in section.pages %}
-    <div class="toc-item">
-      <a href="{{subnode.path}}">
-        {%- if node.path == subnode.path -%}<strong>{{ subnode.title }}</strong>{%- else -%}{{ subnode.title }}{%- endif -%}</a>
-    </div>
-    {% endfor %}
-  </div>
-  {# end Topics in this Section #}
 
-{# Topics in this Section #}
-  {% set root_section = get_section(path=node.ancestors | first) %}
-  <h4>main topics</h4>
-  <div class="toc-sticky">
-    {% for section_name in root_section.subsections %}
-    {% set subnode = get_section(path=section_name) %}
-    <div class="toc-item">
-      <a href="{{subnode.path}}">
-        {%- if section.path == subnode.path -%}<strong>{{ subnode.title }}</strong>{%- else -%}{{ subnode.title }}{%- endif -%}</a>
-    </div>
-    {% endfor %}
-  </div>
-{# end Topics in this Section #}
+    {%- set root_section = get_section(path="_index.md") -%}
 
+    {%- for subsection_path in root_section.subsections -%}
+
+      {%- set subsection = get_section(path=subsection_path) -%}
+
+      <div class="toc-item">
+      {%- if subsection.relative_path == active_section.relative_path -%}
+       <strong>{{- subsection.title -}}</strong>
+      {%- else -%}
+       <a href="{{subsection.path}}">{{- subsection.title -}}</a>
+      {%- endif -%}
+      </div>
+
+    {%- if subsection.relative_path == active_section.relative_path -%}
+
+      {%- for subsection_page in subsection.pages -%}
+      <!-- subsection_page_path: {{ subsection_page.path }} -->
+        <div class="toc-item-child">
+          <a href="{{subsection_page.path}}">
+          {%- if subsection_page.path == active_page.path -%}
+          <strong>{{- subsection_page.title -}}</strong>
+          {%- else -%}
+          {{- subsection_page.title -}}
+          {%- endif -%}
+          </a>
+        </div>
+      {%- endfor -%}
+
+      {%- for subsubsection_path in subsection.subsections -%}
+        <!-- subsubsection_path: {{ subsubsection_path }} -->
+        {%- set subsubsection = get_section(path=subsubsection_path) -%}
+        <div class="toc-item-child">
+          <a href="{{subsubsection.path}}">{{subsubsection.title}}</a>
+        </div>
+      {%- endfor -%}
+
+    {%- endif -%}
+    {%- endfor -%}
+
+  </div>
 </div>
 
-
 <article>
+{{- macros::title_post(page=active_page, config=config) }}
 
-  {% if page is defined %}
-  {{- macros::title_post(page=page, config=config) }}
-
-  {%- if config.extra.meta_post.position %}
+{%- if config.extra.meta_post.position %}
   {%- if config.extra.meta_post.position == "top" or config.extra.meta_post.position == "both" %}
-  {{- macros::meta_post(page=page, config=config) }}
-  {%- endif %}{%- endif %}
-  {% endif %}
+    {{- macros::meta_post(page=active_page, config=config) }}
+  {%- endif %}
+{%- endif %}
 
-  {{ node.content | safe }}
+{{ active_page.content | safe }}
 
-  {%- if config.extra.meta_post.position %}
+{%- if config.extra.meta_post.position %}
   {%- if config.extra.meta_post.position == "bottom" or config.extra.meta_post.position == "both" %}
+    {%- if page is defined -%}
+      {{- macros::meta_post(page=page, config=config) }}
+    {%- endif %}
+  {%- endif %}
+{%- endif %}
 
-  {%- if page is defined -%}
-  {{- macros::meta_post(page=page, config=config) }}
-  {%- endif %}{%- endif %}
-
-  {%- block page_footer %}
-  {{- macros::footer(page=page) }}
-  {%- endblock page_footer %}
-  {%- endif -%}
+{%- block page_footer -%}
+{{- macros::footer(page=page) }}
+{%- endblock page_footer %}
 </article>
 
 {%- block toc %}
-{%- set enable_toc = node.extra.toc | default(value=true) -%}
-{%- if node.extra.toc and config.extra.recent %}
-{%- set toc = node.toc %}
+{%- set active_page = get_page(path=mapper::this_page(section=section|default(value=false),page=page|default(value=false))) -%}
+{%- set active_section=get_section(path=active_page.ancestors | reverse | first) -%}
+
+{%- set enable_toc = active_page.extra.toc | default(value=true) -%}
+{%- if active_page.extra.toc and config.extra.recent %}
+{%- set toc = active_page.toc %}
 {%- elif enable_toc == true %}
-{%- set toc = node.toc %}
+{%- set toc = active_page.toc %}
 {%- endif %}
 {%- if toc %}
 <div class="toc" aria-hidden="true">
@@ -140,15 +150,5 @@
 {%- endif %}
 {%- endblock toc %}
 
-{%- endblock content %}
 
-{%- block gotop %}
-{%- if node.reading_time %}
-{%- if node.reading_time > 2 %}
-<span class="topout">
-<span class="topleft"> </span><a href="#" class="top" title="Back to Top">{%- if config.extra.icon_top %}<i class="{{ config.extra.icon_top }}"></i>{%- else %}&cuwed;{%- endif %}</a>
-</span>
-{%- endif %}
-{%- endif %}
-
-{%- endblock gotop %}
+{%- endblock content -%}

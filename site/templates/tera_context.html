@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{%- import "macros/mapper.html" as mapper %}
+
+{% block content %}
+<div title="tera_context" style="border: solid 1px;">
+  <span>tera_context:</span>
+  <link rel="stylesheet" href="/jsonpath-picker.min.css" />
+  <script type="text/javascript" src="/jsonpath-picker.min.js"></script>
+  {# from https://github.com/ryshu/jsonpath-picker #}
+
+  <div id="dests" type="text"></div>
+  <div id="treeview">
+    <input class="path" type="text">
+    <pre id="json-renderer"></pre>
+  </div>
+
+  <script type="text/javascript">
+      let data = {{ __tera_context | as_str | safe }};
+      source = document.querySelector('#json-renderer');
+      dest = document.querySelectorAll('.path');
+      JPPicker.render(source, data, dest, {outputCollapsed:true});
+      document.querySelector("div#treeview a").click();
+  </script>
+</div>
+
+<div title="tera_context" style="border: solid 1px;">
+
+  <span>special_variables:</span>
+  <link rel="stylesheet" href="/jsonpath-picker.min.css" />
+  <script type="text/javascript" src="/jsonpath-picker.min.js"></script>
+
+  <div id="dests2" type="text"></div>
+  <div id="treeview2">
+    <input class="path2" type="text">
+    <pre id="json-renderer2"></pre>
+  </div>
+
+  {%- set this_page = get_page(path=mapper::this_page(section=section|default(value=false),page=page|default(value=false))) -%}
+  {%- set this_section=get_section(path=this_page.ancestors | reverse | first) -%}
+
+  <script type="text/javascript">
+      let data2 = {
+          'this_page' : {{ this_page | json_encode(pretty=true) | safe }},
+      'this_section' : {{ this_section | json_encode(pretty=true) | safe }},
+
+      };
+      source = document.querySelector('#json-renderer2');
+      dest = document.querySelectorAll('.path2');
+      JPPicker.render(source, data2, dest, {outputCollapsed:true});
+  </script>
+</div>
+
+
+{% endblock content %}

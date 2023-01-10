@@ -1,0 +1,90 @@
+{%- macro find_first_page_in_section(section) -%}
+{%- set content_section = self::this_or_first_section_with_pages(section=section) -%}
+{%- if content_section is defined -%}
+{%- set section_data=get_section(path=content_section) -%}
+{%- set first_page = section_data.pages | first -%}
+{{- first_page.relative_path -}}
+{%- else -%}
+{{- throw(message="whoops") -}}
+{%- endif -%}
+{%- endmacro find_first_page_in_section -%}
+
+{%- macro this_or_first_section_with_pages(section) -%}
+ {%- if section.pages is defined and section.pages | length > 0 -%}
+  {{- section.relative_path -}}
+ {%- elif section.subsections | length == 0 -%}
+  {{- 'none_found for section' ~ section.relative_path -}}
+ {%- else -%}
+  {%- for subsection_name in section.subsections -%}
+   {%- set subsection = get_section(path=subsection_name) -%}
+   {%- set result= self::this_or_first_section_with_pages(section=subsection) -%}
+   {%- if result is defined and result != '' -%}
+     {{- result -}}
+     {%- break -%}
+   {%- endif -%}
+  {%- endfor -%}
+ {%- endif -%}
+{%- endmacro this_or_first_section_with_pages -%}
+
+{%- macro current_section(page) -%}
+  {% set parent_section = page.ancestors | reverse | first %}
+  {{- parent_section -}}
+{% endmacro current_section %}
+
+{%- macro first_section_with_pages(section) %}
+ {%- if section.pages is defined and section.pages | length > 0 -%}
+  {{- section.relative_path -}}
+ {%- elif section.subsections is defined -%}
+  {% set subsection = get_section(path=section.subsections | first) %}
+  {{- self::first_section_with_pages(section=subsection) -}}
+ {%- else -%}
+ {{ throw(message="no section found with a page") }}
+ {%- endif -%}
+{%- endmacro first_section_with_pages -%}
+
+{%- macro first_page() -%}
+ {%- set root_section = get_section(path="_index.md") -%}
+ {%- set first_section_with_pages = self::first_section_with_pages(section=root_section) -%}
+ {%- set found_section = get_section(path=first_section_with_pages) -%}
+ {%- set first_page_in_section =  found_section.pages | first -%}
+ {{- first_page_in_section.relative_path -}}
+{%- endmacro first_page -%}
+
+{%- macro current_or_first_page(context) -%}
+{%- if context.page is defined -%}
+{{- context.page.relative_path -}}
+{%- else -%}
+{{- self::first_page() -}}
+{%- endif -%}
+{%- endmacro current_or_first_page -%}
+
+
+{%- macro this_section(section,page) -%}
+{%- if page -%}
+{%- set page_path = page.relative_path -%}
+{%- set page_data = get_page(path=page_path) -%}
+{%- set section_path = page_data.ancestors | reverse | first -%}
+{%- set section_data = get_section(path=section_path) -%}
+{%- elif section -%}
+{%- set page_path = self::find_first_page_in_section(section=section) -%}
+{%- set page_data = get_page(path=page_path) -%}
+{%- set section_path = page_data.ancestors | reverse | first -%}
+{%- set section_data = get_section(path=section_path) -%}
+{%- endif -%}
+{{- section_data.relative_path -}}
+{%- endmacro this_section -%}
+
+{%- macro this_page(section,page) -%}
+{%- if page -%}
+{%- set page_path = page.relative_path -%}
+{%- set page_data = get_page(path=page_path) -%}
+{%- set section_path = page_data.ancestors | reverse | first -%}
+{%- set section_data = get_section(path=section_path) -%}
+{%- elif section -%}
+{%- set page_path = self::find_first_page_in_section(section=section) -%}
+{%- set page_data = get_page(path=page_path) -%}
+{%- set section_path = page_data.ancestors | reverse | first -%}
+{%- set section_data = get_section(path=section_path) -%}
+{%- endif -%}
+{{- page_data.relative_path -}}
+{%- endmacro this_page -%}

@@ -1,0 +1,85 @@
+{%- extends "base.html" %}
+{%- import "macros/mapper.html" as mapper %}
+
+{%- block seo %}
+{%- set this_page = get_page(path=mapper::this_page(section=section|default(value=false),page=page|default(value=false))) -%}
+{%- set this_section=get_section(path=this_page.ancestors | reverse | first) -%}
+{%- set page=this_page -%}{%- set section=this_section -%}
+
+{{- super() }}
+{%- set title_addition = "" %}
+{%- if page.title and config.title %}
+{%- set title = page.title %}
+{%- set title_addition = title_separator ~ config.title %}
+{%- elif page.title %}
+{%- set title = page.title %}
+{%- else %}
+{%- set title = config.title %}
+{%- endif %}
+
+{%- if page.description %}
+{%- set description = page.description %}
+{%- else %}
+{%- set description = config.description %}
+{%- endif %}
+
+{%- if page.date -%}
+{%- set created_time = page.date %}
+{%- else -%}
+{%- set created_time = "" %}
+{% endif %}
+
+{%- if page.updated -%}
+{%- set updated_time = page.updated %}
+{%- else -%}
+{%- set updated_time = "" %}
+{%- endif -%}
+
+{{- macros_head::seo(config=config, title=title, title_addition=title_addition, description=description, type="article", is_page=true, created_time=created_time, updated_time=updated_time) }}
+{%- endblock seo %}
+
+{# CONTENT #}
+{%- block content -%}
+
+{%- set active_page = get_page(path=mapper::this_page(section=section|default(value=false),page=page|default(value=false))) -%}
+{%- set active_section=get_section(path=active_page.ancestors | reverse | first) -%}
+{%- set root_section = get_section(path="_index.md") -%}
+
+<!-- active_page: {{ active_page.relative_path }} -->
+<!-- active_section: {{ active_section.relative_path }} -->
+<!-- root_section: {{ root_section.relative_path }} -->
+
+<div class="toc" aria-hidden="true">
+  {# Topics in this Section #}
+  <h4>{# active_section.extra.topicheader | default(value=active_section.title) }} topics</h4>
+  <div class="toc-sticky">
+
+  </div>
+  {# end Topics in this Section #}
+</div>
+
+<article>
+  {{- macros::title_post(page=active_page, config=config) }}
+
+  {%- if config.extra.meta_post.position %}
+  {%- if config.extra.meta_post.position == "top" or config.extra.meta_post.position == "both" %}
+  {{- macros::meta_post(page=active_page, config=config) }}
+  {%- endif %}
+  {%- endif %}
+
+  {{ active_page.content | safe }}
+
+  {%- if config.extra.meta_post.position %}
+  {%- if config.extra.meta_post.position == "bottom" or config.extra.meta_post.position == "both" %}
+  {%- if page is defined -%}
+  {{- macros::meta_post(page=page, config=config) }}
+  {%- endif %}
+  {%- endif %}
+  {%- endif %}
+
+  {%- block page_footer %}
+  {{- macros::footer(page=page) }}
+  {%- endblock page_footer %}
+</article>
+
+{%- endblock content -%}
