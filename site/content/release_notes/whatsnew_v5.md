@@ -101,13 +101,13 @@ point for this site was provided by the [abridge](https://github.com/Jieiku/abri
 * Only op templates which are active (selected and have a positive ratio) are resolved at 
   activity initialization. This improves startup times for large workload with subsets of 
   operations enabled.
-* Driver and Adapter state is now instanced per unique value of an op field parameter called 
-  `space`. By default, this is wired to return `default`, thus each unique adapter will use the 
-  same internal object graph for execution. This is how things worked for most drivers before. 
-  However, if the user specifies that the space should vary, then the simply assign it a binding.
-  This allows for advanced driver testing across a number of client instances, either 
-  pseudo-randomly or in lock-step with specific access patterns. If you don't want to use this, 
-  then ignore it and everything works as it did before.
+* Native Driver (like the CQL Java Driver) and Adapter state is now instanced per unique value of 
+  an op field  parameter called `space`. By default, this is wired to return `default`, thus 
+  each unique adapter will use the same internal object graph for execution. This is how things 
+  worked for most drivers before. However, if the user specifies that the space should vary, 
+  then the simply assign it a binding. This allows for advanced driver testing across a number 
+  of client instances, either pseudo-randomly or in lock-step with specific access patterns. If 
+  you don't want to use this, then ignore it and everything works as it did before.
 * The activity parameter `driver` simply sets the default adapter for an activity. You can set 
   this per op template, and run a different driver for every cycle. This field must be static on 
   each op template, however.
