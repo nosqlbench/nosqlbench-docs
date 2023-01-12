@@ -316,7 +316,7 @@ Ideally:
 * cqld4 driver
     * all statement forms are supported
     * allows file or parameter-based configuration
-    * some backward support for classic nb cql driver options
+    * some backward support for classic nb5 cql driver options
     * op templates can support any valid statement builder option
 
 ## Bundled Applications

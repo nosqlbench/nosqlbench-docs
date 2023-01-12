@@ -57,7 +57,7 @@ scenario.
 
 You can store this into a file with a `.js` extension, and then use a command line like
 
-    nosqlbench script myfile.js
+    nb5 script myfile.js
 
 to invoke it. This is exactly the same as running the original command line, only with a couple of
 extra steps that let you see what it is doing directly in the scenario script.

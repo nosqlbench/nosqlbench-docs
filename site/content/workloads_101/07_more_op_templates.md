@@ -221,7 +221,7 @@ statements:
         tag2: tagvalue2
 ```
 
-The above is valid nosqlbench YAML, although a reader would need to know about the rules explained
+The above is valid NoSQLBench YAML, although a reader would need to know about the rules explained
 above in order to really make sense of it. For most cases, it is best to follow one format
 convention, but there is flexibility for overrides and naming when you need it. The main thing to
 remember is that the statement form is determined on an element-by-element basis for maximum

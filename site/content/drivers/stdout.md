@@ -5,7 +5,7 @@ title: stdout activity type
 # stdout activity type
 
 This is an activity type which allows for the generation of data
-into to stdout or a file. It reads the standard nosqlbench YAML
+into to stdout or a file. It reads the standard NoSQLBench YAML
 format. It can read YAML activity files for any activity type
 that uses the curly brace token form in statements.
 
@@ -36,7 +36,7 @@ activity types.
    default: true
 - **format** - which format to use. If provided, the format will override any statement formats provided by the YAML.
   valid values are (csv, readout, json, inlinejson, assignments, and diag)
-  - When 'format=diag', then the internal construction logic for the binding is logged in detail and nosqlbench exits.
+  - When 'format=diag', then the internal construction logic for the binding is logged in detail and NoSQLBench exits.
     This is useful for detailed diagnostics when you run into trouble, but not generally otherwise. This provides
     details that you may include in a bug report if you think there is a bindings bug.
 - **bindings** - This is a simple way to specify a filter for the names of bindings that you want to use.

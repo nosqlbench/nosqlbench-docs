@@ -5,7 +5,7 @@ weight: 9
 
 ## Template Params Defined
 
-All nosqlbench YAML formats support a parameter macro format that applies before YAML processing
+All NoSQLBench YAML formats support a parameter macro format that applies before YAML processing
 starts. It is a basic macro facility that allows named anchors to be placed in the document as a
 whole:
 
@@ -42,10 +42,10 @@ statements:
   - "<<linetoprint:MISSING>>\n"
   # EOF (control-D in your terminal)
 
-  [ test ]$ ./nb run driver=stdout workload=stdout-test cycles=1
+  [ test ]$ ./nb5 run driver=stdout workload=stdout-test cycles=1
   MISSING
 
-  [ test ]$ ./nb run driver=stdout workload=stdout-test cycles=1 linetoprint="THIS IS IT"
+  [ test ]$ ./nb5 run driver=stdout workload=stdout-test cycles=1 linetoprint="THIS IS IT"
   THIS IS IT
 ```
 

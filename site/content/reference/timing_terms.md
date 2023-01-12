@@ -6,7 +6,7 @@ weight: 30
 ## Overview
 
 Often, terms used to describe latency can create confusion. In fact, the term _latency_ is so
-overloaded in practice that it is not useful by itself. **Because of this, nosqlbench will avoid 
+overloaded in practice that it is not useful by itself. **Because of this, NoSQLBench will avoid 
 using the term latency _except in a specific way_. Instead, the terms described in this section will be
 used.**
 
@@ -48,6 +48,6 @@ limiter.
 
 **The duration of time it takes a server or other system to fully process to a request and send a
 response.** From the perspective of a testing client, the _system_ includes the infrastructure as
-well as remote servers. As such, the service time metrics in nosqlbench include any operational time
+well as remote servers. As such, the service time metrics in NoSQLBench include any operational time
 that is external to the client, including transport latency.
 

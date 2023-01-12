@@ -18,7 +18,7 @@ here.
 **NOTE:**
 To see what activity parameters are valid for a given activity type, see
 the documentation for that activity type with
-`nb help <activity type>`.
+`nb5 help <activity type>`.
 
 When starting out, you want to familiarize yourself with these parameters.
 The most important ones to learn about first are driver, cycles and
@@ -42,7 +42,7 @@ inferred from a substring match against the alias and/or yaml parameters.
 If there is more than one valid match for a valid type value, then you
 must set the type parameter directly.
 
-Telling nosqlbench what type of activity will be run also determines
+Telling NoSQLBench what type of activity will be run also determines
 what other parameters are considered valid and how they will be used. So
 in this way, the type parameter is actually the base parameter for any
 activity. When used with scenario commands like `run` or `start`, an
@@ -80,7 +80,7 @@ You *should* set the _threads_ parameter when you need to ramp up a
 workload.
 
 Each activity can be created with a number of threads. It is important to
-adjust this setting to the system types used by nosqlbench.
+adjust this setting to the system types used by NoSQLBench.
 
 _default value_ : For now, the default is simply *1*. Users must be aware
 of this setting and adjust it to a reasonable value for their workloads.
@@ -101,7 +101,7 @@ the async parameter. For example, when `async=500` is provided, then the
 number of async operations is split between all configured threads, and
 each thread will juggle a number of in-flight operations asynchronously.
 Without the async parameter, threads determines the logical concurrency
-level of nosqlbench in the classic 'request-per-thread' mode. Neither mode
+level of NoSQLBench in the classic 'request-per-thread' mode. Neither mode
 is strictly correct, and both modes can be used for more accurate testing
 depending on the constraints of your environment.
 
@@ -154,10 +154,10 @@ between 0 (inclusive) and 5000 (exclusive) have been specified.
 - _dynamic_: no
 
 Usually, you don't want to provide a setting for stride, but it is still
-important to understand what it does. Within nosqlbench, each time a
+important to understand what it does. Within NoSQLBench, each time a
 thread needs to allocate a set of cycles to operate on, it takes a
 contiguous range of values from a shared atomic value. Thus, the stride is
-the unit of micro-batching within nosqlbench. It also means that you can
+the unit of micro-batching within NoSQLBench. It also means that you can
 use stride to optimize a workload by setting the value higher than the
 default. For example if you are running a single-statement workload at a
 very high rate, it doesn't make sense for threads to allocate one op at a
@@ -256,7 +256,7 @@ specified by itself.
 * _default_: `1.1`
 * _dynamic_: yes
 
-The nosqlbench rate limiter provides a sliding scale between strict rate
+The NoSQLBench rate limiter provides a sliding scale between strict rate
 limiting and average rate limiting. The difference between them is
 controlled by a _burst ratio_ parameter. When the burst ratio is 1.0
 (burst up to 100% relative rate), the rate limiter acts as a strict rate
@@ -300,7 +300,7 @@ parameter, except that it blocks a whole group of operations from starting
 instead of a single operation. The striderate can use a burst ratio just
 as the cyclerate.
 
-This sets the target rate for strides. In nosqlbench, a stride is a group
+This sets the target rate for strides. In NoSQLBench, a stride is a group
 of operations that are dispatched and executed together within the same
 thread. This is useful, for example, to emulate application behaviors in
 which some outside request translates to multiple internal requests. It is

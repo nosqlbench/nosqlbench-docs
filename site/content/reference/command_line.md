@@ -4,7 +4,7 @@ weight: 10
 ---
 
 This is the same documentation you get in markdown format with the
-`nb --help` command.
+`nb5 --help` command.
 
 ---------------------------------------
 
@@ -23,7 +23,7 @@ dashes is a command that will be converted into script form. Any option that inc
 is a named argument to the previous command. The following example is a commandline with a command *
 start*, and two named arguments to that command.
 
-    nb start driver=diag alias=example
+    nb5 start driver=diag alias=example
 
 ### Discovery options ###
 
@@ -32,11 +32,11 @@ particular version.
 
 Get a list of additional help topics that have more detailed documentation:
 
-    nb help topics
+    nb5 help topics
 
 Provide specific help for the named activity type:
 
-    nb help <activity type>
+    nb5 help <activity type>
 
 List the available drivers:
 
@@ -60,7 +60,7 @@ Provide the metrics that are available for scripting
 
 ### Execution Options ###
 
-This is how you actually tell nb what scenario to run. Each of these commands appends script logic
+This is how you actually tell nb5 what scenario to run. Each of these commands appends script logic
 to the scenario that will be executed. These are considered as commands, can occur in any order and
 quantity. The only rule is that arguments in the arg=value form will apply to the preceding script
 or activity.
@@ -189,13 +189,13 @@ a logfile will be created for this name.
 
     --session-name <name>
 
-Enlist nosqlbench to stand up your metrics infrastructure using a local docker runtime:
+EnlistNoSQLBenchto stand up your metrics infrastructure using a local docker runtime:
 
     --docker-metrics
 
-When this option is set, nosqlbench will start graphite, prometheus, and grafana automatically on
-your local docker, configure them to work together, and point nosqlbench to send metrics the system
-automatically. It also imports a base dashboard for nosqlbench and configures grafana snapshot
+When this option is set,NoSQLBenchwill start graphite, prometheus, and grafana automatically on
+your local docker, configure them to work together, and point NoSQLBench to send metrics the system
+automatically. It also imports a base dashboard for NoSQLBench and configures grafana snapshot
 export to share with a central DataStax grafana instance (grafana can be found on localhost:3000
 with the default credentials admin/admin).
 

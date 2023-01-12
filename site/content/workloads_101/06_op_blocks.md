@@ -34,7 +34,7 @@ blocks:
 ```
 
 ```shell
-[test]$ ./nb run driver=stdout workload=stdout-test cycles=10
+[test]$ ./nb5 run driver=stdout workload=stdout-test cycles=10
 0,block1-C
 1,block2-O
 2,block1-M

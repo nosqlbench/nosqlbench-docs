@@ -16,7 +16,7 @@ plugable across YAMLs.
 
 The schema phase is simply a phase of your test which creates the necessary schema on your target
 system. For CQL, this generally consists of a keyspace and one ore more table statements. There is
-no special schema layer in nosqlbench. All statements executed are simply statements. This provides
+no special schema layer in NoSQLBench. All statements executed are simply statements. This provides
 the greatest flexibility in testing since every activity type is allowed to control its DDL and DML
 using the same machinery.
 

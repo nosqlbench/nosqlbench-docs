@@ -18,7 +18,7 @@ simply passing a parameter map with the activity parameters to the scenario cont
 
 You might invoke it like this:
 
-    nb script myscript
+    nb5 script myscript
 
 Suppose that you want to allow the user to run such an activity by calling the script directly,
 but you also want them to allow them to add their own parameters specifically to the

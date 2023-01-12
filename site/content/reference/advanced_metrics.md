@@ -29,7 +29,7 @@ although some examples of these may be found below.
 ## Metrics via Graphite
 
 If you like to have all of your testing data in one place, then you may be interested in reporting
-your measurements to a monitoring system. For this, nosqlbench includes a
+your measurements to a monitoring system. For this, NoSQLBench includes a
 [Metrics Library](https://github.com/dropwizard/metrics). Graphite reporting is baked in as the
 default reporter.
 

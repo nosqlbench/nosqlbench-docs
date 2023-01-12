@@ -36,19 +36,19 @@ or consult the instructions at the
 
 To run a simple built-in workload run:
 
-    ./nb cql-iot
+    ./nb5 cql-iot
 
 To get a list of built-in scenarios run:
 
     # Get a list of all named scenarios and parameters
-    ./nb --list-scenarios
+    ./nb5 --list-scenarios
 
 If you want a simple list of yamls which contain named scenarios, run:
 
     # Get a simple list of yamls containing named scenarios
-    ./nb --list-workloads
+    ./nb5 --list-workloads
 
-👉 These commands will include workloads that were shipped with nb and
+👉 These commands will include workloads that were shipped with nb5 and
 workloads in your local directory. To learn more about how to design
 custom workloads see
 [[designing workloads](../../designing_workloads/01-statement-templates)].
@@ -56,12 +56,12 @@ custom workloads see
 To provide your own contact points (comma separated), add the `hosts=`
 parameter
 
-    ./nb  cql-iot hosts=host1,host2
+    ./nb5  cql-iot hosts=host1,host2
 
 Additionally, if you have docker installed on your local system, and your user has permissions to use it, you can use
 `--docker-metrics` to stand up a live metrics dashboard at port 3000.
 
-    ./nb  cql-iot --docker-metrics
+    ./nb5  cql-iot --docker-metrics
 
 This example doesn't go into much detail about what it is doing. It is here to show you how quickly you can start
 running real workloads without having to learn much about the machinery that makes it happen.

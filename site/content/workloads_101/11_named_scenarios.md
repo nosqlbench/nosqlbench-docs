@@ -46,19 +46,19 @@ Some examples may be more illustrative:
 
 ```
 # runs the scenario named 'default' if it exists, or throws an error if it does not.
-nb myworkloads
+nb5 myworkloads
 # or
-nb myworkloads default
+nb5 myworkloads default
 
 # runs the named scenario 'longrun' if it exists, or throws an error if it does not.
-nb myworkloads longrun
+nb5 myworkloads longrun
 
 # runs the named scenario 'longrun' if it exists, or throws an error if it does not.
 # this is simply the canonical form which is more verbose, but more explicit.
-nb scenario myworkloads longrun
+nb5 scenario myworkloads longrun
 
 # run multiple named scenarios from one workload, and then some from another
-nb scenario myworkloads longrun default longrun scenario another.yaml name1 name2
+nb5 scenario myworkloads longrun default longrun scenario another.yaml name1 name2
 # In this form ^ you may have to add the explicit form to avoid conflicts between
 # workload names and scenario names. That's why the explicit form is provided, afterall.
 ```
@@ -86,7 +86,7 @@ publishers in order to keep things simple:
 
 1. Workload files in the current directory `*.yaml` are considered.
 2. Workload files under in the relative path `activities/` with name `*.yaml` are considered.
-3. The same rules are used when looking in the bundled nosqlbench, so built-ins come along for the
+3. The same rules are used when looking in the bundled NoSQLBench, so built-ins come along for the
    ride.
 4. Any workload file that contains a `scenarios:` tag is included, but all others are ignored.
 
@@ -141,7 +141,7 @@ statements:
 Running this with no options prompts the user to select one of the named scenarios:
 
 ```
-$ nb basics
+$ nb5 basics
 ERROR: Unable to find named scenario 'default' in workload 'basics', but you can pick from s1,s2,s3
 $
 ```
@@ -151,7 +151,7 @@ $
 If you run the first scenario `s1` with your own value for `cycles=7`, it does as you ask:
 
 ```
-$ nb basics s1 cycles=7
+$ nb5 basics s1 cycles=7
 Logging to logs/scenario_20200324_205121_554.log
 cycle=0
 cycle=1
@@ -171,7 +171,7 @@ parameter
 line.
 
 ```
-$ nb basics s2 cycles=7
+$ nb5 basics s2 cycles=7
 Logging to logs/scenario_20200324_205339_486.log
 cycle=0
 cycle=1
@@ -196,7 +196,7 @@ parameter should not be changed, and that if they want to change it, they'll hav
 custom version of the scenario in question.
 
 ```
-$ nb basics s3 cycles=7
+$ nb5 basics s3 cycles=7
 ERROR: Unable to reassign value for locked param 'cycles===7'
 $
 ```

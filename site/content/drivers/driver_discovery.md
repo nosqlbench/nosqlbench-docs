@@ -21,11 +21,11 @@ this can be overridden per op template with the `driver` field.
 
 NoSQLBench comes with some drivers built-in. You can discover these by running:
 
-    nb --list-drivers
+    nb5 --list-drivers
 
 Each one comes with its own built-in documentation. It can be accessed with this command:
 
-    nb help <driver>
+    nb5 help <driver>
 
 This section contains the per-driver documentation that you get when you run the above command.
 These driver docs are  auto-populated when NoSQLBench is built, so they are exactly the same as

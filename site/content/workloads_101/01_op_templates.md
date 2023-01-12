@@ -3,10 +3,16 @@ title: "01 Op Templates"
 weight: 1
 ---
 
-## Op Templates
+Op templates are data blueprints that represent a particular kind of operation. They are 
+templates because they are used to create possibly many operations to be executed. For example, 
+you may have only one op template that you use to drive a billion operations to a system under 
+test, or you may have a myriad of different access patterns. In either case, all the 
+operations that you want to execute must be defined in template form beforehand.
 
-A valid config file for an activity consists of op templates, parameters for them, bindings to
-generate the data to use with them, and tags for organizing them.
+As templates, you indicate where the variable parts are filled in when needed. How this is done 
+will be explained in the [bindings](../03-data-bindings) section.
+
+# simple statements
 
 In essence, the config format is *all about configuring operations*. Every other element in the
 config format is in some way modifying or otherwise helping create operations to be used in an

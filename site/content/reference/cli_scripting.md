@@ -96,7 +96,7 @@ Add the contents of the next argument to the scenario script buffer.
 # An example CLI script
 
 ```
-./nb \
+./nb5 \
 start driver=stdout alias=a cycles=100K workload=cql-iot tags=phase:main\
 start driver=stdout alias=b cycles=200K workload=cql-iot tags=phase:main\
 waitmillis 10000 \

@@ -57,43 +57,43 @@ statements:
 
 ```shell
 # no tag filter matches any
-[test]$ ./nb run driver=stdout workload=stdout-test
+[test]$ ./nb5 run driver=stdout workload=stdout-test
 I'm alive!
 
 # tag name assertion matches
-[test]$ ./nb run driver=stdout workload=stdout-test tags=name
+[test]$ ./nb5 run driver=stdout workload=stdout-test tags=name
 I'm alive!
 
 # tag name assertion does not match
-[test]$ ./nb run driver=stdout workload=stdout-test tags=name2
+[test]$ ./nb5 run driver=stdout workload=stdout-test tags=name2
 02:25:28.158 [scenarios:001] ERROR i.e.activities.stdout.StdoutActivity - Unable to create a stdout statement if you have no active statements or bindings configured.
 
 # tag value assertion does not match
-[test]$ ./nb run driver=stdout workload=stdout-test tags=name:bravo
+[test]$ ./nb5 run driver=stdout workload=stdout-test tags=name:bravo
 02:25:42.584 [scenarios:001] ERROR i.e.activities.stdout.StdoutActivity - Unable to create a stdout statement if you have no active statements or bindings configured.
 
 # tag value assertion matches
-[test]$ ./nb run driver=stdout workload=stdout-test tags=name:foxtrot
+[test]$ ./nb5 run driver=stdout workload=stdout-test tags=name:foxtrot
 I'm alive!
 
 # tag pattern assertion matches
-[test]$ ./nb run driver=stdout workload=stdout-test tags=name:'fox.*'
+[test]$ ./nb5 run driver=stdout workload=stdout-test tags=name:'fox.*'
 I'm alive!
 
 # tag pattern assertion does not match
-[test]$ ./nb run driver=stdout workload=stdout-test tags=name:'tango.*'
+[test]$ ./nb5 run driver=stdout workload=stdout-test tags=name:'tango.*'
 02:26:05.149 [scenarios:001] ERROR i.e.activities.stdout.StdoutActivity - Unable to create a stdout statement if you have no active statements or bindings configured.
 
 # compound tag predicate matches every assertion
-[test]$ ./nb run driver=stdout workload=stdout-test tags='name=fox.*',unit=bravo
+[test]$ ./nb5 run driver=stdout workload=stdout-test tags='name=fox.*',unit=bravo
 I'm alive!
 
 # compound tag predicate does not fully match
-[test]$ ./nb run driver=stdout workload=stdout-test tags='name=fox.*',unit=delta
+[test]$ ./nb5 run driver=stdout workload=stdout-test tags='name=fox.*',unit=delta
 11:02:53.490 [scenarios:001] ERROR i.e.activities.stdout.StdoutActivity - Unable to create a stdout statement if you have no active statements or bindings configured.
 
 # any(...) form will work as long as one of the tags match
-[test]$ ./nb run driver=stdout workload=stdout-test tags='any(name=fox.*,thisone:wontmatch)',unit=bravo
+[test]$ ./nb5 run driver=stdout workload=stdout-test tags='any(name=fox.*,thisone:wontmatch)',unit=bravo
 I'm alive!
 ```
 

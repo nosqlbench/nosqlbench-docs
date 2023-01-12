@@ -3,7 +3,7 @@ title: "Core Op Parameters"
 weight: 21
 ---
 
-Some statement parameters are recognized by the nosqlbench runtime and can
+Some statement parameters are recognized by the NoSQLBench runtime and can
 be used on any statement in a YAML file.
 
 ## *ratio*

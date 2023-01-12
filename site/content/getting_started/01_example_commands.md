@@ -13,7 +13,7 @@ command line, go ahead and execute the following command, replacing
 the `host=<host-or-ip>` with that of one of your database nodes.
 
 ```
-./nb run driver=cql workload=cql-keyvalue tags=phase:schema host=<host-or-ip>
+./nb5 run driver=cql workload=cql-keyvalue tags=phase:schema host=<host-or-ip>
 ```
 
 This command is creating the following schema in your database:
@@ -66,7 +66,7 @@ statements.
 
 Go ahead and execute the following command:
 
-    ./nb run driver=stdout workload=cql-keyvalue tags=phase:rampup cycles=10
+    ./nb5 run driver=stdout workload=cql-keyvalue tags=phase:rampup cycles=10
 
 You should see 10 of the following statements in your console
 
@@ -89,7 +89,7 @@ be the same from run to run.
 Now we are ready to write some data to our database. Go ahead and execute
 the following from your command line:
 
-    ./nb run driver=cql workload=cql-keyvalue tags=phase:rampup host=<host-or-ip> cycles=100k --progress console:1s
+    ./nb5 run driver=cql workload=cql-keyvalue tags=phase:rampup host=<host-or-ip> cycles=100k --progress console:1s
 
 Note the differences between this and the command that we used to generate
 the schema.
@@ -137,7 +137,7 @@ Now that we have a base dataset of 100k rows in the database, we will now
 run a mixed read / write workload, by default this runs a 50% read / 50%
 write workload.
 
-    ./nb run driver=cql workload=cql-keyvalue tags=phase:main host=<host-or-ip> cycles=100k cyclerate=5000 threads=50 --progress console:1s
+    ./nb5 run driver=cql workload=cql-keyvalue tags=phase:main host=<host-or-ip> cycles=100k cyclerate=5000 threads=50 --progress console:1s
 
 You should see output that looks like this:
 

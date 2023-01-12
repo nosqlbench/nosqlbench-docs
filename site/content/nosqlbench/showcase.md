@@ -205,7 +205,7 @@ sampling times measured in seconds.
 
 The command line has the form of basic test commands and parameters. These command get converted
 directly into scenario control script in the order they appear. The user can choose whether to stay
-in high level executive mode, with simple commands like `nb test-scenario ...`, or to drop
+in high level executive mode, with simple commands like `nb5 test-scenario ...`, or to drop
 directly into script design. They can look at the equivalent script for any command line by running
 `--show-script`. If you take the script that is dumped to console and run it, it will do exactly the
 same thing as if you hadn't even looked at it and just ran basic commands on the command line.
@@ -255,8 +255,8 @@ This means that extending and customizing bundles and features is quite manageab
 
 It also means that it is relatively easy to provide a suitable API for multi-protocol support. In
 fact, there are several drivers available in the current NoSQLBench distribution. You can list them
-out with `nb --list-drivers`, and you can get help on how to use each of them
-with `nb help <driver name>`.
+out with `nb5 --list-drivers`, and you can get help on how to use each of them
+with `nb5 help <driver name>`.
 
 This also is a way for us to encourage and empower other contributors to help develop the
 capabilities and reach of NoSQLBench. By encouraging others to help us build NoSQLBench modules and

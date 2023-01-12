@@ -36,11 +36,11 @@ if you are interested.
 NoSQLBench has some built-in docs which are available on the command line. You can see a list of
 built-in docs with the command:
 
-    nb help topics
+    nb5 help topics
 
 or, to read any topic, simply use the command:
 
-    nb help <topic>
+    nb5 help <topic>
 
 This doc site contains much more documentation than you will want to browse on the command line. 
 It is recommended that you look here first with the search function when possible.
@@ -49,19 +49,19 @@ It is recommended that you look here first with the search function when possibl
 
 If you think you have found a bug, please
 [[file a bug report](https://github.com/nosqlbench/nosqlbench/issues/new?labels=bug)]
-. nosqlbench is actively used within DataStax, and verified bugs will get attention as resources
+. NoSQLBench is actively used within DataStax, and verified bugs will get attention as resources
 permit. We appreciate all feedback, no matter how detailed. However, bug reports which are more 
 detailed, or which include steps to reproduce any issues will get attention first.
 
 ## Feature Requests
 
-If you would like to see something in nosqlbench that is not there yet,please
+If you would like to see something in NoSQLBench that is not there yet,please
 [[submit a feature request](https://github.com/nosqlbench/nosqlbench/issues/new?labels=feature)]
 .
 
 ## Documentation Requests
 
-If you would like to see a specific nosqlbench or testing topic added to the guidebook, please
+If you would like to see a specific NoSQLBench or testing topic added to the guidebook, please
 [[request docs content](https://github.com/nosqlbench/nosqlbench/issues/new?labels=docs)]
 .
 

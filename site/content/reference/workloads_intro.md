@@ -10,7 +10,7 @@ without having to configure anything, or they can be tailored with their built-i
 
 To find the build-in scenarios, ask NoSQLBench like this:
 
-    nb --list-workloads
+    nb5 --list-workloads
 
 This specifically lists the workloads which provide named scenarios. Only named scenarios are
 included. Workloads are contained in yaml files. If a yaml file is in the standard path and contains
@@ -20,16 +20,16 @@ Each of these scenarios has a set of parameters which can be changed on the comm
 
 ## Running Workloads
 
-You can run them directly, by name with `nb <workload> [<scenario>] [<params>...]`. If not provided,
+You can run them directly, by name with `nb5 <workload> [<scenario>] [<params>...]`. If not provided,
 scenario is assumed to be `default`.
 
 For example, the `cql-iot` workload is listed with the above command, and can be executed like this:
 
     # put your normal extra params in ... below, like hosts, for example
-    nb cql-iot default ...
+    nb5 cql-iot default ...
 
     # OR, with scenario name default
-    nb cql-iot ...
+    nb5 cql-iot ...
 
 You can add any parameters to the end, and these parameters will be passed automatically to each
 stage of the scenario as needed. Within the scenario, designers have the ability to lock parameters

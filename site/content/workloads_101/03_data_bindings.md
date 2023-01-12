@@ -42,7 +42,7 @@ this is valid:
      delta: WeightedStrings('one:1;six:6;three:3;')
 # EOF (control-D in your terminal)
 
-[test]$ ./nb run driver=stdout workload=stdout-test cycles=10
+[test]$ ./nb5 run driver=stdout workload=stdout-test cycles=10
 0,zero,00A_pro,six
 1,one,00B_pro,six
 2,two,00C_pro,three
@@ -91,7 +91,7 @@ bindings:
 ```
 
 ```shell
-[test]$ ./nb run driver=stdout workload=stdout-test cycles=10
+[test]$ ./nb5 run driver=stdout workload=stdout-test cycles=10
 This is a statement, and the file format doesn't
 know how statements will be used!
 submit job 1 on queue one with options 00B_pro;

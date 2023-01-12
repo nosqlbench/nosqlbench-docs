@@ -60,7 +60,7 @@ known before as _Virtual Data Set_. The core runtime and scripting harness was f
 _EngineBlock_ project. The CQL support was previously used within DataStax. In March 2020, DataStax
 and the project maintainers decided to put everything into one OSS project in order to make
 contributions and sharing easier for everyone. Thus, the new project name and structure was launched
-as nosqlbench.io. NoSQLBench is an independent project that is primarily sponsored by DataStax.
+as NoSQLBench.io. NoSQLBench is an independent project that is primarily sponsored by DataStax.
 
 We offer NoSQLBench as a new way of thinking about testing systems. It is not limited to testing
 only one type of system. It is our wish to build a community of users and practice around this

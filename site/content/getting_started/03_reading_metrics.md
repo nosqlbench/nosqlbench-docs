@@ -74,7 +74,7 @@ NoSQLBench extends many ways to report the metrics from a run, including:
 
 To get more information on these options, see the output of
 
-    ./nb --help
+    ./nb5 --help
 
 ### Congratulations
 

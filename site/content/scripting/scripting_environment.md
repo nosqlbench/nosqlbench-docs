@@ -38,7 +38,7 @@ the metrics objects directly. Some metrics objects have also been enhanced with 
 provide simple getters and setters, like
 `.p99ms` or `.p99ns`, for example.
 
-Interaction with the nosqlbench runtime and the activities therein is made easy by the above
+Interaction with the NoSQLBench runtime and the activities therein is made easy by the above
 variables and objects. When an assignment is made to any of these variables, the changes are
 propagated to internal listeners. For changes to
 _threads_, the thread pool responsible for the affected activity adjusts the number of active
@@ -54,7 +54,7 @@ runtime controls provided above.
 
 ## Enhanced Metrics for Scripting
 
-The metrics available in nosqlbench are slightly different than the standard kit with dropwizard
+The metrics available in NoSQLBench are slightly different than the standard kit with dropwizard
 metrics. The key differences are:
 
 ### HDR Histograms
@@ -101,7 +101,7 @@ explicitly stop a script, you must stop all activities.
 
 ## Strategies
 
-You can use nosqlbench in the classic form with `run driver=<activity_type> param=value ...` command
+You can use NoSQLBench in the classic form with `run driver=<activity_type> param=value ...` command
 line syntax. There are reasons, however, that you will sometimes want to customize and modify your
 scripts directly, such as:
 

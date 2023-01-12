@@ -29,7 +29,7 @@ parameters are explained individually under the next
 section, [Activity Params](../activity-parameters).
 
 *Driver* Parameters are those provided by an activity type. These parameters are documented for each
-activity type. You can see them by running `nb help <activity type>`.
+activity type. You can see them by running `nb5 help <activity type>`.
 
 Driver parameters may be dynamic. *Dynamic* Activity Parameters are parameters which may be changed
 while an activity is running. This means that scenario scripting logic may change some variables
