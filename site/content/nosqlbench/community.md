@@ -13,7 +13,7 @@ find those places where the docs are lacking. Maybe you can help us by adding so
 
 This site is intended to be the first and most useful form of documentation for NoSQLBench. It is
 hosted on a separate project repo on github so that it can be owned and maintained by the NoSQLBench
-user and developer community. (Click the github link in the top right to go directly there.) If you
+user and developer community. (Click the github link [[here](https://github.com/nosqlbench/nosqlbench-docs)]  to go directly there.) If you
 see something here that should be updated or expanded, please submit an issue, reach out on discord,
 or even better, submit a pull request!
 

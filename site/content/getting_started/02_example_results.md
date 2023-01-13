@@ -4,7 +4,7 @@ weight: 3
 ---
 
 We just ran a very simple workload against our database. In that example, we saw that NoSQLBench
-writes to a log file and it is in that log file where the most basic form of metrics are displayed.
+writes to a log file, and it is in that log file where the most basic form of metrics are displayed.
 
 ## Log File Metrics
 

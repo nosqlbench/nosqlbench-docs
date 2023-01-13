@@ -12,11 +12,15 @@ We will start by creating a simple schema in the database. From your
 command line, go ahead and execute the following command, replacing
 the `host=<host-or-ip>` with that of one of your database nodes.
 
+
 ```
 ./nb5 run driver=cql workload=cql-keyvalue tags=phase:schema host=<host-or-ip>
 ```
-
-This command is creating the following schema in your database:
+**NOTE:**
+If you are using Astra DB for this tutorial, you need to make sure to modify the workload to `workload=cql-keyvalue-astra`.
+You also need to add the following parameters to your command:
+`host=<ip for access>`, `username=<client id>`, `password=<client secret>`,
+and `secureconnectbundle=<path to scb zip file>`.
 
 ```sql
 CREATE KEYSPACE baselines
@@ -61,7 +65,7 @@ the results, you need to make the test more interesting than loading an
 empty table. For this, we use the rampup phase.
 
 Before sending our test writes to the database, we will use the `stdout`
-activity type so we can see what NoSQLBench is generating for CQL
+activity type, so we can see what NoSQLBench is generating for CQL
 statements.
 
 Go ahead and execute the following command:
