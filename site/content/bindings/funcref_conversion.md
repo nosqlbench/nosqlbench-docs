@@ -6,6 +6,14 @@ title: conversion functions
 Conversion functions simply allow values of one type
 to be converted to another type in an obvious way.
 
+---
+title: conversion functions
+weight: 30
+---
+
+Conversion functions simply allow values of one type
+to be converted to another type in an obvious way.
+
 ## ByteBufferSizedHashed
 
 Create a ByteBuffer from a long input based on a provided size function. As a 'Sized' function, the first argument is a function which determines the size of the resulting ByteBuffer. As a 'Hashed' function, the input value is hashed again before being used as value.
@@ -117,14 +125,6 @@ Convert the input long value to a byte, with negative values masked away.
 Convert the input value from long to short.
 
 - long -> LongToShort() -> Short
-
-## MD5HexString
-
-Computes the MD5 digest of the byte image of the input long, and returns it in hexadecimal String form.
-
-- long -> MD5HexString() -> String
-  - *example:* `MD5String()`
-  - *Convert a long input to an md5 digest over its bytes, and then to a hexadecimal string.*
 
 ## ModuloToBigDecimal
 
@@ -462,9 +462,12 @@ Convert the input value to a long.
 
 ## ToMD5ByteBuffer
 
-Converts the byte image of the input long to a MD5 digest in ByteBuffer form.
+Converts the byte image of the input long to a MD5 digest in ByteBuffer form. Deprecated usage due to unsafe MD5 digest. Replaced with DigestToByteBuffer with MD5 when absolutely needed for existing NB tests. However, stronger encryption algorithms (e.g. SHA-256) are recommended due to MD5's limitations.
 
 - long -> ToMD5ByteBuffer() -> java.nio.ByteBuffer
+  - *notes:* Deprecated usage due to unsafe MD5 digest.
+Use the DigestToByteBuffer with alternatives other than MD5.
+
   - *example:* `MD5ByteBuffer()`
   - *convert the a input to an md5 digest of its bytes*
 

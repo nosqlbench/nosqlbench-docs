@@ -1,8 +1,8 @@
 ---
 weight: 0
-title: dynamodb driver
+title: dynamodb
 ---
-# dynamodb driver
+# dynamodb
 
 The DynamoDB driver supports a basic set of commands as specified at
 [Amazon DynamoDB Docs](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Operations_Amazon_DynamoDB.html).

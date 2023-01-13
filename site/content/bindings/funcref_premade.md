@@ -9,6 +9,17 @@ libraries. However, they are provided here for simplicity in workload constructi
 their longer-form equivalents.
 
 
+---
+title: pre-made functions
+weight: 20
+---
+
+Functions in this category are meant to provide easy grab-and-go functions that are tailored for real-world simulation.
+This library will grow over time. These functions are often built directly on top of other functions in the core
+libraries. However, they are provided here for simplicity in workload construction. They perform exactly the same as
+their longer-form equivalents.
+
+
 ## Cities
 
 Return a valid city name.
@@ -166,9 +177,12 @@ Return a state name, weighted by population.
 
 ## ToMD5ByteBuffer
 
-Converts the byte image of the input long to a MD5 digest in ByteBuffer form.
+Converts the byte image of the input long to a MD5 digest in ByteBuffer form. Deprecated usage due to unsafe MD5 digest. Replaced with DigestToByteBuffer with MD5 when absolutely needed for existing NB tests. However, stronger encryption algorithms (e.g. SHA-256) are recommended due to MD5's limitations.
 
 - long -> ToMD5ByteBuffer() -> java.nio.ByteBuffer
+  - *notes:* Deprecated usage due to unsafe MD5 digest.
+Use the DigestToByteBuffer with alternatives other than MD5.
+
   - *example:* `MD5ByteBuffer()`
   - *convert the a input to an md5 digest of its bytes*
 
