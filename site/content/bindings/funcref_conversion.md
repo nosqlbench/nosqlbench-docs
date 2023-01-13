@@ -1,6 +1,6 @@
 ---
-title: conversion functions
 weight: 30
+title: conversion functions
 ---
 
 Conversion functions simply allow values of one type

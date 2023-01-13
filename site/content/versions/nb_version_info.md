@@ -3,6 +3,11 @@ weight: 0
 title: Version Info
 ---
 # Version Info
-version=5.17.0-SNAPSHOT
+
+The version of NB5 which provided some of the docs content is:
+
+```
+version=5.17.1-SNAPSHOT
 groupId=io.nosqlbench
 artifactId=nbr
+```
