@@ -1,6 +1,6 @@
 ---
-weight: 20
 title: pre-made functions
+weight: 20
 ---
 
 Functions in this category are meant to provide easy grab-and-go functions that are tailored for real-world simulation.

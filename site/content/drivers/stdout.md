@@ -1,8 +1,8 @@
 ---
+title: stdout activity type
 weight: 0
-title: stdout
 ---
-# stdout
+# stdout activity type
 
 This is an activity type which allows for the generation of data
 into to stdout or a file. It reads the standard nosqlbench YAML
@@ -13,21 +13,15 @@ that uses the curly brace token form in statements.
 
 Run a stdout activity named 'stdout-test', with definitions from activities/stdout-test.yaml
 
-```shell
-nb5 driver=stdout workload=stdout-test
-```
+    ... driver=stdout workload=stdout-test
 
 Only run statement groups which match a tag regex
 
-```shell
-nb5 driver=stdout workload=stdout-test tags=group:'ddl.*'
-```
+    ... driver=stdout workload=stdout-test tags=group:'ddl.*'
 
 Run the matching 'dml' statements, with 100 cycles, from [1000..1100)
 
-```shell
-nb5 driver=stdout workload=stdout-test tags=group:'dml.*' cycles=1000..11000 filename=test.csv
-```
+    ... driver=stdout workload=stdout-test tags=group:'dml.*' cycles=1000..11000 filename=test.csv
 
 This last example shows that the cycle range is [inclusive..exclusive),
 to allow for stacking test intervals. This is standard across all
@@ -70,21 +64,15 @@ For more details on this format, please refer to the
 The statement format for this activity type is a simple string. Tokens between
 curly braces are used to refer to binding names, as in the following example:
 
-```yaml
-    ops:
-     op1: "It is {minutes} past {hour}."
-```
+    statements:
+     - "It is {minutes} past {hour}."
 
 If you want to suppress the trailing newline that is automatically added, then
 you must either pass `newline=false` as an activity param, or specify it
 in the statement params in your config as in:
 
-```yaml
-ops:
-  op1:
-    stmt: "It is {minutes} past {hour}."
-    newline: false
-```
+    params:
+     newline: false
 
 ### Auto-generated statements
 
@@ -92,17 +80,13 @@ If no statement is provided, then the defined binding names are used as-is
 to create a CSV-style line format. The values are concatenated with
 comma delimiters, so a set of bindings like this:
 
-```yaml
     bindings:
      one: Identity()
      two: NumberNameToString()
-```
 
 would create an automatic string template like this:
 
-```yaml
-ops:
- op1: "{one},{two}\n"
-```
+    statements:
+     - "{one},{two}\n"
 
 The auto-generation behavior is forced when the format parameter is supplied.
