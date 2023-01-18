@@ -9,7 +9,7 @@ of customization you want for further testing.
 The sections below describe key areas that users typically customize when working with NoSQLBench.
 
 Everyone who uses NoSQLBench will want to get familiar with the
-[Core Concepts](/docs/nosqlbench/core-concepts)
+[Core Concepts](/../nosqlbench/core-concepts)
 section. This is essential reading for new and experienced testers alike.
 
 ## High-Level Users
@@ -23,7 +23,7 @@ the available workloads and their options.
 If you want to use NoSQLBench to build a tailored workload that closely emulates what a specific
 application would do, then you can build a self-contained and portable YAML file that specifies all 
 the details. You can specify the access patterns, data distributions, and more. This is 
-explained further in [Workloads 101](/docs/workloads-101/00-designing-workloads)
+explained further in [Workloads 101](/../workloads_101)
 
 ### Built-In Sources
 

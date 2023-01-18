@@ -12,11 +12,15 @@ We will start by creating a simple schema in the database. From your
 command line, go ahead and execute the following command, replacing
 the `host=<host-or-ip>` with that of one of your database nodes.
 
+
 ```
 ./nb5 run driver=cql workload=cql-keyvalue tags=phase:schema host=<host-or-ip>
 ```
-
-This command is creating the following schema in your database:
+**NOTE:**
+If you are using Astra DB for this tutorial, you need to make sure to modify the workload to `workload=cql-keyvalue-astra tags=phase:schema-astra`.
+You also need to add the following parameters to your command:
+`username=<client id>`, `password=<client secret>`,
+and `secureconnectbundle=<path to scb zip file>`.
 
 ```sql
 CREATE KEYSPACE baselines
@@ -61,7 +65,7 @@ the results, you need to make the test more interesting than loading an
 empty table. For this, we use the rampup phase.
 
 Before sending our test writes to the database, we will use the `stdout`
-activity type so we can see what NoSQLBench is generating for CQL
+activity type, so we can see what NoSQLBench is generating for CQL
 statements.
 
 Go ahead and execute the following command:
@@ -117,57 +121,50 @@ console every 1 second.
 You should see output that looks like this
 
 ```
-cql-keyvalue: 0.00%/Running (details: min=0 cycle=1 max=100000)
-cql-keyvalue: 0.00%/Running (details: min=0 cycle=1 max=100000)
-cql-keyvalue: 0.32%/Running (details: min=0 cycle=325 max=100000)
-cql-keyvalue: 1.17%/Running (details: min=0 cycle=1171 max=100000)
-cql-keyvalue: 2.36%/Running (details: min=0 cycle=2360 max=100000)
-cql-keyvalue: 3.65%/Running (details: min=0 cycle=3648 max=100000)
-cql-keyvalue: 4.61%/Running (details: min=0 cycle=4613 max=100000)
-cql-keyvalue: 5.59%/Running (details: min=0 cycle=5593 max=100000)
-cql-keyvalue: 7.14%/Running (details: min=0 cycle=7138 max=100000)
-cql-keyvalue: 8.87%/Running (details: min=0 cycle=8868 max=100000)
+cql-keyvalue-astra (remaining,active,completed)=(99377,50,623) 001%
+cql-keyvalue-astra (remaining,active,completed)=(98219,50,1782) 002%
+cql-keyvalue-astra (remaining,active,completed)=(97009,50,2991) 003%
+cql-keyvalue-astra (remaining,active,completed)=(95856,50,4153) 004%
+cql-keyvalue-astra (remaining,active,completed)=(94653,50,5347) 005%
+cql-keyvalue-astra (remaining,active,completed)=(93494,50,6506) 007%
+cql-keyvalue-astra (remaining,active,completed)=(92254,50,7746) 008%
+cql-keyvalue-astra (remaining,active,completed)=(91024,50,8976) 009%
+cql-keyvalue-astra (remaining,active,completed)=(89800,50,10200) 010%
+cql-keyvalue-astra (remaining,active,completed)=(88588,50,11416) 011%
+cql-keyvalue-astra (remaining,active,completed)=(87378,50,12622) 013%
 ...
-cql-keyvalue: 100.00%/Finished (details: min=0 cycle=100000 max=100000)
+cql-keyvalue-astra (remaining,active,completed)=(0,0,100000) 100% (last report)
 ```
 
 ## Run the main test phase
 
-Now that we have a base dataset of 100k rows in the database, we will now
+Now that we have a base dataset of 50K rows in the database, we will now
 run a mixed read / write workload, by default this runs a 50% read / 50%
-write workload.
+write workload. This time we will add a `-v` option for more context.
 
-    ./nb5 run driver=cql workload=cql-keyvalue tags=phase:main host=<host-or-ip> cycles=100k cyclerate=5000 threads=50 --progress console:1s
+    ./nb5 run driver=cql workload=cql-keyvalue tags=phase:main host=<host-or-ip> cycles=50k cyclerate=5000 threads=50 --progress console:1s -v
 
 You should see output that looks like this:
 
 ```
-Logging to logs/scenario_20190812_154431_028.log
-cql-keyvalue: 0.50%/Running (details: min=0 cycle=500 max=100000)
-cql-keyvalue: 2.50%/Running (details: min=0 cycle=2500 max=100000)
-cql-keyvalue: 6.70%/Running (details: min=0 cycle=6700 max=100000)
-cql-keyvalue: 11.16%/Running (details: min=0 cycle=11160 max=100000)
-cql-keyvalue: 14.25%/Running (details: min=0 cycle=14250 max=100000)
-cql-keyvalue: 18.41%/Running (details: min=0 cycle=18440 max=100000)
-cql-keyvalue: 22.76%/Running (details: min=0 cycle=22760 max=100000)
-cql-keyvalue: 27.27%/Running (details: min=0 cycle=27300 max=100000)
-cql-keyvalue: 31.81%/Running (details: min=0 cycle=31810 max=100000)
-cql-keyvalue: 36.34%/Running (details: min=0 cycle=36340 max=100000)
-cql-keyvalue: 40.90%/Running (details: min=0 cycle=40900 max=100000)
-cql-keyvalue: 45.48%/Running (details: min=0 cycle=45480 max=100000)
-cql-keyvalue: 50.05%/Running (details: min=0 cycle=50050 max=100000)
-cql-keyvalue: 54.36%/Running (details: min=0 cycle=54360 max=100000)
-cql-keyvalue: 58.91%/Running (details: min=0 cycle=58920 max=100000)
-cql-keyvalue: 63.40%/Running (details: min=0 cycle=63400 max=100000)
-cql-keyvalue: 66.96%/Running (details: min=0 cycle=66970 max=100000)
-cql-keyvalue: 71.61%/Running (details: min=0 cycle=71610 max=100000)
-cql-keyvalue: 76.11%/Running (details: min=0 cycle=76130 max=100000)
-cql-keyvalue: 80.66%/Running (details: min=0 cycle=80660 max=100000)
-cql-keyvalue: 85.22%/Running (details: min=0 cycle=85220 max=100000)
-cql-keyvalue: 89.80%/Running (details: min=0 cycle=89800 max=100000)
-cql-keyvalue: 94.46%/Running (details: min=0 cycle=94460 max=100000)
-cql-keyvalue: 98.93%/Running (details: min=0 cycle=98930 max=100000)
-cql-keyvalue: 100.00%/Finished (details: min=0 cycle=100000 max=100000)
+INFO  [main] NBCLI        Configured scenario log at logs/scenario_20230113_135200_029.log
+cql-keyvalue-astra (remaining,active,completed)=(49689,50,311) 001%
+cql-keyvalue-astra (remaining,active,completed)=(48506,44,1494) 003%
+cql-keyvalue-astra (remaining,active,completed)=(44826,50,5174) 010%
+cql-keyvalue-astra (remaining,active,completed)=(41134,50,8866) 018%
+cql-keyvalue-astra (remaining,active,completed)=(37450,50,12550) 025%
+cql-keyvalue-astra (remaining,active,completed)=(33797,50,16203) 032%
+cql-keyvalue-astra (remaining,active,completed)=(30091,50,19909) 040%
+cql-keyvalue-astra (remaining,active,completed)=(26372,50,23628) 047%
+cql-keyvalue-astra (remaining,active,completed)=(22776,50,27224) 054%
+cql-keyvalue-astra (remaining,active,completed)=(19101,50,30899) 062%
+cql-keyvalue-astra (remaining,active,completed)=(15435,50,34565) 069%
+cql-keyvalue-astra (remaining,active,completed)=(11771,50,38229) 076%
+cql-keyvalue-astra (remaining,active,completed)=(8121,50,41879) 084%
+cql-keyvalue-astra (remaining,active,completed)=(4554,50,45446) 091%
+cql-keyvalue-astra (remaining,active,completed)=(922,50,49078) 098%
+cql-keyvalue-astra (remaining,active,completed)=(0,0,50000) 100% (last report)
+
 ```
 
 We have a few new command line options here:
@@ -187,7 +184,7 @@ rate limit the workload and here we are running at 5000 ops/sec.
 ## Now What?
 
 Note in the above output, we
-see `Logging to logs/scenario_20190812_154431_028.log`.
+see `Configured scenario log at logs/scenario_20230113_135200_029.log`.
 
 By default, NoSQLBench records the metrics from the run in this file, we
 will go into detail about these metrics in the next section Viewing

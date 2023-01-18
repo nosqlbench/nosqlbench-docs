@@ -32,6 +32,7 @@ you can start an instance of DSE with this one-liner:
 or consult the instructions at the
 [[Apache Cassandra docker hub landing page](https://hub.docker.com/_/cassandra)].
 
+
 ## Running
 
 To run a simple built-in workload run:
@@ -51,7 +52,7 @@ If you want a simple list of yamls which contain named scenarios, run:
 👉 These commands will include workloads that were shipped with nb5 and
 workloads in your local directory. To learn more about how to design
 custom workloads see
-[[designing workloads](../../designing_workloads/01-statement-templates)].
+[[designing workloads](/../workloads_101)].
 
 To provide your own contact points (comma separated), add the `hosts=`
 parameter
@@ -77,3 +78,24 @@ Prometheus instance in your local docker stack. You can find the DSE
 Metrics Collector docs
 [here](https://docs.datastax.com/en/monitoring/doc/monitoring/metricsCollector/mcExportMetricsDocker.html)
 .
+
+## Run a cluster (Astra DB)
+
+Alternatively, you can choose to run a serverless cluster through AstraDB for functional testing. For tips on how to set-up an Astra DB instance,
+you can check out this [[Astra Tutorial](https://github.com/datastaxdevs/workshop-intro-to-cassandra#2-create-a-table)].
+
+If you plan to follow along this tutorial using AstraDB, you will need to follow these steps: 
+- Add a keyspace named 'baselines' to your Astra Database (this is because Astra does not support adding keyspaces through CQLSH),
+see the following for details:
+
+  ![Keyspace](/../getting_started/keyspace.png)
+
+- Add an IP to connect to your DB Instance, you can do that by going to the settings of your Astra DB 
+and clicking 'Add Access'. Make note of your IP.
+
+- In the connect menu of your Astra DB Instance, download your secure connect bundle and make note of its path.
+
+- In your organization settings, you need to generate a Read/Write token and make note of the Client ID and Client Secret. 
+see below for details:
+
+  ![Token](/../getting_started/token.png)
