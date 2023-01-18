@@ -65,6 +65,9 @@ jobs:
     steps:
       - name: 'Checkout'
         uses: actions/checkout@master
+      - name: 'set CNAME'
+        run: |
+          echo "builddocs.nosqlbench.io" > site/static/CNAME
       - name: 'Build and Deploy Static Site'
         uses: shalzz/zola-deploy-action@master
         env:

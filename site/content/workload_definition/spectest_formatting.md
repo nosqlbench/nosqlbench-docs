@@ -1,5 +1,5 @@
 ---
-weight: 0
+weight: 56247312
 title: SpecTest Formatting
 ---
 # SpecTest Formatting
@@ -33,12 +33,14 @@ block is in array form, and thus compares 0 pair-wise elements.
 ```
 
 *json:*
-```json5
+```json
+
 []
 ```
 
 *ops:*
-```json5
+```json
+
 []
 ```
 

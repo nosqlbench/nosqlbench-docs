@@ -1,5 +1,5 @@
 ---
-weight: 0
+weight: 144740440
 title: Op Templates
 ---
 # Op Templates
@@ -25,7 +25,8 @@ op: select * from bar.table;
 
 *json:*
 
-```json5
+```json
+
 {
   "op": "select * from bar.table;"
 }
@@ -33,7 +34,8 @@ op: select * from bar.table;
 
 *ops:*
 
-```json5
+```json
+
 [
   {
     "name": "block0--stmt1",
@@ -59,7 +61,8 @@ ops:
 
 *json:*
 
-```json5
+```json
+
 {
   "ops": [
     "select * from bar.table;"
@@ -69,7 +72,8 @@ ops:
 
 *ops:*
 
-```json5
+```json
+
 [
   {
     "name": "block0--stmt1",
@@ -98,7 +102,8 @@ ops:
 
 *json:*
 
-```json5
+```json
+
 {
   "ops": [
     {
@@ -110,7 +115,8 @@ ops:
 
 *ops:*
 
-```json5
+```json
+
 [
   {
     "name": "block0--op1",
@@ -137,7 +143,8 @@ ops:
 
 *json:*
 
-```json5
+```json
+
 {
   "ops": [
     {
@@ -150,7 +157,8 @@ ops:
 
 *ops:*
 
-```json5
+```json
+
 [
   {
     "name": "block0--op1",
@@ -176,7 +184,8 @@ ops:
 
 *json:*
 
-```json5
+```json
+
 {
   "ops": {
     "op1": "select * from bar.table;"
@@ -186,7 +195,8 @@ ops:
 
 *ops:*
 
-```json5
+```json
+
 [
   {
     "name": "block0--op1",
@@ -213,7 +223,8 @@ ops:
 
 *json:*
 
-```json5
+```json
+
 {
   "ops": {
     "op1": {
@@ -225,7 +236,8 @@ ops:
 
 *ops:*
 
-```json5
+```json
+
 [
   {
     "name": "block0--op1",
@@ -269,7 +281,8 @@ ops:
 
 *json:*
 
-```json5
+```json
+
 {
   "ops": {
     "op1": {
@@ -292,7 +305,8 @@ ops:
 
 *ops:*
 
-```json5
+```json
+
 [
   {
     "bindings": {
@@ -354,7 +368,8 @@ blocks:
 
 *json:*
 
-```json5
+```json
+
 {
   "tags": {
     "docleveltag": "is-tagging-everything"
@@ -390,7 +405,8 @@ blocks:
 
 *ops:*
 
-```json5
+```json
+
 [
   {
     "bindings": {

@@ -1,5 +1,5 @@
 ---
-weight: 0
+weight: 171833391
 title: dynamodb
 ---
 # dynamodb

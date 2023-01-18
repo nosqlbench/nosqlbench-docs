@@ -1,5 +1,5 @@
 ---
-weight: 0
+weight: 171554638
 title: Workload Structure
 ---
 # Workload Structure
@@ -36,7 +36,8 @@ description: |
 
 *json:*
 
-```json5
+```json
+
 {
   "description": "summary of this workload\nand more details\n"
 }
@@ -44,7 +45,8 @@ description: |
 
 *ops:*
 
-```json5
+```json
+
 []
 ```
 
@@ -70,7 +72,8 @@ scenarios:
 
 *json:*
 
-```json5
+```json
+
 {
   "scenarios": {
     "default": "run driver=diag cycles=10"
@@ -80,7 +83,8 @@ scenarios:
 
 *ops:*
 
-```json5
+```json
+
 []
 ```
 
@@ -97,7 +101,8 @@ scenarios:
 
 *json:*
 
-```json5
+```json
+
 {
   "scenarios": {
     "default": {
@@ -110,7 +115,8 @@ scenarios:
 
 *ops:*
 
-```json5
+```json
+
 []
 ```
 
@@ -127,7 +133,8 @@ scenarios:
 
 *json:*
 
-```json5
+```json
+
 {
   "scenarios": {
     "default": [
@@ -140,7 +147,8 @@ scenarios:
 
 *ops:*
 
-```json5
+```json
+
 []
 ```
 
@@ -162,7 +170,8 @@ scenarios:
 
 *json:*
 
-```json5
+```json
+
 {
   "scenarios": {
     "default": "run alias==first driver=diag cycles=10"
@@ -172,7 +181,8 @@ scenarios:
 
 *ops:*
 
-```json5
+```json
+
 []
 ```
 
@@ -194,7 +204,8 @@ scenarios:
 
 *json:*
 
-```json5
+```json
+
 {
   "scenarios": {
     "default": "run alias===first driver=diag cycles=10"
@@ -204,7 +215,8 @@ scenarios:
 
 *ops:*
 
-```json5
+```json
+
 []
 ```
 
@@ -227,7 +239,8 @@ bindings:
 
 *json:*
 
-```json5
+```json
+
 {
   "bindings": {
     "cycle": "Identity();",
@@ -238,7 +251,8 @@ bindings:
 
 *ops:*
 
-```json5
+```json
+
 []
 ```
 
@@ -261,7 +275,8 @@ params:
 
 *json:*
 
-```json5
+```json
+
 {
   "params": {
     "param1": "pvalue1",
@@ -272,7 +287,8 @@ params:
 
 *ops:*
 
-```json5
+```json
+
 []
 ```
 
@@ -295,7 +311,8 @@ tags:
 
 *json:*
 
-```json5
+```json
+
 {
   "tags": {
     "phase": "main"
@@ -305,7 +322,8 @@ tags:
 
 *ops:*
 
-```json5
+```json
+
 []
 ```
 
@@ -338,7 +356,8 @@ blocks:
 
 *json:*
 
-```json5
+```json
+
 {
   "blocks": {
     "namedblock1": {
@@ -356,7 +375,8 @@ blocks:
 
 *ops:*
 
-```json5
+```json
+
 [
   {
     "name": "namedblock1--op1",
@@ -405,7 +425,8 @@ blocks:
 
 *json:*
 
-```json5
+```json
+
 {
   "blocks": [
     {
@@ -429,7 +450,8 @@ blocks:
 
 *ops:*
 
-```json5
+```json
+
 [
   {
     "name": "block1--op1",
@@ -486,7 +508,8 @@ blocks:
 
 *json:*
 
-```json5
+```json
+
 {
   "blocks": [
     {
@@ -499,7 +522,8 @@ blocks:
 
 *ops:*
 
-```json5
+```json
+
 [
   {
     "name": "myblock--stmt1",

@@ -2,17 +2,19 @@
 title = "What's New - NB5"
 +++
 
+👉 **The docs are presently being rewritten to support NoSQLBench v5.0.** 👈
+
 Welcome to NB5! This release represents a massive leap forward. There are so many improvements 
 that should have gone into smaller releases along the way, but here we are. We've had our heads 
-down for awhile, but it's time to talk about the new stuff!
+down, focusing on new APIs, porting drivers, and fixing bugs, but it's time to talk about the 
+new stuff!
 
 For those who are experienced NB5 users, this will have few (but some!) surprises. For 
 those of you who are NB (4 or earlier) users, NB5 is a whole different kind of testing tool. The 
 changes allow for a much more streamlined user and developer experience, while also offering 
 additional capabilities never seen together in a systems testing tool. 
 
-This is an unconventional set of release notes. Everything mentioned here will find its way into 
-the main docs site before were done.
+Everything mentioned here will find its way into the main docs site before were done.
 
 We've taken some care to make sure that there is support for earlier workloads where at all
 possible. If we've missed something critical, please let us know and we'll patch it up ASAP.

@@ -5,13 +5,6 @@ title: diagnostic functions
 
 Diagnostic functions can be used to help you construct the right VirtData recipe.
 
----
-title: diagnostic functions
-weight: 40
----
-
-Diagnostic functions can be used to help you construct the right VirtData recipe.
-
 ## Show
 
 Show diagnostic values for the thread-local variable map.
