@@ -1,6 +1,6 @@
 ---
-weight: 30
 title: distribution functions
+weight: 30
 ---
 
 All of the distributions that are provided in the Apache Commons Math

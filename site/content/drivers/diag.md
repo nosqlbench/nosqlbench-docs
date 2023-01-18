@@ -1,6 +1,6 @@
 ---
-weight: 106667
 title: diag
+weight: 106667
 ---
 # diag
 

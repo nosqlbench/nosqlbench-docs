@@ -1,6 +1,6 @@
 ---
-weight: 56247312
 title: SpecTest Formatting
+weight: 56247312
 ---
 # SpecTest Formatting
 
