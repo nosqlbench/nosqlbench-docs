@@ -6,6 +6,14 @@ title: conversion functions
 Conversion functions simply allow values of one type
 to be converted to another type in an obvious way.
 
+---
+title: conversion functions
+weight: 30
+---
+
+Conversion functions simply allow values of one type
+to be converted to another type in an obvious way.
+
 ## ByteBufferSizedHashed
 
 Create a ByteBuffer from a long input based on a provided size function. As a 'Sized' function, the first argument is a function which determines the size of the resulting ByteBuffer. As a 'Hashed' function, the input value is hashed again before being used as value.

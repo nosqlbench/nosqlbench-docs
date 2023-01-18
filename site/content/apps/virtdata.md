@@ -60,7 +60,6 @@ Here is what happens when you run this:
               max = 1000000
           [count] = 1000000
        buffersize = 1000
-         isolated = false
  [totalGenTimeMs] = 2408.874399
  [totalCmpTimeMs] = 2274.510746
        [genPerMs] = 39852.638
@@ -73,5 +72,23 @@ This shows that on a 12 core (24 thread) system, Around **40 million** variates 
 generated from the above recipe (across all cores, of course).
 
 In detail:
+* `[totalGenTimeMs]` tracks the total time the thread pool spent generating data, in milliseconds.
+* `[totalCmpTimeMs]` tracks the total time the thread pool spent cross-checking data across threads.
+* `[genPerMs]` and `[cmpPerMs]` show the calculated rates for generation and validation _per
+  millisecond_, respectively.
+* `[genPerS]` and `[cmpPerS]` show the calculated rates for generation and validation _per second_,
+  respectively.
 
+## interpretation
+
+This example shows how effective variate generation can be. This doesn't mean that you can
+easily simulate 40 million operations with this data. However, it does _anecdotally_ indicate
+the proportional load that generation puts on the system. For example, if you were generating
+around 400K ops/s from a client with only this binding, it would be reasonable that variate
+generation consumes around (400,000/40,000,000) of the system's cycles, or around 1%.
+
+More realistic testing scenarios are likely to use proportionally more due to the amount of data
+generation which is needed. Still, generating synthetic data makes for a more capable testing
+harnesses because of the extra headroom you leave in your system for other necessary work, like
+managing a driver's connection pool or serdes on requests and responses.
 
