@@ -91,12 +91,25 @@ dependency creep. This is bad. Try to help us keep the dependency tree well trim
 
 # What is (generally) Accepted?
 
-- Changes which are complimentary or incremental to core NoSQLBench functionality.
-- Changes which have already been discussed or are of such a trivial nature that they are 
-  self-describing.
-- Changes which have appropriate test coverage.
-- Changes which make NoSQLBench easier, better, or more powerful for any user in the NoSQL 
-  ecosystem. (This includes drivers from vendors so long as they follow project standards.)
+## Incremental Improvements
+
+Changes which are complimentary or incremental to core NoSQLBench functionality are always good.
+As long as a change doesn't compromise existing functionality or otherwise compromise the 
+integrity of the project it will generally be welcome.
+
+## Trivial Improvements
+
+Changes which have already been discussed or are of such a trivial nature that they are 
+self-describing don't require substantial ceremony. Use your best judgement here. If you are 
+fixing a typo on the website, just do it. If you are adding a better description to some CI/CD 
+wiring, just do it. Again, just use your best judgement about what should be discussed or agreed 
+to beforehand.
+
+## Subsystem Enhancements
+
+Changes which make the core of NoSQLBench easier, better, or more powerful for any user in the 
+NoSQL ecosystem are awesome. New driver are awesome. This includes drivers from vendors. All 
+changes will be subject to the platform standards and community guidelines, of course.
 
 # What is NOT Accepted?
 

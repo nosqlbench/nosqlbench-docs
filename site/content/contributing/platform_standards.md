@@ -48,5 +48,9 @@ library, there is a good chance it is already available and under version manage
 `mvn-defaults/pom.xml` file. If it is not, then scan for the dependency and hoist it up to the 
 mvn-defaults level if that makes sense for multiple modules depending on it. 
 
+# Abandoned Code
 
-
+If code is contributed which needs to be maintained by a vendor or other party, there will be an 
+expectation that the contributor is at least willing to do bug fixes or resolve other 
+user-affecting issues. If a module is considered abandoned for a significant period of time, it 
+may be removed from the project. 
