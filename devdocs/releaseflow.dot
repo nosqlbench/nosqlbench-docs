@@ -1,0 +1,31 @@
+digraph releaseflow {
+ rankdir=LR;
+
+ subgraph mainrepo {
+  subgraph cluster0 {
+   node[shape=none]
+   label="main artifacts"
+   "nb5-5.17.x-SNAPSHOT"
+   "nb5-5.17.x-PRERELEASE"
+   "nb5-5.17.x"
+  }
+ }
+
+
+ subgraph cluster1 {
+ label="nosqlbench-build-docs\nrepo"
+  "sdf"
+ }
+ subgraph cluster2 {
+ label="main artifacts"
+ }
+ subgraph cluster3 {
+ label="main artifacts"
+ }
+ subgraph cluster4 {
+ label="main artifacts"
+ }
+ subgraph cluster5 {
+ label="main artifacts"
+ }
+}
