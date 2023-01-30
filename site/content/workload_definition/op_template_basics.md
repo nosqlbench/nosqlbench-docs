@@ -273,7 +273,7 @@ ops:
     bindings:
       binding1: NumberNameToString();
     tags:
-      phase: schema
+      block: schema
     params:
       prepared: false
     description: This is just an example operation
@@ -296,7 +296,7 @@ ops:
         "prepared": false
       },
       "tags": {
-        "phase": "schema"
+        "block": "schema"
       }
     }
   }
@@ -321,7 +321,7 @@ ops:
       "prepared": false
     },
     "tags": {
-      "phase": "schema",
+      "block": "schema",
       "name": "block0--special-op-name",
       "block": "block0"
     }
@@ -355,7 +355,7 @@ blocks:
     bindings:
       binding1: NumberNameToString();
     tags:
-      phase: schema
+      block: schema
     params:
       prepared: false
     description: This is just an example operation
@@ -390,7 +390,7 @@ blocks:
         "prepared": false
       },
       "tags": {
-        "phase": "schema"
+        "block": "schema"
       },
       "ops": {
         "op1": {
@@ -420,7 +420,7 @@ blocks:
       "prepared": false
     },
     "tags": {
-      "phase": "schema",
+      "block": "schema",
       "docleveltag": "is-tagging-everything",
       "name": "block-named-fred--special-op-name",
       "block": "block-named-fred"
