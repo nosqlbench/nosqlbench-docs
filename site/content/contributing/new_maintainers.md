@@ -1,6 +1,6 @@
 +++
 title="New Maintainers"
-weight=60
+weight=70
 +++
 
 The NoSQLBench project has a few dedicated builders. We would like to diversify the 

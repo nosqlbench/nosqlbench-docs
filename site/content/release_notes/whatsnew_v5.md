@@ -17,7 +17,11 @@ additional capabilities never seen together in a systems testing tool.
 Everything mentioned here will find its way into the main docs site before were done.
 
 We've taken some care to make sure that there is support for earlier workloads where at all
-possible. If we've missed something critical, please let us know and we'll patch it up ASAP.
+possible. If we've missed something critical, please let us know, and we'll patch it up ASAP.
+
+This is a narrative overview of changes for NB5 in general. Individual 
+[releases](https://github.com/nosqlbench/nosqlbench/releases) will have itemized code changes 
+listed individually.
 
 # A New Artifact - nb5
 
@@ -77,7 +81,8 @@ suitable for promotion to a main release. Once flagged as a normal release, CI/C
 up the release from the github releases area automatically.
 
 We have a set of release criteria which will be published to this site and used as a blueprint for 
-releases going forward.
+releases going forward. More information on how releases are managed can be found in our 
+[Contributing](../contributing/) section.
 
 # Docs
 
@@ -171,6 +176,8 @@ includes structured data, dynamic op configuration, and driver instancing to nam
 * Template vars like `<<name:value>>` or `TEMPLATE(name,value)` can set defaults the first time they 
   are seen. This means you don't have to update them everywhere. A nice way to handle this is to 
   include them in the description once, since you should be documenting them anyway!
+* You can load JSON files directly. You can also load JSONNET files directly! If you need to 
+  sanity check your jsonnet rendering, you can use `dryrun=jsonnet`.
 
 # Deprecations and Standards
 

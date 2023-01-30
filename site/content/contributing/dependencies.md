@@ -1,10 +1,11 @@
 +++
-title="Platform Standards"
+title="Dependencies"
 weight=50
 +++
 
-With NoSQLBench 5 and newer, there are some compatibility standards that are kept to ensure that 
-various drivers and their upstream dependencies can work harmoniously in one runtime.
+With NoSQLBench 5 and newer, there are some compatibility standards that we observe for 
+dependencies. This is to ensure that various drivers and their upstream dependencies can work 
+harmoniously in one runtime.
 
 ## Java LTS
 
