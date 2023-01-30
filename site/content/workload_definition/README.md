@@ -37,8 +37,8 @@ define all valid workload constructions. Because of this, workload definitions a
 essentially data structures comprised of basic collection types and primitive values. Any on-disk
 format which can be loaded as such can be a valid source of workload definitions.
 
-- [SpecTest Formatting](../spectest-formatting) - A primer on the example formats used here
-- [Workload Structure](workload-structure) - Overall workload structure, keywords, nesting
+- [SpecTest Formatting](spectest_formatting.md) - A primer on the example formats used here
+- [Workload Structure](workload_structure.md) - Overall workload structure, keywords, nesting
   features
 - [Op Template Basics](op_template_basics.md) - Basic Details of op templating
 - [Op Template Variations](op_template_variations.md) - Additional op template variants
