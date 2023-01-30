@@ -1,10 +1,7 @@
 on:
   push:
     branches:
-      - main 
-    paths:
-      - "!RELEASENOTES.**"
-      - "site/**"
+      - main
 
 jobs:
 
