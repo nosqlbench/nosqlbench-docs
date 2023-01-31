@@ -1,13 +1,13 @@
-name: preview
+name: builddocs
 
 on:
   push:
-    tags:
-      - "[0-9]+.[0-9]+.[0-9]+-preview"
+    branches:
+      - main
 
 jobs:
 
-  sync-to-preview:
+  import-generated:
     runs-on: ubuntu-latest
     if: github.ref != 'refs/heads/master'
 
@@ -20,36 +20,23 @@ jobs:
 
       - run: ls -la
 
-      - name: clone nosqlbench-build-docs
+      - name: clone nosqlbench-docs
         env:
           NBDROID_NAME: ${{ secrets.NBDROID_NAME }}
           NBDROID_TOKEN: ${{ secrets.NBDROID_TOKEN }}
         run: |
           git clone https://${{secrets.NBDROID_NAME}}:${{secrets.NBDROID_TOKEN}}@github.com/nosqlbench/nosqlbench-build-docs.git nosqlbench-build-docs
-          cd nosqlbench-build-docs
+          cd nosqlbench-docs
           echo "files listing"
-          find site
+          find .
           git remote set-url origin https://${{secrets.NBDROID_NAME}}:${{secrets.NBDROID_TOKEN}}@github.com/nosqlbench/nosqlbench-build-docs.git
           git remote -v
 
-      - name: clone nosqlbench-preview-docs
-        env:
-          NBDROID_NAME: ${{ secrets.NBDROID_NAME }}
-          NBDROID_TOKEN: ${{ secrets.NBDROID_TOKEN }}
-        run: |
-          git clone https://${{secrets.NBDROID_NAME}}:${{secrets.NBDROID_TOKEN}}@github.com/nosqlbench/nosqlbench-preview-docs.git nosqlbench-preview-docs
-          cd nosqlbench-preview-docs
-          echo "files listing"
-          find site
-          git remote set-url origin https://${{secrets.NBDROID_NAME}}:${{secrets.NBDROID_TOKEN}}@github.com/nosqlbench/nosqlbench-preview-docs.git
-          git remote -v
-
-      - name: 'Sync Build to Preview'
+      - name: 'Import Content'
         run: |
           set -x
-          rsync -av --exclude='.git*'  --delete nosqlbench-build-docs/ nosqlbench-preview-docs/
-          perl -pi -e 's/\(BUILD\)/\(PREVIEW\)/' nosqlbench-preview-docs/site/config.toml
-          perl -pi -e 's/\(build\)/\(preview\)/' nosqlbench-preview-docs/site/config.toml
+          cd nosqlbench-docs
+          ./doimport.sh
 
       - name: "commit imported changes"
         env:
@@ -58,7 +45,7 @@ jobs:
         run: |
           set -x
           pwd
-          cd nosqlbench-preview-docs
+          cd nosqlbench-docs
           git add site
           git add -u
           CHANGES=$(git status --porcelain 2>/dev/null| wc -l)
@@ -68,3 +55,20 @@ jobs:
             git commit -m"docs update for $GITHUB_REF"
             git push
           fi
+
+
+  build-site:
+    needs: import-generated
+    runs-on: ubuntu-latest
+    if: github.ref != 'refs/heads/master'
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@master
+      - name: 'set CNAME'
+        run: |
+          echo "docs.nosqlbench.io" > site/static/CNAME
+      - name: 'Build and Deploy Static Site'
+        uses: shalzz/zola-deploy-action@master
+        env:
+          BUILD_DIR: ./site
+          GITHUB_TOKEN: ${{ secrets.NBDROID_TOKEN }}
