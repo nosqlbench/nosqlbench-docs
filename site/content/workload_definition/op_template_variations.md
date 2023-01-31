@@ -1,6 +1,6 @@
 ---
-title: Op Template Variations
 weight: 144740440
+title: Op Template Variations
 ---
 
 # Op Templates Variations
