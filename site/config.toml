@@ -1,6 +1,6 @@
 # do NOT include a trailing slash on the base URL for web urls
 base_url = "https://builddocs.nosqlbench.io"
-title = "NoSQLBench Project"
+title = "NoSQLBench Project (BUILD)"
 description = "NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System."
 default_language = "en"
 output_dir = "public"
@@ -60,7 +60,7 @@ footer_credit_override = ''
 #footer_credit_override='<p class="s90">Powered by <a href="https://www.getzola.org/" target="_blank">Zola</a> &#38; <a href="https://github.com/Jieiku/abridge/" target="_blank">Abridge</a></p>'
 
 #uncomment one of the two lines, or neither, depending on which type of logo you want to use:
-logo = { file="nb5logo.png", width="32", height="32", alt="NoSQLBench5 (build)", text="NoSQLBench v5 (build)"}
+logo = { file="nb5logo.png", width="32", height="32", alt="NoSQLBench5 (build)", text="NoSQLBench v5 (BUILD)"}
 #logo = { file="engine.svg", width="64", height="64", alt="NoSQLBench5", text="NoSQLBench"}
 #logo = { file="nb5.png", width=32, height="32", alt="NoSQLBench5", text="NoSQLBench"}
 #logo = { file="logo.svg", width="32", height="32", alt="Abridge", text="bridge" }
