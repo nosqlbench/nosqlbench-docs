@@ -25,11 +25,11 @@ jobs:
           NBDROID_NAME: ${{ secrets.NBDROID_NAME }}
           NBDROID_TOKEN: ${{ secrets.NBDROID_TOKEN }}
         run: |
-          git clone https://${{secrets.NBDROID_NAME}}:${{secrets.NBDROID_TOKEN}}@github.com/nosqlbench/nosqlbench-build-docs.git nosqlbench-build-docs
+          git clone https://${{secrets.NBDROID_NAME}}:${{secrets.NBDROID_TOKEN}}@github.com/nosqlbench/nosqlbench-docs.git nosqlbench-docs
           cd nosqlbench-docs
           echo "files listing"
           find .
-          git remote set-url origin https://${{secrets.NBDROID_NAME}}:${{secrets.NBDROID_TOKEN}}@github.com/nosqlbench/nosqlbench-build-docs.git
+          git remote set-url origin https://${{secrets.NBDROID_NAME}}:${{secrets.NBDROID_TOKEN}}@github.com/nosqlbench/nosqlbench-docs.git
           git remote -v
 
       - name: 'Import Content'
