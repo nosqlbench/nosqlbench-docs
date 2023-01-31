@@ -5,7 +5,7 @@ on:
 
 jobs:
 
-  import-generated:
+  sync-to-preview:
     runs-on: ubuntu-latest
     if: github.ref != 'refs/heads/master'
 
