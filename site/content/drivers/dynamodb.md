@@ -1,6 +1,6 @@
 ---
-title: dynamodb
 weight: 171833391
+title: dynamodb
 ---
 # dynamodb
 

@@ -1,6 +1,6 @@
 ---
-title: stdout
 weight: 235135268
+title: stdout
 ---
 # stdout
 

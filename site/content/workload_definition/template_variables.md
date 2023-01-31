@@ -1,6 +1,6 @@
 ---
-title: Template Variables
 weight: 5299611
+title: Template Variables
 ---
 # Template Variables
 
