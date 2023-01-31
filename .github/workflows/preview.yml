@@ -48,6 +48,7 @@ jobs:
         run: |
           set -x
           rsync -av --exclude='.git*'  --delete nosqlbench-build-docs/ nosqlbench-preview-docs/
+          perl -pi -e 's/\(BUILD\)/\(PREVIEW\)/' nosqlbench-preview-docs/site/config.toml
 
       - name: "commit imported changes"
         env:
