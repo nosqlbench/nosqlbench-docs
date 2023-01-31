@@ -47,7 +47,7 @@ jobs:
       - name: 'Sync Build to Preview'
         run: |
           set -x
-          rsync -av --delete nosqlbench-build-docs/ nosqlbench-preview-docs/
+          rsync -av --exclude='.git*'  --delete nosqlbench-build-docs/ nosqlbench-preview-docs/
 
       - name: "commit imported changes"
         env:
