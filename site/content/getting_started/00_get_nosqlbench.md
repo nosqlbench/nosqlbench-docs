@@ -103,33 +103,5 @@ Metrics Collector docs
 [here](https://docs.datastax.com/en/monitoring/doc/monitoring/metricsCollector/mcExportMetricsDocker.html)
 .
 
-## Run a cluster (Astra DB)
-
-Alternatively, you can choose to run a serverless cluster through AstraDB for functional testing.
-For tips on how to set-up an Astra DB instance,
-you can check out
-this [[Astra Tutorial](https://github.com/datastaxdevs/workshop-intro-to-cassandra#2-create-a-table)].
-
-If you plan to follow along this tutorial using AstraDB, you will need to follow these steps:
-
-- Add a keyspace named 'baselines' to your Astra Database (this is because Astra does not support
-  adding keyspaces through CQLSH),
-  see the following for details:
-
-  ![Keyspace](/../getting_started/keyspace.png)
-
-- Add an IP to connect to your DB Instance, you can do that by going to the settings of your Astra
-  DB
-  and clicking 'Add Access'. Make note of your IP.
-
-- In the connect menu of your Astra DB Instance, download your secure connect bundle and make note
-  of its path.
-
-- In your organization settings, you need to generate a Read/Write token and make note of the Client
-  ID and Client Secret.
-  see below for details:
-
-  ![Token](/../getting_started/token.png)
-
 [^1]: The version scheme for NoSQLBench is [major]-[java-lts]-[minor], so nb5 version 5.17.1 
 requires java version 17, which is the latest LTS Java release.
