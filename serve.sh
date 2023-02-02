@@ -7,6 +7,6 @@ popd
 
 pushd .
 cd site
-../bin/zola serve
+../bin/zola serve $*
 popd
 

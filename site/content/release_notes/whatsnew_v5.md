@@ -31,6 +31,13 @@ It also allows you to easily have both on your system if you are maintaining tes
 This is a combination of the NoSQLBench core runtime module `nbr` and all the bundled driver 
 adapters which have been contributed to the project.
 
+# New Drivers
+
+We've ported many drivers to the nb5 APIs. All CQL support is now being provided by
+[Datastax Java Driver for Apache Cassandra](https://docs.datastax.com/en/developer/java-driver/4.14/).
+In addition, multiple contributors are stepping up to provide new drivers for many systems 
+across the NoSQL ecosystem.
+
 # Project 
 
 Significant changes were made for the benefit of both users and developers.
