@@ -1,5 +1,5 @@
 # do NOT include a trailing slash on the base URL for web urls
-base_url = "https://builddocs.nosqlbench.io"
+base_url = "https://docs.nosqlbench.io"
 title = "NoSQLBench Project"
 description = "NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System."
 default_language = "en"
