@@ -1,5 +1,5 @@
 # do NOT include a trailing slash on the base URL for web urls
-base_url = "https://builddocs.nosqlbench.io"
+base_url = "https://docs.nosqlbench.io"
 title = "NoSQLBench Project"
 description = "NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System."
 default_language = "en"
@@ -70,12 +70,13 @@ logo = { file="nb5logo.png", width="32", height="32", alt="NoSQLBench5", text="N
 sitedesc = false # enables or disables the display of the site description below the logo.
 copyright_start_year = 2023  # optional
 #copyright_end_year = 2020  # optional, recommend leaving unset, zola build will set this to current year by default
-headhr = false # show or hide horizontal rule below header
+headhr = true # show or hide horizontal rule below header
 foothr = true # show or hide horizontal rule above footer
 
 menu = [
     {url = "/getting_started/", name = "Getting Started", slash = true, blank = false},
     {url = "/release_notes/", name = "Release Notes", slash = true, blank = false},
+#    {url = "http://nosqlbench.io/", icon = "ICON", slash=true, blank=true }
 #    {url = "https://github.com/nosqlbench/nosqlbench-build-docs", name = "Docs Repo", slash = true, blank = "true" },
 #    {url = "/posts/", name = "Posts", slash = true, blank = false},
 #    {url = "/categories/", name = "Categories", slash = true, blank = false},

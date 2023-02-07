@@ -36,7 +36,7 @@ for dirname in $(ls import); do
  if [ -d ${skeldir} ]
  then
   rsync -av $skeldir/ $importdir/
-  rsync -av --delete $importdir/ site/content/$dirname/
+  rsync -av --delete $importdir/ site/content/reference/$dirname/
  else
   printf "docs for $dirname were not deployed due to a missing skel template\n" 1>&2
  fi

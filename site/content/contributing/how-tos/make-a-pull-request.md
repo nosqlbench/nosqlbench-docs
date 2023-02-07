@@ -3,71 +3,53 @@ title="Make a Pull Request"
 weight=55
 +++
 
-# assumptions
+This is a detailed step-by-step explanation of how you would typically submit contributiosn to 
+the NoSQLBench project.
+
+# Assumptions
 
 - You have a github account
 - You know how to build NoSQLBench
 
-# Setup Workspace
+# Steps
 
-## configure your dev environment
+## Setup Workspace
+   1. configure your dev environment
+   2. clone the nosqlbench repo
+   3. clone your repo to your dev environment 
 
-## clone the nosqlbench repo
+## Own an issue 
+   1. assign or ask for an issue
+   2. create a feature branch
 
-## clone your repo to your dev environment
+## Make Change
+   1. add testing
+   2. add documentation
+   3. verify everything works
 
-# Own an issue
+## Submit for Review
+   1. organize commits for easy PR reviews
+   2. make thematic incremental changes as you go
+   3. push your branch up to your clone
+   4. make a draft pull request
+   5. promote PR to ready-for-review
+   6. ask a contributor to review and merge your PR
 
-## assign or ask for an issue
+## Iterate
+   1. resolve conversations or issues
+   2. repush and ask for review 
+      - You are done with this step once your PR is green, changes have been approved by 
+        reviewers, and there are no unresolved issues.
 
-## create a feature branch
+## Merge
+   1. merge the PR in github
 
-# Make Change
+## Reset
+   1. delete the feature branch
+   2. delete your local feature branch
+   3. checkout main
+   4. pull main
 
-## add testing
-
-## add documentation
-
-## verify everything works
-
-# Submit for Review
-
-## organize commits for easy PR reviews
-
-### make thematic incremental changes as you go
-
-## push your branch up to your clone
-
-## make a draft pull request
-
-## promote PR to ready-for-review
-
-## ask a contributor to review and merge your PR
-
-
-# Iterate
-
-## resolve conversations or issues
-
-## repush and ask for review
-
-You are done with this phase once your PR is green, changes have been approved by reviewers, and 
-there are no unresolved issues.
-
-# Merge
-
-## merge the PR in github
-
-# Reset
-
-## delete the feature branch
-
-## delete your local feature branch
-
-## checkout main
-
-## pull main
-
-# You're Done! Go again?
+## You're Done! Go again?
 
 

@@ -58,7 +58,6 @@
 {%- endif -%}
 {%- endmacro current_or_first_page -%}
 
-
 {%- macro this_section(section,page) -%}
 {%- if page -%}
 {%- set page_path = page.relative_path -%}
@@ -72,6 +71,40 @@
 {%- set section_data = get_section(path=section_path) -%}
 {%- endif -%}
 {{- section_data.relative_path -}}
+{%- endmacro this_section -%}
+
+{%- macro lower_root(section,page) -%}
+{%- set result = '_index.md' -%}
+{%- if page -%}
+{%- set page_path = page.relative_path -%}
+{%- set page_data = get_page(path=page_path) -%}
+{%- set section_path = page_data.ancestors | reverse | first -%}
+{%- set section = get_section(path=section_path) -%}
+{%- endif -%}
+{%- for section_path in page_data.ancestors | reverse -%}
+{%- set section_data = get_section(path=section_path) -%}
+{%- if section_data.extra.localroot -%}
+{%- set_global result=section_data.relative_path -%}
+{%- endif -%}
+{%- endfor -%}
+{{ result }}
+{%- endmacro this_section -%}
+
+{%- macro upper_root(section,page) -%}
+{%- set result = '_index.md' -%}
+{%- if page -%}
+{%- set page_path = page.relative_path -%}
+{%- set page_data = get_page(path=page_path) -%}
+{%- set section_path = page_data.ancestors | reverse | first -%}
+{%- set section = get_section(path=section_path) -%}
+{%- endif -%}
+{%- for section_path in page_data.ancestors -%}
+{%- set section_data = get_section(path=section_path) -%}
+{%- if section_data.extra.localroot -%}
+{%- set_global result=section_data.relative_path -%}
+{%- endif -%}
+{%- endfor -%}
+{{ result }}
 {%- endmacro this_section -%}
 
 {%- macro this_page(section,page) -%}
