@@ -13,27 +13,27 @@ Short options, like '-v' represent simple options, like verbosity. Using multipl
 level of the option, like '-vvv'.
 
 Long options, like '--help' are top-level options that may only be used once. These modify general
-behavior, or allow you to get more details on how to use PROG.
+behavior, or allow you to get more details on how to use nb5.
 
 All other options are either commands, or named arguments to commands. Any single word without
 dashes is a command that will be converted into script form. Any option that includes an equals sign
 is a named argument to the previous command. The following example is a commandline with a command *
 start*, and two named arguments to that command.
 
-    PROG start driver=diag alias=example
+    nb5 start driver=diag alias=example
 
 ### Discovery options ###
 
-These options help you learn more about running PROG, and about the plugins that are present in your
+These options help you learn more about running nb5, and about the plugins that are present in your
 particular version.
 
 Get a list of additional help topics that have more detailed documentation:
 
-    PROG help topics
+    nb5 help topics
 
 Provide specific help for the named activity type:
 
-    PROG help <activity type>
+    nb5 help <activity type>
 
 List the available drivers:
 
@@ -57,7 +57,7 @@ Provide the metrics that are available for scripting
 
 ### Execution Options ###
 
-This is how you actually tell PROG what scenario to run. Each of these commands appends script logic
+This is how you actually tell nb5 what scenario to run. Each of these commands appends script logic
 to the scenario that will be executed. These are considered as commands, can occur in any order and
 quantity. The only rule is that arguments in the arg=value form will apply to the preceding script
 or activity.

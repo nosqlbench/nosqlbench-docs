@@ -9,10 +9,7 @@ workloads. This means that you can fast-track performance, sizing and data model
 writing your own testing harness.
 
 To get started right away, jump to the
-[Getting Started](/getting_started/00-get-nosqlbench) section of the docs.
-
-To see the ways you can get NoSQLBench, check out the project site
-[DOWNLOADS.md](https://github.com/nosqlbench/nosqlbench/blob/master/DOWNLOADS.md).
+[Getting Started](@/getting-started/00-get-nosqlbench.md) section of the docs.
 
 ## What is NoSQLBench?
 

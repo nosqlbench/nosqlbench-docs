@@ -235,6 +235,12 @@ Read each line in each matching file in a directory structure, providing one lin
   - *example:* `DirectoryLines('/var/tmp/bardata', '.*')`
   - *load every line from every file in /var/tmp/bardata*
 
+## Discard
+
+This function takes a long input and ignores it. It returns a generic object which is meant to be used as input to other function which don't need a specific input.
+
+- long -> Discard() -> Object
+
 ## Div
 
 Divide the operand by a fixed value and return the result.
@@ -288,6 +294,13 @@ Extracts out a set of fields from a delimited string, returning a string with th
 - String -> FieldExtractor(String: fields) -> String
   - *example:* `FieldExtractor('|,2,16')`
   - *extract fields 2 and 16 from the input data with '|' as the delimiter*
+
+## FirstLines
+
+
+- Object -> FirstLines(String: filePath) -> String
+
+- Object -> FirstLines(String: filePath, Integer: numberOfLines) -> String
 
 ## FixedValue
 
@@ -503,6 +516,14 @@ Return a value along an interpolation curve. This allows you to sketch a basic d
   - *return a uniform long value between 0L and 100L*
   - *example:* `Interpolate(0.0d,90.0d,95.0d,98.0d,100.0d)`
   - *return a weighted long value where the first second and third quartiles are 90.0D, 95.0D, and 98.0D*
+
+## Join
+
+This takes any collection and concatenates the String representation with a specified delimiter.
+
+- Collection<T> -> Join(String: delim) -> String
+  - *example:* `Join(',')`
+  - *Concatenate the incoming collection with ','*
 
 ## JoinTemplate
 
@@ -748,14 +769,6 @@ and then stitched together according to the template provided.
 @param template A string template containing <pre>{}</pre> anchors
 @param funcs    A varargs length of LongFunctions of any output type
 
-
-## TextOfFile
-
-Provides a single line of text from a target file provided.
-
-- Object -> TextOfFile(String: targetFile) -> String
-  - *example:* `TextOfFile()`
-  - *Provides the first line of text in the specified file.*
 
 ## ThreadNumToInteger
 

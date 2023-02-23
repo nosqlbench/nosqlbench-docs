@@ -83,30 +83,32 @@
     {#%- set root_section = get_section(path="_index.md") -%#}
 
     {%- for page in root_section.pages -%}
-    {%- if page.extra.inmenu is defined and page.extra.inmenu==false -%}
-    {%- continue -%}
-    {%- endif -%}
-    <div class="toc-item">
-      {%- if page.relative_path == active_page.relative_path -%}
-      <a href="{{page.path}}"
-         {%- if page.description -%}
-         title="{{ page.description }}"
-         {%- endif -%}
-      ><strong>{{- page.title -}}</strong></a>
-      {%- else -%}
-      <a href="{{page.path}}"
-         {%- if page.description -%}
-         title="{{ page.description }}"
-         {%- endif -%}
-      >{{- page.title -}}</a>
+      {%- if page.extra.inmenu is defined and page.extra.inmenu==false -%}
+      {%- continue -%}
       {%- endif -%}
-    </div>
-
+      <div class="toc-item">
+        {%- if page.relative_path == active_page.relative_path -%}
+          <a href="{{page.path}}"
+          {%- if page.description -%}
+          title="{{ page.description }}"
+          {%- endif -%}
+          ><strong>{{- page.title -}}</strong></a>
+        {%- else -%}
+          <a href="{{page.path}}"
+          {%- if page.description -%}
+          title="{{ page.description }}"
+          {%- endif -%}
+          >{{- page.title -}}</a>
+        {%- endif -%}
+      </div>
     {%- endfor -%}
 
     {%- for subsection_path in root_section.subsections -%}
 
     {%- set subsection = get_section(path=subsection_path) -%}
+    {%- if subsection.extra.inmenu is defined and subsection.extra.inmenu==false -%}
+    {%- continue -%}
+    {%- endif -%}
 
     <div class="toc-item"
          {%- if subsection.description -%}

@@ -79,7 +79,8 @@ up the release from the github releases area automatically.
 
 We have a set of release criteria which will be published to this site and used as a blueprint for
 releases going forward. More information on how releases are managed can be found in our
-[Contributing](@/contributing/_index.md) section. This will include testing coverage, static 
+[Contributing](@/dev-guide/contributing/_index.md) section. This will include testing coverage, 
+static 
 analysis, and further integrated testing support.
 
 ## Documentation

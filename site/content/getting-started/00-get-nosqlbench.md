@@ -59,37 +59,47 @@ file that the scenario is defined in is called the _workload template_. The scen
 
     ./nb5 examples/bindings-basics default
 
-To get a list of built-in scenarios run:
+This will be explained further in [Scenarios](@/getting-started/02-scenarios.md).
 
-    # Get a list of all named scenarios and parameters
-    ./nb5 --list-scenarios
+# Options
 
-If you want a simple list of _workload templates_ which contain _named scenarios_, run:
+Here is a more detailed command which demonstrates how customizable nb5 is:
 
-    # Get a simple list of workload templates containing named scenarios
-    ./nb5 --list-workloads
+```shell,linenos
+./nb5 examples/bindings-basics default \
+ filename=exampledata.out \
+ format=csv \
+ cycles=10000 \
+ rate=100 \
+ --progress console:1s
+```
+Each line does somethign specific:
+1. Starts the scenario named default from the the workload template examples/binding-basics.
+2. Sets the filename parameter (part of the stdout driver) to exampledata.out. 
+3. Sets the output format (part of the stdout driver) to CSV. 
+4. Sets the number of cycles to run to 10000, short for 0..10000, which includes 0 through 9999. 
+5. Sets the cycle rate to 100 per second. 
+6. Tells nb5 to report activity progress to the console every second.
 
-    # Get a list of workload templates including examples.
-    # These can be run just like the example above.
-    ./nb5 --list-workloads --include examples
+# Dashboards
 
-👉 These commands will include workloads that were shipped with nb5 and workloads in your local 
- directory. To learn more about how to design custom workloads see
-[[designing workloads](/../workloads-101)].
+You can use `--docker-metrics` to stand up a live metrics dashboard at port 3000.
 
-Additionally, if you have docker installed on your local system, and your user has permissions to
-use it, you can use
-`--docker-metrics` to stand up a live metrics dashboard at port 3000.
+👉In order to use the `--docker-metrics` option, you need to have docker installed on your 
+local system, and your user must have permissions to use it. Typically, this means that your user 
+has been added to the docker group with a command like `sudo usermod $USER -g docker`.
 
-    ./nb5  cql-iot --docker-metrics
+Here is the above command, with built-in dashboarding enabled:
 
-The rest of this section goes into more detail with a real CQL workload.
-
-👉 If you want to see system-level metrics from your cluster, it is possible to get these as 
-well as Apache Cassandra level metrics by using the DSE Metrics Collector (if using DSE), or 
-by setting up a metrics feed to the Prometheus instance in your local docker stack. You can 
-read the 
-[DSE Metrics Collector docs](https://docs.datastax.com/en/monitoring/doc/monitoring/metricsCollector/mcExportMetricsDocker.html).
+```shell
+./nb5 examples/bindings-basics default \
+ filename=exampledata.out \
+ format=csv \
+ cycles=10000 \
+ rate=100 \
+ --progress console:1s \
+ --docker-metrics
+```
 
 [^1]: The version scheme for NoSQLBench is [major]-[java-lts]-[minor], so nb5 version 5.17.1 
 requires java version 17, which is the latest LTS Java release.

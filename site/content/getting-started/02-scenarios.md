@@ -12,10 +12,12 @@ weight: 102
 To run a simple built-in scenario run one of these:
 
 ```
-# DSE
 ./nb5 cql-keyvalue host=<addr> localdc=<localdcname>
+```
 
-# Astra
+To run the same scenario against Astra, add the credentials and secure connect bundle:
+
+```shell
 ./nb5 cql-keyvalue scb=<scb.zip> userfile=<file-with-client-id> passfile=<file-with-client-secret> ...
 ```
 
@@ -40,22 +42,27 @@ these details are completely open for you to change simply by modifying the work
 
 To get a list of built-in scenarios run:
 
-    # Get a list of all named scenarios and parameters
     ./nb5 --list-scenarios
 
-If you want a simple list of workloads which contain named scenarios, run:
+If you want a simple list of _workload templates_ which contain _named scenarios_, run:
 
-    # Get a simple list of yamls containing named scenarios
     ./nb5 --list-workloads
 
-These are distinct commands, because you can have multiple named scenarios in a given workload 
-template. The commands above scan for all known sources (bundled within or locally on your 
+These are distinct commands, because you can have multiple named scenarios in a given workload
+template. The commands above scan for all known sources (bundled within or locally on your
 filesystem) and provide a list of available scenarios or their containing workload templates.
 The example works above when we specify the workload, because it has a default scenario built in.
 
 👉 These commands will include workloads that were shipped with nb5 and workloads in your local
 directory. To learn more about how to design custom workloads see
 [[Workloads 101](/../workloads-101)].
+
+You can also include the example path prefix which will show many more:
+
+    ./nb5 --list-workloads --include examples
+
+When learning about bindings, it is recommended for first time users to use the above command to 
+find lots of examples for inspiration.
 
 ## compose scenarios
 
@@ -73,23 +80,6 @@ We could easily ask nb5 to run a different named scenario of our choosing by run
 If you don't specify which steps to run, they are all run serially, in the order they are defined.
 If you don't specify which named scenario to run, `default` is used.
 
-# Metrics Dashboard
-
-If you have docker installed on your local system, and your user has permissions to use it, you 
- can use `--docker-metrics` to stand up a live metrics dashboard at port 3000.
-
-    ./nb5 cql-iot ... --docker-metrics
-
-This configures and launches necessary dockers for prometheus, graphite-exporter, and grafana, 
-wires them together, and then configures a default dashboard. It also configures nb5 to start 
-reporting metrics there as well as annotating the testing lifecycle for you automatically.
-
-👉 If you want to see system-level metrics from your cluster, it is possible to get these as 
-well as Apache Cassandra level metrics by using the DSE Metrics Collector (if using DSE), or 
-by setting up a metrics feed to the Prometheus instance in your local docker stack. You can 
-find the DSE Metrics Collector docs
-[here](https://docs.datastax.com/en/monitoring/doc/monitoring/metricsCollector/mcExportMetricsDocker.html).
-
 # Example Activities 
 
 The first examples above show you how to call whole scenarios, which contain multiple steps and 
@@ -101,19 +91,7 @@ they invoke directly.
 
 ## create a schema
 
-We will start by creating a simple schema in the database. From your
-command line, go ahead and execute the following command, replacing
-the `host=<host-or-ip>` with that of one of your database nodes.
-
-```
-./nb5 run driver=cqld4 workload=cql-keyvalue tags=block:schema ...
-```
-
-This follows the basic command pattern of all nb5 commands. The first bare word is a command, 
-and all assignments after it are parameters to that command. The `run` command is short for "run 
-an activity".
-
-
+We will start by creating a simple schema in the database: 
 
 ```sql
 # ( We'll use SQL highlighting for our CQL )
@@ -127,6 +105,18 @@ CREATE TABLE baselines.keyvalue (
     value text
 )
 ```
+
+From your command line, go ahead and execute the following command, replacing
+the `...` with that of one of your database nodes. Alternately, if using Astra, 
+use the options described in the [test target](@/getting-started/01-test-target.md) section.
+
+```
+./nb5 run driver=cqld4 workload=cql-keyvalue tags=block:schema ...
+```
+
+This follows the basic command pattern of all nb5 commands. The first bare word is a command, 
+and all assignments after it are parameters to that command. The `run` command is short for "run 
+an activity".
 
 Let's break down each of those command line options.
 
@@ -156,7 +146,8 @@ Before running a test of typical access patterns where you want to capture the r
 need to make the test more interesting than loading an empty table. For this, we use the 
 rampup activity.
 
-Before sending our test writes to the database, we will use the `stdout` driver, so we can see what NoSQLBench is generating for CQL statements.
+Before sending our test writes to the database, we will use the `stdout` driver, so we can see 
+ what NoSQLBench is generating for CQL statements.
 
 Go ahead and execute the following command:
 

@@ -3,7 +3,7 @@ title="Working Together"
 weight=20
 +++
 
-# Routine Changes
+## Routine Changes
 
 Bugfixes, basic features, doc improvements, and any other change to the project that is 
 well-defined, of reasonably small scope, and easily tested can be managed through issues and 

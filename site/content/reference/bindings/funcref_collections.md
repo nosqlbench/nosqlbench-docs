@@ -115,6 +115,14 @@ Create a list of longs.
 
 - long -> HashedRangeToLongList(int: minVal, int: maxVal, int: minSize, int: maxSize) -> List<Long>
 
+## Join
+
+This takes any collection and concatenates the String representation with a specified delimiter.
+
+- Collection<T> -> Join(String: delim) -> String
+  - *example:* `Join(',')`
+  - *Concatenate the incoming collection with ','*
+
 ## List
 
 Create a {@code List} from a long input based on two functions, the first to determine the list size, and the second to populate the list with object values. The input fed to the second function is incremented between elements.

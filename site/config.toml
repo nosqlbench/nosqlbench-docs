@@ -13,6 +13,7 @@ feed_filename = "atom.xml"
 taxonomies = [
     {name = "categories", feed = true},
     {name = "tags", feed = true},
+    {name = "authors", feed = false}
 ]
 
 theme = "abridge_custom"
@@ -74,8 +75,9 @@ headhr = true # show or hide horizontal rule below header
 foothr = true # show or hide horizontal rule above footer
 
 menu = [
-    {url = "/getting_started/", name = "Getting Started", slash = true, blank = false},
-    {url = "/release_notes/", name = "Release Notes", slash = true, blank = false},
+    {url = "/blog/", name = "Blog", slash = true, blank = false},
+    {url = "/getting-started/", name = "Getting Started", slash = true, blank = false},
+    {url = "/release-notes/", name = "Release Notes", slash = true, blank = false},
 #    {url = "http://nosqlbench.io/", icon = "ICON", slash=true, blank=true }
 #    {url = "https://github.com/nosqlbench/nosqlbench-build-docs", name = "Docs Repo", slash = true, blank = "true" },
 #    {url = "/posts/", name = "Posts", slash = true, blank = false},
@@ -156,13 +158,13 @@ icon_last = "svgs svgh angrr" # Pagination Last Page.
 icon_top = "svgs svgh angu" # Back to Top Button.
 
 # Uncomment below line to load fontawesome, eg: <i class="fa-solid fa-heart"></i>
-#fontawesome = "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"
+fontawesome = "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"
 
 # Icons, by default fontawesome classes, but you can specify any icon you want here.
 #icon_read = "svgs fa-solid fa-glasses" # displayed in metadata on index and below title on page.
 #icon_date = "svgs fa-solid fa-calendar" # displayed in metadata on index and below title on page.
 #icon_info = "svgs fa-solid fa-circle-info" # displayed in metadata on index and below title on page for categories/tags
-#icon_author = "svgs fa-solid fa-pen-fancy" # displayed in metadata on index and below title on page.
+icon_author = "svgs fa-solid fa-pen-fancy" # displayed in metadata on index and below title on page.
 
 # For externally loaded Fonts, make sure to include the FULL url including the http/https prefix
 #fonts = [ {url = "https://fonts.googleapis.com/css?family=Montserrat:400,700,italic|Fira+Code:400,italic"} ]

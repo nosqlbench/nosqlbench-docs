@@ -17,6 +17,12 @@ You can start an instance of DSE with this one-liner:
 
     docker run -e DS_LICENSE=accept --name my-dse -p 9042:9042 -d datastax/dse-server:6.8.17-ubi7
 
+👉 If you want to see system-level metrics from your cluster, it is possible to get these as
+well as Apache Cassandra level metrics by using the DSE Metrics Collector (if using DSE), or
+by setting up a metrics feed to the Prometheus instance in your local docker stack. You can
+read the
+[DSE Metrics Collector docs](https://docs.datastax.com/en/monitoring/doc/monitoring/metricsCollector/mcExportMetricsDocker.html).
+
 # Run an Astra Cluster
 
 You can choose to run a serverless cluster through DataStax AstraDB for functional 
