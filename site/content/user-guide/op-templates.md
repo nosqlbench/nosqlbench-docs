@@ -8,7 +8,7 @@ Understanding op templates in detail will help you bring other features of NoSQL
 focus more quickly.
 
 Each activity that you run in an nb5 scenario is built from operations. These operations are 
-[_generated_](@/reference/bindings/binding-concepts.md) at the time they are needed. 
+[_generated_](@/user-guide/advanced-topics/binding-concepts.md) at the time they are needed. 
 They need a blueprint for what an operation looks like, which we provide in the form of a 
 simple data structure called an _op template_.
 

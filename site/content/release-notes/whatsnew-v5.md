@@ -6,7 +6,9 @@ weight = 50
 
 # Updates in Progress
 
-👉 **The docs are presently being rewritten to support NoSQLBench v5.0.** 👈
+👉 **The docs are presently being rewritten to support NoSQLBench v5.17.x, based
+on [Java LTS 17](https://openjdk.org/projects/jdk/17/). The next major release will be v5.21, based
+on [Java LTS 21](https://openjdk.org/projects/jdk/21/).** 👈
 
 Welcome to NB5! This release represents a massive leap forward. There are so many improvements
 that should have gone into smaller releases along the way, but here we are. We've had our heads

@@ -4,7 +4,7 @@
 # markdown from the main NoSQLBench build as input.
 # This zip file is produced by running "nb5 export-docs"
 #
-# Each top-level directory in this zip file correspondes to a specific subsection
+# Each top-level directory in this zip file corresponds to a specific subsection
 # in the docs site structure. There is also another directory in this repo called
 # _import_overlays. The _import_overlays directory controls how files are
 # unfurled from the exported_docs.zip file into the main site/content directory.
