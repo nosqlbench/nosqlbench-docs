@@ -151,3 +151,86 @@ the measurements are an aggregate over all threads.
 measurements are coherent within serialized operations which represent real access patterns in a 
 given application thread.
 
+
+## verifier
+
+You can now verify results of operations using property-based assertions or result equality.
+These methods use a compiled script which has access to binding variables in the same way that
+op templates use them, as bind points like `... {mybinding} ...`. This means that you can write
+script for verification logic naturally. The verification script is parsed and compiled ahead of 
+time, with full awareness of the bindings which need to be generated before per-cycle evaluation.
+
+The verifier is implemented in groovy 4, and is thus compatible with typical Java forms. It also 
+allows for some terse and simplified views for assertion-based testing. Consult the [Groovy 
+Language Documentation](https://docs.groovy-lang.org/latest/html/documentation/) or 
+the [Groovy API docs](https://docs.groovy-lang.org/latest/html/api/) for more details on the 
+language.
+
+Within the scripting environment of verifier, the result of the last operation is accessed as the
+`result` variable. This makes assertion logic read like what it does. For example, if you want 
+to verify that the result of an operation is equal to the string "this worked 42!", you can 
+specify something like this:
+
+```yaml
+ops:
+  op1:
+     stmt: "this worked 42!\n"
+     verifier: |
+      result.equals("this worked 42!\n");
+```
+
+The verifier allows you to use bindings in exactly the same format as your string-based op 
+templates:
+```yaml
+ops:
+  op1:
+    stmt: "this worked {numname}!\n"
+    verifier: |
+      result.equals("this worked ${numname}!\n");
+    bindings:
+     numname: NumberNameToString();
+```
+
+This example doesn't do much like a real test would, since it is simply asserting that the 
+result looks the way we know it should. However, this mechanism can be used in any scenario
+where you know a property or feature of a result that you can check for to verify correctness.
+
+The verifier can be specified as a string, list, or map structure. In each case, the form is
+interpreted as a sequence of named verifiers. in the string or list forms, names are created for
+you. These names may be used in logging or other views needed to verify or troubleshoot the actual
+logic of your verifier script.
+
+When multiple verifiers are supplied, they are executed each in turn. This means that errors will 
+present distinctly when verifiers are separated for clarity.
+
+All verifier execution contexts share the same compiled script for a given verifier code body, but 
+each thread has its own instanced variable state, including results.
+
+## expected-result
+
+If you want to test with a more concise and declarative form, and your result content isn't complex,
+you can use the `expected-result` op field instead. This form allows you to prototype an object
+in declarative or literal form which can then be checked against a result using Java equals 
+semantics. For example, to verify the same result as shown with the verifier above, but in a 
+simpler form, you could do this:
+
+```yaml
+ops:
+  op1:
+    stmt: "this worked {numname}!\n"
+    expected-result: "this worked "+{numname}+"!\n"
+    bindings:
+     numname: NumberNameToString();
+```
+
+Since the expected-result value is rendered by active code, you must treat it as code where the 
+bind points are simply injected variables. This form can also use container types and inline or 
+literal forms.
+
+## verifier-imports
+
+For the verifier capabilities explained above, you may need to import symbols from packages in
+your runtime. This allows you to do so. These imports will apply equally to any per-cycle 
+verification logic for the given op template, and only need to be specified once (per op template).
+
+
