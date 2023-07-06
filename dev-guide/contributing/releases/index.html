@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script src="https://docs.nosqlbench.io/theme.min.js" integrity="sha384-IpIaa84kOKgkF5EJ0fD/kBe2wtIIsIB60ANGmuJxeA0dz5bSRfwBwp2/QybtQpU2"></script>
+  <link rel="stylesheet" href="https://docs.nosqlbench.io/abridge-switcher.css?h=4238d999f44a7bb130d5" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preload" as="style" class="preStyle" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" crossorigin="anonymous" />
+  <script defer src="https://docs.nosqlbench.io/search_index.en.js?h=ae47d253e455a3aaacb2" integrity="sha384-cP47owL9Iuak1e1AA21cJA4BgagQtaPwAXBQG7QgJeE2JKGgkCBROHbCj/Xym6KC"></script>
+  <script defer src="https://docs.nosqlbench.io/abridge-bundle-nofacade.min.js?h=9bcf621a2fcab7336017" integrity="sha384-u8AROOUG6n2Xjk2+7pvkkfeSIqinjI1tmqeBpZRlZtc5KFO/8DyFfEir6fAE2wcq"></script>
+  <meta name="base" content="https://docs.nosqlbench.io" />
+<meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>Release Management | NoSQLBench Project</title>
+  <meta name="copyright" content="NoSQLBench Project" />
+  <meta name="description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <link rel="canonical" href="https://docs.nosqlbench.io/dev-guide/contributing/releases/" />
+  <meta name="keywords" content="Abridge, Abridge.css, Zola, Theme, Zola Theme, getzola, Semantic Html, Fast, lightweight" />
+  <meta property="og:url" content="https://docs.nosqlbench.io/dev-guide/contributing/releases/" />
+  <meta name="twitter:url" content="https://docs.nosqlbench.io/dev-guide/contributing/releases/" />
+  <meta property="og:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta name="twitter:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta property="og:title" content="Release Management | NoSQLBench Project" />
+  <meta name="twitter:title" content="Release Management | NoSQLBench Project" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:site_name" content="NoSQLBench Project" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://docs.nosqlbench.io/site.webmanifest" />
+  <link rel="mask-icon" href="https://docs.nosqlbench.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://docs.nosqlbench.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://docs.nosqlbench.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://docs.nosqlbench.io/favicon-16x16.png" />
+  <noscript><link rel="stylesheet" href="https://docs.nosqlbench.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://docs.nosqlbench.io/"><img src="https://docs.nosqlbench.io/nb5logo.png" alt="NoSQLBench5" width="32" height="32" />NoSQLBench v5</a></h1></div><div>
+        <ul><li> <h2><a href="https://docs.nosqlbench.io/getting-started/">Getting Started</a></h2> </li><li> <h2><a href="https://docs.nosqlbench.io/release-notes/">Release Notes</a></h2> </li><li class="js"><i type="reset" id="mode" class="svgs adjust"></i></li></ul>
+      </div>
+      <div>
+        <form autocomplete=off class="js" name="goSearch" id="searchbox">
+          <div class="searchd">
+            <input id="searchinput" type="text" placeholder="Search" title="Search" />
+            <button type="submit" title="Search"><i class="svgs search"></i></button>
+          </div>
+          <div><div id="suggestions"></div></div>
+        </form>
+      </div>
+
+      <a href="http://github.com/nosqlbench/nosqlbench-build-docs" title="This doc site's project repo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="1" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+      <a href="http://nosqlbench.io" title="NoSQLBench Project Site">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+    </nav>
+    <hr /><div style="position:sticky"><span><a href="&#x2F;">NB5 Docs► </a></span><span><a href="&#x2F;dev-guide&#x2F;">Dev Guide► </a></span><span title="How to get started"><a href="&#x2F;dev-guide&#x2F;contributing&#x2F;"><strong>Contributing▼</strong> </a></span><span title="[current page]"><a href="&#x2F;dev-guide&#x2F;contributing&#x2F;releases&#x2F;"><strong>Release Management 🖺</strong></a></span>
+</div></header>
+  <main><!-- active_page: dev-guide&#x2F;contributing&#x2F;releases.md -->
+<!-- active_section: dev-guide&#x2F;contributing&#x2F;_index.md -->
+
+
+<!-- lower_root: dev-guide&#x2F;_index.md -->
+<!-- >upper_root: dev-guide&#x2F;_index.md -->
+
+<div class="toc" aria-hidden="true" id="">
+<!--  <h4>Contributing</h4>--><div class="toc-sticky"><div class="toc-item"title="How to get started"><strong>▼Contributing</strong></div><!-- subsection_page_path: &#x2F;dev-guide&#x2F;contributing&#x2F;come-join-us&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;dev-guide&#x2F;contributing&#x2F;come-join-us&#x2F;">Come Join Us</a>
+    </div><!-- subsection_page_path: &#x2F;dev-guide&#x2F;contributing&#x2F;working-together&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;dev-guide&#x2F;contributing&#x2F;working-together&#x2F;">Working Together</a>
+    </div><!-- subsection_page_path: &#x2F;dev-guide&#x2F;contributing&#x2F;pull-requests&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;dev-guide&#x2F;contributing&#x2F;pull-requests&#x2F;">Pull Requests</a>
+    </div><!-- subsection_page_path: &#x2F;dev-guide&#x2F;contributing&#x2F;coding-standards&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;dev-guide&#x2F;contributing&#x2F;coding-standards&#x2F;">Coding Standards</a>
+    </div><!-- subsection_page_path: &#x2F;dev-guide&#x2F;contributing&#x2F;releases&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;dev-guide&#x2F;contributing&#x2F;releases&#x2F;"><strong>Release Management</strong></a>
+    </div><!-- subsection_page_path: &#x2F;dev-guide&#x2F;contributing&#x2F;new-maintainers&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;dev-guide&#x2F;contributing&#x2F;new-maintainers&#x2F;">New Maintainers</a>
+    </div><div class="toc-item"title="Standards to which the NB5 project aspires"><a href="&#x2F;dev-guide&#x2F;project-standards&#x2F;">►Project Standards</a></div><div class="toc-item"title="How to contribute in different ways, step-by-step"><a href="&#x2F;dev-guide&#x2F;how-tos&#x2F;">►Dev How-Tos</a></div></div>
+</div>
+
+<article>
+
+  <p>This is partly documenting the current flow, partly aspirational. Within the first few releases 
+of NB5, this should all be standard and reliable. This notice will be removed at that time. </p>
+<h1 id="release-channels">Release Channels</h1>
+<p>We have a three track release system:</p>
+<ul>
+<li><strong>build</strong> artifacts are produced from every successful build on a branch.
+<ul>
+<li><em>build</em> artifacts: 
+<a rel="noopener" target="_blank" href="https://github.com/nosqlbench/nosqlbench/actions/workflows/build.yml">build workflow</a> </li>
+<li><em>build</em> docs:
+<a rel="noopener" target="_blank" href="http://builddocs.nosqlbench.io">http://builddocs.nosqbench.io/</a></li>
+</ul>
+</li>
+<li><strong>preview</strong> artifacts are promoted to the releases section as pre-release (only) versions.
+<ul>
+<li><em>preview</em> artifacts:
+<a rel="noopener" target="_blank" href="https://github.com/nosqlbench/nosqlbench/releases/">releases</a></li>
+<li><em>preview</em> docs:
+<a rel="noopener" target="_blank" href="http://previewdocs.nosqlbench.io">http://previewdocs.nosqbench.io/</a></li>
+</ul>
+</li>
+<li><strong>release</strong> artifacts are eventually promoted to the releases under a proper release name and tag:
+<ul>
+<li><em>release</em> artifacts:
+<a rel="noopener" target="_blank" href="https://github.com/nosqlbench/nosqlbench/releases/">releases</a></li>
+<li><em>release</em> docs:
+<a rel="noopener" target="_blank" href="http://docs.nosqlbench.io">http://docs.nosqbench.io/</a></li>
+</ul>
+</li>
+</ul>
+<p>This is a system of incremental promotion from build to preview to release, with documentation 
+included. This allows us to preview new features and capabilities with the community in a safe 
+way, only accepting previews which are up to release standards.</p>
+<h1 id="repositories">Repositories</h1>
+<p>Of course, managing this flow requires a few more repositories than usual, since we are hosting
+the docs sites on github pages. This means we need the main code repo for NoSQLBench, as well as 
+a separate repo for each of the three docs sites:</p>
+<p>The main repo for <code>nb5</code> is at <a rel="noopener" target="_blank" href="http://nosqlbench.io">nosqlbench.io</a>. This is just a convenient
+name for <a rel="noopener" target="_blank" href="https://github.com/nosqlbench/nosqlbench">https://github.com/nosqlbench/nosqlbench</a>.</p>
+<p>This allows convenient access to <a rel="noopener" target="_blank" href="http://nosqlbench.io/issues">issues</a>, and
+<a rel="noopener" target="_blank" href="http://nosqlbench.io/pulls">pull requests</a> too.</p>
+<p>The three docs sites and their corresponding 
+URLs are:</p>
+<ol>
+<li><a rel="noopener" target="_blank" href="https://github.com/nosqlbench/nosqlbench-build-docs">nosqlbench-build-docs</a>, accessed at
+<a rel="noopener" target="_blank" href="http://builddocs.nosqlbench.io">http://builddocs.nosqlbench.io</a></li>
+<li><a rel="noopener" target="_blank" href="https://github.com/nosqlbench/nosqlbench-preview-docs">nosqlbench-preview-docs</a>, accessed at
+<a rel="noopener" target="_blank" href="http://previewdocs.nosqlbench.io">http://previewdocs.nosqlbench.io</a></li>
+<li><a rel="noopener" target="_blank" href="https://github.com/nosqlbench/nosqlbench-docs">nosqlbench-docs</a>, the main docs
+site, at <a rel="noopener" target="_blank" href="http://docs.nosqlbench.io">http://docs.nosqlbenhc.io</a></li>
+</ol>
+<h1 id="automation">Automation</h1>
+<p>All of the CI &amp; CD build automation for NoSQLBench is hosted in github actions.</p>
+<h1 id="release-criteria">Release Criteria</h1>
+<p>Before a preview release can be promoted to a main release, the following must happen:</p>
+<ol>
+<li>All high CVE alerts for potential issues must be addressed. We use multiple static analysis 
+tools for this. Any high severity issues are required to be addressed, even if this means 
+that they are flagged as a false positive after further review.</li>
+<li>All integration test must pass.</li>
+<li>New functionality must be documented in the docs site. Ideally this includes a what's new update.</li>
+</ol>
+<h1 id="release-notifications">Release Notifications</h1>
+<p>When a new release is made, the community should be notified in the usual places. 
+This isn't active, yet but we intend to support:</p>
+<ul>
+<li>discord</li>
+<li>this docs site</li>
+<li>twitter and/or mastodon</li>
+<li>corporate sponsor sites / blog feeds</li>
+</ul>
+
+<p><b><a href="#">Back to top</a></b></p>
+</article>
+<div class="toc" aria-hidden="true">
+  <div class="toc-sticky">
+    <h5>Release Management</h5>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/dev-guide/contributing/releases/#release-channels">Release Channels</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/dev-guide/contributing/releases/#repositories">Repositories</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/dev-guide/contributing/releases/#automation">Automation</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/dev-guide/contributing/releases/#release-criteria">Release Criteria</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/dev-guide/contributing/releases/#release-notifications">Release Notifications</a>
+    </div>
+  </div>
+</div>
+  </main>
+  <footer>
+    <hr />
+    <div class="c">
+      <nav>
+        <ul></ul>
+      </nav>
+      <p class="s90">Copyright &copy; 2023-2023 NoSQLBench Project</p>
+    </div>
+  </footer>
+</body>
+</html>

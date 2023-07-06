@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script src="https://docs.nosqlbench.io/theme.min.js" integrity="sha384-IpIaa84kOKgkF5EJ0fD/kBe2wtIIsIB60ANGmuJxeA0dz5bSRfwBwp2/QybtQpU2"></script>
+  <link rel="stylesheet" href="https://docs.nosqlbench.io/abridge-switcher.css?h=4238d999f44a7bb130d5" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preload" as="style" class="preStyle" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" crossorigin="anonymous" />
+  <script defer src="https://docs.nosqlbench.io/search_index.en.js?h=ae47d253e455a3aaacb2" integrity="sha384-cP47owL9Iuak1e1AA21cJA4BgagQtaPwAXBQG7QgJeE2JKGgkCBROHbCj/Xym6KC"></script>
+  <script defer src="https://docs.nosqlbench.io/abridge-bundle-nofacade.min.js?h=9bcf621a2fcab7336017" integrity="sha384-u8AROOUG6n2Xjk2+7pvkkfeSIqinjI1tmqeBpZRlZtc5KFO/8DyFfEir6fAE2wcq"></script>
+  <meta name="base" content="https://docs.nosqlbench.io" />
+<meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>Pull Requests | NoSQLBench Project</title>
+  <meta name="copyright" content="NoSQLBench Project" />
+  <meta name="description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <link rel="canonical" href="https://docs.nosqlbench.io/dev-guide/contributing/pull-requests/" />
+  <meta name="keywords" content="Abridge, Abridge.css, Zola, Theme, Zola Theme, getzola, Semantic Html, Fast, lightweight" />
+  <meta property="og:url" content="https://docs.nosqlbench.io/dev-guide/contributing/pull-requests/" />
+  <meta name="twitter:url" content="https://docs.nosqlbench.io/dev-guide/contributing/pull-requests/" />
+  <meta property="og:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta name="twitter:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta property="og:title" content="Pull Requests | NoSQLBench Project" />
+  <meta name="twitter:title" content="Pull Requests | NoSQLBench Project" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:site_name" content="NoSQLBench Project" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://docs.nosqlbench.io/site.webmanifest" />
+  <link rel="mask-icon" href="https://docs.nosqlbench.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://docs.nosqlbench.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://docs.nosqlbench.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://docs.nosqlbench.io/favicon-16x16.png" />
+  <noscript><link rel="stylesheet" href="https://docs.nosqlbench.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://docs.nosqlbench.io/"><img src="https://docs.nosqlbench.io/nb5logo.png" alt="NoSQLBench5" width="32" height="32" />NoSQLBench v5</a></h1></div><div>
+        <ul><li> <h2><a href="https://docs.nosqlbench.io/getting-started/">Getting Started</a></h2> </li><li> <h2><a href="https://docs.nosqlbench.io/release-notes/">Release Notes</a></h2> </li><li class="js"><i type="reset" id="mode" class="svgs adjust"></i></li></ul>
+      </div>
+      <div>
+        <form autocomplete=off class="js" name="goSearch" id="searchbox">
+          <div class="searchd">
+            <input id="searchinput" type="text" placeholder="Search" title="Search" />
+            <button type="submit" title="Search"><i class="svgs search"></i></button>
+          </div>
+          <div><div id="suggestions"></div></div>
+        </form>
+      </div>
+
+      <a href="http://github.com/nosqlbench/nosqlbench-build-docs" title="This doc site's project repo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="1" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+      <a href="http://nosqlbench.io" title="NoSQLBench Project Site">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+    </nav>
+    <hr /><div style="position:sticky"><span><a href="&#x2F;">NB5 Docs► </a></span><span><a href="&#x2F;dev-guide&#x2F;">Dev Guide► </a></span><span title="How to get started"><a href="&#x2F;dev-guide&#x2F;contributing&#x2F;"><strong>Contributing▼</strong> </a></span><span title="[current page]"><a href="&#x2F;dev-guide&#x2F;contributing&#x2F;pull-requests&#x2F;"><strong>Pull Requests 🖺</strong></a></span>
+</div></header>
+  <main><!-- active_page: dev-guide&#x2F;contributing&#x2F;pull-requests.md -->
+<!-- active_section: dev-guide&#x2F;contributing&#x2F;_index.md -->
+
+
+<!-- lower_root: dev-guide&#x2F;_index.md -->
+<!-- >upper_root: dev-guide&#x2F;_index.md -->
+
+<div class="toc" aria-hidden="true" id="">
+<!--  <h4>Contributing</h4>--><div class="toc-sticky"><div class="toc-item"title="How to get started"><strong>▼Contributing</strong></div><!-- subsection_page_path: &#x2F;dev-guide&#x2F;contributing&#x2F;come-join-us&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;dev-guide&#x2F;contributing&#x2F;come-join-us&#x2F;">Come Join Us</a>
+    </div><!-- subsection_page_path: &#x2F;dev-guide&#x2F;contributing&#x2F;working-together&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;dev-guide&#x2F;contributing&#x2F;working-together&#x2F;">Working Together</a>
+    </div><!-- subsection_page_path: &#x2F;dev-guide&#x2F;contributing&#x2F;pull-requests&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;dev-guide&#x2F;contributing&#x2F;pull-requests&#x2F;"><strong>Pull Requests</strong></a>
+    </div><!-- subsection_page_path: &#x2F;dev-guide&#x2F;contributing&#x2F;coding-standards&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;dev-guide&#x2F;contributing&#x2F;coding-standards&#x2F;">Coding Standards</a>
+    </div><!-- subsection_page_path: &#x2F;dev-guide&#x2F;contributing&#x2F;releases&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;dev-guide&#x2F;contributing&#x2F;releases&#x2F;">Release Management</a>
+    </div><!-- subsection_page_path: &#x2F;dev-guide&#x2F;contributing&#x2F;new-maintainers&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;dev-guide&#x2F;contributing&#x2F;new-maintainers&#x2F;">New Maintainers</a>
+    </div><div class="toc-item"title="Standards to which the NB5 project aspires"><a href="&#x2F;dev-guide&#x2F;project-standards&#x2F;">►Project Standards</a></div><div class="toc-item"title="How to contribute in different ways, step-by-step"><a href="&#x2F;dev-guide&#x2F;how-tos&#x2F;">►Dev How-Tos</a></div></div>
+</div>
+
+<article>
+
+  <p>All new changes to the project should be made in the form of a pull request. In certain cases,
+project maintainers may push directly in order to fix a CI/CD issue or similar, but otherwise
+<em>everyone</em> should expect to submit pull requests and get at least 1 maintainer approval before
+having their code merged.</p>
+<p>Maintainers may make suggestions to your PR before it can be approved. This is done via the
+conversations feature directly in github. If there are required changes before approval, they
+will be described clearly with a request to make the changes before further review. If you are
+asked to make changes, all you have to do is refine the branch you submitted the PR from and
+push the changes up.</p>
+<p><em>note:</em> If you are unsure of your branch, and want to work on it further before review or merge,
+please submit it as a <em>draft</em> PR. This helps set expectations so that reviewers aren't studying
+incomplete submissions.</p>
+<p>In order to make sure related issues are closed, you can add
+<a rel="noopener" target="_blank" href="https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue">closing terms</a>
+to the description.</p>
+<p>When you are ready for review, move your PR from draft to &quot;ready for review&quot;, and request one of
+the project maintainers for a review.</p>
+<p>The rest of this page tells you what to expect from the maintainers during code review.</p>
+<h1 id="what-is-accepted">What is Accepted?</h1>
+<p>Generally speaking, any change which is non-trivial should already be discussed within the
+project in order to make cooperation between contributors harmonious. Very trivial change which
+are quick to review and very self-evident as to what they fix or improve may be accepted with
+little pushback. Still, it is a courtesy to the rest of the developer community to document what
+you are working on in an issue and assign yourself to it first.</p>
+<h2 id="licensing">Licensing</h2>
+<p>All code submitted should have the APLv2 license header at the top, with the copyright set as</p>
+<pre class="z-code"><code><span class="z-text z-plain">/*
+ * Copyright (c) 2022 nosqlbench
+ *
+ * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+</span></code></pre>
+<p>If this is not the case, then the build will fail. There is a handy way to fix this.
+After this happens, the license checker will automatically create some prototype files
+which include the changes needed. You can simply run a utility script in
+<code>scripts/accept_license.sh</code> to write the updated files to the orignal names.</p>
+<h1 id="coding-standards">Coding Standards</h1>
+<h2 id="static-analysis">Static Analysis</h2>
+<p>You should use a static analyzer if you have one. There is one that is used by the project for 
+every build. It may flag significant issues in your PR, which may also keep it from being merged.
+It is always a good idea to leave your PR in draft mode until you get green light, as the CodeQL 
+feedback will already give you something to fix if it finds anything.</p>
+<h2 id="test-coverage">Test Coverage</h2>
+<p>Any contribution of code should have an appropriate amount of built-in testing. This can be
+either as unit tests or as integrated tests. It is up to the judgement of the contributor what
+constitutes a sufficient level of testing, although more may be requested by code review.</p>
+<p>The code coverage in unit and integrated tests will be improved over time. There may be
+build-time checks which warn you if the code coverage goes down with your added changes. This
+could cause it to fail during merge checks, so try to have a reasonable amount of test coverage
+in new code.</p>
+<h2 id="dependencies">Dependencies</h2>
+<p>Be cautious about adding even more dependencies to the project. NoSQLBench is a rather large 
+project due to the scope of what it does, including many driver modes. If you add dependencies 
+without scanning for a suitable capability that is already in the project, it will cause 
+dependency creep. This is bad. Try to help us keep the dependency tree well trimmed.</p>
+<h1 id="what-is-generally-accepted">What is (generally) Accepted?</h1>
+<h2 id="incremental-improvements">Incremental Improvements</h2>
+<p>Changes which are complimentary or incremental to core NoSQLBench functionality are always good.
+As long as a change doesn't compromise existing functionality or otherwise compromise the 
+integrity of the project it will generally be welcome.</p>
+<h2 id="trivial-improvements">Trivial Improvements</h2>
+<p>Changes which have already been discussed or are of such a trivial nature that they are 
+self-describing don't require substantial ceremony. Use your best judgement here. If you are 
+fixing a typo on the website, just do it. If you are adding a better description to some CI/CD 
+wiring, just do it. Again, just use your best judgement about what should be discussed or agreed 
+to beforehand.</p>
+<h2 id="subsystem-enhancements">Subsystem Enhancements</h2>
+<p>Changes which make the core of NoSQLBench easier, better, or more powerful for any user in the 
+NoSQL ecosystem are awesome. New driver are awesome. This includes drivers from vendors. All 
+changes will be subject to the platform standards and community guidelines, of course.</p>
+<h1 id="what-is-not-accepted">What is NOT Accepted?</h1>
+<h2 id="bad-dependencies">Bad Dependencies</h2>
+<p>The <a href="../platform-standards">platform standards</a> are enforced in PRs.</p>
+<h2 id="large-surprises">Large Surprises</h2>
+<p>Large, surprising changes with no previous consensus or discussion may not be approved with 
+a request for discussion. This type of change is an unreasonable burden to any maintainer. If 
+you want to make large changes, you must work together with the NoSQLBench builder community to 
+make sure it fits well within the project, and is on-mission with the core outcomes of the project.</p>
+<h2 id="untested-or-untestable-code">Untested or Untestable Code</h2>
+<p>You must design your contributions in a way that allows for testing.</p>
+
+<p><b><a href="#">Back to top</a></b></p>
+</article>
+<div class="toc" aria-hidden="true">
+  <div class="toc-sticky">
+    <h5>Pull Requests</h5>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/dev-guide/contributing/pull-requests/#what-is-accepted">What is Accepted?</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/dev-guide/contributing/pull-requests/#licensing"><small>- Licensing</small></a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/dev-guide/contributing/pull-requests/#coding-standards">Coding Standards</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/dev-guide/contributing/pull-requests/#static-analysis"><small>- Static Analysis</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/dev-guide/contributing/pull-requests/#test-coverage"><small>- Test Coverage</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/dev-guide/contributing/pull-requests/#dependencies"><small>- Dependencies</small></a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/dev-guide/contributing/pull-requests/#what-is-generally-accepted">What is (generally) Accepted?</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/dev-guide/contributing/pull-requests/#incremental-improvements"><small>- Incremental Improvements</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/dev-guide/contributing/pull-requests/#trivial-improvements"><small>- Trivial Improvements</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/dev-guide/contributing/pull-requests/#subsystem-enhancements"><small>- Subsystem Enhancements</small></a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/dev-guide/contributing/pull-requests/#what-is-not-accepted">What is NOT Accepted?</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/dev-guide/contributing/pull-requests/#bad-dependencies"><small>- Bad Dependencies</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/dev-guide/contributing/pull-requests/#large-surprises"><small>- Large Surprises</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/dev-guide/contributing/pull-requests/#untested-or-untestable-code"><small>- Untested or Untestable Code</small></a>
+    </div>
+  </div>
+</div>
+  </main>
+  <footer>
+    <hr />
+    <div class="c">
+      <nav>
+        <ul></ul>
+      </nav>
+      <p class="s90">Copyright &copy; 2023-2023 NoSQLBench Project</p>
+    </div>
+  </footer>
+</body>
+</html>

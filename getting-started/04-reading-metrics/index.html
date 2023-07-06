@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script src="https://docs.nosqlbench.io/theme.min.js" integrity="sha384-IpIaa84kOKgkF5EJ0fD/kBe2wtIIsIB60ANGmuJxeA0dz5bSRfwBwp2/QybtQpU2"></script>
+  <link rel="stylesheet" href="https://docs.nosqlbench.io/abridge-switcher.css?h=4238d999f44a7bb130d5" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preload" as="style" class="preStyle" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" crossorigin="anonymous" />
+  <script defer src="https://docs.nosqlbench.io/search_index.en.js?h=ae47d253e455a3aaacb2" integrity="sha384-cP47owL9Iuak1e1AA21cJA4BgagQtaPwAXBQG7QgJeE2JKGgkCBROHbCj/Xym6KC"></script>
+  <script defer src="https://docs.nosqlbench.io/abridge-bundle-nofacade.min.js?h=9bcf621a2fcab7336017" integrity="sha384-u8AROOUG6n2Xjk2+7pvkkfeSIqinjI1tmqeBpZRlZtc5KFO/8DyFfEir6fAE2wcq"></script>
+  <meta name="base" content="https://docs.nosqlbench.io" />
+<meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>04 Metrics | NoSQLBench Project</title>
+  <meta name="copyright" content="NoSQLBench Project" />
+  <meta name="description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <link rel="canonical" href="https://docs.nosqlbench.io/getting-started/04-reading-metrics/" />
+  <meta name="keywords" content="Abridge, Abridge.css, Zola, Theme, Zola Theme, getzola, Semantic Html, Fast, lightweight" />
+  <meta property="og:url" content="https://docs.nosqlbench.io/getting-started/04-reading-metrics/" />
+  <meta name="twitter:url" content="https://docs.nosqlbench.io/getting-started/04-reading-metrics/" />
+  <meta property="og:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta name="twitter:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta property="og:title" content="04 Metrics | NoSQLBench Project" />
+  <meta name="twitter:title" content="04 Metrics | NoSQLBench Project" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:site_name" content="NoSQLBench Project" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://docs.nosqlbench.io/site.webmanifest" />
+  <link rel="mask-icon" href="https://docs.nosqlbench.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://docs.nosqlbench.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://docs.nosqlbench.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://docs.nosqlbench.io/favicon-16x16.png" />
+  <noscript><link rel="stylesheet" href="https://docs.nosqlbench.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://docs.nosqlbench.io/"><img src="https://docs.nosqlbench.io/nb5logo.png" alt="NoSQLBench5" width="32" height="32" />NoSQLBench v5</a></h1></div><div>
+        <ul><li> <h2><a href="https://docs.nosqlbench.io/getting-started/">Getting Started</a></h2> </li><li> <h2><a href="https://docs.nosqlbench.io/release-notes/">Release Notes</a></h2> </li><li class="js"><i type="reset" id="mode" class="svgs adjust"></i></li></ul>
+      </div>
+      <div>
+        <form autocomplete=off class="js" name="goSearch" id="searchbox">
+          <div class="searchd">
+            <input id="searchinput" type="text" placeholder="Search" title="Search" />
+            <button type="submit" title="Search"><i class="svgs search"></i></button>
+          </div>
+          <div><div id="suggestions"></div></div>
+        </form>
+      </div>
+
+      <a href="http://github.com/nosqlbench/nosqlbench-build-docs" title="This doc site's project repo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="1" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+      <a href="http://nosqlbench.io" title="NoSQLBench Project Site">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+    </nav>
+    <hr /><div style="position:sticky"><span><a href="&#x2F;">NB5 Docs► </a></span><span title="Getting Started with NoSQLBench"><a href="&#x2F;getting-started&#x2F;"><strong>Getting Started▼</strong> </a></span><span title="[current page]"><a href="&#x2F;getting-started&#x2F;04-reading-metrics&#x2F;"><strong>04 Metrics 🖺</strong></a></span>
+</div></header>
+  <main><!-- active_page: getting-started&#x2F;04-reading-metrics.md -->
+<!-- active_section: getting-started&#x2F;_index.md -->
+
+
+<!-- lower_root: _index.md -->
+<!-- >upper_root: _index.md -->
+
+<div class="toc" aria-hidden="true" id="">
+<!--  <h4>Getting Started</h4>--><div class="toc-sticky"><div class="toc-item"title="Release Notes for each major and some minor releases"><a href="&#x2F;release-notes&#x2F;">►Release Notes</a></div><div class="toc-item"title="An introduction to what makes NoSQLBench Unique"><a href="&#x2F;introduction&#x2F;">►Introduction</a></div><div class="toc-item"title="Getting Started with NoSQLBench"><strong>▼Getting Started</strong></div><!-- subsection_page_path: &#x2F;getting-started&#x2F;00-get-nosqlbench&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;getting-started&#x2F;00-get-nosqlbench&#x2F;">00 Download</a>
+    </div><!-- subsection_page_path: &#x2F;getting-started&#x2F;01-test-target&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;getting-started&#x2F;01-test-target&#x2F;">01 Test Target</a>
+    </div><!-- subsection_page_path: &#x2F;getting-started&#x2F;02-scenarios&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;getting-started&#x2F;02-scenarios&#x2F;">02 Scenarios</a>
+    </div><!-- subsection_page_path: &#x2F;getting-started&#x2F;03-example-results&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;getting-started&#x2F;03-example-results&#x2F;">03 Results</a>
+    </div><!-- subsection_page_path: &#x2F;getting-started&#x2F;04-reading-metrics&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;getting-started&#x2F;04-reading-metrics&#x2F;"><strong>04 Metrics</strong></a>
+    </div><!-- subsection_page_path: &#x2F;getting-started&#x2F;05-next-steps&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;getting-started&#x2F;05-next-steps&#x2F;">05 Next Steps</a>
+    </div><div class="toc-item"title="You can build workloads to simulate real-world data and access patterns."><a href="&#x2F;workloads-101&#x2F;">►Workloads 101</a></div><div class="toc-item"title="Detailed documentation on all options and features of NoSQLBench"><a href="&#x2F;user-guide&#x2F;">►User Guide</a></div><div class="toc-item"title="The NB5 Developer Guide"><a href="&#x2F;dev-guide&#x2F;">►Dev Guide</a></div><div class="toc-item"title="Detailed reference on drivers, formats, bindings, from auto-imported docs"><a href="&#x2F;reference&#x2F;">►Reference Section</a></div></div>
+</div>
+
+<article>
+
+  <p>A set of core metrics are provided for every workload that runs with NoSQLBench, regardless of the activity type and
+protocol used. This section explains each of these metrics and shows an example of them from the log file.</p>
+<h2 id="metric-result">metric: result</h2>
+<p>This is the primary metric that should be used to get a quick idea of the throughput and latency for a given run. It
+encapsulates the entire operation life cycle ( ie. bind, execute, get result back ).</p>
+<p>For this example we see that we averaged 3732 operations / second with 3.6ms 75th percentile latency and 23.9ms 99th
+percentile latency. Note the raw metrics are in microseconds. This duration_unit may change depending on how a user
+configures NoSQLBench, so always double-check it.</p>
+<pre class="z-code"><code><span class="z-text z-plain">2019-08-12 15:46:01,310 INFO [main] i.e.c.ScenarioResult [Slf4jReporter.java:373] type=TIMER,
+ name=cql-keyvalue.result, count=100000, min=233.48, max=358596.607, mean=3732.00338612, stddev=10254.850416061185,
+ median=1874.815, p75=3648.767, p95=10115.071, p98=15855.615, p99=23916.543, p999=111292.415,
+ mean_rate=4024.0234405430424, m1=3514.053841156124, m5=3307.431472596865, m15=3268.6786509004132,
+ rate_unit=events/second, duration_unit=microseconds
+</span></code></pre>
+<h2 id="metric-result-success">metric: result-success</h2>
+<p>This metric shows whether there were any errors during the run. You can confirm that the count is equal to the number of
+cycles for the run if you are expecting or requiring zero failed operations.</p>
+<p>Here we see that all 100k of our cycles succeeded. Note that the metrics for throughput and latency here are slightly
+different than the <code>results</code> metric simply because this is a separate timer that only includes operations which
+completed with no exceptions.</p>
+<pre class="z-code"><code><span class="z-text z-plain">2019-08-12 15:46:01,452 INFO [main] i.e.c.ScenarioResult [Slf4jReporter.java:373] type=TIMER,
+ name=cql-keyvalue.result-success, count=100000, min=435.168, max=358645.759, mean=3752.40990808,
+ stddev=10251.524945886964, median=1889.791, p75=3668.479, p95=10154.495, p98=15884.287, p99=24280.063,
+ p999=111443.967, mean_rate=4003.3090048756894, m1=3523.40328629036, m5=3318.8463896065778, m15=3280.480326762243,
+ rate_unit=events/second, duration_unit=microseconds
+</span></code></pre>
+<h2 id="metric-resultset-size">metric: resultset-size</h2>
+<p>For read workloads, this metric shows the size of result sent back to NoSQLBench from the server. This is useful to
+confirm that you are reading rows that already exist in the database.</p>
+<pre class="z-code"><code><span class="z-text z-plain">2019-08-12 15:46:00,298 INFO [main] i.e.c.ScenarioResult [Slf4jReporter.java:373] type=HISTOGRAM,
+ name=cql-keyvalue.resultset-size, count=100000, min=0, max=1, mean=8.0E-5, stddev=0.008943914131967056,
+ median=0.0, p75=0.0, p95=0.0, p98=0.0, p99=0.0, p999=0.0
+</span></code></pre>
+<h4 id="metric-tries">metric: tries</h4>
+<p>NoSQLBench will retry failures 10 times by default, this is configurable via the <code>maxtries</code> command line option for the
+cql activity type. This metric shows a histogram of the number of tries that each operation required, in this example,
+there were no retries as the <code>count</code> is 100k.</p>
+<pre class="z-code"><code><span class="z-text z-plain">2019-08-12 15:46:00,341 INFO [main] i.e.c.ScenarioResult [Slf4jReporter.java:373] type=HISTOGRAM,
+ name=cql-keyvalue.tries, count=100000, min=1, max=1, mean=1.0, stddev=0.0, median=1.0,
+ p75=1.0, p95=1.0, p98=1.0, p99=1.0, p999=1.0
+</span></code></pre>
+<h3 id="more-metrics">More Metrics</h3>
+<p>NoSQLBench extends many ways to report the metrics from a run, including:</p>
+<ul>
+<li>Built-in Docker Dashboard</li>
+<li>Reporting to CSV</li>
+<li>Reporting to Graphite</li>
+<li>Reporting to HDR</li>
+</ul>
+<p>To get more information on these options, see the output of</p>
+<pre class="z-code"><code><span class="z-text z-plain">./nb5 --help
+</span></code></pre>
+<h3 id="congratulations">Congratulations</h3>
+<p>You have completed your first run with NoSQLBench!</p>
+<p>In the 'Next Steps' section, you'll find options for how to continue, whether you are looking for basic testing or
+something more advanced.</p>
+
+<p><b><a href="#">Back to top</a></b></p>
+</article>
+<div class="toc" aria-hidden="true">
+  <div class="toc-sticky">
+    <h5>04 Metrics</h5>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/getting-started/04-reading-metrics/#metric-result">metric: result</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/getting-started/04-reading-metrics/#metric-result-success">metric: result-success</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/getting-started/04-reading-metrics/#metric-resultset-size">metric: resultset-size</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/getting-started/04-reading-metrics/#metric-tries"><small>- metric: tries</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/getting-started/04-reading-metrics/#more-metrics"><small>- More Metrics</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/getting-started/04-reading-metrics/#congratulations"><small>- Congratulations</small></a>
+    </div>
+  </div>
+</div>
+  </main>
+  <footer>
+    <hr />
+    <div class="c">
+      <nav>
+        <ul></ul>
+      </nav>
+      <p class="s90">Copyright &copy; 2023-2023 NoSQLBench Project</p>
+    </div>
+  </footer>
+</body>
+</html>

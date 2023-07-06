@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script src="https://docs.nosqlbench.io/theme.min.js" integrity="sha384-IpIaa84kOKgkF5EJ0fD/kBe2wtIIsIB60ANGmuJxeA0dz5bSRfwBwp2/QybtQpU2"></script>
+  <link rel="stylesheet" href="https://docs.nosqlbench.io/abridge-switcher.css?h=4238d999f44a7bb130d5" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preload" as="style" class="preStyle" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" crossorigin="anonymous" />
+  <script defer src="https://docs.nosqlbench.io/search_index.en.js?h=ae47d253e455a3aaacb2" integrity="sha384-cP47owL9Iuak1e1AA21cJA4BgagQtaPwAXBQG7QgJeE2JKGgkCBROHbCj/Xym6KC"></script>
+  <script defer src="https://docs.nosqlbench.io/abridge-bundle-nofacade.min.js?h=9bcf621a2fcab7336017" integrity="sha384-u8AROOUG6n2Xjk2+7pvkkfeSIqinjI1tmqeBpZRlZtc5KFO/8DyFfEir6fAE2wcq"></script>
+  <meta name="base" content="https://docs.nosqlbench.io" />
+<meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>Metrics Options | NoSQLBench Project</title>
+  <meta name="copyright" content="NoSQLBench Project" />
+  <meta name="description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <link rel="canonical" href="https://docs.nosqlbench.io/user-guide/metrics-options/" />
+  <meta name="keywords" content="Abridge, Abridge.css, Zola, Theme, Zola Theme, getzola, Semantic Html, Fast, lightweight" />
+  <meta property="og:url" content="https://docs.nosqlbench.io/user-guide/metrics-options/" />
+  <meta name="twitter:url" content="https://docs.nosqlbench.io/user-guide/metrics-options/" />
+  <meta property="og:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta name="twitter:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta property="og:title" content="Metrics Options | NoSQLBench Project" />
+  <meta name="twitter:title" content="Metrics Options | NoSQLBench Project" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:site_name" content="NoSQLBench Project" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://docs.nosqlbench.io/site.webmanifest" />
+  <link rel="mask-icon" href="https://docs.nosqlbench.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://docs.nosqlbench.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://docs.nosqlbench.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://docs.nosqlbench.io/favicon-16x16.png" />
+  <noscript><link rel="stylesheet" href="https://docs.nosqlbench.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://docs.nosqlbench.io/"><img src="https://docs.nosqlbench.io/nb5logo.png" alt="NoSQLBench5" width="32" height="32" />NoSQLBench v5</a></h1></div><div>
+        <ul><li> <h2><a href="https://docs.nosqlbench.io/getting-started/">Getting Started</a></h2> </li><li> <h2><a href="https://docs.nosqlbench.io/release-notes/">Release Notes</a></h2> </li><li class="js"><i type="reset" id="mode" class="svgs adjust"></i></li></ul>
+      </div>
+      <div>
+        <form autocomplete=off class="js" name="goSearch" id="searchbox">
+          <div class="searchd">
+            <input id="searchinput" type="text" placeholder="Search" title="Search" />
+            <button type="submit" title="Search"><i class="svgs search"></i></button>
+          </div>
+          <div><div id="suggestions"></div></div>
+        </form>
+      </div>
+
+      <a href="http://github.com/nosqlbench/nosqlbench-build-docs" title="This doc site's project repo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="1" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+      <a href="http://nosqlbench.io" title="NoSQLBench Project Site">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+    </nav>
+    <hr /><div style="position:sticky"><span><a href="&#x2F;">NB5 Docs► </a></span><span title="Detailed documentation on all options and features of NoSQLBench"><a href="&#x2F;user-guide&#x2F;"><strong>User Guide▼</strong> </a></span><span title="[current page]"><a href="&#x2F;user-guide&#x2F;metrics-options&#x2F;"><strong>Metrics Options 🖺</strong></a></span>
+</div></header>
+  <main><!-- active_page: user-guide&#x2F;metrics-options.md -->
+<!-- active_section: user-guide&#x2F;_index.md -->
+
+
+<!-- lower_root: _index.md -->
+<!-- >upper_root: _index.md -->
+
+<div class="toc" aria-hidden="true" id="">
+<!--  <h4>User Guide</h4>--><div class="toc-sticky"><div class="toc-item"title="Release Notes for each major and some minor releases"><a href="&#x2F;release-notes&#x2F;">►Release Notes</a></div><div class="toc-item"title="An introduction to what makes NoSQLBench Unique"><a href="&#x2F;introduction&#x2F;">►Introduction</a></div><div class="toc-item"title="Getting Started with NoSQLBench"><a href="&#x2F;getting-started&#x2F;">►Getting Started</a></div><div class="toc-item"title="You can build workloads to simulate real-world data and access patterns."><a href="&#x2F;workloads-101&#x2F;">►Workloads 101</a></div><div class="toc-item"title="Detailed documentation on all options and features of NoSQLBench"><strong>▼User Guide</strong></div><!-- subsection_page_path: &#x2F;user-guide&#x2F;cli-options&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;cli-options&#x2F;">CLI Options</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;ssl-options&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;ssl-options&#x2F;">Standard SSL Options</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;cli-scripting&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;cli-scripting&#x2F;">CLI Scripting</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;op-templates&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;op-templates&#x2F;">Op Templates</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;core-op-fields&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;core-op-fields&#x2F;">Core Op Fields</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;core-activity-params&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;core-activity-params&#x2F;">Core Activity Params</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;error-handlers&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;error-handlers&#x2F;">Error Handlers</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;standard-metrics&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;standard-metrics&#x2F;">Standard Metrics</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;metrics-options&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;metrics-options&#x2F;"><strong>Metrics Options</strong></a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;grafana-metrics&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;grafana-metrics&#x2F;">Built-In Grafana Dashboard</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;workloads-intro&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;workloads-intro&#x2F;">Built-In Workloads</a>
+    </div><!-- subsubsection_path: user-guide&#x2F;advanced-topics&#x2F;_index.md --><div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;"title="Detailed documentation on all options and features of NoSQLBench">‣ Advanced Topics</a>
+    </div><div class="toc-item"title="The NB5 Developer Guide"><a href="&#x2F;dev-guide&#x2F;">►Dev Guide</a></div><div class="toc-item"title="Detailed reference on drivers, formats, bindings, from auto-imported docs"><a href="&#x2F;reference&#x2F;">►Reference Section</a></div></div>
+</div>
+
+<article>
+
+  <h2 id="unit-of-measure">Unit of Measure</h2>
+<p>All metrics collected from activities are recorded in nanoseconds and ops per second. All histograms
+are recorded with 3 digits of precision using HDR histograms unless otherwise modified with the
+global <code>--hdr-digits</code> option or the activity-specific <code>hdr_digits</code> activity param.</p>
+<h2 id="metric-outputs">Metric Outputs</h2>
+<p>Metrics from a scenario run can be gathered in multiple ways:</p>
+<ul>
+<li>In the log output</li>
+<li>In CSV files</li>
+<li>In HDR histogram logs</li>
+<li>In Histogram Stats logs (CSV)</li>
+<li>To a monitoring system via graphite</li>
+<li>via the <code>--docker-metrics</code> option</li>
+<li>remotely via the <code>--docker-metrics-at &lt;host&gt;</code> option</li>
+</ul>
+<p>When <code>--docker-metrics</code> or <code>--docker-metrics-at &lt;host&gt;</code> methods are used, they take over the global
+options for the other methods. Except these, the others may generally be combined and used in
+combination. The command line options for enabling these are documented in the command line docs,
+although some examples of these may be found below.</p>
+<h2 id="metrics-via-graphite">Metrics via Graphite</h2>
+<p>If you like to have all of your testing data in one place, then you may be interested in reporting
+your measurements to a monitoring system. For this, NoSQLBench includes a
+<a rel="noopener" target="_blank" href="https://github.com/dropwizard/metrics">Metrics Library</a>. Graphite reporting is baked in as the
+default reporter.</p>
+<p>In order to enable graphite reporting, use one of these options formats:</p>
+<pre class="z-code"><code><span class="z-text z-plain">--report-graphite-to &lt;host&gt;
+--report-graphite-to &lt;host&gt;:&lt;port&gt;
+</span></code></pre>
+<h2 id="metric-naming">Metric Naming</h2>
+<p><strong>Prefix</strong></p>
+<p>Core metrics use the prefix <em>nosqlbench</em> by default. You can override this with the ``
+--metrics-prefix` option:</p>
+<pre class="z-code"><code><span class="z-text z-plain">--metrics-prefix myclient.group5
+</span></code></pre>
+<p><strong>Identifiers</strong></p>
+<p>Metrics associated with a specific activity will have the activity alias in their name. There is a
+set of core metrics which are always present regardless of the activity type. The names and types of
+additional metrics provided for each activity type vary.</p>
+<p>Sometimes, an activity type will expose metrics on a per-statement basis, measuring over all
+invocations of a given statement as defined in the YAML. In these cases, you will see <code>--</code>
+separating the name components of the metric. At the most verbose, a metric name could take on the
+form like
+<code>&lt;activity&gt;.&lt;docname&gt;--&lt;blockname&gt;--&lt;statementname&gt;--&lt;metricname&gt;</code>, although this is rare when you
+name your statements, which is recommended. Just keep in mind that the double dash connects an
+activity's alias with named statements <em>within</em>
+that activity.</p>
+<h2 id="hdr-histograms">HDR Histograms</h2>
+<h3 id="recording-hdr-histogram-logs">Recording HDR Histogram Logs</h3>
+<p>You can record details of histograms from any compatible metric (histograms and timers) with an
+option like this:</p>
+<pre class="z-code"><code><span class="z-text z-plain">--log-histograms hdrdata.log
+</span></code></pre>
+<p>If you want to record only certain metrics in this way, then use this form:</p>
+<pre class="z-code"><code><span class="z-text z-plain">--log-histograms &#39;hdrdata.log:.*suffix&#39;
+</span></code></pre>
+<p>Notice that the option is enclosed in single quotes. This is because the second part of the option
+value is a regex. The
+'.*suffix' pattern matches any metric name that ends with &quot;suffix&quot;. Effectively, leaving out the
+pattern is the same as using '.*', which matches all metrics. Any valid regex is allowed here.</p>
+<p>Metrics may be included in multiple logs, but care should be taken not to overdo this. Keeping
+higher fidelity histogram reservoirs does come with a cost, so be sure to be specific in what you
+record as much as possible.</p>
+<p>If you want to specify the recording interval, use this form:</p>
+<pre class="z-code"><code><span class="z-text z-plain">--log-histograms &#39;hdrdata.log:.*suffix:5s&#39;
+</span></code></pre>
+<p>If you want to specify the interval, you must use the third form above, although it is valid to
+leave the pattern empty, such as 'hdrdata.log::5s'.</p>
+<p>Each interval specified will be tracked in a discrete reservoir in memory, so they will not
+interfere with each other in terms of accuracy.</p>
+<h3 id="recording-hdr-histogram-stats">Recording HDR Histogram Stats</h3>
+<p>You can also record basic snapshots of histogram data on a periodic interval just like above with
+HDR histogram logs. The option to do this is:</p>
+<pre class="z-code"><code><span class="z-text z-plain">--log-histostats &#39;hdrstats.log:.*suffix:10s&#39;
+</span></code></pre>
+<p>Everything works the same as for hdr histogram logging, except that the format is in CSV as shown in
+the example below:</p>
+<pre class="z-code"><code><span class="z-text z-plain">#logging stats for session scenario-1479089852022
+#[Histogram log format version 1.0]
+#[StartTime: 1479089852.046 (seconds since epoch), Sun Nov 13 20:17:32 CST 2016]
+#Tag,Interval_Start,Interval_Length,count,min,p25,p50,p75,p90,p95,p98,p99,p999,p9999,max
+Tag=diag1.delay,0.457,0.044,1,16,31,31,31,31,31,31,31,31,31,31
+Tag=diag1.cycles,0.48,0.021,31,4096,8191,8191,8191,8191,8191,8191,8191,8191,8191,2097151
+Tag=diag1.delay,0.501,0.499,1,1,1,1,1,1,1,1,1,1,1,1
+Tag=diag1.cycles,0.501,0.499,498,1024,2047,2047,4095,4095,4095,4095,4095,4095,4095,4194303
+...
+</span></code></pre>
+<p>This includes the metric name (Tag), the interval start time and length (from the beginning of
+collection time), number of metrics recorded (count), minimum magnitude, a number of percentile
+measurements, and the maximum value. Notice that the format used is similar to that of the HDR
+logging, although instead of including the raw histogram data, common percentiles are recorded
+directly.</p>
+
+<p><b><a href="#">Back to top</a></b></p>
+</article>
+<div class="toc" aria-hidden="true">
+  <div class="toc-sticky">
+    <h5>Metrics Options</h5>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/metrics-options/#unit-of-measure">Unit of Measure</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/metrics-options/#metric-outputs">Metric Outputs</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/metrics-options/#metrics-via-graphite">Metrics via Graphite</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/metrics-options/#metric-naming">Metric Naming</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/metrics-options/#hdr-histograms">HDR Histograms</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/metrics-options/#recording-hdr-histogram-logs"><small>- Recording HDR Histogram Logs</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/metrics-options/#recording-hdr-histogram-stats"><small>- Recording HDR Histogram Stats</small></a>
+    </div>
+  </div>
+</div>
+  </main>
+  <footer>
+    <hr />
+    <div class="c">
+      <nav>
+        <ul></ul>
+      </nav>
+      <p class="s90">Copyright &copy; 2023-2023 NoSQLBench Project</p>
+    </div>
+  </footer>
+</body>
+</html>

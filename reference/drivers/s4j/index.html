@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script src="https://docs.nosqlbench.io/theme.min.js" integrity="sha384-IpIaa84kOKgkF5EJ0fD/kBe2wtIIsIB60ANGmuJxeA0dz5bSRfwBwp2/QybtQpU2"></script>
+  <link rel="stylesheet" href="https://docs.nosqlbench.io/abridge-switcher.css?h=4238d999f44a7bb130d5" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preload" as="style" class="preStyle" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" crossorigin="anonymous" />
+  <script defer src="https://docs.nosqlbench.io/search_index.en.js?h=ae47d253e455a3aaacb2" integrity="sha384-cP47owL9Iuak1e1AA21cJA4BgagQtaPwAXBQG7QgJeE2JKGgkCBROHbCj/Xym6KC"></script>
+  <script defer src="https://docs.nosqlbench.io/abridge-bundle-nofacade.min.js?h=9bcf621a2fcab7336017" integrity="sha384-u8AROOUG6n2Xjk2+7pvkkfeSIqinjI1tmqeBpZRlZtc5KFO/8DyFfEir6fAE2wcq"></script>
+  <meta name="base" content="https://docs.nosqlbench.io" />
+<meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>S4J | NoSQLBench Project</title>
+  <meta name="copyright" content="NoSQLBench Project" />
+  <meta name="description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <link rel="canonical" href="https://docs.nosqlbench.io/reference/drivers/s4j/" />
+  <meta name="keywords" content="Abridge, Abridge.css, Zola, Theme, Zola Theme, getzola, Semantic Html, Fast, lightweight" />
+  <meta property="og:url" content="https://docs.nosqlbench.io/reference/drivers/s4j/" />
+  <meta name="twitter:url" content="https://docs.nosqlbench.io/reference/drivers/s4j/" />
+  <meta property="og:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta name="twitter:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta property="og:title" content="S4J | NoSQLBench Project" />
+  <meta name="twitter:title" content="S4J | NoSQLBench Project" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:site_name" content="NoSQLBench Project" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://docs.nosqlbench.io/site.webmanifest" />
+  <link rel="mask-icon" href="https://docs.nosqlbench.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://docs.nosqlbench.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://docs.nosqlbench.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://docs.nosqlbench.io/favicon-16x16.png" />
+  <noscript><link rel="stylesheet" href="https://docs.nosqlbench.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://docs.nosqlbench.io/"><img src="https://docs.nosqlbench.io/nb5logo.png" alt="NoSQLBench5" width="32" height="32" />NoSQLBench v5</a></h1></div><div>
+        <ul><li> <h2><a href="https://docs.nosqlbench.io/getting-started/">Getting Started</a></h2> </li><li> <h2><a href="https://docs.nosqlbench.io/release-notes/">Release Notes</a></h2> </li><li class="js"><i type="reset" id="mode" class="svgs adjust"></i></li></ul>
+      </div>
+      <div>
+        <form autocomplete=off class="js" name="goSearch" id="searchbox">
+          <div class="searchd">
+            <input id="searchinput" type="text" placeholder="Search" title="Search" />
+            <button type="submit" title="Search"><i class="svgs search"></i></button>
+          </div>
+          <div><div id="suggestions"></div></div>
+        </form>
+      </div>
+
+      <a href="http://github.com/nosqlbench/nosqlbench-build-docs" title="This doc site's project repo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="1" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+      <a href="http://nosqlbench.io" title="NoSQLBench Project Site">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+    </nav>
+    <hr /><div style="position:sticky"><span><a href="&#x2F;">NB5 Docs► </a></span><span><a href="&#x2F;reference&#x2F;">Reference Section► </a></span><span title="DriverAdapters allow native drivers or other logic to be plugged into the nb5 engine."><a href="&#x2F;reference&#x2F;drivers&#x2F;"><strong>Drivers▼</strong> </a></span><span title="[current page]"><a href="&#x2F;reference&#x2F;drivers&#x2F;s4j&#x2F;"><strong>S4J 🖺</strong></a></span>
+</div></header>
+  <main><!-- active_page: reference&#x2F;drivers&#x2F;s4j.md -->
+<!-- active_section: reference&#x2F;drivers&#x2F;_index.md -->
+
+
+<!-- lower_root: reference&#x2F;_index.md -->
+<!-- >upper_root: reference&#x2F;_index.md -->
+
+<div class="toc" aria-hidden="true" id="">
+<!--  <h4>Drivers</h4>--><div class="toc-sticky"><div class="toc-item"title="This section is a specification of the standard workload format."><a href="&#x2F;reference&#x2F;workload_definition&#x2F;">►Workload Specification</a></div><div class="toc-item"title="DriverAdapters allow native drivers or other logic to be plugged into the nb5 engine."><strong>▼Drivers</strong></div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;jdbc&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;jdbc&#x2F;">JDBC driver</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;cqld4&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;cqld4&#x2F;">cqld4</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;stdout&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;stdout&#x2F;">stdout</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;mongodb&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;mongodb&#x2F;">MongoDB</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;diag&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;diag&#x2F;">diag</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;pulsar&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;pulsar&#x2F;">pulsar</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;tcpserver&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;tcpserver&#x2F;">tcpserver</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;tcpclient&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;tcpclient&#x2F;">tcpclient</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;dynamodb&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;dynamodb&#x2F;">dynamodb</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;s4j&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;s4j&#x2F;"><strong>S4J</strong></a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;http&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;http&#x2F;">http</a>
+    </div><div class="toc-item"title="Binding functions are the core of the procedural data generation capabilities of NoSQLBench. They bind generated data to operations in a determinstic way."><a href="&#x2F;reference&#x2F;bindings&#x2F;">►Binding Functions</a></div><div class="toc-item"title="Documentation for bundled applications within NB5."><a href="&#x2F;reference&#x2F;apps&#x2F;">►Bundled Apps</a></div><div class="toc-item"title="Version data for the bundled and imported docs content"><a href="&#x2F;reference&#x2F;versions&#x2F;">►Version Info</a></div></div>
+</div>
+
+<article>
+
+  <h1 id="1-overview">1. Overview</h1>
+<p>This driver is similar to <a href="../../../../driver-pulsar/src/main/resources/pulsar.md">NB Pulsar driver</a> that allows NB based workload generation and performance testing against a Pulsar cluster. It also follows a similar pattern to configure and connect to the Pulsar cluster for workload execution.</p>
+<p>However, the major difference is instead of simulating native Pulsar client workloads, the NB S4J driver allows simulating JMS oriented workloads (that follows JMS spec 2.0 and 1.1) to be executed on the Pulsar cluster. Under the hood, this is achieved through DataStax's [Starlight for JMS API] (https://github.com/datastax/pulsar-jms).</p>
+<h1 id="2-execute-nb-s4j-workload">2. Execute NB S4J Workload</h1>
+<p>The following is an example of executing a NB S4J workload (defined as <em>pulsar_s4j.yaml</em>)</p>
+<pre data-lang="shell" class="language-shell z-code"><code class="language-shell" data-lang="shell"><span class="z-text z-plain">$ &lt;nb_cmd&gt; run driver=s4j cycles=10000 threads=4 num_conn=2 num_session=2 session_mode=&quot;client_ack&quot; strict_msg_error_handling=&quot;false&quot; web_url=http://localhost:8080 service_url=pulsar://localhost:6650 config=/path/to/nb_s4j_config.properties yaml=/path/to/pulsar_s4j.yaml -vv --logs-dir=s4j_log
+</span></code></pre>
+<p>In the above NB CLI command, the S4J driver specific parameters are listed as below:</p>
+<ul>
+<li>num_conn: the number of JMS connections to be created</li>
+<li>num_session: the number of JMS sessions per JMS connection
+<ul>
+<li>Note that multiple JMS sessions can be created from one JMS connection, and they share the same connection characteristics.</li>
+</ul>
+</li>
+<li>session_mode: the session mode used when creating a JMS session</li>
+<li>web_url: the URL of the Pulsar web service</li>
+<li>service_url: the URL of the Pulsar native protocol service</li>
+<li>(optional) strict_msg_error_handling: whether to do strict error handling
+<ul>
+<li>when true, Pulsar client error will not stop NB S4J execution</li>
+<li>otherwise, any Pulsar client error will stop NB S4J execution</li>
+</ul>
+</li>
+<li>(optional) max_s4jop_time: maximum time (in seconds) to execute the actual S4J operations (e.g. message sending or receiving). If NB execution time is beyond this limit, each NB cycle is just a no-op. Please NOTE:
+<ul>
+<li>this is useful when controlled NB execution is needed with NB CLI scripting.</li>
+<li>if this parameter is not specified or the value is 0, it means no time limitation. Every single NB cycle will trigger an actual S4J operation.</li>
+</ul>
+</li>
+<li>(optional) track_msg_cnt: When set to true (with default as false), the S4J driver will keep track of the confirmed response count for message sending and receiving.</li>
+</ul>
+<p>Other NB engine parameters are straight forward:</p>
+<ul>
+<li>driver: must be <strong>s4j</strong></li>
+<li>threads: depending on the workload type, the NB thread number determines how many producers or consumers will be created. All producers or consumers will share the available JMS connections and sessions</li>
+<li>yamL: the NB S4J scenario definition yaml file</li>
+<li>config: specify the file that contains the connection parameters used by the S4J API</li>
+</ul>
+<h1 id="3-nb-s4j-driver-configuration-parameter-file">3. NB S4J Driver Configuration Parameter File</h1>
+<p>The S4J API has a list of configuration options that can be found here: https://docs.datastax.com/en/fast-pulsar-jms/docs/1.1/pulsar-jms-reference.html#_configuration_options.</p>
+<p>The NB S4J driver supports these configuration options via a config property file, an example of which is listed below. The configuration parameters in this file are grouped into several groups. The comments below explain how the grouping works.</p>
+<pre class="z-code"><code><span class="z-text z-plain">###########
+# Overview: Starlight for JMS (S4J) API configuration items are listed at:
+#           https://docs.datastax.com/en/fast-pulsar-jms/docs/1.1/pulsar-jms-reference.html#_configuration_options
+enableTransaction=true
+
+####
+# S4J API specific configurations (non Pulsar specific) - jms.***
+
+jms.enableClientSideEmulation=true
+jms.usePulsarAdmin=false
+#...
+
+#####
+# Pulsar client related configurations - client.***
+# - Valid settings: http://pulsar.apache.org/docs/en/client-libraries-java/#client
+#
+# - These Pulsar client settings (without the &quot;client.&quot; prefix) will be
+#   directly used as S4J configuration settings, on a 1-to-1 basis.
+#--------------------------------------
+# only relevant when authentication is enabled
+client.authPlugin=org.apache.pulsar.client.impl.auth.AuthenticationToken
+client.authParams=file:///path/to/authentication/jwt/file
+# only relevant when in-transit encryption is enabled
+client.tlsTrustCertsFilePath=/path/to/certificate/file
+#...
+
+#####
+# Producer related configurations (global) - producer.***
+# - Valid settings: http://pulsar.apache.org/docs/en/client-libraries-java/#configure-producer
+#
+# - These Pulsar producer settings (without &quot;producer.&quot; prefix) will be collectively (as a map)
+#   mapped to S4J connection setting of &quot;producerConfig&quot;
+#--------------------------------------
+producer.blockIfQueueFull=true
+# disable producer batching
+#producer.batchingEnabled=false
+#...
+
+#####
+# Consumer related configurations (global) - consumer.***
+# - Valid settings: http://pulsar.apache.org/docs/en/client-libraries-java/#configure-consumer
+#
+# - These Pulsar producer settings (without &quot;consumer.&quot; portion) will be collectively (as a map)
+#   mapped to S4J connection setting of &quot;consumerConfig&quot;
+#--------------------------------------
+#...
+</span></code></pre>
+<h1 id="4-nb-s4j-scenario-definition-file">4. NB S4J Scenario Definition File</h1>
+<p>Like any NB scenario yaml file, the NB S4J yaml file is composed of 3 major components:</p>
+<ul>
+<li>bindings: define NB bindings</li>
+<li>params: define document level parameters</li>
+<li>blocks: define various statement blocks. Each statement block represents one JMS workload type</li>
+</ul>
+<pre class="z-code"><code><span class="z-text z-plain">bindings:
+ ... ...
+params:
+ ... ...
+blocks:
+ ... ...
+</span></code></pre>
+<h2 id="4-1-document-level-parameters">4.1. Document Level Parameters</h2>
+<p>The parameters defined in this section will be applicable to all statement blocks. An example of some common parameters that can be set at the document level is listed below:</p>
+<ul>
+<li>temporary_dest: whether JMS workload is dealing with a temporary destination</li>
+<li>dest_type: JMS destination type - queue or topic</li>
+</ul>
+<pre class="z-code"><code><span class="z-text z-plain">params:
+ temporary_dest: &quot;false&quot;
+ dest_type: &quot;&lt;jms_destination_type&gt;&quot;
+ async_api: &quot;true&quot;
+ txn_batch_num: &lt;number_of_message_ops_in_one_transaction&gt;
+ blocking_msg_recv: &lt;whehter_to_block_when_receiving_messages&gt;
+ shared_topic: &lt;if_shared_topic_or_not&gt;  // only relevant when the destination type is a topic
+ durable_topic: &lt;if_durable_topic_or_not&gt;  // only relevant when the destination type is a topic
+</span></code></pre>
+<p>Please <strong>NOTE</strong> that the above parameters won't necessarily be specified at the document level. If they're specified at the statement level, they will only impact the statement within which they're specified.</p>
+<h2 id="4-2-nb-s4j-workload-types">4.2. NB S4J Workload Types</h2>
+<p>The NB S4J driver supports 2 types of JMS operations:</p>
+<ul>
+<li>One for message producing/sending/publishing
+<ul>
+<li>this is identified by NB Op identifier <em><strong>MessageProduce</strong></em></li>
+</ul>
+</li>
+<li>One for message consuming/receiving/subscribing
+<ul>
+<li>this is identified by NB Op identifier <em><strong>MessageConsume</strong></em></li>
+</ul>
+</li>
+</ul>
+<h3 id="4-2-1-publish-messages-to-a-jms-destination-queue-or-topic">4.2.1. Publish Messages to a JMS Destination, Queue or Topic</h3>
+<p>The NB S4J statement block for publishing messages to a JMS destination (either a Queue or a topic) has the following format.</p>
+<ul>
+<li>Optionally, you can specify the JMS headers (<strong>msg_header</strong>) and properties (<strong>msg_property</strong>) via valid JSON strings in key: value format.</li>
+<li>The default message type (<strong>msg_type</strong>) is &quot;byte&quot;. But optionally, you can specify other message types such as &quot;text&quot;, &quot;map&quot;, etc.</li>
+<li>The message payload (<strong>msg_body</strong>) is the only mandatory field.</li>
+</ul>
+<pre data-lang="yaml" class="language-yaml z-code"><code class="language-yaml" data-lang="yaml"><span class="z-source z-yaml"><span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">blocks</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">msg-produce-block</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">ops</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+      <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">op1</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+        <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span># The value represents the destination (queue or topic) name)
+</span>        <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">MessageProduce</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-quoted z-double z-yaml"><span class="z-punctuation z-definition z-string z-begin z-yaml">&quot;</span>mys4jtest_t<span class="z-punctuation z-definition z-string z-end z-yaml">&quot;</span></span>
+
+        <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span># (Optional) JMS headers (in JSON format).
+</span>        <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">msg_header</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-keyword z-control z-flow z-block-scalar z-literal z-yaml">|</span>
+<span class="z-string z-unquoted z-block z-yaml">          {
+            &quot;&lt;header_key&gt;&quot;: &quot;&lt;header_value&gt;&quot;
+          }
+
+</span>        <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span># (Optional) JMS properties, predefined or customized (in JSON format).
+</span>        <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">msg_property</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-keyword z-control z-flow z-block-scalar z-literal z-yaml">|</span>
+<span class="z-string z-unquoted z-block z-yaml">          {
+            &quot;&lt;property1_key&gt;&quot;: &quot;&lt;property_value1&gt;&quot;,
+            &quot;&lt;property2_key&gt;&quot;: &quot;&lt;property_value2&gt;&quot;
+          }
+
+</span>        <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span># (Optional) JMS message types, default to be BYTES.
+</span>        <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">msg_type</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-quoted z-double z-yaml"><span class="z-punctuation z-definition z-string z-begin z-yaml">&quot;</span>text<span class="z-punctuation z-definition z-string z-end z-yaml">&quot;</span></span>
+
+        <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span># (Mandatory) JMS message body. Value depends on msg_type.
+</span>        <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">msg_body</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-quoted z-double z-yaml"><span class="z-punctuation z-definition z-string z-begin z-yaml">&quot;</span>{mytext_val}<span class="z-punctuation z-definition z-string z-end z-yaml">&quot;</span></span>
+</span></code></pre>
+<h3 id="4-2-2-receiving-messages-from-a-jms-destination-queue-or-topic">4.2.2. Receiving Messages from a JMS Destination, Queue or Topic</h3>
+<p>The generic NB S4J statement block for receiving messages to a JMS destination (either a Queue or a topic) has the following format. All the statement specific parameters are listed as below.</p>
+<ul>
+<li><strong>msg_selector</strong>: Message selector string</li>
+<li><strong>no_local</strong>: Only applicable to a Topic as the destination. This allows a subscriber to inhibit the delivery of messages published by its own connection.</li>
+<li><strong>read_timeout</strong>: The timeout value for receiving a message from a destination
+<ul>
+<li>This setting only works if <strong>no_wait</strong> is false</li>
+<li>If the <strong>read_timeout</strong> value is 0, it behaves the same as <strong>no_wait</strong> is true</li>
+</ul>
+</li>
+<li><strong>no_wait</strong>: Whether to receive the next message immediately if one is available</li>
+<li><strong>msg_ack_ratio</strong>: the ratio of the received messages being acknowledged</li>
+<li><strong>slow_ack_in_sec</strong>: whether to simulate a slow consumer (pause before acknowledging after receiving a message)
+<ul>
+<li>value 0 means no simulation (consumer acknowledges right away)</li>
+</ul>
+</li>
+<li>negative ack/ack timeout/deadletter topic related settings
+<ul>
+<li>The settings here (as the scenario specific settings) will be merged with the</li>
+<li>global settings in <em>s4j_config.properties</em> file</li>
+</ul>
+</li>
+</ul>
+<pre data-lang="yaml" class="language-yaml z-code"><code class="language-yaml" data-lang="yaml"><span class="z-source z-yaml"><span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">blocks</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">msg-produce-block</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">ops</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+      <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">op1</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+        <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span># The value represents the destination (queue or topic) name)
+</span>        <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">MessageProduce</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-quoted z-double z-yaml"><span class="z-punctuation z-definition z-string z-begin z-yaml">&quot;</span>mys4jtest_t<span class="z-punctuation z-definition z-string z-end z-yaml">&quot;</span></span>
+
+        <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span># (Optional) client side message selector
+</span>        <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">msg_selector</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-quoted z-double z-yaml"><span class="z-punctuation z-definition z-string z-begin z-yaml">&quot;</span><span class="z-punctuation z-definition z-string z-end z-yaml">&quot;</span></span>
+
+        <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span># (Optional) No Local
+</span>        <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">no_local</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-quoted z-double z-yaml"><span class="z-punctuation z-definition z-string z-begin z-yaml">&quot;</span>true<span class="z-punctuation z-definition z-string z-end z-yaml">&quot;</span></span>
+
+        <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span># (Optional) Read Timeout
+</span>        <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">read_timeout</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-quoted z-double z-yaml"><span class="z-punctuation z-definition z-string z-begin z-yaml">&quot;</span>10<span class="z-punctuation z-definition z-string z-end z-yaml">&quot;</span></span>
+
+        <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span># (Optional) Receive message without wait
+</span>        <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">no_wait</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-quoted z-double z-yaml"><span class="z-punctuation z-definition z-string z-begin z-yaml">&quot;</span>true<span class="z-punctuation z-definition z-string z-end z-yaml">&quot;</span></span>
+
+        <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span># (Optional) Message acknowledgement ratio
+</span>        <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">msg_ack_ratio</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-quoted z-double z-yaml"><span class="z-punctuation z-definition z-string z-begin z-yaml">&quot;</span>0.5<span class="z-punctuation z-definition z-string z-end z-yaml">&quot;</span></span>
+
+        <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span># (Optional) Simulate slow consumer acknowledgement
+</span>        <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> must be non-negative numbers. negative numbers will be treated as 0
+</span>        <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> 0 - means no simulation
+</span>        <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> positive value - the number of seconds to pause before acknowledgement
+</span>        <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">slow_ack_in_sec</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-quoted z-double z-yaml"><span class="z-punctuation z-definition z-string z-begin z-yaml">&quot;</span>0<span class="z-punctuation z-definition z-string z-end z-yaml">&quot;</span></span>
+
+        <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span>####
+</span>        <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span># (Optional) Statement level settings for Consumer
+</span>        <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span>
+</span>        <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span># AckTimeout value (at least 1 second)
+</span>        <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">consumer.ackTimeoutMillis</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-constant z-numeric z-integer z-decimal z-yaml">1000</span>
+
+        <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span># DLQ policy
+</span>        <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">consumer.deadLetterPolicy</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-quoted z-single z-yaml"><span class="z-punctuation z-definition z-string z-begin z-yaml">&#39;</span>{ &quot;maxRedeliverCount&quot;: &quot;2&quot; }<span class="z-punctuation z-definition z-string z-end z-yaml">&#39;</span></span>
+
+        <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span># NegativeAck Redelivery policy
+</span>        <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">consumer.negativeAckRedeliveryBackoff</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-keyword z-control z-flow z-block-scalar z-literal z-yaml">|</span>
+<span class="z-string z-unquoted z-block z-yaml">          {
+          }
+
+</span>        <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span># AckTimeout Redelivery policy
+</span>        <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">consumer.ackTimeoutRedeliveryBackoff</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-keyword z-control z-flow z-block-scalar z-literal z-yaml">|</span>
+<span class="z-string z-unquoted z-block z-yaml">          {
+            &quot;minDelayMs&quot;:&quot;10&quot;,
+            &quot;maxDelayMs&quot;:&quot;20&quot;,
+            &quot;multiplier&quot;:&quot;1.2&quot;
+          }
+</span></span></code></pre>
+
+<p><b><a href="#">Back to top</a></b></p>
+</article>
+<div class="toc" aria-hidden="true">
+  <div class="toc-sticky">
+    <h5>S4J</h5>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/drivers/s4j/#1-overview">1. Overview</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/drivers/s4j/#2-execute-nb-s4j-workload">2. Execute NB S4J Workload</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/drivers/s4j/#3-nb-s4j-driver-configuration-parameter-file">3. NB S4J Driver Configuration Parameter File</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/drivers/s4j/#4-nb-s4j-scenario-definition-file">4. NB S4J Scenario Definition File</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/drivers/s4j/#4-1-document-level-parameters"><small>- 4.1. Document Level Parameters</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/drivers/s4j/#4-2-nb-s4j-workload-types"><small>- 4.2. NB S4J Workload Types</small></a>
+    </div>
+  </div>
+</div>
+  </main>
+  <footer>
+    <hr />
+    <div class="c">
+      <nav>
+        <ul></ul>
+      </nav>
+      <p class="s90">Copyright &copy; 2023-2023 NoSQLBench Project</p>
+    </div>
+  </footer>
+</body>
+</html>

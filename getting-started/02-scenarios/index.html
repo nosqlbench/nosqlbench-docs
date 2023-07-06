@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script src="https://docs.nosqlbench.io/theme.min.js" integrity="sha384-IpIaa84kOKgkF5EJ0fD/kBe2wtIIsIB60ANGmuJxeA0dz5bSRfwBwp2/QybtQpU2"></script>
+  <link rel="stylesheet" href="https://docs.nosqlbench.io/abridge-switcher.css?h=4238d999f44a7bb130d5" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preload" as="style" class="preStyle" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" crossorigin="anonymous" />
+  <script defer src="https://docs.nosqlbench.io/search_index.en.js?h=ae47d253e455a3aaacb2" integrity="sha384-cP47owL9Iuak1e1AA21cJA4BgagQtaPwAXBQG7QgJeE2JKGgkCBROHbCj/Xym6KC"></script>
+  <script defer src="https://docs.nosqlbench.io/abridge-bundle-nofacade.min.js?h=9bcf621a2fcab7336017" integrity="sha384-u8AROOUG6n2Xjk2+7pvkkfeSIqinjI1tmqeBpZRlZtc5KFO/8DyFfEir6fAE2wcq"></script>
+  <meta name="base" content="https://docs.nosqlbench.io" />
+<meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>02 Scenarios | NoSQLBench Project</title>
+  <meta name="copyright" content="NoSQLBench Project" />
+  <meta name="description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <link rel="canonical" href="https://docs.nosqlbench.io/getting-started/02-scenarios/" />
+  <meta name="keywords" content="Abridge, Abridge.css, Zola, Theme, Zola Theme, getzola, Semantic Html, Fast, lightweight" />
+  <meta property="og:url" content="https://docs.nosqlbench.io/getting-started/02-scenarios/" />
+  <meta name="twitter:url" content="https://docs.nosqlbench.io/getting-started/02-scenarios/" />
+  <meta property="og:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta name="twitter:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta property="og:title" content="02 Scenarios | NoSQLBench Project" />
+  <meta name="twitter:title" content="02 Scenarios | NoSQLBench Project" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:site_name" content="NoSQLBench Project" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://docs.nosqlbench.io/site.webmanifest" />
+  <link rel="mask-icon" href="https://docs.nosqlbench.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://docs.nosqlbench.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://docs.nosqlbench.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://docs.nosqlbench.io/favicon-16x16.png" />
+  <noscript><link rel="stylesheet" href="https://docs.nosqlbench.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://docs.nosqlbench.io/"><img src="https://docs.nosqlbench.io/nb5logo.png" alt="NoSQLBench5" width="32" height="32" />NoSQLBench v5</a></h1></div><div>
+        <ul><li> <h2><a href="https://docs.nosqlbench.io/getting-started/">Getting Started</a></h2> </li><li> <h2><a href="https://docs.nosqlbench.io/release-notes/">Release Notes</a></h2> </li><li class="js"><i type="reset" id="mode" class="svgs adjust"></i></li></ul>
+      </div>
+      <div>
+        <form autocomplete=off class="js" name="goSearch" id="searchbox">
+          <div class="searchd">
+            <input id="searchinput" type="text" placeholder="Search" title="Search" />
+            <button type="submit" title="Search"><i class="svgs search"></i></button>
+          </div>
+          <div><div id="suggestions"></div></div>
+        </form>
+      </div>
+
+      <a href="http://github.com/nosqlbench/nosqlbench-build-docs" title="This doc site's project repo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="1" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+      <a href="http://nosqlbench.io" title="NoSQLBench Project Site">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+    </nav>
+    <hr /><div style="position:sticky"><span><a href="&#x2F;">NB5 Docs► </a></span><span title="Getting Started with NoSQLBench"><a href="&#x2F;getting-started&#x2F;"><strong>Getting Started▼</strong> </a></span><span title="[current page]"><a href="&#x2F;getting-started&#x2F;02-scenarios&#x2F;"><strong>02 Scenarios 🖺</strong></a></span>
+</div></header>
+  <main><!-- active_page: getting-started&#x2F;02-scenarios.md -->
+<!-- active_section: getting-started&#x2F;_index.md -->
+
+
+<!-- lower_root: _index.md -->
+<!-- >upper_root: _index.md -->
+
+<div class="toc" aria-hidden="true" id="">
+<!--  <h4>Getting Started</h4>--><div class="toc-sticky"><div class="toc-item"title="Release Notes for each major and some minor releases"><a href="&#x2F;release-notes&#x2F;">►Release Notes</a></div><div class="toc-item"title="An introduction to what makes NoSQLBench Unique"><a href="&#x2F;introduction&#x2F;">►Introduction</a></div><div class="toc-item"title="Getting Started with NoSQLBench"><strong>▼Getting Started</strong></div><!-- subsection_page_path: &#x2F;getting-started&#x2F;00-get-nosqlbench&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;getting-started&#x2F;00-get-nosqlbench&#x2F;">00 Download</a>
+    </div><!-- subsection_page_path: &#x2F;getting-started&#x2F;01-test-target&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;getting-started&#x2F;01-test-target&#x2F;">01 Test Target</a>
+    </div><!-- subsection_page_path: &#x2F;getting-started&#x2F;02-scenarios&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;getting-started&#x2F;02-scenarios&#x2F;"><strong>02 Scenarios</strong></a>
+    </div><!-- subsection_page_path: &#x2F;getting-started&#x2F;03-example-results&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;getting-started&#x2F;03-example-results&#x2F;">03 Results</a>
+    </div><!-- subsection_page_path: &#x2F;getting-started&#x2F;04-reading-metrics&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;getting-started&#x2F;04-reading-metrics&#x2F;">04 Metrics</a>
+    </div><!-- subsection_page_path: &#x2F;getting-started&#x2F;05-next-steps&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;getting-started&#x2F;05-next-steps&#x2F;">05 Next Steps</a>
+    </div><div class="toc-item"title="You can build workloads to simulate real-world data and access patterns."><a href="&#x2F;workloads-101&#x2F;">►Workloads 101</a></div><div class="toc-item"title="Detailed documentation on all options and features of NoSQLBench"><a href="&#x2F;user-guide&#x2F;">►User Guide</a></div><div class="toc-item"title="The NB5 Developer Guide"><a href="&#x2F;dev-guide&#x2F;">►Dev Guide</a></div><div class="toc-item"title="Detailed reference on drivers, formats, bindings, from auto-imported docs"><a href="&#x2F;reference&#x2F;">►Reference Section</a></div></div>
+</div>
+
+<article>
+
+  <h1 id="scenarios">Scenarios</h1>
+<p>👉 The commands in this section are examples to show you how the command line works with nb5.</p>
+<h2 id="run-a-scenario">run a scenario</h2>
+<p>To run a simple built-in scenario run one of these:</p>
+<pre class="z-code"><code><span class="z-text z-plain">./nb5 cql-keyvalue host=&lt;addr&gt; localdc=&lt;localdcname&gt;
+</span></code></pre>
+<p>To run the same scenario against Astra, add the credentials and secure connect bundle:</p>
+<pre data-lang="shell" class="language-shell z-code"><code class="language-shell" data-lang="shell"><span class="z-text z-plain">./nb5 cql-keyvalue scb=&lt;scb.zip&gt; userfile=&lt;file-with-client-id&gt; passfile=&lt;file-with-client-secret&gt; ...
+</span></code></pre>
+<p>👉 Regardless of what form you are using for the tutorial, you'll want to keep these options 
+handy. You may want to drop them in anywhere you see a <code>...</code> below. </p>
+<p>This example shows how you can call on a completely pre-built workload template by simply using it 
+as the first argument. <code>cql-keyvalue</code> is actually a workload description hosted within the binary 
+(or jar), at <code>activities/cql-keyvalue.yaml</code>. You do have to provide some endpoint and authentication 
+details, but these should <em>not</em> be added to the workload template anyway.</p>
+<p>This also captures some workflow for us. It takes care of:</p>
+<ol>
+<li>Initializing your schema.</li>
+<li>Loading background data to provide a realistic scenario. </li>
+<li>Running a main activity against the background data.</li>
+</ol>
+<p>How this works is explained in more depth throughout this guide. For now, just know that all of 
+these details are completely open for you to change simply by modifying the workload template.</p>
+<h2 id="discover-scenarios">discover Scenarios</h2>
+<p>To get a list of built-in scenarios run:</p>
+<pre class="z-code"><code><span class="z-text z-plain">./nb5 --list-scenarios
+</span></code></pre>
+<p>If you want a simple list of <em>workload templates</em> which contain <em>named scenarios</em>, run:</p>
+<pre class="z-code"><code><span class="z-text z-plain">./nb5 --list-workloads
+</span></code></pre>
+<p>These are distinct commands, because you can have multiple named scenarios in a given workload
+template. The commands above scan for all known sources (bundled within or locally on your
+filesystem) and provide a list of available scenarios or their containing workload templates.
+The example works above when we specify the workload, because it has a default scenario built in.</p>
+<p>👉 These commands will include workloads that were shipped with nb5 and workloads in your local
+directory. To learn more about how to design custom workloads see
+[<a href="/../workloads-101">Workloads 101</a>].</p>
+<p>You can also include the example path prefix which will show many more:</p>
+<pre class="z-code"><code><span class="z-text z-plain">./nb5 --list-workloads --include examples
+</span></code></pre>
+<p>When learning about bindings, it is recommended for first time users to use the above command to 
+find lots of examples for inspiration.</p>
+<h2 id="compose-scenarios">compose scenarios</h2>
+<p>We could easily ask nb5 to run a different named scenario of our choosing by running this:</p>
+<pre class="z-code"><code><span class="z-text z-plain"># Run a specific named scenario
+./nb5 cql-keyvalue astra ...
+
+# Run a specific step of a specific named scenario
+./nb5 cql-keyvalue astra.schema ...
+
+# Run a series of specific steps from specific named scenarios
+./nb5 cql-keyvalue astra.schema astra.rampup ...
+</span></code></pre>
+<p>If you don't specify which steps to run, they are all run serially, in the order they are defined.
+If you don't specify which named scenario to run, <code>default</code> is used.</p>
+<h1 id="example-activities">Example Activities</h1>
+<p>The first examples above show you how to call whole scenarios, which contain multiple steps and 
+pre-configured defaults. You can also skip using named scenarios and invoke the activities that 
+they invoke directly.</p>
+<blockquote>
+<p>You can skip the next part of this page if you want to just use built-in scenarios. If you 
+want to know how to drill down to the steps and test them individually, continue on. </p>
+</blockquote>
+<h2 id="create-a-schema">create a schema</h2>
+<p>We will start by creating a simple schema in the database: </p>
+<pre data-lang="sql" class="language-sql z-code"><code class="language-sql" data-lang="sql"><span class="z-source z-sql"><span class="z-comment z-line z-number-sign z-sql"><span class="z-punctuation z-definition z-comment z-sql">#</span> ( We&#39;ll use SQL highlighting for our CQL )
+</span>    
+CREATE KEYSPACE baselines
+ <span class="z-keyword z-other z-DML z-sql">WITH</span> replication <span class="z-keyword z-operator z-comparison z-sql">=</span> {<span class="z-string z-quoted z-single z-sql"><span class="z-punctuation z-definition z-string z-begin z-sql">&#39;</span>class<span class="z-punctuation z-definition z-string z-end z-sql">&#39;</span></span>: <span class="z-string z-quoted z-single z-sql"><span class="z-punctuation z-definition z-string z-begin z-sql">&#39;</span>SimpleStrategy<span class="z-punctuation z-definition z-string z-end z-sql">&#39;</span></span>, <span class="z-string z-quoted z-single z-sql"><span class="z-punctuation z-definition z-string z-begin z-sql">&#39;</span>replication_factor<span class="z-punctuation z-definition z-string z-end z-sql">&#39;</span></span>: <span class="z-string z-quoted z-single z-sql"><span class="z-punctuation z-definition z-string z-begin z-sql">&#39;</span>1<span class="z-punctuation z-definition z-string z-end z-sql">&#39;</span></span>}
+ <span class="z-keyword z-operator z-logical z-sql">AND</span> durable_writes <span class="z-keyword z-operator z-comparison z-sql">=</span> <span class="z-constant z-boolean z-sql">true</span>;
+
+<span class="z-meta z-create z-sql"><span class="z-keyword z-other z-create z-sql">CREATE</span> <span class="z-keyword z-other z-sql">TABLE</span> </span><span class="z-meta z-toc-list z-full-identifier z-sql">baselines<span class="z-punctuation z-accessor z-dot z-sql">.</span></span><span class="z-meta z-toc-list z-full-identifier z-sql"><span class="z-entity z-name z-function z-sql">keyvalue</span></span> (
+    key <span class="z-storage z-type z-sql">text</span> <span class="z-storage z-modifier z-sql">PRIMARY KEY</span>,
+    value <span class="z-storage z-type z-sql">text</span>
+)
+</span></code></pre>
+<p>From your command line, go ahead and execute the following command, replacing
+the <code>...</code> with that of one of your database nodes. Alternately, if using Astra, 
+use the options described in the <a href="https://docs.nosqlbench.io/getting-started/01-test-target/">test target</a> section.</p>
+<pre class="z-code"><code><span class="z-text z-plain">./nb5 run driver=cqld4 workload=cql-keyvalue tags=block:schema ...
+</span></code></pre>
+<p>This follows the basic command pattern of all nb5 commands. The first bare word is a command, 
+and all assignments after it are parameters to that command. The <code>run</code> command is short for &quot;run 
+an activity&quot;.</p>
+<p>Let's break down each of those command line options.</p>
+<p><code>run</code> tells NoSQLBench to run an activity.</p>
+<p><code>driver=...</code> is used to specify the activity type (driver). In this case
+we are using <code>cqld4</code>, which tells NoSQLBench to use the DataStax Java Driver
+and execute CQL statements against a database.</p>
+<p><code>workload=...</code> is used to specify the workload definition file that defines the activity. In 
+this example, we use <code>cql-keyvalue</code> which is a pre-built workload that is packaged with 
+NoSQLBench.</p>
+<p><code>tags=block:schema</code> tells NoSQLBench to run the op templates from a block that is
+tagged with <code>block:schema</code>. In this example, that is the DDL portion of the <code>cql-keyvalue</code> 
+workload.</p>
+<p><code>...</code> should be the endpoint and authentication details that you used from the first example.</p>
+<p>If you like, you can verify the result of this command by describing your
+keyspace in cqlsh or DataStax Studio with
+<code>DESCRIBE KEYSPACE baselines</code>.</p>
+<h2 id="load-some-data">load some data</h2>
+<p>Before running a test of typical access patterns where you want to capture the results, you 
+need to make the test more interesting than loading an empty table. For this, we use the 
+rampup activity.</p>
+<p>Before sending our test writes to the database, we will use the <code>stdout</code> driver, so we can see 
+what NoSQLBench is generating for CQL statements.</p>
+<p>Go ahead and execute the following command:</p>
+<pre class="z-code"><code><span class="z-text z-plain">./nb5 run driver=stdout workload=cql-keyvalue
+</span></code></pre>
+<p>You should see 10 of the following statements in your console</p>
+<pre data-lang="sql" class="language-sql z-code"><code class="language-sql" data-lang="sql"><span class="z-source z-sql"><span class="z-keyword z-other z-DML z-sql">insert into</span> <span class="z-constant z-other z-database-name z-sql">baselines</span>.<span class="z-constant z-other z-table-name z-sql">keyvalue</span> (key, value) <span class="z-keyword z-other z-DML z-II z-sql">values</span> (<span class="z-constant z-numeric z-sql">0</span>,<span class="z-constant z-numeric z-sql">382062539</span>);
+<span class="z-keyword z-other z-DML z-sql">insert into</span> <span class="z-constant z-other z-database-name z-sql">baselines</span>.<span class="z-constant z-other z-table-name z-sql">keyvalue</span> (key, value) <span class="z-keyword z-other z-DML z-II z-sql">values</span> (<span class="z-constant z-numeric z-sql">1</span>,<span class="z-constant z-numeric z-sql">774912474</span>);
+<span class="z-keyword z-other z-DML z-sql">insert into</span> <span class="z-constant z-other z-database-name z-sql">baselines</span>.<span class="z-constant z-other z-table-name z-sql">keyvalue</span> (key, value) <span class="z-keyword z-other z-DML z-II z-sql">values</span> (<span class="z-constant z-numeric z-sql">2</span>,<span class="z-constant z-numeric z-sql">949364593</span>);
+<span class="z-keyword z-other z-DML z-sql">insert into</span> <span class="z-constant z-other z-database-name z-sql">baselines</span>.<span class="z-constant z-other z-table-name z-sql">keyvalue</span> (key, value) <span class="z-keyword z-other z-DML z-II z-sql">values</span> (<span class="z-constant z-numeric z-sql">3</span>,<span class="z-constant z-numeric z-sql">352527683</span>);
+<span class="z-keyword z-other z-DML z-sql">insert into</span> <span class="z-constant z-other z-database-name z-sql">baselines</span>.<span class="z-constant z-other z-table-name z-sql">keyvalue</span> (key, value) <span class="z-keyword z-other z-DML z-II z-sql">values</span> (<span class="z-constant z-numeric z-sql">4</span>,<span class="z-constant z-numeric z-sql">351686621</span>);
+<span class="z-keyword z-other z-DML z-sql">insert into</span> <span class="z-constant z-other z-database-name z-sql">baselines</span>.<span class="z-constant z-other z-table-name z-sql">keyvalue</span> (key, value) <span class="z-keyword z-other z-DML z-II z-sql">values</span> (<span class="z-constant z-numeric z-sql">5</span>,<span class="z-constant z-numeric z-sql">114304900</span>);
+<span class="z-keyword z-other z-DML z-sql">insert into</span> <span class="z-constant z-other z-database-name z-sql">baselines</span>.<span class="z-constant z-other z-table-name z-sql">keyvalue</span> (key, value) <span class="z-keyword z-other z-DML z-II z-sql">values</span> (<span class="z-constant z-numeric z-sql">6</span>,<span class="z-constant z-numeric z-sql">439790106</span>);
+<span class="z-keyword z-other z-DML z-sql">insert into</span> <span class="z-constant z-other z-database-name z-sql">baselines</span>.<span class="z-constant z-other z-table-name z-sql">keyvalue</span> (key, value) <span class="z-keyword z-other z-DML z-II z-sql">values</span> (<span class="z-constant z-numeric z-sql">7</span>,<span class="z-constant z-numeric z-sql">564330072</span>);
+<span class="z-keyword z-other z-DML z-sql">insert into</span> <span class="z-constant z-other z-database-name z-sql">baselines</span>.<span class="z-constant z-other z-table-name z-sql">keyvalue</span> (key, value) <span class="z-keyword z-other z-DML z-II z-sql">values</span> (<span class="z-constant z-numeric z-sql">8</span>,<span class="z-constant z-numeric z-sql">296173906</span>);
+<span class="z-keyword z-other z-DML z-sql">insert into</span> <span class="z-constant z-other z-database-name z-sql">baselines</span>.<span class="z-constant z-other z-table-name z-sql">keyvalue</span> (key, value) <span class="z-keyword z-other z-DML z-II z-sql">values</span> (<span class="z-constant z-numeric z-sql">9</span>,<span class="z-constant z-numeric z-sql">97405552</span>);
+</span></code></pre>
+<p>NoSQLBench deterministically generates data, so the generated values will be the same from run to run.</p>
+<p>Now we are ready to write some data to our database. Go ahead and execute the following from your command line:</p>
+<pre data-lang="shell" class="language-shell z-code"><code class="language-shell" data-lang="shell"><span class="z-text z-plain">./nb5 run driver=cql workload=cql-keyvalue tags=block:rampup cycles=100k ... --progress console:1s
+</span></code></pre>
+<p>Note the differences between this and the command that we used to generate the schema.</p>
+<p><code>tags=block:rampup</code> is running the yaml block in <code>cql-keyvalue</code> that has only INSERT statements.</p>
+<p><code>cycles=100k</code> will run a total of 100,000 operations, in this case,
+100,000 writes. You will want to pick an appropriately large number of
+cycles in actual testing to make your main test meaningful.</p>
+<p>👉 The cycles parameter is not just a quantity. It is a range of values.
+The <code>cycles=n</code> format is short for
+<code>cycles=0..n</code>, which makes cycles a zero-based range. For example,
+cycles=5 means that the activity will use cycles 0,1,2,3,4, but not 5. The
+reason for this is explained in detail in the Activity Parameters section.</p>
+<p>These parameters are explained in detail in the section on <em>Activity
+Parameters</em>.</p>
+<p><code>--progress console:1s</code> will print the progression of the run to the
+console every 1 second.</p>
+<p>You should see output that looks like this</p>
+<pre class="z-code"><code><span class="z-text z-plain">cql-keyvalue-astra (remaining,active,completed)=(99377,50,623) 001%
+cql-keyvalue-astra (remaining,active,completed)=(98219,50,1782) 002%
+cql-keyvalue-astra (remaining,active,completed)=(97009,50,2991) 003%
+cql-keyvalue-astra (remaining,active,completed)=(95856,50,4153) 004%
+cql-keyvalue-astra (remaining,active,completed)=(94653,50,5347) 005%
+cql-keyvalue-astra (remaining,active,completed)=(93494,50,6506) 007%
+cql-keyvalue-astra (remaining,active,completed)=(92254,50,7746) 008%
+cql-keyvalue-astra (remaining,active,completed)=(91024,50,8976) 009%
+cql-keyvalue-astra (remaining,active,completed)=(89800,50,10200) 010%
+cql-keyvalue-astra (remaining,active,completed)=(88588,50,11416) 011%
+cql-keyvalue-astra (remaining,active,completed)=(87378,50,12622) 013%
+...
+cql-keyvalue-astra (remaining,active,completed)=(0,0,100000) 100% (last report)
+</span></code></pre>
+<h2 id="run-the-main-activity">Run the main activity</h2>
+<p>Now that we have a base dataset of 50K rows in the database, we will now
+run a mixed read / write workload, by default this runs a 50% read / 50%
+write workload. This time we will add a <code>-v</code> option for more context.</p>
+<pre data-lang="shell" class="language-shell z-code"><code class="language-shell" data-lang="shell"><span class="z-text z-plain"> ./nb5 run driver=cql workload=cql-keyvalue tags=&#39;block:main.*&#39; \
+ cycles=50k cyclerate=5000 threads=50 --progress console:1s ...
+</span></code></pre>
+<p>You can go ahead and past your activity parameters on the end. nb5 will always parse out the 
+global options (those with a dash) and leave your commands intact.</p>
+<p>You should see output that looks like this:</p>
+<pre class="z-code"><code><span class="z-text z-plain">Configured scenario log at ...
+cql-keyvalue (remaining,active,completed)=(47168,1,2832) 006%
+cql-keyvalue (remaining,active,completed)=(42059,2,7941) 016%
+cql-keyvalue (remaining,active,completed)=(37107,2,12895) 026%
+cql-keyvalue (remaining,active,completed)=(32060,1,17941) 036%
+cql-keyvalue (remaining,active,completed)=(27060,2,22940) 046%
+cql-keyvalue (remaining,active,completed)=(22058,2,27943) 056%
+cql-keyvalue (remaining,active,completed)=(17058,1,32942) 066%
+cql-keyvalue (remaining,active,completed)=(12059,2,37942) 076%
+cql-keyvalue (remaining,active,completed)=(7059,1,42942) 086%
+cql-keyvalue (remaining,active,completed)=(2060,1,47941) 096%
+cql-keyvalue (remaining,active,completed)=(0,0,50000) 100% (last report)
+</span></code></pre>
+<p>We have a few new command line options here:</p>
+<p><code>tags=block:main</code> is using a new block in our workload template that contains both read and 
+write queries.</p>
+<p><code>threads=50</code> is an important one. The default for NoSQLBench is to run with a single thread. 
+This is not adequate for workloads that will be running many operations, so threads is used as 
+a way to increase concurrency on the client side.</p>
+<p><code>cyclerate=5000</code> is used to control the operations per second that are initiated by NoSQLBench. 
+This command line option is the primary means to rate limit the workload and here we are 
+running at 5000 ops/sec.</p>
+<h2 id="now-what">Now What?</h2>
+<p>Note in the above output, we
+see <code>Configured scenario log at logs/scenario_20230113_135200_029.log</code>.</p>
+<p>By default, NoSQLBench records the metrics from the run in this file, we will go into detail 
+about these metrics in the next section <a href="../03_example_results">example results</a>.</p>
+
+<p><b><a href="#">Back to top</a></b></p>
+</article>
+<div class="toc" aria-hidden="true">
+  <div class="toc-sticky">
+    <h5>02 Scenarios</h5>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/getting-started/02-scenarios/#scenarios">Scenarios</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/getting-started/02-scenarios/#run-a-scenario"><small>- run a scenario</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/getting-started/02-scenarios/#discover-scenarios"><small>- discover Scenarios</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/getting-started/02-scenarios/#compose-scenarios"><small>- compose scenarios</small></a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/getting-started/02-scenarios/#example-activities">Example Activities</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/getting-started/02-scenarios/#create-a-schema"><small>- create a schema</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/getting-started/02-scenarios/#load-some-data"><small>- load some data</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/getting-started/02-scenarios/#run-the-main-activity"><small>- Run the main activity</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/getting-started/02-scenarios/#now-what"><small>- Now What?</small></a>
+    </div>
+  </div>
+</div>
+  </main>
+  <footer>
+    <hr />
+    <div class="c">
+      <nav>
+        <ul></ul>
+      </nav>
+      <p class="s90">Copyright &copy; 2023-2023 NoSQLBench Project</p>
+    </div>
+  </footer>
+</body>
+</html>

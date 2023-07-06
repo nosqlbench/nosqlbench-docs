@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script src="https://docs.nosqlbench.io/theme.min.js" integrity="sha384-IpIaa84kOKgkF5EJ0fD/kBe2wtIIsIB60ANGmuJxeA0dz5bSRfwBwp2/QybtQpU2"></script>
+  <link rel="stylesheet" href="https://docs.nosqlbench.io/abridge-switcher.css?h=4238d999f44a7bb130d5" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preload" as="style" class="preStyle" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" crossorigin="anonymous" />
+  <script defer src="https://docs.nosqlbench.io/search_index.en.js?h=ae47d253e455a3aaacb2" integrity="sha384-cP47owL9Iuak1e1AA21cJA4BgagQtaPwAXBQG7QgJeE2JKGgkCBROHbCj/Xym6KC"></script>
+  <script defer src="https://docs.nosqlbench.io/abridge-bundle-nofacade.min.js?h=9bcf621a2fcab7336017" integrity="sha384-u8AROOUG6n2Xjk2+7pvkkfeSIqinjI1tmqeBpZRlZtc5KFO/8DyFfEir6fAE2wcq"></script>
+  <meta name="base" content="https://docs.nosqlbench.io" />
+<meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>Make a Pull Request | NoSQLBench Project</title>
+  <meta name="copyright" content="NoSQLBench Project" />
+  <meta name="description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <link rel="canonical" href="https://docs.nosqlbench.io/dev-guide/how-tos/make-a-pull-request/" />
+  <meta name="keywords" content="Abridge, Abridge.css, Zola, Theme, Zola Theme, getzola, Semantic Html, Fast, lightweight" />
+  <meta property="og:url" content="https://docs.nosqlbench.io/dev-guide/how-tos/make-a-pull-request/" />
+  <meta name="twitter:url" content="https://docs.nosqlbench.io/dev-guide/how-tos/make-a-pull-request/" />
+  <meta property="og:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta name="twitter:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta property="og:title" content="Make a Pull Request | NoSQLBench Project" />
+  <meta name="twitter:title" content="Make a Pull Request | NoSQLBench Project" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:site_name" content="NoSQLBench Project" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://docs.nosqlbench.io/site.webmanifest" />
+  <link rel="mask-icon" href="https://docs.nosqlbench.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://docs.nosqlbench.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://docs.nosqlbench.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://docs.nosqlbench.io/favicon-16x16.png" />
+  <noscript><link rel="stylesheet" href="https://docs.nosqlbench.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://docs.nosqlbench.io/"><img src="https://docs.nosqlbench.io/nb5logo.png" alt="NoSQLBench5" width="32" height="32" />NoSQLBench v5</a></h1></div><div>
+        <ul><li> <h2><a href="https://docs.nosqlbench.io/getting-started/">Getting Started</a></h2> </li><li> <h2><a href="https://docs.nosqlbench.io/release-notes/">Release Notes</a></h2> </li><li class="js"><i type="reset" id="mode" class="svgs adjust"></i></li></ul>
+      </div>
+      <div>
+        <form autocomplete=off class="js" name="goSearch" id="searchbox">
+          <div class="searchd">
+            <input id="searchinput" type="text" placeholder="Search" title="Search" />
+            <button type="submit" title="Search"><i class="svgs search"></i></button>
+          </div>
+          <div><div id="suggestions"></div></div>
+        </form>
+      </div>
+
+      <a href="http://github.com/nosqlbench/nosqlbench-build-docs" title="This doc site's project repo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="1" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+      <a href="http://nosqlbench.io" title="NoSQLBench Project Site">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+    </nav>
+    <hr /><div style="position:sticky"><span><a href="&#x2F;">NB5 Docs► </a></span><span><a href="&#x2F;dev-guide&#x2F;">Dev Guide► </a></span><span title="How to contribute in different ways, step-by-step"><a href="&#x2F;dev-guide&#x2F;how-tos&#x2F;"><strong>Dev How-Tos▼</strong> </a></span><span title="[current page]"><a href="&#x2F;dev-guide&#x2F;how-tos&#x2F;make-a-pull-request&#x2F;"><strong>Make a Pull Request 🖺</strong></a></span>
+</div></header>
+  <main><!-- active_page: dev-guide&#x2F;how-tos&#x2F;make-a-pull-request.md -->
+<!-- active_section: dev-guide&#x2F;how-tos&#x2F;_index.md -->
+
+
+<!-- lower_root: dev-guide&#x2F;_index.md -->
+<!-- >upper_root: dev-guide&#x2F;_index.md -->
+
+<div class="toc" aria-hidden="true" id="">
+<!--  <h4>Dev How-Tos</h4>--><div class="toc-sticky"><div class="toc-item"title="How to get started"><a href="&#x2F;dev-guide&#x2F;contributing&#x2F;">►Contributing</a></div><div class="toc-item"title="Standards to which the NB5 project aspires"><a href="&#x2F;dev-guide&#x2F;project-standards&#x2F;">►Project Standards</a></div><div class="toc-item"title="How to contribute in different ways, step-by-step"><strong>▼Dev How-Tos</strong></div><!-- subsection_page_path: &#x2F;dev-guide&#x2F;how-tos&#x2F;auto-apply-license-intellij&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;dev-guide&#x2F;how-tos&#x2F;auto-apply-license-intellij&#x2F;">Auto Apply License in IntelliJ</a>
+    </div><!-- subsection_page_path: &#x2F;dev-guide&#x2F;how-tos&#x2F;make-a-pull-request&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;dev-guide&#x2F;how-tos&#x2F;make-a-pull-request&#x2F;"><strong>Make a Pull Request</strong></a>
+    </div><!-- subsection_page_path: &#x2F;dev-guide&#x2F;how-tos&#x2F;recompile-less&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;dev-guide&#x2F;how-tos&#x2F;recompile-less&#x2F;">Recompile Less</a>
+    </div></div>
+</div>
+
+<article>
+
+  <p>This is a detailed step-by-step explanation of how you would typically submit contributiosn to 
+the NoSQLBench project.</p>
+<h1 id="assumptions">Assumptions</h1>
+<ul>
+<li>You have a github account</li>
+<li>You know how to build NoSQLBench</li>
+</ul>
+<h1 id="steps">Steps</h1>
+<h2 id="setup-workspace">Setup Workspace</h2>
+<ol>
+<li>configure your dev environment</li>
+<li>clone the nosqlbench repo</li>
+<li>clone your repo to your dev environment </li>
+</ol>
+<h2 id="own-an-issue">Own an issue</h2>
+<ol>
+<li>assign or ask for an issue</li>
+<li>create a feature branch</li>
+</ol>
+<h2 id="make-change">Make Change</h2>
+<ol>
+<li>add testing</li>
+<li>add documentation</li>
+<li>verify everything works</li>
+</ol>
+<h2 id="submit-for-review">Submit for Review</h2>
+<ol>
+<li>organize commits for easy PR reviews</li>
+<li>make thematic incremental changes as you go</li>
+<li>push your branch up to your clone</li>
+<li>make a draft pull request</li>
+<li>promote PR to ready-for-review</li>
+<li>ask a contributor to review and merge your PR</li>
+</ol>
+<h2 id="iterate">Iterate</h2>
+<ol>
+<li>resolve conversations or issues</li>
+<li>repush and ask for review 
+<ul>
+<li>You are done with this step once your PR is green, changes have been approved by 
+reviewers, and there are no unresolved issues.</li>
+</ul>
+</li>
+</ol>
+<h2 id="merge">Merge</h2>
+<ol>
+<li>merge the PR in github</li>
+</ol>
+<h2 id="reset">Reset</h2>
+<ol>
+<li>delete the feature branch</li>
+<li>delete your local feature branch</li>
+<li>checkout main</li>
+<li>pull main</li>
+</ol>
+<h2 id="you-re-done-go-again">You're Done! Go again?</h2>
+
+</article>
+<div class="toc" aria-hidden="true">
+  <div class="toc-sticky">
+    <h5>Make a Pull Request</h5>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/dev-guide/how-tos/make-a-pull-request/#assumptions">Assumptions</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/dev-guide/how-tos/make-a-pull-request/#steps">Steps</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/dev-guide/how-tos/make-a-pull-request/#setup-workspace"><small>- Setup Workspace</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/dev-guide/how-tos/make-a-pull-request/#own-an-issue"><small>- Own an issue</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/dev-guide/how-tos/make-a-pull-request/#make-change"><small>- Make Change</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/dev-guide/how-tos/make-a-pull-request/#submit-for-review"><small>- Submit for Review</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/dev-guide/how-tos/make-a-pull-request/#iterate"><small>- Iterate</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/dev-guide/how-tos/make-a-pull-request/#merge"><small>- Merge</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/dev-guide/how-tos/make-a-pull-request/#reset"><small>- Reset</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/dev-guide/how-tos/make-a-pull-request/#you-re-done-go-again"><small>- You&#x27;re Done! Go again?</small></a>
+    </div>
+  </div>
+</div>
+  </main>
+  <footer>
+    <hr />
+    <div class="c">
+      <nav>
+        <ul></ul>
+      </nav>
+      <p class="s90">Copyright &copy; 2023-2023 NoSQLBench Project</p>
+    </div>
+  </footer>
+</body>
+</html>

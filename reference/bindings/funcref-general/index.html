@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script src="https://docs.nosqlbench.io/theme.min.js" integrity="sha384-IpIaa84kOKgkF5EJ0fD/kBe2wtIIsIB60ANGmuJxeA0dz5bSRfwBwp2/QybtQpU2"></script>
+  <link rel="stylesheet" href="https://docs.nosqlbench.io/abridge-switcher.css?h=4238d999f44a7bb130d5" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preload" as="style" class="preStyle" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" crossorigin="anonymous" />
+  <script defer src="https://docs.nosqlbench.io/search_index.en.js?h=ae47d253e455a3aaacb2" integrity="sha384-cP47owL9Iuak1e1AA21cJA4BgagQtaPwAXBQG7QgJeE2JKGgkCBROHbCj/Xym6KC"></script>
+  <script defer src="https://docs.nosqlbench.io/abridge-bundle-nofacade.min.js?h=9bcf621a2fcab7336017" integrity="sha384-u8AROOUG6n2Xjk2+7pvkkfeSIqinjI1tmqeBpZRlZtc5KFO/8DyFfEir6fAE2wcq"></script>
+  <meta name="base" content="https://docs.nosqlbench.io" />
+<meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>general functions | NoSQLBench Project</title>
+  <meta name="copyright" content="NoSQLBench Project" />
+  <meta name="description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <link rel="canonical" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/" />
+  <meta name="keywords" content="Abridge, Abridge.css, Zola, Theme, Zola Theme, getzola, Semantic Html, Fast, lightweight" />
+  <meta property="og:url" content="https://docs.nosqlbench.io/reference/bindings/funcref-general/" />
+  <meta name="twitter:url" content="https://docs.nosqlbench.io/reference/bindings/funcref-general/" />
+  <meta property="og:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta name="twitter:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta property="og:title" content="general functions | NoSQLBench Project" />
+  <meta name="twitter:title" content="general functions | NoSQLBench Project" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:site_name" content="NoSQLBench Project" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://docs.nosqlbench.io/site.webmanifest" />
+  <link rel="mask-icon" href="https://docs.nosqlbench.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://docs.nosqlbench.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://docs.nosqlbench.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://docs.nosqlbench.io/favicon-16x16.png" />
+  <noscript><link rel="stylesheet" href="https://docs.nosqlbench.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://docs.nosqlbench.io/"><img src="https://docs.nosqlbench.io/nb5logo.png" alt="NoSQLBench5" width="32" height="32" />NoSQLBench v5</a></h1></div><div>
+        <ul><li> <h2><a href="https://docs.nosqlbench.io/getting-started/">Getting Started</a></h2> </li><li> <h2><a href="https://docs.nosqlbench.io/release-notes/">Release Notes</a></h2> </li><li class="js"><i type="reset" id="mode" class="svgs adjust"></i></li></ul>
+      </div>
+      <div>
+        <form autocomplete=off class="js" name="goSearch" id="searchbox">
+          <div class="searchd">
+            <input id="searchinput" type="text" placeholder="Search" title="Search" />
+            <button type="submit" title="Search"><i class="svgs search"></i></button>
+          </div>
+          <div><div id="suggestions"></div></div>
+        </form>
+      </div>
+
+      <a href="http://github.com/nosqlbench/nosqlbench-build-docs" title="This doc site's project repo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="1" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+      <a href="http://nosqlbench.io" title="NoSQLBench Project Site">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+    </nav>
+    <hr /><div style="position:sticky"><span><a href="&#x2F;">NB5 Docs► </a></span><span><a href="&#x2F;reference&#x2F;">Reference Section► </a></span><span title="Binding functions are the core of the procedural data generation capabilities of NoSQLBench. They bind generated data to operations in a determinstic way."><a href="&#x2F;reference&#x2F;bindings&#x2F;"><strong>Binding Functions▼</strong> </a></span><span title="[current page]"><a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-general&#x2F;"><strong>general functions 🖺</strong></a></span>
+</div></header>
+  <main><!-- active_page: reference&#x2F;bindings&#x2F;funcref_general.md -->
+<!-- active_section: reference&#x2F;bindings&#x2F;_index.md -->
+
+
+<!-- lower_root: reference&#x2F;_index.md -->
+<!-- >upper_root: reference&#x2F;_index.md -->
+
+<div class="toc" aria-hidden="true" id="">
+<!--  <h4>Binding Functions</h4>--><div class="toc-sticky"><div class="toc-item"title="This section is a specification of the standard workload format."><a href="&#x2F;reference&#x2F;workload_definition&#x2F;">►Workload Specification</a></div><div class="toc-item"title="DriverAdapters allow native drivers or other logic to be plugged into the nb5 engine."><a href="&#x2F;reference&#x2F;drivers&#x2F;">►Drivers</a></div><div class="toc-item"title="Binding functions are the core of the procedural data generation capabilities of NoSQLBench. They bind generated data to operations in a determinstic way."><strong>▼Binding Functions</strong></div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-conversion&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-conversion&#x2F;">conversion functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-general&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-general&#x2F;"><strong>general functions</strong></a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-functional&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-functional&#x2F;">flow functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-diagnostics&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-diagnostics&#x2F;">diagnostic functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-objects&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-objects&#x2F;">Distance</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-premade&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-premade&#x2F;">pre-made functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-statistics&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-statistics&#x2F;">LongStats</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-nulls&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-nulls&#x2F;">null functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-distributions&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-distributions&#x2F;">distribution functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-experimental&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-experimental&#x2F;">TokenMapFileCycle</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-state&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-state&#x2F;">state functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-collections&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-collections&#x2F;">collection functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-datetime&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-datetime&#x2F;">datetime functions</a>
+    </div><div class="toc-item"title="Documentation for bundled applications within NB5."><a href="&#x2F;reference&#x2F;apps&#x2F;">►Bundled Apps</a></div><div class="toc-item"title="Version data for the bundled and imported docs content"><a href="&#x2F;reference&#x2F;versions&#x2F;">►Version Info</a></div></div>
+</div>
+
+<article>
+
+  <p>These functions have no particular category, so they ended up here by default.</p>
+<h2 id="add">Add</h2>
+<p>Adds a value to the input.</p>
+<ul>
+<li>
+<p>double -&gt; Add(double: addend) -&gt; double</p>
+</li>
+<li>
+<p>long -&gt; Add(int: addend) -&gt; int</p>
+</li>
+<li>
+<p>long -&gt; Add(long: addend) -&gt; long</p>
+</li>
+<li>
+<p>int -&gt; Add(int: addend) -&gt; int</p>
+<ul>
+<li><em>example:</em> <code>Add(23)</code></li>
+<li><em>adds integer 23 to the input integer value</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="addcyclerange">AddCycleRange</h2>
+<p>Adds a cycle range to the input, producing an increasing sawtooth-like output.</p>
+<ul>
+<li>
+<p>long -&gt; AddCycleRange(int: maxValue) -&gt; int</p>
+</li>
+<li>
+<p>long -&gt; AddCycleRange(int: minValue, int: maxValue) -&gt; int</p>
+</li>
+<li>
+<p>long -&gt; AddCycleRange(long: maxValue) -&gt; long</p>
+</li>
+<li>
+<p>long -&gt; AddCycleRange(long: minValue, long: maxValue) -&gt; long</p>
+</li>
+<li>
+<p>int -&gt; AddCycleRange(int: maxValue) -&gt; int</p>
+</li>
+<li>
+<p>int -&gt; AddCycleRange(int: minValue, int: maxValue) -&gt; int</p>
+</li>
+</ul>
+<h2 id="addhashrange">AddHashRange</h2>
+<p>Adds a pseudo-random value within the specified range to the input.</p>
+<ul>
+<li>
+<p>long -&gt; AddHashRange(long: maxValue) -&gt; long</p>
+</li>
+<li>
+<p>long -&gt; AddHashRange(long: minValue, long: maxValue) -&gt; long</p>
+</li>
+<li>
+<p>long -&gt; AddHashRange(int: maxValue) -&gt; int</p>
+</li>
+<li>
+<p>long -&gt; AddHashRange(int: minValue, int: maxValue) -&gt; int</p>
+</li>
+<li>
+<p>int -&gt; AddHashRange(int: maxValue) -&gt; int</p>
+</li>
+<li>
+<p>int -&gt; AddHashRange(int: minValue, int: maxValue) -&gt; int</p>
+</li>
+</ul>
+<h2 id="alphanumericstring">AlphaNumericString</h2>
+<p>Create an alpha-numeric string of the specified length, character-by-character.</p>
+<ul>
+<li>long -&gt; AlphaNumericString(int: length) -&gt; String</li>
+</ul>
+<h2 id="bytebuffersizedhashed">ByteBufferSizedHashed</h2>
+<p>Create a ByteBuffer from a long input based on a provided size function. As a 'Sized' function, the first argument is a function which determines the size of the resulting ByteBuffer. As a 'Hashed' function, the input value is hashed again before being used as value.</p>
+<ul>
+<li>
+<p>long -&gt; ByteBufferSizedHashed(int: size) -&gt; java.nio.ByteBuffer</p>
+<ul>
+<li><em>example:</em> <code>ByteBufferSizedHashed(16)</code></li>
+<li><em>Functionally identical to HashedToByteBuffer(16) but using dynamic sizing implementation</em></li>
+<li><em>example:</em> <code>ByteBufferSizedHashed(HashRange(10, 14))</code></li>
+<li><em>Create a ByteBuffer with variable limit (10 to 14)</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; ByteBufferSizedHashed(Object: sizeFunc) -&gt; java.nio.ByteBuffer</p>
+</li>
+</ul>
+<h2 id="csvfrequencysampler">CSVFrequencySampler</h2>
+<p>Takes a CSV with sample data and generates random values based on the relative frequencies of the values in the file. The CSV file must have headers which can be used to find the named columns. I.E. take the following imaginary `animals.csv` file: animal,count,country puppy,1,usa puppy,2,colombia puppy,3,senegal kitten,2,colombia `CSVFrequencySampler('animals.csv', animal)` will return `puppy` or `kitten` randomly. `puppy` will be 3x more frequent than `kitten`. `CSVFrequencySampler('animals.csv', country)` will return `usa`, `colombia`, or `senegal` randomly. `colombia` will be 2x more frequent than `usa` or `senegal`. Use this function to infer frequencies of categorical values from CSVs.</p>
+<ul>
+<li>long -&gt; CSVFrequencySampler(String: filename, String: columnName) -&gt; String
+<ul>
+<li>
+<p><em>notes:</em> Create a sampler of strings from the given CSV file. The CSV file must have plain CSV headers
+as its first line.
+@param filename The name of the file to be read into the sampler buffer
+@param columnName The name of the column to be sampled</p>
+</li>
+<li>
+<p><em>example:</em> <code>CSVFrequencySampler('values.csv','modelno')</code></p>
+</li>
+<li>
+<p><em>Read values.csv, count the frequency of values in 'modelno' column, and sample from this column proportionally</em></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="csvsampler">CSVSampler</h2>
+<p>This function is a toolkit version of the {@link WeightedStringsFromCSV} function. It is more capable and should be the preferred function for alias sampling over any CSV data. This sampler uses a named column in the CSV data as the value. This is also referred to as the <em>labelColumn</em> . The frequency of this label depends on the weight assigned to it in another named CSV column, known as the <em>weightColumn</em> .</p>
+<h3 id="combining-duplicate-labels">Combining duplicate labels</h3>
+<p>When you have CSV data which is not organized around the specific identifier that you want to sample by, you can use some combining functions to tabulate these prior to sampling. In that case, you can use any of &quot;sum&quot;, &quot;avg&quot;, &quot;count&quot;, &quot;min&quot;, or &quot;max&quot; as the reducing function on the value in the weight column. If none are specified, then &quot;sum&quot; is used by default. All modes except &quot;count&quot; and &quot;name&quot; require a valid weight column to be specified.</p>
+<ul>
+<li>sum, avg, min, max - takes the given stat for the weight of each distinct label</li>
+<li>count - takes the number of occurrences of a given label as the weight</li>
+<li>name - sets the weight of all distinct labels to 1.0d</li>
+</ul>
+<h3 id="map-vs-hash-mode">Map vs Hash mode</h3>
+<p>As with some of the other statistical functions, you can use this one to pick through the sample values by using the <em>map</em> mode. This is distinct from the default <em>hash</em> mode. When map mode is used, the values will appear monotonically as you scan through the unit interval of all long values. Specifically, 0L represents 0.0d in the unit interval on input, and Long.MAX_VALUE represents 1.0 on the unit interval.) This mode is only recommended for advanced scenarios and should otherwise be avoided. You will know if you need this mode.</p>
+<ul>
+<li>long -&gt; CSVSampler(String: labelColumn, String: weightColumn, String[]...: data) -&gt; String
+<ul>
+<li><em>notes:</em> Build an efficient O(1) sampler for the given column values with respect to the weights,
+combining equal values by summing the weights.</li>
+</ul>
+</li>
+</ul>
+<p>@param labelColumn   The CSV column name containing the value
+@param weightColumn  The CSV column name containing a double weight
+@param data Sampling modes or file names. Any of map, hash, sum, avg, count are taken
+as configuration modes, and all others are taken as CSV filenames.</p>
+<ul>
+<li><em>example:</em> <code>CSVSampler('USPS','n/a','name','census_state_abbrev')</code></li>
+<li>**</li>
+</ul>
+<h2 id="charbufimage">CharBufImage</h2>
+<p>Builds a shared text image in memory and samples from it pseudo-randomly with hashing. The characters provided can be listed like a string (abc123), or can include range specifiers like a hyphen (a-zA-Z0-9). These characters are used to build an image of the specified size in memory that is sampled from according to the size function. The extracted value is sized according to either a provided function, a size range, or otherwise the whole image. The image can be varied between tests if you want by specifying a seed value. If no seed value is specified, then the image length is used also as a seed.</p>
+<ul>
+<li>
+<p>long -&gt; CharBufImage(int: size) -&gt; java.nio.CharBuffer</p>
+<ul>
+<li><em>notes:</em> Shortcut constructor for building a simple text image
+from A-Z, a-z, 0-9 and a space, of the specified size.
+When this function is used, it always returns the full image
+if constructed in this way.
+@param size length in characters of the image.</li>
+</ul>
+</li>
+<li>
+<p>long -&gt; CharBufImage(Object: charsFunc, int: imgsize) -&gt; java.nio.CharBuffer</p>
+<ul>
+<li><em>notes:</em> This is the same as {@link CharBufImage(Object,int,Object)} except that the
+extracted sample length is fixed to the buffer size, thus the function will
+always return the full buffer.
+@param charsFunc The function which produces objects, which toString() is used to collect their input
+@param imgsize The size of the CharBuffer to build at startup</li>
+</ul>
+</li>
+<li>
+<p>long -&gt; CharBufImage(Object: charsFunc, int: imgsize, Object: sizespec) -&gt; java.nio.CharBuffer</p>
+<ul>
+<li><em>notes:</em> This is the same as {@link CharBufImage(Object, int, Object, long)} excep that
+the seed is defaulted to 0L
+@param charsFunc The function which produces objects, which toString() is used to collect their input
+@param imgsize The size of the CharBuffer to build at startup
+@param sizespec The specifier for how long samples should be. If this is a number, then it is static. If
+it is a function, then the size is determined for each call.</li>
+</ul>
+</li>
+<li>
+<p>long -&gt; CharBufImage(Object: charsFunc, int: imgsize, Object: sizespec, long: seed) -&gt; java.nio.CharBuffer</p>
+<ul>
+<li><em>notes:</em> Create a CharBuffer full of the contents of the results of calling a source
+function until it is full. Then allow it to be sampled with random extracts
+as determined by the sizespec.
+@param charsFunc The function which produces objects, which toString() is used to collect their input
+@param imgsize The size of the CharBuffer to build at startup
+@param sizespec The specifier for how long samples should be. If this is a number, then it is static. If
+it is a function, then the size is determined for each call.
+@param seed      A seed that can be used to change up the rendered content.</li>
+</ul>
+</li>
+</ul>
+<h2 id="charbufferextract">CharBufferExtract</h2>
+<p>Create a CharBuffer from the first function, and then sample data from that buffer according to the size function. The initFunction can be given as simply a size, in which case ByteBufferSizedHash is used with Hex String conversion. If the size function yields a size larger than the available buffer size, then it is lowered to that size automatically. If it is lower, then a random offset is used within the buffer image. This function behaves slightly differently than most in that it creates and caches as source byte buffer during initialization.</p>
+<ul>
+<li>long -&gt; CharBufferExtract(Object: initFunc, Object: sizeFunc) -&gt; java.nio.CharBuffer</li>
+</ul>
+<h2 id="clamp">Clamp</h2>
+<p>Clamp the output values to be at least the minimum value and at most the maximum value.</p>
+<ul>
+<li>
+<p>double -&gt; Clamp(double: min, double: max) -&gt; double</p>
+<ul>
+<li><em>example:</em> <code>Clamp(1.0D,9.0D)</code></li>
+<li><em>clamp output values between the range [1.0D, 9.0D], inclusive</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; Clamp(long: min, long: max) -&gt; long</p>
+<ul>
+<li><em>example:</em> <code>Clamp(4L,400L)</code></li>
+<li><em>clamp the output values in the range [4L,400L], inclusive</em></li>
+</ul>
+</li>
+<li>
+<p>int -&gt; Clamp(int: min, int: max) -&gt; int</p>
+<ul>
+<li><em>example:</em> <code>Clamp(1,100)</code></li>
+<li><em>clamp the output values in the range [1,100], inclusive</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="combinations">Combinations</h2>
+<p>Convert a numeric value into a code according to ASCII printable characters. This is useful for creating various encodings using different character ranges, etc. This mapper can map over the sequences of character ranges providing every unique combination and then wrapping around to the beginning again. It can convert between character bases with independent radix in each position. Each position in the final string takes its values from a position-specific character set, described by the shorthand in the examples below. The constructor will throw an error if the number of combinations exceeds that which can be represented in a long value. (This is a very high number).</p>
+<ul>
+<li>long -&gt; Combinations(String: spec) -&gt; String
+<ul>
+<li><em>example:</em> <code>Combinations('A-Z;A-Z')</code></li>
+<li><em>a two digit alphanumeric code. Wraps at 26^2</em></li>
+<li><em>example:</em> <code>Combinations('0-9A-F')</code></li>
+<li><em>a single hexadecimal digit</em></li>
+<li><em>example:</em> <code>Combinations('0123456789ABCDEF')</code></li>
+<li><em>a single hexadecimal digit</em></li>
+<li><em>example:</em> <code>Combinations('0-9A-F;0-9A-F;0-9A-F;0-9A-F;')</code></li>
+<li><em>two bytes of hexadecimal</em></li>
+<li><em>example:</em> <code>Combinations('A-9')</code></li>
+<li><em>upper case alphanumeric</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="cyclerange">CycleRange</h2>
+<p>Yields a value within a specified range, which rolls over continuously.</p>
+<ul>
+<li>
+<p>long -&gt; CycleRange(long: maxValue) -&gt; long</p>
+</li>
+<li>
+<p>long -&gt; CycleRange(long: minValue, long: maxValue) -&gt; long</p>
+</li>
+<li>
+<p>long -&gt; CycleRange(int: maxValue) -&gt; int</p>
+</li>
+<li>
+<p>long -&gt; CycleRange(int: minValue, int: maxValue) -&gt; int</p>
+</li>
+<li>
+<p>int -&gt; CycleRange(int: maxValue) -&gt; int</p>
+<ul>
+<li>
+<p><em>notes:</em> Sets the maximum value of the cycle range. The minimum is default to 0.
+@param maxValue The maximum value in the cycle to be added.</p>
+</li>
+<li>
+<p><em>example:</em> <code>CycleRange(34)</code></p>
+</li>
+<li>
+<p><em>add a rotating value between 0 and 34 to the input</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p>int -&gt; CycleRange(int: minValue, int: maxValue) -&gt; int</p>
+<ul>
+<li><em>notes:</em> Sets the minimum and maximum value of the cycle range.
+@param minValue minimum value of the cycle to be added.
+@param maxValue maximum value of the cycle to be added.</li>
+</ul>
+</li>
+</ul>
+<h2 id="delimfrequencysampler">DelimFrequencySampler</h2>
+<p>Takes a CSV with sample data and generates random values based on the relative frequencies of the values in the file. The CSV file must have headers which can be used to find the named columns. I.E. take the following imaginary `animals.csv` file: animal,count,country puppy,1,usa puppy,2,colombia puppy,3,senegal kitten,2,colombia `CSVFrequencySampler('animals.csv', animal)` will return `puppy` or `kitten` randomly. `puppy` will be 3x more frequent than `kitten`. `CSVFrequencySampler('animals.csv', country)` will return `usa`, `colombia`, or `senegal` randomly. `colombia` will be 2x more frequent than `usa` or `senegal`. Use this function to infer frequencies of categorical values from CSVs.</p>
+<ul>
+<li>long -&gt; DelimFrequencySampler(String: filename, String: columnName, char: delimiter) -&gt; String
+<ul>
+<li>
+<p><em>notes:</em> Create a sampler of strings from the given delimited file. The delimited file must have plain headers
+as its first line.
+@param filename The name of the file to be read into the sampler buffer
+@param columnName The name of the column to be sampled
+@param delimiter delimmiter</p>
+</li>
+<li>
+<p><em>example:</em> <code>DelimFrequencySampler('values.csv','modelno', '|')</code></p>
+</li>
+<li>
+<p><em>Read values.csv, count the frequency of values in 'modelno' column, and sample from this column proportionally</em></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="directorylines">DirectoryLines</h2>
+<p>Read each line in each matching file in a directory structure, providing one line for each time this function is called. The files are sorted at the time the function is initialized, and each line is read in order. This function does not produce the same result per cycle value. It is possible that different cycle inputs will return different inputs if the cycles are not applied in strict order. Still, this function is useful for consuming input from a set of files as input to a test or simulation.</p>
+<ul>
+<li>long -&gt; DirectoryLines(String: basepath, String: namePattern) -&gt; String
+<ul>
+<li><em>example:</em> <code>DirectoryLines('/var/tmp/bardata', '.*')</code></li>
+<li><em>load every line from every file in /var/tmp/bardata</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="discard">Discard</h2>
+<p>This function takes a long input and ignores it. It returns a generic object which is meant to be used as input to other function which don't need a specific input.</p>
+<ul>
+<li>long -&gt; Discard() -&gt; Object</li>
+</ul>
+<h2 id="div">Div</h2>
+<p>Divide the operand by a fixed value and return the result.</p>
+<ul>
+<li>
+<p>double -&gt; Div(double: divisor) -&gt; double</p>
+</li>
+<li>
+<p>long -&gt; Div(int: divisor) -&gt; int</p>
+</li>
+<li>
+<p>long -&gt; Div(long: divisor) -&gt; long</p>
+<ul>
+<li><em>example:</em> <code>Div(42L)</code></li>
+<li><em>divide all inputs by 42L</em></li>
+</ul>
+</li>
+<li>
+<p>int -&gt; Div(int: divisor) -&gt; int</p>
+</li>
+</ul>
+<h2 id="dividetolongtostring">DivideToLongToString</h2>
+<p>This is equivalent to <code>Div(...)</code>, but returns the result after String.valueOf(...). This function is also deprecated, as it is easily replaced by other functions.</p>
+<ul>
+<li>long -&gt; DivideToLongToString(long: divisor) -&gt; String</li>
+</ul>
+<h2 id="elapsednanotime">ElapsedNanoTime</h2>
+<p>Provide the elapsed nano time since the process started. CAUTION: This does not produce deterministic test data.</p>
+<ul>
+<li>long -&gt; ElapsedNanoTime() -&gt; long</li>
+</ul>
+<h2 id="escapejson">EscapeJSON</h2>
+<p>Escape all special characters which are required to be escaped when found within JSON content according to the JSON spec</p>
+<pre class="z-code"><code><span class="z-text z-plain">{@code
+\b  Backspace (ascii code 08)
+\f  Form feed (ascii code 0C)
+\n  New line
+\r  Carriage return
+\t  Tab
+\&quot;  Double quote
+\\  Backslash character
+\/  Forward slash
+}
+</span></code></pre>
+<ul>
+<li>String -&gt; EscapeJSON() -&gt; String</li>
+</ul>
+<h2 id="fieldextractor">FieldExtractor</h2>
+<p>Extracts out a set of fields from a delimited string, returning a string with the same delimiter containing only the specified fields.</p>
+<ul>
+<li>String -&gt; FieldExtractor(String: fields) -&gt; String
+<ul>
+<li><em>example:</em> <code>FieldExtractor('|,2,16')</code></li>
+<li><em>extract fields 2 and 16 from the input data with '|' as the delimiter</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="firstlines">FirstLines</h2>
+<ul>
+<li>
+<p>Object -&gt; FirstLines(String: filePath) -&gt; String</p>
+</li>
+<li>
+<p>Object -&gt; FirstLines(String: filePath, Integer: numberOfLines) -&gt; String</p>
+</li>
+</ul>
+<h2 id="fixedvalue">FixedValue</h2>
+<p>Yield a fixed value.</p>
+<ul>
+<li>
+<p>long -&gt; FixedValue(String: value) -&gt; String</p>
+</li>
+<li>
+<p>long -&gt; FixedValue(int: value) -&gt; int</p>
+<ul>
+<li><em>example:</em> <code>FixedValue(42)</code></li>
+<li><em>always return 42</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; FixedValue(long: fixedValue) -&gt; long</p>
+</li>
+</ul>
+<h2 id="fixedvalues">FixedValues</h2>
+<p>Yield one of the specified values, rotating through them as the input value increases.</p>
+<ul>
+<li>
+<p>long -&gt; FixedValues(int[]...: values) -&gt; int</p>
+</li>
+<li>
+<p>long -&gt; FixedValues(long[]...: values) -&gt; double</p>
+<ul>
+<li><em>example:</em> <code>FixedValues(3D,53D,73d)</code></li>
+<li><em>Yield 3D, 53D, 73D, 3D, 53D, 73D, 3D, ...</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; FixedValues(long[]...: values) -&gt; long</p>
+<ul>
+<li><em>example:</em> <code>FixedValues(3L,53L,73L)</code></li>
+<li><em>Yield 3L, 53L, 73L, 3L, 53L, 73L, 3L, ...</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="fullhash">FullHash</h2>
+<p>This uses the Murmur3F (64-bit optimized) version of Murmur3, not as a checksum, but as a simple hash. It doesn't bother pushing the high-64 bits of input, since it only uses the lower 64 bits of output. This version returns the value regardless of this sign bit. It does not return the absolute value, as {@link Hash} does.</p>
+<ul>
+<li>long -&gt; FullHash() -&gt; long</li>
+</ul>
+<h2 id="hash">Hash</h2>
+<p>This uses the Murmur3F (64-bit optimized) version of Murmur3, not as a checksum, but as a simple hash. It doesn't bother pushing the high-64 bits of input, since it only uses the lower 64 bits of output. It does, however, return the absolute value. This is to make it play nice with users and other libraries.</p>
+<ul>
+<li>
+<p>long -&gt; Hash() -&gt; long</p>
+</li>
+<li>
+<p>int -&gt; Hash() -&gt; int</p>
+</li>
+<li>
+<p>long -&gt; Hash() -&gt; int</p>
+</li>
+</ul>
+<h2 id="hashinterval">HashInterval</h2>
+<p>Return a value within a range, pseudo-randomly, using interval semantics, where the range of values return does not include the last value. This function behaves exactly like HashRange except for the exclusion of the last value. This allows you to stack intervals using known reference points without duplicating or skipping any given value. You can specify hash intervals as small as a single-element range, like (5,6), or as wide as the relevant data type allows.</p>
+<ul>
+<li>
+<p>int -&gt; HashInterval(int: width) -&gt; int</p>
+<ul>
+<li>
+<p><em>notes:</em> Create a hash interval based on a minimum value of 0 and a specified width.
+@param width The maximum value, which is excluded.</p>
+</li>
+<li>
+<p><em>example:</em> <code>HashInterval(4)</code></p>
+</li>
+<li>
+<p><em>return values which could include 0, 1, 2, 3, but not 4</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p>int -&gt; HashInterval(int: minIncl, int: maxExcl) -&gt; int</p>
+<ul>
+<li>
+<p><em>notes:</em> Create a hash interval
+@param minIncl The minimum value, which is included
+@param maxExcl The maximum value, which is excluded</p>
+</li>
+<li>
+<p><em>example:</em> <code>HashInterval(2,5)</code></p>
+</li>
+<li>
+<p><em>return values which could include 2, 3, 4, but not 5</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p>long -&gt; HashInterval(int: width) -&gt; int</p>
+<ul>
+<li>
+<p><em>notes:</em> Create a hash interval based on a minimum value of 0 and a specified width.
+@param width The maximum value, which is excluded.</p>
+</li>
+<li>
+<p><em>example:</em> <code>HashInterval(4)</code></p>
+</li>
+<li>
+<p><em>return values which could include 0, 1, 2, 3, but not 4</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p>long -&gt; HashInterval(int: minIncl, int: maxExcl) -&gt; int</p>
+<ul>
+<li>
+<p><em>notes:</em> Create a hash interval
+@param minIncl The minimum value, which is included
+@param maxExcl The maximum value, which is excluded</p>
+</li>
+<li>
+<p><em>example:</em> <code>HashInterval(2,5)</code></p>
+</li>
+<li>
+<p><em>return values which could include 2, 3, 4, but not 5</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p>long -&gt; HashInterval(long: width) -&gt; long</p>
+<ul>
+<li>
+<p><em>notes:</em> Create a hash interval based on a minimum value of 0 and a specified width.
+@param width The maximum value, which is excluded.</p>
+</li>
+<li>
+<p><em>example:</em> <code>HashInterval(4L)</code></p>
+</li>
+<li>
+<p><em>return values which could include 0L, 1L, 2L, 3L, but not 4L</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p>long -&gt; HashInterval(long: minIncl, long: maxExcl) -&gt; long</p>
+<ul>
+<li>
+<p><em>notes:</em> Create a hash interval
+@param minIncl The minimum value, which is included
+@param maxExcl The maximum value, which is excluded</p>
+</li>
+<li>
+<p><em>example:</em> <code>HashInterval(2L,5L)</code></p>
+</li>
+<li>
+<p><em>return values which could include 2L, 3L, 4L, but not 5L</em></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="hashrange">HashRange</h2>
+<p>Return a value within a range, pseudo-randomly. This is equivalent to returning a value with in range between 0 and some maximum value, but with a minimum value added. You can specify hash ranges as small as a single-element range, like (5,5), or as wide as the relevant data type allows.</p>
+<ul>
+<li>
+<p>int -&gt; HashRange(int: width) -&gt; int</p>
+</li>
+<li>
+<p>int -&gt; HashRange(int: minValue, int: maxValue) -&gt; int</p>
+</li>
+<li>
+<p>long -&gt; HashRange(long: width) -&gt; long</p>
+</li>
+<li>
+<p>long -&gt; HashRange(long: minValue, long: maxValue) -&gt; long</p>
+</li>
+<li>
+<p>long -&gt; HashRange(int: width) -&gt; int</p>
+<ul>
+<li><em>example:</em> <code>HashRange(32L)</code></li>
+<li><em>map the input to a number in the range 0-31, inclusive, of type int</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; HashRange(int: minValue, int: maxValue) -&gt; int</p>
+<ul>
+<li><em>example:</em> <code>HashRange(35L,39L)</code></li>
+<li><em>map the input to a number in the range 35-38, inclusive, of type int</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="hashrangescaled">HashRangeScaled</h2>
+<p>Return a pseudo-random value which can only be as large as the input times a scale factor, with a default scale factor of 1.0d</p>
+<ul>
+<li>
+<p>int -&gt; HashRangeScaled(double: scalefactor) -&gt; int</p>
+</li>
+<li>
+<p>int -&gt; HashRangeScaled() -&gt; int</p>
+</li>
+<li>
+<p>long -&gt; HashRangeScaled(double: scalefactor) -&gt; long</p>
+</li>
+<li>
+<p>long -&gt; HashRangeScaled() -&gt; long</p>
+</li>
+<li>
+<p>long -&gt; HashRangeScaled(double: scalefactor) -&gt; int</p>
+</li>
+<li>
+<p>long -&gt; HashRangeScaled() -&gt; int</p>
+</li>
+</ul>
+<h2 id="hashedbytebufferextract">HashedByteBufferExtract</h2>
+<p>Create a ByteBuffer from the first function, and then sample data from that bytebuffer according to the size function. The initFunction can be given as simply a size, in which case ByteBufferSizedHash is used. If the size function yields a size larger than the available buffer size, then it is lowered to that size automatically. If it is lower, then a random offset is used within the buffer image. This function behaves slightly differently than most in that it creates and caches as source byte buffer during initialization.</p>
+<ul>
+<li>long -&gt; HashedByteBufferExtract(Object: initFunc, Object: sizeFunc) -&gt; java.nio.ByteBuffer</li>
+</ul>
+<h2 id="hasheddoublerange">HashedDoubleRange</h2>
+<p>Return a double value within the specified range. This function uses an intermediate long to arrive at the sampled value before conversion to double, thus providing a more linear sample at the expense of some precision at extremely large values.</p>
+<ul>
+<li>long -&gt; HashedDoubleRange(double: min, double: max) -&gt; double</li>
+</ul>
+<h2 id="hashedfileextracttostring">HashedFileExtractToString</h2>
+<p>Pseudo-randomly extract a section of a text file and return it according to some minimum and maximum extract size. The file is loaded into memory as a shared text image. It is then indexed into as a character buffer to find a pseudo-randomly sized fragment.</p>
+<ul>
+<li>
+<p>long -&gt; HashedFileExtractToString(String: filename, int: minsize, int: maxsize) -&gt; String</p>
+<ul>
+<li><em>example:</em> <code>HashedFileExtractToString('data/adventures.txt',100,200)</code></li>
+<li><em>return a fragment from adventures.txt between 100 and 200 characters long</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; HashedFileExtractToString(String: filename, Object: sizefunc) -&gt; String</p>
+<ul>
+<li><em>notes:</em> Provide a size function for the fragment to be extracted. In this form, if the size function specifies a string
+size which is larger than the text image, it is truncated via modulo to fall within the text image size.</li>
+</ul>
+</li>
+</ul>
+<p>@param filename The file name to be loaded
+@param sizefunc A function which determines the size of the data to be loaded.</p>
+<ul>
+<li><em>example:</em> <code>HashedFileExtractToString('data/adventures.txt',Uniform())</code></li>
+<li><em>return a fragment from adventures.txt from a random offset, based on the size function provided.</em></li>
+</ul>
+<h2 id="hashedlinetoint">HashedLineToInt</h2>
+<p>Return a pseudo-randomly selected integer value from a file of numeric values. Each line in the file must contain one parsable integer value.</p>
+<ul>
+<li>long -&gt; HashedLineToInt(String: filename) -&gt; int</li>
+</ul>
+<h2 id="hashedlinetostring">HashedLineToString</h2>
+<p>Return a pseudo-randomly selected String value from a single line of the specified file.</p>
+<ul>
+<li>long -&gt; HashedLineToString(String: filename) -&gt; String</li>
+</ul>
+<h2 id="hashedlinestokeyvaluestring">HashedLinesToKeyValueString</h2>
+<p>Generate a string in the format key1:value1;key2:value2;... from the words in the specified file, ranging in size between zero and the specified maximum.</p>
+<ul>
+<li>long -&gt; HashedLinesToKeyValueString(String: paramFile, int: maxsize) -&gt; String</li>
+</ul>
+<h2 id="hashedloremextracttostring">HashedLoremExtractToString</h2>
+<p>Provide a text extract from the full lorem ipsum text, between the specified minimum and maximum size.</p>
+<ul>
+<li>long -&gt; HashedLoremExtractToString(int: minsize, int: maxsize) -&gt; String</li>
+</ul>
+<h2 id="hashedrangedtononuniformdouble">HashedRangedToNonuniformDouble</h2>
+<p>This provides a random sample of a double in a range, without accounting for the non-uniform distribution of IEEE double representation. This means that values closer to high-precision areas of the IEEE spec will be weighted higher in the output. However, NaN and positive and negative infinity are filtered out via oversampling. Results are still stable for a given input value.</p>
+<ul>
+<li>long -&gt; HashedRangedToNonuniformDouble(long: min, long: max) -&gt; double</li>
+</ul>
+<h2 id="hashedtobytebuffer">HashedToByteBuffer</h2>
+<p>Hash a long input value into a byte buffer, at least length bytes long, but aligned on 8-byte boundary;</p>
+<ul>
+<li>long -&gt; HashedToByteBuffer(int: lengthInBytes) -&gt; java.nio.ByteBuffer</li>
+</ul>
+<h2 id="identity">Identity</h2>
+<p>Simply returns the input value. This function intentionally does nothing.</p>
+<ul>
+<li>long -&gt; Identity() -&gt; long</li>
+</ul>
+<h2 id="interpolate">Interpolate</h2>
+<p>Return a value along an interpolation curve. This allows you to sketch a basic density curve and describe it simply with just a few values. The number of values provided determines the resolution of the internal lookup table that is used for interpolation. The first value is always the 0.0 anchoring point on the unit interval. The last value is always the 1.0 anchoring point on the unit interval. This means that in order to subdivide the density curve in an interesting way, you need to provide a few more values in between them. Providing two values simply provides a uniform sample between a minimum and maximum value. The input range of this function is, as many of the other functions in this library, based on the valid range of positive long values, between 0L and Long.MAX_VALUE inclusive. This means that if you want to combine interpolation on this curve with the effect of pseudo-random sampling, you need to put a hash function ahead of it in the flow. Developer Note: This is the canonical implementation of LERPing in NoSQLBench, so is heavily documented. Any other LERP implementations should borrow directly from this, embedding by default.</p>
+<ul>
+<li>
+<p>long -&gt; Interpolate(double[]...: values) -&gt; double</p>
+<ul>
+<li><em>example:</em> <code>Interpolate(0.0d,100.0d)</code></li>
+<li><em>return a uniform double value between 0.0d and 100.0d</em></li>
+<li><em>example:</em> <code>Interpolate(0.0d,90.0d,95.0d,98.0d,100.0d)</code></li>
+<li><em>return a weighted double value where the first second and third quartiles are 90.0D, 95.0D, and 98.0D</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; Interpolate(double[]...: values) -&gt; long</p>
+<ul>
+<li><em>example:</em> <code>Interpolate(0.0d,100.0d)</code></li>
+<li><em>return a uniform long value between 0L and 100L</em></li>
+<li><em>example:</em> <code>Interpolate(0.0d,90.0d,95.0d,98.0d,100.0d)</code></li>
+<li><em>return a weighted long value where the first second and third quartiles are 90.0D, 95.0D, and 98.0D</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="join">Join</h2>
+<p>This takes any collection and concatenates the String representation with a specified delimiter.</p>
+<ul>
+<li>Collection<T> -&gt; Join(String: delim) -&gt; String
+<ul>
+<li><em>example:</em> <code>Join(',')</code></li>
+<li><em>Concatenate the incoming collection with ','</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="jointemplate">JoinTemplate</h2>
+<p>Combine the result of the specified functions together with the specified delimiter and optional prefix and suffix.</p>
+<ul>
+<li>
+<p>long -&gt; JoinTemplate(String: delimiter, function.LongFunction&lt;?&gt;[]...: funcs) -&gt; String</p>
+<ul>
+<li><em>example:</em> <code>JoinTemplate('--',NumberNameToString(),NumberNameToString())</code></li>
+<li><em>create values like <code>one--one</code>, <code>two-two</code>, ...</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; JoinTemplate(String: prefix, String: delimiter, String: suffix, function.LongFunction&lt;?&gt;[]...: funcs) -&gt; String</p>
+<ul>
+<li><em>example:</em> <code>JoinTemplate('{',',','}',NumberNameToString(),LastNames())</code></li>
+<li><em>create values like '{one,Farrel}', '{two,Haskell}', ...</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; JoinTemplate(function.LongUnaryOperator: iterop, String: prefix, String: delimiter, String: suffix, function.LongFunction&lt;?&gt;[]...: funcs) -&gt; String</p>
+<ul>
+<li><em>example:</em> <code>JoinTemplate(Add(3),'&lt;',';','&gt;',NumberNameToString(),NumberNameToString(),NumberNameToString())</code></li>
+<li><em>create values like '&lt;zero;three,six&gt;', '&lt;one;four,seven&gt;', ...</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="listtemplate">ListTemplate</h2>
+<p>Create a {@code List} based on two functions, the first to determine the list size, and the second to populate the list with string values. The input fed to the second function is incremented between elements.</p>
+<ul>
+<li>long -&gt; ListTemplate(function.LongToIntFunction: sizeFunc, function.LongFunction<String>: valueFunc) -&gt; List<String>
+<ul>
+<li><em>example:</em> <code>ListTemplate(HashRange(3,7),NumberNameToString())</code></li>
+<li><em>create a list between 3 and 7 elements, with number names as the values</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="loadelement">LoadElement</h2>
+<p>Load a value from a map, based on the injected configuration. The map which is used must be named by the mapname. If the injected configuration contains a variable of this name which is also a Map, then this map is referenced and read by the provided variable name.</p>
+<ul>
+<li>Object -&gt; LoadElement(String: varname, String: mapname, Object: defaultValue) -&gt; Object
+<ul>
+<li><em>example:</em> <code>LoadElement('varname','vars','defaultvalue')</code></li>
+<li><em>Load the varable 'varname' from a map named 'vars', or provide 'defaultvalue' if neither is provided</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="longtostring">LongToString</h2>
+<p>Return the string representation of the provided long. @deprecated use ToString() instead</p>
+<ul>
+<li>long -&gt; LongToString() -&gt; String</li>
+</ul>
+<h2 id="matchfunc">MatchFunc</h2>
+<p>Match any input with a regular expression, and apply the associated function to it, yielding the value. If no matches occur, then the original value is passed through unchanged. Patterns and functions are passed as even,odd pairs indexed from the 0th position. Instead of a function, a String value may be provided as the associated output value.</p>
+<ul>
+<li>String -&gt; MatchFunc(Object[]...: funcs) -&gt; String
+<ul>
+<li><em>example:</em> <code>MatchFunc('.*','onevalue')</code></li>
+<li><em>Match all String inputs, simply returning 'onevalue' as the output value.</em></li>
+<li><em>example:</em> <code>MatchFunc('[0-9]+',Suffix('-is-a-number'))</code></li>
+<li><em>Append '-is-a-number' to every input which is a sequence of digits</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="matchregex">MatchRegex</h2>
+<p>Match any input with a regular expression, and apply the associated regex replacement to it, yielding the value. If no matches occur, then the original value is passed through unchanged. Patterns and replacements are passed as even,odd pairs indexed from the 0th position. Back-references to matching groups are supported.</p>
+<ul>
+<li>String -&gt; MatchRegex(String[]...: specs) -&gt; String
+<ul>
+<li><em>example:</em> <code>MatchRegex('.*(25|6to4).*','$1')</code></li>
+<li><em>Match 25 or 6 to 4 and set the output to only that</em></li>
+<li><em>example:</em> <code>MatchRegex('([0-9]+)-([0-9]+)-([0-9]+)','$1 $2 $3'</code></li>
+<li><em>replaced dashes with spaces in a 10 digit US phone number.</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="max">Max</h2>
+<p>Return the maximum of either the input value or the specified max.</p>
+<ul>
+<li>
+<p>double -&gt; Max(double: max) -&gt; double</p>
+</li>
+<li>
+<p>long -&gt; Max(long: max) -&gt; long</p>
+<ul>
+<li><em>example:</em> <code>Max(42L)</code></li>
+<li><em>take the value of 42L or the input, which ever is greater</em></li>
+<li><em>example:</em> <code>Max(-42L)</code></li>
+<li><em>take the value of -42L or the input, which ever is greater</em></li>
+</ul>
+</li>
+<li>
+<p>int -&gt; Max(int: max) -&gt; int</p>
+</li>
+</ul>
+<h2 id="min">Min</h2>
+<p>Return the minimum of either the input value or the specified minimum.</p>
+<ul>
+<li>
+<p>double -&gt; Min(double: min) -&gt; double</p>
+</li>
+<li>
+<p>long -&gt; Min(long: min) -&gt; long</p>
+</li>
+<li>
+<p>int -&gt; Min(int: min) -&gt; int</p>
+</li>
+</ul>
+<h2 id="mod">Mod</h2>
+<p>Return the result of modulo division by the specified divisor.</p>
+<ul>
+<li>
+<p>long -&gt; Mod(long: modulo) -&gt; long</p>
+</li>
+<li>
+<p>int -&gt; Mod(int: modulo) -&gt; int</p>
+</li>
+<li>
+<p>long -&gt; Mod(int: modulo) -&gt; int</p>
+</li>
+</ul>
+<h2 id="modulocsvlinetostring">ModuloCSVLineToString</h2>
+<p>Select a value from a CSV file line by modulo division against the number of lines in the file. The second parameter is the field name, and this must be provided in the CSV header line as written.</p>
+<ul>
+<li>long -&gt; ModuloCSVLineToString(String: filename, String: fieldname) -&gt; String
+<ul>
+<li><em>example:</em> <code>ModuloCSVLineToString('data/myfile.csv','lat')</code></li>
+<li><em>load values for 'lat' from the CSV file myfile.csv.</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="modulolinetostring">ModuloLineToString</h2>
+<p>Select a value from a text file line by modulo division against the number of lines in the file.</p>
+<ul>
+<li>long -&gt; ModuloLineToString(String: filename) -&gt; String</li>
+</ul>
+<h2 id="modulotointeger">ModuloToInteger</h2>
+<p>Return an integer value as the result of modulo division with the specified divisor.</p>
+<ul>
+<li>long -&gt; ModuloToInteger(int: modulo) -&gt; Integer</li>
+</ul>
+<h2 id="modulotolong">ModuloToLong</h2>
+<p>Return a long value as the result of modulo division with the specified divisor.</p>
+<ul>
+<li>long -&gt; ModuloToLong(long: modulo) -&gt; long</li>
+</ul>
+<h2 id="mul">Mul</h2>
+<p>Return the result of multiplying the specified value with the input.</p>
+<ul>
+<li>
+<p>double -&gt; Mul(double: factor) -&gt; double</p>
+</li>
+<li>
+<p>long -&gt; Mul(long: multiplicand) -&gt; long</p>
+</li>
+<li>
+<p>int -&gt; Mul(int: addend) -&gt; int</p>
+</li>
+<li>
+<p>long -&gt; Mul(int: multiplicand) -&gt; int</p>
+</li>
+</ul>
+<h2 id="murmur3divtolong">Murmur3DivToLong</h2>
+<p>Yield a long value which is the result of hashing and modulo division with the specified divisor.</p>
+<ul>
+<li>long -&gt; Murmur3DivToLong(long: divisor) -&gt; long</li>
+</ul>
+<h2 id="murmur3divtostring">Murmur3DivToString</h2>
+<p>Yield a String value which is the result of hashing and modulo division with the specified divisor to long and then converting the value to String.</p>
+<ul>
+<li>long -&gt; Murmur3DivToString(long: divisor) -&gt; String</li>
+</ul>
+<h2 id="numbernametostring">NumberNameToString</h2>
+<p>Provides the spelled-out name of a number. For example, an input of 7 would yield &quot;seven&quot;. An input of 4234 yields the value &quot;four thousand thirty four&quot;. The maximum value is limited at 999,999,999.</p>
+<ul>
+<li>long -&gt; NumberNameToString() -&gt; String</li>
+</ul>
+<h2 id="partitionlongs">PartitionLongs</h2>
+<p>Split the value range of Java longs into a number of offsets, starting with Long.MIN_VALUE. This method makes it easy to construct a set of offsets for testing, or to limit the values used a subset. The outputs will range from Long.MIN_VALUE (-2^63) up. This is not an exactly emulation of token range splits in Apache Cassandra.</p>
+<ul>
+<li>long -&gt; PartitionLongs(int: partitions) -&gt; long</li>
+</ul>
+<h2 id="prefix">Prefix</h2>
+<p>Add the specified prefix String to the input value and return the result.</p>
+<ul>
+<li>String -&gt; Prefix(String: prefix) -&gt; String
+<ul>
+<li><em>example:</em> <code>Prefix('PREFIX:')</code></li>
+<li><em>Prepend 'PREFIX:' to every input value</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="replaceall">ReplaceAll</h2>
+<p>Replace all occurrences of the extant string with the replacement string.</p>
+<ul>
+<li>String -&gt; ReplaceAll(String: extant, String: replacement) -&gt; String
+<ul>
+<li><em>example:</em> <code>ReplaceAll('one','two')</code></li>
+<li><em>Replace all occurrences of 'one' with 'two'</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="replaceregex">ReplaceRegex</h2>
+<p>Replace all occurrences of the regular expression with the replacement string. Note, this is much less efficient than using the simple ReplaceAll for most cases.</p>
+<ul>
+<li>String -&gt; ReplaceRegex(String: regex, String: replacement) -&gt; String
+<ul>
+<li><em>example:</em> <code>ReplaceRegex('[one]','two')</code></li>
+<li><em>Replace all occurrences of 'o' or 'n' or 'e' with 'two'</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="shuffle">Shuffle</h2>
+<p>This function provides a low-overhead shuffling effect without loading elements into memory. It uses a bundled dataset of pre-computed Galois LFSR shift register configurations, along with a down-sampling method to provide amortized virtual shuffling with minimal memory usage. Essentially, this guarantees that every value in the specified range will be seen at least once before the cycle repeats. However, since the order of traversal of these values is dependent on the LFSR configuration, some orders will appear much more random than others depending on where you are in the traversal cycle. This function *does* yield values that are deterministic.</p>
+<ul>
+<li>
+<p>long -&gt; Shuffle(long: min, long: maxPlusOne) -&gt; long</p>
+<ul>
+<li><em>example:</em> <code>Shuffle(11,99)</code></li>
+<li><em>Provide all values between 11 and 98 inclusive, in some order, then repeat</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; Shuffle(long: min, long: maxPlusOne, int: bankSelector) -&gt; long</p>
+<ul>
+<li><em>example:</em> <code>Shuffle(11,99,3)</code></li>
+<li><em>Provide all values between 11 and 98 inclusive, in some different (and repeatable) order, then repeat</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="signedhash">SignedHash</h2>
+<p>This uses the Murmur3F (64-bit optimized) version of Murmur3, not as a checksum, but as a simple hash. It doesn't bother pushing the high-64 bits of input, since it only uses the lower 64 bits of output. Unlike the other hash functions, this one may return positive as well as negative values.</p>
+<ul>
+<li>
+<p>long -&gt; SignedHash() -&gt; long</p>
+</li>
+<li>
+<p>int -&gt; SignedHash() -&gt; int</p>
+</li>
+<li>
+<p>long -&gt; SignedHash() -&gt; int</p>
+</li>
+</ul>
+<h2 id="staticstringmapper">StaticStringMapper</h2>
+<p>Return a static String value.</p>
+<ul>
+<li>long -&gt; StaticStringMapper(String: string) -&gt; String</li>
+</ul>
+<h2 id="suffix">Suffix</h2>
+<p>Add the specified prefix String to the input value and return the result.</p>
+<ul>
+<li>String -&gt; Suffix(String: suffix) -&gt; String
+<ul>
+<li><em>example:</em> <code>Suffix('--Fin')</code></li>
+<li><em>Append '--Fin' to every input value</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="template">Template</h2>
+<p>Creates a template function which will yield a string which fits the template provided, with all occurrences of <code>{}</code> substituted pair-wise with the result of the provided functions. The number of <code>{}</code> entries in the template must strictly match the number of functions or an error will be thrown. If you need to include single quotes or other special characters, you may use a backslash &quot;\&quot; in your template. The objects passed must be functions of any of the following types:</p>
+<ul>
+<li>LongUnaryOperator</li>
+<li>IntUnaryOperator</li>
+<li>DoubleUnaryOperator</li>
+<li>LongFunction</li>
+<li>IntFunction</li>
+<li>DoubleFunction</li>
+<li>Function&lt;Long,?&gt;</li>
+</ul>
+<p>The result of applying the input value to any of these functions is converted to a String
+and then stitched together according to the template provided.</p>
+<ul>
+<li>
+<p>long -&gt; Template(String: template, Object[]...: funcs) -&gt; String</p>
+<ul>
+<li><em>example:</em> <code>Template('{}-{}',Add(10),Hash())</code></li>
+<li><em>concatenate input+10, '-', and a pseudo-random long</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; Template(boolean: truncate, String: template, Object[]...: funcs) -&gt; String</p>
+<ul>
+<li><em>example:</em> <code>Template(true, '{}-{}', Add(10),Hash())</code></li>
+<li><em>throws an error, as the Add(10) function causes a narrowing conversion for a long input</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; Template(function.LongUnaryOperator: iterOp, String: template, function.LongFunction&lt;?&gt;[]...: funcs) -&gt; String</p>
+<ul>
+<li><em>notes:</em> If an operator is provided, it is used to change the function input value in an additional way before each function.</li>
+</ul>
+</li>
+</ul>
+<p>@param iterOp   A pre-generation value mapping function
+@param template A string template containing <pre>{}</pre> anchors
+@param funcs    A varargs length of LongFunctions of any output type</p>
+<h2 id="threadnumtointeger">ThreadNumToInteger</h2>
+<p>Matches a digit sequence in the current thread name and caches it in a thread local. This allows you to use any intentionally indexed thread factories to provide an analogue for concurrency. Note that once the thread number is cached, it will not be refreshed. This means you can't change the thread name and get an updated value.</p>
+<ul>
+<li>long -&gt; ThreadNumToInteger() -&gt; Integer</li>
+</ul>
+<h2 id="threadnumtolong">ThreadNumToLong</h2>
+<p>Matches a digit sequence in the current thread name and caches it in a thread local. This allows you to use any intentionally indexed thread factories to provide an analogue for concurrency. Note that once the thread number is cached, it will not be refreshed. This means you can't change the thread name and get an updated value.</p>
+<ul>
+<li>long -&gt; ThreadNumToLong() -&gt; long</li>
+</ul>
+<h2 id="tobase64">ToBase64</h2>
+<p>Takes a bytebuffer and turns it into a base64 string</p>
+<ul>
+<li>java.nio.ByteBuffer -&gt; ToBase64() -&gt; String</li>
+</ul>
+<h2 id="tohasheduuid">ToHashedUUID</h2>
+<p>This function provides a stable hashing of the input value to a version 4 (Random) UUID.</p>
+<ul>
+<li>long -&gt; ToHashedUUID() -&gt; UUID</li>
+</ul>
+<h2 id="trim">Trim</h2>
+<p>Trim the input value and return the result.</p>
+<ul>
+<li>String -&gt; Trim() -&gt; String</li>
+</ul>
+<h2 id="weightedlongs">WeightedLongs</h2>
+<p>Provides a long value from a list of weighted values. The total likelihood of any value to be produced is proportional to its relative weight in the total weight of all elements. This function automatically hashes the input, so the result is already pseudo-random.</p>
+<ul>
+<li>long -&gt; WeightedLongs(String: valuesAndWeights) -&gt; Long
+<ul>
+<li><em>example:</em> <code>WeightedLongs('1:10;3;5;12345;1</code></li>
+<li><em>Yield 1 62.5% of the time, 3 31.25% of the time, and 12345 6.2% of the time</em></li>
+<li><em>example:</em> <code>WeightedLongs('1,6,7</code></li>
+<li><em>Yield 1 33.3% of the time, 6 33.3% of the time, and 7 33.3% of the time</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="weightedstrings">WeightedStrings</h2>
+<p>Allows for weighted elements to be used, such as <code>a:0.25;b:0.25;c:0.5</code> or <code>a:1;b:1.0;c:2.0</code> The unit weights are normalized to the cumulative sum internally, so it is not necessary for them to add up to any particular value.</p>
+<ul>
+<li>long -&gt; WeightedStrings(String: valuesAndWeights) -&gt; String</li>
+</ul>
+<h2 id="weightedstringsfromcsv">WeightedStringsFromCSV</h2>
+<p>Provides sampling of a given field in a CSV file according to discrete probabilities. The CSV file must have headers which can be used to find the named columns for value and weight. The value column contains the string result to be returned by the function. The weight column contains the floating-point weight or mass associated with the value on the same line. All the weights are normalized automatically.</p>
+<p>If there are multiple file names containing the same format, then they
+will all be read in the same way.</p>
+<p>If the first word in the filenames list is 'map', then the values will not
+be pseudo-randomly selected. Instead, they will be mapped over in some
+other unsorted and stable order as input values vary from 0L to Long.MAX_VALUE.</p>
+<p>Generally, you want to leave out the 'map' directive to get &quot;random sampling&quot;
+of these values.</p>
+<p>This function works the same as the three-parametered form of WeightedStrings,
+which is deprecated in lieu of this one. Use this one instead.</p>
+<ul>
+<li>long -&gt; WeightedStringsFromCSV(String: valueColumn, String: weightColumn, String[]...: filenames) -&gt; String
+<ul>
+<li><em>notes:</em> Create a sampler of strings from the given CSV file. The CSV file must have plain CSV headers
+as its first line.
+@param valueColumn The name of the value column to be sampled
+@param weightColumn The name of the weight column, which must be parsable as a double
+@param filenames One or more file names which will be read in to the sampler buffer</li>
+</ul>
+</li>
+</ul>
+
+<p><b><a href="#">Back to top</a></b></p>
+</article>
+<div class="toc" aria-hidden="true">
+  <div class="toc-sticky">
+    <h5>general functions</h5>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#add">Add</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#addcyclerange">AddCycleRange</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#addhashrange">AddHashRange</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#alphanumericstring">AlphaNumericString</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#bytebuffersizedhashed">ByteBufferSizedHashed</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#csvfrequencysampler">CSVFrequencySampler</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#csvsampler">CSVSampler</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#combining-duplicate-labels"><small>- Combining duplicate labels</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#map-vs-hash-mode"><small>- Map vs Hash mode</small></a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#charbufimage">CharBufImage</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#charbufferextract">CharBufferExtract</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#clamp">Clamp</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#combinations">Combinations</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#cyclerange">CycleRange</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#delimfrequencysampler">DelimFrequencySampler</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#directorylines">DirectoryLines</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#discard">Discard</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#div">Div</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#dividetolongtostring">DivideToLongToString</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#elapsednanotime">ElapsedNanoTime</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#escapejson">EscapeJSON</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#fieldextractor">FieldExtractor</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#firstlines">FirstLines</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#fixedvalue">FixedValue</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#fixedvalues">FixedValues</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#fullhash">FullHash</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#hash">Hash</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#hashinterval">HashInterval</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#hashrange">HashRange</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#hashrangescaled">HashRangeScaled</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#hashedbytebufferextract">HashedByteBufferExtract</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#hasheddoublerange">HashedDoubleRange</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#hashedfileextracttostring">HashedFileExtractToString</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#hashedlinetoint">HashedLineToInt</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#hashedlinetostring">HashedLineToString</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#hashedlinestokeyvaluestring">HashedLinesToKeyValueString</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#hashedloremextracttostring">HashedLoremExtractToString</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#hashedrangedtononuniformdouble">HashedRangedToNonuniformDouble</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#hashedtobytebuffer">HashedToByteBuffer</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#identity">Identity</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#interpolate">Interpolate</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#join">Join</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#jointemplate">JoinTemplate</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#listtemplate">ListTemplate</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#loadelement">LoadElement</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#longtostring">LongToString</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#matchfunc">MatchFunc</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#matchregex">MatchRegex</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#max">Max</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#min">Min</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#mod">Mod</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#modulocsvlinetostring">ModuloCSVLineToString</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#modulolinetostring">ModuloLineToString</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#modulotointeger">ModuloToInteger</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#modulotolong">ModuloToLong</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#mul">Mul</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#murmur3divtolong">Murmur3DivToLong</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#murmur3divtostring">Murmur3DivToString</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#numbernametostring">NumberNameToString</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#partitionlongs">PartitionLongs</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#prefix">Prefix</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#replaceall">ReplaceAll</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#replaceregex">ReplaceRegex</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#shuffle">Shuffle</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#signedhash">SignedHash</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#staticstringmapper">StaticStringMapper</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#suffix">Suffix</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#template">Template</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#threadnumtointeger">ThreadNumToInteger</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#threadnumtolong">ThreadNumToLong</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#tobase64">ToBase64</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#tohasheduuid">ToHashedUUID</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#trim">Trim</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#weightedlongs">WeightedLongs</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#weightedstrings">WeightedStrings</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-general/#weightedstringsfromcsv">WeightedStringsFromCSV</a>
+    </div>
+  </div>
+</div>
+  </main>
+  <footer>
+    <hr />
+    <div class="c">
+      <nav>
+        <ul></ul>
+      </nav>
+      <p class="s90">Copyright &copy; 2023-2023 NoSQLBench Project</p>
+    </div>
+  </footer>
+</body>
+</html>

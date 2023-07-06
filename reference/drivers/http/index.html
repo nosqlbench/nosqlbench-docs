@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script src="https://docs.nosqlbench.io/theme.min.js" integrity="sha384-IpIaa84kOKgkF5EJ0fD/kBe2wtIIsIB60ANGmuJxeA0dz5bSRfwBwp2/QybtQpU2"></script>
+  <link rel="stylesheet" href="https://docs.nosqlbench.io/abridge-switcher.css?h=4238d999f44a7bb130d5" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preload" as="style" class="preStyle" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" crossorigin="anonymous" />
+  <script defer src="https://docs.nosqlbench.io/search_index.en.js?h=ae47d253e455a3aaacb2" integrity="sha384-cP47owL9Iuak1e1AA21cJA4BgagQtaPwAXBQG7QgJeE2JKGgkCBROHbCj/Xym6KC"></script>
+  <script defer src="https://docs.nosqlbench.io/abridge-bundle-nofacade.min.js?h=9bcf621a2fcab7336017" integrity="sha384-u8AROOUG6n2Xjk2+7pvkkfeSIqinjI1tmqeBpZRlZtc5KFO/8DyFfEir6fAE2wcq"></script>
+  <meta name="base" content="https://docs.nosqlbench.io" />
+<meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>http | NoSQLBench Project</title>
+  <meta name="copyright" content="NoSQLBench Project" />
+  <meta name="description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <link rel="canonical" href="https://docs.nosqlbench.io/reference/drivers/http/" />
+  <meta name="keywords" content="Abridge, Abridge.css, Zola, Theme, Zola Theme, getzola, Semantic Html, Fast, lightweight" />
+  <meta property="og:url" content="https://docs.nosqlbench.io/reference/drivers/http/" />
+  <meta name="twitter:url" content="https://docs.nosqlbench.io/reference/drivers/http/" />
+  <meta property="og:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta name="twitter:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta property="og:title" content="http | NoSQLBench Project" />
+  <meta name="twitter:title" content="http | NoSQLBench Project" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:site_name" content="NoSQLBench Project" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://docs.nosqlbench.io/site.webmanifest" />
+  <link rel="mask-icon" href="https://docs.nosqlbench.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://docs.nosqlbench.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://docs.nosqlbench.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://docs.nosqlbench.io/favicon-16x16.png" />
+  <noscript><link rel="stylesheet" href="https://docs.nosqlbench.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://docs.nosqlbench.io/"><img src="https://docs.nosqlbench.io/nb5logo.png" alt="NoSQLBench5" width="32" height="32" />NoSQLBench v5</a></h1></div><div>
+        <ul><li> <h2><a href="https://docs.nosqlbench.io/getting-started/">Getting Started</a></h2> </li><li> <h2><a href="https://docs.nosqlbench.io/release-notes/">Release Notes</a></h2> </li><li class="js"><i type="reset" id="mode" class="svgs adjust"></i></li></ul>
+      </div>
+      <div>
+        <form autocomplete=off class="js" name="goSearch" id="searchbox">
+          <div class="searchd">
+            <input id="searchinput" type="text" placeholder="Search" title="Search" />
+            <button type="submit" title="Search"><i class="svgs search"></i></button>
+          </div>
+          <div><div id="suggestions"></div></div>
+        </form>
+      </div>
+
+      <a href="http://github.com/nosqlbench/nosqlbench-build-docs" title="This doc site's project repo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="1" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+      <a href="http://nosqlbench.io" title="NoSQLBench Project Site">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+    </nav>
+    <hr /><div style="position:sticky"><span><a href="&#x2F;">NB5 Docs► </a></span><span><a href="&#x2F;reference&#x2F;">Reference Section► </a></span><span title="DriverAdapters allow native drivers or other logic to be plugged into the nb5 engine."><a href="&#x2F;reference&#x2F;drivers&#x2F;"><strong>Drivers▼</strong> </a></span><span title="[current page]"><a href="&#x2F;reference&#x2F;drivers&#x2F;http&#x2F;"><strong>http 🖺</strong></a></span>
+</div></header>
+  <main><!-- active_page: reference&#x2F;drivers&#x2F;http.md -->
+<!-- active_section: reference&#x2F;drivers&#x2F;_index.md -->
+
+
+<!-- lower_root: reference&#x2F;_index.md -->
+<!-- >upper_root: reference&#x2F;_index.md -->
+
+<div class="toc" aria-hidden="true" id="">
+<!--  <h4>Drivers</h4>--><div class="toc-sticky"><div class="toc-item"title="This section is a specification of the standard workload format."><a href="&#x2F;reference&#x2F;workload_definition&#x2F;">►Workload Specification</a></div><div class="toc-item"title="DriverAdapters allow native drivers or other logic to be plugged into the nb5 engine."><strong>▼Drivers</strong></div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;jdbc&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;jdbc&#x2F;">JDBC driver</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;cqld4&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;cqld4&#x2F;">cqld4</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;stdout&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;stdout&#x2F;">stdout</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;mongodb&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;mongodb&#x2F;">MongoDB</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;diag&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;diag&#x2F;">diag</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;pulsar&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;pulsar&#x2F;">pulsar</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;tcpserver&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;tcpserver&#x2F;">tcpserver</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;tcpclient&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;tcpclient&#x2F;">tcpclient</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;dynamodb&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;dynamodb&#x2F;">dynamodb</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;s4j&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;s4j&#x2F;">S4J</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;http&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;http&#x2F;"><strong>http</strong></a>
+    </div><div class="toc-item"title="Binding functions are the core of the procedural data generation capabilities of NoSQLBench. They bind generated data to operations in a determinstic way."><a href="&#x2F;reference&#x2F;bindings&#x2F;">►Binding Functions</a></div><div class="toc-item"title="Documentation for bundled applications within NB5."><a href="&#x2F;reference&#x2F;apps&#x2F;">►Bundled Apps</a></div><div class="toc-item"title="Version data for the bundled and imported docs content"><a href="&#x2F;reference&#x2F;versions&#x2F;">►Version Info</a></div></div>
+</div>
+
+<article>
+
+  <h1 id="http">http</h1>
+<p>This driver allows you to make http requests using the native HTTP client
+that is bundled with the JVM. It supports free-form construction of
+requests.</p>
+<p>You specify what a request looks like by providing a set of request
+parameters. They can be in either literal (static) form with no dynamic
+data binding, or they can each be in a string template form that draws
+from data bindings. Each cycle, a request is assembled from these
+parameters and executed.</p>
+<h2 id="example-statements">Example Statements</h2>
+<p>The simplest possible statement form looks like this:</p>
+<pre data-lang="yaml" class="language-yaml z-code"><code class="language-yaml" data-lang="yaml"><span class="z-source z-yaml"><span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">op</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-unquoted z-plain z-out z-yaml">http://google.com/</span>
+</span></code></pre>
+<p>Or, you can have a list:</p>
+<pre data-lang="yaml" class="language-yaml z-code"><code class="language-yaml" data-lang="yaml"><span class="z-source z-yaml"><span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> A list of statements
+</span><span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">ops</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+ <span class="z-punctuation z-definition z-block z-sequence z-item z-yaml">-</span> <span class="z-string z-unquoted z-plain z-out z-yaml">http://google.com/</span>
+ <span class="z-punctuation z-definition z-block z-sequence z-item z-yaml">-</span> <span class="z-string z-unquoted z-plain z-out z-yaml">http://amazon.com/</span>
+</span></code></pre>
+<p>Or you can template the values used in the URI, and even add ratios:</p>
+<pre data-lang="yaml" class="language-yaml z-code"><code class="language-yaml" data-lang="yaml"><span class="z-source z-yaml"><span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> A list of named statements with variable fields and specific ratios:
+</span><span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">ops</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+    <span class="z-punctuation z-definition z-block z-sequence z-item z-yaml">-</span> <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">s1</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-unquoted z-plain z-out z-yaml">http://google.com/search?query={query}</span>
+      <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">ratio</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-constant z-numeric z-integer z-decimal z-yaml">3</span>
+    <span class="z-punctuation z-definition z-block z-sequence z-item z-yaml">-</span> <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">s2</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-unquoted z-plain z-out z-yaml">https://www.amazon.com/s?k={query}</span>
+      <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">ratio</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-constant z-numeric z-integer z-decimal z-yaml">2</span>
+<span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">bindings</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">query</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-keyword z-control z-flow z-block-scalar z-folded z-yaml">&gt;</span>
+<span class="z-string z-unquoted z-block z-yaml">        WeightedStrings(&#39;function generator;backup generator;static generator&#39;);
+        UrlEncode();
+</span></span></code></pre>
+<p>You can even make a detailed request with custom headers and result
+verification conditions:</p>
+<pre data-lang="yaml" class="language-yaml z-code"><code class="language-yaml" data-lang="yaml"><span class="z-source z-yaml"><span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> Require that the result be status code 200-299 match regex &quot;OK, account id is .*&quot; in the body
+</span><span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">ops</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+    <span class="z-punctuation z-definition z-block z-sequence z-item z-yaml">-</span> <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">get-from-google</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+      <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">method</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-unquoted z-plain z-out z-yaml">GET</span>
+      <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">uri</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-quoted z-double z-yaml"><span class="z-punctuation z-definition z-string z-begin z-yaml">&quot;</span>https://google.com/<span class="z-punctuation z-definition z-string z-end z-yaml">&quot;</span></span>
+      <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">version</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-quoted z-double z-yaml"><span class="z-punctuation z-definition z-string z-begin z-yaml">&quot;</span>HTTP/1.1<span class="z-punctuation z-definition z-string z-end z-yaml">&quot;</span></span>
+      <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">Content-Type</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-quoted z-double z-yaml"><span class="z-punctuation z-definition z-string z-begin z-yaml">&quot;</span>application/json<span class="z-punctuation z-definition z-string z-end z-yaml">&quot;</span></span>
+      <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">ok-status</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-quoted z-double z-yaml"><span class="z-punctuation z-definition z-string z-begin z-yaml">&quot;</span>2[0-9][0-9]<span class="z-punctuation z-definition z-string z-end z-yaml">&quot;</span></span>
+      <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">ok-body</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-quoted z-double z-yaml"><span class="z-punctuation z-definition z-string z-begin z-yaml">&quot;</span>^(OK, account id is .*)$<span class="z-punctuation z-definition z-string z-end z-yaml">&quot;</span></span>
+</span></code></pre>
+<p>For those familiar with what an HTTP request looks like on the wire, the
+format below may be familiar. This isn't actually the content that is
+submitted, but it is recognized as a valid way to express the request
+parameters in a familiar and condensed form. A custom config parser makes
+this form available fo rhose who want to emulate a well-known pattern:</p>
+<pre data-lang="yaml" class="language-yaml z-code"><code class="language-yaml" data-lang="yaml"><span class="z-source z-yaml"><span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">ops</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+    <span class="z-punctuation z-definition z-block z-sequence z-item z-yaml">-</span> <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">s1</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-keyword z-control z-flow z-block-scalar z-literal z-yaml">|</span>
+<span class="z-string z-unquoted z-block z-yaml">          GET https://google.com/ HTTP/1.1
+          Content-Type: application/json
+</span>      <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">ok-status</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-unquoted z-plain z-out z-yaml">2[0-9][0-9]</span>
+      <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">ok-body</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-unquoted z-plain z-out z-yaml">^(OK, account id is.*)$</span>
+</span></code></pre>
+<p>Of course, in the above form, the response validators are still separate
+parameters.</p>
+<h2 id="bindings">Bindings</h2>
+<p>All request fields can be made dynamic with binding functions. To make a
+request that has all dynamic fields, you can do something like this:</p>
+<pre data-lang="yaml" class="language-yaml z-code"><code class="language-yaml" data-lang="yaml"><span class="z-source z-yaml"><span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">ops</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+    <span class="z-punctuation z-definition z-block z-sequence z-item z-yaml">-</span> <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">s1</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-keyword z-control z-flow z-block-scalar z-literal z-yaml">|</span>
+<span class="z-string z-unquoted z-block z-yaml">          {method} {scheme}://{host}:{port}/{path}?{query} {version}
+          Content-Type: {content_type}
+          Token: {mybearertoken}
+
+          {body}
+</span></span></code></pre>
+<p>The above example is in the inline request form. It is parsed and
+interpreted internally as if you had configured your op template like
+this:</p>
+<pre data-lang="yaml" class="language-yaml z-code"><code class="language-yaml" data-lang="yaml"><span class="z-source z-yaml"><span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">ops</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+    <span class="z-punctuation z-definition z-block z-sequence z-item z-yaml">-</span> <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">method</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-meta z-flow-mapping z-yaml"><span class="z-punctuation z-definition z-mapping z-begin z-yaml">{</span> <span class="z-string z-unquoted z-plain z-in z-yaml">method</span> <span class="z-punctuation z-definition z-mapping z-end z-yaml">}</span></span>
+      <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">uri</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-meta z-flow-mapping z-yaml"><span class="z-punctuation z-definition z-mapping z-begin z-yaml">{</span> <span class="z-string z-unquoted z-plain z-in z-yaml">scheme</span> <span class="z-punctuation z-definition z-mapping z-end z-yaml">}</span></span><span class="z-string z-unquoted z-plain z-out z-yaml">://{host}:{port}/{path}?{query}</span>
+      <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">version</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-meta z-flow-mapping z-yaml"><span class="z-punctuation z-definition z-mapping z-begin z-yaml">{</span> <span class="z-string z-unquoted z-plain z-in z-yaml">version</span> <span class="z-punctuation z-definition z-mapping z-end z-yaml">}</span></span>
+      <span class="z-string z-quoted z-double z-yaml"><span class="z-punctuation z-definition z-string z-begin z-yaml">&quot;</span>Content-Type<span class="z-punctuation z-definition z-string z-end z-yaml">&quot;</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-meta z-flow-mapping z-yaml"><span class="z-punctuation z-definition z-mapping z-begin z-yaml">{</span> <span class="z-string z-unquoted z-plain z-in z-yaml">content_type</span> <span class="z-punctuation z-definition z-mapping z-end z-yaml">}</span></span>
+      <span class="z-string z-quoted z-double z-yaml"><span class="z-punctuation z-definition z-string z-begin z-yaml">&quot;</span>Token<span class="z-punctuation z-definition z-string z-end z-yaml">&quot;</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-meta z-flow-mapping z-yaml"><span class="z-punctuation z-definition z-mapping z-begin z-yaml">{</span> <span class="z-string z-unquoted z-plain z-in z-yaml">mybearertoken</span> <span class="z-punctuation z-definition z-mapping z-end z-yaml">}</span></span>
+      <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">body</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-meta z-flow-mapping z-yaml"><span class="z-punctuation z-definition z-mapping z-begin z-yaml">{</span> <span class="z-string z-unquoted z-plain z-in z-yaml">body</span> <span class="z-punctuation z-definition z-mapping z-end z-yaml">}</span></span>
+</span></code></pre>
+<p>The above two examples are semantically identical, only the format is
+different. Notice that the expansion of the URI is still captured in a
+field called uri, with all the dynamic pieces stitched together in the
+value. You can't use arbitrary request fields. Every request field must
+from (method, uri, version, body, ok-status, ok-body) or otherwise be
+capitalized to signify an HTTP header.</p>
+<p>The HTTP RFCs do not require headers to be capitalized, but they are
+capitalized ubiquitously in practice, so we follow that convention here
+for clarity. Headers are in-fact case-insensitive, so any issues created
+by this indicate a non-conformant server/application implementation.</p>
+<p>For URIs which are fully static (There are no dynamic fields, request
+generation will be much faster, since the request is fully built and
+cached at startup.</p>
+<h2 id="request-fields">Request Fields</h2>
+<p>At a minimum, a <strong>URI</strong> must be provided. This is enough to build a
+request with. All other request fields are optional and have reasonable
+defaults:</p>
+<ul>
+<li><strong>uri</strong> - This is the URI that you might put into the URL bar of your
+browser. There is no default.
+Example: <code>https://en.wikipedia.org/wiki/Leonhard_Euler</code>
+If the uri contains a question mark '?' as a query delimiter, then all
+embedded sections which are contained within <code>URLENCODE[[</code> ... <code>]]</code>
+sections are preprocessed by the HTTP driver. This allows you to keep
+your test data in a recognizable form. This is done at startup, so there
+is no cost during the test run. As an added convenience, binding points
+which are within the encoded block will be preserved, so
+both <code>https://en.wikipedia.org/URLENCODE[[wiki/]]{topic}</code> and
+<code>https://en.wikipedia.org/URLENCODE[[wiki/{topic}]]</code> will yield the same
+configuration. For a terser form, you can use <code>E[[...]]</code>. You must also
+ensure that the values that are inserted at binding points are produced
+in a valid form for a URI. You can use the <code>URLEncode()</code>
+binding function where needed to achieve this.
+<em>NOTE</em>, If you are using dynamic values for the uri field, and
+a test value for cycle 0 includes neither <code>URLENCODE[[</code> nor <code>E[]</code>,
+then it is skipped. You can override this with <code>enable_urlencode: true</code>.</li>
+<li><strong>method</strong> - An optional request method. If not provided, &quot;GET&quot; is
+assumed. Any method name will work here, even custom ones that are
+specific to a given target system. No validation is done for standard
+method names, as there is no way to know what method names may be valid.</li>
+<li><strong>version</strong> - The HTTP version to use. If this value is not provided,
+the default version for the Java HttpClient is used. If it is provided,
+it must be one of 'HTTP/1.1' or 'HTTP/2.0'.</li>
+<li><strong>body</strong> - The content of the request body, for methods which support
+it.</li>
+<li><strong>ok-status</strong> - An optional set of rules to verify that a response is
+valid. This is a simple comma or space separated list of integer status
+codes or a pattern which is used as a regex against the string form of a
+status code. If any characters other than digits spaces and commas are
+found in this value, then it is taken as a regex. If this is not
+provided, then any status code which is &gt;=200 and &lt;300 is considered
+valid.</li>
+<li><strong>ok-body</strong> - An optional regex pattern which will be applied to the
+body to verify that it is a valid response. If this is not provided,
+then content bodies are read, but any content is considered valid.</li>
+</ul>
+<p>Any other statement parameter which is capitalized is taken as a request
+header. If additional fields are provided which are not included in the
+above list, or which are not capitalized, then an error is thrown.</p>
+<h2 id="error-handling-retries">Error Handling &amp; Retries</h2>
+<p>By default, a request which encounters an exception is retried up to 10
+times. If you want to change this, set another value to the
+<code>retries=</code> activity parameters.</p>
+<p>Presently, no determination is made about whether an errored
+response <em>should</em> be retryable, but it is possible to configure this if
+you have a specific exception type that indicates a retryable operation.</p>
+<p>The HTTP driver is the first NB driver to include a completely
+configurable error handler chain. This is explained in the
+<code>error-handlers</code> topic. By default, the HTTP activity's error handler is
+wired to stop the activity for any error encountered.</p>
+<h2 id="ssl-support">SSL Support</h2>
+<p>SSL should work for any basic client request that doesn't need custom SSL
+configuration. If needed, more configurable SSL support will be added.</p>
+<h2 id="client-behavior">Client Behavior</h2>
+<h3 id="tcp-sessions-clients">TCP Sessions &amp; Clients</h3>
+<p>Client instances are created for each unique <code>space</code> value. NoSQLBench
+provides a way for all driver adapters to instance native clients according
+to a data from a binding. This is standardized under the op template parameter
+<code>space</code>, which is wired by default to the static value <code>default</code>. This means
+that each activity that uses the http driver shares a client instance across
+all threads by default. If you want to have a new http client per-thread,
+simply add a binding for <code>space: ThreadNumToInteger()</code> and reference it in
+an op template like <code>space: {space}</code>, OR use an inline op field in your op
+template like <code>space: {(ThreadNumToInteger())}</code>.</p>
+<p>You can use any binding function you want for the space op field. However,
+if you were to assign it something like &quot;space: {(Identity()}&quot; you would
+not have a good result, as you would be spinning up and caching a new http client
+instance for every single cycle.</p>
+<h3 id="chunked-encoding-and-web-sockets">Chunked encoding and web sockets</h3>
+<p>Presently, this driver only does basic request-response style requests.
+Thus, adding headers which take TCP socket control away from the
+HttpClient will likely yield inconsistent (or undefined)
+results. Support may be added for long-lived connections in a future
+release. However, chunked encoding responses are supported, although they
+will be received fully before being processed further. Connecting to a long-lived
+connection that streams chunked encoding responses indefinitely will have
+undefined results.</p>
+<h2 id="http-activity-parameters">HTTP Activity Parameters</h2>
+<ul>
+<li>
+<p><strong>follow_redirects</strong> - default: normal - One of never, always, or
+normal. Normal redirects are those which do not redirect from HTTPS to
+HTTP.</p>
+</li>
+<li>
+<p><strong>diagnostics</strong> - default: none - synonym: <strong>diag</strong>
+example: <code>diag=brief,1000</code> - print diagnostics for every 1000th cycle,
+including only brief details as explained below.</p>
+<p>This setting is a selector for what level of verbosity you will get on
+the console. If you set this to <code>diag=all</code>, you'll get every request and
+response logged to console. This is only for verifying that a test is
+configured and to spot check services before running higher scale tests.</p>
+<p>All the data shown in diagnostics is post-hoc, directly from the
+response provided by the internal HTTP client in the Java runtime.</p>
+<p>If you want finer control over how much information diagnostics
+provides, you can specify a comma separated list of the below.</p>
+<ul>
+<li>headers - show headers</li>
+<li>stats - show basic stats of each request</li>
+<li>data - show all of each response body this setting</li>
+<li>data10 - show only the first 10 characters of each response body
+this setting supersedes <code>data</code></li>
+<li>data100 - show only the first 100 characters of each response body
+this setting supersedes <code>data10</code></li>
+<li>data1000 - show only the first 1000 characters of each response body
+this setting supersedes <code>data100</code></li>
+<li>redirects - show details for interstitial request which are made
+when the client follows a redirect directive like a <code>location</code>
+header</li>
+<li>requests - show details for requests</li>
+<li>responses - show details for responses</li>
+<li>codes - shows explanatory details (high-level) of http response status codes</li>
+<li>brief - Show headers, stats, requests, responses, and 10 characters</li>
+<li>all - Show everything, including full payloads and redirects</li>
+<li>a modulo - any number, like 3000 - causes the diagnostics to be
+reported only on this cycle modulo. If you set <code>diag=300,brief</code>
+then you will get the brief diagnostic output for every 300th
+response.</li>
+</ul>
+<p>The requests, responses, and redirects settings work in combination.
+For example, if you specify responses, and redirect, but not requests,
+then you will only see the response portion of all calls made by the
+client. All available filters layer together in this way.</p>
+</li>
+<li>
+<p><strong>timeout</strong> - default: forever - Sets the timeout of each request in
+milliseconds.</p>
+</li>
+</ul>
+
+<p><b><a href="#">Back to top</a></b></p>
+</article>
+<div class="toc" aria-hidden="true">
+  <div class="toc-sticky">
+    <h5>http</h5>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/drivers/http/#http">http</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/drivers/http/#example-statements"><small>- Example Statements</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/drivers/http/#bindings"><small>- Bindings</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/drivers/http/#request-fields"><small>- Request Fields</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/drivers/http/#error-handling-retries"><small>- Error Handling &amp; Retries</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/drivers/http/#ssl-support"><small>- SSL Support</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/drivers/http/#client-behavior"><small>- Client Behavior</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/drivers/http/#http-activity-parameters"><small>- HTTP Activity Parameters</small></a>
+    </div>
+  </div>
+</div>
+  </main>
+  <footer>
+    <hr />
+    <div class="c">
+      <nav>
+        <ul></ul>
+      </nav>
+      <p class="s90">Copyright &copy; 2023-2023 NoSQLBench Project</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script src="https://docs.nosqlbench.io/theme.min.js" integrity="sha384-IpIaa84kOKgkF5EJ0fD/kBe2wtIIsIB60ANGmuJxeA0dz5bSRfwBwp2/QybtQpU2"></script>
+  <link rel="stylesheet" href="https://docs.nosqlbench.io/abridge-switcher.css?h=4238d999f44a7bb130d5" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preload" as="style" class="preStyle" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" crossorigin="anonymous" />
+  <script defer src="https://docs.nosqlbench.io/search_index.en.js?h=ae47d253e455a3aaacb2" integrity="sha384-cP47owL9Iuak1e1AA21cJA4BgagQtaPwAXBQG7QgJeE2JKGgkCBROHbCj/Xym6KC"></script>
+  <script defer src="https://docs.nosqlbench.io/abridge-bundle-nofacade.min.js?h=9bcf621a2fcab7336017" integrity="sha384-u8AROOUG6n2Xjk2+7pvkkfeSIqinjI1tmqeBpZRlZtc5KFO/8DyFfEir6fAE2wcq"></script>
+  <meta name="base" content="https://docs.nosqlbench.io" />
+<meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>Core Op Fields | NoSQLBench Project</title>
+  <meta name="copyright" content="NoSQLBench Project" />
+  <meta name="description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <link rel="canonical" href="https://docs.nosqlbench.io/user-guide/core-op-fields/" />
+  <meta name="keywords" content="Abridge, Abridge.css, Zola, Theme, Zola Theme, getzola, Semantic Html, Fast, lightweight" />
+  <meta property="og:url" content="https://docs.nosqlbench.io/user-guide/core-op-fields/" />
+  <meta name="twitter:url" content="https://docs.nosqlbench.io/user-guide/core-op-fields/" />
+  <meta property="og:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta name="twitter:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta property="og:title" content="Core Op Fields | NoSQLBench Project" />
+  <meta name="twitter:title" content="Core Op Fields | NoSQLBench Project" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:site_name" content="NoSQLBench Project" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://docs.nosqlbench.io/site.webmanifest" />
+  <link rel="mask-icon" href="https://docs.nosqlbench.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://docs.nosqlbench.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://docs.nosqlbench.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://docs.nosqlbench.io/favicon-16x16.png" />
+  <noscript><link rel="stylesheet" href="https://docs.nosqlbench.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://docs.nosqlbench.io/"><img src="https://docs.nosqlbench.io/nb5logo.png" alt="NoSQLBench5" width="32" height="32" />NoSQLBench v5</a></h1></div><div>
+        <ul><li> <h2><a href="https://docs.nosqlbench.io/getting-started/">Getting Started</a></h2> </li><li> <h2><a href="https://docs.nosqlbench.io/release-notes/">Release Notes</a></h2> </li><li class="js"><i type="reset" id="mode" class="svgs adjust"></i></li></ul>
+      </div>
+      <div>
+        <form autocomplete=off class="js" name="goSearch" id="searchbox">
+          <div class="searchd">
+            <input id="searchinput" type="text" placeholder="Search" title="Search" />
+            <button type="submit" title="Search"><i class="svgs search"></i></button>
+          </div>
+          <div><div id="suggestions"></div></div>
+        </form>
+      </div>
+
+      <a href="http://github.com/nosqlbench/nosqlbench-build-docs" title="This doc site's project repo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="1" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+      <a href="http://nosqlbench.io" title="NoSQLBench Project Site">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+    </nav>
+    <hr /><div style="position:sticky"><span><a href="&#x2F;">NB5 Docs► </a></span><span title="Detailed documentation on all options and features of NoSQLBench"><a href="&#x2F;user-guide&#x2F;"><strong>User Guide▼</strong> </a></span><span title="[current page]"><a href="&#x2F;user-guide&#x2F;core-op-fields&#x2F;"><strong>Core Op Fields 🖺</strong></a></span>
+</div></header>
+  <main><!-- active_page: user-guide&#x2F;core-op-fields.md -->
+<!-- active_section: user-guide&#x2F;_index.md -->
+
+
+<!-- lower_root: _index.md -->
+<!-- >upper_root: _index.md -->
+
+<div class="toc" aria-hidden="true" id="">
+<!--  <h4>User Guide</h4>--><div class="toc-sticky"><div class="toc-item"title="Release Notes for each major and some minor releases"><a href="&#x2F;release-notes&#x2F;">►Release Notes</a></div><div class="toc-item"title="An introduction to what makes NoSQLBench Unique"><a href="&#x2F;introduction&#x2F;">►Introduction</a></div><div class="toc-item"title="Getting Started with NoSQLBench"><a href="&#x2F;getting-started&#x2F;">►Getting Started</a></div><div class="toc-item"title="You can build workloads to simulate real-world data and access patterns."><a href="&#x2F;workloads-101&#x2F;">►Workloads 101</a></div><div class="toc-item"title="Detailed documentation on all options and features of NoSQLBench"><strong>▼User Guide</strong></div><!-- subsection_page_path: &#x2F;user-guide&#x2F;cli-options&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;cli-options&#x2F;">CLI Options</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;ssl-options&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;ssl-options&#x2F;">Standard SSL Options</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;cli-scripting&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;cli-scripting&#x2F;">CLI Scripting</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;op-templates&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;op-templates&#x2F;">Op Templates</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;core-op-fields&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;core-op-fields&#x2F;"><strong>Core Op Fields</strong></a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;core-activity-params&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;core-activity-params&#x2F;">Core Activity Params</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;error-handlers&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;error-handlers&#x2F;">Error Handlers</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;standard-metrics&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;standard-metrics&#x2F;">Standard Metrics</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;metrics-options&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;metrics-options&#x2F;">Metrics Options</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;grafana-metrics&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;grafana-metrics&#x2F;">Built-In Grafana Dashboard</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;workloads-intro&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;workloads-intro&#x2F;">Built-In Workloads</a>
+    </div><!-- subsubsection_path: user-guide&#x2F;advanced-topics&#x2F;_index.md --><div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;"title="Detailed documentation on all options and features of NoSQLBench">‣ Advanced Topics</a>
+    </div><div class="toc-item"title="The NB5 Developer Guide"><a href="&#x2F;dev-guide&#x2F;">►Dev Guide</a></div><div class="toc-item"title="Detailed reference on drivers, formats, bindings, from auto-imported docs"><a href="&#x2F;reference&#x2F;">►Reference Section</a></div></div>
+</div>
+
+<article>
+
+  <p>Some op template fields are reserved by nb5. These are provided by the runtime, not any 
+particular driver, and can be used in any op template.</p>
+<p>👉 op fields can be defined at any level of a workload template with a <code>param</code> property. Op 
+template which do not have this op field by name will automatically inherit it.</p>
+<h1 id="core-op-fields">Core Op Fields</h1>
+<h2 id="driver"><em>driver</em></h2>
+<ul>
+<li><em>default</em>: unset</li>
+<li><em>required</em>: yes, by op template or by activity params</li>
+<li><em>dynamic</em>: no</li>
+</ul>
+<p>Each op template in an activity can use a specific driver.  If this op field is not provided in 
+the op template, then it is set by default from the activity params. If neither is set, an error 
+is thrown.</p>
+<p>Since each op template can have a unique driver, and each activity can have multiple op 
+templates, each activity will have multiple drivers active while it is running. These drivers 
+are instanced and shared between op templates which specify the same driver by name.</p>
+<p>During activity initialization, all the drivers which are loaded by active op templates (those 
+not filtered out) are consulted for valid activity params. Only params which are valid for at least 
+one active driver will be allowed to be set on the activity. This includes <a href="https://docs.nosqlbench.io/user-guide/core-activity-params/">core activity 
+params</a>.</p>
+<h2 id="space"><em>space</em></h2>
+<ul>
+<li><em>default</em>: &quot;default&quot;</li>
+<li><em>required</em>: yes, but set by default</li>
+<li><em>dynamic</em>: yes</li>
+</ul>
+<p>The space is a named cache of driver state. For each driver, a cache of driver-specific &quot;driver 
+space&quot; objects is kept. If the value is not set in the op template, then the effect is the same 
+as all op templates sharing a single instance of a driver for a given name (Where the name is 
+the same for multiple op templates). However, if the users sets the <code>space</code> op field to 
+a binding, then the driver will be virtualized over the names provided, allowing for a given 
+driver to be effectively multi-instanced within the activity.</p>
+<p>👉 <strong>Be careful with this op field!</strong> The way it works allows for quite advanced testing 
+scenarios to be built with <em>very minimal</em> effort, compared to nearly all other approaches. 
+However, if you set this op field to a binding function which produces a high cardinality values,
+you will be asking your client to create many instances of a native driver. This is not likely 
+to end well for at least the client, and in some cases the server. This does present interesting 
+stress testing scenarios, however!</p>
+<p>When an activity is shutting down, it will automatically close out any driver spaces 
+according to their own built-in shutdown logic, but not until the activity is complete. At 
+present, there is no space cache expiry mechanism, but this can be added if someone
+needs it.</p>
+<h2 id="ratio"><em>ratio</em></h2>
+<p>An op field called <em>ratio</em> can be specified on an op template to set the number of times this op 
+will occur in the op sequence.</p>
+<p>When an activity is initialized, all the active statements are combined into a sequence based 
+on their relative ratios. By default, all op templates are initialized with a ratio of 
+1 if none is specified by the user.</p>
+<p>For example, consider the op templates below:</p>
+<pre data-lang="yaml" class="language-yaml z-code"><code class="language-yaml" data-lang="yaml"><span class="z-source z-yaml">
+<span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">ops</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">s1</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">op</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-quoted z-double z-yaml"><span class="z-punctuation z-definition z-string z-begin z-yaml">&quot;</span>select foo,bar from baz where ...<span class="z-punctuation z-definition z-string z-end z-yaml">&quot;</span></span>
+    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">ratio</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-constant z-numeric z-integer z-decimal z-yaml">1</span>
+  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">s2</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">op</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-quoted z-double z-yaml"><span class="z-punctuation z-definition z-string z-begin z-yaml">&quot;</span>select bar,baz from foo where ...<span class="z-punctuation z-definition z-string z-end z-yaml">&quot;</span></span>
+    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">ratio</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-constant z-numeric z-integer z-decimal z-yaml">2</span>
+  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">s3</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> 
+    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">op</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-quoted z-double z-yaml"><span class="z-punctuation z-definition z-string z-begin z-yaml">&quot;</span>select baz,foo from bar where ...<span class="z-punctuation z-definition z-string z-end z-yaml">&quot;</span></span>
+    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">ratio</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-constant z-numeric z-integer z-decimal z-yaml">3</span>
+</span></code></pre>
+<p>If all ops are activated (there is no tag filtering), then the activity will be initialized 
+with a sequence length of 6. In this case, the relative ratio of op &quot;s3&quot; will be 50% overall. 
+If you filtered out the first op, then the sequence would be 5 operations long. In this case, 
+the relative ratio of op &quot;s3&quot; would be 60% overall. It is important to remember that op ratios 
+are always relative to the total sum of the active ops' ratios.</p>
+<p>This op field works closely with the core activity 
+parameter <a href="../core-activity-parameters/#seq">seq</a> </p>
+<h2 id="instrument">instrument</h2>
+<p>By setting this to true, each named op template will be instrumented with a set of metrics, with 
+the metric name derived from its op name.</p>
+<p>For example, with the following workload template:</p>
+<pre data-lang="yaml" class="language-yaml z-code"><code class="language-yaml" data-lang="yaml"><span class="z-source z-yaml"><span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">ops</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+ <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">op1</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+   <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">op</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-quoted z-double z-yaml"><span class="z-punctuation z-definition z-string z-begin z-yaml">&quot;</span>example stmt1<span class="z-punctuation z-definition z-string z-end z-yaml">&quot;</span></span>
+   <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">instrument</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-constant z-language z-boolean z-yaml">true</span>
+ <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">op2</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+   <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">op</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-quoted z-double z-yaml"><span class="z-punctuation z-definition z-string z-begin z-yaml">&quot;</span>example stmt2<span class="z-punctuation z-definition z-string z-end z-yaml">&quot;</span></span>
+   <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">instrument</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-constant z-language z-boolean z-yaml">true</span>
+</span></code></pre>
+<p>With instrument <em>enabled</em> for each of these ops, six additional metrics will be created:
+four <a rel="noopener" target="_blank" href="https://metrics.dropwizard.io/4.2.0/manual/core.html#timers">timers</a> named op1-success, 
+op1-error, op2-success, and op2-error, and two
+<a rel="noopener" target="_blank" href="https://metrics.dropwizard.io/4.2.0/manual/core.html#man-core-histograms">histograms</a> named
+op1-result-size and op2-result size.</p>
+<p>This is very useful for understanding performance dynamics of individual operations. However, be 
+careful when enabling this for a large number of metrics (by setting it as a doc or block level 
+param), especially when you are running with more than 3 significant digits of HDR histogram 
+precision.</p>
+<h2 id="start-timers">start-timers</h2>
+<h2 id="stop-timers">stop-timers</h2>
+<p>This op fields allow for a timer or set of timers to be started immediately before an operation is 
+started and stopped immediately after another (or the same!) operation is completed. This allows 
+you to instrument your access patterns with arbitrary timers across any number of operations.</p>
+<p>These timers are started and stopped unconditionally, which means failed operations will be 
+included. Be sure to correlate your metrics so you know what you are truly measuring.</p>
+<p>For example:</p>
+<pre data-lang="yaml" class="language-yaml z-code"><code class="language-yaml" data-lang="yaml"><span class="z-source z-yaml"><span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">ops</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">op1</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">op</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-quoted z-double z-yaml"><span class="z-punctuation z-definition z-string z-begin z-yaml">&quot;</span>example stmt1<span class="z-punctuation z-definition z-string z-end z-yaml">&quot;</span></span>
+    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">start-timers</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-unquoted z-plain z-out z-yaml">stanza1, stanza2</span>
+  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">op2</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">op</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-quoted z-double z-yaml"><span class="z-punctuation z-definition z-string z-begin z-yaml">&quot;</span>example stmt2<span class="z-punctuation z-definition z-string z-end z-yaml">&quot;</span></span>
+    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">stop-timers</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-unquoted z-plain z-out z-yaml">stanza1</span>
+  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">op3</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">op</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-quoted z-double z-yaml"><span class="z-punctuation z-definition z-string z-begin z-yaml">&quot;</span>example stmt<span class="z-punctuation z-definition z-string z-end z-yaml">&quot;</span></span>
+    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">stop-timers</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-unquoted z-plain z-out z-yaml">stanza2</span>
+</span></code></pre>
+<p>In this case, before op1 is executed, a timer is started for stanza1 and stanza2. After op2 has 
+been executed, successful or not, the timer for stanza1 will be stopped. After 
+op3 has been executed, successful or not, the timer named stanza2 will be stopped.</p>
+<p>These are treated just like any other timers, with a single named instance per activity, thus 
+the measurements are an aggregate over all threads.</p>
+<p>👉 The instancing of these named timers is per-thread! There is no way to cross the streams, so 
+measurements are coherent within serialized operations which represent real access patterns in a 
+given application thread.</p>
+<h2 id="verifier">verifier</h2>
+<p>You can now verify results of operations using property-based assertions or result equality.
+These methods use a compiled script which has access to binding variables in the same way that
+op templates use them, as bind points like <code>... {mybinding} ...</code>. This means that you can write
+script for verification logic naturally. The verification script is parsed and compiled ahead of 
+time, with full awareness of the bindings which need to be generated before per-cycle evaluation.</p>
+<p>The verifier is implemented in groovy 4, and is thus compatible with typical Java forms. It also 
+allows for some terse and simplified views for assertion-based testing. Consult the <a rel="noopener" target="_blank" href="https://docs.groovy-lang.org/latest/html/documentation/">Groovy 
+Language Documentation</a> or 
+the <a rel="noopener" target="_blank" href="https://docs.groovy-lang.org/latest/html/api/">Groovy API docs</a> for more details on the 
+language.</p>
+<p>Within the scripting environment of verifier, the result of the last operation is accessed as the
+<code>result</code> variable. This makes assertion logic read like what it does. For example, if you want 
+to verify that the result of an operation is equal to the string &quot;this worked 42!&quot;, you can 
+specify something like this:</p>
+<pre data-lang="yaml" class="language-yaml z-code"><code class="language-yaml" data-lang="yaml"><span class="z-source z-yaml"><span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">ops</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">op1</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+     <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">stmt</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-quoted z-double z-yaml"><span class="z-punctuation z-definition z-string z-begin z-yaml">&quot;</span>this worked 42!<span class="z-constant z-character z-escape z-double-quoted z-yaml">\n</span><span class="z-punctuation z-definition z-string z-end z-yaml">&quot;</span></span>
+     <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">verifier</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-keyword z-control z-flow z-block-scalar z-literal z-yaml">|</span>
+<span class="z-string z-unquoted z-block z-yaml">      result.equals(&quot;this worked 42!\n&quot;);
+</span></span></code></pre>
+<p>The verifier allows you to use bindings in exactly the same format as your string-based op 
+templates:</p>
+<pre data-lang="yaml" class="language-yaml z-code"><code class="language-yaml" data-lang="yaml"><span class="z-source z-yaml"><span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">ops</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">op1</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">stmt</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-quoted z-double z-yaml"><span class="z-punctuation z-definition z-string z-begin z-yaml">&quot;</span>this worked {numname}!<span class="z-constant z-character z-escape z-double-quoted z-yaml">\n</span><span class="z-punctuation z-definition z-string z-end z-yaml">&quot;</span></span>
+    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">verifier</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-keyword z-control z-flow z-block-scalar z-literal z-yaml">|</span>
+<span class="z-string z-unquoted z-block z-yaml">      result.equals(&quot;this worked ${numname}!\n&quot;);
+</span>    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">bindings</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+     <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">numname</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-unquoted z-plain z-out z-yaml">NumberNameToString();</span>
+</span></code></pre>
+<p>This example doesn't do much like a real test would, since it is simply asserting that the 
+result looks the way we know it should. However, this mechanism can be used in any scenario
+where you know a property or feature of a result that you can check for to verify correctness.</p>
+<p>The verifier can be specified as a string, list, or map structure. In each case, the form is
+interpreted as a sequence of named verifiers. in the string or list forms, names are created for
+you. These names may be used in logging or other views needed to verify or troubleshoot the actual
+logic of your verifier script.</p>
+<p>When multiple verifiers are supplied, they are executed each in turn. This means that errors will 
+present distinctly when verifiers are separated for clarity.</p>
+<p>All verifier execution contexts share the same compiled script for a given verifier code body, but 
+each thread has its own instanced variable state, including results.</p>
+<h2 id="expected-result">expected-result</h2>
+<p>If you want to test with a more concise and declarative form, and your result content isn't complex,
+you can use the <code>expected-result</code> op field instead. This form allows you to prototype an object
+in declarative or literal form which can then be checked against a result using Java equals 
+semantics. For example, to verify the same result as shown with the verifier above, but in a 
+simpler form, you could do this:</p>
+<pre data-lang="yaml" class="language-yaml z-code"><code class="language-yaml" data-lang="yaml"><span class="z-source z-yaml"><span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">ops</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">op1</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">stmt</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-quoted z-double z-yaml"><span class="z-punctuation z-definition z-string z-begin z-yaml">&quot;</span>this worked {numname}!<span class="z-constant z-character z-escape z-double-quoted z-yaml">\n</span><span class="z-punctuation z-definition z-string z-end z-yaml">&quot;</span></span>
+    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">expected-result</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-quoted z-double z-yaml"><span class="z-punctuation z-definition z-string z-begin z-yaml">&quot;</span>this worked <span class="z-punctuation z-definition z-string z-end z-yaml">&quot;</span></span><span class="z-string z-unquoted z-plain z-out z-yaml">+{numname}+&quot;!\n&quot;</span>
+    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">bindings</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+     <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">numname</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-unquoted z-plain z-out z-yaml">NumberNameToString();</span>
+</span></code></pre>
+<p>Since the expected-result value is rendered by active code, you must treat it as code where the 
+bind points are simply injected variables. This form can also use container types and inline or 
+literal forms.</p>
+<h2 id="verifier-imports">verifier-imports</h2>
+<p>For the verifier capabilities explained above, you may need to import symbols from packages in
+your runtime. This allows you to do so. These imports will apply equally to any per-cycle 
+verification logic for the given op template, and only need to be specified once (per op template).</p>
+
+<p><b><a href="#">Back to top</a></b></p>
+</article>
+<div class="toc" aria-hidden="true">
+  <div class="toc-sticky">
+    <h5>Core Op Fields</h5>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/core-op-fields/#core-op-fields">Core Op Fields</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/core-op-fields/#driver"><small>- driver</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/core-op-fields/#space"><small>- space</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/core-op-fields/#ratio"><small>- ratio</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/core-op-fields/#instrument"><small>- instrument</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/core-op-fields/#start-timers"><small>- start-timers</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/core-op-fields/#stop-timers"><small>- stop-timers</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/core-op-fields/#verifier"><small>- verifier</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/core-op-fields/#expected-result"><small>- expected-result</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/core-op-fields/#verifier-imports"><small>- verifier-imports</small></a>
+    </div>
+  </div>
+</div>
+  </main>
+  <footer>
+    <hr />
+    <div class="c">
+      <nav>
+        <ul></ul>
+      </nav>
+      <p class="s90">Copyright &copy; 2023-2023 NoSQLBench Project</p>
+    </div>
+  </footer>
+</body>
+</html>

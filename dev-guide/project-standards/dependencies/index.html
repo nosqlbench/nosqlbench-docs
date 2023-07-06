@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script src="https://docs.nosqlbench.io/theme.min.js" integrity="sha384-IpIaa84kOKgkF5EJ0fD/kBe2wtIIsIB60ANGmuJxeA0dz5bSRfwBwp2/QybtQpU2"></script>
+  <link rel="stylesheet" href="https://docs.nosqlbench.io/abridge-switcher.css?h=4238d999f44a7bb130d5" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preload" as="style" class="preStyle" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" crossorigin="anonymous" />
+  <script defer src="https://docs.nosqlbench.io/search_index.en.js?h=ae47d253e455a3aaacb2" integrity="sha384-cP47owL9Iuak1e1AA21cJA4BgagQtaPwAXBQG7QgJeE2JKGgkCBROHbCj/Xym6KC"></script>
+  <script defer src="https://docs.nosqlbench.io/abridge-bundle-nofacade.min.js?h=9bcf621a2fcab7336017" integrity="sha384-u8AROOUG6n2Xjk2+7pvkkfeSIqinjI1tmqeBpZRlZtc5KFO/8DyFfEir6fAE2wcq"></script>
+  <meta name="base" content="https://docs.nosqlbench.io" />
+<meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>Dependencies | NoSQLBench Project</title>
+  <meta name="copyright" content="NoSQLBench Project" />
+  <meta name="description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <link rel="canonical" href="https://docs.nosqlbench.io/dev-guide/project-standards/dependencies/" />
+  <meta name="keywords" content="Abridge, Abridge.css, Zola, Theme, Zola Theme, getzola, Semantic Html, Fast, lightweight" />
+  <meta property="og:url" content="https://docs.nosqlbench.io/dev-guide/project-standards/dependencies/" />
+  <meta name="twitter:url" content="https://docs.nosqlbench.io/dev-guide/project-standards/dependencies/" />
+  <meta property="og:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta name="twitter:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta property="og:title" content="Dependencies | NoSQLBench Project" />
+  <meta name="twitter:title" content="Dependencies | NoSQLBench Project" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:site_name" content="NoSQLBench Project" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://docs.nosqlbench.io/site.webmanifest" />
+  <link rel="mask-icon" href="https://docs.nosqlbench.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://docs.nosqlbench.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://docs.nosqlbench.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://docs.nosqlbench.io/favicon-16x16.png" />
+  <noscript><link rel="stylesheet" href="https://docs.nosqlbench.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://docs.nosqlbench.io/"><img src="https://docs.nosqlbench.io/nb5logo.png" alt="NoSQLBench5" width="32" height="32" />NoSQLBench v5</a></h1></div><div>
+        <ul><li> <h2><a href="https://docs.nosqlbench.io/getting-started/">Getting Started</a></h2> </li><li> <h2><a href="https://docs.nosqlbench.io/release-notes/">Release Notes</a></h2> </li><li class="js"><i type="reset" id="mode" class="svgs adjust"></i></li></ul>
+      </div>
+      <div>
+        <form autocomplete=off class="js" name="goSearch" id="searchbox">
+          <div class="searchd">
+            <input id="searchinput" type="text" placeholder="Search" title="Search" />
+            <button type="submit" title="Search"><i class="svgs search"></i></button>
+          </div>
+          <div><div id="suggestions"></div></div>
+        </form>
+      </div>
+
+      <a href="http://github.com/nosqlbench/nosqlbench-build-docs" title="This doc site's project repo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="1" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+      <a href="http://nosqlbench.io" title="NoSQLBench Project Site">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+    </nav>
+    <hr /><div style="position:sticky"><span><a href="&#x2F;">NB5 Docs► </a></span><span><a href="&#x2F;dev-guide&#x2F;">Dev Guide► </a></span><span title="Standards to which the NB5 project aspires"><a href="&#x2F;dev-guide&#x2F;project-standards&#x2F;"><strong>Project Standards▼</strong> </a></span><span title="[current page]"><a href="&#x2F;dev-guide&#x2F;project-standards&#x2F;dependencies&#x2F;"><strong>Dependencies 🖺</strong></a></span>
+</div></header>
+  <main><!-- active_page: dev-guide&#x2F;project-standards&#x2F;dependencies.md -->
+<!-- active_section: dev-guide&#x2F;project-standards&#x2F;_index.md -->
+
+
+<!-- lower_root: dev-guide&#x2F;_index.md -->
+<!-- >upper_root: dev-guide&#x2F;_index.md -->
+
+<div class="toc" aria-hidden="true" id="">
+<!--  <h4>Project Standards</h4>--><div class="toc-sticky"><div class="toc-item"title="How to get started"><a href="&#x2F;dev-guide&#x2F;contributing&#x2F;">►Contributing</a></div><div class="toc-item"title="Standards to which the NB5 project aspires"><strong>▼Project Standards</strong></div><!-- subsection_page_path: &#x2F;dev-guide&#x2F;project-standards&#x2F;project-structure&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;dev-guide&#x2F;project-standards&#x2F;project-structure&#x2F;">Project Structure</a>
+    </div><!-- subsection_page_path: &#x2F;dev-guide&#x2F;project-standards&#x2F;dependencies&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;dev-guide&#x2F;project-standards&#x2F;dependencies&#x2F;"><strong>Dependencies</strong></a>
+    </div><div class="toc-item"title="How to contribute in different ways, step-by-step"><a href="&#x2F;dev-guide&#x2F;how-tos&#x2F;">►Dev How-Tos</a></div></div>
+</div>
+
+<article>
+
+  <p>With NoSQLBench 5 and newer, there are some compatibility standards that we observe for 
+dependencies. This is to ensure that various drivers and their upstream dependencies can work 
+harmoniously in one runtime.</p>
+<h2 id="java-lts">Java LTS</h2>
+<p>The latest Java LTS release should be used for every new major version. In some cases, newer Java 
+LTS releases can be pulled into a minor release after sufficient testing. </p>
+<p>The middle version number indicates the Java platform standard. For example nb5 version
+5.<strong>17</strong>.0 uses Java <strong>17</strong>, which is the latest LTS version. The NoSQLBench project will use 
+this version across the board, including JVM and language features.</p>
+<h2 id="no-shading">No Shading</h2>
+<p>Keeping the project modular and easy to build is essential. In the past, there were some driver 
+modules which would not play well together in the same runtime due to JNI or JNA level artifact 
+conflicts. Guava, for example was used variously across many drivers and was an unending source 
+of dependency conflicts. </p>
+<p>Going forward, any module or dependency which requires shading in order to work with the other 
+modules that do not will <em>not</em> be included in the project. This is a necessary minimum standard 
+to protect the sanity of the code base as well as the developers who work on it. </p>
+<h2 id="jpms-modular-jars">JPMS Modular jars</h2>
+<p>Ideally, any dependencies which are added have the necessary minimum module information to 
+function as a JPMS modular jar. This is <em>not</em> requiring the full adoption of JPMS. It is a 
+fairly minor task to make your artifacts work this way.</p>
+<h2 id="logging-subsystems">Logging Subsystems</h2>
+<p>The standard logging implementation in NoSQLBench is Log4J2. This was used because of its 
+extensive runtime configuration support. Further, API stub implementations for SLF4J and others
+are included, but only using the later (JPMS-friendly) versions. Included modules <em>should not</em> 
+implement their own logging subsystem, but instead should either use Log4J2 directly, or SLF4J 
+using a modern version.</p>
+<h2 id="dependency-management">Dependency Management</h2>
+<p>If you are building a new module, be sure you understand the project layout. Leverage the 
+existing module structure to minimize new library dependencies. If you are using a common 
+library, there is a good chance it is already available and under version management in the 
+<code>mvn-defaults/pom.xml</code> file. If it is not, then scan for the dependency and hoist it up to the 
+mvn-defaults level if that makes sense for multiple modules depending on it. </p>
+<h1 id="abandoned-code">Abandoned Code</h1>
+<p>If code is contributed which needs to be maintained by a vendor or other party, there will be an 
+expectation that the contributor is at least willing to do bug fixes or resolve other 
+user-affecting issues. If a module is considered abandoned for a significant period of time, it 
+may be removed from the project. </p>
+
+<p><b><a href="#">Back to top</a></b></p>
+</article>
+<div class="toc" aria-hidden="true">
+  <div class="toc-sticky">
+    <h5>Dependencies</h5>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/dev-guide/project-standards/dependencies/#java-lts">Java LTS</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/dev-guide/project-standards/dependencies/#no-shading">No Shading</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/dev-guide/project-standards/dependencies/#jpms-modular-jars">JPMS Modular jars</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/dev-guide/project-standards/dependencies/#logging-subsystems">Logging Subsystems</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/dev-guide/project-standards/dependencies/#dependency-management">Dependency Management</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/dev-guide/project-standards/dependencies/#abandoned-code">Abandoned Code</a>
+    </div>
+  </div>
+</div>
+  </main>
+  <footer>
+    <hr />
+    <div class="c">
+      <nav>
+        <ul></ul>
+      </nav>
+      <p class="s90">Copyright &copy; 2023-2023 NoSQLBench Project</p>
+    </div>
+  </footer>
+</body>
+</html>

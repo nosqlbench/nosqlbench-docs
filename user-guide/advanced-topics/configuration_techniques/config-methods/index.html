@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script src="https://docs.nosqlbench.io/theme.min.js" integrity="sha384-IpIaa84kOKgkF5EJ0fD/kBe2wtIIsIB60ANGmuJxeA0dz5bSRfwBwp2/QybtQpU2"></script>
+  <link rel="stylesheet" href="https://docs.nosqlbench.io/abridge-switcher.css?h=4238d999f44a7bb130d5" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preload" as="style" class="preStyle" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" crossorigin="anonymous" />
+  <script defer src="https://docs.nosqlbench.io/search_index.en.js?h=ae47d253e455a3aaacb2" integrity="sha384-cP47owL9Iuak1e1AA21cJA4BgagQtaPwAXBQG7QgJeE2JKGgkCBROHbCj/Xym6KC"></script>
+  <script defer src="https://docs.nosqlbench.io/abridge-bundle-nofacade.min.js?h=9bcf621a2fcab7336017" integrity="sha384-u8AROOUG6n2Xjk2+7pvkkfeSIqinjI1tmqeBpZRlZtc5KFO/8DyFfEir6fAE2wcq"></script>
+  <meta name="base" content="https://docs.nosqlbench.io" />
+<meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>Config Methods | NoSQLBench Project</title>
+  <meta name="copyright" content="NoSQLBench Project" />
+  <meta name="description" content="detailed explanation of all available configuration methods in nb5" />
+  <link rel="canonical" href="https://docs.nosqlbench.io/user-guide/advanced-topics/configuration_techniques/config-methods/" />
+  <meta name="keywords" content="Abridge, Abridge.css, Zola, Theme, Zola Theme, getzola, Semantic Html, Fast, lightweight" />
+  <meta property="og:url" content="https://docs.nosqlbench.io/user-guide/advanced-topics/configuration_techniques/config-methods/" />
+  <meta name="twitter:url" content="https://docs.nosqlbench.io/user-guide/advanced-topics/configuration_techniques/config-methods/" />
+  <meta property="og:description" content="detailed explanation of all available configuration methods in nb5" />
+  <meta name="twitter:description" content="detailed explanation of all available configuration methods in nb5" />
+  <meta property="og:title" content="Config Methods | NoSQLBench Project" />
+  <meta name="twitter:title" content="Config Methods | NoSQLBench Project" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:site_name" content="NoSQLBench Project" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://docs.nosqlbench.io/site.webmanifest" />
+  <link rel="mask-icon" href="https://docs.nosqlbench.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://docs.nosqlbench.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://docs.nosqlbench.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://docs.nosqlbench.io/favicon-16x16.png" />
+  <noscript><link rel="stylesheet" href="https://docs.nosqlbench.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://docs.nosqlbench.io/"><img src="https://docs.nosqlbench.io/nb5logo.png" alt="NoSQLBench5" width="32" height="32" />NoSQLBench v5</a></h1></div><div>
+        <ul><li> <h2><a href="https://docs.nosqlbench.io/getting-started/">Getting Started</a></h2> </li><li> <h2><a href="https://docs.nosqlbench.io/release-notes/">Release Notes</a></h2> </li><li class="js"><i type="reset" id="mode" class="svgs adjust"></i></li></ul>
+      </div>
+      <div>
+        <form autocomplete=off class="js" name="goSearch" id="searchbox">
+          <div class="searchd">
+            <input id="searchinput" type="text" placeholder="Search" title="Search" />
+            <button type="submit" title="Search"><i class="svgs search"></i></button>
+          </div>
+          <div><div id="suggestions"></div></div>
+        </form>
+      </div>
+
+      <a href="http://github.com/nosqlbench/nosqlbench-build-docs" title="This doc site's project repo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="1" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+      <a href="http://nosqlbench.io" title="NoSQLBench Project Site">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+    </nav>
+    <hr /><div style="position:sticky"><span><a href="&#x2F;">NB5 Docs► </a></span><span><a href="&#x2F;user-guide&#x2F;">User Guide► </a></span><span><a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;">Advanced Topics► </a></span><span title="Detailed examples of different ways to configure nb5"><a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;configuration_techniques&#x2F;"><strong>Configuration Techniques▼</strong> </a></span><span title="detailed explanation of all available configuration methods in nb5"><a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;configuration_techniques&#x2F;config-methods&#x2F;"><strong>Config Methods 🖺</strong></a></span>
+</div></header>
+  <main><!-- active_page: user-guide&#x2F;advanced-topics&#x2F;configuration_techniques&#x2F;config-methods.md -->
+<!-- active_section: user-guide&#x2F;advanced-topics&#x2F;configuration_techniques&#x2F;_index.md -->
+
+
+<!-- lower_root: user-guide&#x2F;advanced-topics&#x2F;_index.md -->
+<!-- >upper_root: user-guide&#x2F;advanced-topics&#x2F;_index.md -->
+
+<div class="toc" aria-hidden="true" id="">
+<!--  <h4>Configuration Techniques</h4>--><div class="toc-sticky"><div class="toc-item"><a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;binding-concepts&#x2F;">Binding Concepts</a></div><div class="toc-item"><a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;advanced-topics&#x2F;"title="detailed explanation of all available configuration methods in nb5">Advanced Topics</a></div><div class="toc-item"><a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;timing-terms&#x2F;">Timing Terms Explained</a></div><div class="toc-item"title="Detailed examples of different ways to configure nb5"><strong>▼Configuration Techniques</strong></div><!-- subsection_page_path: &#x2F;user-guide&#x2F;advanced-topics&#x2F;configuration_techniques&#x2F;config-methods&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;configuration_techniques&#x2F;config-methods&#x2F;"><strong>Config Methods</strong></a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;advanced-topics&#x2F;configuration_techniques&#x2F;argsfiles&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;configuration_techniques&#x2F;argsfiles&#x2F;">Args Files</a>
+    </div><div class="toc-item"title="NoSQLBench comes with a fully scriptable runtime for advanced testing scenarios"><a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;scenario-scripting&#x2F;">►Scenario Scripting</a></div><div class="toc-item"title="A deeper dive into frequent topics of discussion around scale testing."><a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;testing-at-scale&#x2F;">►Testing at Scale</a></div></div>
+</div>
+
+<article>
+
+  <p>To configure a NoSQLBench Scenario to do something useful, you have to provide parameters to it.
+This can occur in one of several ways. This section is a guide on all the ways you can 
+configure an nb5 scenario.</p>
+<p>👉 Most users will not need to understand all the ways you can parameterize nb5. If you are doing 
+lots of customization or scenario design, then the details of this section may be useful. 
+Otherwise, the examples are a better starting point, particularly the built-in scenarios. </p>
+<h1 id="global-options">Global Options</h1>
+<p>The command line is used to configure both the overall runtime (logging, etc.) and
+individual scenarios or activities. Global options can be distinguished from scenario commands and
+their parameters because global options always start with a <code>-single</code> or <code>--double-hyphen</code>.</p>
+<p>You can co-mingle global options with scenario or activity params. They will be parsed out 
+without disturbing the sequence of those other options.</p>
+<h1 id="script-params">Script Params</h1>
+<h2 id="params-object">params object</h2>
+<p>When you run a scenario script directly, like <code>nb5 script mysript.js</code> , you can provide 
+params to it, just as you can with an activity. These params are provided to the scripting 
+environment in a service object called <code>params</code>.</p>
+<h2 id="template-variables">template variables</h2>
+<p>Further, template variables are expanded in this script before evaluation just as with workload 
+templates. So, you can use <code>TEMPLATE(varname,value)</code> or <code>&lt;&lt;varname:value&gt;&gt;</code> to create textual 
+parameters which will be recognized on the command line.</p>
+<h1 id="scenario-commands">Scenario Commands</h1>
+<p>Any command line argument which is not a global option (starting with a <code>-</code> or <code>--</code>), is a 
+scenario command. These are all described in <a href="https://docs.nosqlbench.io/user-guide/cli-scripting/">CLI Scripting</a>. </p>
+<p>Most of the time, when you are running scenario commands, they are being used to start, modify, 
+or stop an activity. <strong>Scenario commands are all about managing activities.</strong> So, in practice, 
+most scenario commands are activity commands.</p>
+<h2 id="activity-params">Activity Params</h2>
+<p>When you run an activity in a scenario with <code>run</code> or <code>start</code>, every named parameter after the
+command is an activity param. <a href="https://docs.nosqlbench.io/user-guide/core-activity-params/">Core Activity Params</a> 
+allow you to initialize your workload. There are a few ways that these parameters work together.</p>
+<ul>
+<li>A default driver may be specified. This is the most common way to use nb5.</li>
+<li>A workload or op may be specified. Either will provide a (possibly empty) list of op templates.</li>
+<li>Each op template which is found will be interpreted with the selected driver, even if this is 
+a locally assigned driver in the op template itself.</li>
+<li>Each active driver, according to the active op templates, will enable new activity params 
+above and beyond the core activity params. For example, by assigning the driver <code>stdout</code> to an 
+activity or an op template directly, the param <code>filename</code> becomes available. This activity 
+param will apply <em>only</em> to those activity instances for which it is valid. The other drivers 
+will not see the parameter. In this way, a single set of activity params can be used to 
+configure multiple drivers.</li>
+<li>In special cases, when there are no op templates, and this wasn't because of tag filtering, a 
+driver may synthesize ops according to their documented behavior. The <code>stdout</code> driver does 
+this. These drivers are given a view of the raw workload template from which to build 
+fully-qualified op templates.</li>
+</ul>
+<p>👉 <strong>Depending on the driver param, additional activity params may become available.</strong></p>
+<p>👉 <strong>The driver param is actually assigned per op template.</strong></p>
+<h1 id="named-scenario-params">Named Scenario Params</h1>
+<p>It is common to use the <a href="https://docs.nosqlbench.io/workloads-101/11-named-scenarios/">Named Scenarios</a> 
+feature to 
+bundle up multiple activity workflows into a single command. When you do this, it is 
+possible to apply params on the command line to the named scenario. In effect, this means you are 
+applying a single set of parameters to possibly multiple activities, so there is a one-to-many 
+relationship.</p>
+<p>For this reason, the named scenarios have a form of parameter locking that allows you to drop 
+your param overrides from the command line into exactly the places which are intended to be 
+changeable. Double equals is a soft (quiet) lock, and triple equals is a hard (verbose) lock. 
+Any parameter provided after a workflow will replace the same named parameters in the named 
+scenario steps which are not locked.</p>
+<h1 id="op-template-fields">Op Template Fields</h1>
+<p>Activities, <em>all activities</em>, are based on a set of op templates. These are the
+<a rel="noopener" target="_blank" href="https://yaml.org/">YAML</a>, <a rel="noopener" target="_blank" href="https://www.json.org/">json</a>, <a rel="noopener" target="_blank" href="https://jsonnet.org/">jsonnet</a>, or direct 
+data structures which follow the <a href="https://docs.nosqlbench.io/reference/workload_definition/">workload definition</a>
+standard. These schematic values are provided to the selected driver to be mapped to native 
+operations.</p>
+<p>Generally, you define all the schematic values (templates, bindings, other config properties) 
+for an op template directly within the workload template. However, there are cases where it 
+makes sense to <em>also</em> allow those op fields to be initialized with the activity params.</p>
+<p>This is easy to enable for driver developers. All that is required is that the op field has a compatible 
+config model entry that matches the name and type. This also allows the driver adapter to 
+describe the parameter, indicate whether the parameter is required or has defaults.</p>
+<p>A good example of this is the <code>consistency_level</code> activity param for the cqld4 driver. If the 
+user sets this value when the cqld4 driver is active, then all op templates will take their 
+default from this.</p>
+<p>👉 <strong>Depending on the driver param, op templates will be interpreted a certain way.</strong></p>
+<h2 id="standard-activity-params">Standard Activity Params</h2>
+<p>Some parameters that can be specified for an activity are standardized in the NoSQLBench design.
+These include parameters like <code>driver</code>, <code>alias</code>, and <code>threads</code>. Find more info on standard 
+params at <a href="https://docs.nosqlbench.io/user-guide/core-activity-params/">Standard Activity Params</a>.</p>
+<h2 id="dynamic-activity-params">Dynamic Activity Params</h2>
+<p>Some driver params are instrumented in the runtime to be dynamically changed during a scenario's 
+execution. This means that a scenario script can assign a value to an activity parameter after 
+the activity is started. Further, these assignments are treated like events which force the 
+activity to observe any changes and modify its behavior in real time.</p>
+<p>This is accomplished with a two-layer <em>configuration</em> model. The initial configuration for an 
+activity is gated by a type model that knows what parameters are required, what the default 
+values are, and so on. This configuration model is an aggregate of all the active drivers in 
+an activity.</p>
+<p>A second configuration model, called the <em>reconfiguration</em> model, can expose a set of the 
+original config params for modification. In this way, driver developers can allow for a variety 
+of dynamic behaviors which allow for advanced analysis of workloads without restarts. These 
+parameters are not meant for casual use. They are generally used in advanced scripting scenarios.</p>
+<p>Parameters that are dynamic should be documented as such where they are described.</p>
+<h2 id="template-variables-1">Template Variables</h2>
+<p>If you need to provide general-purpose overrides to a in a workload template, then you
+may use a mechanism called <em>template variables</em>. These are just like activity parameters, but they
+are set via macro and can have defaults. This allows you to easily template workload properties 
+in a way that is easy to override on the command line or via scripting.</p>
+
+<p><b><a href="#">Back to top</a></b></p>
+</article>
+<div class="toc" aria-hidden="true">
+  <div class="toc-sticky">
+    <h5>Config Methods</h5>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/advanced-topics/configuration_techniques/config-methods/#global-options">Global Options</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/advanced-topics/configuration_techniques/config-methods/#script-params">Script Params</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/advanced-topics/configuration_techniques/config-methods/#params-object"><small>- params object</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/advanced-topics/configuration_techniques/config-methods/#template-variables"><small>- template variables</small></a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/advanced-topics/configuration_techniques/config-methods/#scenario-commands">Scenario Commands</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/advanced-topics/configuration_techniques/config-methods/#activity-params"><small>- Activity Params</small></a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/advanced-topics/configuration_techniques/config-methods/#named-scenario-params">Named Scenario Params</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/advanced-topics/configuration_techniques/config-methods/#op-template-fields">Op Template Fields</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/advanced-topics/configuration_techniques/config-methods/#standard-activity-params"><small>- Standard Activity Params</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/advanced-topics/configuration_techniques/config-methods/#dynamic-activity-params"><small>- Dynamic Activity Params</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/advanced-topics/configuration_techniques/config-methods/#template-variables-1"><small>- Template Variables</small></a>
+    </div>
+  </div>
+</div>
+  </main>
+  <footer>
+    <hr />
+    <div class="c">
+      <nav>
+        <ul></ul>
+      </nav>
+      <p class="s90">Copyright &copy; 2023-2023 NoSQLBench Project</p>
+    </div>
+  </footer>
+</body>
+</html>

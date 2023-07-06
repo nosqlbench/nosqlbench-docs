@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script src="https://docs.nosqlbench.io/theme.min.js" integrity="sha384-IpIaa84kOKgkF5EJ0fD/kBe2wtIIsIB60ANGmuJxeA0dz5bSRfwBwp2/QybtQpU2"></script>
+  <link rel="stylesheet" href="https://docs.nosqlbench.io/abridge-switcher.css?h=4238d999f44a7bb130d5" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preload" as="style" class="preStyle" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" crossorigin="anonymous" />
+  <script defer src="https://docs.nosqlbench.io/search_index.en.js?h=ae47d253e455a3aaacb2" integrity="sha384-cP47owL9Iuak1e1AA21cJA4BgagQtaPwAXBQG7QgJeE2JKGgkCBROHbCj/Xym6KC"></script>
+  <script defer src="https://docs.nosqlbench.io/abridge-bundle-nofacade.min.js?h=9bcf621a2fcab7336017" integrity="sha384-u8AROOUG6n2Xjk2+7pvkkfeSIqinjI1tmqeBpZRlZtc5KFO/8DyFfEir6fAE2wcq"></script>
+  <meta name="base" content="https://docs.nosqlbench.io" />
+<meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>virdata | NoSQLBench Project</title>
+  <meta name="copyright" content="NoSQLBench Project" />
+  <meta name="description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <link rel="canonical" href="https://docs.nosqlbench.io/reference/apps/virtdata/" />
+  <meta name="keywords" content="Abridge, Abridge.css, Zola, Theme, Zola Theme, getzola, Semantic Html, Fast, lightweight" />
+  <meta property="og:url" content="https://docs.nosqlbench.io/reference/apps/virtdata/" />
+  <meta name="twitter:url" content="https://docs.nosqlbench.io/reference/apps/virtdata/" />
+  <meta property="og:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta name="twitter:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta property="og:title" content="virdata | NoSQLBench Project" />
+  <meta name="twitter:title" content="virdata | NoSQLBench Project" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:site_name" content="NoSQLBench Project" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://docs.nosqlbench.io/site.webmanifest" />
+  <link rel="mask-icon" href="https://docs.nosqlbench.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://docs.nosqlbench.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://docs.nosqlbench.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://docs.nosqlbench.io/favicon-16x16.png" />
+  <noscript><link rel="stylesheet" href="https://docs.nosqlbench.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://docs.nosqlbench.io/"><img src="https://docs.nosqlbench.io/nb5logo.png" alt="NoSQLBench5" width="32" height="32" />NoSQLBench v5</a></h1></div><div>
+        <ul><li> <h2><a href="https://docs.nosqlbench.io/getting-started/">Getting Started</a></h2> </li><li> <h2><a href="https://docs.nosqlbench.io/release-notes/">Release Notes</a></h2> </li><li class="js"><i type="reset" id="mode" class="svgs adjust"></i></li></ul>
+      </div>
+      <div>
+        <form autocomplete=off class="js" name="goSearch" id="searchbox">
+          <div class="searchd">
+            <input id="searchinput" type="text" placeholder="Search" title="Search" />
+            <button type="submit" title="Search"><i class="svgs search"></i></button>
+          </div>
+          <div><div id="suggestions"></div></div>
+        </form>
+      </div>
+
+      <a href="http://github.com/nosqlbench/nosqlbench-build-docs" title="This doc site's project repo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="1" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+      <a href="http://nosqlbench.io" title="NoSQLBench Project Site">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+    </nav>
+    <hr /><div style="position:sticky"><span><a href="&#x2F;">NB5 Docs► </a></span><span><a href="&#x2F;reference&#x2F;">Reference Section► </a></span><span title="Documentation for bundled applications within NB5."><a href="&#x2F;reference&#x2F;apps&#x2F;"><strong>Bundled Apps▼</strong> </a></span><span title="[current page]"><a href="&#x2F;reference&#x2F;apps&#x2F;virtdata&#x2F;"><strong>virdata 🖺</strong></a></span>
+</div></header>
+  <main><!-- active_page: reference&#x2F;apps&#x2F;virtdata.md -->
+<!-- active_section: reference&#x2F;apps&#x2F;_index.md -->
+
+
+<!-- lower_root: reference&#x2F;_index.md -->
+<!-- >upper_root: reference&#x2F;_index.md -->
+
+<div class="toc" aria-hidden="true" id="">
+<!--  <h4>Bundled Apps</h4>--><div class="toc-sticky"><div class="toc-item"title="This section is a specification of the standard workload format."><a href="&#x2F;reference&#x2F;workload_definition&#x2F;">►Workload Specification</a></div><div class="toc-item"title="DriverAdapters allow native drivers or other logic to be plugged into the nb5 engine."><a href="&#x2F;reference&#x2F;drivers&#x2F;">►Drivers</a></div><div class="toc-item"title="Binding functions are the core of the procedural data generation capabilities of NoSQLBench. They bind generated data to operations in a determinstic way."><a href="&#x2F;reference&#x2F;bindings&#x2F;">►Binding Functions</a></div><div class="toc-item"title="Documentation for bundled applications within NB5."><strong>▼Bundled Apps</strong></div><!-- subsection_page_path: &#x2F;reference&#x2F;apps&#x2F;export-docs&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;apps&#x2F;export-docs&#x2F;">export-docs</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;apps&#x2F;cqlgen&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;apps&#x2F;cqlgen&#x2F;">cqlgen</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;apps&#x2F;virtdata&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;apps&#x2F;virtdata&#x2F;"><strong>virdata</strong></a>
+    </div><div class="toc-item"title="Version data for the bundled and imported docs content"><a href="&#x2F;reference&#x2F;versions&#x2F;">►Version Info</a></div></div>
+</div>
+
+<article>
+
+  <h1 id="virdata">virdata</h1>
+<p>NB5 contains a bundled virtdata app which lets you verify bindings from the command line.
+It is useful for sanity checking values as well as getting a concurrent performance baseline for
+specific binding recipes.</p>
+<h1 id="diagnostic-mode">diagnostic mode</h1>
+<p>The <code>diagnose</code> mode of virtdata can be used to explain binding resolution logic and potentially
+how to fix a binding that doesn't resolve properly:</p>
+<pre data-lang="shell" class="language-shell z-code"><code class="language-shell" data-lang="shell"><span class="z-text z-plain">nb5 virtdata diagnose &quot;Combinations(&#39;0-90-9&#39;); ToInt();&quot;
+</span></code></pre>
+<h1 id="perftest-mode">perftest mode</h1>
+<p>To see the options you can simply run <code>nb5 virtdata testmapper</code>, which gives you</p>
+<pre class="z-code"><code><span class="z-text z-plain">ARGS: checkperf &#39;specifier&#39; threads bufsize start end
+example: &#39;timeuuid()&#39; 100 1000 0 10000
+specifier: A VirtData function specifier.
+threads: The number of concurrent threads to run.
+bufsize: The number of cycles to give each thread at a time.
+start: The start cycle for the test, inclusive.
+end: The end cycle for the test, exclusive.
+</span></code></pre>
+<p>Assuming you have a working binding recipe that you want to measure for
+concurrent performance, you can use the form below:</p>
+<pre data-lang="shell" class="language-shell z-code"><code class="language-shell" data-lang="shell"><span class="z-text z-plain">nb5 virtdata testmapper &quot;Combinations(&#39;0-90-9&#39;); ToInt();&quot; 96 1000 0 1000000
+</span></code></pre>
+<p>Here is what happens when you run this:</p>
+<ol>
+<li>The binding is resolved.</li>
+<li>A single thread (the first thread) generates the values into a reference buffer.</li>
+<li>The specified number of threads is started, and synchronized for simultaneous start.</li>
+<li>Each thread is given successive batches of input values from the cycle rage specified, in
+chunks of bufsize each. A dot <code>.</code> is printed to the console for each completed chunk.</li>
+<li>Once all threads are complete, each checks their values against the reference buffer, and an
+exception is thrown if any difference are found. (This would mean concurrency is affecting
+the values, which is not allowed for binding functions.)</li>
+<li>After all chunks are generated and verified, statistics are displayed to the console:</li>
+</ol>
+<h2 id="output-details">output details</h2>
+<pre data-linenos data-lang="text" class="language-text z-code"><code class="language-text" data-lang="text"><table><tbody><tr><td>1</td><td><span class="z-text z-plain">         run data = [derived values in brackets]
+</td></tr><tr><td>2</td><td>        specifier = &#39;Combinations(&#39;0-90-9&#39;); ToInt();&#39;
+</td></tr><tr><td>3</td><td>          threads = 96
+</td></tr><tr><td>4</td><td>              min = 0
+</td></tr><tr><td>5</td><td>              max = 1000000
+</td></tr><tr><td>6</td><td>          [count] = 1000000
+</td></tr><tr><td>7</td><td>       buffersize = 1000
+</td></tr><tr><td>8</td><td> [totalGenTimeMs] = 2408.874399
+</td></tr><tr><td>9</td><td> [totalCmpTimeMs] = 2274.510746
+</td></tr><tr><td>10</td><td>       [genPerMs] = 39852.638
+</td></tr><tr><td>11</td><td>       [cmpPerMs] = 42206.879
+</td></tr><tr><td>12</td><td>        [genPerS] = 39852638.245
+</td></tr><tr><td>13</td><td>        [cmpPerS] = 42206879.070
+</td></tr></span></tbody></table></code></pre>
+<p>This shows that on a 12 core (24 thread) system, Around <strong>40 million</strong> variates are able to be
+generated from the above recipe (across all cores, of course).</p>
+<p>In detail:</p>
+<ul>
+<li><code>[totalGenTimeMs]</code> tracks the total time the thread pool spent generating data, in milliseconds.</li>
+<li><code>[totalCmpTimeMs]</code> tracks the total time the thread pool spent cross-checking data across threads.</li>
+<li><code>[genPerMs]</code> and <code>[cmpPerMs]</code> show the calculated rates for generation and validation <em>per
+millisecond</em>, respectively.</li>
+<li><code>[genPerS]</code> and <code>[cmpPerS]</code> show the calculated rates for generation and validation <em>per second</em>,
+respectively.</li>
+</ul>
+<h2 id="interpretation">interpretation</h2>
+<p>This example shows how effective variate generation can be. This doesn't mean that you can
+easily simulate 40 million operations with this data. However, it does <em>anecdotally</em> indicate
+the proportional load that generation puts on the system. For example, if you were generating
+around 400K ops/s from a client with only this binding, it would be reasonable that variate
+generation consumes around (400,000/40,000,000) of the system's cycles, or around 1%.</p>
+<p>More realistic testing scenarios are likely to use proportionally more due to the amount of data
+generation which is needed. Still, generating synthetic data makes for a more capable testing
+harnesses because of the extra headroom you leave in your system for other necessary work, like
+managing a driver's connection pool or serdes on requests and responses.</p>
+
+<p><b><a href="#">Back to top</a></b></p>
+</article>
+<div class="toc" aria-hidden="true">
+  <div class="toc-sticky">
+    <h5>virdata</h5>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/apps/virtdata/#virdata">virdata</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/apps/virtdata/#diagnostic-mode">diagnostic mode</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/apps/virtdata/#perftest-mode">perftest mode</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/apps/virtdata/#output-details"><small>- output details</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/apps/virtdata/#interpretation"><small>- interpretation</small></a>
+    </div>
+  </div>
+</div>
+  </main>
+  <footer>
+    <hr />
+    <div class="c">
+      <nav>
+        <ul></ul>
+      </nav>
+      <p class="s90">Copyright &copy; 2023-2023 NoSQLBench Project</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script src="https://docs.nosqlbench.io/theme.min.js" integrity="sha384-IpIaa84kOKgkF5EJ0fD/kBe2wtIIsIB60ANGmuJxeA0dz5bSRfwBwp2/QybtQpU2"></script>
+  <link rel="stylesheet" href="https://docs.nosqlbench.io/abridge-switcher.css?h=4238d999f44a7bb130d5" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preload" as="style" class="preStyle" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" crossorigin="anonymous" />
+  <script defer src="https://docs.nosqlbench.io/search_index.en.js?h=ae47d253e455a3aaacb2" integrity="sha384-cP47owL9Iuak1e1AA21cJA4BgagQtaPwAXBQG7QgJeE2JKGgkCBROHbCj/Xym6KC"></script>
+  <script defer src="https://docs.nosqlbench.io/abridge-bundle-nofacade.min.js?h=9bcf621a2fcab7336017" integrity="sha384-u8AROOUG6n2Xjk2+7pvkkfeSIqinjI1tmqeBpZRlZtc5KFO/8DyFfEir6fAE2wcq"></script>
+  <meta name="base" content="https://docs.nosqlbench.io" />
+<meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>cqlgen | NoSQLBench Project</title>
+  <meta name="copyright" content="NoSQLBench Project" />
+  <meta name="description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <link rel="canonical" href="https://docs.nosqlbench.io/reference/apps/cqlgen/" />
+  <meta name="keywords" content="Abridge, Abridge.css, Zola, Theme, Zola Theme, getzola, Semantic Html, Fast, lightweight" />
+  <meta property="og:url" content="https://docs.nosqlbench.io/reference/apps/cqlgen/" />
+  <meta name="twitter:url" content="https://docs.nosqlbench.io/reference/apps/cqlgen/" />
+  <meta property="og:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta name="twitter:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta property="og:title" content="cqlgen | NoSQLBench Project" />
+  <meta name="twitter:title" content="cqlgen | NoSQLBench Project" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:site_name" content="NoSQLBench Project" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://docs.nosqlbench.io/site.webmanifest" />
+  <link rel="mask-icon" href="https://docs.nosqlbench.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://docs.nosqlbench.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://docs.nosqlbench.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://docs.nosqlbench.io/favicon-16x16.png" />
+  <noscript><link rel="stylesheet" href="https://docs.nosqlbench.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://docs.nosqlbench.io/"><img src="https://docs.nosqlbench.io/nb5logo.png" alt="NoSQLBench5" width="32" height="32" />NoSQLBench v5</a></h1></div><div>
+        <ul><li> <h2><a href="https://docs.nosqlbench.io/getting-started/">Getting Started</a></h2> </li><li> <h2><a href="https://docs.nosqlbench.io/release-notes/">Release Notes</a></h2> </li><li class="js"><i type="reset" id="mode" class="svgs adjust"></i></li></ul>
+      </div>
+      <div>
+        <form autocomplete=off class="js" name="goSearch" id="searchbox">
+          <div class="searchd">
+            <input id="searchinput" type="text" placeholder="Search" title="Search" />
+            <button type="submit" title="Search"><i class="svgs search"></i></button>
+          </div>
+          <div><div id="suggestions"></div></div>
+        </form>
+      </div>
+
+      <a href="http://github.com/nosqlbench/nosqlbench-build-docs" title="This doc site's project repo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="1" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+      <a href="http://nosqlbench.io" title="NoSQLBench Project Site">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+    </nav>
+    <hr /><div style="position:sticky"><span><a href="&#x2F;">NB5 Docs► </a></span><span><a href="&#x2F;reference&#x2F;">Reference Section► </a></span><span title="Documentation for bundled applications within NB5."><a href="&#x2F;reference&#x2F;apps&#x2F;"><strong>Bundled Apps▼</strong> </a></span><span title="[current page]"><a href="&#x2F;reference&#x2F;apps&#x2F;cqlgen&#x2F;"><strong>cqlgen 🖺</strong></a></span>
+</div></header>
+  <main><!-- active_page: reference&#x2F;apps&#x2F;cqlgen.md -->
+<!-- active_section: reference&#x2F;apps&#x2F;_index.md -->
+
+
+<!-- lower_root: reference&#x2F;_index.md -->
+<!-- >upper_root: reference&#x2F;_index.md -->
+
+<div class="toc" aria-hidden="true" id="">
+<!--  <h4>Bundled Apps</h4>--><div class="toc-sticky"><div class="toc-item"title="This section is a specification of the standard workload format."><a href="&#x2F;reference&#x2F;workload_definition&#x2F;">►Workload Specification</a></div><div class="toc-item"title="DriverAdapters allow native drivers or other logic to be plugged into the nb5 engine."><a href="&#x2F;reference&#x2F;drivers&#x2F;">►Drivers</a></div><div class="toc-item"title="Binding functions are the core of the procedural data generation capabilities of NoSQLBench. They bind generated data to operations in a determinstic way."><a href="&#x2F;reference&#x2F;bindings&#x2F;">►Binding Functions</a></div><div class="toc-item"title="Documentation for bundled applications within NB5."><strong>▼Bundled Apps</strong></div><!-- subsection_page_path: &#x2F;reference&#x2F;apps&#x2F;export-docs&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;apps&#x2F;export-docs&#x2F;">export-docs</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;apps&#x2F;cqlgen&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;apps&#x2F;cqlgen&#x2F;"><strong>cqlgen</strong></a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;apps&#x2F;virtdata&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;apps&#x2F;virtdata&#x2F;">virdata</a>
+    </div><div class="toc-item"title="Version data for the bundled and imported docs content"><a href="&#x2F;reference&#x2F;versions&#x2F;">►Version Info</a></div></div>
+</div>
+
+<article>
+
+  <h1 id="cqlgen">cqlgen</h1>
+<p>cqlgen is a default CQL workload generator</p>
+<p>With NB5, the cqld4 driver comes with a workload generator that can be used to generate a
+workload yaml from a CQL schema file.</p>
+<p>Development on this workload generator is just starting, but it is already in a useful state.
+Eventually, workload observation and monitoring methods will be used to create workloads which
+more accurately emulate those in-situ.</p>
+<h2 id="inputs-outputs">Inputs &amp; Outputs</h2>
+<p>You need the cql schema for whatever keyspaces, types, and tables you want to include.
+Optionally, you can provide a table stats file which is generated as
+<code>nodetool tablestats &gt; tablestats</code>.</p>
+<p>Note: The table stats file provides results only for a single node. As such, you will want to
+adjust a config parameter called <code>partition_multiplier</code> to improve accuracy of the generated
+workload. Further, the file only contains traffic and data details since the last time your node
+was restarted, thus it may not be representative of the overall character of your workload and data.</p>
+<h2 id="usage">Usage</h2>
+<p>A typical cqlgen command looks like this:</p>
+<pre class="z-code"><code><span class="z-text z-plain">nb5 cqlgen myschema.cql myworkload.yaml myhistograms
+</span></code></pre>
+<ol>
+<li>The first option is simply the name of the .cql file containing your schema.</li>
+<li>The second is the name of the output yaml. The generator will <em>not</em> overwrite this file for you.</li>
+<li>The third option is an optional table stats file created with <code>nodetool tablestats &gt;tablestats</code>.
+If provided, the reads, writes, and estimated partition counts will be used to weight the
+workload to the tables and data sizes automatically.</li>
+</ol>
+<p>For now, it is almost certain that you'll need to extract the configs and tailor them as
+described below. Then, when you run <code>nb5 cqlgen ...</code> the config files in the current directory will
+be used.</p>
+<h2 id="workload-patterns">Workload Patterns</h2>
+<p>The initial version of the cql workload generator provides these defaults:</p>
+<ul>
+<li>All keyspaces, tables, or types which are provided on the input are included in the workload.</li>
+<li>All create syntax has &quot;if not exists&quot; added.</li>
+<li>All drop syntax has &quot;if exists&quot; added.</li>
+<li>All table DDL properties are ignored except for durable writes.</li>
+<li>The default replication settings are as for local testing with SimpleReplicationStrategy. For
+testing on a proper cluster with NetworkTopology or in Astra, you'll need to modify this in
+the configs explained below.</li>
+<li>All UDTs are converted to blobs. This will be replaced by a layer which understands UDTs very
+soon.</li>
+<li>Data bindings are created using the simplest possible binding recipes that work.</li>
+<li>Cardinalities on partition-specific bindings are multiplied by 10. This presumes even data
+distribution, replication factor 3, and 30 nodes. This method will be improved in the future.</li>
+<li>For the main phase, reads, writes, updates, and scans are included, 1 each.
+<ul>
+<li>reads select * from a fully qualified predicate.</li>
+<li>writes will write to all named fields.</li>
+<li>updates change all fields with a fully qualified predicate.</li>
+<li>scan-10 will read up to 10 consecutive rows from a partition with a partially qualified
+predicate. This means the last clustering column is not included in the predicates. Single
+key (1 partition component) tables do not have a scan created for them.</li>
+<li>When partition estimates are provided, all read and writes statements have predicates for
+the last partition component modified to modulo by the estimated partition cardinality.</li>
+</ul>
+</li>
+</ul>
+<h2 id="fine-tuning">Fine Tuning</h2>
+<p>The generator uses two internal files for the purposes of setting defaults:</p>
+<ul>
+<li>cqlgen.conf - a yaml formatted configuration file.</li>
+<li>cqlgen-bindings.yaml</li>
+</ul>
+<p>Both of these files will be read from the internal nb5 resources unless you pull them into the
+local directory with these commands:</p>
+<pre class="z-code"><code><span class="z-text z-plain">nb5 --copy cqlgen/cqlgen-bindings.yaml
+nb5 --copy cqlgen/cqlgen.conf
+</span></code></pre>
+<p>The details of how to customize these files are included within them. The cqlgen-bindings.yaml
+file contains default bindings by type. If you get UnresolvedBindingsException when trying to
+generate a workload, then a binding for the type in question must be added to the
+cqlgen-bindings.yaml file.</p>
+<p>The cqlgen.conf controls much of the internal wiring of the workload generator. Modifying it
+gives you the ability to enable and disable certain stages and behaviors, like:</p>
+<ul>
+<li>obfuscating all keyspace, table, and column names</li>
+<li>keyspaces to include by name</li>
+<li>tables to exclude by traffic</li>
+<li>setting the replcation fields</li>
+<li>default timeouts</li>
+<li>block naming and construction (which type of operations are included in each)</li>
+</ul>
+<p>These are mostly controlled by a series of processing phases known as transformers.
+Some transformers depend on others upstream, but if the data provided is not sufficient, they
+will silently pass-through.</p>
+<p>This is a new feature of the NoSQLBench driver. If you are an early adopter, please reach out
+with ideas, or for requests and support as needed.</p>
+
+<p><b><a href="#">Back to top</a></b></p>
+</article>
+<div class="toc" aria-hidden="true">
+  <div class="toc-sticky">
+    <h5>cqlgen</h5>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/apps/cqlgen/#cqlgen">cqlgen</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/apps/cqlgen/#inputs-outputs"><small>- Inputs &amp; Outputs</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/apps/cqlgen/#usage"><small>- Usage</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/apps/cqlgen/#workload-patterns"><small>- Workload Patterns</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/apps/cqlgen/#fine-tuning"><small>- Fine Tuning</small></a>
+    </div>
+  </div>
+</div>
+  </main>
+  <footer>
+    <hr />
+    <div class="c">
+      <nav>
+        <ul></ul>
+      </nav>
+      <p class="s90">Copyright &copy; 2023-2023 NoSQLBench Project</p>
+    </div>
+  </footer>
+</body>
+</html>

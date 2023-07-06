@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script src="https://docs.nosqlbench.io/theme.min.js" integrity="sha384-IpIaa84kOKgkF5EJ0fD/kBe2wtIIsIB60ANGmuJxeA0dz5bSRfwBwp2/QybtQpU2"></script>
+  <link rel="stylesheet" href="https://docs.nosqlbench.io/abridge-switcher.css?h=4238d999f44a7bb130d5" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preload" as="style" class="preStyle" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" crossorigin="anonymous" />
+  <link rel="preload" as="style" class="preStyle" href="https://docs.nosqlbench.io/katex.min.css" integrity="sha384-ZPe7yZ91iWxYumsBEOn7ieg8q/o+qh/hQpSaPow8T6BwALcXSCS6C6fSRPIAnTQs" />
+  <script defer src="https://docs.nosqlbench.io/search_index.en.js?h=ae47d253e455a3aaacb2" integrity="sha384-cP47owL9Iuak1e1AA21cJA4BgagQtaPwAXBQG7QgJeE2JKGgkCBROHbCj/Xym6KC"></script>
+  <script defer src="https://docs.nosqlbench.io/abridge-bundle-nofacade.min.js?h=9bcf621a2fcab7336017" integrity="sha384-u8AROOUG6n2Xjk2+7pvkkfeSIqinjI1tmqeBpZRlZtc5KFO/8DyFfEir6fAE2wcq"></script>
+  <script defer src="https://docs.nosqlbench.io/katexbundle.min.js?h=a550ba0540c37778ffcb" integrity="sha384-ddSpLWE2IN4NTX956m9zVX0cUonZmEeunMpVZPgEcwmGficsSB8WtHlbuWkGPf8d"></script>
+  <meta name="base" content="https://docs.nosqlbench.io" />
+<meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>02 Workload Template Layout | NoSQLBench Project</title>
+  <meta name="copyright" content="NoSQLBench Project" />
+  <meta name="description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <link rel="canonical" href="https://docs.nosqlbench.io/workloads-101/02-workload-template-layout/" />
+  <meta name="keywords" content="Abridge, Abridge.css, Zola, Theme, Zola Theme, getzola, Semantic Html, Fast, lightweight" />
+  <meta property="og:url" content="https://docs.nosqlbench.io/workloads-101/02-workload-template-layout/" />
+  <meta name="twitter:url" content="https://docs.nosqlbench.io/workloads-101/02-workload-template-layout/" />
+  <meta property="og:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta name="twitter:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta property="og:title" content="02 Workload Template Layout | NoSQLBench Project" />
+  <meta name="twitter:title" content="02 Workload Template Layout | NoSQLBench Project" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:site_name" content="NoSQLBench Project" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://docs.nosqlbench.io/site.webmanifest" />
+  <link rel="mask-icon" href="https://docs.nosqlbench.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://docs.nosqlbench.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://docs.nosqlbench.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://docs.nosqlbench.io/favicon-16x16.png" />
+  <noscript><link rel="stylesheet" href="https://docs.nosqlbench.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://docs.nosqlbench.io/"><img src="https://docs.nosqlbench.io/nb5logo.png" alt="NoSQLBench5" width="32" height="32" />NoSQLBench v5</a></h1></div><div>
+        <ul><li> <h2><a href="https://docs.nosqlbench.io/getting-started/">Getting Started</a></h2> </li><li> <h2><a href="https://docs.nosqlbench.io/release-notes/">Release Notes</a></h2> </li><li class="js"><i type="reset" id="mode" class="svgs adjust"></i></li></ul>
+      </div>
+      <div>
+        <form autocomplete=off class="js" name="goSearch" id="searchbox">
+          <div class="searchd">
+            <input id="searchinput" type="text" placeholder="Search" title="Search" />
+            <button type="submit" title="Search"><i class="svgs search"></i></button>
+          </div>
+          <div><div id="suggestions"></div></div>
+        </form>
+      </div>
+
+      <a href="http://github.com/nosqlbench/nosqlbench-build-docs" title="This doc site's project repo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="1" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+      <a href="http://nosqlbench.io" title="NoSQLBench Project Site">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+    </nav>
+    <hr /><div style="position:sticky"><span><a href="&#x2F;">NB5 Docs► </a></span><span title="You can build workloads to simulate real-world data and access patterns."><a href="&#x2F;workloads-101&#x2F;"><strong>Workloads 101▼</strong> </a></span><span title="[current page]"><a href="&#x2F;workloads-101&#x2F;02-workload-template-layout&#x2F;"><strong>02 Workload Template Layout 🖺</strong></a></span>
+</div></header>
+  <main><!-- active_page: workloads-101&#x2F;02-workload-template-layout.md -->
+<!-- active_section: workloads-101&#x2F;_index.md -->
+
+
+<!-- lower_root: _index.md -->
+<!-- >upper_root: _index.md -->
+
+<div class="toc" aria-hidden="true" id="">
+<!--  <h4>Workloads 101</h4>--><div class="toc-sticky"><div class="toc-item"title="Release Notes for each major and some minor releases"><a href="&#x2F;release-notes&#x2F;">►Release Notes</a></div><div class="toc-item"title="An introduction to what makes NoSQLBench Unique"><a href="&#x2F;introduction&#x2F;">►Introduction</a></div><div class="toc-item"title="Getting Started with NoSQLBench"><a href="&#x2F;getting-started&#x2F;">►Getting Started</a></div><div class="toc-item"title="You can build workloads to simulate real-world data and access patterns."><strong>▼Workloads 101</strong></div><!-- subsection_page_path: &#x2F;workloads-101&#x2F;00-designing-workloads&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;workloads-101&#x2F;00-designing-workloads&#x2F;">00 Designing Workloads</a>
+    </div><!-- subsection_page_path: &#x2F;workloads-101&#x2F;01-op-templates&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;workloads-101&#x2F;01-op-templates&#x2F;">01 Op Templates</a>
+    </div><!-- subsection_page_path: &#x2F;workloads-101&#x2F;02-workload-template-layout&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;workloads-101&#x2F;02-workload-template-layout&#x2F;"><strong>02 Workload Template Layout</strong></a>
+    </div><!-- subsection_page_path: &#x2F;workloads-101&#x2F;03-data-bindings&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;workloads-101&#x2F;03-data-bindings&#x2F;">03 Data Bindings</a>
+    </div><!-- subsection_page_path: &#x2F;workloads-101&#x2F;04-op-params&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;workloads-101&#x2F;04-op-params&#x2F;">04 Op Params</a>
+    </div><!-- subsection_page_path: &#x2F;workloads-101&#x2F;05-op-tags&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;workloads-101&#x2F;05-op-tags&#x2F;">05 Op Tags</a>
+    </div><!-- subsection_page_path: &#x2F;workloads-101&#x2F;06-op-blocks&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;workloads-101&#x2F;06-op-blocks&#x2F;">06 Op Blocks</a>
+    </div><!-- subsection_page_path: &#x2F;workloads-101&#x2F;07-more-op-templates&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;workloads-101&#x2F;07-more-op-templates&#x2F;">07 More Op Templates</a>
+    </div><!-- subsection_page_path: &#x2F;workloads-101&#x2F;08-multi-docs&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;workloads-101&#x2F;08-multi-docs&#x2F;">08 Multi-Docs</a>
+    </div><!-- subsection_page_path: &#x2F;workloads-101&#x2F;09-template-params&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;workloads-101&#x2F;09-template-params&#x2F;">09 Template Params</a>
+    </div><!-- subsection_page_path: &#x2F;workloads-101&#x2F;10-stmt-naming&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;workloads-101&#x2F;10-stmt-naming&#x2F;">10 Op Naming</a>
+    </div><!-- subsection_page_path: &#x2F;workloads-101&#x2F;11-named-scenarios&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;workloads-101&#x2F;11-named-scenarios&#x2F;">11 Named Scenarios</a>
+    </div><!-- subsection_page_path: &#x2F;workloads-101&#x2F;99-yaml-diagnostics&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;workloads-101&#x2F;99-yaml-diagnostics&#x2F;">YAML Diagnostics</a>
+    </div><div class="toc-item"title="Detailed documentation on all options and features of NoSQLBench"><a href="&#x2F;user-guide&#x2F;">►User Guide</a></div><div class="toc-item"title="The NB5 Developer Guide"><a href="&#x2F;dev-guide&#x2F;">►Dev Guide</a></div><div class="toc-item"title="Detailed reference on drivers, formats, bindings, from auto-imported docs"><a href="&#x2F;reference&#x2F;">►Reference Section</a></div></div>
+</div>
+
+<article>
+
+  <p>It is best to keep every workload templaet self-contained within a single YAML file, including 
+schema, rampup, and the main steps in your testing workflow. These steps in a typical testing 
+workflow are controlled by tags as described below.</p>
+<p>👉 The step names described below have been adopted as a convention within the built-in workloads 
+templates. It is strongly advised that new workload templates use the same naming scheme so 
+that they are easier to re-use..</p>
+<h1 id="automatic-tags">Automatic tags</h1>
+<p>To make tag filters more useful, every op template in NoSQLBench is given a set of automatic 
+tags based on the block and op template names:</p>
+<ul>
+<li>block: &lt;blockname&gt;</li>
+<li>name: &lt;blockname&gt;--&lt;op name&gt;</li>
+</ul>
+<p>For example, if you had a block named <code>block42</code> and an op named <code>op007</code>, then you would be able 
+to match it with <code>tags=block:block42</code>, or <code>tags=name:block42--op007</code>, or any regex which also 
+matched. The difference between the first example and the second is this: There is only one op 
+template which will have the name shown, but multiple statements could be in block42. <sup class="footnote-reference"><a href="#1">1</a></sup></p>
+<p>👉 In previous versions of NoSQLBench, you had to add tags directly to your docs, blocks, or op
+templates. This is still supported if you need, but most cases will only require that you group
+statements together in named blocks. When used with the regex matching pattern demonstrated
+above, you get quite a bit of flexibility without having to create boilerplate tags everywhere.</p>
+<h1 id="a-standard-workflow">A Standard Workflow</h1>
+<p>These steps are <em>very</em> commonly used by nb5 users. The standard test workflow described here is 
+understood as <a rel="noopener" target="_blank" href="https://en.wikipedia.org/wiki/Lingua_franca">lingua franca</a> for seasoned NoSQLBench 
+users.</p>
+<h2 id="schema-step">Schema step</h2>
+<p>The schema step is simply where you create the necessary schema on your target system. For CQL, 
+this generally consists of a keyspace and one ore more table statements. There is no special 
+schema layer in NoSQLBench. All statements executed are simply statements. This provides the 
+greatest flexibility in testing since every activity type is allowed to control its DDL and DML 
+using the same machinery.</p>
+<p>The schema step is normally executed with defaults for most parameters. This means that 
+operations will execute in the order specified in the workload template, serially, exactly once.
+This is a welcome side-effect of how the initial parameters like <em>cycles</em> are set from the 
+op templates which are activated by tagging.</p>
+<p>The nb5 way of selecting all op templates in a block is to use the built-in block name in a tag 
+filter, like this:</p>
+<pre data-lang="shell" class="language-shell z-code"><code class="language-shell" data-lang="shell"><span class="z-text z-plain"># select all op templates in the block named schema
+./nb5 ... tags=block:schema ...
+
+# select all op templates in all blocks that have a name matching the regex
+./nb5 ... tags=&#39;block:schema-.*&#39;
+</span></code></pre>
+<h2 id="rampup-step">Rampup step</h2>
+<p>When you run a performance test, it is very important to be aware of how much data is present.
+Higher density tests are more realistic for systems which accumulate data over time, or which 
+accumulate a larger working set every day. The amount of data on the system you are testing 
+should recreate a realistic amount of data that you would run in production.</p>
+<p>It is the purpose of the <em>rampup</em> activity is to create the backdrop data on a target system that 
+makes a
+test meaningful for some level of data density. Data density is normally discussed as average per
+node, but it is also important to consider distribution of data as it varies from the least dense to
+the most dense nodes in your target system.</p>
+<p>Because it is useful to be able to add data to a target system in an incremental way, the bindings
+which are used with a <em>rampup</em> step may actually be different from the ones used for a <em>main</em>
+step. In most cases, you want the <em>rampup</em> step to create data in a way that incrementally adds to
+the working set. This allows you to add some data to a cluster with <code>cycles=0..1M</code> and then 
+decide whether to continue adding data using the next contiguous range of cycles, with 
+<code>cycles=1M..2M</code> and so on.</p>
+<h2 id="main-step">Main step</h2>
+<p>The main step of a performance testing scenario is the one during which you really care about 
+recording the metrics. This is the actual test that everything else has prepared your system for.</p>
+<p>You will want to run your main workload for a significant amount of time. This doesn't mean a 
+<em>long</em> time, but it may. What is significant in terms of getting realistic results is a question 
+of statistical significance. If you have a very small system which you can push into 
+steady-state performance in 20 minutes, then 30 minutes may be enough testing time. However, 
+most modern systems of scale, even with a few nodes, will take longer to get reasonably accurate 
+measurements. It depends on how you are measuring.</p>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p>All block names must be unique and all op names within a block must be unique.</p>
+</div>
+
+<p><b><a href="#">Back to top</a></b></p>
+</article>
+<div class="toc" aria-hidden="true">
+  <div class="toc-sticky">
+    <h5>02 Workload Template Layout</h5>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/workloads-101/02-workload-template-layout/#automatic-tags">Automatic tags</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/workloads-101/02-workload-template-layout/#a-standard-workflow">A Standard Workflow</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/workloads-101/02-workload-template-layout/#schema-step"><small>- Schema step</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/workloads-101/02-workload-template-layout/#rampup-step"><small>- Rampup step</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/workloads-101/02-workload-template-layout/#main-step"><small>- Main step</small></a>
+    </div>
+  </div>
+</div>
+  </main>
+  <footer>
+    <hr />
+    <div class="c">
+      <nav>
+        <ul></ul>
+      </nav>
+      <p class="s90">Copyright &copy; 2023-2023 NoSQLBench Project</p>
+    </div>
+  </footer>
+</body>
+</html>

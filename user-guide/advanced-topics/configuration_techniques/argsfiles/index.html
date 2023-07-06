@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script src="https://docs.nosqlbench.io/theme.min.js" integrity="sha384-IpIaa84kOKgkF5EJ0fD/kBe2wtIIsIB60ANGmuJxeA0dz5bSRfwBwp2/QybtQpU2"></script>
+  <link rel="stylesheet" href="https://docs.nosqlbench.io/abridge-switcher.css?h=4238d999f44a7bb130d5" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preload" as="style" class="preStyle" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" crossorigin="anonymous" />
+  <script defer src="https://docs.nosqlbench.io/search_index.en.js?h=ae47d253e455a3aaacb2" integrity="sha384-cP47owL9Iuak1e1AA21cJA4BgagQtaPwAXBQG7QgJeE2JKGgkCBROHbCj/Xym6KC"></script>
+  <script defer src="https://docs.nosqlbench.io/abridge-bundle-nofacade.min.js?h=9bcf621a2fcab7336017" integrity="sha384-u8AROOUG6n2Xjk2+7pvkkfeSIqinjI1tmqeBpZRlZtc5KFO/8DyFfEir6fAE2wcq"></script>
+  <meta name="base" content="https://docs.nosqlbench.io" />
+<meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>Args Files | NoSQLBench Project</title>
+  <meta name="copyright" content="NoSQLBench Project" />
+  <meta name="description" content="There is a way to pin standard options for every nb5 run called argsfiles." />
+  <link rel="canonical" href="https://docs.nosqlbench.io/user-guide/advanced-topics/configuration_techniques/argsfiles/" />
+  <meta name="keywords" content="Abridge, Abridge.css, Zola, Theme, Zola Theme, getzola, Semantic Html, Fast, lightweight" />
+  <meta property="og:url" content="https://docs.nosqlbench.io/user-guide/advanced-topics/configuration_techniques/argsfiles/" />
+  <meta name="twitter:url" content="https://docs.nosqlbench.io/user-guide/advanced-topics/configuration_techniques/argsfiles/" />
+  <meta property="og:description" content="There is a way to pin standard options for every nb5 run called argsfiles." />
+  <meta name="twitter:description" content="There is a way to pin standard options for every nb5 run called argsfiles." />
+  <meta property="og:title" content="Args Files | NoSQLBench Project" />
+  <meta name="twitter:title" content="Args Files | NoSQLBench Project" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:site_name" content="NoSQLBench Project" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://docs.nosqlbench.io/site.webmanifest" />
+  <link rel="mask-icon" href="https://docs.nosqlbench.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://docs.nosqlbench.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://docs.nosqlbench.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://docs.nosqlbench.io/favicon-16x16.png" />
+  <noscript><link rel="stylesheet" href="https://docs.nosqlbench.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://docs.nosqlbench.io/"><img src="https://docs.nosqlbench.io/nb5logo.png" alt="NoSQLBench5" width="32" height="32" />NoSQLBench v5</a></h1></div><div>
+        <ul><li> <h2><a href="https://docs.nosqlbench.io/getting-started/">Getting Started</a></h2> </li><li> <h2><a href="https://docs.nosqlbench.io/release-notes/">Release Notes</a></h2> </li><li class="js"><i type="reset" id="mode" class="svgs adjust"></i></li></ul>
+      </div>
+      <div>
+        <form autocomplete=off class="js" name="goSearch" id="searchbox">
+          <div class="searchd">
+            <input id="searchinput" type="text" placeholder="Search" title="Search" />
+            <button type="submit" title="Search"><i class="svgs search"></i></button>
+          </div>
+          <div><div id="suggestions"></div></div>
+        </form>
+      </div>
+
+      <a href="http://github.com/nosqlbench/nosqlbench-build-docs" title="This doc site's project repo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="1" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+      <a href="http://nosqlbench.io" title="NoSQLBench Project Site">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+    </nav>
+    <hr /><div style="position:sticky"><span><a href="&#x2F;">NB5 Docs► </a></span><span><a href="&#x2F;user-guide&#x2F;">User Guide► </a></span><span><a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;">Advanced Topics► </a></span><span title="Detailed examples of different ways to configure nb5"><a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;configuration_techniques&#x2F;"><strong>Configuration Techniques▼</strong> </a></span><span title="There is a way to pin standard options for every nb5 run called argsfiles."><a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;configuration_techniques&#x2F;argsfiles&#x2F;"><strong>Args Files 🖺</strong></a></span>
+</div></header>
+  <main><!-- active_page: user-guide&#x2F;advanced-topics&#x2F;configuration_techniques&#x2F;argsfiles.md -->
+<!-- active_section: user-guide&#x2F;advanced-topics&#x2F;configuration_techniques&#x2F;_index.md -->
+
+
+<!-- lower_root: user-guide&#x2F;advanced-topics&#x2F;_index.md -->
+<!-- >upper_root: user-guide&#x2F;advanced-topics&#x2F;_index.md -->
+
+<div class="toc" aria-hidden="true" id="">
+<!--  <h4>Configuration Techniques</h4>--><div class="toc-sticky"><div class="toc-item"><a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;binding-concepts&#x2F;">Binding Concepts</a></div><div class="toc-item"><a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;advanced-topics&#x2F;"title="detailed explanation of all available configuration methods in nb5">Advanced Topics</a></div><div class="toc-item"><a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;timing-terms&#x2F;">Timing Terms Explained</a></div><div class="toc-item"title="Detailed examples of different ways to configure nb5"><strong>▼Configuration Techniques</strong></div><!-- subsection_page_path: &#x2F;user-guide&#x2F;advanced-topics&#x2F;configuration_techniques&#x2F;config-methods&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;configuration_techniques&#x2F;config-methods&#x2F;">Config Methods</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;advanced-topics&#x2F;configuration_techniques&#x2F;argsfiles&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;configuration_techniques&#x2F;argsfiles&#x2F;"><strong>Args Files</strong></a>
+    </div><div class="toc-item"title="NoSQLBench comes with a fully scriptable runtime for advanced testing scenarios"><a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;scenario-scripting&#x2F;">►Scenario Scripting</a></div><div class="toc-item"title="A deeper dive into frequent topics of discussion around scale testing."><a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;testing-at-scale&#x2F;">►Testing at Scale</a></div></div>
+</div>
+
+<article>
+
+  <p>An argsfile (Command Line Arguments File) is a simple text file which contains defaults for
+command-line arguments. You can use an args file to contain a set of global defaults that you
+want to use by default and automatically.</p>
+<p>A command, <code>--argsfile &lt;path&gt;</code> is used to specify an args file. You can use it like an instant
+import statement in the middle of a command line. There are three variants of this option.
+The <code>--argsfile &lt;path&gt;</code> variant will warn you if the file doesn't exist. If you want to load an
+argsfile if it exist, but avoid warnings if it doesn't, then use the <code>--argsfile-optional &lt;path&gt;</code>
+form. If you want to throw an error if the argsfile doesn't exist, then use
+the <code>--argsfile-required &lt;path&gt;</code> form.</p>
+<h1 id="default-argsfile">Default argsfile</h1>
+<p>The default args file location is <code>$NBSTATEDIR/argsfile</code>. After the NBSTATEDIR environment variable or default is resolved, the default argsfile will be
+searched for in that directory.</p>
+<p><code>$NBSTATEDIR</code> is a mechanism for setting and finding the local state directory for NoSQLBench. It is
+a search path, delimited by colons, and allowing Java system properties and shell environment
+variables. When the NBSTATEDIR location is first needed, the paths are checked in order, and the
+first one found is used. If one is not found on the filesystem, the first expanded value is used to
+create the state directory.</p>
+<p>If the default argsfile is is present, it is loaded by nosqlbench when it starts even if you don't
+ask it to. That is, nosqlbench behaves as if your first set of command line arguments is</p>
+<pre class="z-code"><code><span class="z-text z-plain">--argsfile-optional &quot;$NBSTATEDIR/argsfile    
+</span></code></pre>
+<p>Just as with the NBSTATEDIR location, the argsfile can also be used like a search path. That is, if
+the value provided is a colon-delimited set of possible paths, the first one found (after variable
+expansion) will be used. If needed, the first expanded path will be used to create an argsfile when
+pinning options are used.</p>
+<h1 id="args-file-format">Args file format</h1>
+<p>An args file simply contains an argument on each line, like this:</p>
+<pre class="z-code"><code><span class="z-text z-plain">--docker-metrics
+--annotate all
+--grafana-baseurl http://localhost:3000/
+</span></code></pre>
+<h1 id="pinning">Pinning</h1>
+<h2 id="pin-an-option">Pin an option</h2>
+<p>It is possible to pin an option to the default args file by use of the <code>--pin</code> meta-option. This
+option will take the following command line argument and add it to the currently active args file.
+That means, if you use <code>--pin --docker-metrics</code>, then <code>--docker-metrics</code> is added to the args file.
+If there is an exact duplicate of the same option and value, then it is skipped, but if the option
+name is the same with a different value, then it is added at the end. This allows for options which
+may be called multiple times normally.</p>
+<p>If the <code>--pin</code> option occurs after an explicit use of <code>--argsfile &lt;filename&gt;</code>, then the filename
+used in this argument is the one that is modified.</p>
+<p>After the <code>--pin</code> option, the following argument is taken as any global option (
+--with-double-dashes) and any non-option values after it which are not commands (reserved words)</p>
+<p>When the <code>--pin</code> option is used, it does not cause the pinned option to be excluded from the current
+command line call. The effects of the pinned option will take place in the current nosqlbench
+invocation just as they would without the <code>--pin</code>. However, when pinning global options when there
+are no commands on the command line, nosqlbench will not run a scenario, so this form is suitable
+for setting arguments.</p>
+<h2 id="unpin-an-option">Unpin an option</h2>
+<p>To reverse the effect of pinning an option, you simply use <code>--unpin ...</code>.</p>
+<p>The behavior of --unpin is slightly different than --pin. Specifically, an option which is unpinned
+will be removed from the arg list, and will not be used in the current invocation of nosqlbench
+after removal.</p>
+<p>Further, you can specify <code>--unpin --grafana-baseurl</code> to unpin an option which normally has an
+argument, and all instances of that argument will be removed. If you want to unpin a specific
+instance of a multi-valued option, or one that can be specified more than once with different
+parameter values, then you must provide the value as well, as
+in <code>--unpin --log-histograms 'histodata.log:.*:1m'</code></p>
+<h1 id="example">Example</h1>
+<p>To simply set global defaults, you can run nosqlbench with a command line like this:</p>
+<pre class="z-code"><code><span class="z-text z-plain">./nb --pin --docker-metrics-at metricsnode --pin --annotate all
+</span></code></pre>
+<h1 id="compatibility">Compatibility</h1>
+<p>You should use the --pin and --unpin options to make any changes to the argsfile when integrating or
+automating workflows. This ensures that any changes to file format are handled for you by nb.</p>
+
+<p><b><a href="#">Back to top</a></b></p>
+</article>
+<div class="toc" aria-hidden="true">
+  <div class="toc-sticky">
+    <h5>Args Files</h5>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/advanced-topics/configuration_techniques/argsfiles/#default-argsfile">Default argsfile</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/advanced-topics/configuration_techniques/argsfiles/#args-file-format">Args file format</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/advanced-topics/configuration_techniques/argsfiles/#pinning">Pinning</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/advanced-topics/configuration_techniques/argsfiles/#pin-an-option"><small>- Pin an option</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/advanced-topics/configuration_techniques/argsfiles/#unpin-an-option"><small>- Unpin an option</small></a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/advanced-topics/configuration_techniques/argsfiles/#example">Example</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/advanced-topics/configuration_techniques/argsfiles/#compatibility">Compatibility</a>
+    </div>
+  </div>
+</div>
+  </main>
+  <footer>
+    <hr />
+    <div class="c">
+      <nav>
+        <ul></ul>
+      </nav>
+      <p class="s90">Copyright &copy; 2023-2023 NoSQLBench Project</p>
+    </div>
+  </footer>
+</body>
+</html>

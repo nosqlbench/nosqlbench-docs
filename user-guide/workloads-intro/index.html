@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script src="https://docs.nosqlbench.io/theme.min.js" integrity="sha384-IpIaa84kOKgkF5EJ0fD/kBe2wtIIsIB60ANGmuJxeA0dz5bSRfwBwp2/QybtQpU2"></script>
+  <link rel="stylesheet" href="https://docs.nosqlbench.io/abridge-switcher.css?h=4238d999f44a7bb130d5" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preload" as="style" class="preStyle" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" crossorigin="anonymous" />
+  <script defer src="https://docs.nosqlbench.io/search_index.en.js?h=ae47d253e455a3aaacb2" integrity="sha384-cP47owL9Iuak1e1AA21cJA4BgagQtaPwAXBQG7QgJeE2JKGgkCBROHbCj/Xym6KC"></script>
+  <script defer src="https://docs.nosqlbench.io/abridge-bundle-nofacade.min.js?h=9bcf621a2fcab7336017" integrity="sha384-u8AROOUG6n2Xjk2+7pvkkfeSIqinjI1tmqeBpZRlZtc5KFO/8DyFfEir6fAE2wcq"></script>
+  <meta name="base" content="https://docs.nosqlbench.io" />
+<meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>Built-In Workloads | NoSQLBench Project</title>
+  <meta name="copyright" content="NoSQLBench Project" />
+  <meta name="description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <link rel="canonical" href="https://docs.nosqlbench.io/user-guide/workloads-intro/" />
+  <meta name="keywords" content="Abridge, Abridge.css, Zola, Theme, Zola Theme, getzola, Semantic Html, Fast, lightweight" />
+  <meta property="og:url" content="https://docs.nosqlbench.io/user-guide/workloads-intro/" />
+  <meta name="twitter:url" content="https://docs.nosqlbench.io/user-guide/workloads-intro/" />
+  <meta property="og:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta name="twitter:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta property="og:title" content="Built-In Workloads | NoSQLBench Project" />
+  <meta name="twitter:title" content="Built-In Workloads | NoSQLBench Project" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:site_name" content="NoSQLBench Project" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://docs.nosqlbench.io/site.webmanifest" />
+  <link rel="mask-icon" href="https://docs.nosqlbench.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://docs.nosqlbench.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://docs.nosqlbench.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://docs.nosqlbench.io/favicon-16x16.png" />
+  <noscript><link rel="stylesheet" href="https://docs.nosqlbench.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://docs.nosqlbench.io/"><img src="https://docs.nosqlbench.io/nb5logo.png" alt="NoSQLBench5" width="32" height="32" />NoSQLBench v5</a></h1></div><div>
+        <ul><li> <h2><a href="https://docs.nosqlbench.io/getting-started/">Getting Started</a></h2> </li><li> <h2><a href="https://docs.nosqlbench.io/release-notes/">Release Notes</a></h2> </li><li class="js"><i type="reset" id="mode" class="svgs adjust"></i></li></ul>
+      </div>
+      <div>
+        <form autocomplete=off class="js" name="goSearch" id="searchbox">
+          <div class="searchd">
+            <input id="searchinput" type="text" placeholder="Search" title="Search" />
+            <button type="submit" title="Search"><i class="svgs search"></i></button>
+          </div>
+          <div><div id="suggestions"></div></div>
+        </form>
+      </div>
+
+      <a href="http://github.com/nosqlbench/nosqlbench-build-docs" title="This doc site's project repo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="1" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+      <a href="http://nosqlbench.io" title="NoSQLBench Project Site">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+    </nav>
+    <hr /><div style="position:sticky"><span><a href="&#x2F;">NB5 Docs► </a></span><span title="Detailed documentation on all options and features of NoSQLBench"><a href="&#x2F;user-guide&#x2F;"><strong>User Guide▼</strong> </a></span><span title="[current page]"><a href="&#x2F;user-guide&#x2F;workloads-intro&#x2F;"><strong>Built-In Workloads 🖺</strong></a></span>
+</div></header>
+  <main><!-- active_page: user-guide&#x2F;workloads-intro.md -->
+<!-- active_section: user-guide&#x2F;_index.md -->
+
+
+<!-- lower_root: _index.md -->
+<!-- >upper_root: _index.md -->
+
+<div class="toc" aria-hidden="true" id="">
+<!--  <h4>User Guide</h4>--><div class="toc-sticky"><div class="toc-item"title="Release Notes for each major and some minor releases"><a href="&#x2F;release-notes&#x2F;">►Release Notes</a></div><div class="toc-item"title="An introduction to what makes NoSQLBench Unique"><a href="&#x2F;introduction&#x2F;">►Introduction</a></div><div class="toc-item"title="Getting Started with NoSQLBench"><a href="&#x2F;getting-started&#x2F;">►Getting Started</a></div><div class="toc-item"title="You can build workloads to simulate real-world data and access patterns."><a href="&#x2F;workloads-101&#x2F;">►Workloads 101</a></div><div class="toc-item"title="Detailed documentation on all options and features of NoSQLBench"><strong>▼User Guide</strong></div><!-- subsection_page_path: &#x2F;user-guide&#x2F;cli-options&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;cli-options&#x2F;">CLI Options</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;ssl-options&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;ssl-options&#x2F;">Standard SSL Options</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;cli-scripting&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;cli-scripting&#x2F;">CLI Scripting</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;op-templates&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;op-templates&#x2F;">Op Templates</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;core-op-fields&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;core-op-fields&#x2F;">Core Op Fields</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;core-activity-params&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;core-activity-params&#x2F;">Core Activity Params</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;error-handlers&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;error-handlers&#x2F;">Error Handlers</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;standard-metrics&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;standard-metrics&#x2F;">Standard Metrics</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;metrics-options&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;metrics-options&#x2F;">Metrics Options</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;grafana-metrics&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;grafana-metrics&#x2F;">Built-In Grafana Dashboard</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;workloads-intro&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;workloads-intro&#x2F;"><strong>Built-In Workloads</strong></a>
+    </div><!-- subsubsection_path: user-guide&#x2F;advanced-topics&#x2F;_index.md --><div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;"title="Detailed documentation on all options and features of NoSQLBench">‣ Advanced Topics</a>
+    </div><div class="toc-item"title="The NB5 Developer Guide"><a href="&#x2F;dev-guide&#x2F;">►Dev Guide</a></div><div class="toc-item"title="Detailed reference on drivers, formats, bindings, from auto-imported docs"><a href="&#x2F;reference&#x2F;">►Reference Section</a></div></div>
+</div>
+
+<article>
+
+  <p>There are a few built-in workloads which you may want to run. These can be run from a command
+without having to configure anything, or they can be tailored with their built-in parameters.</p>
+<h2 id="finding-workloads">Finding Workloads</h2>
+<p>To find the build-in scenarios, ask NoSQLBench like this:</p>
+<pre class="z-code"><code><span class="z-text z-plain">nb5 --list-workloads
+</span></code></pre>
+<p>This specifically lists the workloads which provide named scenarios. Only named scenarios are
+included. Workloads are contained in yaml files. If a yaml file is in the standard path and contains
+a root <code>scenarios</code> element, then it is included in the listing above.</p>
+<p>Each of these scenarios has a set of parameters which can be changed on the command line.</p>
+<h2 id="running-workloads">Running Workloads</h2>
+<p>You can run them directly, by name with <code>nb5 &lt;workload&gt; [&lt;scenario&gt;] [&lt;params&gt;...]</code>. If not provided,
+scenario is assumed to be <code>default</code>.</p>
+<p>For example, the <code>cql-iot</code> workload is listed with the above command, and can be executed like this:</p>
+<pre class="z-code"><code><span class="z-text z-plain"># put your normal extra params in ... below, like hosts, for example
+nb5 cql-iot default ...
+
+# OR, with scenario name default
+nb5 cql-iot ...
+</span></code></pre>
+<p>You can add any parameters to the end, and these parameters will be passed automatically to each
+stage of the scenario as needed. Within the scenario, designers have the ability to lock parameters
+so that overrides are used appropriately.</p>
+<h2 id="conventions">Conventions</h2>
+<p>The built-in workloads follow a set of conventions so that they can be used interchangeably. This is
+more for users who are using the stages of these workloads directly, or for users who are designing
+new scenarios to be included in the built-ins.</p>
+<h3 id="phases">Phases</h3>
+<p>Each built-in contains the following tags that can be used to break the workload up into uniform
+steps:</p>
+<ul>
+<li>schema - selected with <code>tags=block:schema</code></li>
+<li>rampup - selected with <code>tags=block:rampup</code></li>
+<li>main - selected with <code>tags=block:main</code></li>
+</ul>
+<h3 id="parameters">Parameters</h3>
+<p>Each built-in has a set of adjustable parameters which is documented below per workload. For
+example, the cql-iot workload has a <code>sources</code> parameter which determines the number of unique
+devices in the dataset.</p>
+<h2 id="adding-workloads">Adding Workloads</h2>
+<p>If you want to add your own workload to NoSQLBench, or request a specific type of workload, please
+<a rel="noopener" target="_blank" href="https://github.com/nosqlbench/nosqlbench/issues">Request a workload</a> or
+<a rel="noopener" target="_blank" href="https://github.com/nosqlbench/nosqlbench/pulls">Submit a pull request</a>.</p>
+
+</article>
+<div class="toc" aria-hidden="true">
+  <div class="toc-sticky">
+    <h5>Built-In Workloads</h5>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/workloads-intro/#finding-workloads">Finding Workloads</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/workloads-intro/#running-workloads">Running Workloads</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/workloads-intro/#conventions">Conventions</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/workloads-intro/#phases"><small>- Phases</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/workloads-intro/#parameters"><small>- Parameters</small></a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/workloads-intro/#adding-workloads">Adding Workloads</a>
+    </div>
+  </div>
+</div>
+  </main>
+  <footer>
+    <hr />
+    <div class="c">
+      <nav>
+        <ul></ul>
+      </nav>
+      <p class="s90">Copyright &copy; 2023-2023 NoSQLBench Project</p>
+    </div>
+  </footer>
+</body>
+</html>

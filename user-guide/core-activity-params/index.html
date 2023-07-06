@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script src="https://docs.nosqlbench.io/theme.min.js" integrity="sha384-IpIaa84kOKgkF5EJ0fD/kBe2wtIIsIB60ANGmuJxeA0dz5bSRfwBwp2/QybtQpU2"></script>
+  <link rel="stylesheet" href="https://docs.nosqlbench.io/abridge-switcher.css?h=4238d999f44a7bb130d5" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preload" as="style" class="preStyle" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" crossorigin="anonymous" />
+  <link rel="preload" as="style" class="preStyle" href="https://docs.nosqlbench.io/katex.min.css" integrity="sha384-ZPe7yZ91iWxYumsBEOn7ieg8q/o+qh/hQpSaPow8T6BwALcXSCS6C6fSRPIAnTQs" />
+  <script defer src="https://docs.nosqlbench.io/search_index.en.js?h=ae47d253e455a3aaacb2" integrity="sha384-cP47owL9Iuak1e1AA21cJA4BgagQtaPwAXBQG7QgJeE2JKGgkCBROHbCj/Xym6KC"></script>
+  <script defer src="https://docs.nosqlbench.io/abridge-bundle-nofacade.min.js?h=9bcf621a2fcab7336017" integrity="sha384-u8AROOUG6n2Xjk2+7pvkkfeSIqinjI1tmqeBpZRlZtc5KFO/8DyFfEir6fAE2wcq"></script>
+  <script defer src="https://docs.nosqlbench.io/katexbundle.min.js?h=a550ba0540c37778ffcb" integrity="sha384-ddSpLWE2IN4NTX956m9zVX0cUonZmEeunMpVZPgEcwmGficsSB8WtHlbuWkGPf8d"></script>
+  <meta name="base" content="https://docs.nosqlbench.io" />
+<meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>Core Activity Params | NoSQLBench Project</title>
+  <meta name="copyright" content="NoSQLBench Project" />
+  <meta name="description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <link rel="canonical" href="https://docs.nosqlbench.io/user-guide/core-activity-params/" />
+  <meta name="keywords" content="Abridge, Abridge.css, Zola, Theme, Zola Theme, getzola, Semantic Html, Fast, lightweight" />
+  <meta property="og:url" content="https://docs.nosqlbench.io/user-guide/core-activity-params/" />
+  <meta name="twitter:url" content="https://docs.nosqlbench.io/user-guide/core-activity-params/" />
+  <meta property="og:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta name="twitter:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta property="og:title" content="Core Activity Params | NoSQLBench Project" />
+  <meta name="twitter:title" content="Core Activity Params | NoSQLBench Project" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:site_name" content="NoSQLBench Project" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://docs.nosqlbench.io/site.webmanifest" />
+  <link rel="mask-icon" href="https://docs.nosqlbench.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://docs.nosqlbench.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://docs.nosqlbench.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://docs.nosqlbench.io/favicon-16x16.png" />
+  <noscript><link rel="stylesheet" href="https://docs.nosqlbench.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://docs.nosqlbench.io/"><img src="https://docs.nosqlbench.io/nb5logo.png" alt="NoSQLBench5" width="32" height="32" />NoSQLBench v5</a></h1></div><div>
+        <ul><li> <h2><a href="https://docs.nosqlbench.io/getting-started/">Getting Started</a></h2> </li><li> <h2><a href="https://docs.nosqlbench.io/release-notes/">Release Notes</a></h2> </li><li class="js"><i type="reset" id="mode" class="svgs adjust"></i></li></ul>
+      </div>
+      <div>
+        <form autocomplete=off class="js" name="goSearch" id="searchbox">
+          <div class="searchd">
+            <input id="searchinput" type="text" placeholder="Search" title="Search" />
+            <button type="submit" title="Search"><i class="svgs search"></i></button>
+          </div>
+          <div><div id="suggestions"></div></div>
+        </form>
+      </div>
+
+      <a href="http://github.com/nosqlbench/nosqlbench-build-docs" title="This doc site's project repo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="1" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+      <a href="http://nosqlbench.io" title="NoSQLBench Project Site">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+    </nav>
+    <hr /><div style="position:sticky"><span><a href="&#x2F;">NB5 Docs► </a></span><span title="Detailed documentation on all options and features of NoSQLBench"><a href="&#x2F;user-guide&#x2F;"><strong>User Guide▼</strong> </a></span><span title="[current page]"><a href="&#x2F;user-guide&#x2F;core-activity-params&#x2F;"><strong>Core Activity Params 🖺</strong></a></span>
+</div></header>
+  <main><!-- active_page: user-guide&#x2F;core-activity-params.md -->
+<!-- active_section: user-guide&#x2F;_index.md -->
+
+
+<!-- lower_root: _index.md -->
+<!-- >upper_root: _index.md -->
+
+<div class="toc" aria-hidden="true" id="">
+<!--  <h4>User Guide</h4>--><div class="toc-sticky"><div class="toc-item"title="Release Notes for each major and some minor releases"><a href="&#x2F;release-notes&#x2F;">►Release Notes</a></div><div class="toc-item"title="An introduction to what makes NoSQLBench Unique"><a href="&#x2F;introduction&#x2F;">►Introduction</a></div><div class="toc-item"title="Getting Started with NoSQLBench"><a href="&#x2F;getting-started&#x2F;">►Getting Started</a></div><div class="toc-item"title="You can build workloads to simulate real-world data and access patterns."><a href="&#x2F;workloads-101&#x2F;">►Workloads 101</a></div><div class="toc-item"title="Detailed documentation on all options and features of NoSQLBench"><strong>▼User Guide</strong></div><!-- subsection_page_path: &#x2F;user-guide&#x2F;cli-options&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;cli-options&#x2F;">CLI Options</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;ssl-options&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;ssl-options&#x2F;">Standard SSL Options</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;cli-scripting&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;cli-scripting&#x2F;">CLI Scripting</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;op-templates&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;op-templates&#x2F;">Op Templates</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;core-op-fields&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;core-op-fields&#x2F;">Core Op Fields</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;core-activity-params&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;core-activity-params&#x2F;"><strong>Core Activity Params</strong></a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;error-handlers&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;error-handlers&#x2F;">Error Handlers</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;standard-metrics&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;standard-metrics&#x2F;">Standard Metrics</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;metrics-options&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;metrics-options&#x2F;">Metrics Options</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;grafana-metrics&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;grafana-metrics&#x2F;">Built-In Grafana Dashboard</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;workloads-intro&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;workloads-intro&#x2F;">Built-In Workloads</a>
+    </div><!-- subsubsection_path: user-guide&#x2F;advanced-topics&#x2F;_index.md --><div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;"title="Detailed documentation on all options and features of NoSQLBench">‣ Advanced Topics</a>
+    </div><div class="toc-item"title="The NB5 Developer Guide"><a href="&#x2F;dev-guide&#x2F;">►Dev Guide</a></div><div class="toc-item"title="Detailed reference on drivers, formats, bindings, from auto-imported docs"><a href="&#x2F;reference&#x2F;">►Reference Section</a></div></div>
+</div>
+
+<article>
+
+  <p>Activity parameters are passed as named arguments for an activity, either on the command line
+or from a scenario script. On the command line, these take the form of</p>
+<pre class="z-code"><code><span class="z-text z-plain">... &lt;param&gt;=&lt;value&gt; ...
+</span></code></pre>
+<p>Some activity parameters are universal in that they can be used with any driver type. These
+parameters are called <em>core</em> activity params. Only core activity parameters are documented here.
+When starting out, you want to familiarize yourself with these parameters.</p>
+<p>👉 To see what activity parameters are valid for a given driver, see the documentation for that
+driver with <code>nb5 help &lt;driver&gt;</code>. Each driver comes with documentation that describes what how
+to configure it with additional driver params as well as what op template forms it can understand.</p>
+<h1 id="essential">Essential</h1>
+<p>The activity params described in this section are those which you will use almost all the time 
+when configuring activities.</p>
+<p>👉 If you aren't using one of these options with a <code>run</code> or <code>start</code> 
+command, or otherwise in your named scenarios, double check that you aren't missing something 
+important.</p>
+<h2 id="driver">driver</h2>
+<ul>
+<li><code>driver=&lt;driver&gt;</code></li>
+<li><em>default</em>: unset</li>
+<li><em>required</em>: no</li>
+<li><em>dynamic</em>: no</li>
+</ul>
+<p>Every activity can have a default driver. If provided, it will be used for any op template which 
+does not have one directly assigned in the workload template. For each op template in the 
+workload, if no driver is set, an error is thrown.</p>
+<p>As each activity can have multiple op templates, and each op template can have its own driver, 
+the available activity params for a workload are determined by the superset of valid params for 
+all active drivers.</p>
+<p>You can find out what drivers are available in nb5 with the <code>--list-drivers</code> option from 
+<a href="https://docs.nosqlbench.io/user-guide/cli-options/#discovery-options">discovery options</a>. You can then get details on 
+what each of these drivers allow with <code>nb5 help &lt;driver&gt;</code>.</p>
+<p>The driver selection for an op template determines the valid constructions for the op template. 
+For example:</p>
+<pre data-lang="yaml" class="language-yaml z-code"><code class="language-yaml" data-lang="yaml"><span class="z-source z-yaml"><span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> file test.yaml
+</span><span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">ops</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+ <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">op1</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">op</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+   <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">driver</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-unquoted z-plain z-out z-yaml">stdout</span>
+   <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">stmt</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-quoted z-double z-yaml"><span class="z-punctuation z-definition z-string z-begin z-yaml">&quot;</span>example {{Identity()}}<span class="z-punctuation z-definition z-string z-end z-yaml">&quot;</span></span>
+</span></code></pre>
+<p>If an activity were started up which references this file as <code>workload=test.yaml</code>, then all 
+the activity params recognized by the stdout driver would be valid, in addition to the core 
+activity params documented in this section.</p>
+<p><em>examples</em></p>
+<ul>
+<li><code>driver=stdout</code> - set the default driver to <code>stdout</code></li>
+</ul>
+<h2 id="workload-op">workload | op</h2>
+<p>The workload param tells an activity where to load its op template from. This can be a 
+<a rel="noopener" target="_blank" href="https://yaml.org/">YAML</a> file, a <a rel="noopener" target="_blank" href="https://json.org/">JSON</a> file, 
+a <a rel="noopener" target="_blank" href="https://jsonnet.org/">Jsonnet</a> file, a URL, or an Amazon S3 URL, assuming you have locally 
+configured authentication.</p>
+<p>If the file is a JSON or YAML file, it will be loaded as is, with any template variables 
+expanded before structural parsing.</p>
+<p>If the file is a Jsonnet file (by extension), then a local jsonnet interpreter will be run 
+against it before being handled as above. Within this evaluation context, all provided activity 
+parameters are available as external variables and accessible via the standard Jsonnet APIs, 
+specifially <a rel="noopener" target="_blank" href="https://jsonnet.org/ref/stdlib.html#extVar">std.extVar(str)</a>. For doing robust data 
+type conversion, use <a rel="noopener" target="_blank" href="https://jsonnet.org/ref/stdlib.html#parseJson">std.parseJson(str)</a> by default.</p>
+<p>URLs are supported as well, with the above expansion rules, based on the path name (extension) of 
+the resource.</p>
+<p>When the <code>op</code> param is provided, then the contents of this are taken as an op template which 
+consists of a string template only. This is equivalent to providing a workload which contains a 
+single op with a single op field named <code>stmt</code>.</p>
+<h2 id="tags">tags</h2>
+<ul>
+<li><code>tags=&lt;filterspec&gt;</code></li>
+<li><em>default</em>: unset</li>
+<li><em>required</em>: no</li>
+<li><em>dynamic</em> : no</li>
+</ul>
+<p>Tags are used to filter the set of op templates presented for sequencing in an activity. Each op 
+template has a set of tags, which include two auto-tags that are provided by the runtime:</p>
+<ul>
+<li><code>block</code> - the block name that contains the op template. All op templates are part of some 
+block, even if they are configured at the root of a document. There is a virtual block named 
+<code>block0</code> which all of the root-level op templates are assigned to.</li>
+<li><code>name</code> - a unique name for the op template within the workload template. This is a 
+concatenation of the block name, two dashes (--) and the base op template name. For example, 
+an op in <code>block0</code> with a base name of <code>opexample2</code> would be <code>block0--opexample2</code>. This allows for 
+regex matching that can be globally distinct within a workload.</li>
+</ul>
+<p>The rules for tag filtering are explained in depth in the <a href="https://docs.nosqlbench.io/workloads-101/05-op-tags/">Op Tags</a> 
+of the <a href="https://docs.nosqlbench.io/workloads-101/">Workloads 101</a> tutorial.</p>
+<h2 id="threads">threads</h2>
+<ul>
+<li><code>threads=&lt;threads&gt;</code></li>
+<li><em>default</em>: 1</li>
+<li><em>required</em>: no</li>
+<li><em>dynamic</em>: yes</li>
+</ul>
+<p>You should set the <em>threads</em> parameter when you need to ramp up a workload.</p>
+<p>This controls how many threads will be started up for an activity to run its cycles with.</p>
+<p><em>default value</em> : For now, the default is simply <em>1</em>. Users must be aware of this setting and
+adjust it to a reasonable value for their workloads.</p>
+<p><code>threads=auto</code> : Set the number of threads to 10x the number of cores in your system. There is
+no distinction here between full cores and hardware threads. This is generally a reasonable
+number of threads to tap into the processing power of a client system.</p>
+<p><code>threads=__x</code> : When you set <code>threads=5x</code> or <code>threads=10x</code>, you will
+Set the number of threads to some multiplier of the logical CPUs in the local system.</p>
+<p>A good rule of thumb for setting threads for maximum effect is to set it relatively high, such
+as 10XvCPU when running synchronous workloads (when not providing the async parameter), and to
+5XvCPU for all async workloads. Variation in system dynamics make it difficult to peg an ideal
+number, so experimentation is encouraged while you dial in your settings initially.</p>
+<p><em>examples</em></p>
+<ul>
+<li><code>threads=30x</code> - set the number of threads in an activity to $30 * cores$.</li>
+<li><code>threads=auto</code> - set the number of threads in an activity to $10 * cores$.</li>
+<li><code>threads=10</code> - set the number of threads in an activity to $10$.</li>
+</ul>
+<h2 id="cycles">cycles</h2>
+<ul>
+<li><code>cycles=&lt;cycle count&gt;</code></li>
+<li><code>cycles=&lt;cycle min&gt;..&lt;cycle max&gt;</code></li>
+<li><em>default</em>: 1</li>
+<li><em>required</em>: no</li>
+<li><em>dynamic</em>: no</li>
+</ul>
+<p>The cycles parameter determines the starting and ending point for an activity. It determines
+the range of values which will act as seed values for each operation. For each cycle of the
+activity, a statement is built from a statement template and executed as an operation.</p>
+<p>For each cycle in an activity, the cycle is used as the input to the binding functions. This
+allows you to create numerical relationships between all of the data used in your activity.</p>
+<p>If you do not set the cycles parameter, then it will automatically be set to the size of the
+sequence. The sequence is simply the length of the op sequence that is constructed from the
+active op templates and ratios in your activity.</p>
+<p>You <em>should</em> set the cycles for every activity except for schema-like activities, or activities
+which you run just as a sanity check of active statements.</p>
+<p>In the <code>cycles=&lt;cycle count&gt;</code> version, the count indicates the total number of cycles, and is
+equivalent to <code>cycles=0..&lt;cycle max&gt;</code>. In both cases, the max value is not the actual number
+of the last cycle. This is because all cycle parameters define a closed-open interval. In other
+words, the minimum value is either zero by default or the specified minimum value, but the
+maximum value is the first value <em>not</em> included in the interval. This means that you can easily
+stack intervals over subsequent runs while knowing that you will cover all logical cycles
+without gaps or duplicates. For example, given <code>cycles=1000</code> and then <code>cycles=1000..2000</code>, and
+then <code>cycles=2000..5K</code>, you know that all cycles between 0 (inclusive) and 5000 (exclusive)
+have been specified.</p>
+<p><em>examples</em></p>
+<ul>
+<li><code>cycles=500</code> - run an activity over cycles $[0,500)$, including $0$ and $499$, but not $500$.</li>
+<li><code>cycles=20M</code> - run an activity over cycles $[0,20000000)$.</li>
+<li><code>cycles=2k..3k</code> - run an activity over cycles $[2000,3000)$.</li>
+</ul>
+<h2 id="errors">errors</h2>
+<ul>
+<li><code>errors=&lt;error-handler-spec&gt;</code></li>
+<li><em>default</em>: <code>errors=stop</code></li>
+<li><em>required</em>: no</li>
+<li><em>dynamic</em>: no</li>
+</ul>
+<p>This activity param allows you to specify what happens when an exception is thrown during 
+execution of an operation (within a cycle). You can configure any named exception to be handled 
+with any of the available handler verbs in the order your choosing.</p>
+<p>👉 By default, any single error in any operation will cause your test to stop. This is not 
+generally what you want to do for significant test scenarios.</p>
+<p>You generally want to configure this so that you can run an activity as long as needed without a 
+single error stopping the whole thing. However, it is important for users to know exactly how 
+this is configured, so it is up to the user to set this appropriately.</p>
+<p>The detailed configuration of error handlers is covered in
+<a href="https://docs.nosqlbench.io/user-guide/error-handlers/">error handlers</a></p>
+<h1 id="diagnostic">Diagnostic</h1>
+<p>These params allow you to see more closely how an activity works for the purpose of 
+troubleshooting or test verification.</p>
+<h2 id="dryrun">dryrun</h2>
+<ul>
+<li><code>dryrun=&lt;stepname&gt;</code></li>
+<li><em>default</em>: unset</li>
+<li><em>required</em>: no</li>
+<li><em>dynamic</em>: no</li>
+</ul>
+<p>This option is checked at various stages of activity initialization in order to modify the 
+way an activity runs. Some of the dryrun options stop an activity and dump out a summary of some 
+specific step. Others wrap normal mechanisms in a 
+<a rel="noopener" target="_blank" href="https://en.wikipedia.org/wiki/NOP_(code)">noop</a> in order to exercise other parts of the 
+machinery at full speed.</p>
+<p><em>examples</em></p>
+<ul>
+<li><code>dryrun=jsonnet</code> - When rendering a jsonnet workload, dump the result to the console and exit.</li>
+<li><code>dryrun=op</code> - Wrap the operation in a noop, to measure core nb5 execution speed without 
+invoking operations.</li>
+</ul>
+<h1 id="metrics">Metrics</h1>
+<h2 id="alias">alias</h2>
+<ul>
+<li><code>alias=&lt;alias&gt;</code></li>
+<li><em>default</em>: inferred from yaml, or 'UNSET'</li>
+<li><em>required</em>: no</li>
+<li><em>dynamic</em>: no</li>
+</ul>
+<p>You <em>should</em> set the <em>alias</em> parameter when you have multiple activities, when you want to name
+metrics per-activity, or when you want to control activities via scripting.</p>
+<p>Each activity can be given a symbolic name known as an <em>alias</em>. It is good practice to give all
+your activities an alias, since this determines the named used in logging, metrics, and even
+scripting control.</p>
+<p><em>default value</em> : The name of any provided YAML filename is used as the basis for the default
+alias. Otherwise, the activity type name is used. This is a convenience for simple test
+scenarios only.</p>
+<p>If you are using the <code>--docker-metrics</code> option, then you may want to ensure that you are either
+using named scenarios or setting your activity to use the same alias expansion pattern that it
+does: <em>WORKLOAD_SCENARIO_STEP</em>. These values are not interpolated for you at this time.</p>
+<p><em>examples</em></p>
+<ul>
+<li><code>alias=mytest2</code> - set the activity alias to <code>mystest2</code></li>
+<li><code>alias=workload42_scenario20230101_step5</code> - conform to the current --docker-metrics expansion
+template</li>
+</ul>
+<h2 id="instrument">instrument</h2>
+<ul>
+<li><code>instrument=true</code></li>
+<li><em>default</em>: false</li>
+<li>_required: no</li>
+<li><em>dynamic</em>: no</li>
+</ul>
+<p>This activity param allows you to set the default value for the 
+<a href="https://docs.nosqlbench.io/user-guide/core-op-fields/">instrument</a> op field.</p>
+<h2 id="hdr-digits">hdr_digits</h2>
+<ul>
+<li><code>hdr_digits=3</code></li>
+<li><em>default</em>: <code>4</code></li>
+<li><em>required</em>: no</li>
+<li><em>dynamic</em>: no</li>
+</ul>
+<p>This parameter determines the number of significant digits used in all HDR
+histograms for metrics collected from this activity. The default of 4
+allows 4 significant digits, which means <em>up to</em> 10000 distinct histogram
+buckets per named metric, per histogram interval. This does not mean that
+there <em>will be</em> 10000 distinct buckets, but it means there could be if
+there is significant volume and variety in the measurements.</p>
+<p>If you are running a scenario that creates many activities, then you can
+set <code>hdr_digits=1</code> on some of them to save client resources.</p>
+<h1 id="customization">Customization</h1>
+<h2 id="cyclerate">cyclerate</h2>
+<ul>
+<li><code>cyclerate=&lt;cycle_per_second&gt;</code></li>
+<li><code>cyclerate=&lt;cycles_per_second&gt;,&lt;burst_ratio&gt;</code></li>
+<li><em>default</em>: unset</li>
+<li><em>required</em>: no</li>
+<li><em>dynamic</em>: yes</li>
+</ul>
+<p>The cyclerate parameter sets a maximum op rate for individual cycles within the activity, 
+across the whole activity, irrespective of how many threads are active.</p>
+<p>👉 The cyclerate is a rate limiter, and can thus only throttle an activity to be slower than it 
+would otherwise run. Rate limiting is also an invasive element in a workload, and will always 
+come at a cost. For extremely high throughput testing, consider carefully whether your testing 
+would benefit more from concurrency-based throttling such as adjust the number of threads.</p>
+<p>When the cyclerate parameter is provided, two additional metrics are tracked: the wait time and 
+the response time. See <a href="/timing_terms">Timing Terms Explained</a> for more details.</p>
+<p>When you try to set very high cyclerate values on systems with many cores, the performance will 
+degrade. Be sure to use dryrun features to test this if you think it is a limitation. You can 
+always set the rate high enough that the rate limiter can't sustain. This is like telling it to 
+get in the way and then get out of the way even faster. This is just the nature of this type of 
+rate limiter.</p>
+<p>There are plans to make the rate limiter adaptive across a wider variety of performance 
+scenarios, which will improve this.</p>
+<p><em>examples</em></p>
+<ul>
+<li><code>cyclerate=1000</code> - set the cycle rate limiter to 1000 ops/s and a
+default burst ratio of 1.1.</li>
+<li><code>cyclerate=1000,1.0</code> - same as above, but with burstrate set to 1.0
+(use it or lose it, not usually desired)</li>
+<li><code>cyclerate=1000,1.5</code> - same as above, with burst rate set to 1.5 (aka
+50% burst allowed)</li>
+</ul>
+<p><strong>burst ratio</strong></p>
+<p>This is only an optional part of the cyclerate as shown in examples above.
+If you do not specify it when you initialize a cyclerate, then it defaults
+1.1. The burst ratio is only valid as part of a rate limit and can not be
+specified by itself.</p>
+<ul>
+<li><em>default</em>: <code>1.1</code></li>
+<li><em>dynamic</em>: yes</li>
+</ul>
+<p>The NoSQLBench rate limiter provides a sliding scale between strict rate
+limiting and average rate limiting. The difference between them is
+controlled by a <em>burst ratio</em> parameter. When the burst ratio is 1.0
+(burst up to 100% relative rate), the rate limiter acts as a strict rate
+limiter, disallowing faster operations from using time that was previously
+forfeited by prior slower operations. This is a &quot;use it or lose it&quot; mode
+that means things like GC events can steal throughput from a running
+client as a necessary effect of losing time in a strict timing sense.</p>
+<p>When the burst ratio is set to higher than 1.0, faster operations may
+recover lost time from previously slower operations. For example, a burst
+ratio of 1.3 means that the rate limiter will allow bursting up to 130% of
+the base rate, but only until the average rate is back to 100% relative
+speed. This means that any valleys created in the actual op rate of the
+client can be converted into plateaus of throughput above the strict rate,
+but only at a speed that fits within (op rate * burst ratio). This allows
+for workloads to approximate the average target rate over time, with
+controllable bursting rates. This ability allows for near-strict behavior
+while allowing clients to still track truer to rate limit expectations, so
+long as the overall workload is not saturating resources.</p>
+<p>👉 The default burst ratio of 1.1 makes testing results slightly more stable
+on average, but can also hide some short-term slow-downs in system
+throughput. It is set at the default to fit most tester's expectations for
+averaging results, but it may not be strict enough for your testing
+purposes. However, a strict setting of 1.0 nearly always adds cold/startup
+time to the result, so if you are testing for steady state, be sure to
+account for this across test runs.</p>
+<h2 id="striderate">striderate</h2>
+<ul>
+<li><code>striderate=&lt;strides per second&gt;</code></li>
+<li><code>striderate=&lt;strides per second&gt;,&lt;burst_ratio&gt;</code></li>
+<li><em>default</em>: unset</li>
+<li><em>required</em>: no</li>
+<li><em>dynamic</em>: yes</li>
+</ul>
+<p>The <code>striderate</code> parameter allows you to limit the start of a stride
+according to some rate. This works almost exactly like the cyclerate
+parameter, except that it blocks a whole group of operations from starting
+instead of a single operation. The striderate can use a burst ratio just
+as the cyclerate.</p>
+<p>This sets the target rate for strides. In NoSQLBench, a stride is a group
+of operations that are dispatched and executed together within the same
+thread. This is useful, for example, to emulate application behaviors in
+which some outside request translates to multiple internal requests. It is
+also a way to optimize a client runtime for more efficiency and
+throughput. The stride rate limiter applies to the whole activity
+irrespective of how many threads it has.</p>
+<p><strong>WARNING:</strong>
+When using the cyclerate and striderate options together, operations are
+delayed based on both rate limiters. If the relative rates are not
+synchronised with the size of a stride, then one rate limiter will
+artificially throttle the other. Thus, it usually doesn't make sense to
+use both of these settings in the same activity.</p>
+<h2 id="stride">stride</h2>
+<ul>
+<li><code>stride=&lt;stride&gt;</code></li>
+<li><em>default</em>: same as op sequence length</li>
+<li><em>required</em>: no</li>
+<li><em>dynamic</em>: no</li>
+</ul>
+<p>Usually, you don't want to provide a setting for stride, but it is still important to
+understand what it does. Within NoSQLBench, each time a thread needs to allocate a set of
+cycles to run, it takes a contiguous range of values from an activity-wide source, usually an
+atomic sequence. Thus, the stride is the unit of micro-batching within NoSQLBench. It also
+means that you can use stride to optimize a workload by setting the value higher than the
+default. For example if you are running a single-statement workload at a very high rate, it
+doesn't make sense for threads to allocate one op at a time from a shared atomic value. You can
+simply set <code>stride=1000</code> to cause (ballpark estimation) about 1000X less internal contention.
+The stride is initialized to the calculated sequence length. The sequence length is simply the
+number of operations in the op sequence that is planned from your active statements and their
+ratios.</p>
+<p>You usually do not want to set the stride directly. If you do, make sure it is a multiple of
+what it would normally be set to if you need to ensure that sequences are not divided up
+differently. This can be important when simulating the access patterns of applications.</p>
+<p><em>examples</em></p>
+<ul>
+<li><code>stride=1000</code> - set the stride to 1000</li>
+</ul>
+<h2 id="seq">seq</h2>
+<ul>
+<li><code>seq=&lt;bucket|concat|interval&gt;</code></li>
+<li><em>default</em>: <code>seq=bucket</code></li>
+<li><em>required</em>: no</li>
+<li><em>dynamic</em>: no</li>
+</ul>
+<p>The <code>seq=&lt;bucket|concat|interval&gt;</code> parameter determines the type of
+sequencing that will be used to plan the op sequence. The op sequence is a
+look-up-table that is used for each stride to pick statement forms
+according to the cycle offset. It is simply the sequence of statements
+from your YAML that will be executed, but in a pre-planned, and highly
+efficient form.</p>
+<p>An op sequence is planned for every activity. With the default ratio on
+every statement as 1, and the default bucket scheme, the basic result is
+that each active statement will occur once in the order specified. Once
+you start adding ratios to statements, the most obvious thing that you
+might expect wil happen: those statements will occur multiple times to
+meet their ratio in the op mix. You can customize the op mix further by
+changing the seq parameter to concat or interval.</p>
+<p>👉 The op sequence is a look up table of statement templates, <em>not</em>
+individual statements or operations. Thus, the cycle still determines the
+uniqueness of an operation as you would expect. For example, if statement
+form ABC occurs 3x per sequence because you set its ratio to 3, then each
+of these would manifest as a distinct operation with fields determined by
+distinct cycle values.</p>
+<p>There are three schemes to pick from:</p>
+<p><strong>bucket</strong></p>
+<p>This is a round-robin planner which draws operations from buckets in
+circular fashion, removing each bucket as it is exhausted. For example,
+the ratios A:4, B:2, C:1 would yield the sequence A B C A B A A. The
+ratios A:1, B5 would yield the sequence A B B B B B.</p>
+<p><strong>concat</strong></p>
+<p>This simply takes each statement template as it occurs in order and
+duplicates it in place to achieve the ratio. The ratios above (A:4, B:2,
+C:1) would yield the sequence A A A A B B C for the concat sequencer.</p>
+<p><strong>interval</strong></p>
+<p>This is arguably the most complex sequencer. It takes each ratio as a
+frequency over a unit interval of time, and apportions the associated
+operation to occur evenly over that time. When two operations would be
+assigned the same time, then the order of appearance establishes
+precedence. In other words, statements appearing first win ties for the
+same time slot. The ratios A:4 B:2 C:1 would yield the sequence A B C A A
+B A. This occurs because, over the unit interval (0.0,1.0), A is assigned
+the positions <code>A: 0.0, 0.25, 0.5, 0.75</code>, B is assigned the
+positions <code>B: 0.0, 0.5</code>, and C is assigned position <code>C: 0.0</code>. These
+offsets are all sorted with a position-stable sort, and then the
+associated ops are taken as the order.</p>
+<p>In detail, the rendering appears
+as <code>0.0(A), 0.0(B), 0.0(C), 0.25(A), 0.5(A), 0.5(B), 0.75(A)</code>, which
+yields <code>A B C A A B A</code> as the op sequence.</p>
+<p>This sequencer is most useful when you want a stable ordering of operation
+from a rich mix of statement types, where each operation is spaced as
+evenly as possible over time, and where it is not important to control the
+cycle-by-cycle sequencing of statements.</p>
+
+<p><b><a href="#">Back to top</a></b></p>
+</article>
+<div class="toc" aria-hidden="true">
+  <div class="toc-sticky">
+    <h5>Core Activity Params</h5>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/core-activity-params/#essential">Essential</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/core-activity-params/#driver"><small>- driver</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/core-activity-params/#workload-op"><small>- workload | op</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/core-activity-params/#tags"><small>- tags</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/core-activity-params/#threads"><small>- threads</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/core-activity-params/#cycles"><small>- cycles</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/core-activity-params/#errors"><small>- errors</small></a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/core-activity-params/#diagnostic">Diagnostic</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/core-activity-params/#dryrun"><small>- dryrun</small></a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/core-activity-params/#metrics">Metrics</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/core-activity-params/#alias"><small>- alias</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/core-activity-params/#instrument"><small>- instrument</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/core-activity-params/#hdr-digits"><small>- hdr_digits</small></a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/core-activity-params/#customization">Customization</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/core-activity-params/#cyclerate"><small>- cyclerate</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/core-activity-params/#striderate"><small>- striderate</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/core-activity-params/#stride"><small>- stride</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/core-activity-params/#seq"><small>- seq</small></a>
+    </div>
+  </div>
+</div>
+  </main>
+  <footer>
+    <hr />
+    <div class="c">
+      <nav>
+        <ul></ul>
+      </nav>
+      <p class="s90">Copyright &copy; 2023-2023 NoSQLBench Project</p>
+    </div>
+  </footer>
+</body>
+</html>

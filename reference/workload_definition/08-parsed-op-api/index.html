@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script src="https://docs.nosqlbench.io/theme.min.js" integrity="sha384-IpIaa84kOKgkF5EJ0fD/kBe2wtIIsIB60ANGmuJxeA0dz5bSRfwBwp2/QybtQpU2"></script>
+  <link rel="stylesheet" href="https://docs.nosqlbench.io/abridge-switcher.css?h=4238d999f44a7bb130d5" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preload" as="style" class="preStyle" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" crossorigin="anonymous" />
+  <script defer src="https://docs.nosqlbench.io/search_index.en.js?h=ae47d253e455a3aaacb2" integrity="sha384-cP47owL9Iuak1e1AA21cJA4BgagQtaPwAXBQG7QgJeE2JKGgkCBROHbCj/Xym6KC"></script>
+  <script defer src="https://docs.nosqlbench.io/abridge-bundle-nofacade.min.js?h=9bcf621a2fcab7336017" integrity="sha384-u8AROOUG6n2Xjk2+7pvkkfeSIqinjI1tmqeBpZRlZtc5KFO/8DyFfEir6fAE2wcq"></script>
+  <meta name="base" content="https://docs.nosqlbench.io" />
+<meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>ParsedOp API | NoSQLBench Project</title>
+  <meta name="copyright" content="NoSQLBench Project" />
+  <meta name="description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <link rel="canonical" href="https://docs.nosqlbench.io/reference/workload_definition/08-parsed-op-api/" />
+  <meta name="keywords" content="Abridge, Abridge.css, Zola, Theme, Zola Theme, getzola, Semantic Html, Fast, lightweight" />
+  <meta property="og:url" content="https://docs.nosqlbench.io/reference/workload_definition/08-parsed-op-api/" />
+  <meta name="twitter:url" content="https://docs.nosqlbench.io/reference/workload_definition/08-parsed-op-api/" />
+  <meta property="og:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta name="twitter:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta property="og:title" content="ParsedOp API | NoSQLBench Project" />
+  <meta name="twitter:title" content="ParsedOp API | NoSQLBench Project" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:site_name" content="NoSQLBench Project" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://docs.nosqlbench.io/site.webmanifest" />
+  <link rel="mask-icon" href="https://docs.nosqlbench.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://docs.nosqlbench.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://docs.nosqlbench.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://docs.nosqlbench.io/favicon-16x16.png" />
+  <noscript><link rel="stylesheet" href="https://docs.nosqlbench.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://docs.nosqlbench.io/"><img src="https://docs.nosqlbench.io/nb5logo.png" alt="NoSQLBench5" width="32" height="32" />NoSQLBench v5</a></h1></div><div>
+        <ul><li> <h2><a href="https://docs.nosqlbench.io/getting-started/">Getting Started</a></h2> </li><li> <h2><a href="https://docs.nosqlbench.io/release-notes/">Release Notes</a></h2> </li><li class="js"><i type="reset" id="mode" class="svgs adjust"></i></li></ul>
+      </div>
+      <div>
+        <form autocomplete=off class="js" name="goSearch" id="searchbox">
+          <div class="searchd">
+            <input id="searchinput" type="text" placeholder="Search" title="Search" />
+            <button type="submit" title="Search"><i class="svgs search"></i></button>
+          </div>
+          <div><div id="suggestions"></div></div>
+        </form>
+      </div>
+
+      <a href="http://github.com/nosqlbench/nosqlbench-build-docs" title="This doc site's project repo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="1" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+      <a href="http://nosqlbench.io" title="NoSQLBench Project Site">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+    </nav>
+    <hr /><div style="position:sticky"><span><a href="&#x2F;">NB5 Docs► </a></span><span><a href="&#x2F;reference&#x2F;">Reference Section► </a></span><span title="This section is a specification of the standard workload format."><a href="&#x2F;reference&#x2F;workload_definition&#x2F;"><strong>Workload Specification▼</strong> </a></span><span title="[current page]"><a href="&#x2F;reference&#x2F;workload_definition&#x2F;08-parsed-op-api&#x2F;"><strong>ParsedOp API 🖺</strong></a></span>
+</div></header>
+  <main><!-- active_page: reference&#x2F;workload_definition&#x2F;08_parsed_op_api.md -->
+<!-- active_section: reference&#x2F;workload_definition&#x2F;_index.md -->
+
+
+<!-- lower_root: reference&#x2F;_index.md -->
+<!-- >upper_root: reference&#x2F;_index.md -->
+
+<div class="toc" aria-hidden="true" id="">
+<!--  <h4>Workload Specification</h4>--><div class="toc-sticky"><div class="toc-item"title="This section is a specification of the standard workload format."><strong>▼Workload Specification</strong></div><!-- subsection_page_path: &#x2F;reference&#x2F;workload_definition&#x2F;06-op-template-variations&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;workload_definition&#x2F;06-op-template-variations&#x2F;">Op Template Variations</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;workload_definition&#x2F;04-op-template-basics&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;workload_definition&#x2F;04-op-template-basics&#x2F;">Op Templates</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;workload_definition&#x2F;02-workload-structure&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;workload_definition&#x2F;02-workload-structure&#x2F;">Workload Structure</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;workload_definition&#x2F;01-spectest-formatting&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;workload_definition&#x2F;01-spectest-formatting&#x2F;">SpecTest Formatting</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;workload_definition&#x2F;00-workload-specification&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;workload_definition&#x2F;00-workload-specification&#x2F;">Workload Specification</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;workload_definition&#x2F;05-op-template-payloads&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;workload_definition&#x2F;05-op-template-payloads&#x2F;">Op Template Payloads</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;workload_definition&#x2F;08-parsed-op-api&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;workload_definition&#x2F;08-parsed-op-api&#x2F;"><strong>ParsedOp API</strong></a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;workload_definition&#x2F;07-template-variables&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;workload_definition&#x2F;07-template-variables&#x2F;">Template Variables</a>
+    </div><div class="toc-item"title="DriverAdapters allow native drivers or other logic to be plugged into the nb5 engine."><a href="&#x2F;reference&#x2F;drivers&#x2F;">►Drivers</a></div><div class="toc-item"title="Binding functions are the core of the procedural data generation capabilities of NoSQLBench. They bind generated data to operations in a determinstic way."><a href="&#x2F;reference&#x2F;bindings&#x2F;">►Binding Functions</a></div><div class="toc-item"title="Documentation for bundled applications within NB5."><a href="&#x2F;reference&#x2F;apps&#x2F;">►Bundled Apps</a></div><div class="toc-item"title="Version data for the bundled and imported docs content"><a href="&#x2F;reference&#x2F;versions&#x2F;">►Version Info</a></div></div>
+</div>
+
+<article>
+
+  <h1 id="parsedop-api">ParsedOp API</h1>
+<p>In the workload template examples, we show statements as being formed from a string value. This is a
+specific type of statement form, although it is possible to provide structured op templates as well.</p>
+<p><strong>The ParsedOp API is responsible for converting all valid op template forms into a consistent and
+unambiguous model.</strong> Thus, the rules for mapping the various forms to the command model must be
+precise. Those rules are the substance of this specification.</p>
+<h2 id="op-synthesis">Op Synthesis</h2>
+<p>Executable operations are <em>created</em> on the fly by NoSQLBench via a process called <em>Op Synthesis</em>.
+This is done incrementally in stages. The following narrative describes this process in logical
+stages. (The implementation may vary from this, but it explains the effects, nonetheless.)</p>
+<p>Everything here happens <strong>during</strong> activity initialization, before the activity starts running
+cycles:</p>
+<ol>
+<li><em>Template Variable Expansion</em> - If there are template variables, such as
+<code>TEMPLATE(name,defaultval)</code> or <code>&amp;lt;&amp;lt;name:defaultval&amp;gt;&amp;gt;</code>, then these are expanded
+according to their defaults and any overrides provided in the activity params. This is a macro
+substitution only, so the values are simply interposed into the character stream of the document.</li>
+<li><em>Jsonnet Evaluation</em> - If the source file was in jsonnet format (the extension was <code>.jsonnet</code>)
+then it is interpreted by sjsonnet, with all activity parameters available as external variables.</li>
+<li><em>Structural Normalization</em> - The workload template (yaml, json, or data structure) is loaded
+into memory and transformed into a standard format. This means taking various list and map
+forms at every level and converting them to a singular standard form in memory.</li>
+<li><em>Auto-Naming</em> - All elements which do not already have a name are assigned a simple name like
+<code>block2</code> or <code>op3</code>.</li>
+<li><em>Auto-Tagging</em> - All op templates are given standard tag values under reserved tag names:
+<ul>
+<li><strong>block</strong>: the name of the block containing the op template. For example: <code>block2</code>.</li>
+<li><strong>name</strong>: the name of the op template, prefixed with the block value and <code>--</code>. For example,
+<code>block2--op1</code>.</li>
+</ul>
+</li>
+<li><em>Property De-normalization</em> - Default values for all the standard op template properties are
+copied from the doc to the block layer unless the same-named key exists. Then the same
+method is applied from the doc layer to the op template layer. <strong>At this point, the op
+templates are effectively an ordered list of data structures, each containing all necessary
+details for use.</strong></li>
+<li><em>Tag Filtering</em> - The activity's <code>tag</code> param is used to filter all the op templates
+according to their tag map.</li>
+<li><em>Bind Point and Capture Points</em> - Each op template is now converted into a ParsedOp, which is
+a swiss-army knife of op template introspection and function generation. It is the direct
+programmatic API that driver adapters use in subsequent steps.
+<ul>
+<li>Any string sequences with bind points like <code>this has a {bindpoint}</code> are automatically
+converted to a long -&gt; string function.</li>
+<li>Any direct references with no surrounding text like <code>{bindpoint}</code> are automatically
+converted to direct binding references.</li>
+<li>Any other string form is cached as a static value.</li>
+<li>The same process is applied to Lists and Maps, allowing structural templates which read
+like JSON with bind points in arbitrary places.</li>
+</ul>
+</li>
+<li><em>Op Mapping</em> - Using the ParsedOp API, each op template is categorized by the active <code>driver</code>
+according to that driver's documented examples and type-matching rules. Once the op mapper
+determines what op type a user intended, it uses this information and the associated op
+fields to create an <em>Op Dispenser</em>.</li>
+<li><em>Op Sequencing</em> - The op dispensers are kept as an internal sequence, and installed into a
+<a rel="noopener" target="_blank" href="https://en.wikipedia.org/wiki/Lookup_table">LUT</a> according to their ratios and the specified
+(or default) sequencer. By default, round-robin with bucket exhaustion is used. The ratios
+specified are used directly in the LUT.</li>
+</ol>
+<p>When this is complete, you are left with an efficient lookup table which indexes into a set of
+OpDispensers. The length of this lookup table is called the <em>sequence length</em>, and that value is
+used, by default, to set the <em>stride</em> for the activity. This stride determines the size of
+per-thread cycle batching, effectively turning each sequence into a thread-safe set of
+operations which are serialized, and thus suitable for testing linearized operations with
+suitable dependency and error-handling mechanisms. (But wait, there's more!)</p>
+<h2 id="special-cases">Special Cases</h2>
+<p>Drivers are assigned to op templates individually, meaning you can specify the driver within an
+op template, not even assigning a default for the activity. Further, certain drivers are able to
+fill in missing details for op templates, like the <code>stdout</code> driver which only requires bindings.</p>
+<p>This means that there are distinct cases for configuration which are valid, and these are
+checked at initialization time:</p>
+<ul>
+<li>A <code>driver</code> must be selected for each op template either directly or via activity params.</li>
+<li>If the whole workload template provided does not include actual op templates <strong>AND</strong> a
+default driver is provided which can create synthetic op templates, it is given the raw
+workload template, incomplete as it is, and asked to provide op templates which have all
+normalization, naming, etc. already done. This is injected before the tag-filtering phase.</li>
+<li>In any case that an actual non-zero list of op templates is provided and tag filtering removes
+them all, an error is thrown.</li>
+<li>If, after tag filtering no op template are in the active list, an error is thrown.</li>
+</ul>
+<h1 id="the-parsedop">The ParsedOp</h1>
+<p>The components of a fully-parsed op template (AKA a ParsedOp) are:</p>
+<h2 id="name">name</h2>
+<p>Each ParsedOp knows its name, which is simply the op template name that it was made from. This
+is useful for diagnostics, logging, and metrics.</p>
+<h2 id="description">description</h2>
+<p>Every named element of a workload may be given a description.</p>
+<h2 id="tags">tags</h2>
+<p>Every op template has tags, even if they are auto-assigned from the block and op template names.
+If you assign explicit tags to an op template, the standard tags are still provided. Thus, it is
+an error to directly provide a tag named <code>block</code> or <code>name</code>.</p>
+<h2 id="bindings">bindings</h2>
+<p>Although bindings are usually defined as workload template level property, they can also be
+provided directly as an op field property.</p>
+<h2 id="op-fields">op fields</h2>
+<p>The <strong>op</strong> property of an op template or ParsedOp is the root of the op fields. This is a map of
+specific fields specified by the user.</p>
+<h3 id="static-op-fields">static op fields</h3>
+<p>Some op fields are simply static values. Since these values are not generated per cycle, they are
+kept separate as reference data. Knowing which fields are static and which are not makes it
+possible for developers to optimize op synthesis.</p>
+<h3 id="dynamic-op-fields">dynamic op fields</h3>
+<p>Other fields may be specified as recipes, with the actual value to be filled-in once the cycle
+value is known. All such fields are known as <em>dynamic op fields</em>, and are provided to the op
+dispenser as a long function, where the input is always the cycle value and the output is a
+type-specific value as determined by the associated binding recipe.</p>
+<h3 id="bind-points">bind points</h3>
+<p>This is how dynamic values are indicated. Each bind point in an op template results in some type of
+procedural generation binding. These can be references to named bindings elsewhere in the
+workload template, or they can be inline.</p>
+<h3 id="capture-points">capture points</h3>
+<p>Names of result values to save, and the variable names they are to be saved as. The names represent
+the name as it would be found in the native driver's API, such as the name <code>userid</code>
+in <code>select userid from ...</code>. In string form statements, users can specify that the userid should be
+saved as the thread-local variable named <em>userid</em> simply by tagging it
+like <code>select [userid] from ...</code>. They can also specify that this value should be captured under a
+different name with a variation like <code>select [userid as user_id] from ...</code>. This is the standard
+variable capture syntax for any string-based statement form.</p>
+<h3 id="params">params</h3>
+<p>A backwards-compatible feature called op params is still available. This is another root
+property within an op template which can be used to accessorize op fields. By default, any op
+field which is not explicitly rooted under the <code>op</code> property are put there anyway. This is also
+true when there is an explicitly <code>params</code> property. However if the op property is provided, then
+all non-reserved fields are given to the params property instead. If both the <code>op</code> and the
+<code>param</code> op properties are specified, then no non-reserved op fields are allowed outside of these
+root values. Thus it is possible to still support params, but it is <strong>highly</strong> recommended that
+new driver developers avoid using this field, and instead allow all fields to be automatically
+anchored under the <code>op</code> property. This keeps configs terse and simple going forward.</p>
+<p>Params may not be dynamic.</p>
+<h1 id="mapping-rules">Mapping Rules</h1>
+<p>A ParsedOp does not necessarily describe a specific low-level operation to be performed by
+a native driver. It <em>should</em> do so, but it is up to the user to provide a valid op template
+according to the documented rules of op construction for that driver type. These rules should be
+clearly documented by the driver developer as examples in markdown that is required for every
+driver. With this documentation, users can use <code>nb5 help &amp;lt;driver&amp;gt;</code> to see exactly how
+to create op templates for a given driver.</p>
+<h2 id="string-form">String Form</h2>
+<p>Basic operations are made from a statement in some type of query language:</p>
+<pre data-lang="yaml" class="language-yaml z-code"><code class="language-yaml" data-lang="yaml"><span class="z-source z-yaml"><span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">ops</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+  <span class="z-punctuation z-definition z-block z-sequence z-item z-yaml">-</span> <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">stringform</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-unquoted z-plain z-out z-yaml">select [userid] from db.users where user=&#39;{username}&#39;;</span>
+    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">bindings</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+      <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">username</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-unquoted z-plain z-out z-yaml">NumberNameToString()</span>
+</span></code></pre>
+<h1 id="reserved-op-fields">Reserved op fields</h1>
+<p>The property names <code>ratio</code>, <code>driver</code>, <code>space</code>, are considered reserved by the NoSQLBench runtime.
+These are extracted and handled specially by the core runtime.</p>
+<h1 id="base-opdispenser-fields">Base OpDispenser fields</h1>
+<p>The BaseOpDispenser, which <s>is</s> will be required as the base implementation of any op
+dispenser going forward, provides cross-cutting functionality. These include <code>start-timers</code>,
+<code>stop-timers</code>, <code>instrument</code>, and likely will include more as future cross-driver functionality is
+added. These fields will be considered reserved property names.</p>
+<h1 id="optimization">Optimization</h1>
+<p>It should be noted that the op mapping process, where user intentions are mapped from op templates to
+op dispensers is not something that needs to be done quickly. This occurs at <em>initialization</em>
+time. Instead, it is more important to focus on user experience factors, such as flexibility,
+obviousness, robustness, correctness, and so on. Thus, priority of design factors in this part
+of NB is placed more on clear and purposeful abstractions and less on optimizing for speed. The
+clarity and detail which is conveyed by this layer to the driver developer will then enable
+them to focus on building fast and correct op dispensers. These dispensers are also constructed
+before the workload starts running, but are used at high speed while the workload is running.</p>
+<p>In essence:</p>
+<ul>
+<li>Any initialization code which happens before or in the OpDispenser constructor should not be
+concerned with careful performance optimization.</li>
+<li>Any code which occurs within the OpDispenser#apply method should be as lightweight as is
+reasonable.</li>
+</ul>
+
+<p><b><a href="#">Back to top</a></b></p>
+</article>
+<div class="toc" aria-hidden="true">
+  <div class="toc-sticky">
+    <h5>ParsedOp API</h5>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/workload_definition/08-parsed-op-api/#parsedop-api">ParsedOp API</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/workload_definition/08-parsed-op-api/#op-synthesis"><small>- Op Synthesis</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/workload_definition/08-parsed-op-api/#special-cases"><small>- Special Cases</small></a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/workload_definition/08-parsed-op-api/#the-parsedop">The ParsedOp</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/workload_definition/08-parsed-op-api/#name"><small>- name</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/workload_definition/08-parsed-op-api/#description"><small>- description</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/workload_definition/08-parsed-op-api/#tags"><small>- tags</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/workload_definition/08-parsed-op-api/#bindings"><small>- bindings</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/workload_definition/08-parsed-op-api/#op-fields"><small>- op fields</small></a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/workload_definition/08-parsed-op-api/#mapping-rules">Mapping Rules</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/workload_definition/08-parsed-op-api/#string-form"><small>- String Form</small></a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/workload_definition/08-parsed-op-api/#reserved-op-fields">Reserved op fields</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/workload_definition/08-parsed-op-api/#base-opdispenser-fields">Base OpDispenser fields</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/workload_definition/08-parsed-op-api/#optimization">Optimization</a>
+    </div>
+  </div>
+</div>
+  </main>
+  <footer>
+    <hr />
+    <div class="c">
+      <nav>
+        <ul></ul>
+      </nav>
+      <p class="s90">Copyright &copy; 2023-2023 NoSQLBench Project</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script src="https://docs.nosqlbench.io/theme.min.js" integrity="sha384-IpIaa84kOKgkF5EJ0fD/kBe2wtIIsIB60ANGmuJxeA0dz5bSRfwBwp2/QybtQpU2"></script>
+  <link rel="stylesheet" href="https://docs.nosqlbench.io/abridge-switcher.css?h=4238d999f44a7bb130d5" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preload" as="style" class="preStyle" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" crossorigin="anonymous" />
+  <script defer src="https://docs.nosqlbench.io/search_index.en.js?h=ae47d253e455a3aaacb2" integrity="sha384-cP47owL9Iuak1e1AA21cJA4BgagQtaPwAXBQG7QgJeE2JKGgkCBROHbCj/Xym6KC"></script>
+  <script defer src="https://docs.nosqlbench.io/abridge-bundle-nofacade.min.js?h=9bcf621a2fcab7336017" integrity="sha384-u8AROOUG6n2Xjk2+7pvkkfeSIqinjI1tmqeBpZRlZtc5KFO/8DyFfEir6fAE2wcq"></script>
+  <meta name="base" content="https://docs.nosqlbench.io" />
+<meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>Scripting Intro | NoSQLBench Project</title>
+  <meta name="copyright" content="NoSQLBench Project" />
+  <meta name="description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <link rel="canonical" href="https://docs.nosqlbench.io/user-guide/advanced-topics/scenario-scripting/" />
+  <meta name="keywords" content="Abridge, Abridge.css, Zola, Theme, Zola Theme, getzola, Semantic Html, Fast, lightweight" />
+  <meta property="og:url" content="https://docs.nosqlbench.io/user-guide/advanced-topics/scenario-scripting/" />
+  <meta name="twitter:url" content="https://docs.nosqlbench.io/user-guide/advanced-topics/scenario-scripting/" />
+  <meta property="og:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta name="twitter:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta property="og:title" content="NoSQLBench Project" />
+  <meta name="twitter:title" content="NoSQLBench Project" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:site_name" content="NoSQLBench Project" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://docs.nosqlbench.io/site.webmanifest" />
+  <link rel="mask-icon" href="https://docs.nosqlbench.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://docs.nosqlbench.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://docs.nosqlbench.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://docs.nosqlbench.io/favicon-16x16.png" />
+  <noscript><link rel="stylesheet" href="https://docs.nosqlbench.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://docs.nosqlbench.io/"><img src="https://docs.nosqlbench.io/nb5logo.png" alt="NoSQLBench5" width="32" height="32" />NoSQLBench v5</a></h1></div><div>
+        <ul><li> <h2><a href="https://docs.nosqlbench.io/getting-started/">Getting Started</a></h2> </li><li> <h2><a href="https://docs.nosqlbench.io/release-notes/">Release Notes</a></h2> </li><li class="js"><i type="reset" id="mode" class="svgs adjust"></i></li></ul>
+      </div>
+      <div>
+        <form autocomplete=off class="js" name="goSearch" id="searchbox">
+          <div class="searchd">
+            <input id="searchinput" type="text" placeholder="Search" title="Search" />
+            <button type="submit" title="Search"><i class="svgs search"></i></button>
+          </div>
+          <div><div id="suggestions"></div></div>
+        </form>
+      </div>
+
+      <a href="http://github.com/nosqlbench/nosqlbench-build-docs" title="This doc site's project repo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="1" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+      <a href="http://nosqlbench.io" title="NoSQLBench Project Site">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+    </nav>
+    <hr /><div style="position:sticky"><span><a href="&#x2F;">NB5 Docs► </a></span><span><a href="&#x2F;user-guide&#x2F;">User Guide► </a></span><span><a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;">Advanced Topics► </a></span><span title="NoSQLBench comes with a fully scriptable runtime for advanced testing scenarios"><a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;scenario-scripting&#x2F;"><strong>Scenario Scripting▼</strong> </a></span><span title="[current page]"><a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;scenario-scripting&#x2F;scripting-intro&#x2F;"><strong>Scripting Intro 🖺</strong></a></span>
+</div></header>
+  <main><!-- active_page: user-guide&#x2F;advanced-topics&#x2F;scenario-scripting&#x2F;scripting-intro.md -->
+<!-- active_section: user-guide&#x2F;advanced-topics&#x2F;scenario-scripting&#x2F;_index.md -->
+
+
+<!-- lower_root: user-guide&#x2F;advanced-topics&#x2F;_index.md -->
+<!-- >upper_root: user-guide&#x2F;advanced-topics&#x2F;_index.md -->
+
+<div class="toc" aria-hidden="true" id="">
+<!--  <h4>Scenario Scripting</h4>--><div class="toc-sticky"><div class="toc-item"><a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;binding-concepts&#x2F;">Binding Concepts</a></div><div class="toc-item"><a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;advanced-topics&#x2F;"title="detailed explanation of all available configuration methods in nb5">Advanced Topics</a></div><div class="toc-item"><a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;timing-terms&#x2F;">Timing Terms Explained</a></div><div class="toc-item"title="Detailed examples of different ways to configure nb5"><a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;configuration_techniques&#x2F;">►Configuration Techniques</a></div><div class="toc-item"title="NoSQLBench comes with a fully scriptable runtime for advanced testing scenarios"><strong>▼Scenario Scripting</strong></div><!-- subsection_page_path: &#x2F;user-guide&#x2F;advanced-topics&#x2F;scenario-scripting&#x2F;scripting-intro&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;scenario-scripting&#x2F;scripting-intro&#x2F;"><strong>Scripting Intro</strong></a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;advanced-topics&#x2F;scenario-scripting&#x2F;scripting-parameters&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;scenario-scripting&#x2F;scripting-parameters&#x2F;">Scripting Parameters</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;advanced-topics&#x2F;scenario-scripting&#x2F;scripting-environment&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;scenario-scripting&#x2F;scripting-environment&#x2F;">Scripting Environment</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;advanced-topics&#x2F;scenario-scripting&#x2F;scripting-extensions&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;scenario-scripting&#x2F;scripting-extensions&#x2F;">Scripting Extensions</a>
+    </div><div class="toc-item"title="A deeper dive into frequent topics of discussion around scale testing."><a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;testing-at-scale&#x2F;">►Testing at Scale</a></div></div>
+</div>
+
+<article>
+
+  <h2 id="intro">Intro</h2>
+<p>The NoSQLBench runtime is a combination of a scripting runtime and a workload execution machine.
+This is not accidental. With this particular arrangement, it has been possible to build
+sophisticated tests across a variety of scenarios. In particular, logic which can observe and react
+to the system under test can be powerful. With this approach, it becomes possible to break away from
+the conventional run-interpret-adjust cycle which is all too often done by human hands.</p>
+<p>The approach that enables this is based on a few key principles:</p>
+<ol>
+<li>NoSQLBench is packaged by default for users who want to use pre-built testing configurations.</li>
+<li>The whole runtime is modular and designed for composition.</li>
+<li>The default testing configurations are assembled from the modules components as needed.</li>
+<li>Users can choose to build their own testing configurations from these modules.</li>
+<li>When a user moves from using pre-built configurations to custom configurations, is an incremental
+process.</li>
+</ol>
+<h2 id="design-motive">Design Motive</h2>
+<p>Why base the internal logic on a scripting engine?</p>
+<p>The principles described above apply all the way to the scripting layer. Every NoSQLBench scenario
+is after-all, a script. For users who just need to run the pre-package configurations, it doesn't
+matter that a scripting engine is at the core. For others who need to create advanced testing logic,
+it is a crucial enabler. This feature allows them to build on the self-same concepts and components
+that other NoSQLBench users are already familiar with and using. This provides common ground that
+pays for itself in terms of usability, clarity, and a shared approach to testing at different levels
+of detail.</p>
+<h2 id="machinery-controls-instruments">Machinery, Controls &amp; Instruments</h2>
+<p>All the heavy lifting is left to Java and the core NoSQLBench runtime. This includes the iterative
+workloads that are meant to test the target system. This is combined with a control layer which is
+provided by GraalVM. This division of responsibility allows the high-level test logic to be &quot;script&quot;
+and the low-level activity logic to be &quot;machinery&quot;. While the scenario script has the most control,
+it also is the least busy relative to activity workloads. The net effect is that you have the
+efficiency of the iterative test loads in conjunction with the open design palette of a first-class
+scripting language. You aren't having to buy test flexibility at the expense of testing speed or 
+efficiency. You get the best of both worlds, working together.</p>
+<p>Essentially, the drivers are meant to handle the workload-specific machinery. They also provide
+dynamic control points and parameters which special to each driver. This exposes a full feedback
+loop between a running scenario script and the activities that run under its control. The scenario
+is free to read the performance metrics from a live activity and make changes to it on the fly.</p>
+<h2 id="getting-started">Getting Started</h2>
+<p>For users who want to tap into the programmatic power of NoSQLBench, it's easy to get started by
+using the <code>--show-script</code> option. For any normal command line that you might use with NoSQLBench,
+this option causes it to dump the scenario script to stdout and exit instead of running the
+scenario.</p>
+<p>You can store this into a file with a <code>.js</code> extension, and then use a command line like</p>
+<pre class="z-code"><code><span class="z-text z-plain">nb5 script myfile.js
+</span></code></pre>
+<p>to invoke it. This is exactly the same as running the original command line, only with a couple of
+extra steps that let you see what it is doing directly in the scenario script.</p>
+
+<p><b><a href="#">Back to top</a></b></p>
+</article>
+<div class="toc" aria-hidden="true">
+  <div class="toc-sticky">
+    <h5>Scripting Intro</h5>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/advanced-topics/scenario-scripting/scripting-intro/#intro">Intro</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/advanced-topics/scenario-scripting/scripting-intro/#design-motive">Design Motive</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/advanced-topics/scenario-scripting/scripting-intro/#machinery-controls-instruments">Machinery, Controls &amp; Instruments</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/advanced-topics/scenario-scripting/scripting-intro/#getting-started">Getting Started</a>
+    </div>
+  </div>
+</div>
+  </main>
+  <footer>
+    <hr />
+    <div class="c">
+      <nav>
+        <ul></ul>
+      </nav>
+      <p class="s90">Copyright &copy; 2023-2023 NoSQLBench Project</p>
+    </div>
+  </footer>
+</body>
+</html>

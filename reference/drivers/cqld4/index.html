@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script src="https://docs.nosqlbench.io/theme.min.js" integrity="sha384-IpIaa84kOKgkF5EJ0fD/kBe2wtIIsIB60ANGmuJxeA0dz5bSRfwBwp2/QybtQpU2"></script>
+  <link rel="stylesheet" href="https://docs.nosqlbench.io/abridge-switcher.css?h=4238d999f44a7bb130d5" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preload" as="style" class="preStyle" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" crossorigin="anonymous" />
+  <script defer src="https://docs.nosqlbench.io/search_index.en.js?h=ae47d253e455a3aaacb2" integrity="sha384-cP47owL9Iuak1e1AA21cJA4BgagQtaPwAXBQG7QgJeE2JKGgkCBROHbCj/Xym6KC"></script>
+  <script defer src="https://docs.nosqlbench.io/abridge-bundle-nofacade.min.js?h=9bcf621a2fcab7336017" integrity="sha384-u8AROOUG6n2Xjk2+7pvkkfeSIqinjI1tmqeBpZRlZtc5KFO/8DyFfEir6fAE2wcq"></script>
+  <meta name="base" content="https://docs.nosqlbench.io" />
+<meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>cqld4 | NoSQLBench Project</title>
+  <meta name="copyright" content="NoSQLBench Project" />
+  <meta name="description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <link rel="canonical" href="https://docs.nosqlbench.io/reference/drivers/cqld4/" />
+  <meta name="keywords" content="Abridge, Abridge.css, Zola, Theme, Zola Theme, getzola, Semantic Html, Fast, lightweight" />
+  <meta property="og:url" content="https://docs.nosqlbench.io/reference/drivers/cqld4/" />
+  <meta name="twitter:url" content="https://docs.nosqlbench.io/reference/drivers/cqld4/" />
+  <meta property="og:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta name="twitter:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta property="og:title" content="cqld4 | NoSQLBench Project" />
+  <meta name="twitter:title" content="cqld4 | NoSQLBench Project" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:site_name" content="NoSQLBench Project" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://docs.nosqlbench.io/site.webmanifest" />
+  <link rel="mask-icon" href="https://docs.nosqlbench.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://docs.nosqlbench.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://docs.nosqlbench.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://docs.nosqlbench.io/favicon-16x16.png" />
+  <noscript><link rel="stylesheet" href="https://docs.nosqlbench.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://docs.nosqlbench.io/"><img src="https://docs.nosqlbench.io/nb5logo.png" alt="NoSQLBench5" width="32" height="32" />NoSQLBench v5</a></h1></div><div>
+        <ul><li> <h2><a href="https://docs.nosqlbench.io/getting-started/">Getting Started</a></h2> </li><li> <h2><a href="https://docs.nosqlbench.io/release-notes/">Release Notes</a></h2> </li><li class="js"><i type="reset" id="mode" class="svgs adjust"></i></li></ul>
+      </div>
+      <div>
+        <form autocomplete=off class="js" name="goSearch" id="searchbox">
+          <div class="searchd">
+            <input id="searchinput" type="text" placeholder="Search" title="Search" />
+            <button type="submit" title="Search"><i class="svgs search"></i></button>
+          </div>
+          <div><div id="suggestions"></div></div>
+        </form>
+      </div>
+
+      <a href="http://github.com/nosqlbench/nosqlbench-build-docs" title="This doc site's project repo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="1" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+      <a href="http://nosqlbench.io" title="NoSQLBench Project Site">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+    </nav>
+    <hr /><div style="position:sticky"><span><a href="&#x2F;">NB5 Docs► </a></span><span><a href="&#x2F;reference&#x2F;">Reference Section► </a></span><span title="DriverAdapters allow native drivers or other logic to be plugged into the nb5 engine."><a href="&#x2F;reference&#x2F;drivers&#x2F;"><strong>Drivers▼</strong> </a></span><span title="[current page]"><a href="&#x2F;reference&#x2F;drivers&#x2F;cqld4&#x2F;"><strong>cqld4 🖺</strong></a></span>
+</div></header>
+  <main><!-- active_page: reference&#x2F;drivers&#x2F;cqld4.md -->
+<!-- active_section: reference&#x2F;drivers&#x2F;_index.md -->
+
+
+<!-- lower_root: reference&#x2F;_index.md -->
+<!-- >upper_root: reference&#x2F;_index.md -->
+
+<div class="toc" aria-hidden="true" id="">
+<!--  <h4>Drivers</h4>--><div class="toc-sticky"><div class="toc-item"title="This section is a specification of the standard workload format."><a href="&#x2F;reference&#x2F;workload_definition&#x2F;">►Workload Specification</a></div><div class="toc-item"title="DriverAdapters allow native drivers or other logic to be plugged into the nb5 engine."><strong>▼Drivers</strong></div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;jdbc&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;jdbc&#x2F;">JDBC driver</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;cqld4&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;cqld4&#x2F;"><strong>cqld4</strong></a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;stdout&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;stdout&#x2F;">stdout</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;mongodb&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;mongodb&#x2F;">MongoDB</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;diag&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;diag&#x2F;">diag</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;pulsar&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;pulsar&#x2F;">pulsar</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;tcpserver&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;tcpserver&#x2F;">tcpserver</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;tcpclient&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;tcpclient&#x2F;">tcpclient</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;dynamodb&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;dynamodb&#x2F;">dynamodb</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;s4j&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;s4j&#x2F;">S4J</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;http&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;http&#x2F;">http</a>
+    </div><div class="toc-item"title="Binding functions are the core of the procedural data generation capabilities of NoSQLBench. They bind generated data to operations in a determinstic way."><a href="&#x2F;reference&#x2F;bindings&#x2F;">►Binding Functions</a></div><div class="toc-item"title="Documentation for bundled applications within NB5."><a href="&#x2F;reference&#x2F;apps&#x2F;">►Bundled Apps</a></div><div class="toc-item"title="Version data for the bundled and imported docs content"><a href="&#x2F;reference&#x2F;versions&#x2F;">►Version Info</a></div></div>
+</div>
+
+<article>
+
+  <h1 id="cqld4">cqld4</h1>
+<p>This is the newly revamped driver for CQL which uses the DataStax OSS Driver version 4. As
+there was a significant restructuring of the APIs between CQL driver 4.x and previous versions, this
+driver is a clean and separate implementation which aims to use the features of version 4.x of the
+native driver directly as well as new internal NoSQLBench APIs.</p>
+<p>This means that many features that advanced testers may have been used to (the syntactical sugar,
+the surfacing of advanced configuration properties in simple ways, and so on) will have to be
+redesigned to fit with version 4 of the driver. Most users who do basic testing with direct CQL
+syntax should see few issues, but advanced testers will need to consult this documentation
+specifically to understand the differences between <code>cqld4</code> driver features and <code>cql</code> driver
+features.</p>
+<p>Notably, these features need to be re-built on the cqld4 driver to bring it up to parity with
+previous advanced testing features:</p>
+<ul>
+<li>verify</li>
+<li>result set size metrics</li>
+<li>explicit paging metrics</li>
+</ul>
+<h2 id="configuration">Configuration</h2>
+<p>The DataStax Java Driver 4.* has a much different configuration system than previous versions. For
+changing driver settings with this version it is <strong>highly recommended</strong> that users use the built-in
+driver settings and configuration file/profile options, just as they would for an application. This
+serves two goals: 1) to ensure that the settings you test with are portable from test environment to
+application, and 2) to allow you to configure driver settings directly, without depending on
+internal helper logic provided by NoSQLBench. This means that the driver options exposed are those
+provided by the low-level driver, thus removing another dependency from your test setup.</p>
+<h3 id="config-sources">Config Sources</h3>
+<p>By using the option <code>driverconfig</code>, you can have as many configuration sources as you like, even
+mixing in JSON or remote URLs.</p>
+<p><strong>examples</strong></p>
+<p>Configure directly from a config file, or classpath resource:</p>
+<pre data-lang="shell" class="language-shell z-code"><code class="language-shell" data-lang="shell"><span class="z-text z-plain"># If this isn&#39;t found in the file system, the classpath will also be checked.
+nb5 ... driverconfig=myconfig.json
+</span></code></pre>
+<p>Configure directly from JSON:</p>
+<pre data-lang="shell" class="language-shell z-code"><code class="language-shell" data-lang="shell"><span class="z-text z-plain">nb5 ... driverconfig=&#39;{basic.request.timeout:&quot;2 seconds&quot;}&#39;
+</span></code></pre>
+<p>Configure directly form a remote URL:</p>
+<pre data-lang="shell" class="language-shell z-code"><code class="language-shell" data-lang="shell"><span class="z-text z-plain">nb5 ... driverconfig=&#39;http://gist.github.com...&#39;
+</span></code></pre>
+<h3 id="basic-cqld4-driver-options">Basic Cqld4 driver options</h3>
+<ul>
+<li><strong>hosts</strong> &amp; <strong>localdc</strong> - (required unless using scb) - Set the endpoint and local datacenter name
+for the driver.
+<ul>
+<li>example: <code>host=mydsehost localdc=testdc1</code></li>
+</ul>
+</li>
+<li><strong>port</strong> (optional for hosts) - Set the port to connect to for the CQL binary protocol.</li>
+<li><strong>driverconfig</strong> - (explained above) - set the configuration source for the driver.</li>
+<li><strong>username</strong> OR <strong>userfile</strong> - (optional, only one may be used) - If you need to specify a
+username but want to put it in a file instead, simply use the <code>userfile=myfile</code> option. It is
+not uncommon to say <code>userfile=userfile</code>.</li>
+</ul>
+<ul>
+<li><strong>password</strong> OR <strong>passfile</strong> - (optional, only one may be used) - Fi you need to specify a
+password but want to put it ina  file instead, simply use the <code>passfile=mypassfile</code> option. It
+is not uncommon to say <code>passfile=passfile</code>.</li>
+<li><strong>showstmt</strong> - enable per-statement diagnostics which show as much of the statement as possible
+for the given statement type. <em>WARNING</em> - Do not use this for performance testing, only for
+diagnostics.</li>
+<li><strong>maxpages</strong> - configure the maximum number of pages allowed in a CQL result set. This is
+configured to <code>maxpages=1</code> by default, so that users will be aware of any paging that occurs
+by default. If you expect and want to allow paging in your operation, then set this number
+higher. A <em>synthetic</em> exception is generated as <code>UnexpectedPagingException</code> by default when
+the number of pages exceeds maxpages.</li>
+</ul>
+<h3 id="activity-level-driver-config">Activity level Driver Config</h3>
+<p>The activity parameters which are provided by the driver are exposed as <code>driver.&lt;name&gt;</code>. Any
+configuration option that is specified this way will be applied directly to the driver through the
+type-safe configuration layer. For example, specifying <code>driver.basic.request.timeout='2 seconds'</code>
+has the same effect as setting <code>basic.request.timeout</code> in a driver configuration file.</p>
+<h2 id="backwards-compatibility-with-cql-and-cqld3">Backwards Compatibility with <code>cql</code> and <code>cqld3</code></h2>
+<p>Many driver options were provided in a more convenient form for testing in previous CQL drivers with
+NoSQLBench. Due to the changes in driver 4.x, the implementation of these options had to change as
+well. Where possible, a backwards-compatible option helper was provided so that test defined for
+<code>cql</code> and <code>cqld3</code> drivers would just work with the <code>cqld4</code> driver. In some cases, this simply was
+not possible as some options were no longer supported, or changed so much that there was no longer a
+direct mapping that would work consistently across versions. You can try to use the previous
+options, like <code>pooling</code> and so on. If the option is not supported as such, it will cause an error
+with an explanation. Otherwise, these helper options will simply set the equivalent options in the
+driver profile to achieve the same effect. As stated above, it is highly recommended that driver
+settings be captured in a configuration file and set with <code>driverconfig=&lt;file&gt;.json</code></p>
+<h2 id="statement-forms">Statement Forms</h2>
+<p>The CQLd4 driver supports idiomatic usage of all the main statement APIs within the native Java
+driver. The syntax for specifying these types is simplified as well, using only a single
+<code>type</code> field which allows values of simple, prepared, raw, gremlin, fluent, and so on. The previous
+form of specifing <code>type: cql</code> and optional modifiers like <code>prepared</code> and
+<code>parameterized</code> is deprecated now, sinces all the forms are explicitly supported by a well-defined
+type name.</p>
+<p>The previous form will work, but you will get a warning, as these should be deprecated going
+forward. It is best to use the forms in the examples below. The defaults and field names for the
+classic form have not changed.</p>
+<h2 id="cqld4-op-template-examples">CQLd4 Op Template Examples</h2>
+<pre data-lang="yaml" class="language-yaml z-code"><code class="language-yaml" data-lang="yaml"><span class="z-source z-yaml"><span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">ops</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+
+  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> prepared statement
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> allows for parameterization via bindings, and uses prepared statements internally
+</span>  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">example-prepared-cql-stmt</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">prepared</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-keyword z-control z-flow z-block-scalar z-literal z-yaml">|</span>
+<span class="z-string z-unquoted z-block z-yaml">     select one, two from buckle.myshoe where ...
+
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> prepared statement (verbose form)
+</span>  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">example-prepared-cql-stmt-verbose</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">type</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-unquoted z-plain z-out z-yaml">prepared</span>
+    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">stmt</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-keyword z-control z-flow z-block-scalar z-literal z-yaml">|</span>
+<span class="z-string z-unquoted z-block z-yaml">      select one, two from buckle.myshoe where ...
+
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> simple statement
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> allows for parameterization via bindings, but does not use prepared statements internally
+</span>  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">example-simple-cql-stmt</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">simple</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-keyword z-control z-flow z-block-scalar z-literal z-yaml">|</span>
+<span class="z-string z-unquoted z-block z-yaml">     select three, four from knock.onthedoor where ...
+
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> raw statement
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> pre-renders the statement into a string, with no driver-supervised parameterization
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> useful for testing variant DDL where some fields are not parameterizable
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> NOTE: the raw form does its best to quote non-literals where needed, but you may
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> have to inject single or double quotes in special cases.
+</span>  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">example-raw-cql-stmt</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">raw</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-keyword z-control z-flow z-block-scalar z-literal z-yaml">|</span>
+<span class="z-string z-unquoted z-block z-yaml">     create table if not exist {ksname}.{tblname} ...
+
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> gremlin statement using the fluent API, as it would be written in a client application
+</span>  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">example-fluent-graph-stmt</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">fluent</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-keyword z-control z-flow z-block-scalar z-folded z-yaml">&gt;</span><span class="z-storage z-modifier z-chomping-indicator z-yaml">-</span>
+<span class="z-string z-unquoted z-block z-yaml">      g.V().hasLabel(&quot;device&quot;).has(&quot;deviceid&quot;, UUID.fromString({deviceid}))
+</span>    <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> if imports are not specified, the following is auto imported.
+</span>    <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> if imports are specified, you must also provide the __ class if needed
+</span>    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">imports</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+     <span class="z-punctuation z-definition z-block z-sequence z-item z-yaml">-</span> <span class="z-string z-unquoted z-plain z-out z-yaml">org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.__</span>
+
+  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> gremlin statement using string API (not recommended)
+</span>  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">example-raw-gremlin-stmt</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">gremlin</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-keyword z-control z-flow z-block-scalar z-folded z-yaml">&gt;</span><span class="z-storage z-modifier z-chomping-indicator z-yaml">-</span>
+<span class="z-string z-unquoted z-block z-yaml">      g.V().hasLabel(&quot;device&quot;).has(&quot;deviceid&quot;, UUID.fromString(&#39;{deviceid})&#39;)
+</span></span></code></pre>
+<h2 id="cql-op-template-optional-fields">CQL Op Template - Optional Fields</h2>
+<p>If any of these are provided as op template fields or as op params, or as activity params, then they
+will have the described effect. The calls to set these parameters on an individual statement are
+only incurred if they are provided. Otherwise, defaults are used. These options can be applied to
+any of the statement forms above.</p>
+<pre data-lang="yaml" class="language-yaml z-code"><code class="language-yaml" data-lang="yaml"><span class="z-source z-yaml"><span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">params</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+
+  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> Set the consistency level for this statement
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> For Astra, use only LOCAL_QUORUM
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> Otherwise, one of
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> ALL|EACH_QUORUM|QUORUM|LOCAL_QUORUM|ONE|TWO|THREE|LOCAL_ONE|ANY
+</span>  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">cl</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-unquoted z-plain z-out z-yaml">LOCAL_QUORUM</span>
+  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> or consistency_level: ...
+</span>
+  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> Set the serial consistency level for this statement.
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> Note, you probably don&#39;t need this unless you are using LWTs
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> SERIAL ~ QUORUM, LOCAL_SERIAL ~ LOCAL_QUORUM
+</span>  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">scl</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-unquoted z-plain z-out z-yaml">LOCAL_SERIAL</span>
+  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> or serial_consistency_level: ...
+</span>
+  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> Set a statement as idempotent. This is important for determining
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> when ops can be trivially retried with no concern for unexpected
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> mutation in the event that it succeeds multiple times.
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> true or false
+</span>  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">idempotent</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-constant z-language z-boolean z-yaml">false</span>
+
+  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> Set the timeout for the operation, from the driver&#39;s perspective,
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> in seconds. &quot;2 seconds&quot; is the default, but DDL statements, truncate or drop
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> statements will generally need more. If you want milliseconds, just use
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> fractional seconds, like 0.500
+</span>  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">timeout</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-constant z-numeric z-float z-decimal z-yaml">2<span class="z-punctuation z-separator z-decimal z-yaml">.</span>0</span>
+
+  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> Set the maximum number of allowed pages for this request before a
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> UnexpectedPagingException is thrown.
+</span>  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">maxpages</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-constant z-numeric z-integer z-decimal z-yaml">1</span>
+
+  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> Set the LWT rebinding behavior for this statement. If set to true, then
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> any statement result which was not applied will be retried with the
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> conditional fields set to the currently visible values. This makes all LWT
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> statements do another round trip of retrying (assuming the data doesn&#39;t
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> match the preconditions) in order to test LWT performance.
+</span>  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">retryreplace</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-constant z-language z-boolean z-yaml">true</span>
+
+  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> Set the number of retries allowed by the retryreplace option. This is set
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> to 1 conservatively, as with the maxpages setting. This means that you will
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> see an error if the first LWT retry after an unapplied change was not successful.
+</span>  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">maxlwtretries</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-constant z-numeric z-integer z-decimal z-yaml">1</span>
+
+  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span># The following options are meant for advanced testing scenarios only,
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span># and are not generally meant to be used in typical application-level,
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span># data mode, performance or scale testing. These expose properties
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span># which should not be set for general use. These allow for very specific
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span># scenarios to be constructed for core system-level testing.
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span># Some of them will only work with specially provided bindings which
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span># can provide the correct instantiated object type.
+</span>
+  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> replace the payload with a map of String-&gt;ByteBuffer for this operation
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> type: Map&lt;String, ByteBuffer&gt;
+</span>  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">custom_payload</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-constant z-numeric z-float z-decimal z-yaml"><span class="z-punctuation z-separator z-decimal z-yaml">.</span>..</span>
+
+  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> set an instantiated ExecutionProfile to be used for this operation
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> type: com.datastax.oss.driver.api.core.config.DriverExecutionProfile
+</span>  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">execution_profile</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-constant z-numeric z-float z-decimal z-yaml"><span class="z-punctuation z-separator z-decimal z-yaml">.</span>..</span>
+
+  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> set a named execution profile to be used for this operation
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> type: String
+</span>  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">execution_profile_name</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-constant z-numeric z-float z-decimal z-yaml"><span class="z-punctuation z-separator z-decimal z-yaml">.</span>..</span>
+
+  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> set a resolved target node to be used for this operation
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> type: com.datastax.oss.driver.api.core.metadata.Node
+</span>  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">node</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-constant z-numeric z-float z-decimal z-yaml"><span class="z-punctuation z-separator z-decimal z-yaml">.</span>..</span>
+
+  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> set the timestamp to be used as the &quot;now&quot; reference for this operation
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> type: int
+</span>  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">now_in_seconds</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-constant z-numeric z-float z-decimal z-yaml"><span class="z-punctuation z-separator z-decimal z-yaml">.</span>..</span>
+
+  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> set the page size for this operation
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> type: int
+</span>  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">page_size</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-constant z-numeric z-float z-decimal z-yaml"><span class="z-punctuation z-separator z-decimal z-yaml">.</span>..</span>
+
+  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> set the query timestamp for this operation (~ USING TIMESTAMP)
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> type: long
+</span>  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">query_timestamp</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+
+  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> set the routing key for this operation, as a single bytebuffer
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> type: ByteArray
+</span>  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">routing_key</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-constant z-numeric z-float z-decimal z-yaml"><span class="z-punctuation z-separator z-decimal z-yaml">.</span>..</span>
+
+  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> set the routing key for this operation as an array of bytebuffers
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> type: ByteArray[]
+</span>  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">routing_keys</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-constant z-numeric z-float z-decimal z-yaml"><span class="z-punctuation z-separator z-decimal z-yaml">.</span>..</span>
+
+  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> set the routing token for this operation
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> type: com.datastax.oss.driver.api.core.metadata.token.Token
+</span>  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">routing_token</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-constant z-numeric z-float z-decimal z-yaml"><span class="z-punctuation z-separator z-decimal z-yaml">.</span>..</span>
+
+  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> enable (or disable) tracing for this operation
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> This should be used with great care, as tracing imposed overhead
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> far and above most point queries or writes. Use it sparsely or only
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> for functional investigation
+</span>  <span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> type: boolean
+</span>  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">tracing</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-constant z-numeric z-float z-decimal z-yaml"><span class="z-punctuation z-separator z-decimal z-yaml">.</span>..</span>
+</span></code></pre>
+<h2 id="driver-cache">Driver Cache</h2>
+<p>Like all driver adapters, the CQLd4 driver has the ability to use multiple low-level driver
+instances for the purposes of advanced testing. To take advantage of this, simply set a <code>space</code>
+parameter in your op templates, with a dynamic value.
+<strong>WARNING</strong>: If you use the driver cache feature, be aware that creating a large number of driver
+instances will be very expensive. Generally driver instances are meant to be initialized and then
+shared throughout the life-cycle of an application process. Thus, if you are doing multi-instance
+driver testing, it is best to use bindings functions for the <code>space</code> parameter which have bounded
+cardinality per host.</p>
+
+<p><b><a href="#">Back to top</a></b></p>
+</article>
+<div class="toc" aria-hidden="true">
+  <div class="toc-sticky">
+    <h5>cqld4</h5>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/drivers/cqld4/#cqld4">cqld4</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/drivers/cqld4/#configuration"><small>- Configuration</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/drivers/cqld4/#backwards-compatibility-with-cql-and-cqld3"><small>- Backwards Compatibility with cql and cqld3</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/drivers/cqld4/#statement-forms"><small>- Statement Forms</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/drivers/cqld4/#cqld4-op-template-examples"><small>- CQLd4 Op Template Examples</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/drivers/cqld4/#cql-op-template-optional-fields"><small>- CQL Op Template - Optional Fields</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/drivers/cqld4/#driver-cache"><small>- Driver Cache</small></a>
+    </div>
+  </div>
+</div>
+  </main>
+  <footer>
+    <hr />
+    <div class="c">
+      <nav>
+        <ul></ul>
+      </nav>
+      <p class="s90">Copyright &copy; 2023-2023 NoSQLBench Project</p>
+    </div>
+  </footer>
+</body>
+</html>

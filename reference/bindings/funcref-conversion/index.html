@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script src="https://docs.nosqlbench.io/theme.min.js" integrity="sha384-IpIaa84kOKgkF5EJ0fD/kBe2wtIIsIB60ANGmuJxeA0dz5bSRfwBwp2/QybtQpU2"></script>
+  <link rel="stylesheet" href="https://docs.nosqlbench.io/abridge-switcher.css?h=4238d999f44a7bb130d5" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preload" as="style" class="preStyle" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" crossorigin="anonymous" />
+  <script defer src="https://docs.nosqlbench.io/search_index.en.js?h=ae47d253e455a3aaacb2" integrity="sha384-cP47owL9Iuak1e1AA21cJA4BgagQtaPwAXBQG7QgJeE2JKGgkCBROHbCj/Xym6KC"></script>
+  <script defer src="https://docs.nosqlbench.io/abridge-bundle-nofacade.min.js?h=9bcf621a2fcab7336017" integrity="sha384-u8AROOUG6n2Xjk2+7pvkkfeSIqinjI1tmqeBpZRlZtc5KFO/8DyFfEir6fAE2wcq"></script>
+  <meta name="base" content="https://docs.nosqlbench.io" />
+<meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>conversion functions | NoSQLBench Project</title>
+  <meta name="copyright" content="NoSQLBench Project" />
+  <meta name="description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <link rel="canonical" href="https://docs.nosqlbench.io/reference/bindings/funcref-conversion/" />
+  <meta name="keywords" content="Abridge, Abridge.css, Zola, Theme, Zola Theme, getzola, Semantic Html, Fast, lightweight" />
+  <meta property="og:url" content="https://docs.nosqlbench.io/reference/bindings/funcref-conversion/" />
+  <meta name="twitter:url" content="https://docs.nosqlbench.io/reference/bindings/funcref-conversion/" />
+  <meta property="og:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta name="twitter:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta property="og:title" content="conversion functions | NoSQLBench Project" />
+  <meta name="twitter:title" content="conversion functions | NoSQLBench Project" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:site_name" content="NoSQLBench Project" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://docs.nosqlbench.io/site.webmanifest" />
+  <link rel="mask-icon" href="https://docs.nosqlbench.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://docs.nosqlbench.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://docs.nosqlbench.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://docs.nosqlbench.io/favicon-16x16.png" />
+  <noscript><link rel="stylesheet" href="https://docs.nosqlbench.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://docs.nosqlbench.io/"><img src="https://docs.nosqlbench.io/nb5logo.png" alt="NoSQLBench5" width="32" height="32" />NoSQLBench v5</a></h1></div><div>
+        <ul><li> <h2><a href="https://docs.nosqlbench.io/getting-started/">Getting Started</a></h2> </li><li> <h2><a href="https://docs.nosqlbench.io/release-notes/">Release Notes</a></h2> </li><li class="js"><i type="reset" id="mode" class="svgs adjust"></i></li></ul>
+      </div>
+      <div>
+        <form autocomplete=off class="js" name="goSearch" id="searchbox">
+          <div class="searchd">
+            <input id="searchinput" type="text" placeholder="Search" title="Search" />
+            <button type="submit" title="Search"><i class="svgs search"></i></button>
+          </div>
+          <div><div id="suggestions"></div></div>
+        </form>
+      </div>
+
+      <a href="http://github.com/nosqlbench/nosqlbench-build-docs" title="This doc site's project repo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="1" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+      <a href="http://nosqlbench.io" title="NoSQLBench Project Site">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+    </nav>
+    <hr /><div style="position:sticky"><span><a href="&#x2F;">NB5 Docs► </a></span><span><a href="&#x2F;reference&#x2F;">Reference Section► </a></span><span title="Binding functions are the core of the procedural data generation capabilities of NoSQLBench. They bind generated data to operations in a determinstic way."><a href="&#x2F;reference&#x2F;bindings&#x2F;"><strong>Binding Functions▼</strong> </a></span><span title="[current page]"><a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-conversion&#x2F;"><strong>conversion functions 🖺</strong></a></span>
+</div></header>
+  <main><!-- active_page: reference&#x2F;bindings&#x2F;funcref_conversion.md -->
+<!-- active_section: reference&#x2F;bindings&#x2F;_index.md -->
+
+
+<!-- lower_root: reference&#x2F;_index.md -->
+<!-- >upper_root: reference&#x2F;_index.md -->
+
+<div class="toc" aria-hidden="true" id="">
+<!--  <h4>Binding Functions</h4>--><div class="toc-sticky"><div class="toc-item"title="This section is a specification of the standard workload format."><a href="&#x2F;reference&#x2F;workload_definition&#x2F;">►Workload Specification</a></div><div class="toc-item"title="DriverAdapters allow native drivers or other logic to be plugged into the nb5 engine."><a href="&#x2F;reference&#x2F;drivers&#x2F;">►Drivers</a></div><div class="toc-item"title="Binding functions are the core of the procedural data generation capabilities of NoSQLBench. They bind generated data to operations in a determinstic way."><strong>▼Binding Functions</strong></div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-conversion&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-conversion&#x2F;"><strong>conversion functions</strong></a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-general&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-general&#x2F;">general functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-functional&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-functional&#x2F;">flow functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-diagnostics&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-diagnostics&#x2F;">diagnostic functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-objects&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-objects&#x2F;">Distance</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-premade&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-premade&#x2F;">pre-made functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-statistics&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-statistics&#x2F;">LongStats</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-nulls&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-nulls&#x2F;">null functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-distributions&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-distributions&#x2F;">distribution functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-experimental&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-experimental&#x2F;">TokenMapFileCycle</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-state&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-state&#x2F;">state functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-collections&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-collections&#x2F;">collection functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-datetime&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-datetime&#x2F;">datetime functions</a>
+    </div><div class="toc-item"title="Documentation for bundled applications within NB5."><a href="&#x2F;reference&#x2F;apps&#x2F;">►Bundled Apps</a></div><div class="toc-item"title="Version data for the bundled and imported docs content"><a href="&#x2F;reference&#x2F;versions&#x2F;">►Version Info</a></div></div>
+</div>
+
+<article>
+
+  <p>Conversion functions simply allow values of one type
+to be converted to another type in an obvious way.</p>
+<h2 id="bytebuffersizedhashed">ByteBufferSizedHashed</h2>
+<p>Create a ByteBuffer from a long input based on a provided size function. As a 'Sized' function, the first argument is a function which determines the size of the resulting ByteBuffer. As a 'Hashed' function, the input value is hashed again before being used as value.</p>
+<ul>
+<li>
+<p>long -&gt; ByteBufferSizedHashed(int: size) -&gt; java.nio.ByteBuffer</p>
+<ul>
+<li><em>example:</em> <code>ByteBufferSizedHashed(16)</code></li>
+<li><em>Functionally identical to HashedToByteBuffer(16) but using dynamic sizing implementation</em></li>
+<li><em>example:</em> <code>ByteBufferSizedHashed(HashRange(10, 14))</code></li>
+<li><em>Create a ByteBuffer with variable limit (10 to 14)</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; ByteBufferSizedHashed(Object: sizeFunc) -&gt; java.nio.ByteBuffer</p>
+</li>
+</ul>
+<h2 id="bytebuffertohex">ByteBufferToHex</h2>
+<p>Convert the contents of the input ByteBuffer to a String as hexadecimal. This function is retained to avoid breaking previous workload definitions, but you should use {@link ToHexString} instead.</p>
+<ul>
+<li>java.nio.ByteBuffer -&gt; ByteBufferToHex() -&gt; String</li>
+</ul>
+<h2 id="decimalformat">DecimalFormat</h2>
+<p>Formats a floating point value to a string using the java.text.DecimalFormat</p>
+<ul>
+<li>double -&gt; DecimalFormat(String: format) -&gt; String
+<ul>
+<li><em>example:</em> <code>DecimalFormat('.##')</code></li>
+<li><em>converts a double value to a string with only two digits after the decimal</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="digesttobytebuffer">DigestToByteBuffer</h2>
+<p>Computes the digest of the ByteBuffer on input and stores it in the output ByteBuffer. The digestTypes available are: MD2 MD5 SHA-1 SHA-224 SHA-256 SHA-384 SHA-512 SHA3-224 SHA3-256 SHA3-384 SHA3-512</p>
+<ul>
+<li>
+<p>long -&gt; DigestToByteBuffer(String: digestType) -&gt; java.nio.ByteBuffer</p>
+</li>
+<li>
+<p>java.nio.ByteBuffer -&gt; DigestToByteBuffer(String: digestType) -&gt; java.nio.ByteBuffer</p>
+</li>
+</ul>
+<h2 id="doubletofloat">DoubleToFloat</h2>
+<p>Convert the input double value to the closest float value.</p>
+<ul>
+<li>double -&gt; DoubleToFloat() -&gt; Float</li>
+</ul>
+<h2 id="escapejson">EscapeJSON</h2>
+<p>Escape all special characters which are required to be escaped when found within JSON content according to the JSON spec</p>
+<pre class="z-code"><code><span class="z-text z-plain">{@code
+\b  Backspace (ascii code 08)
+\f  Form feed (ascii code 0C)
+\n  New line
+\r  Carriage return
+\t  Tab
+\&quot;  Double quote
+\\  Backslash character
+\/  Forward slash
+}
+</span></code></pre>
+<ul>
+<li>String -&gt; EscapeJSON() -&gt; String</li>
+</ul>
+<h2 id="flow">Flow</h2>
+<p>Combine functions into one.</p>
+<p>This function allows you to combine multiple other functions into one. This is often useful
+for constructing more sophisticated recipes, when you don't have the ability to use
+control flow or non-functional forms.</p>
+<p>The functions will be stitched together using the same logic that VirtData uses when
+combining flows outside functions. That said, if the functions selected are not the right ones,
+then it is possible to end up with the wrong data type at the end. To remedy this, be sure
+to add input and output qualifiers, like <code>long-&gt;</code> or <code>-&gt;String</code> where
+appropriate, to ensure that VirtData selects the right functions within the flow.</p>
+<ul>
+<li>long -&gt; Flow(Object[]...: funcs) -&gt; Object</li>
+</ul>
+<h2 id="format">Format</h2>
+<p>Apply the Java String.format method to an incoming object. @see <a rel="noopener" target="_blank" href="https://docs.oracle.com/javase/8/docs/api/Formatter.html#syntax">Java 8 String.format(...) javadoc</a> Note: This function can often be quite slow, so more direct methods are generally preferrable.</p>
+<ul>
+<li>Object -&gt; Format(String: format) -&gt; String
+<ul>
+<li><em>example:</em> <code>Format('Y')</code></li>
+<li><em>Yield the formatted year from a Java date object.</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="htmlentitydecode">HTMLEntityDecode</h2>
+<p>encode HTML Entities</p>
+<ul>
+<li>String -&gt; HTMLEntityDecode() -&gt; String
+<ul>
+<li><em>example:</em> <code>HTMLEntityEncode()</code></li>
+<li><em>Decode/Unescape input from HTML4 valid to text.</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="htmlentityencode">HTMLEntityEncode</h2>
+<p>encode HTML Entities</p>
+<ul>
+<li>String -&gt; HTMLEntityEncode() -&gt; String
+<ul>
+<li><em>example:</em> <code>HTMLEntityEncode()</code></li>
+<li><em>Encode/Escape input into HTML4 valid entties.</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="longtobyte">LongToByte</h2>
+<p>Convert the input long value to a byte, with negative values masked away.</p>
+<ul>
+<li>long -&gt; LongToByte() -&gt; Byte</li>
+</ul>
+<h2 id="longtoshort">LongToShort</h2>
+<p>Convert the input value from long to short.</p>
+<ul>
+<li>long -&gt; LongToShort() -&gt; Short</li>
+</ul>
+<h2 id="modulotobigdecimal">ModuloToBigDecimal</h2>
+<p>Return a {@code BigDecimal} value as the result of modulo division with the specified divisor.</p>
+<ul>
+<li>
+<p>long -&gt; ModuloToBigDecimal() -&gt; java.math.BigDecimal</p>
+</li>
+<li>
+<p>long -&gt; ModuloToBigDecimal(long: modulo) -&gt; java.math.BigDecimal</p>
+</li>
+</ul>
+<h2 id="modulotobigint">ModuloToBigInt</h2>
+<p>Return a {@code BigInteger} value as the result of modulo division with the specified divisor.</p>
+<ul>
+<li>
+<p>long -&gt; ModuloToBigInt() -&gt; java.math.BigInteger</p>
+</li>
+<li>
+<p>long -&gt; ModuloToBigInt(long: modulo) -&gt; java.math.BigInteger</p>
+</li>
+</ul>
+<h2 id="modulotoboolean">ModuloToBoolean</h2>
+<p>Return a boolean value as the result of modulo division with the specified divisor.</p>
+<ul>
+<li>long -&gt; ModuloToBoolean() -&gt; Boolean</li>
+</ul>
+<h2 id="modulotobyte">ModuloToByte</h2>
+<p>Return a byte value as the result of modulo division with the specified divisor.</p>
+<ul>
+<li>long -&gt; ModuloToByte(long: modulo) -&gt; Byte</li>
+</ul>
+<h2 id="modulotoshort">ModuloToShort</h2>
+<p>Return a boolean value as the result of modulo division with the specified divisor.</p>
+<ul>
+<li>long -&gt; ModuloToShort(long: modulo) -&gt; Short</li>
+</ul>
+<h2 id="snappycomp">SnappyComp</h2>
+<p>Compress the input using snappy compression</p>
+<ul>
+<li>String -&gt; SnappyComp() -&gt; java.nio.ByteBuffer</li>
+</ul>
+<h2 id="stringdatewrapper">StringDateWrapper</h2>
+<p>This function wraps an epoch time in milliseconds into a String as specified in the format. The valid formatters are documented at @see <a rel="noopener" target="_blank" href="https://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html">DateTimeFormat API Docs</a></p>
+<ul>
+<li>long -&gt; StringDateWrapper(String: format) -&gt; String</li>
+</ul>
+<h2 id="tobase64string">ToBase64String</h2>
+<p>Computes the Base64 representation of the byte image of the input long.</p>
+<ul>
+<li>
+<p>String -&gt; ToBase64String() -&gt; String</p>
+<ul>
+<li><em>example:</em> <code>ToBase64String()</code></li>
+<li><em>encode any input as Base64</em></li>
+</ul>
+</li>
+<li>
+<p>UUID -&gt; ToBase64String() -&gt; String</p>
+<ul>
+<li><em>example:</em> <code>ToBase64String()</code></li>
+<li><em>Encode the bits of a UUID into a Base64 String</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; ToBase64String() -&gt; String</p>
+<ul>
+<li><em>example:</em> <code>ToBase64String()</code></li>
+<li><em>Convert the bytes of a long input into a base64 String</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="tobigdecimal">ToBigDecimal</h2>
+<p>Convert values to BigDecimals at configurable scale or precision.</p>
+<p>ToBigDecimal(...) functions which take whole-numbered inputs may have
+a scale parameter or a custom MathContext, but not both. The scale parameter
+is not supported for String or Double input forms.</p>
+<ul>
+<li>
+<p>double -&gt; ToBigDecimal() -&gt; java.math.BigDecimal</p>
+<ul>
+<li><em>example:</em> <code>ToBigDecimal()</code></li>
+<li><em>Convert all double values to BigDecimal values with no limits (using MathContext.UNLIMITED)</em></li>
+</ul>
+</li>
+<li>
+<p>double -&gt; ToBigDecimal(String: context) -&gt; java.math.BigDecimal</p>
+<ul>
+<li>
+<p><em>notes:</em> Convert all input values to BigDecimal values with a specific MathContext.
+The value for context can be one of UNLIMITED,
+DECIMAL32, DECIMAL64, DECIMAL128, or any valid configuration supported by
+{@link MathContext#MathContext(String)}, such as {@code &quot;precision=32 roundingMode=CEILING&quot;}.
+In the latter form, roundingMode can be any valid value for {@link RoundingMode}, like
+UP, DOWN, CEILING, FLOOR, HALF_UP, HALF_DOWN, HALF_EVEN, or UNNECESSARY.</p>
+</li>
+<li>
+<p><em>example:</em> <code>ToBigDecimal('DECIMAL32')</code></p>
+</li>
+<li>
+<p><em>IEEE 754R Decimal32 format, 7 digits, HALF_EVEN</em></p>
+</li>
+<li>
+<p><em>example:</em> <code>ToBigDecimal('DECIMAL64'),</code></p>
+</li>
+<li>
+<p><em>IEEE 754R Decimal64 format, 16 digits, HALF_EVEN</em></p>
+</li>
+<li>
+<p><em>example:</em> <code>ToBigDecimal('DECIMAL128')</code></p>
+</li>
+<li>
+<p><em>IEEE 754R Decimal128 format, 34 digits, HALF_EVEN</em></p>
+</li>
+<li>
+<p><em>example:</em> <code>ToBigDecimal('UNLIMITED')</code></p>
+</li>
+<li>
+<p><em>unlimited precision, HALF_UP</em></p>
+</li>
+<li>
+<p><em>example:</em> <code>ToBigDecimal('precision=17 roundingMode=UNNECESSARY')</code></p>
+</li>
+<li>
+<p><em>Custom precision with no rounding performed</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p>long -&gt; ToBigDecimal() -&gt; java.math.BigDecimal</p>
+<ul>
+<li><em>example:</em> <code>ToBigDecimal()</code></li>
+<li><em>Convert all long values to whole-numbered BigDecimal values</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; ToBigDecimal(int: scale) -&gt; java.math.BigDecimal</p>
+<ul>
+<li><em>example:</em> <code>ToBigDecimal(0)</code></li>
+<li><em>Convert all long values to whole-numbered BigDecimal values</em></li>
+<li><em>example:</em> <code>ToBigDecimal(2)</code></li>
+<li><em>Convert long 'pennies' BigDecimal with 2 digits after decimal point</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; ToBigDecimal(String: context) -&gt; java.math.BigDecimal</p>
+<ul>
+<li>
+<p><em>notes:</em> Convert all input values to BigDecimal values with a specific MathContext. This form is only
+supported for scale=0, meaning whole numbers. The value for context can be one of UNLIMITED,
+DECIMAL32, DECIMAL64, DECIMAL128, or any valid configuration supported by
+{@link MathContext#MathContext(String)}, such as {@code &quot;precision=32 roundingMode=CEILING&quot;}.
+In the latter form, roundingMode can be any valid value for {@link RoundingMode}, like
+UP, DOWN, CEILING, FLOOR, HALF_UP, HALF_DOWN, HALF_EVEN, or UNNECESSARY.</p>
+</li>
+<li>
+<p><em>example:</em> <code>ToBigDecimal('DECIMAL32')</code></p>
+</li>
+<li>
+<p><em>IEEE 754R Decimal32 format, 7 digits, HALF_EVEN</em></p>
+</li>
+<li>
+<p><em>example:</em> <code>ToBigDecimal('DECIMAL64'),</code></p>
+</li>
+<li>
+<p><em>IEEE 754R Decimal64 format, 16 digits, HALF_EVEN</em></p>
+</li>
+<li>
+<p><em>example:</em> <code>ToBigDecimal('DECIMAL128')</code></p>
+</li>
+<li>
+<p><em>IEEE 754R Decimal128 format, 34 digits, HALF_EVEN</em></p>
+</li>
+<li>
+<p><em>example:</em> <code>ToBigDecimal('UNLIMITED')</code></p>
+</li>
+<li>
+<p><em>unlimited precision, HALF_UP</em></p>
+</li>
+<li>
+<p><em>example:</em> <code>ToBigDecimal('precision=17 roundingMode=UNNECESSARY')</code></p>
+</li>
+<li>
+<p><em>Custom precision with no rounding performed</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p>int -&gt; ToBigDecimal() -&gt; java.math.BigDecimal</p>
+<ul>
+<li><em>example:</em> <code>ToBigDecimal()</code></li>
+<li><em>Convert all int values to BigDecimal values with no limits (using MathContext.UNLIMITED)</em></li>
+</ul>
+</li>
+<li>
+<p>int -&gt; ToBigDecimal(String: context) -&gt; java.math.BigDecimal</p>
+<ul>
+<li>
+<p><em>notes:</em> Convert all input values to BigDecimal values with a specific MathContext.
+The value for context can be one of UNLIMITED,
+DECIMAL32, DECIMAL64, DECIMAL128, or any valid configuration supported by
+{@link MathContext#MathContext(String)}, such as {@code &quot;precision=32 roundingMode=CEILING&quot;}.
+In the latter form, roundingMode can be any valid value for {@link RoundingMode}, like
+UP, DOWN, CEILING, FLOOR, HALF_UP, HALF_DOWN, HALF_EVEN, or UNNECESSARY.</p>
+</li>
+<li>
+<p><em>example:</em> <code>ToBigDecimal('DECIMAL32')</code></p>
+</li>
+<li>
+<p><em>IEEE 754R Decimal32 format, 7 digits, HALF_EVEN</em></p>
+</li>
+<li>
+<p><em>example:</em> <code>ToBigDecimal('DECIMAL64'),</code></p>
+</li>
+<li>
+<p><em>IEEE 754R Decimal64 format, 16 digits, HALF_EVEN</em></p>
+</li>
+<li>
+<p><em>example:</em> <code>ToBigDecimal('DECIMAL128')</code></p>
+</li>
+<li>
+<p><em>IEEE 754R Decimal128 format, 34 digits, HALF_EVEN</em></p>
+</li>
+<li>
+<p><em>example:</em> <code>ToBigDecimal('UNLIMITED')</code></p>
+</li>
+<li>
+<p><em>unlimited precision, HALF_UP</em></p>
+</li>
+<li>
+<p><em>example:</em> <code>ToBigDecimal('precision=17 roundingMode=UNNECESSARY')</code></p>
+</li>
+<li>
+<p><em>Custom precision with no rounding performed</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p>String -&gt; ToBigDecimal() -&gt; java.math.BigDecimal</p>
+<ul>
+<li><em>example:</em> <code>Convert strings to BigDecimal according to default precision (unlimited) and rounding (HALF_UP)</code></li>
+</ul>
+</li>
+<li>
+<p>String -&gt; ToBigDecimal(String: context) -&gt; java.math.BigDecimal</p>
+<ul>
+<li><em>notes:</em> Convert all input values to BigDecimal values with a specific MathContext. This form is only
+supported for scale=0, meaning whole numbers. The value for context can be one of UNLIMITED,
+DECIMAL32, DECIMAL64, DECIMAL128, or any valid configuration supported by
+{@link MathContext#MathContext(String)}, such as {@code &quot;precision=32 roundingMode=CEILING&quot;}.
+In the latter form, roundingMode can be any valid value for {@link RoundingMode}, like
+UP, DOWN, CEILING, FLOOR, HALF_UP, HALF_DOWN, HALF_EVEN, or UNNECESSARY.</li>
+</ul>
+</li>
+</ul>
+<h2 id="tobigint">ToBigInt</h2>
+<p>Convert the input value to a {@code BigInteger}</p>
+<ul>
+<li>long -&gt; ToBigInt() -&gt; java.math.BigInteger</li>
+</ul>
+<h2 id="toboolean">ToBoolean</h2>
+<p>Convert the input value to a {@code boolean}</p>
+<ul>
+<li>
+<p>Float -&gt; ToBoolean() -&gt; Boolean</p>
+</li>
+<li>
+<p>Double -&gt; ToBoolean() -&gt; Boolean</p>
+</li>
+<li>
+<p>long -&gt; ToBoolean() -&gt; Boolean</p>
+</li>
+<li>
+<p>Integer -&gt; ToBoolean() -&gt; Boolean</p>
+</li>
+</ul>
+<h2 id="tobyte">ToByte</h2>
+<p>Convert the input value to a {@code Byte}.</p>
+<ul>
+<li>
+<p>Float -&gt; ToByte() -&gt; Byte</p>
+</li>
+<li>
+<p>Float -&gt; ToByte(int: modulo) -&gt; Byte</p>
+</li>
+<li>
+<p>Short -&gt; ToByte(int: scale) -&gt; Byte</p>
+</li>
+<li>
+<p>Short -&gt; ToByte() -&gt; Byte</p>
+</li>
+<li>
+<p>String -&gt; ToByte() -&gt; Byte</p>
+</li>
+<li>
+<p>long -&gt; ToByte() -&gt; Byte</p>
+</li>
+<li>
+<p>long -&gt; ToByte(int: modulo) -&gt; Byte</p>
+</li>
+<li>
+<p>int -&gt; ToByte() -&gt; Byte</p>
+</li>
+<li>
+<p>int -&gt; ToByte(int: modulo) -&gt; Byte</p>
+</li>
+<li>
+<p>double -&gt; ToByte() -&gt; Byte</p>
+</li>
+<li>
+<p>double -&gt; ToByte(int: modulo) -&gt; Byte</p>
+</li>
+</ul>
+<h2 id="tobytebuffer">ToByteBuffer</h2>
+<p>Convert the input value to a {@code ByteBuffer}</p>
+<ul>
+<li>
+<p>String -&gt; ToByteBuffer() -&gt; java.nio.ByteBuffer</p>
+</li>
+<li>
+<p>java.nio.CharBuffer -&gt; ToByteBuffer() -&gt; java.nio.ByteBuffer</p>
+</li>
+<li>
+<p>int -&gt; ToByteBuffer() -&gt; java.nio.ByteBuffer</p>
+</li>
+<li>
+<p>long -&gt; ToByteBuffer() -&gt; java.nio.ByteBuffer</p>
+</li>
+<li>
+<p>long -&gt; ToByteBuffer(int: size) -&gt; java.nio.ByteBuffer</p>
+<ul>
+<li><em>example:</em> <code>ToByteBuffer(13)</code></li>
+<li><em>Repeat the input long value to make a 13byte buffer</em></li>
+</ul>
+</li>
+<li>
+<p>Float -&gt; ToByteBuffer() -&gt; java.nio.ByteBuffer</p>
+</li>
+<li>
+<p>Short -&gt; ToByteBuffer() -&gt; java.nio.ByteBuffer</p>
+</li>
+<li>
+<p>double -&gt; ToByteBuffer() -&gt; java.nio.ByteBuffer</p>
+</li>
+</ul>
+<h2 id="tocharbuffer">ToCharBuffer</h2>
+<p>Convert the input string to a character buffer</p>
+<ul>
+<li>String -&gt; ToCharBuffer() -&gt; java.nio.CharBuffer</li>
+</ul>
+<h2 id="tocqldurationnanos">ToCqlDurationNanos</h2>
+<p>Convert the input value into a {@link CqlDuration} by reading the input as total nanoseconds, assuming 30-month days.</p>
+<ul>
+<li>long -&gt; ToCqlDurationNanos() -&gt; com.datastax.oss.driver.api.core.data.CqlDuration</li>
+</ul>
+<h2 id="todouble">ToDouble</h2>
+<p>Convert the input value to a double.</p>
+<ul>
+<li>long -&gt; ToDouble() -&gt; double</li>
+</ul>
+<h2 id="tofloat">ToFloat</h2>
+<p>Convert the input value into a float.</p>
+<ul>
+<li>
+<p>long -&gt; ToFloat(long: scale) -&gt; Float</p>
+</li>
+<li>
+<p>long -&gt; ToFloat() -&gt; Float</p>
+</li>
+<li>
+<p>double -&gt; ToFloat(double: scale) -&gt; Float</p>
+</li>
+<li>
+<p>double -&gt; ToFloat() -&gt; Float</p>
+</li>
+<li>
+<p>int -&gt; ToFloat(int: scale) -&gt; Float</p>
+</li>
+<li>
+<p>int -&gt; ToFloat() -&gt; Float</p>
+</li>
+<li>
+<p>String -&gt; ToFloat() -&gt; Float</p>
+</li>
+<li>
+<p>Short -&gt; ToFloat() -&gt; Float</p>
+</li>
+</ul>
+<h2 id="tohexstring">ToHexString</h2>
+<p>Converts the input ByteBuffer to a hexadecimal String.</p>
+<ul>
+<li>
+<p>long -&gt; ToHexString() -&gt; String</p>
+</li>
+<li>
+<p>java.nio.ByteBuffer -&gt; ToHexString() -&gt; String</p>
+<ul>
+<li><em>notes:</em> Convert the ByteBuffer's contents to a hex string using upper case by default.</li>
+</ul>
+</li>
+<li>
+<p>java.nio.ByteBuffer -&gt; ToHexString(boolean: useUpperCase) -&gt; String</p>
+<ul>
+<li><em>notes:</em> Convert the ByteBuffer's contents to a hex string upper or lower case.</li>
+</ul>
+</li>
+</ul>
+<h2 id="toinetaddress">ToInetAddress</h2>
+<p>Convert the input value to a {@code InetAddress}</p>
+<ul>
+<li>long -&gt; ToInetAddress() -&gt; InetAddress</li>
+</ul>
+<h2 id="toint">ToInt</h2>
+<p>Convert the input value to an int with long modulus remainder. If the scale is chosen, then the value is wrapped at this value. Otherwise, {@link Integer#MAX_VALUE} is used.</p>
+<ul>
+<li>
+<p>Object -&gt; ToInt() -&gt; Integer</p>
+</li>
+<li>
+<p>Double -&gt; ToInt(int: scale) -&gt; Integer</p>
+</li>
+<li>
+<p>Double -&gt; ToInt() -&gt; Integer</p>
+</li>
+<li>
+<p>double -&gt; ToInt(int: scale) -&gt; int</p>
+</li>
+<li>
+<p>double -&gt; ToInt() -&gt; int</p>
+</li>
+<li>
+<p>long -&gt; ToInt() -&gt; int</p>
+</li>
+<li>
+<p>String -&gt; ToInt() -&gt; Integer</p>
+</li>
+<li>
+<p>long -&gt; ToInt(int: scale) -&gt; int</p>
+<ul>
+<li><em>example:</em> <code>ToInt(1000)</code></li>
+<li><em>converts a long input value to an int between 0 and 999, inclusive</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; ToInt() -&gt; int</p>
+<ul>
+<li><em>example:</em> <code>ToInt()</code></li>
+<li>*converts a long input value to an int between 0 and 2147483647, inclusive *</li>
+</ul>
+</li>
+</ul>
+<h2 id="tojson">ToJSON</h2>
+<p>Convert the input object to a JSON string with Gson.</p>
+<ul>
+<li>Object -&gt; ToJSON() -&gt; String</li>
+</ul>
+<h2 id="tojsonpretty">ToJSONPretty</h2>
+<p>Convert the input object to a JSON string with Gson, with pretty printing enabled.</p>
+<ul>
+<li>Object -&gt; ToJSONPretty() -&gt; String</li>
+</ul>
+<h2 id="tolong">ToLong</h2>
+<p>Convert the input value to a long.</p>
+<ul>
+<li>
+<p>Float -&gt; ToLong(long: scale) -&gt; Long</p>
+</li>
+<li>
+<p>Float -&gt; ToLong() -&gt; Long</p>
+</li>
+<li>
+<p>String -&gt; ToLong() -&gt; Long</p>
+</li>
+<li>
+<p>double -&gt; ToLong(long: scale) -&gt; long</p>
+</li>
+<li>
+<p>double -&gt; ToLong() -&gt; long</p>
+</li>
+</ul>
+<h2 id="tomd5bytebuffer">ToMD5ByteBuffer</h2>
+<p>Converts the byte image of the input long to a MD5 digest in ByteBuffer form. Deprecated usage due to unsafe MD5 digest. Replaced with DigestToByteBuffer with MD5 when absolutely needed for existing NB tests. However, stronger encryption algorithms (e.g. SHA-256) are recommended due to MD5's limitations.</p>
+<ul>
+<li>long -&gt; ToMD5ByteBuffer() -&gt; java.nio.ByteBuffer
+<ul>
+<li>
+<p><em>notes:</em> Deprecated usage due to unsafe MD5 digest.
+Use the DigestToByteBuffer with alternatives other than MD5.</p>
+</li>
+<li>
+<p><em>example:</em> <code>MD5ByteBuffer()</code></p>
+</li>
+<li>
+<p><em>convert the a input to an md5 digest of its bytes</em></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="toshort">ToShort</h2>
+<p>Convert the input value to a short.</p>
+<ul>
+<li>
+<p>String -&gt; ToShort() -&gt; Short</p>
+</li>
+<li>
+<p>Float -&gt; ToShort() -&gt; Short</p>
+</li>
+<li>
+<p>Float -&gt; ToShort(int: modulo) -&gt; Short</p>
+</li>
+<li>
+<p>long -&gt; ToShort() -&gt; Short</p>
+</li>
+<li>
+<p>long -&gt; ToShort(int: wrapat) -&gt; Short</p>
+<ul>
+<li><em>notes:</em> This form allows for limiting the short values at a lower limit than Short.MAX_VALUE.
+@param wrapat The maximum value to return.</li>
+</ul>
+</li>
+<li>
+<p>int -&gt; ToShort() -&gt; Short</p>
+</li>
+<li>
+<p>int -&gt; ToShort(int: scale) -&gt; Short</p>
+</li>
+<li>
+<p>double -&gt; ToShort() -&gt; Short</p>
+</li>
+<li>
+<p>double -&gt; ToShort(int: modulo) -&gt; Short</p>
+</li>
+</ul>
+<h2 id="tostring">ToString</h2>
+<p>Converts the input to the most obvious string representation with String.valueOf(...). Forms which accept a function will evaluate that function first and then apply String.valueOf() to the result.</p>
+<ul>
+<li>
+<p>Float -&gt; ToString() -&gt; String</p>
+</li>
+<li>
+<p>long -&gt; ToString() -&gt; String</p>
+</li>
+<li>
+<p>long -&gt; ToString(function.LongUnaryOperator: f) -&gt; String</p>
+</li>
+<li>
+<p>long -&gt; ToString(function.LongFunction&lt;?&gt;: f) -&gt; String</p>
+</li>
+<li>
+<p>long -&gt; ToString(function.Function&lt;Long,?&gt;: f) -&gt; String</p>
+</li>
+<li>
+<p>long -&gt; ToString(function.LongToIntFunction: f) -&gt; String</p>
+</li>
+<li>
+<p>long -&gt; ToString(function.LongToDoubleFunction: f) -&gt; String</p>
+</li>
+<li>
+<p>long -&gt; ToString(io.nosqlbench.virtdata.library.basics.shared.from_long.to_byte.LongToByte: f) -&gt; String</p>
+</li>
+<li>
+<p>long -&gt; ToString(io.nosqlbench.virtdata.library.basics.shared.from_long.to_short.LongToShort: f) -&gt; String</p>
+</li>
+<li>
+<p>double -&gt; ToString() -&gt; String</p>
+<ul>
+<li><em>example:</em> <code>ToString()</code></li>
+<li><em>map the double input value to a String</em></li>
+</ul>
+</li>
+<li>
+<p>double -&gt; ToString(function.DoubleUnaryOperator: df) -&gt; String</p>
+<ul>
+<li><em>example:</em> <code>ToString(Add(5.7D))</code></li>
+<li><em>map the double input value X to X+5.7D and then to a String</em></li>
+</ul>
+</li>
+<li>
+<p>double -&gt; ToString(function.DoubleFunction<Double>: df) -&gt; String</p>
+</li>
+<li>
+<p>double -&gt; ToString(function.Function&lt;Double,Double&gt;: df) -&gt; String</p>
+</li>
+<li>
+<p>int -&gt; ToString() -&gt; String</p>
+</li>
+<li>
+<p>Object -&gt; ToString() -&gt; String</p>
+</li>
+</ul>
+<h2 id="touuid">ToUUID</h2>
+<p>This function creates a non-random UUID in the type 4 version (Random). It always puts the same value in the MSB position of the UUID format. The input value is put in the LSB position. This function is suitable for deterministic testing of scenarios which depend on type 4 UUIDs, but without the mandated randomness that makes testing difficult. Just be aware that the MSB will always contain value 0x0123456789ABCDEFL unless you specify a different long value to pre-fill it with.</p>
+<ul>
+<li>
+<p>long -&gt; ToUUID() -&gt; UUID</p>
+</li>
+<li>
+<p>long -&gt; ToUUID(long: msbs) -&gt; UUID</p>
+</li>
+</ul>
+<h2 id="urldecode">URLDecode</h2>
+<p>URLDecode string data</p>
+<ul>
+<li>String -&gt; URLDecode(String: charset) -&gt; String
+<ul>
+<li><em>notes:</em> URLDecode any incoming string using the specified charset.</li>
+</ul>
+</li>
+</ul>
+<p>@param charset A valid character set name from {@link Charset}</p>
+<ul>
+<li>
+<p><em>example:</em> <code>URLDecode('UTF-16')</code></p>
+</li>
+<li>
+<p><em>URLDecode using the UTF-16 charset.</em></p>
+</li>
+<li>
+<p>String -&gt; URLDecode() -&gt; String</p>
+<ul>
+<li><em>example:</em> <code>URLDecode()</code></li>
+<li><em>URLDecode using the default UTF-8 charset.</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="urlencode">URLEncode</h2>
+<p>URLEncode string data</p>
+<ul>
+<li>String -&gt; URLEncode(String: charset) -&gt; String
+<ul>
+<li><em>notes:</em> UrlEncode any incoming string using the specified charset.</li>
+</ul>
+</li>
+</ul>
+<p>@param charset A valid character set name from {@link Charset}</p>
+<ul>
+<li>
+<p><em>example:</em> <code>URLEncode('UTF-16')</code></p>
+</li>
+<li>
+<p><em>URLEncode using the UTF-16 charset.</em></p>
+</li>
+<li>
+<p>String -&gt; URLEncode() -&gt; String</p>
+<ul>
+<li><em>example:</em> <code>URLEncode()</code></li>
+<li><em>URLEncode using the default UTF-8 charset.</em></li>
+</ul>
+</li>
+</ul>
+
+<p><b><a href="#">Back to top</a></b></p>
+</article>
+<div class="toc" aria-hidden="true">
+  <div class="toc-sticky">
+    <h5>conversion functions</h5>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-conversion/#bytebuffersizedhashed">ByteBufferSizedHashed</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-conversion/#bytebuffertohex">ByteBufferToHex</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-conversion/#decimalformat">DecimalFormat</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-conversion/#digesttobytebuffer">DigestToByteBuffer</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-conversion/#doubletofloat">DoubleToFloat</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-conversion/#escapejson">EscapeJSON</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-conversion/#flow">Flow</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-conversion/#format">Format</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-conversion/#htmlentitydecode">HTMLEntityDecode</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-conversion/#htmlentityencode">HTMLEntityEncode</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-conversion/#longtobyte">LongToByte</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-conversion/#longtoshort">LongToShort</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-conversion/#modulotobigdecimal">ModuloToBigDecimal</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-conversion/#modulotobigint">ModuloToBigInt</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-conversion/#modulotoboolean">ModuloToBoolean</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-conversion/#modulotobyte">ModuloToByte</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-conversion/#modulotoshort">ModuloToShort</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-conversion/#snappycomp">SnappyComp</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-conversion/#stringdatewrapper">StringDateWrapper</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-conversion/#tobase64string">ToBase64String</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-conversion/#tobigdecimal">ToBigDecimal</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-conversion/#tobigint">ToBigInt</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-conversion/#toboolean">ToBoolean</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-conversion/#tobyte">ToByte</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-conversion/#tobytebuffer">ToByteBuffer</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-conversion/#tocharbuffer">ToCharBuffer</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-conversion/#tocqldurationnanos">ToCqlDurationNanos</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-conversion/#todouble">ToDouble</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-conversion/#tofloat">ToFloat</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-conversion/#tohexstring">ToHexString</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-conversion/#toinetaddress">ToInetAddress</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-conversion/#toint">ToInt</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-conversion/#tojson">ToJSON</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-conversion/#tojsonpretty">ToJSONPretty</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-conversion/#tolong">ToLong</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-conversion/#tomd5bytebuffer">ToMD5ByteBuffer</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-conversion/#toshort">ToShort</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-conversion/#tostring">ToString</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-conversion/#touuid">ToUUID</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-conversion/#urldecode">URLDecode</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-conversion/#urlencode">URLEncode</a>
+    </div>
+  </div>
+</div>
+  </main>
+  <footer>
+    <hr />
+    <div class="c">
+      <nav>
+        <ul></ul>
+      </nav>
+      <p class="s90">Copyright &copy; 2023-2023 NoSQLBench Project</p>
+    </div>
+  </footer>
+</body>
+</html>

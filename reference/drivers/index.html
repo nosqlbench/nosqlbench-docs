@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script src="https://docs.nosqlbench.io/theme.min.js" integrity="sha384-IpIaa84kOKgkF5EJ0fD/kBe2wtIIsIB60ANGmuJxeA0dz5bSRfwBwp2/QybtQpU2"></script>
+  <link rel="stylesheet" href="https://docs.nosqlbench.io/abridge-switcher.css?h=4238d999f44a7bb130d5" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preload" as="style" class="preStyle" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" crossorigin="anonymous" />
+  <script defer src="https://docs.nosqlbench.io/search_index.en.js?h=ae47d253e455a3aaacb2" integrity="sha384-cP47owL9Iuak1e1AA21cJA4BgagQtaPwAXBQG7QgJeE2JKGgkCBROHbCj/Xym6KC"></script>
+  <script defer src="https://docs.nosqlbench.io/abridge-bundle-nofacade.min.js?h=9bcf621a2fcab7336017" integrity="sha384-u8AROOUG6n2Xjk2+7pvkkfeSIqinjI1tmqeBpZRlZtc5KFO/8DyFfEir6fAE2wcq"></script>
+  <meta name="base" content="https://docs.nosqlbench.io" />
+<meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>JDBC driver | NoSQLBench Project</title>
+  <meta name="copyright" content="NoSQLBench Project" />
+  <meta name="description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <link rel="canonical" href="https://docs.nosqlbench.io/reference/drivers/" />
+  <meta name="keywords" content="Abridge, Abridge.css, Zola, Theme, Zola Theme, getzola, Semantic Html, Fast, lightweight" />
+  <meta property="og:url" content="https://docs.nosqlbench.io/reference/drivers/" />
+  <meta name="twitter:url" content="https://docs.nosqlbench.io/reference/drivers/" />
+  <meta property="og:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta name="twitter:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta property="og:title" content="NoSQLBench Project" />
+  <meta name="twitter:title" content="NoSQLBench Project" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:site_name" content="NoSQLBench Project" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://docs.nosqlbench.io/site.webmanifest" />
+  <link rel="mask-icon" href="https://docs.nosqlbench.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://docs.nosqlbench.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://docs.nosqlbench.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://docs.nosqlbench.io/favicon-16x16.png" />
+  <noscript><link rel="stylesheet" href="https://docs.nosqlbench.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://docs.nosqlbench.io/"><img src="https://docs.nosqlbench.io/nb5logo.png" alt="NoSQLBench5" width="32" height="32" />NoSQLBench v5</a></h1></div><div>
+        <ul><li> <h2><a href="https://docs.nosqlbench.io/getting-started/">Getting Started</a></h2> </li><li> <h2><a href="https://docs.nosqlbench.io/release-notes/">Release Notes</a></h2> </li><li class="js"><i type="reset" id="mode" class="svgs adjust"></i></li></ul>
+      </div>
+      <div>
+        <form autocomplete=off class="js" name="goSearch" id="searchbox">
+          <div class="searchd">
+            <input id="searchinput" type="text" placeholder="Search" title="Search" />
+            <button type="submit" title="Search"><i class="svgs search"></i></button>
+          </div>
+          <div><div id="suggestions"></div></div>
+        </form>
+      </div>
+
+      <a href="http://github.com/nosqlbench/nosqlbench-build-docs" title="This doc site's project repo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="1" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+      <a href="http://nosqlbench.io" title="NoSQLBench Project Site">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+    </nav>
+    <hr /><div style="position:sticky"><span><a href="&#x2F;">NB5 Docs► </a></span><span><a href="&#x2F;reference&#x2F;">Reference Section► </a></span><span title="DriverAdapters allow native drivers or other logic to be plugged into the nb5 engine."><a href="&#x2F;reference&#x2F;drivers&#x2F;"><strong>Drivers▼</strong> </a></span><span title="[current page]"><a href="&#x2F;reference&#x2F;drivers&#x2F;jdbc&#x2F;"><strong>JDBC driver 🖺</strong></a></span>
+</div></header>
+  <main><!-- active_page: reference&#x2F;drivers&#x2F;jdbc.md -->
+<!-- active_section: reference&#x2F;drivers&#x2F;_index.md -->
+
+
+<!-- lower_root: reference&#x2F;_index.md -->
+<!-- >upper_root: reference&#x2F;_index.md -->
+
+<div class="toc" aria-hidden="true" id="">
+<!--  <h4>Drivers</h4>--><div class="toc-sticky"><div class="toc-item"title="This section is a specification of the standard workload format."><a href="&#x2F;reference&#x2F;workload_definition&#x2F;">►Workload Specification</a></div><div class="toc-item"title="DriverAdapters allow native drivers or other logic to be plugged into the nb5 engine."><strong>▼Drivers</strong></div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;jdbc&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;jdbc&#x2F;"><strong>JDBC driver</strong></a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;cqld4&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;cqld4&#x2F;">cqld4</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;stdout&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;stdout&#x2F;">stdout</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;mongodb&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;mongodb&#x2F;">MongoDB</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;diag&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;diag&#x2F;">diag</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;pulsar&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;pulsar&#x2F;">pulsar</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;tcpserver&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;tcpserver&#x2F;">tcpserver</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;tcpclient&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;tcpclient&#x2F;">tcpclient</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;dynamodb&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;dynamodb&#x2F;">dynamodb</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;s4j&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;s4j&#x2F;">S4J</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;http&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;http&#x2F;">http</a>
+    </div><div class="toc-item"title="Binding functions are the core of the procedural data generation capabilities of NoSQLBench. They bind generated data to operations in a determinstic way."><a href="&#x2F;reference&#x2F;bindings&#x2F;">►Binding Functions</a></div><div class="toc-item"title="Documentation for bundled applications within NB5."><a href="&#x2F;reference&#x2F;apps&#x2F;">►Bundled Apps</a></div><div class="toc-item"title="Version data for the bundled and imported docs content"><a href="&#x2F;reference&#x2F;versions&#x2F;">►Version Info</a></div></div>
+</div>
+
+<article>
+
+  <h1 id="jdbc-driver">JDBC driver</h1>
+<p>This JDBC driver leverages <a rel="noopener" target="_blank" href="https://github.com/brettwooldridge/HikariCP/wiki">Hikari Connection Pool</a> for connection pool and works with PostgreSQL®. This leverages NoSQLBench based workload generation and performance testing against any PostgreSQL-compatible database cluster. Example: CockroachDB® or YugabyteDB® (YSQL API).</p>
+<h1 id="executing-jdbc-workload">Executing JDBC Workload</h1>
+<p>The following is an example of invoking a JDBC workload.</p>
+<pre data-lang="shell" class="language-shell z-code"><code class="language-shell" data-lang="shell"><span class="z-text z-plain">&lt;nb_cmd&gt; run driver=jdbc workload=&quot;/path/to/workload.yaml&quot; cycles=1000 threads=100 url=&quot;jdbc:postgresql://&quot; serverName=localhost portNumber=5432 databaseName=defaultdb ... -vv --show-stacktraces
+</span></code></pre>
+<p>In the above NB command, following are JDBC driver specific parameters:</p>
+<ul>
+<li><code>url</code>: URL of the database cluster. Default is <code>jdbc:postgresql://</code>.</li>
+<li><code>serverName</code>: Default is <code>localhost</code>.</li>
+<li><code>portNumber</code>: Default is <code>5432</code>.</li>
+<li><code>serverName</code>: The database name. The default is to connect to a database with the same name as the user name used to connect to the server.</li>
+</ul>
+<p>Other NB engine parameters are straight forward:</p>
+<ul>
+<li><code>driver</code>: <em>must</em> be <code>jdbc</code>.</li>
+<li><code>threads</code>: depending on the workload type, the NB thread number determines how many clients will be created. All the clients will share the Connection originated from the Hikari Connection Pool.</li>
+<li><code>*.yaml</code>: the NB jdbc scenario definition workload yaml file.</li>
+<li><code>&lt;nb_cmd&gt;</code>: is <code>./nb</code> (using binary) or the <code>java -jar nb5.jar</code>.</li>
+</ul>
+<h1 id="configuration">Configuration</h1>
+<p>These are the main configurations with which we could issue a query and process the results back based on the <a rel="noopener" target="_blank" href="https://jdbc.postgresql.org/documentation/query/">PostgreSQL® Query</a> pattern.</p>
+<h2 id="config-sources">Config Sources</h2>
+<ul>
+<li><code>execute</code>: This is to issue any DDL statements such <code>CREATE DATABASE|TABLE</code> or <code>DROP DATABASE|TABLE</code> operations which returns nothing.</li>
+<li><code>query</code>: This is to issue DML statement such as <code>SELECT</code> operation which would return a <code>ResultSet</code> object to process.</li>
+<li><code>update</code>: This is to issue DML statements such as <code>INSERT|UPDATE|DELETE</code> operations that will return how many number of rows were affected by that operation.</li>
+</ul>
+<h2 id="statement-forms">Statement Forms</h2>
+<p>The syntax for specifying these types is simplified as well, using only a single <code>type</code> field which allows values of <code>execute</code>, <code>query</code>, &amp; <code>update</code>
+and specifying the raw statements in the <code>stmt</code>. Alternatively, one could directly use one of the types and provide the raw query directly.</p>
+<h3 id="examples">Examples</h3>
+<p>Check out the default activities under the <a href="https://docs.nosqlbench.io/reference/drivers/jdbc/./activities.baselinesv2">activities.baselinesv2</a> directory.</p>
+<h4 id="op-template-examples">Op Template Examples</h4>
+<pre data-lang="yaml" class="language-yaml z-code"><code class="language-yaml" data-lang="yaml"><span class="z-source z-yaml"><span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">ops</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">drop-database</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">type</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-unquoted z-plain z-out z-yaml">execute</span>
+    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">stmt</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-keyword z-control z-flow z-block-scalar z-literal z-yaml">|</span>
+<span class="z-string z-unquoted z-block z-yaml">      DROP DATABASE IF EXISTS TEMPLATE(database,baselines);
+</span>  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">create-table</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">execute</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-keyword z-control z-flow z-block-scalar z-literal z-yaml">|</span>
+<span class="z-string z-unquoted z-block z-yaml">      CREATE TABLE IF NOT EXISTS TEMPLATE(database,baselines).TEMPLATE(table,keyvalue);
+</span>  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">select-table</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">query</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-keyword z-control z-flow z-block-scalar z-literal z-yaml">|</span>
+<span class="z-string z-unquoted z-block z-yaml">      SELECT one, two, three FROM TEMPLATE(database,baselines).TEMPLATE(table,keyvalue) WHERE ...;
+</span>  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">insert-table</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">update</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-keyword z-control z-flow z-block-scalar z-literal z-yaml">|</span>
+<span class="z-string z-unquoted z-block z-yaml">      UPDATE TABLE TEMPLATE(database,baselines).TEMPLATE(table,keyvalue) SET key = &#39;value&#39; WHERE ...;
+</span></span></code></pre>
+
+<p><b><a href="#">Back to top</a></b></p>
+</article>
+<div class="toc" aria-hidden="true">
+  <div class="toc-sticky">
+    <h5>JDBC driver</h5>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/drivers/jdbc/#jdbc-driver">JDBC driver</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/drivers/jdbc/#executing-jdbc-workload">Executing JDBC Workload</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/drivers/jdbc/#configuration">Configuration</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/drivers/jdbc/#config-sources"><small>- Config Sources</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/drivers/jdbc/#statement-forms"><small>- Statement Forms</small></a>
+    </div>
+  </div>
+</div>
+  </main>
+  <footer>
+    <hr />
+    <div class="c">
+      <nav>
+        <ul></ul>
+      </nav>
+      <p class="s90">Copyright &copy; 2023-2023 NoSQLBench Project</p>
+    </div>
+  </footer>
+</body>
+</html>

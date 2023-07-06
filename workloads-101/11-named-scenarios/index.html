@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script src="https://docs.nosqlbench.io/theme.min.js" integrity="sha384-IpIaa84kOKgkF5EJ0fD/kBe2wtIIsIB60ANGmuJxeA0dz5bSRfwBwp2/QybtQpU2"></script>
+  <link rel="stylesheet" href="https://docs.nosqlbench.io/abridge-switcher.css?h=4238d999f44a7bb130d5" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preload" as="style" class="preStyle" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" crossorigin="anonymous" />
+  <script defer src="https://docs.nosqlbench.io/search_index.en.js?h=ae47d253e455a3aaacb2" integrity="sha384-cP47owL9Iuak1e1AA21cJA4BgagQtaPwAXBQG7QgJeE2JKGgkCBROHbCj/Xym6KC"></script>
+  <script defer src="https://docs.nosqlbench.io/abridge-bundle-nofacade.min.js?h=9bcf621a2fcab7336017" integrity="sha384-u8AROOUG6n2Xjk2+7pvkkfeSIqinjI1tmqeBpZRlZtc5KFO/8DyFfEir6fAE2wcq"></script>
+  <meta name="base" content="https://docs.nosqlbench.io" />
+<meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>11 Named Scenarios | NoSQLBench Project</title>
+  <meta name="copyright" content="NoSQLBench Project" />
+  <meta name="description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <link rel="canonical" href="https://docs.nosqlbench.io/workloads-101/11-named-scenarios/" />
+  <meta name="keywords" content="Abridge, Abridge.css, Zola, Theme, Zola Theme, getzola, Semantic Html, Fast, lightweight" />
+  <meta property="og:url" content="https://docs.nosqlbench.io/workloads-101/11-named-scenarios/" />
+  <meta name="twitter:url" content="https://docs.nosqlbench.io/workloads-101/11-named-scenarios/" />
+  <meta property="og:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta name="twitter:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta property="og:title" content="11 Named Scenarios | NoSQLBench Project" />
+  <meta name="twitter:title" content="11 Named Scenarios | NoSQLBench Project" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:site_name" content="NoSQLBench Project" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://docs.nosqlbench.io/site.webmanifest" />
+  <link rel="mask-icon" href="https://docs.nosqlbench.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://docs.nosqlbench.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://docs.nosqlbench.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://docs.nosqlbench.io/favicon-16x16.png" />
+  <noscript><link rel="stylesheet" href="https://docs.nosqlbench.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://docs.nosqlbench.io/"><img src="https://docs.nosqlbench.io/nb5logo.png" alt="NoSQLBench5" width="32" height="32" />NoSQLBench v5</a></h1></div><div>
+        <ul><li> <h2><a href="https://docs.nosqlbench.io/getting-started/">Getting Started</a></h2> </li><li> <h2><a href="https://docs.nosqlbench.io/release-notes/">Release Notes</a></h2> </li><li class="js"><i type="reset" id="mode" class="svgs adjust"></i></li></ul>
+      </div>
+      <div>
+        <form autocomplete=off class="js" name="goSearch" id="searchbox">
+          <div class="searchd">
+            <input id="searchinput" type="text" placeholder="Search" title="Search" />
+            <button type="submit" title="Search"><i class="svgs search"></i></button>
+          </div>
+          <div><div id="suggestions"></div></div>
+        </form>
+      </div>
+
+      <a href="http://github.com/nosqlbench/nosqlbench-build-docs" title="This doc site's project repo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="1" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+      <a href="http://nosqlbench.io" title="NoSQLBench Project Site">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+    </nav>
+    <hr /><div style="position:sticky"><span><a href="&#x2F;">NB5 Docs► </a></span><span title="You can build workloads to simulate real-world data and access patterns."><a href="&#x2F;workloads-101&#x2F;"><strong>Workloads 101▼</strong> </a></span><span title="[current page]"><a href="&#x2F;workloads-101&#x2F;11-named-scenarios&#x2F;"><strong>11 Named Scenarios 🖺</strong></a></span>
+</div></header>
+  <main><!-- active_page: workloads-101&#x2F;11-named-scenarios.md -->
+<!-- active_section: workloads-101&#x2F;_index.md -->
+
+
+<!-- lower_root: _index.md -->
+<!-- >upper_root: _index.md -->
+
+<div class="toc" aria-hidden="true" id="">
+<!--  <h4>Workloads 101</h4>--><div class="toc-sticky"><div class="toc-item"title="Release Notes for each major and some minor releases"><a href="&#x2F;release-notes&#x2F;">►Release Notes</a></div><div class="toc-item"title="An introduction to what makes NoSQLBench Unique"><a href="&#x2F;introduction&#x2F;">►Introduction</a></div><div class="toc-item"title="Getting Started with NoSQLBench"><a href="&#x2F;getting-started&#x2F;">►Getting Started</a></div><div class="toc-item"title="You can build workloads to simulate real-world data and access patterns."><strong>▼Workloads 101</strong></div><!-- subsection_page_path: &#x2F;workloads-101&#x2F;00-designing-workloads&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;workloads-101&#x2F;00-designing-workloads&#x2F;">00 Designing Workloads</a>
+    </div><!-- subsection_page_path: &#x2F;workloads-101&#x2F;01-op-templates&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;workloads-101&#x2F;01-op-templates&#x2F;">01 Op Templates</a>
+    </div><!-- subsection_page_path: &#x2F;workloads-101&#x2F;02-workload-template-layout&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;workloads-101&#x2F;02-workload-template-layout&#x2F;">02 Workload Template Layout</a>
+    </div><!-- subsection_page_path: &#x2F;workloads-101&#x2F;03-data-bindings&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;workloads-101&#x2F;03-data-bindings&#x2F;">03 Data Bindings</a>
+    </div><!-- subsection_page_path: &#x2F;workloads-101&#x2F;04-op-params&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;workloads-101&#x2F;04-op-params&#x2F;">04 Op Params</a>
+    </div><!-- subsection_page_path: &#x2F;workloads-101&#x2F;05-op-tags&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;workloads-101&#x2F;05-op-tags&#x2F;">05 Op Tags</a>
+    </div><!-- subsection_page_path: &#x2F;workloads-101&#x2F;06-op-blocks&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;workloads-101&#x2F;06-op-blocks&#x2F;">06 Op Blocks</a>
+    </div><!-- subsection_page_path: &#x2F;workloads-101&#x2F;07-more-op-templates&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;workloads-101&#x2F;07-more-op-templates&#x2F;">07 More Op Templates</a>
+    </div><!-- subsection_page_path: &#x2F;workloads-101&#x2F;08-multi-docs&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;workloads-101&#x2F;08-multi-docs&#x2F;">08 Multi-Docs</a>
+    </div><!-- subsection_page_path: &#x2F;workloads-101&#x2F;09-template-params&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;workloads-101&#x2F;09-template-params&#x2F;">09 Template Params</a>
+    </div><!-- subsection_page_path: &#x2F;workloads-101&#x2F;10-stmt-naming&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;workloads-101&#x2F;10-stmt-naming&#x2F;">10 Op Naming</a>
+    </div><!-- subsection_page_path: &#x2F;workloads-101&#x2F;11-named-scenarios&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;workloads-101&#x2F;11-named-scenarios&#x2F;"><strong>11 Named Scenarios</strong></a>
+    </div><!-- subsection_page_path: &#x2F;workloads-101&#x2F;99-yaml-diagnostics&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;workloads-101&#x2F;99-yaml-diagnostics&#x2F;">YAML Diagnostics</a>
+    </div><div class="toc-item"title="Detailed documentation on all options and features of NoSQLBench"><a href="&#x2F;user-guide&#x2F;">►User Guide</a></div><div class="toc-item"title="The NB5 Developer Guide"><a href="&#x2F;dev-guide&#x2F;">►Dev Guide</a></div><div class="toc-item"title="Detailed reference on drivers, formats, bindings, from auto-imported docs"><a href="&#x2F;reference&#x2F;">►Reference Section</a></div></div>
+</div>
+
+<article>
+
+  <p>There is one final element of a yaml that you need to know about: <em>named scenarios</em>.</p>
+<p><strong>Named Scenarios allow anybody to run your testing workflows with a single command.</strong></p>
+<p>You can provide named scenarios for a workload like this:</p>
+<pre data-lang="yaml" class="language-yaml z-code"><code class="language-yaml" data-lang="yaml"><span class="z-source z-yaml"><span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> contents of myworkloads.yaml
+</span><span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">scenarios</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">default</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+    <span class="z-punctuation z-definition z-block z-sequence z-item z-yaml">-</span> <span class="z-string z-unquoted z-plain z-out z-yaml">run driver=diag cycles=10 alias=first-ten</span>
+    <span class="z-punctuation z-definition z-block z-sequence z-item z-yaml">-</span> <span class="z-string z-unquoted z-plain z-out z-yaml">run driver=diag cycles=10..20 alias=second-ten</span>
+  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">longrun</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+    <span class="z-punctuation z-definition z-block z-sequence z-item z-yaml">-</span> <span class="z-string z-unquoted z-plain z-out z-yaml">run driver=diag cycles=10M</span>
+</span></code></pre>
+<p>This provides a way to specify more detailed workflows that users may want to run without them
+having to build up a command line for themselves.</p>
+<p>A couple of other forms are supported in the YAML, for terseness:</p>
+<pre data-lang="yaml" class="language-yaml z-code"><code class="language-yaml" data-lang="yaml"><span class="z-source z-yaml"><span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">scenarios</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">oneliner</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-unquoted z-plain z-out z-yaml">run driver=diag cycles=10</span>
+  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">mapform</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">part1</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-unquoted z-plain z-out z-yaml">run driver=diag cycles=10 alias=part2</span>
+    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">part2</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-unquoted z-plain z-out z-yaml">run driver=diag cycles=20 alias=part2</span>
+</span></code></pre>
+<p>These forms simply provide finesse for common editing habits, but they are automatically read
+internally as a list of named steps. In the map form, the names are used to name activities. The
+order is retained.</p>
+<h2 id="scenario-selection">Scenario selection</h2>
+<p>When a named scenario is run, it is <em>always</em> named, so that it can be looked up in the list of named
+scenarios under your <code>scenarios:</code> property. The only exception to this is when an explicit scenario
+name is not found on the command line, in which case it is automatically assumed to be <code>default</code>.</p>
+<p>Some examples may be more illustrative:</p>
+<pre class="z-code"><code><span class="z-text z-plain"># runs the scenario named &#39;default&#39; if it exists, or throws an error if it does not.
+nb5 myworkloads
+# or
+nb5 myworkloads default
+
+# runs the named scenario &#39;longrun&#39; if it exists, or throws an error if it does not.
+nb5 myworkloads longrun
+
+# runs the named scenario &#39;longrun&#39; if it exists, or throws an error if it does not.
+# this is simply the canonical form which is more verbose, but more explicit.
+nb5 scenario myworkloads longrun
+
+# run multiple named scenarios from one workload, and then some from another
+nb5 scenario myworkloads longrun default longrun scenario another.yaml name1 name2
+# In this form ^ you may have to add the explicit form to avoid conflicts between
+# workload names and scenario names. That&#39;s why the explicit form is provided, afterall.
+</span></code></pre>
+<h2 id="workload-selection">Workload selection</h2>
+<p>The examples above contain no reference to a workload (formerly called _
+yaml_). They don't need to, as they refer to themselves implicitly. You may add a <code>workload=</code>
+parameter to the command templates if you like, but this is never needed for basic use, and it is
+error-prone to keep the filename matched to the command template. Just leave it out by default.</p>
+<p><em>However</em>, if you are doing advanced scripting across multiple systems, you can actually provide
+a <code>workload=</code> parameter particularly to use another workload description in your test.</p>
+<p>👉 This is a powerful feature for workload automation and organization. However, it can get unwieldy
+quickly. Caution is advised for deep-linking too many scenarios in a workspace, as there is no
+mechanism for keeping them in sync when small changes are made.</p>
+<h2 id="named-scenario-discovery">Named Scenario Discovery</h2>
+<p>For named scenarios, there is a way for users to find all the named scenarios that are currently
+bundled or in view of their current directory. A couple simple rules must be followed by scenario
+publishers in order to keep things simple:</p>
+<ol>
+<li>Workload files in the current directory <code>*.yaml</code> are considered.</li>
+<li>Workload files under in the relative path <code>activities/</code> with name <code>*.yaml</code> are considered.</li>
+<li>The same rules are used when looking in the bundled NoSQLBench, so built-ins come along for the
+ride.</li>
+<li>Any workload file that contains a <code>scenarios:</code> tag is included, but all others are ignored.</li>
+</ol>
+<p>This doesn't mean that you can't use named scenarios for workloads in other locations. It simply
+means that when users use the <code>--list-scenarios</code> option, these are the only ones they will see
+listed.</p>
+<h2 id="parameter-overrides">Parameter Overrides</h2>
+<p>You can override parameters that are provided by named scenarios. Any parameter that you specify on
+the command line after your workload and optional scenario name will be used to override or augment
+the commands that are provided for the named scenario.</p>
+<p>This is powerful, but it also means that you can sometimes munge user-provided activity parameters
+on the command line with the named scenario commands in ways that may not make sense. To solve this,
+the parameters in the named scenario commands may be locked. You can lock them silently, or you can
+provide a verbose locking that will cause an error if the user even tries to adjust them.</p>
+<p>Silent locking is provided with a form like <code>param==value</code>. Any silent locked parameters will reject
+overrides from the command line, but will not interrupt the user.</p>
+<p>Verbose locking is provided with a form like <code>param===value</code>. Any time a user provides a parameter
+on the command line for the named parameter, an error is thrown and they are informed that this is
+not possible. This level is provided for cases in which you would not want the user to be unaware of
+an unset parameter which is germain and specific to the named scenario.</p>
+<p>All other parameters provided by the user will take the place of the same-named parameters provided
+in <em>each</em> command templates, in the order they appear in the template. Any other parameters provided
+by the user will be added to <em>each</em>
+of the command templates in the order they appear on the command line.</p>
+<p>This is a little counter-intuitive at first, but once you see some examples it should make sense.</p>
+<h2 id="parameter-override-examples">Parameter Override Examples</h2>
+<p>Consider a simple workload with three named scenarios:</p>
+<pre data-lang="yaml" class="language-yaml z-code"><code class="language-yaml" data-lang="yaml"><span class="z-source z-yaml"><span class="z-comment z-line z-number-sign z-yaml"><span class="z-punctuation z-definition z-comment z-line z-number-sign z-yaml">#</span> basics.yaml
+</span><span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">scenarios</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">s1</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-unquoted z-plain z-out z-yaml">run driver=stdout cycles=10</span>
+  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">s2</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-unquoted z-plain z-out z-yaml">run driver=stdout cycles==10</span>
+  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">s3</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-unquoted z-plain z-out z-yaml">run driver=stdout cycles===10</span>
+
+<span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">bindings</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">c</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-unquoted z-plain z-out z-yaml">Identity()</span>
+
+<span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">statements</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+  <span class="z-punctuation z-definition z-block z-sequence z-item z-yaml">-</span> <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">A</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-quoted z-double z-yaml"><span class="z-punctuation z-definition z-string z-begin z-yaml">&quot;</span>cycle={c}<span class="z-constant z-character z-escape z-double-quoted z-yaml">\n</span><span class="z-punctuation z-definition z-string z-end z-yaml">&quot;</span></span>
+</span></code></pre>
+<p>Running this with no options prompts the user to select one of the named scenarios:</p>
+<pre class="z-code"><code><span class="z-text z-plain">$ nb5 basics
+ERROR: Unable to find named scenario &#39;default&#39; in workload &#39;basics&#39;, but you can pick from s1,s2,s3
+$
+</span></code></pre>
+<h3 id="basic-override-example">Basic Override example</h3>
+<p>If you run the first scenario <code>s1</code> with your own value for <code>cycles=7</code>, it does as you ask:</p>
+<pre class="z-code"><code><span class="z-text z-plain">$ nb5 basics s1 cycles=7
+Logging to logs/scenario_20200324_205121_554.log
+cycle=0
+cycle=1
+cycle=2
+cycle=3
+cycle=4
+cycle=5
+cycle=6
+$
+</span></code></pre>
+<h3 id="silent-locking-example">Silent Locking example</h3>
+<p>If you run the second scenario <code>s2</code> with your own value for <code>cycles=7</code>, then it does what the locked
+parameter
+<code>cycles==10</code> requires, without telling you that it is ignoring the specified value on your command
+line.</p>
+<pre class="z-code"><code><span class="z-text z-plain">$ nb5 basics s2 cycles=7
+Logging to logs/scenario_20200324_205339_486.log
+cycle=0
+cycle=1
+cycle=2
+cycle=3
+cycle=4
+cycle=5
+cycle=6
+cycle=7
+cycle=8
+cycle=9
+$
+</span></code></pre>
+<p>Sometimes, this is appropriate, such as when specifying settings like <code>threads==</code> for schema 
+activities.</p>
+<h3 id="verbose-locking-example">Verbose Locking example</h3>
+<p>If you run the third scenario <code>s3</code> with your own value for <code>cycles=7</code>, then you will get an error
+telling you that this is not possible. Sometimes you want to make sure tha the user knows a
+parameter should not be changed, and that if they want to change it, they'll have to make their own
+custom version of the scenario in question.</p>
+<pre class="z-code"><code><span class="z-text z-plain">$ nb5 basics s3 cycles=7
+ERROR: Unable to reassign value for locked param &#39;cycles===7&#39;
+$
+</span></code></pre>
+<p>Ultimately, it is up to the scenario designer when to lock parameters for users. The built-in
+workloads offer some examples on how to set these parameters so that the right value are locked in
+place without bother the user, but some values are made very clear in how they should be set. Please
+look at these examples for inspiration when you need.</p>
+<h2 id="forcing-undefined-parameters">Forcing Undefined Parameters</h2>
+<p>If you want to ensure that any parameter in a named scenario template remains unset in the generated
+scenario script, you can assign it a value of <code>UNDEF</code>. The locking behaviors described above apply to
+this one as well. Thus, for schema commands which rely on the default sequence length (which is
+based on the number of active statements), you can set <code>cycles==UNDEF</code> to ensure that when a user
+passes a cycles parameter, the schema activity doesn't break with too many cycles.</p>
+<h2 id="automatic-parameters">Automatic Parameters</h2>
+<p>Some parameters are already known due to the fact that you are using named scenarios.</p>
+<p><em>workload</em></p>
+<p>The <code>workload</code> parameter is, by default, set to the logical path (fully qualified workload name) of
+the yaml file containing the named scenario. However, if the command template contains this
+parameter, it may be overridden by users as any other parameter depending on the assignment
+operators as explained above.</p>
+<p><em>alias</em></p>
+<p>The <code>alias</code> parameter is, by default, set to the expanded name of WORKLOAD_SCENARIO_STEP, which
+means that each activity within the scenario has a distinct and symbolic name. This is important for
+distinguishing metrics from one another across workloads, named scenarios, and steps within a named
+scenario. The above words are interpolated into the alias as follows:</p>
+<ul>
+<li>
+<p>WORKLOAD - The simple name part of the fully qualified workload name. For example, with a
+workload (yaml path) of foo/bar/baz.yaml, the WORKLOAD name used here would be <code>baz</code>.</p>
+</li>
+<li>
+<p>SCENARIO - The name of the scenario as provided on the command line.</p>
+</li>
+<li>
+<p>STEP - The name of the step in the named scenario. If you used the list or string forms to provide
+a command template, then the steps are automatically named as a zero-padded number representing
+the step in the named scenario, starting from <code>000</code>, per named scenario. (The numbers are not
+globally assigned)</p>
+</li>
+</ul>
+<p>Because it is important to have uniquely named activities for the sake of sane metrics and logging,
+any alias provided when using named scenarios which does not include the three tokens above will
+cause a warning to be issued to the user explaining why this is a bad idea.</p>
+<p>👉 UNDEF is handled before alias expansion above, so it is possible to force the default activity
+naming behavior above with <code>alias===UNDEF</code>. This is generally recommended, and will inform users if
+they try to set the alias in an unsafe way.</p>
+
+<p><b><a href="#">Back to top</a></b></p>
+</article>
+<div class="toc" aria-hidden="true">
+  <div class="toc-sticky">
+    <h5>11 Named Scenarios</h5>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/workloads-101/11-named-scenarios/#scenario-selection">Scenario selection</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/workloads-101/11-named-scenarios/#workload-selection">Workload selection</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/workloads-101/11-named-scenarios/#named-scenario-discovery">Named Scenario Discovery</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/workloads-101/11-named-scenarios/#parameter-overrides">Parameter Overrides</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/workloads-101/11-named-scenarios/#parameter-override-examples">Parameter Override Examples</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/workloads-101/11-named-scenarios/#basic-override-example"><small>- Basic Override example</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/workloads-101/11-named-scenarios/#silent-locking-example"><small>- Silent Locking example</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/workloads-101/11-named-scenarios/#verbose-locking-example"><small>- Verbose Locking example</small></a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/workloads-101/11-named-scenarios/#forcing-undefined-parameters">Forcing Undefined Parameters</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/workloads-101/11-named-scenarios/#automatic-parameters">Automatic Parameters</a>
+    </div>
+  </div>
+</div>
+  </main>
+  <footer>
+    <hr />
+    <div class="c">
+      <nav>
+        <ul></ul>
+      </nav>
+      <p class="s90">Copyright &copy; 2023-2023 NoSQLBench Project</p>
+    </div>
+  </footer>
+</body>
+</html>

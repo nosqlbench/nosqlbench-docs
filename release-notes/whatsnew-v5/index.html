@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script src="https://docs.nosqlbench.io/theme.min.js" integrity="sha384-IpIaa84kOKgkF5EJ0fD/kBe2wtIIsIB60ANGmuJxeA0dz5bSRfwBwp2/QybtQpU2"></script>
+  <link rel="stylesheet" href="https://docs.nosqlbench.io/abridge-switcher.css?h=4238d999f44a7bb130d5" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preload" as="style" class="preStyle" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" crossorigin="anonymous" />
+  <script defer src="https://docs.nosqlbench.io/search_index.en.js?h=ae47d253e455a3aaacb2" integrity="sha384-cP47owL9Iuak1e1AA21cJA4BgagQtaPwAXBQG7QgJeE2JKGgkCBROHbCj/Xym6KC"></script>
+  <script defer src="https://docs.nosqlbench.io/abridge-bundle-nofacade.min.js?h=9bcf621a2fcab7336017" integrity="sha384-u8AROOUG6n2Xjk2+7pvkkfeSIqinjI1tmqeBpZRlZtc5KFO/8DyFfEir6fAE2wcq"></script>
+  <meta name="base" content="https://docs.nosqlbench.io" />
+<meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>What's New - NB5 | NoSQLBench Project</title>
+  <meta name="copyright" content="NoSQLBench Project" />
+  <meta name="description" content="A list of nb5 release highlights" />
+  <link rel="canonical" href="https://docs.nosqlbench.io/release-notes/whatsnew-v5/" />
+  <meta name="keywords" content="Abridge, Abridge.css, Zola, Theme, Zola Theme, getzola, Semantic Html, Fast, lightweight" />
+  <meta property="og:url" content="https://docs.nosqlbench.io/release-notes/whatsnew-v5/" />
+  <meta name="twitter:url" content="https://docs.nosqlbench.io/release-notes/whatsnew-v5/" />
+  <meta property="og:description" content="A list of nb5 release highlights" />
+  <meta name="twitter:description" content="A list of nb5 release highlights" />
+  <meta property="og:title" content="What&#x27;s New - NB5 | NoSQLBench Project" />
+  <meta name="twitter:title" content="What&#x27;s New - NB5 | NoSQLBench Project" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:site_name" content="NoSQLBench Project" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://docs.nosqlbench.io/site.webmanifest" />
+  <link rel="mask-icon" href="https://docs.nosqlbench.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://docs.nosqlbench.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://docs.nosqlbench.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://docs.nosqlbench.io/favicon-16x16.png" />
+  <noscript><link rel="stylesheet" href="https://docs.nosqlbench.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://docs.nosqlbench.io/"><img src="https://docs.nosqlbench.io/nb5logo.png" alt="NoSQLBench5" width="32" height="32" />NoSQLBench v5</a></h1></div><div>
+        <ul><li> <h2><a href="https://docs.nosqlbench.io/getting-started/">Getting Started</a></h2> </li><li> <h2><a href="https://docs.nosqlbench.io/release-notes/">Release Notes</a></h2> </li><li class="js"><i type="reset" id="mode" class="svgs adjust"></i></li></ul>
+      </div>
+      <div>
+        <form autocomplete=off class="js" name="goSearch" id="searchbox">
+          <div class="searchd">
+            <input id="searchinput" type="text" placeholder="Search" title="Search" />
+            <button type="submit" title="Search"><i class="svgs search"></i></button>
+          </div>
+          <div><div id="suggestions"></div></div>
+        </form>
+      </div>
+
+      <a href="http://github.com/nosqlbench/nosqlbench-build-docs" title="This doc site's project repo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="1" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+      <a href="http://nosqlbench.io" title="NoSQLBench Project Site">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+    </nav>
+    <hr /><div style="position:sticky"><span><a href="&#x2F;">NB5 Docs► </a></span><span title="Release Notes for each major and some minor releases"><a href="&#x2F;release-notes&#x2F;"><strong>Release Notes▼</strong> </a></span><span title="A list of nb5 release highlights"><a href="&#x2F;release-notes&#x2F;whatsnew-v5&#x2F;"><strong>What&#x27;s New - NB5 🖺</strong></a></span>
+</div></header>
+  <main><!-- active_page: release-notes&#x2F;whatsnew-v5.md -->
+<!-- active_section: release-notes&#x2F;_index.md -->
+
+
+<!-- lower_root: _index.md -->
+<!-- >upper_root: _index.md -->
+
+<div class="toc" aria-hidden="true" id="">
+<!--  <h4>Release Notes</h4>--><div class="toc-sticky"><div class="toc-item"title="Release Notes for each major and some minor releases"><strong>▼Release Notes</strong></div><!-- subsection_page_path: &#x2F;release-notes&#x2F;whatsnew-v5&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;release-notes&#x2F;whatsnew-v5&#x2F;"><strong>What&#x27;s New - NB5</strong></a>
+    </div><div class="toc-item"title="An introduction to what makes NoSQLBench Unique"><a href="&#x2F;introduction&#x2F;">►Introduction</a></div><div class="toc-item"title="Getting Started with NoSQLBench"><a href="&#x2F;getting-started&#x2F;">►Getting Started</a></div><div class="toc-item"title="You can build workloads to simulate real-world data and access patterns."><a href="&#x2F;workloads-101&#x2F;">►Workloads 101</a></div><div class="toc-item"title="Detailed documentation on all options and features of NoSQLBench"><a href="&#x2F;user-guide&#x2F;">►User Guide</a></div><div class="toc-item"title="The NB5 Developer Guide"><a href="&#x2F;dev-guide&#x2F;">►Dev Guide</a></div><div class="toc-item"title="Detailed reference on drivers, formats, bindings, from auto-imported docs"><a href="&#x2F;reference&#x2F;">►Reference Section</a></div></div>
+</div>
+
+<article>
+
+  <h1 id="updates-in-progress">Updates in Progress</h1>
+<p>👉 <strong>The docs are presently being rewritten to support NoSQLBench v5.17.x, based
+on <a rel="noopener" target="_blank" href="https://openjdk.org/projects/jdk/17/">Java LTS 17</a>. The next major release will be v5.21, based
+on <a rel="noopener" target="_blank" href="https://openjdk.org/projects/jdk/21/">Java LTS 21</a>.</strong> 👈</p>
+<p>Welcome to NB5! This release represents a massive leap forward. There are so many improvements
+that should have gone into smaller releases along the way, but here we are. We've had our heads
+down, focusing on new APIs, porting drivers, and fixing bugs, but it's time to talk about the
+new stuff!</p>
+<p>For those who are experienced NB5 users, this will have few (but some!) surprises. For
+those of you who are NB (4 or earlier) users, NB5 is a whole different kind of testing tool. The
+changes allow for a much more streamlined user and developer experience, while also offering
+additional capabilities never seen together in a systems testing tool.</p>
+<p>Everything mentioned here will find its way into the main docs site before were done.</p>
+<p>We've taken some care to make sure that there is support for earlier workloads where at all
+possible. If we've missed something critical, please let us know, and we'll patch it up ASAP.</p>
+<p>This is a narrative overview of changes for NB5 in general. Individual
+<a rel="noopener" target="_blank" href="https://github.com/nosqlbench/nosqlbench/releases">releases</a> will have itemized code changes
+listed individually.</p>
+<h1 id="artifacts">Artifacts</h1>
+<h2 id="nb5">nb5</h2>
+<p>The main bundled artifact is now named <strong>nb5</strong>. This version of NoSQLBench is a
+significant departure from the previous limitations and conventions, so a new name was fitting.
+It also allows you to easily have both on your system if you are maintaining test harnesses.
+This is a combination of the NoSQLBench core runtime module <code>nbr</code> and all the bundled driver
+adapters which have been contributed to the project.</p>
+<h2 id="packaging">Packaging</h2>
+<p>The code base for nb5 is more modular and adaptable. The core runtime module <code>nbr</code> is now
+separate, including only the core diagnostic driver which is used in integration tests. This allows
+for leaner and meaner integration tests.</p>
+<h2 id="drivers">drivers</h2>
+<p>We've ported many drivers to the nb5 APIs. All CQL support is now being provided by
+<a rel="noopener" target="_blank" href="https://docs.datastax.com/en/developer/java-driver/4.14/">Datastax Java Driver for Apache Cassandra</a>.
+In addition, multiple contributors are stepping up to provide new drivers for many systems
+across the NoSQL ecosystem.</p>
+<h1 id="project">Project</h1>
+<p>Significant changes were made for the benefit of both users and developers.</p>
+<h2 id="team">Team</h2>
+<p>We've expanded the developer team which maintains tools like NoSQLBench. This should allow us to
+make improvements faster, focus on users more, and bring more strategic capabilities to the project
+which can redefine how advanced testing is done.</p>
+<h2 id="wysiwyg-docs">WYSiWYG Docs</h2>
+<p>We've connected the integration and specification tests to the documentation in a way that
+ties examples everything together. If the examples and integration tests that are used on this
+site fail, the build fails. Otherwise, the most recent examples are auto exported from the main
+code base to the docs site. This means that test coverage will improve examples in the docs,
+which will stay constantly up to date. Expect coverage of this method to improve with each
+release. Until we can say <em>What You See Is What You Get</em> across all nb5 functions and examples,
+we're not done yet.</p>
+<h2 id="releases">Releases</h2>
+<p>Going forward we'll enforce stricter release criteria. Interim releases will be flagged as
+prerelease unless due diligence checks have been done and a peer review finds a prerelease
+suitable for promotion to a main release. Once flagged as a normal release, CI/CD tools can pick
+up the release from the github releases area automatically.</p>
+<p>We have a set of release criteria which will be published to this site and used as a blueprint for
+releases going forward. More information on how releases are managed can be found in our
+<a href="https://docs.nosqlbench.io/dev-guide/contributing/">Contributing</a> section. This will include testing coverage, 
+static 
+analysis, and further integrated testing support.</p>
+<h2 id="documentation">Documentation</h2>
+<p>This doc site is a significant step up from the previous version. It is now more accessible,
+more standards compliant, and generally more user-friendly. The dark theme is highly usable.
+Syntax highlighting is much easier on the eyes, and page navigation works better! The starting
+point for this site was provided by the <a rel="noopener" target="_blank" href="https://github.com/Jieiku/abridge">abridge</a> theme by
+<a rel="noopener" target="_blank" href="https://github.com/Jieiku">Jieiku</a>.</p>
+<h1 id="architecture">Architecture</h1>
+<p>The impetus for a major new version of NoSQLBench came from user and developer needs. In
+order to provide a consistent user experience across a variety of testing needs, the core
+machinery needed an upgrade. The APIs for building drivers and features have been redesigned to
+this end, resulting in a vast improvement for all who use or maintain nb5 core or drivers.</p>
+<p>These benefits include:</p>
+<ul>
+<li>Vastly simplified driver contributor experience</li>
+<li>Common features across all implemented DriverAdapters</li>
+<li>Interoperability between drivers in the same scenario or activity</li>
+<li>Standard core activity params across all drivers, like <code>op=...</code></li>
+<li>Standard metrics semantics across all drivers</li>
+<li>Standard highly configurable error handler support</li>
+<li>Standard op template features, like named start and stop timers</li>
+<li>Standard diagnostic tools across all drivers, like <code>dryrun=...</code></li>
+</ul>
+<p>The amount of <em>Standard</em> you see in this list is directly related to the burden removed from
+both nb5 users and project contributors.</p>
+<p>Some highlights of these will be described below, with more details in the user guide.</p>
+<ul>
+<li>The <a href="https://docs.nosqlbench.io/user-guide/error-handlers/">error handlers</a> mechanism is now fully generalized across all
+drivers.
+It is also chainable, with specific support for handling each error type with a specific chain of
+handlers, or
+simply assigning a default to all of them as before.</li>
+<li>The rate limiter is more efficient. This should allow it to work better in some scenarios
+where inter-core contention was a limiting factor.</li>
+<li>It is now possible to dry-run an activity with <code>dryrun=op</code> or similar. Each dryrun option goes
+a little further into a normal run so that incremental verification of workloads can be done.
+For example, the <code>dryrun=op</code> option uses all the logic of a normal execution, but it wraps
+the op implementation in a no-op. The results of this will tell you how fast the client can
+synthesize and dispatch operations when there is no op execution involved. The measurement
+will be conservative due to the extra wrapping layer.</li>
+<li>Thread management within activities is now more efficient, more consistent, and more real-time.
+Polling calls were replaced with evented calls where possible.</li>
+<li>Only op templates which are active (selected and have a positive ratio) are resolved at
+activity initialization. This improves startup times for large workload with subsets of
+operations enabled.</li>
+<li>Native drivers (like the CQL Java Driver) now have their driver instance and object graph
+cached, indexed by a named op field called <code>space</code>. By default, this is wired to return
+<code>default</code>, thus each unique adapter will use the same internal object graph for execution.
+This is how things worked for most drivers before. However, if the user specifies that the
+space should vary, then they simply assign it a binding. This allows for advanced driver
+testing across a number of client instances, either pseudo-randomly or in lock-step with
+specific access patterns. If you don't want to use this, then ignore it and everything works
+as it did before. But if you do, this is built-in to every driver by design.</li>
+<li>The activity parameter <code>driver</code> simply sets the default adapter for an activity. You can set
+this per op template, and run a different driver for every cycle. This field must be static on
+each op template, however. This allows for mixed-mode workloads in the same op sequence.</li>
+<li>Adapters can be loaded from external jars. This can help users who are building adapters and want
+to avoid building the full runtime just for iterative testing.</li>
+<li>The phase loop has been removed.</li>
+<li>Operations can now generate more operations associated with a cycle. This opens the door to</li>
+<li>There is a distinct API for implementing dynamic activity params distinctly from
+initialization params.</li>
+</ul>
+<h1 id="ergonomics">Ergonomics</h1>
+<h2 id="console">Console</h2>
+<ul>
+<li>ANSI color support in some places, such as in console logging patterns. The <code>--ansi</code> and
+<code>--console-pattern</code> and <code>--logging-pattern</code> options work together. If a non-terminal is
+detected on stdout, ANSI is automatically disabled.</li>
+<li>The progress meter has been modified to show real-time, accurate, detailed numbers
+including operations in flight.</li>
+</ul>
+<h2 id="discovery">Discovery</h2>
+<ul>
+<li>Discovery of bundled assets is now more consistent, supported with a family of <code>--list-...</code>
+options.</li>
+</ul>
+<h2 id="configuration">Configuration</h2>
+<ul>
+<li>Drivers know what parameters they can be configured with. This allows for more
+intelligent and useful feedback to users around appropriate parameter usage. If you get a
+param name wrong, nb5 will likely suggest the next closest option.</li>
+<li>S3 Urls should work in most places, including for loading workload templates. You only need to 
+configure your local authentication first.</li>
+</ul>
+<h2 id="templating">Templating</h2>
+<p>Much of the power of NB5 is illustrated in the new ways you can template workloads. This
+includes structured data, dynamic op configuration, and driver instancing, to name a few.</p>
+<ul>
+<li>The structure of op templates (the YAML you write to simulate access patterns) has been
+standardized around a strict set of specification tests and examples. These are documented
+in-depth and tested against a specification with round-trip validation.</li>
+<li>Now, JSON and Jsonnet are supported directly as workload template formats. Jsonnet allows you to
+see the activity params as external variables.</li>
+<li>All workload template structure is now supported as maps, in addition to the other structural
+forms (previously called workload YAMLs). All of these forms automatically de-sugar into the
+canonical forms for the runtime to use. This follows the previous pattern of &quot;If it does what
+it looks like, it is valid&quot;, but further allows simplification of workloads with inline
+naming of elements.</li>
+<li>In addition to workload template structure, op templates also support arbitrary structure
+instead of just scalar or String values. This is especially useful for JSON payload modeling.
+This means that op templates now have a generalized templating mechanism that works for all
+data structures. You can reference bindings as before, but you can also create collections and
+string templates by writing fields as they naturally occur, then adding <code>{bindings}</code> where you
+need.</li>
+<li>All op template fields can be made dynamic if an adapter supports it. It is up to the adapter
+implementor to decide which op fields must be static.</li>
+<li>Op template values auto-defer to configured values as static, then dynamic, and then
+configured from activity parameters as defaults. If an adapter supports a parameter at the
+activity level, and an op form supports the same field, then this occurs automatically.</li>
+<li>Tags for basic workload template elements are provided gratis. You no longer need to specify the
+conventional tags. All op templates now have <code>block: &lt;blockname&gt;</code> and <code>name: &lt;blockname&gt;--&lt;name&gt;</code> tags added. This works with regexes in tag filtering.</li>
+<li>Named scenarios now allow for <code>nb5 &lt;workload-file&gt; &lt;scenario-name&gt;.&lt;scenario-step&gt; ...</code>. You can
+prototype and validate complex scenarios by sub-selecting the steps to execute.</li>
+<li>You can use the <code>op=&quot;...&quot;</code> activity parameter to specific a single-op workload on the
+command line, as if you had read it from a workload YAML. This allows
+for one-liner tests streamlined integration, and other simple utility usage.</li>
+<li>Binding recipes can now occur inline, as <code>{{Identity()}}</code>. This works with the op
+parameter above.</li>
+<li>You can now set a minimum version of NoSQLBench to use for a workload. The <code>min_version: &quot;4.17. 15&quot;</code> property is checked starting from the most-significant number down. If there are new core
+features that your workload depends on, you can use this to avoid ambiguous errors.</li>
+<li>Template vars like <code>&lt;&lt;name:value&gt;&gt;</code> or <code>TEMPLATE(name,value)</code> can set defaults the first time they
+are seen. This means you don't have to update them everywhere. A nice way to handle this is to
+include them in the description once, since you should be documenting them anyway!</li>
+<li>You can load JSON files directly. You can also load JSONNET files directly! If you need to
+sanity check your jsonnet rendering, you can use <code>dryrun=jsonnet</code>.</li>
+<li>All workload template elements can have a description.</li>
+</ul>
+<h2 id="misc-improvements">Misc Improvements</h2>
+<p>(some carry over from pre-nb5 features)</p>
+<ul>
+<li>Argsfile support for allowing sticky parameters on a system.</li>
+<li>Tag filters are more expressive, with regexes and conjunctions.</li>
+<li>Some scenario commands now allow for regex-style globbing on activity alias names.</li>
+<li>Startup logging now includes details on version, hardware config, and scenario commands for 
+better diagnostics and bug reports.</li>
+<li>The logging subsystem config is improved and standardized across the project.</li>
+<li>Test output is now vectored exclusively through logging config.</li>
+<li>Analysis methods are improved and more widely used.</li>
+</ul>
+<h1 id="deprecations-and-standards">Deprecations and Standards</h1>
+<ul>
+<li>NB5 depends on Java 17. Going forward, major versions will adopt the latest LTS java release.</li>
+<li>Dependencies which require shading in order to play well with others are not supported. If you
+have a native driver or need to depend on a library which is not a good citizen, you can only
+use it with NB5 by using the external jar feature (explained elsewhere). This includes the
+previous CQL drivers which were the <code>1.9.*</code> and <code>3.*.*</code> version. Only CQL driver 4.* is
+provided in nb5.</li>
+<li>Dependencies should behave as modular jars, according to JPMS specification. This does not
+mean they need to be JPMS modules, only that the get halfway there.</li>
+<li>Log4J2 is the standard logging provider in the runtime for NoSQLBench. An SLF4J stub
+implementation is provided to allow clients which implement against the SLF4J API to work.</li>
+<li>All new drivers added to the project are based on the Adapter API.</li>
+</ul>
+<h1 id="works-in-progress">Works In Progress</h1>
+<ul>
+<li>These docs!</li>
+<li>Bulk Loading efficiency for large tests</li>
+<li>Linearized Op Modeling
+<ul>
+<li>We now have a syntax for designating fields to extract from op results. This is part of the
+support needed to make <em>client-side joins</em> and other patterns easy to emulate.</li>
+</ul>
+</li>
+<li>Rate Limiter v3</li>
+<li>VictoriaMetrics Integration
+<ul>
+<li>Labeled metrics need to be fed to a victoria metrics docker via push. This approach will
+remove much of the pain involved in using prometheus as an ephemeral testing apparatus.</li>
+</ul>
+</li>
+</ul>
+
+<p><b><a href="#">Back to top</a></b></p>
+</article>
+<div class="toc" aria-hidden="true">
+  <div class="toc-sticky">
+    <h5>What&#x27;s New - NB5</h5>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/release-notes/whatsnew-v5/#updates-in-progress">Updates in Progress</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/release-notes/whatsnew-v5/#artifacts">Artifacts</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/release-notes/whatsnew-v5/#nb5"><small>- nb5</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/release-notes/whatsnew-v5/#packaging"><small>- Packaging</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/release-notes/whatsnew-v5/#drivers"><small>- drivers</small></a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/release-notes/whatsnew-v5/#project">Project</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/release-notes/whatsnew-v5/#team"><small>- Team</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/release-notes/whatsnew-v5/#wysiwyg-docs"><small>- WYSiWYG Docs</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/release-notes/whatsnew-v5/#releases"><small>- Releases</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/release-notes/whatsnew-v5/#documentation"><small>- Documentation</small></a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/release-notes/whatsnew-v5/#architecture">Architecture</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/release-notes/whatsnew-v5/#ergonomics">Ergonomics</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/release-notes/whatsnew-v5/#console"><small>- Console</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/release-notes/whatsnew-v5/#discovery"><small>- Discovery</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/release-notes/whatsnew-v5/#configuration"><small>- Configuration</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/release-notes/whatsnew-v5/#templating"><small>- Templating</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/release-notes/whatsnew-v5/#misc-improvements"><small>- Misc Improvements</small></a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/release-notes/whatsnew-v5/#deprecations-and-standards">Deprecations and Standards</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/release-notes/whatsnew-v5/#works-in-progress">Works In Progress</a>
+    </div>
+  </div>
+</div>
+  </main>
+  <footer>
+    <hr />
+    <div class="c">
+      <nav>
+        <ul></ul>
+      </nav>
+      <p class="s90">Copyright &copy; 2023-2023 NoSQLBench Project</p>
+    </div>
+  </footer>
+</body>
+</html>

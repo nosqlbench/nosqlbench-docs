@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script src="https://docs.nosqlbench.io/theme.min.js" integrity="sha384-IpIaa84kOKgkF5EJ0fD/kBe2wtIIsIB60ANGmuJxeA0dz5bSRfwBwp2/QybtQpU2"></script>
+  <link rel="stylesheet" href="https://docs.nosqlbench.io/abridge-switcher.css?h=4238d999f44a7bb130d5" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preload" as="style" class="preStyle" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" crossorigin="anonymous" />
+  <script defer src="https://docs.nosqlbench.io/search_index.en.js?h=ae47d253e455a3aaacb2" integrity="sha384-cP47owL9Iuak1e1AA21cJA4BgagQtaPwAXBQG7QgJeE2JKGgkCBROHbCj/Xym6KC"></script>
+  <script defer src="https://docs.nosqlbench.io/abridge-bundle-nofacade.min.js?h=9bcf621a2fcab7336017" integrity="sha384-u8AROOUG6n2Xjk2+7pvkkfeSIqinjI1tmqeBpZRlZtc5KFO/8DyFfEir6fAE2wcq"></script>
+  <meta name="base" content="https://docs.nosqlbench.io" />
+<meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>Op Templates | NoSQLBench Project</title>
+  <meta name="copyright" content="NoSQLBench Project" />
+  <meta name="description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <link rel="canonical" href="https://docs.nosqlbench.io/user-guide/op-templates/" />
+  <meta name="keywords" content="Abridge, Abridge.css, Zola, Theme, Zola Theme, getzola, Semantic Html, Fast, lightweight" />
+  <meta property="og:url" content="https://docs.nosqlbench.io/user-guide/op-templates/" />
+  <meta name="twitter:url" content="https://docs.nosqlbench.io/user-guide/op-templates/" />
+  <meta property="og:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta name="twitter:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta property="og:title" content="Op Templates | NoSQLBench Project" />
+  <meta name="twitter:title" content="Op Templates | NoSQLBench Project" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:site_name" content="NoSQLBench Project" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://docs.nosqlbench.io/site.webmanifest" />
+  <link rel="mask-icon" href="https://docs.nosqlbench.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://docs.nosqlbench.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://docs.nosqlbench.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://docs.nosqlbench.io/favicon-16x16.png" />
+  <noscript><link rel="stylesheet" href="https://docs.nosqlbench.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://docs.nosqlbench.io/"><img src="https://docs.nosqlbench.io/nb5logo.png" alt="NoSQLBench5" width="32" height="32" />NoSQLBench v5</a></h1></div><div>
+        <ul><li> <h2><a href="https://docs.nosqlbench.io/getting-started/">Getting Started</a></h2> </li><li> <h2><a href="https://docs.nosqlbench.io/release-notes/">Release Notes</a></h2> </li><li class="js"><i type="reset" id="mode" class="svgs adjust"></i></li></ul>
+      </div>
+      <div>
+        <form autocomplete=off class="js" name="goSearch" id="searchbox">
+          <div class="searchd">
+            <input id="searchinput" type="text" placeholder="Search" title="Search" />
+            <button type="submit" title="Search"><i class="svgs search"></i></button>
+          </div>
+          <div><div id="suggestions"></div></div>
+        </form>
+      </div>
+
+      <a href="http://github.com/nosqlbench/nosqlbench-build-docs" title="This doc site's project repo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="1" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+      <a href="http://nosqlbench.io" title="NoSQLBench Project Site">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+    </nav>
+    <hr /><div style="position:sticky"><span><a href="&#x2F;">NB5 Docs► </a></span><span title="Detailed documentation on all options and features of NoSQLBench"><a href="&#x2F;user-guide&#x2F;"><strong>User Guide▼</strong> </a></span><span title="[current page]"><a href="&#x2F;user-guide&#x2F;op-templates&#x2F;"><strong>Op Templates 🖺</strong></a></span>
+</div></header>
+  <main><!-- active_page: user-guide&#x2F;op-templates.md -->
+<!-- active_section: user-guide&#x2F;_index.md -->
+
+
+<!-- lower_root: _index.md -->
+<!-- >upper_root: _index.md -->
+
+<div class="toc" aria-hidden="true" id="">
+<!--  <h4>User Guide</h4>--><div class="toc-sticky"><div class="toc-item"title="Release Notes for each major and some minor releases"><a href="&#x2F;release-notes&#x2F;">►Release Notes</a></div><div class="toc-item"title="An introduction to what makes NoSQLBench Unique"><a href="&#x2F;introduction&#x2F;">►Introduction</a></div><div class="toc-item"title="Getting Started with NoSQLBench"><a href="&#x2F;getting-started&#x2F;">►Getting Started</a></div><div class="toc-item"title="You can build workloads to simulate real-world data and access patterns."><a href="&#x2F;workloads-101&#x2F;">►Workloads 101</a></div><div class="toc-item"title="Detailed documentation on all options and features of NoSQLBench"><strong>▼User Guide</strong></div><!-- subsection_page_path: &#x2F;user-guide&#x2F;cli-options&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;cli-options&#x2F;">CLI Options</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;ssl-options&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;ssl-options&#x2F;">Standard SSL Options</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;cli-scripting&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;cli-scripting&#x2F;">CLI Scripting</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;op-templates&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;op-templates&#x2F;"><strong>Op Templates</strong></a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;core-op-fields&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;core-op-fields&#x2F;">Core Op Fields</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;core-activity-params&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;core-activity-params&#x2F;">Core Activity Params</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;error-handlers&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;error-handlers&#x2F;">Error Handlers</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;standard-metrics&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;standard-metrics&#x2F;">Standard Metrics</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;metrics-options&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;metrics-options&#x2F;">Metrics Options</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;grafana-metrics&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;grafana-metrics&#x2F;">Built-In Grafana Dashboard</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;workloads-intro&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;workloads-intro&#x2F;">Built-In Workloads</a>
+    </div><!-- subsubsection_path: user-guide&#x2F;advanced-topics&#x2F;_index.md --><div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;"title="Detailed documentation on all options and features of NoSQLBench">‣ Advanced Topics</a>
+    </div><div class="toc-item"title="The NB5 Developer Guide"><a href="&#x2F;dev-guide&#x2F;">►Dev Guide</a></div><div class="toc-item"title="Detailed reference on drivers, formats, bindings, from auto-imported docs"><a href="&#x2F;reference&#x2F;">►Reference Section</a></div></div>
+</div>
+
+<article>
+
+  <p>👉 When it comes to building workloads, the op template is where everything comes together. 
+Understanding op templates in detail will help you bring other features of NoSQLBench into 
+focus more quickly.</p>
+<p>Each activity that you run in an nb5 scenario is built from operations. These operations are 
+<a href="https://docs.nosqlbench.io/user-guide/advanced-topics/binding-concepts/"><em>generated</em></a> at the time they are needed. 
+They need a blueprint for what an operation looks like, which we provide in the form of a 
+simple data structure called an <em>op template</em>.</p>
+<p>The op template is effectively a JSON object or a YAML map. It is simply a data structure. </p>
+<h1 id="de-sugaring">De-sugaring</h1>
+<p>The op template structure is quite flexible in practice, and only requires you to be as detailed 
+as necessary for a given situation.</p>
+<p>For example, you can provide an op template which looks like this:</p>
+<pre data-lang="yaml" class="language-yaml z-code"><code class="language-yaml" data-lang="yaml"><span class="z-source z-yaml"><span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">op</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-quoted z-double z-yaml"><span class="z-punctuation z-definition z-string z-begin z-yaml">&quot;</span>example {{Combinations(&#39;a-z&#39;)}} body<span class="z-punctuation z-definition z-string z-end z-yaml">&quot;</span></span>
+</span></code></pre>
+<p>or like this:</p>
+<pre data-lang="yaml" class="language-yaml z-code"><code class="language-yaml" data-lang="yaml"><span class="z-source z-yaml"><span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">bindings</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">binding1</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-unquoted z-plain z-out z-yaml">Combinations(&#39;a-z&#39;)</span>
+<span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">blocks</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+ <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">warmup-block</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">ops</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+   <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">op1</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">op</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+     <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">prepared</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-quoted z-double z-yaml"><span class="z-punctuation z-definition z-string z-begin z-yaml">&quot;</span>example {binding1} body<span class="z-punctuation z-definition z-string z-end z-yaml">&quot;</span></span>
+</span></code></pre>
+<p><strong>These both mean the same thing!</strong> NoSQLBench performs a structural de-sugaring and 
+normalization, and then applies property de-normalization and overrides. At the end, it's as if 
+you used a fully-qualified and detailed format, even if you didn't. The reason you might use 
+the second form over the first is to provide additional op templates or properties when tailing 
+for more specific situations.</p>
+<p>If you want to know why or how nb5 does this, expand the details below. Otherwise, Let's skip to 
+the next part!</p>
+<details title="test">
+<summary title="This section contains motives and design philosophy for this mechanism. You can 
+skip it.">Workload Specification Design</summary>
+<h2 id="why">Why?</h2>
+<p>Why? Because YAML is not fun for most people if we're being really honest. System 
+designers and developers have a persistent habit of pushing their configuration problems into 
+pop-markup formats. Yet, without a truly innovative and widely supported alternative, it's still 
+a not a <em>bad</em> choice. There are really not many practical alternatives that are portable, 
+supported by many languages, and so ubiquitous that they are immediately recognized by most 
+users. Further, it plays generally well with JSON, a proper subset and close runner-up, which 
+is also extended by jsonnet.</p>
+<p>Even so, there is still a problem to solve: NoSQLBench needs to support trivial testing 
+scenarios with trivial configuration <em>AND</em> advanced testing scenarios with a detailed configuration.
+So, <strong>why not both?</strong> </p>
+<blockquote>
+<p>Simple things should be simple, complex things should be possible. 
+(<a rel="noopener" target="_blank" href="https://en.wikiquote.org/wiki/Alan_Kay">Alan Kay</a>)</p>
+</blockquote>
+<p>So in terms of tooling, this provides a rich layering of tools which can scale from the 
+trivial to the sophisticated.</p>
+<h2 id="how">How?</h2>
+<p>The rules for this mechanism are part of the nb5 
+<a href="https://docs.nosqlbench.io/reference/workload_definition/">workload definition</a>
+standard, which covers all the details and corner cases. The nb5 runtime handles all the
+structural processing for users and developers, so there is little ambiguity about valid or
+equivalent forms. This standard is elevated to a tested specification because it is part of the 
+core nb5 code base, tested for validity with every build. You can only see a documented and 
+working specification on this site.</p>
+<p>The design principles used when building this standard include:</p>
+<ul>
+<li>If it looks like what it does and it does what it looks like, then it is valid.</li>
+<li>If there is a reasonable chance of ambiguity, then disallow the pattern, or make the user be 
+more specific.</li>
+</ul>
+</details>
+<h1 id="valid-forms">Valid Forms</h1>
+<p>👉 The <a href="https://docs.nosqlbench.io/workloads-101/">Workloads 101</a> tutorial is a great way to learn about op 
+templates.</p>
+<p>What determines if a given op template is valid or not depends on a couple of things: Can it be 
+recognized according to the <a href="https://docs.nosqlbench.io/reference/workload_definition/">workload definition</a> 
+standard? 
+Can it be 
+recognized by the specified driver as a valid op template, <em>according to the field names and values?</em></p>
+<p>In general, you have three places to look for valid op templates. Here they are in order of 
+preference:</p>
+<ul>
+<li>The built-in workloads. Use the <code>--list-workloads</code> and <code>--copy &lt;workload&gt;</code> options to discover 
+and copy out some examples. These are documented under 
+<a href="https://docs.nosqlbench.io/user-guide/cli-options/#discovery-options">discovery options</a>.</li>
+<li>The driver documentation. Each driver should provide clear examples that can be pasted right 
+into a new workload if you want. Access the documentation for a specific driver with <code>nb5 help  &lt;driver&gt;</code>.</li>
+<li>The <a href="https://docs.nosqlbench.io/workloads-101/">Workloads_101</a> tutorial.</li>
+<li>Finally, the detailed <a href="https://docs.nosqlbench.io/reference/workload_definition/">workload definition specification</a>,
+if you need, for example to see all the possibilities. Developers will generally want to know 
+what can be specified, but those who are just using nb5 will get by easily on the examples.</li>
+</ul>
+<h1 id="template-form">Template Form</h1>
+<p>Let's take a look at the longer example again, with line numbers this time:</p>
+<pre data-linenos data-lang="yaml" class="language-yaml z-code"><code class="language-yaml" data-lang="yaml"><table><tbody><tr><td>1</td><td><span class="z-source z-yaml"><span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">bindings</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+</td></tr><tr><td>2</td><td>  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">binding1</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-unquoted z-plain z-out z-yaml">Combinations(&#39;a-z&#39;)</span>
+</td></tr><tr><td>3</td><td><span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">blocks</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+</td></tr><tr><td>4</td><td> <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">warmup-block</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+</td></tr><tr><td>5</td><td>  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">ops</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+</td></tr><tr><td>6</td><td>   <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">op1</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+</td></tr><tr><td>7</td><td>    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">op</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+</td></tr><tr><td>8</td><td>     <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">prepared</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-quoted z-double z-yaml"><span class="z-punctuation z-definition z-string z-begin z-yaml">&quot;</span>example {binding1} body<span class="z-punctuation z-definition z-string z-end z-yaml">&quot;</span></span>
+</td></tr></span></tbody></table></code></pre>
+<p>We see some of the surrounding workload template format, then the op template, and then the 
+single op field <code>prepared</code>. Here is a line-by-line readout of each part:</p>
+<pre data-linenos class="z-code"><code><table><tbody><tr><td>1</td><td><span class="z-text z-plain">At the root of the workload template, a bindings property sets global bindings.
+</td></tr><tr><td>2</td><td> One global binding is defined as &quot;Combinations(&#39;a-z&#39;)&quot;, with name binding1.
+</td></tr><tr><td>3</td><td>At the root of the workload template, the blocks property is defined.
+</td></tr><tr><td>4</td><td> The first block is named warmup-block.
+</td></tr><tr><td>5</td><td>  The ops property for warmup-block is defined.
+</td></tr><tr><td>6</td><td>   The first op template is named op1. Everything under it is called the op template.
+</td></tr><tr><td>7</td><td>    The op template named op1 has an explicity op fields property.
+</td></tr><tr><td>8</td><td>     The first op field of the op template is named &quot;prepared&quot;, and it is a string template.
+</td></tr></span></tbody></table></code></pre>
+<p>Additionally, the string template above might be called a statement. It could just as well be 
+<code>select user_id from mytable where token={user_token}</code> instead of <code>example {binding1} body</code>. 
+When the entirety of an op template is passed as a string like in the very first example, that 
+string is stored in an op field called <code>stmt</code> automatically.</p>
+<p>The part of the string that looks like <code>{binding1}</code> is called a bind point. Bind points are the 
+places where you will inject data into the template later to create a fully constructed 
+synthetic operation. In this case <code>binding1</code> is the <em>bind point name</em>. It matches up with a 
+<em>binding name</em> above (also <code>binding1</code>), to create a full blueprint for constructing the whole 
+string when you need it.</p>
+<p>As for the longer example, you might notice that this is a fully mapped structure with no lists. 
+That is, every property is basically a container for a collection of named elements. If you get 
+lost in the layers, just remember that everything follows this pattern: From the root inward, 
+the map keys mean <em>property name</em> &gt; <em>member name</em> &gt; <em>property name</em> &gt; <em>member name</em> ...
+until the very end where leaf nodes are simply values.</p>
+<h1 id="synthetic-op-values">Synthetic op Values</h1>
+<p>The power of an op template comes from the fact that it is a real template. If your op template 
+contains a string template <code>select user_id from mytable where token={user_token}</code>, you can't 
+take it as it is and send it to the database. Either your client or your server will throw a 
+syntax error on the <code>{user_token}</code> part. What nb5 is excellent at is working with a (nb5) driver to 
+create a synthetic operation to execute. For native drivers, the nb5 driver (known in the API as 
+a <em>DriverAdapter</em>) interprets the op template structure, and uses the native driver APIs to 
+behave exactly as an application might. For other nb5 drivers, like stdout, something else may 
+be done with the op template, like printing out the rendered op template in schematic form. No 
+native driver is needed to do this.</p>
+<h1 id="structure">Structure!</h1>
+<p>So far, you've seen a simple op field with a synthetic op value. The <code>prefix {bindpoint} suffix</code> 
+form is a <em>string</em> template. But what about other forms? <strong>You can have any structural form for an 
+op field, and it will be handled as a synthetic structure, including lists, maps and strings!</strong></p>
+<h2 id="example">example</h2>
+<pre data-lang="yaml" class="language-yaml z-code"><code class="language-yaml" data-lang="yaml"><span class="z-source z-yaml"><span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">ops</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">op1</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-quoted z-double z-yaml"><span class="z-punctuation z-definition z-string z-begin z-yaml">&quot;</span>{{Identity()}}<span class="z-punctuation z-definition z-string z-end z-yaml">&quot;</span></span>
+  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">op2</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">op</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+     <span class="z-punctuation z-definition z-block z-sequence z-item z-yaml">-</span> <span class="z-string z-unquoted z-plain z-out z-yaml">field1</span>
+     <span class="z-punctuation z-definition z-block z-sequence z-item z-yaml">-</span> <span class="z-string z-quoted z-double z-yaml"><span class="z-punctuation z-definition z-string z-begin z-yaml">&quot;</span>field2 {bindpoint}<span class="z-punctuation z-definition z-string z-end z-yaml">&quot;</span></span>
+    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">tags</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+      <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">tag1</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-unquoted z-plain z-out z-yaml">list-form</span>
+    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">prepared</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-constant z-language z-boolean z-yaml">true</span>
+  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">op3</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">key1</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-quoted z-double z-yaml"><span class="z-punctuation z-definition z-string z-begin z-yaml">&quot;</span>{value1}<span class="z-punctuation z-definition z-string z-end z-yaml">&quot;</span></span>
+    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">key2</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-quoted z-double z-yaml"><span class="z-punctuation z-definition z-string z-begin z-yaml">&quot;</span>string {value2}<span class="z-punctuation z-definition z-string z-end z-yaml">&quot;</span></span>
+    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">params</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+      <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">prepared</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-constant z-language z-boolean z-yaml">true</span>
+</span></code></pre>
+<p>This shows a few example op templates.</p>
+<h2 id="op1">op1</h2>
+<p>The one named <code>op1</code> looks like A string template, but it has no prefix nor suffix in the string.
+The double curly brace form removes the need to reference a binding by name. It is an anonymous 
+binding function directly within the bind point. Further, it isn't necessary to put <em>only a bind 
+point</em> in a string template like this when you are assigning a string value. That happens 
+automatically. So we use this case to promote this to a direct binding. That means that the type 
+of value produced by the binding directly will be used. If it needs to be a string, it will anyway.</p>
+<h2 id="op2">op2</h2>
+<p>The one named <code>op2</code> shows that the <code>op</code> property of an op template has special significance. If 
+you want to do anything beyond a trivial string binding, you can use this to explicitly set the 
+root of the object used for the op fields. This allows for other properties of the op template 
+to be stored separately and interpreted separately. Besides reserved op template properties 
+(like <code>tag</code>, <code>bindings</code>, <code>params</code>, etc.), all other keys in the op template will be put in the 
+params property. Thus, <code>prepared</code> is stored as if you had put it under the <code>params</code> block. 
+This is unambiguous because of the explicit <code>op</code> definition.</p>
+<h2 id="op3">op3</h2>
+<p>The third op template example shows the complimentary scenario to having an explicit op property.
+The directly defined params property means that any unknown keyword (like <code>tag</code>, <code>bindings</code>, etc.
+) will automatically be stored under an injected <code>op</code> field for you. You can think of the <code>op</code> 
+property as the <em>payload</em>, and the <code>params</code> property as the <em>metadata</em>. For protocols and 
+drivers that can distinguish between these, the distinction is meaningful. For those that don't, 
+where the whole protocol is described within an JSON object for example, the params field is 
+useless.</p>
+<p>👉 <strong>When you have a trivial op structure with no need for params, you need to specify neither the 
+<code>op</code> nor the<code>params</code> property, and all non-reserved keys will automatically be stored in the 
+<code>op</code>.</strong> This is recommended as the convention for all new drivers. Usage of the <code>params</code> 
+property is still supported, but should only be employed by driver developers when it is 
+strictly necessary.</p>
+<h1 id="synthesis">Synthesis!</h1>
+<p>All the op fields can be fully dynamic! However, it is not efficient for everything about an 
+operation to be undetermined until cycle time. Therefore, driver developers will often require 
+certain identifying op fields to be static for the purposes of determining op type. The rules 
+for this are up to each driver. For example, with the <a href="https://docs.nosqlbench.io/reference/drivers/cqld4/">cqld4 driver</a>
+, you can 
+specify that you want a raw, prepared, or other type of statement to be executed, but each op 
+template must pick one. This is necessary to allow activities to pre-compute or pre-bake much 
+of the op synthesis logic as it can. This can be done much more efficiently if at least the 
+type of operation doesn't change from cycle to cycle.</p>
+
+<p><b><a href="#">Back to top</a></b></p>
+</article>
+<div class="toc" aria-hidden="true">
+  <div class="toc-sticky">
+    <h5>Op Templates</h5>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/op-templates/#de-sugaring">De-sugaring</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/op-templates/#why"><small>- Why?</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/op-templates/#how"><small>- How?</small></a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/op-templates/#valid-forms">Valid Forms</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/op-templates/#template-form">Template Form</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/op-templates/#synthetic-op-values">Synthetic op Values</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/op-templates/#structure">Structure!</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/op-templates/#example"><small>- example</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/op-templates/#op1"><small>- op1</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/op-templates/#op2"><small>- op2</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/op-templates/#op3"><small>- op3</small></a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/op-templates/#synthesis">Synthesis!</a>
+    </div>
+  </div>
+</div>
+  </main>
+  <footer>
+    <hr />
+    <div class="c">
+      <nav>
+        <ul></ul>
+      </nav>
+      <p class="s90">Copyright &copy; 2023-2023 NoSQLBench Project</p>
+    </div>
+  </footer>
+</body>
+</html>

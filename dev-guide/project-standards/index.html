@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script src="https://docs.nosqlbench.io/theme.min.js" integrity="sha384-IpIaa84kOKgkF5EJ0fD/kBe2wtIIsIB60ANGmuJxeA0dz5bSRfwBwp2/QybtQpU2"></script>
+  <link rel="stylesheet" href="https://docs.nosqlbench.io/abridge-switcher.css?h=4238d999f44a7bb130d5" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preload" as="style" class="preStyle" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" crossorigin="anonymous" />
+  <script defer src="https://docs.nosqlbench.io/search_index.en.js?h=ae47d253e455a3aaacb2" integrity="sha384-cP47owL9Iuak1e1AA21cJA4BgagQtaPwAXBQG7QgJeE2JKGgkCBROHbCj/Xym6KC"></script>
+  <script defer src="https://docs.nosqlbench.io/abridge-bundle-nofacade.min.js?h=9bcf621a2fcab7336017" integrity="sha384-u8AROOUG6n2Xjk2+7pvkkfeSIqinjI1tmqeBpZRlZtc5KFO/8DyFfEir6fAE2wcq"></script>
+  <meta name="base" content="https://docs.nosqlbench.io" />
+<meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>Project Structure | NoSQLBench Project</title>
+  <meta name="copyright" content="NoSQLBench Project" />
+  <meta name="description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <link rel="canonical" href="https://docs.nosqlbench.io/dev-guide/project-standards/" />
+  <meta name="keywords" content="Abridge, Abridge.css, Zola, Theme, Zola Theme, getzola, Semantic Html, Fast, lightweight" />
+  <meta property="og:url" content="https://docs.nosqlbench.io/dev-guide/project-standards/" />
+  <meta name="twitter:url" content="https://docs.nosqlbench.io/dev-guide/project-standards/" />
+  <meta property="og:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta name="twitter:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta property="og:title" content="NoSQLBench Project" />
+  <meta name="twitter:title" content="NoSQLBench Project" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:site_name" content="NoSQLBench Project" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://docs.nosqlbench.io/site.webmanifest" />
+  <link rel="mask-icon" href="https://docs.nosqlbench.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://docs.nosqlbench.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://docs.nosqlbench.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://docs.nosqlbench.io/favicon-16x16.png" />
+  <noscript><link rel="stylesheet" href="https://docs.nosqlbench.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://docs.nosqlbench.io/"><img src="https://docs.nosqlbench.io/nb5logo.png" alt="NoSQLBench5" width="32" height="32" />NoSQLBench v5</a></h1></div><div>
+        <ul><li> <h2><a href="https://docs.nosqlbench.io/getting-started/">Getting Started</a></h2> </li><li> <h2><a href="https://docs.nosqlbench.io/release-notes/">Release Notes</a></h2> </li><li class="js"><i type="reset" id="mode" class="svgs adjust"></i></li></ul>
+      </div>
+      <div>
+        <form autocomplete=off class="js" name="goSearch" id="searchbox">
+          <div class="searchd">
+            <input id="searchinput" type="text" placeholder="Search" title="Search" />
+            <button type="submit" title="Search"><i class="svgs search"></i></button>
+          </div>
+          <div><div id="suggestions"></div></div>
+        </form>
+      </div>
+
+      <a href="http://github.com/nosqlbench/nosqlbench-build-docs" title="This doc site's project repo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="1" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+      <a href="http://nosqlbench.io" title="NoSQLBench Project Site">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+    </nav>
+    <hr /><div style="position:sticky"><span><a href="&#x2F;">NB5 Docs► </a></span><span><a href="&#x2F;dev-guide&#x2F;">Dev Guide► </a></span><span title="Standards to which the NB5 project aspires"><a href="&#x2F;dev-guide&#x2F;project-standards&#x2F;"><strong>Project Standards▼</strong> </a></span><span title="[current page]"><a href="&#x2F;dev-guide&#x2F;project-standards&#x2F;project-structure&#x2F;"><strong>Project Structure 🖺</strong></a></span>
+</div></header>
+  <main><!-- active_page: dev-guide&#x2F;project-standards&#x2F;project-structure.md -->
+<!-- active_section: dev-guide&#x2F;project-standards&#x2F;_index.md -->
+
+
+<!-- lower_root: dev-guide&#x2F;_index.md -->
+<!-- >upper_root: dev-guide&#x2F;_index.md -->
+
+<div class="toc" aria-hidden="true" id="">
+<!--  <h4>Project Standards</h4>--><div class="toc-sticky"><div class="toc-item"title="How to get started"><a href="&#x2F;dev-guide&#x2F;contributing&#x2F;">►Contributing</a></div><div class="toc-item"title="Standards to which the NB5 project aspires"><strong>▼Project Standards</strong></div><!-- subsection_page_path: &#x2F;dev-guide&#x2F;project-standards&#x2F;project-structure&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;dev-guide&#x2F;project-standards&#x2F;project-structure&#x2F;"><strong>Project Structure</strong></a>
+    </div><!-- subsection_page_path: &#x2F;dev-guide&#x2F;project-standards&#x2F;dependencies&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;dev-guide&#x2F;project-standards&#x2F;dependencies&#x2F;">Dependencies</a>
+    </div><div class="toc-item"title="How to contribute in different ways, step-by-step"><a href="&#x2F;dev-guide&#x2F;how-tos&#x2F;">►Dev How-Tos</a></div></div>
+</div>
+
+<article>
+
+  <p>NoSQLBench is a large project. It has a few basic layers of functionality which nest together
+like a system of modules and interfaces:</p>
+<ul>
+<li>Core APIs
+<ul>
+<li>Annotations and Processors</li>
+</ul>
+</li>
+<li>Core Runtime</li>
+<li>Virtual Data Subsystem</li>
+<li>Extensions and Plugins</li>
+<li>Driver Adapters</li>
+</ul>
+<h2 id="spi-and-modules">SPI and Modules</h2>
+<p>Nearly all of the functionality in NoSQLBench is wired together at runtime through a service 
+discovery mechanism. This allows modules to be bundled within the project and packaged together 
+as needed. At runtime, when a particular set of components is called up to be used together, the 
+runtime uses Java's SPI mechanism to discover and map them by a name, called a <em>selector</em>.</p>
+<p>You will see this throughout the project in the form of a <code>@Service(...)</code> annotation. Any 
+component withing the code base which needs to be realized at runtime must have this. The 
+built-in annotation processors do the packing work to put these into the standard service manifest 
+format.</p>
+<h2 id="driver-adapters">Driver Adapters</h2>
+<p>If you are building a driver adapter, you don't need to understand the whole project structure. 
+You simply need to implement the DriverAdapter interface. You only need the <em>adapters-api</em> 
+module as an upstream dependency.</p>
+<h2 id="insert-module-graph-here">Insert Module Graph Here</h2>
+<p>This will be a visual of all the core modules.</p>
+<h2 id="java-package-naming">(Java) Package Naming</h2>
+<p>All of the modules in the project follow a minimum structural standard. The internal package 
+names <em>must</em> have the prefix <code>io.nosqlbench.[module-name]</code> where the module name has its 
+non-words replaced with package boundaries.</p>
+<p>This means that module named <code>adapter-diag</code> lives in a directory under the main project of the 
+same name. It has a package named <code>io.nosqlbench.adapter.diag</code> in which all of its driver code 
+resides.</p>
+<p>This makes it easy to know what module any package is part of simply from the name.</p>
+
+</article>
+<div class="toc" aria-hidden="true">
+  <div class="toc-sticky">
+    <h5>Project Structure</h5>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/dev-guide/project-standards/project-structure/#spi-and-modules">SPI and Modules</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/dev-guide/project-standards/project-structure/#driver-adapters">Driver Adapters</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/dev-guide/project-standards/project-structure/#insert-module-graph-here">Insert Module Graph Here</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/dev-guide/project-standards/project-structure/#java-package-naming">(Java) Package Naming</a>
+    </div>
+  </div>
+</div>
+  </main>
+  <footer>
+    <hr />
+    <div class="c">
+      <nav>
+        <ul></ul>
+      </nav>
+      <p class="s90">Copyright &copy; 2023-2023 NoSQLBench Project</p>
+    </div>
+  </footer>
+</body>
+</html>

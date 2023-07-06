@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script src="https://docs.nosqlbench.io/theme.min.js" integrity="sha384-IpIaa84kOKgkF5EJ0fD/kBe2wtIIsIB60ANGmuJxeA0dz5bSRfwBwp2/QybtQpU2"></script>
+  <link rel="stylesheet" href="https://docs.nosqlbench.io/abridge-switcher.css?h=4238d999f44a7bb130d5" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preload" as="style" class="preStyle" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" crossorigin="anonymous" />
+  <script defer src="https://docs.nosqlbench.io/search_index.en.js?h=ae47d253e455a3aaacb2" integrity="sha384-cP47owL9Iuak1e1AA21cJA4BgagQtaPwAXBQG7QgJeE2JKGgkCBROHbCj/Xym6KC"></script>
+  <script defer src="https://docs.nosqlbench.io/abridge-bundle-nofacade.min.js?h=9bcf621a2fcab7336017" integrity="sha384-u8AROOUG6n2Xjk2+7pvkkfeSIqinjI1tmqeBpZRlZtc5KFO/8DyFfEir6fAE2wcq"></script>
+  <meta name="base" content="https://docs.nosqlbench.io" />
+<meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>Coding Standards | NoSQLBench Project</title>
+  <meta name="copyright" content="NoSQLBench Project" />
+  <meta name="description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <link rel="canonical" href="https://docs.nosqlbench.io/dev-guide/contributing/coding-standards/" />
+  <meta name="keywords" content="Abridge, Abridge.css, Zola, Theme, Zola Theme, getzola, Semantic Html, Fast, lightweight" />
+  <meta property="og:url" content="https://docs.nosqlbench.io/dev-guide/contributing/coding-standards/" />
+  <meta name="twitter:url" content="https://docs.nosqlbench.io/dev-guide/contributing/coding-standards/" />
+  <meta property="og:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta name="twitter:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta property="og:title" content="Coding Standards | NoSQLBench Project" />
+  <meta name="twitter:title" content="Coding Standards | NoSQLBench Project" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:site_name" content="NoSQLBench Project" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://docs.nosqlbench.io/site.webmanifest" />
+  <link rel="mask-icon" href="https://docs.nosqlbench.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://docs.nosqlbench.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://docs.nosqlbench.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://docs.nosqlbench.io/favicon-16x16.png" />
+  <noscript><link rel="stylesheet" href="https://docs.nosqlbench.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://docs.nosqlbench.io/"><img src="https://docs.nosqlbench.io/nb5logo.png" alt="NoSQLBench5" width="32" height="32" />NoSQLBench v5</a></h1></div><div>
+        <ul><li> <h2><a href="https://docs.nosqlbench.io/getting-started/">Getting Started</a></h2> </li><li> <h2><a href="https://docs.nosqlbench.io/release-notes/">Release Notes</a></h2> </li><li class="js"><i type="reset" id="mode" class="svgs adjust"></i></li></ul>
+      </div>
+      <div>
+        <form autocomplete=off class="js" name="goSearch" id="searchbox">
+          <div class="searchd">
+            <input id="searchinput" type="text" placeholder="Search" title="Search" />
+            <button type="submit" title="Search"><i class="svgs search"></i></button>
+          </div>
+          <div><div id="suggestions"></div></div>
+        </form>
+      </div>
+
+      <a href="http://github.com/nosqlbench/nosqlbench-build-docs" title="This doc site's project repo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="1" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+      <a href="http://nosqlbench.io" title="NoSQLBench Project Site">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+    </nav>
+    <hr /><div style="position:sticky"><span><a href="&#x2F;">NB5 Docs► </a></span><span><a href="&#x2F;dev-guide&#x2F;">Dev Guide► </a></span><span title="How to get started"><a href="&#x2F;dev-guide&#x2F;contributing&#x2F;"><strong>Contributing▼</strong> </a></span><span title="[current page]"><a href="&#x2F;dev-guide&#x2F;contributing&#x2F;coding-standards&#x2F;"><strong>Coding Standards 🖺</strong></a></span>
+</div></header>
+  <main><!-- active_page: dev-guide&#x2F;contributing&#x2F;coding-standards.md -->
+<!-- active_section: dev-guide&#x2F;contributing&#x2F;_index.md -->
+
+
+<!-- lower_root: dev-guide&#x2F;_index.md -->
+<!-- >upper_root: dev-guide&#x2F;_index.md -->
+
+<div class="toc" aria-hidden="true" id="">
+<!--  <h4>Contributing</h4>--><div class="toc-sticky"><div class="toc-item"title="How to get started"><strong>▼Contributing</strong></div><!-- subsection_page_path: &#x2F;dev-guide&#x2F;contributing&#x2F;come-join-us&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;dev-guide&#x2F;contributing&#x2F;come-join-us&#x2F;">Come Join Us</a>
+    </div><!-- subsection_page_path: &#x2F;dev-guide&#x2F;contributing&#x2F;working-together&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;dev-guide&#x2F;contributing&#x2F;working-together&#x2F;">Working Together</a>
+    </div><!-- subsection_page_path: &#x2F;dev-guide&#x2F;contributing&#x2F;pull-requests&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;dev-guide&#x2F;contributing&#x2F;pull-requests&#x2F;">Pull Requests</a>
+    </div><!-- subsection_page_path: &#x2F;dev-guide&#x2F;contributing&#x2F;coding-standards&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;dev-guide&#x2F;contributing&#x2F;coding-standards&#x2F;"><strong>Coding Standards</strong></a>
+    </div><!-- subsection_page_path: &#x2F;dev-guide&#x2F;contributing&#x2F;releases&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;dev-guide&#x2F;contributing&#x2F;releases&#x2F;">Release Management</a>
+    </div><!-- subsection_page_path: &#x2F;dev-guide&#x2F;contributing&#x2F;new-maintainers&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;dev-guide&#x2F;contributing&#x2F;new-maintainers&#x2F;">New Maintainers</a>
+    </div><div class="toc-item"title="Standards to which the NB5 project aspires"><a href="&#x2F;dev-guide&#x2F;project-standards&#x2F;">►Project Standards</a></div><div class="toc-item"title="How to contribute in different ways, step-by-step"><a href="&#x2F;dev-guide&#x2F;how-tos&#x2F;">►Dev How-Tos</a></div></div>
+</div>
+
+<article>
+
+  <p>In order to keep the code base tidy, here are the coding standards we try to observe:</p>
+<h1 id="unit-tests">Unit Tests</h1>
+<h2 id="unit-test-coverage">Unit Test Coverage</h2>
+<p>We really like unit tests where it makes sense. It usually makes sense to write unit tests!
+However, we aren't chasing 100% code coverage. We <em>do</em> measure it, and we do intend to keep it 
+from going down past some reasonable level. We will start to pull up the code coverage 
+requirements for each module over time, but only to a reasonable level.</p>
+<h2 id="unit-test-logging">Unit Test Logging</h2>
+<p>Don't write to System.stdout or System.stderr in your unit tests. Instead, use a logger, as in</p>
+<pre data-lang="java" class="language-java z-code"><code class="language-java" data-lang="java"><span class="z-source z-java"><span class="z-storage z-modifier z-java">private</span> <span class="z-storage z-modifier z-java">final</span> <span class="z-storage z-modifier z-java">static</span> <span class="z-support z-class z-java">Logger</span> logger <span class="z-meta z-assignment z-rhs z-java"><span class="z-keyword z-operator z-assignment z-java">=</span> <span class="z-support z-class z-java">LogManager</span><span class="z-punctuation z-accessor z-dot z-java">.</span><span class="z-meta z-function-call z-java"><span class="z-variable z-function z-java">getLogger</span><span class="z-punctuation z-section z-parens z-begin z-java">(</span><span class="z-support z-class z-java">MyClass</span><span class="z-punctuation z-accessor z-dot z-java">.</span><span class="z-variable z-language z-java">class</span><span class="z-punctuation z-section z-parens z-end z-java">)</span></span></span><span class="z-punctuation z-terminator z-java">;</span>
+</span></code></pre>
+<p>The logging subsystem is used for nearly <em>all</em> console IO with NoSQLBench. This is a drastic 
+simplification for developers and maintainer. In general, users don't want to be notified of 
+anything except when the do, and when they do, they can simply use <code>-v</code> to turn the default 
+console logging level up from <code>WARN</code> to <code>INFO</code> and so on. This applies as well to tests. We can 
+keep console IO low for unit tests and even us async logging in the background to speed up 
+builds and keep the build output tidy for when you need to troubleshoot actual build errors.</p>
+<h2 id="integrated-test-coverage">Integrated Test Coverage</h2>
+<p>Since NB is a layered runtime design, we need to be specific when we are talking about 
+<em>integrated</em> tests. Once we have stabilized the new integrated test harness, it will be better 
+documented for contributors. This is a work in progress.</p>
+
+</article>
+<div class="toc" aria-hidden="true">
+  <div class="toc-sticky">
+    <h5>Coding Standards</h5>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/dev-guide/contributing/coding-standards/#unit-tests">Unit Tests</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/dev-guide/contributing/coding-standards/#unit-test-coverage"><small>- Unit Test Coverage</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/dev-guide/contributing/coding-standards/#unit-test-logging"><small>- Unit Test Logging</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/dev-guide/contributing/coding-standards/#integrated-test-coverage"><small>- Integrated Test Coverage</small></a>
+    </div>
+  </div>
+</div>
+  </main>
+  <footer>
+    <hr />
+    <div class="c">
+      <nav>
+        <ul></ul>
+      </nav>
+      <p class="s90">Copyright &copy; 2023-2023 NoSQLBench Project</p>
+    </div>
+  </footer>
+</body>
+</html>

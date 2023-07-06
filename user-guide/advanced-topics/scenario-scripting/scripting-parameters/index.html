@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script src="https://docs.nosqlbench.io/theme.min.js" integrity="sha384-IpIaa84kOKgkF5EJ0fD/kBe2wtIIsIB60ANGmuJxeA0dz5bSRfwBwp2/QybtQpU2"></script>
+  <link rel="stylesheet" href="https://docs.nosqlbench.io/abridge-switcher.css?h=4238d999f44a7bb130d5" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preload" as="style" class="preStyle" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" crossorigin="anonymous" />
+  <script defer src="https://docs.nosqlbench.io/search_index.en.js?h=ae47d253e455a3aaacb2" integrity="sha384-cP47owL9Iuak1e1AA21cJA4BgagQtaPwAXBQG7QgJeE2JKGgkCBROHbCj/Xym6KC"></script>
+  <script defer src="https://docs.nosqlbench.io/abridge-bundle-nofacade.min.js?h=9bcf621a2fcab7336017" integrity="sha384-u8AROOUG6n2Xjk2+7pvkkfeSIqinjI1tmqeBpZRlZtc5KFO/8DyFfEir6fAE2wcq"></script>
+  <meta name="base" content="https://docs.nosqlbench.io" />
+<meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>Scripting Parameters | NoSQLBench Project</title>
+  <meta name="copyright" content="NoSQLBench Project" />
+  <meta name="description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <link rel="canonical" href="https://docs.nosqlbench.io/user-guide/advanced-topics/scenario-scripting/scripting-parameters/" />
+  <meta name="keywords" content="Abridge, Abridge.css, Zola, Theme, Zola Theme, getzola, Semantic Html, Fast, lightweight" />
+  <meta property="og:url" content="https://docs.nosqlbench.io/user-guide/advanced-topics/scenario-scripting/scripting-parameters/" />
+  <meta name="twitter:url" content="https://docs.nosqlbench.io/user-guide/advanced-topics/scenario-scripting/scripting-parameters/" />
+  <meta property="og:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta name="twitter:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta property="og:title" content="Scripting Parameters | NoSQLBench Project" />
+  <meta name="twitter:title" content="Scripting Parameters | NoSQLBench Project" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:site_name" content="NoSQLBench Project" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://docs.nosqlbench.io/site.webmanifest" />
+  <link rel="mask-icon" href="https://docs.nosqlbench.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://docs.nosqlbench.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://docs.nosqlbench.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://docs.nosqlbench.io/favicon-16x16.png" />
+  <noscript><link rel="stylesheet" href="https://docs.nosqlbench.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://docs.nosqlbench.io/"><img src="https://docs.nosqlbench.io/nb5logo.png" alt="NoSQLBench5" width="32" height="32" />NoSQLBench v5</a></h1></div><div>
+        <ul><li> <h2><a href="https://docs.nosqlbench.io/getting-started/">Getting Started</a></h2> </li><li> <h2><a href="https://docs.nosqlbench.io/release-notes/">Release Notes</a></h2> </li><li class="js"><i type="reset" id="mode" class="svgs adjust"></i></li></ul>
+      </div>
+      <div>
+        <form autocomplete=off class="js" name="goSearch" id="searchbox">
+          <div class="searchd">
+            <input id="searchinput" type="text" placeholder="Search" title="Search" />
+            <button type="submit" title="Search"><i class="svgs search"></i></button>
+          </div>
+          <div><div id="suggestions"></div></div>
+        </form>
+      </div>
+
+      <a href="http://github.com/nosqlbench/nosqlbench-build-docs" title="This doc site's project repo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="1" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+      <a href="http://nosqlbench.io" title="NoSQLBench Project Site">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+    </nav>
+    <hr /><div style="position:sticky"><span><a href="&#x2F;">NB5 Docs► </a></span><span><a href="&#x2F;user-guide&#x2F;">User Guide► </a></span><span><a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;">Advanced Topics► </a></span><span title="NoSQLBench comes with a fully scriptable runtime for advanced testing scenarios"><a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;scenario-scripting&#x2F;"><strong>Scenario Scripting▼</strong> </a></span><span title="[current page]"><a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;scenario-scripting&#x2F;scripting-parameters&#x2F;"><strong>Scripting Parameters 🖺</strong></a></span>
+</div></header>
+  <main><!-- active_page: user-guide&#x2F;advanced-topics&#x2F;scenario-scripting&#x2F;scripting-parameters.md -->
+<!-- active_section: user-guide&#x2F;advanced-topics&#x2F;scenario-scripting&#x2F;_index.md -->
+
+
+<!-- lower_root: user-guide&#x2F;advanced-topics&#x2F;_index.md -->
+<!-- >upper_root: user-guide&#x2F;advanced-topics&#x2F;_index.md -->
+
+<div class="toc" aria-hidden="true" id="">
+<!--  <h4>Scenario Scripting</h4>--><div class="toc-sticky"><div class="toc-item"><a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;binding-concepts&#x2F;">Binding Concepts</a></div><div class="toc-item"><a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;advanced-topics&#x2F;"title="detailed explanation of all available configuration methods in nb5">Advanced Topics</a></div><div class="toc-item"><a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;timing-terms&#x2F;">Timing Terms Explained</a></div><div class="toc-item"title="Detailed examples of different ways to configure nb5"><a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;configuration_techniques&#x2F;">►Configuration Techniques</a></div><div class="toc-item"title="NoSQLBench comes with a fully scriptable runtime for advanced testing scenarios"><strong>▼Scenario Scripting</strong></div><!-- subsection_page_path: &#x2F;user-guide&#x2F;advanced-topics&#x2F;scenario-scripting&#x2F;scripting-intro&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;scenario-scripting&#x2F;scripting-intro&#x2F;">Scripting Intro</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;advanced-topics&#x2F;scenario-scripting&#x2F;scripting-parameters&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;scenario-scripting&#x2F;scripting-parameters&#x2F;"><strong>Scripting Parameters</strong></a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;advanced-topics&#x2F;scenario-scripting&#x2F;scripting-environment&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;scenario-scripting&#x2F;scripting-environment&#x2F;">Scripting Environment</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;advanced-topics&#x2F;scenario-scripting&#x2F;scripting-extensions&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;scenario-scripting&#x2F;scripting-extensions&#x2F;">Scripting Extensions</a>
+    </div><div class="toc-item"title="A deeper dive into frequent topics of discussion around scale testing."><a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;testing-at-scale&#x2F;">►Testing at Scale</a></div></div>
+</div>
+
+<article>
+
+  <p>When running a script, it is sometimes necessary to pass parameters to it in the same way
+that you would for an activity. For example, you might have a scenario script like this:</p>
+<pre class="z-code"><code><span class="z-text z-plain"># myscript.js
+scenario.run({
+  driver:   &#39;stdout&#39;,
+  workload: &#39;test.yaml&#39;,
+  cycles:   &#39;1000&#39;
+});
+</span></code></pre>
+<p>This is what the script form of starting an activity might look like. It is
+simply passing a parameter map with the activity parameters to the scenario controller.</p>
+<p>You might invoke it like this:</p>
+<pre class="z-code"><code><span class="z-text z-plain">nb5 script myscript
+</span></code></pre>
+<p>Suppose that you want to allow the user to run such an activity by calling the script directly,
+but you also want them to allow them to add their own parameters specifically to the
+activity.</p>
+<p>NoSQLBench supports this type of flexibility by providing any command-line arguments to the
+script as a script object. It is possible to then combine the parameters that a user provides
+with any templated parameters in your script. You can make either one the primary, while allowing
+the other to backfill values. In either case, it's a matter of using helper methods that are
+baked into the command line parameters object.</p>
+<p>To force parameters to specific values while allowing user command line parameters to backfill,
+use a pattern like this:</p>
+<pre class="z-code"><code><span class="z-text z-plain">myparams = params.withOverrides(
+  {
+    myparam: &#39;myvalue&#39;
+  }
+);
+</span></code></pre>
+<p>This will force 'myparam' to the specified values irrespective of what the user has provided for
+that value, and will add the value if it is not present already.</p>
+<p>To force <em>unset</em> a parameter, use a similar pattern, but with the value <code>UNSET</code> instead:</p>
+<pre class="z-code"><code><span class="z-text z-plain">myparams = params.withOverrides(
+  {
+    myparam: &#39;UNSET&#39;
+  }
+);
+</span></code></pre>
+<p>If this form is used, then any parameter which has already been provided for <code>myparam</code> will be
+removed from the resulting map.</p>
+
+</article>
+  </main>
+  <footer>
+    <hr />
+    <div class="c">
+      <nav>
+        <ul></ul>
+      </nav>
+      <p class="s90">Copyright &copy; 2023-2023 NoSQLBench Project</p>
+    </div>
+  </footer>
+</body>
+</html>

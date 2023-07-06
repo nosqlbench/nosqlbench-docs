@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script src="https://docs.nosqlbench.io/theme.min.js" integrity="sha384-IpIaa84kOKgkF5EJ0fD/kBe2wtIIsIB60ANGmuJxeA0dz5bSRfwBwp2/QybtQpU2"></script>
+  <link rel="stylesheet" href="https://docs.nosqlbench.io/abridge-switcher.css?h=4238d999f44a7bb130d5" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preload" as="style" class="preStyle" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" crossorigin="anonymous" />
+  <script defer src="https://docs.nosqlbench.io/search_index.en.js?h=ae47d253e455a3aaacb2" integrity="sha384-cP47owL9Iuak1e1AA21cJA4BgagQtaPwAXBQG7QgJeE2JKGgkCBROHbCj/Xym6KC"></script>
+  <script defer src="https://docs.nosqlbench.io/abridge-bundle-nofacade.min.js?h=9bcf621a2fcab7336017" integrity="sha384-u8AROOUG6n2Xjk2+7pvkkfeSIqinjI1tmqeBpZRlZtc5KFO/8DyFfEir6fAE2wcq"></script>
+  <meta name="base" content="https://docs.nosqlbench.io" />
+<meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>pulsar | NoSQLBench Project</title>
+  <meta name="copyright" content="NoSQLBench Project" />
+  <meta name="description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <link rel="canonical" href="https://docs.nosqlbench.io/reference/drivers/pulsar/" />
+  <meta name="keywords" content="Abridge, Abridge.css, Zola, Theme, Zola Theme, getzola, Semantic Html, Fast, lightweight" />
+  <meta property="og:url" content="https://docs.nosqlbench.io/reference/drivers/pulsar/" />
+  <meta name="twitter:url" content="https://docs.nosqlbench.io/reference/drivers/pulsar/" />
+  <meta property="og:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta name="twitter:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta property="og:title" content="pulsar | NoSQLBench Project" />
+  <meta name="twitter:title" content="pulsar | NoSQLBench Project" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:site_name" content="NoSQLBench Project" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://docs.nosqlbench.io/site.webmanifest" />
+  <link rel="mask-icon" href="https://docs.nosqlbench.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://docs.nosqlbench.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://docs.nosqlbench.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://docs.nosqlbench.io/favicon-16x16.png" />
+  <noscript><link rel="stylesheet" href="https://docs.nosqlbench.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://docs.nosqlbench.io/"><img src="https://docs.nosqlbench.io/nb5logo.png" alt="NoSQLBench5" width="32" height="32" />NoSQLBench v5</a></h1></div><div>
+        <ul><li> <h2><a href="https://docs.nosqlbench.io/getting-started/">Getting Started</a></h2> </li><li> <h2><a href="https://docs.nosqlbench.io/release-notes/">Release Notes</a></h2> </li><li class="js"><i type="reset" id="mode" class="svgs adjust"></i></li></ul>
+      </div>
+      <div>
+        <form autocomplete=off class="js" name="goSearch" id="searchbox">
+          <div class="searchd">
+            <input id="searchinput" type="text" placeholder="Search" title="Search" />
+            <button type="submit" title="Search"><i class="svgs search"></i></button>
+          </div>
+          <div><div id="suggestions"></div></div>
+        </form>
+      </div>
+
+      <a href="http://github.com/nosqlbench/nosqlbench-build-docs" title="This doc site's project repo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="1" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+      <a href="http://nosqlbench.io" title="NoSQLBench Project Site">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+    </nav>
+    <hr /><div style="position:sticky"><span><a href="&#x2F;">NB5 Docs► </a></span><span><a href="&#x2F;reference&#x2F;">Reference Section► </a></span><span title="DriverAdapters allow native drivers or other logic to be plugged into the nb5 engine."><a href="&#x2F;reference&#x2F;drivers&#x2F;"><strong>Drivers▼</strong> </a></span><span title="[current page]"><a href="&#x2F;reference&#x2F;drivers&#x2F;pulsar&#x2F;"><strong>pulsar 🖺</strong></a></span>
+</div></header>
+  <main><!-- active_page: reference&#x2F;drivers&#x2F;pulsar.md -->
+<!-- active_section: reference&#x2F;drivers&#x2F;_index.md -->
+
+
+<!-- lower_root: reference&#x2F;_index.md -->
+<!-- >upper_root: reference&#x2F;_index.md -->
+
+<div class="toc" aria-hidden="true" id="">
+<!--  <h4>Drivers</h4>--><div class="toc-sticky"><div class="toc-item"title="This section is a specification of the standard workload format."><a href="&#x2F;reference&#x2F;workload_definition&#x2F;">►Workload Specification</a></div><div class="toc-item"title="DriverAdapters allow native drivers or other logic to be plugged into the nb5 engine."><strong>▼Drivers</strong></div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;jdbc&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;jdbc&#x2F;">JDBC driver</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;cqld4&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;cqld4&#x2F;">cqld4</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;stdout&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;stdout&#x2F;">stdout</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;mongodb&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;mongodb&#x2F;">MongoDB</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;diag&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;diag&#x2F;">diag</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;pulsar&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;pulsar&#x2F;"><strong>pulsar</strong></a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;tcpserver&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;tcpserver&#x2F;">tcpserver</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;tcpclient&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;tcpclient&#x2F;">tcpclient</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;dynamodb&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;dynamodb&#x2F;">dynamodb</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;s4j&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;s4j&#x2F;">S4J</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;drivers&#x2F;http&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;drivers&#x2F;http&#x2F;">http</a>
+    </div><div class="toc-item"title="Binding functions are the core of the procedural data generation capabilities of NoSQLBench. They bind generated data to operations in a determinstic way."><a href="&#x2F;reference&#x2F;bindings&#x2F;">►Binding Functions</a></div><div class="toc-item"title="Documentation for bundled applications within NB5."><a href="&#x2F;reference&#x2F;apps&#x2F;">►Bundled Apps</a></div><div class="toc-item"title="Version data for the bundled and imported docs content"><a href="&#x2F;reference&#x2F;versions&#x2F;">►Version Info</a></div></div>
+</div>
+
+<article>
+
+  <h1 id="pulsar">pulsar</h1>
+<h1 id="1-overview">1. Overview</h1>
+<p>This driver allows you to simulate and run different types of workloads (as below) against a Pulsar cluster through NoSQLBench (NB).</p>
+<ul>
+<li>Admin API - create/delete tenants</li>
+<li>Admin API - create/delete namespaces</li>
+<li>Admin API - create/delete topics
+<ul>
+<li>Topics can be partitioned or non-partitioned</li>
+</ul>
+</li>
+<li>Producer - publish messages with schema support
+<ul>
+<li>Default schema type is byte[]</li>
+<li>Avro schema and KeyValue schema are also supported</li>
+</ul>
+</li>
+<li>Consumer - consume messages with schema support and the following support
+<ul>
+<li>Different subscription types</li>
+<li>Multi-topic subscription (including Topic patterns)</li>
+<li>Subscription initial position</li>
+<li>Dead letter topic policy</li>
+<li>Negative acknowledgement and acknowledgement timeout redelivery backoff policy</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-1-issues-tracker">1.1. Issues Tracker</h2>
+<p>If you have issues or new requirements for this driver, please add them at the <a rel="noopener" target="_blank" href="https://github.com/nosqlbench/nosqlbench/issues/new?labels=pulsar">pulsar issues tracker</a>.</p>
+<h1 id="2-execute-the-nb-pulsar-driver-workload">2. Execute the NB Pulsar Driver Workload</h1>
+<p>In order to run a NB Pulsar driver workload, it follows similar command as other NB driver types. But it does have its unique execution parameters. The general command has the following format:</p>
+<pre data-lang="shell" class="language-shell z-code"><code class="language-shell" data-lang="shell"><span class="z-text z-plain">&lt;nb_cmd&gt; run driver=pulsar threads=&lt;thread_num&gt; cycles=&lt;cycle_count&gt; web_url=&lt;pulsar_web_svc_url&gt; service_url=&lt;pulsar_svc_url&gt; config=&lt;pulsar_client_config_property_file&gt; yaml=&lt;nb_scenario_yaml_file&gt; [&lt;other_common_NB_execution_parameters&gt;]
+</span></code></pre>
+<p>In the above command, make sure the driver type is <strong>pulsar</strong> and provide the following Pulsar driver specific parameters:</p>
+<ul>
+<li><em><strong>web_url</strong></em>: Pulsar web service url and default to &quot;http://localhost:8080&quot;</li>
+<li><em><strong>service_url</strong></em>: Pulsar native protocol service url and default to &quot;pulsar://localhost:6650&quot;</li>
+<li><em><strong>config</strong></em>: Pulsar schema/client/producer/consumer related configuration (as a property file)</li>
+</ul>
+<h2 id="2-1-nb-pulsar-driver-yaml-file-high-level-structure">2.1. NB Pulsar Driver Yaml File High Level Structure</h2>
+<p>Just like other NB driver types, the actual NB Pulsar workload is defined in a YAML file with the following high level structure:</p>
+<pre data-lang="yaml" class="language-yaml z-code"><code class="language-yaml" data-lang="yaml"><span class="z-source z-yaml"><span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">description</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-keyword z-control z-flow z-block-scalar z-literal z-yaml">|</span>
+<span class="z-string z-unquoted z-block z-yaml">  ...
+
+</span><span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">bindings</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+  <span class="z-constant z-numeric z-float z-decimal z-yaml"><span class="z-punctuation z-separator z-decimal z-yaml">.</span>..</span>
+
+<span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">params</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+  <span class="z-constant z-numeric z-float z-decimal z-yaml"><span class="z-punctuation z-separator z-decimal z-yaml">.</span>..</span>
+
+<span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">blocks</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">&lt;block_1&gt;</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">ops</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+      <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">op1</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+        <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">&lt;OpTypeIdentifier&gt;</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-quoted z-double z-yaml"><span class="z-punctuation z-definition z-string z-begin z-yaml">&quot;</span>&lt;static_or_dynamic_value&gt;<span class="z-punctuation z-definition z-string z-end z-yaml">&quot;</span></span>
+        <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">&lt;op_param_1&gt;</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-quoted z-double z-yaml"><span class="z-punctuation z-definition z-string z-begin z-yaml">&quot;</span>&lt;some_value&gt;<span class="z-punctuation z-definition z-string z-end z-yaml">&quot;</span></span>
+        <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">&lt;op_param_2&gt;</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-quoted z-double z-yaml"><span class="z-punctuation z-definition z-string z-begin z-yaml">&quot;</span>&lt;some_value&gt;<span class="z-punctuation z-definition z-string z-end z-yaml">&quot;</span></span>
+        <span class="z-constant z-numeric z-float z-decimal z-yaml"><span class="z-punctuation z-separator z-decimal z-yaml">.</span>..</span>
+
+  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">&lt;block_2&gt;</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+  <span class="z-constant z-numeric z-float z-decimal z-yaml"><span class="z-punctuation z-separator z-decimal z-yaml">.</span>..</span>
+</span></code></pre>
+<ul>
+<li><em><strong>description</strong></em>: This is an (optional) section where to provide general description of the Pulsar NB workload defined in this file.</li>
+<li><em><strong>bindings</strong></em>: This section defines all NB bindings that are required in all OpTemplate blocks</li>
+<li><em><strong>params</strong></em>: This section defines <strong>Document level</strong> configuration parameters that apply to all OpTemplate blocks.</li>
+<li><em><strong>blocks</strong></em>: This section defines the OpTemplate blocks that are needed to execute Pulsar specific workloads. Each OpTemplate block may contain multiple OpTemplates.</li>
+</ul>
+<h2 id="2-2-nb-pulsar-driver-configuration-parameters">2.2. NB Pulsar Driver Configuration Parameters</h2>
+<p>The NB Pulsar driver configuration parameters can be set at 3 different levels:</p>
+<ul>
+<li>Global level</li>
+<li>Document  level
+<ul>
+<li>The parameters at this level are those within a NB yaml file that impact all OpTemplates</li>
+</ul>
+</li>
+<li>Op level (or Cycle level)
+<ul>
+<li>The parameters at this level are those within a NB yaml file that are associated with each individual OpTemplate</li>
+</ul>
+</li>
+</ul>
+<p>Please <strong>NOTE</strong> that when a parameter is specified at multiple levels, the one at the lowest level takes precedence.</p>
+<h3 id="2-2-1-global-level-parameters">2.2.1. Global Level Parameters</h3>
+<p>The parameters at this level are those listed in the command line config properties file.</p>
+<p>The NB Pulsar driver relies on Pulsar's <a rel="noopener" target="_blank" href="https://pulsar.apache.org/docs/en/client-libraries-java/">Java Client API</a> complete its workloads such as creating/deleting tenants/namespaces/topics, generating messages, creating producers to send messages, and creating consumers to receive messages. The Pulsar client API has different configuration parameters to control the execution behavior. For example, <a rel="noopener" target="_blank" href="https://pulsar.apache.org/docs/en/client-libraries-java/#configure-producer">this document</a> lists all possible configuration parameters for how a Pulsar producer can be created.</p>
+<p>All these Pulsar &quot;native&quot; parameters are supported by the NB Pulsar driver, via the global configuration properties file (e.g. <strong>config.properties</strong>). An example of the structure of this file looks like below:</p>
+<pre data-lang="properties" class="language-properties z-code"><code class="language-properties" data-lang="properties"><span class="z-source z-java-props"><span class="z-comment z-line z-java-props"><span class="z-punctuation z-definition z-comment z-java-props">#</span>## Schema related configurations - MUST start with prefix &quot;schema.&quot;</span>
+<span class="z-comment z-line z-java-props"><span class="z-punctuation z-definition z-comment z-java-props">#</span>schema.key.type=avro</span>
+<span class="z-comment z-line z-java-props"><span class="z-punctuation z-definition z-comment z-java-props">#</span>schema.key.definition=&lt;/path/to/avro-key-example.avsc&gt;</span>
+<span class="z-meta z-property z-java-props"><span class="z-entity z-name z-key z-java-props">schema.type</span><span class="z-punctuation z-separator z-java-props">=</span><span class="z-string z-unquoted z-java-props">avro</span></span>
+<span class="z-meta z-property z-java-props"><span class="z-entity z-name z-key z-java-props">schema.definition</span><span class="z-punctuation z-separator z-java-props">=</span><span class="z-string z-unquoted z-java-props">&lt;/path/to/avro-value-example.avsc&gt;</span></span>
+
+<span class="z-comment z-line z-java-props"><span class="z-punctuation z-definition z-comment z-java-props">#</span>## Pulsar client related configurations - MUST start with prefix &quot;client.&quot;</span>
+<span class="z-comment z-line z-java-props"><span class="z-punctuation z-definition z-comment z-java-props">#</span> http://pulsar.apache.org/docs/en/client-libraries-java/#client</span>
+<span class="z-meta z-property z-java-props"><span class="z-entity z-name z-key z-java-props">client.connectionTimeoutMs</span><span class="z-punctuation z-separator z-java-props">=</span><span class="z-string z-unquoted z-java-props">5000</span></span>
+<span class="z-meta z-property z-java-props"><span class="z-entity z-name z-key z-java-props">client.authPluginClassName</span><span class="z-punctuation z-separator z-java-props">=</span><span class="z-string z-unquoted z-java-props">org.apache.pulsar.client.impl.auth.AuthenticationToken</span></span>
+<span class="z-meta z-property z-java-props"><span class="z-entity z-name z-key z-java-props">client.authParams</span><span class="z-punctuation z-separator z-java-props">=</span></span>
+<span class="z-comment z-line z-java-props"><span class="z-punctuation z-definition z-comment z-java-props">#</span> ...</span>
+
+<span class="z-comment z-line z-java-props"><span class="z-punctuation z-definition z-comment z-java-props">#</span>## Producer related configurations (global) - MUST start with prefix &quot;producer.&quot;</span>
+<span class="z-comment z-line z-java-props"><span class="z-punctuation z-definition z-comment z-java-props">#</span> http://pulsar.apache.org/docs/en/client-libraries-java/#configure-producer</span>
+<span class="z-meta z-property z-java-props"><span class="z-entity z-name z-key z-java-props">producer.sendTimeoutMs</span><span class="z-punctuation z-separator z-java-props">=</span></span>
+<span class="z-meta z-property z-java-props"><span class="z-entity z-name z-key z-java-props">producer.blockIfQueueFull</span><span class="z-punctuation z-separator z-java-props">=</span><span class="z-string z-unquoted z-java-props">true</span></span>
+<span class="z-comment z-line z-java-props"><span class="z-punctuation z-definition z-comment z-java-props">#</span> ...</span>
+
+<span class="z-comment z-line z-java-props"><span class="z-punctuation z-definition z-comment z-java-props">#</span>## Consumer related configurations (global) - MUST start with prefix &quot;consumer.&quot;</span>
+<span class="z-comment z-line z-java-props"><span class="z-punctuation z-definition z-comment z-java-props">#</span> http://pulsar.apache.org/docs/en/client-libraries-java/#configure-consumer</span>
+<span class="z-meta z-property z-java-props"><span class="z-entity z-name z-key z-java-props">consumer.subscriptionInitialPosition</span><span class="z-punctuation z-separator z-java-props">=</span><span class="z-string z-unquoted z-java-props">Earliest</span></span>
+<span class="z-meta z-property z-java-props"><span class="z-entity z-name z-key z-java-props">consumer.deadLetterPolicy</span><span class="z-punctuation z-separator z-java-props">=</span><span class="z-string z-unquoted z-java-props">{&quot;maxRedeliverCount&quot;:&quot;5&quot;,&quot;retryLetterTopic&quot;:&quot;public/default/retry&quot;,&quot;deadLetterTopic&quot;:&quot;public/default/dlq&quot;,&quot;initialSubscriptionName&quot;:&quot;dlq-sub&quot;}</span></span>
+<span class="z-meta z-property z-java-props"><span class="z-entity z-name z-key z-java-props">consumer.ackTimeoutRedeliveryBackoff</span><span class="z-punctuation z-separator z-java-props">=</span><span class="z-string z-unquoted z-java-props">{&quot;minDelayMs&quot;:&quot;10&quot;,&quot;maxDelayMs&quot;:&quot;20&quot;,&quot;multiplier&quot;:&quot;1.2&quot;}</span></span>
+<span class="z-comment z-line z-java-props"><span class="z-punctuation z-definition z-comment z-java-props">#</span> ...</span>
+</span></code></pre>
+<p>There are multiple sections in this file that correspond to different
+categories of the configuration parameters:</p>
+<ul>
+<li><strong><code>Pulsar Schema</code> related settings</strong>:
+<ul>
+<li>All settings under this section starts with <strong>schema.</strong> prefix.</li>
+<li>At the moment, there are 3 schema types supported
+<ul>
+<li>Default raw <em><strong>byte[]</strong></em></li>
+<li>Avro schema for the message payload</li>
+<li>KeyValue based Avro schema for both message key and message payload</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong><code>Pulsar Client</code> related settings</strong>:
+<ul>
+<li>All settings under this section starts with <strong>client.</strong> prefix.</li>
+<li>This section defines all configuration parameters that are related with defining a PulsarClient object.
+<ul>
+<li>See <a rel="noopener" target="_blank" href="https://pulsar.apache.org/docs/en/client-libraries-java/#default-broker-urls-for-standalone-clusters">Pulsar Doc Reference</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong><code>Pulsar Producer</code> related settings</strong>:
+<ul>
+<li>All settings under this section starts with <strong>producer</strong> prefix.</li>
+<li>This section defines all configuration parameters that are related with defining a Pulsar Producer object.
+<ul>
+<li>See <a rel="noopener" target="_blank" href="https://pulsar.apache.org/docs/en/client-libraries-java/#configure-producer">Pulsar Doc Reference</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong><code>Pulsar Consumer</code> related settings</strong>:
+<ul>
+<li>All settings under this section starts with <strong>consumer</strong> prefix.</li>
+<li>This section defines all configuration parameters that are related with defining a Pulsar Consumer object.
+<ul>
+<li>See <a rel="noopener" target="_blank" href="http://pulsar.apache.org/docs/en/client-libraries-java/#configure-consumer">Pulsar Doc Reference</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-2-2-document-level-parameters">2.2.2. Document Level Parameters</h3>
+<p>For the Pulsar NB driver, Document level parameters can only be statically bound; and currently, the following Document level configuration parameters are supported:</p>
+<ul>
+<li><em><strong>async_api</strong></em> (boolean):
+<ul>
+<li>When true, use async Pulsar client API.</li>
+</ul>
+</li>
+<li><em><strong>use_transaction</strong></em> (boolean):
+<ul>
+<li>When true, use Pulsar transaction.</li>
+</ul>
+</li>
+<li><em><strong>admin_delop</strong></em> (boolean):
+<ul>
+<li>When true, delete Tenants/Namespaces/Topics. Otherwise, create them.</li>
+<li>Only applicable to administration related operations</li>
+</ul>
+</li>
+<li><em><strong>seq_tracking</strong></em> (boolean):
+<ul>
+<li>When true, a sequence number is created as part of each message's properties</li>
+<li>This parameter is used in conjunction with the next one in order to simulate abnormal message processing errors and then be able to detect such errors successfully.</li>
+</ul>
+</li>
+<li><em><strong>seqerr_simu</strong></em>:
+<ul>
+<li>A list of error simulation types separated by comma (,)</li>
+<li>Valid error simulation types
+<ul>
+<li><code>out_of_order</code>: simulate message out of sequence</li>
+<li><code>msg_loss</code>: simulate message loss</li>
+<li><code>msg_dup</code>: simulate message duplication</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em><strong>e2e_starting_time_source</strong></em>:
+<ul>
+<li>Starting timestamp for end-to-end operation. When specified, will update the <code>e2e_msg_latency</code> histogram with the calculated end-to-end latency. The latency is calculated by subtracting the starting time from the current time. The starting time is determined from a configured starting time source. The unit of the starting time is milliseconds since epoch.</li>
+<li>The possible values for <code>e2e_starting_time_source</code>:
+<ul>
+<li><code>message_publish_time</code> : uses the message publishing timestamp as the starting time</li>
+<li><code>message_event_time</code> : uses the message event timestamp as the starting time</li>
+<li><code>message_property_e2e_starting_time</code> : uses a message property <code>e2e_starting_time</code> as the starting time.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="3-nb-pulsar-driver-optemplates">3. NB Pulsar Driver OpTemplates</h1>
+<p>For the NB Pulsar driver, each OpTemplate has the following format:</p>
+<pre data-lang="yaml" class="language-yaml z-code"><code class="language-yaml" data-lang="yaml"><span class="z-source z-yaml"><span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">blocks</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+  <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">&lt;some_block_name&gt;</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+    <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">ops</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+      <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">&lt;some_op_name&gt;</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span>
+        <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">&lt;OpTypeIdentifier&gt;</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-unquoted z-plain z-out z-yaml">&lt;tenant|namespace|topic_name&gt;</span>
+        <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">&lt;op_param_1&gt;</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-quoted z-double z-yaml"><span class="z-punctuation z-definition z-string z-begin z-yaml">&quot;</span>&lt;some_value&gt;<span class="z-punctuation z-definition z-string z-end z-yaml">&quot;</span></span>
+        <span class="z-string z-unquoted z-plain z-out z-yaml"><span class="z-entity z-name z-tag z-yaml">&lt;op_param_2&gt;</span></span><span class="z-punctuation z-separator z-key-value z-mapping z-yaml">:</span> <span class="z-string z-quoted z-double z-yaml"><span class="z-punctuation z-definition z-string z-begin z-yaml">&quot;</span>&lt;some_value&gt;<span class="z-punctuation z-definition z-string z-end z-yaml">&quot;</span></span>
+        <span class="z-constant z-numeric z-float z-decimal z-yaml"><span class="z-punctuation z-separator z-decimal z-yaml">.</span>..</span>
+</span></code></pre>
+<p>The <code>OpTypeIdentifier</code> determines which NB Pulsar workload type (<code>OpType</code>) to run, and it has the following value:</p>
+<pre data-lang="java" class="language-java z-code"><code class="language-java" data-lang="java"><span class="z-source z-java"><span class="z-meta z-class z-java"><span class="z-storage z-modifier z-java">public</span> <span class="z-meta z-class z-identifier z-java"><span class="z-storage z-type z-java">enum</span> <span class="z-entity z-name z-class z-java">PulsarOpType</span></span> <span class="z-meta z-class z-body z-java"><span class="z-meta z-block z-java"><span class="z-punctuation z-section z-block z-begin z-java">{</span>
+    <span class="z-support z-class z-java">AdminTenant</span><span class="z-punctuation z-separator z-comma z-java">,</span>
+    <span class="z-meta z-field z-java">AdminNamespace</span><span class="z-punctuation z-separator z-comma z-java">,</span>
+    <span class="z-meta z-field z-java">AdminTopic</span><span class="z-punctuation z-separator z-comma z-java">,</span>
+    <span class="z-meta z-field z-java">MessageProduce</span><span class="z-punctuation z-separator z-comma z-java">,</span>
+    <span class="z-meta z-field z-java">MessageConsume</span>
+<span class="z-punctuation z-section z-block z-end z-java">}</span></span></span></span>
+</span></code></pre>
+<p>Its value is mandatory and depending on the actual identifier, its value can be one of the following:</p>
+<ul>
+<li><em><strong>Tenant name</strong></em>: for <code>AdminTenant</code> type</li>
+<li><em><strong>Namespace name</strong></em>: for <code>AdminNamespace</code> type and in format &quot;<tenant>/<namespace>&quot;</li>
+<li><em><strong>Topic name</strong></em>: for the rest of the types and in format [(persistent|non-persistent)://]<tenant>/<namespace>/<topic>
+is mandatory for each NB Pulsar operation type</li>
+</ul>
+<p>Each Pulsar <code>OpType</code> may have optional Op specific parameters. Please refer to <a href="https://docs.nosqlbench.io/reference/drivers/pulsar/yaml_examples">here</a> for the example NB Pulsar YAML files for each OpType</p>
+<h1 id="4-message-generation-and-schema-support">4. Message Generation and Schema Support</h1>
+<h2 id="4-1-message-generation">4.1. Message Generation</h2>
+<p>A Pulsar message has three main components: message key, message properties, and message payload. Among them, message payload is mandatory when creating a message.</p>
+<p>When running the &quot;message producing&quot; workload, the NB Pulsar driver is able to generate a message with its full content via the following OpTemplate level parameters:</p>
+<ul>
+<li><code>msg_key</code>: defines message key value</li>
+<li><code>msg_property</code>: defines message property values</li>
+<li><code>msg_value</code>: defines message payload value</li>
+</ul>
+<p>The actual values of them can be static or dynamic (which are determined by NB data binding rules)</p>
+<p>For <code>msg_key</code>, its value can be either</p>
+<ul>
+<li>a plain text string, or</li>
+<li>a JSON string that follows the specified &quot;key&quot; Avro schema (when KeyValue schema is used)</li>
+</ul>
+<p>For <code>msg_property</code>, its value needs to be a JSON string that contains a list of key-value pairs. An example is as below. Please <strong>NOTE</strong> that if the provided value is not a valid JSON string, the NB Pulsar driver will ignore it and treat the message as having no properties.</p>
+<pre class="z-code"><code><span class="z-text z-plain">  msg_property: |
+    {
+      &quot;prop1&quot;: &quot;{myprop1}&quot;,
+      &quot;prop2&quot;: &quot;{myprop2}&quot;
+    }
+</span></code></pre>
+<p>For <code>msg_value</code>, its value can be either</p>
+<ul>
+<li>a plain simple text, or</li>
+<li>a JSON string that follows the specified &quot;value&quot; Avro schema (when Avro schema or KeyValue schema is used)</li>
+</ul>
+<h2 id="4-2-schema-support">4.2. Schema Support</h2>
+<p>The NB Pulsar driver supports the following Pulsar schema types:</p>
+<ul>
+<li>Primitive schema types</li>
+<li>Avro schema type (only for message payload - <code>msg_value</code>)</li>
+<li>KeyValue schema type (with both key and value follows an Avro schema)</li>
+</ul>
+<p>The following 2 global configuration parameters define the required schema type</p>
+<ul>
+<li><code>schema.key.type</code>: defines message key type</li>
+<li><code>schema.type</code>: defines message value type
+For them, if the parameter value is not specified, it means using the default <code>byte[]/BYTES</code> type as the schema type. Otherwise, if it is specified as &quot;avro&quot;, it means using Avro as the schema type.</li>
+</ul>
+<p>The following 2 global configuration parameters define the schema specification (<strong>ONLY</strong> needed when Avro is the schema type)</p>
+<ul>
+<li><code>schema.key.definition</code>: a file path that defines the message key Avro schema specification</li>
+<li><code>schema.definition</code>: a file path the message value Avro schema specification
+The NB Pulsar driver will throw an error if the schema type is Avro but no schema specification definition file is not provided or is not valid.</li>
+</ul>
+
+<p><b><a href="#">Back to top</a></b></p>
+</article>
+<div class="toc" aria-hidden="true">
+  <div class="toc-sticky">
+    <h5>pulsar</h5>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/drivers/pulsar/#pulsar">pulsar</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/drivers/pulsar/#1-overview">1. Overview</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/drivers/pulsar/#1-1-issues-tracker"><small>- 1.1. Issues Tracker</small></a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/drivers/pulsar/#2-execute-the-nb-pulsar-driver-workload">2. Execute the NB Pulsar Driver Workload</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/drivers/pulsar/#2-1-nb-pulsar-driver-yaml-file-high-level-structure"><small>- 2.1. NB Pulsar Driver Yaml File High Level Structure</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/drivers/pulsar/#2-2-nb-pulsar-driver-configuration-parameters"><small>- 2.2. NB Pulsar Driver Configuration Parameters</small></a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/drivers/pulsar/#3-nb-pulsar-driver-optemplates">3. NB Pulsar Driver OpTemplates</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/drivers/pulsar/#4-message-generation-and-schema-support">4. Message Generation and Schema Support</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/drivers/pulsar/#4-1-message-generation"><small>- 4.1. Message Generation</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/drivers/pulsar/#4-2-schema-support"><small>- 4.2. Schema Support</small></a>
+    </div>
+  </div>
+</div>
+  </main>
+  <footer>
+    <hr />
+    <div class="c">
+      <nav>
+        <ul></ul>
+      </nav>
+      <p class="s90">Copyright &copy; 2023-2023 NoSQLBench Project</p>
+    </div>
+  </footer>
+</body>
+</html>

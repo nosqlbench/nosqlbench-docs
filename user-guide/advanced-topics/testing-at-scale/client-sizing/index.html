@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script src="https://docs.nosqlbench.io/theme.min.js" integrity="sha384-IpIaa84kOKgkF5EJ0fD/kBe2wtIIsIB60ANGmuJxeA0dz5bSRfwBwp2/QybtQpU2"></script>
+  <link rel="stylesheet" href="https://docs.nosqlbench.io/abridge-switcher.css?h=4238d999f44a7bb130d5" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preload" as="style" class="preStyle" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" crossorigin="anonymous" />
+  <script defer src="https://docs.nosqlbench.io/search_index.en.js?h=ae47d253e455a3aaacb2" integrity="sha384-cP47owL9Iuak1e1AA21cJA4BgagQtaPwAXBQG7QgJeE2JKGgkCBROHbCj/Xym6KC"></script>
+  <script defer src="https://docs.nosqlbench.io/abridge-bundle-nofacade.min.js?h=9bcf621a2fcab7336017" integrity="sha384-u8AROOUG6n2Xjk2+7pvkkfeSIqinjI1tmqeBpZRlZtc5KFO/8DyFfEir6fAE2wcq"></script>
+  <meta name="base" content="https://docs.nosqlbench.io" />
+<meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>Client Sizing | NoSQLBench Project</title>
+  <meta name="copyright" content="NoSQLBench Project" />
+  <meta name="description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <link rel="canonical" href="https://docs.nosqlbench.io/user-guide/advanced-topics/testing-at-scale/client-sizing/" />
+  <meta name="keywords" content="Abridge, Abridge.css, Zola, Theme, Zola Theme, getzola, Semantic Html, Fast, lightweight" />
+  <meta property="og:url" content="https://docs.nosqlbench.io/user-guide/advanced-topics/testing-at-scale/client-sizing/" />
+  <meta name="twitter:url" content="https://docs.nosqlbench.io/user-guide/advanced-topics/testing-at-scale/client-sizing/" />
+  <meta property="og:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta name="twitter:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta property="og:title" content="Client Sizing | NoSQLBench Project" />
+  <meta name="twitter:title" content="Client Sizing | NoSQLBench Project" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:site_name" content="NoSQLBench Project" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://docs.nosqlbench.io/site.webmanifest" />
+  <link rel="mask-icon" href="https://docs.nosqlbench.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://docs.nosqlbench.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://docs.nosqlbench.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://docs.nosqlbench.io/favicon-16x16.png" />
+  <noscript><link rel="stylesheet" href="https://docs.nosqlbench.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://docs.nosqlbench.io/"><img src="https://docs.nosqlbench.io/nb5logo.png" alt="NoSQLBench5" width="32" height="32" />NoSQLBench v5</a></h1></div><div>
+        <ul><li> <h2><a href="https://docs.nosqlbench.io/getting-started/">Getting Started</a></h2> </li><li> <h2><a href="https://docs.nosqlbench.io/release-notes/">Release Notes</a></h2> </li><li class="js"><i type="reset" id="mode" class="svgs adjust"></i></li></ul>
+      </div>
+      <div>
+        <form autocomplete=off class="js" name="goSearch" id="searchbox">
+          <div class="searchd">
+            <input id="searchinput" type="text" placeholder="Search" title="Search" />
+            <button type="submit" title="Search"><i class="svgs search"></i></button>
+          </div>
+          <div><div id="suggestions"></div></div>
+        </form>
+      </div>
+
+      <a href="http://github.com/nosqlbench/nosqlbench-build-docs" title="This doc site's project repo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="1" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+      <a href="http://nosqlbench.io" title="NoSQLBench Project Site">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+    </nav>
+    <hr /><div style="position:sticky"><span><a href="&#x2F;">NB5 Docs► </a></span><span><a href="&#x2F;user-guide&#x2F;">User Guide► </a></span><span><a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;">Advanced Topics► </a></span><span title="A deeper dive into frequent topics of discussion around scale testing."><a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;testing-at-scale&#x2F;"><strong>Testing at Scale▼</strong> </a></span><span title="[current page]"><a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;testing-at-scale&#x2F;client-sizing&#x2F;"><strong>Client Sizing 🖺</strong></a></span>
+</div></header>
+  <main><!-- active_page: user-guide&#x2F;advanced-topics&#x2F;testing-at-scale&#x2F;client-sizing.md -->
+<!-- active_section: user-guide&#x2F;advanced-topics&#x2F;testing-at-scale&#x2F;_index.md -->
+
+
+<!-- lower_root: user-guide&#x2F;advanced-topics&#x2F;_index.md -->
+<!-- >upper_root: user-guide&#x2F;advanced-topics&#x2F;_index.md -->
+
+<div class="toc" aria-hidden="true" id="">
+<!--  <h4>Testing at Scale</h4>--><div class="toc-sticky"><div class="toc-item"><a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;binding-concepts&#x2F;">Binding Concepts</a></div><div class="toc-item"><a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;advanced-topics&#x2F;"title="detailed explanation of all available configuration methods in nb5">Advanced Topics</a></div><div class="toc-item"><a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;timing-terms&#x2F;">Timing Terms Explained</a></div><div class="toc-item"title="Detailed examples of different ways to configure nb5"><a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;configuration_techniques&#x2F;">►Configuration Techniques</a></div><div class="toc-item"title="NoSQLBench comes with a fully scriptable runtime for advanced testing scenarios"><a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;scenario-scripting&#x2F;">►Scenario Scripting</a></div><div class="toc-item"title="A deeper dive into frequent topics of discussion around scale testing."><strong>▼Testing at Scale</strong></div><!-- subsection_page_path: &#x2F;user-guide&#x2F;advanced-topics&#x2F;testing-at-scale&#x2F;scaling-math&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;testing-at-scale&#x2F;scaling-math&#x2F;">Scaling Math</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;advanced-topics&#x2F;testing-at-scale&#x2F;scaling-up&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;testing-at-scale&#x2F;scaling-up&#x2F;">Scaling Up</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;advanced-topics&#x2F;testing-at-scale&#x2F;client-sizing&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;testing-at-scale&#x2F;client-sizing&#x2F;"><strong>Client Sizing</strong></a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;advanced-topics&#x2F;testing-at-scale&#x2F;determinism&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;testing-at-scale&#x2F;determinism&#x2F;">Determinism &amp; Variation</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;advanced-topics&#x2F;testing-at-scale&#x2F;vantage-points&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;testing-at-scale&#x2F;vantage-points&#x2F;">Vantage Points</a>
+    </div></div>
+</div>
+
+<article>
+
+  <p>How do you know what kind of client to run? How do you know how many clients to run? How do you see
+the result of running multiple clients? We attempt to answer these questions below.</p>
+<h2 id="testing-asymmetry">Testing Asymmetry</h2>
+<p>When you are measuring system performance, certain precautions have to be taken in order to ensure
+that you are measuring what you intend. One of the most fundamental requirements is that the systems
+that generate load and measure results must be inherently more capable of scale than the system you
+are measuring. In other words, if the testing system is the bottle-neck in the composed system, then
+you are effectively measuring your testing system and not the target.</p>
+<p>This is a sliding scale. For instance, if your testing system's resources are <em>mostly</em> saturated,
+say &quot;80% utilized&quot;, then you are likely still leaving some performance untapped, or at the very
+least, measuring higher response times than you would otherwise. This follows from the fact that
+clients are not real-time systems and must juggle threads and other parallel computing resources in
+order to service results from the target system. There is no simple or practical way to avoid this.</p>
+<p>So, in order to have empirical results which are accurate with respect to the target of your tests,
+your client resources must not be over-utilized. In most cases, a client which uses less than 60% of
+its CPU and is not otherwise throttled by resource contention will provide generally accurate
+results.</p>
+<p>In some testing systems, such as those which pipe around data in order to replay operations, you
+will find that it is more difficult to scale your client nodes up than with NoSQLBench. That is
+because moving serialized operations around and then consuming them in real time is simply much more
+work on the client system. This forces you into a situation where the load bank needs to be much
+larger to offset processing demands in the testing apparatus. Methods involving local IO or
+pre-processing will generally be much slower than those which operate almost entirely within the
+CPU-Memory complex. NoSQLBench's approach to synthesizing operations from recipes avoids much of
+this concern, or at least makes it easier to manage and scale.</p>
+<p>Yet, the amount of client capability you need in order to run an accurate performance test still
+depend on how capable your test target is. Consider a target cluster comprised of 5 nodes. This may
+take a couple of test clients <em>of the same basic hardware profile</em> in order to adequately load the
+target system without saturating client resources. However, if those clients are saturating 
+their CPUs, this is not enough.</p>
+<h3 id="verify-client-overhead">Verify client overhead</h3>
+<p>When running serious tests, it is important that you look at your clients' system utilization
+metrics. The key metric to watch for is CPU utilization. If it goes over 50%, you may need more
+client resources in order to keep your metrics accurate. There are a couple ways to approach this.</p>
+<h3 id="use-a-larger-test-node">Use a larger test node</h3>
+<p>If you need to scale up your test client capabilities, the simplest method is to just use a larger
+client node. This may also require you to increase the number of threads, but
+<code>threads=auto</code> will always size up reasonably to the available cores.</p>
+<h3 id="add-more-client-nodes">Add more client nodes</h3>
+<p>If you need, you can add more nodes to your test. There are a couple of strategies for doing this
+effectively.</p>
+<ol>
+<li>If you want to run the same number of operations overall, you can split them over nodes. Simply
+change your <code>cycles</code> activity param so that it allocates a share of the cycles to each node. For
+example, a single-node test which uses <code>cycles=1M</code> can be split into two different ones which
+use <code>cycles=500K</code> and <code>cycles=500k..1M</code>. If you instead simply set the number to
+<code>500k</code> for each of them, you would be running the same exact operations twice.</li>
+<li>If you are gathering metrics on a dashboard, you will want to alias the workload name. If you are
+using <code>Named Scenarios</code> as most users do, then you can simply copy the workload name to another.
+This allows you to receive distinct metrics by client. When tagged metrics are implemented, this
+will no longer be necessary.</li>
+</ol>
+<p>A good rule of thumb to use is 1 client node for each 3 target nodes in a cluster. This will
+of-course vary by workload and hardware, but it is a reasonable starting point.</p>
+<p>It is also important to consider the section on <a href="https://docs.nosqlbench.io/user-guide/advanced-topics/testing-at-scale/client-sizing/@scale_up_testing.md">Scaling Math</a>
+when sizing your load bank.</p>
+
+<p><b><a href="#">Back to top</a></b></p>
+</article>
+<div class="toc" aria-hidden="true">
+  <div class="toc-sticky">
+    <h5>Client Sizing</h5>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/advanced-topics/testing-at-scale/client-sizing/#testing-asymmetry">Testing Asymmetry</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/advanced-topics/testing-at-scale/client-sizing/#verify-client-overhead"><small>- Verify client overhead</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/advanced-topics/testing-at-scale/client-sizing/#use-a-larger-test-node"><small>- Use a larger test node</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/advanced-topics/testing-at-scale/client-sizing/#add-more-client-nodes"><small>- Add more client nodes</small></a>
+    </div>
+  </div>
+</div>
+  </main>
+  <footer>
+    <hr />
+    <div class="c">
+      <nav>
+        <ul></ul>
+      </nav>
+      <p class="s90">Copyright &copy; 2023-2023 NoSQLBench Project</p>
+    </div>
+  </footer>
+</body>
+</html>

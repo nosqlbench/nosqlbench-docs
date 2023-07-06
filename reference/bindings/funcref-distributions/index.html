@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script src="https://docs.nosqlbench.io/theme.min.js" integrity="sha384-IpIaa84kOKgkF5EJ0fD/kBe2wtIIsIB60ANGmuJxeA0dz5bSRfwBwp2/QybtQpU2"></script>
+  <link rel="stylesheet" href="https://docs.nosqlbench.io/abridge-switcher.css?h=4238d999f44a7bb130d5" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preload" as="style" class="preStyle" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" crossorigin="anonymous" />
+  <script defer src="https://docs.nosqlbench.io/search_index.en.js?h=ae47d253e455a3aaacb2" integrity="sha384-cP47owL9Iuak1e1AA21cJA4BgagQtaPwAXBQG7QgJeE2JKGgkCBROHbCj/Xym6KC"></script>
+  <script defer src="https://docs.nosqlbench.io/abridge-bundle-nofacade.min.js?h=9bcf621a2fcab7336017" integrity="sha384-u8AROOUG6n2Xjk2+7pvkkfeSIqinjI1tmqeBpZRlZtc5KFO/8DyFfEir6fAE2wcq"></script>
+  <meta name="base" content="https://docs.nosqlbench.io" />
+<meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>distribution functions | NoSQLBench Project</title>
+  <meta name="copyright" content="NoSQLBench Project" />
+  <meta name="description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <link rel="canonical" href="https://docs.nosqlbench.io/reference/bindings/funcref-distributions/" />
+  <meta name="keywords" content="Abridge, Abridge.css, Zola, Theme, Zola Theme, getzola, Semantic Html, Fast, lightweight" />
+  <meta property="og:url" content="https://docs.nosqlbench.io/reference/bindings/funcref-distributions/" />
+  <meta name="twitter:url" content="https://docs.nosqlbench.io/reference/bindings/funcref-distributions/" />
+  <meta property="og:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta name="twitter:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta property="og:title" content="distribution functions | NoSQLBench Project" />
+  <meta name="twitter:title" content="distribution functions | NoSQLBench Project" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:site_name" content="NoSQLBench Project" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://docs.nosqlbench.io/site.webmanifest" />
+  <link rel="mask-icon" href="https://docs.nosqlbench.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://docs.nosqlbench.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://docs.nosqlbench.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://docs.nosqlbench.io/favicon-16x16.png" />
+  <noscript><link rel="stylesheet" href="https://docs.nosqlbench.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://docs.nosqlbench.io/"><img src="https://docs.nosqlbench.io/nb5logo.png" alt="NoSQLBench5" width="32" height="32" />NoSQLBench v5</a></h1></div><div>
+        <ul><li> <h2><a href="https://docs.nosqlbench.io/getting-started/">Getting Started</a></h2> </li><li> <h2><a href="https://docs.nosqlbench.io/release-notes/">Release Notes</a></h2> </li><li class="js"><i type="reset" id="mode" class="svgs adjust"></i></li></ul>
+      </div>
+      <div>
+        <form autocomplete=off class="js" name="goSearch" id="searchbox">
+          <div class="searchd">
+            <input id="searchinput" type="text" placeholder="Search" title="Search" />
+            <button type="submit" title="Search"><i class="svgs search"></i></button>
+          </div>
+          <div><div id="suggestions"></div></div>
+        </form>
+      </div>
+
+      <a href="http://github.com/nosqlbench/nosqlbench-build-docs" title="This doc site's project repo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="1" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+      <a href="http://nosqlbench.io" title="NoSQLBench Project Site">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+    </nav>
+    <hr /><div style="position:sticky"><span><a href="&#x2F;">NB5 Docs► </a></span><span><a href="&#x2F;reference&#x2F;">Reference Section► </a></span><span title="Binding functions are the core of the procedural data generation capabilities of NoSQLBench. They bind generated data to operations in a determinstic way."><a href="&#x2F;reference&#x2F;bindings&#x2F;"><strong>Binding Functions▼</strong> </a></span><span title="[current page]"><a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-distributions&#x2F;"><strong>distribution functions 🖺</strong></a></span>
+</div></header>
+  <main><!-- active_page: reference&#x2F;bindings&#x2F;funcref_distributions.md -->
+<!-- active_section: reference&#x2F;bindings&#x2F;_index.md -->
+
+
+<!-- lower_root: reference&#x2F;_index.md -->
+<!-- >upper_root: reference&#x2F;_index.md -->
+
+<div class="toc" aria-hidden="true" id="">
+<!--  <h4>Binding Functions</h4>--><div class="toc-sticky"><div class="toc-item"title="This section is a specification of the standard workload format."><a href="&#x2F;reference&#x2F;workload_definition&#x2F;">►Workload Specification</a></div><div class="toc-item"title="DriverAdapters allow native drivers or other logic to be plugged into the nb5 engine."><a href="&#x2F;reference&#x2F;drivers&#x2F;">►Drivers</a></div><div class="toc-item"title="Binding functions are the core of the procedural data generation capabilities of NoSQLBench. They bind generated data to operations in a determinstic way."><strong>▼Binding Functions</strong></div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-conversion&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-conversion&#x2F;">conversion functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-general&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-general&#x2F;">general functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-functional&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-functional&#x2F;">flow functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-diagnostics&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-diagnostics&#x2F;">diagnostic functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-objects&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-objects&#x2F;">Distance</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-premade&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-premade&#x2F;">pre-made functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-statistics&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-statistics&#x2F;">LongStats</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-nulls&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-nulls&#x2F;">null functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-distributions&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-distributions&#x2F;"><strong>distribution functions</strong></a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-experimental&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-experimental&#x2F;">TokenMapFileCycle</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-state&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-state&#x2F;">state functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-collections&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-collections&#x2F;">collection functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-datetime&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-datetime&#x2F;">datetime functions</a>
+    </div><div class="toc-item"title="Documentation for bundled applications within NB5."><a href="&#x2F;reference&#x2F;apps&#x2F;">►Bundled Apps</a></div><div class="toc-item"title="Version data for the bundled and imported docs content"><a href="&#x2F;reference&#x2F;versions&#x2F;">►Version Info</a></div></div>
+</div>
+
+<article>
+
+  <p>All of the distributions that are provided in the Apache Commons Math
+project are supported here, in multiple forms.</p>
+<h2 id="continuous-or-discrete">Continuous or Discrete</h2>
+<p>These distributions break down into two main categories:</p>
+<h3 id="continuous-distributions">Continuous Distributions</h3>
+<p>These are distributions over real numbers like 23.4323, with continuity across the values. Each of the continuous
+distributions can provide samples that fall on an interval of the real number line. Continuous probability distributions
+include the <em>Normal</em> distribution, and the <em>Exponential</em> distribution, among many others.</p>
+<h3 id="discrete-distributions">Discrete Distributions</h3>
+<p>Discrete distributions, also known as <em>integer distributions</em> have only whole-number valued samples. These distributions
+include the <em>Binomial</em> distribution, the <em>Zipf</em> distribution, and the <em>Poisson</em> distribution, among others.</p>
+<h2 id="hashed-or-mapped">Hashed or Mapped</h2>
+<h3 id="hashed-samples">hashed samples</h3>
+<p>Generally, you will want to &quot;randomly sample&quot; from a probability distribution. This is handled automatically by the
+functions below if you do not override the defaults. <strong>The <code>hash</code> mode is the default sampling mode for probability
+distributions.</strong> This is accomplished by hashing the input before using the resulting value with the sampling curve.
+This is called the <code>hash</code> sampling mode by VirtData. You can put <code>hash</code> into the modifiers as explained below if you
+want to document it explicitly.</p>
+<h3 id="mapped-samples">mapped samples</h3>
+<p>The method used to sample from these distributions depends on a mathematical function called the cumulative probability
+density function, or more specifically the inverse of it. Having this function computed over some interval allows one to
+sample the shape of a distribution progressively if desired. In other words, it allows for some <em>percentile-like</em> view
+of values within a given probability distribution. This mode of using the inverse cumulative density function is known
+as the <code>map</code> mode in VirtData, as it allows one to map a unit interval variate in a deterministic way to a density
+sampling curve. To enable this mode, simply pass <code>map</code> as one of the function modifiers for any function in this
+category.</p>
+<h2 id="interpolated-or-computed-samples">Interpolated or Computed Samples</h2>
+<p>When sampling from mathematical models of probability densities,
+performance between different densities can vary drastically. This means
+that you may end up perturbing the results of your test in an unexpected
+way simply by changing parameters of your testing distributions. Even
+worse, some densities have painful corner cases in performance, like
+'Zipf', which can make tests unbearably slow and flawed as they chew up
+CPU resources.</p>
+<p><strong>NOTE:</strong>
+Functions like 'Zipf' can still take a long time to initialize for certain
+parameters. If you are seeing a workload that seems to hang while
+initializing, it might be computing complex integrals for large parameters
+of Zipf. We hope to pre-compute and cache these at a future time to avoid
+this type of impact. For now, just be aware that some parameters on some
+density curves can be expensive to compute <em>even during initialization</em>.</p>
+<h3 id="interpolated-samples">Interpolated Samples</h3>
+<p>For this reason, interpolation is built-in to these sampling functions. <strong>The default mode is <code>interpolate</code>.</strong> This
+means that the sampling function is pre-computed over 1000 equidistant points in the unit interval (0.0,1.0), and the
+result is shared among all threads as a look-up-table for interpolation. This makes all statistical sampling functions
+perform nearly identically at runtime (after initialization, a one time cost). This does have the minor side effect of a
+little loss in accuracy, but the difference is generally negligible for nearly all performance testing cases.</p>
+<h4 id="infinite-or-finite">Infinite or Finite</h4>
+<p>For interpolated samples from continuous distributions, you also have the option of including or
+excluding infinite values which may occur in some distributions. If you want to include them,
+use <code>infinite</code>, or <code>finite</code> to explicitly avoid them (the default). Specifying 'infinite'
+doesn't guarantee that you will see +Infinity or -Infinity, only that they are allowed. The
+Normal distribution often contains -Infinity and +Infinity, for example, due to the function
+used to estimate its cumulative distribution. These values can often be valuable in finding
+corner cases which should be treated uniformly according to
+<a rel="noopener" target="_blank" href="https://en.wikipedia.org/wiki/IEEE_754">IEEE 754</a>.</p>
+<h4 id="clamp-or-noclamp">Clamp or Noclamp</h4>
+<p>For interpolated samples from continuous distributions, you also have the option of clamping the
+allowed values to the valid range for the integral data type used as input. To clamp the output
+values to the range (Long.MIN_VALUE,Long.MAX_VALUE) for long-&gt;double functions, or to (Integer.
+MIN_VALUE,Integer.MAX_VALUE) for int-double functions, specify <code>clamp</code>, which is also the default.
+To explicitly disable this, use <code>noclamp</code>. This is useful when you know the downstream functions
+will only work with a certain range of values without truncating conversions. When you are using
+double values natively on the downstream functions, use <code>noclamp</code> to avoid limiting the domain of
+values in your test data. (In this case, you might also consider <code>infinite</code>).</p>
+<h3 id="computed-samples">Computed Samples</h3>
+<p>Conversely, <code>compute</code> mode sampling calls the sampling function every time a sample is needed. This affords a little
+more accuracy, but is generally <em>not</em> preferable to the default interpolated mode. You'll know if you need computed
+samples. Otherwise, it's best to stick with interpolation so that you spend more time testing your target system and
+less time testing your data generation functions.</p>
+<h2 id="input-range">Input Range</h2>
+<p>All of these functions take a long as the input value for sampling. This is similar to how the unit interval (0.0,1.0)
+is used in mathematics and statistics, but more tailored to modern system capabilities. Instead of using the unit
+interval, we simply use the interval of all positive longs. This provides more compatibility with other functions in
+VirtData, including hashing functions. Internally, this value is automatically converted to a unit interval variate as
+needed to work well with the distributions from Apache Math.</p>
+<h2 id="beta">Beta</h2>
+<p>@see <a rel="noopener" target="_blank" href="https://en.wikipedia.org/wiki/Beta_distribution">Wikipedia: Beta distribution</a> @see <a rel="noopener" target="_blank" href="https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/BetaDistribution.html">Commons JavaDoc: BetaDistribution</a></p>
+<ul>
+<li>
+<p>long -&gt; Beta(double: alpha, double: beta, String[]...: mods) -&gt; double</p>
+</li>
+<li>
+<p>int -&gt; Beta(double: alpha, double: beta, String[]...: mods) -&gt; double</p>
+</li>
+</ul>
+<h2 id="binomial">Binomial</h2>
+<p>@see <a rel="noopener" target="_blank" href="http://en.wikipedia.org/wiki/Binomial_distribution">Wikipedia: Binomial distribution</a> @see <a rel="noopener" target="_blank" href="https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/BinomialDistribution.html">Commons JavaDoc: BinomialDistribution</a></p>
+<ul>
+<li>
+<p>int -&gt; Binomial(int: trials, double: p, String[]...: modslist) -&gt; int</p>
+</li>
+<li>
+<p>long -&gt; Binomial(int: trials, double: p, String[]...: modslist) -&gt; long</p>
+</li>
+<li>
+<p>int -&gt; Binomial(int: trials, double: p, String[]...: modslist) -&gt; long</p>
+</li>
+<li>
+<p>long -&gt; Binomial(int: trials, double: p, String[]...: modslist) -&gt; int</p>
+</li>
+</ul>
+<h2 id="cauchy">Cauchy</h2>
+<p>@see <a rel="noopener" target="_blank" href="http://en.wikipedia.org/wiki/Cauchy_distribution">Wikipedia: Cauchy_distribution</a> @see <a rel="noopener" target="_blank" href="https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/CauchyDistribution.html">Commons Javadoc: CauchyDistribution</a></p>
+<ul>
+<li>
+<p>long -&gt; Cauchy(double: median, double: scale, String[]...: mods) -&gt; double</p>
+</li>
+<li>
+<p>int -&gt; Cauchy(double: median, double: scale, String[]...: mods) -&gt; double</p>
+</li>
+</ul>
+<h2 id="chisquared">ChiSquared</h2>
+<p>@see <a rel="noopener" target="_blank" href="https://en.wikipedia.org/wiki/Chi-squared_distribution">Wikipedia: Chi-squared distribution</a> @see <a rel="noopener" target="_blank" href="https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/ChiSquaredDistribution.html">Commons JavaDoc: ChiSquaredDistribution</a></p>
+<ul>
+<li>
+<p>long -&gt; ChiSquared(double: degreesOfFreedom, String[]...: mods) -&gt; double</p>
+</li>
+<li>
+<p>int -&gt; ChiSquared(double: degreesOfFreedom, String[]...: mods) -&gt; double</p>
+</li>
+</ul>
+<h2 id="coinfunc">CoinFunc</h2>
+<p>This is a higher-order function which takes an input value, and flips a coin. The first parameter is used as the threshold for choosing a function. If the sample values derived from the input is lower than the threshold value, then the first following function is used, and otherwise the second is used. For example, if the threshold is 0.23, and the input value is hashed and sampled in the unit interval to 0.43, then the second of the two provided functions will be used. The input value does not need to be hashed beforehand, since the user may need to use the full input value before hashing as the input to one or both of the functions. This function will accept either a LongFunction or a {@link Function} or a LongUnaryOperator in either position. If necessary, use {@link function.ToLongFunction} to adapt other function forms to be compatible with these signatures.</p>
+<ul>
+<li>Long -&gt; CoinFunc(double: threshold, Object: first, Object: second) -&gt; Object
+<ul>
+<li><em>example:</em> <code>CoinFunc(0.15,NumberNameToString(),Combinations('A:1:B:23'))</code></li>
+<li><em>use the first function 15% of the time</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="constantcontinuous">ConstantContinuous</h2>
+<p>Always yields the same value. @see <a rel="noopener" target="_blank" href="https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/ConstantContinuousDistribution.html">Commons JavaDoc: ConstantContinuousDistribution</a></p>
+<ul>
+<li>
+<p>long -&gt; ConstantContinuous(double: value, String[]...: mods) -&gt; double</p>
+</li>
+<li>
+<p>int -&gt; ConstantContinuous(double: value, String[]...: mods) -&gt; double</p>
+</li>
+</ul>
+<h2 id="enumerated">Enumerated</h2>
+<p>Creates a probability density given the values and optional weights provided, in &quot;value:weight value:weight ...&quot; form. The weight can be elided for any value to use the default weight of 1.0d. @see <a rel="noopener" target="_blank" href="http://commons.apache.org/proper/commons-math/apidocs/org/apache/commons/math4/distribution/EnumeratedRealDistribution.html">Commons JavaDoc: EnumeratedRealDistribution</a></p>
+<ul>
+<li>
+<p>int -&gt; Enumerated(String: data, String[]...: mods) -&gt; double</p>
+<ul>
+<li><em>example:</em> <code>Enumerated('1 2 3 4 5 6')</code></li>
+<li><em>a fair six-sided die roll</em></li>
+<li><em>example:</em> <code>Enumerated('1:2.0 2 3 4 5 6')</code></li>
+<li><em>an unfair six-sided die roll, where 1 has probability mass 2.0, and everything else has only 1.0</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; Enumerated(String: data, String[]...: mods) -&gt; double</p>
+<ul>
+<li><em>example:</em> <code>Enumerated('1 2 3 4 5 6')</code></li>
+<li><em>a fair 6-sided die</em></li>
+<li><em>example:</em> <code>Enumerated('1:2.0 2 3 4 5:0.5 6:0.5')</code></li>
+<li><em>an unfair fair 6-sided die, where ones are twice as likely, and fives and sixes are half as likely</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="exponential">Exponential</h2>
+<p>@see <a rel="noopener" target="_blank" href="https://en.wikipedia.org/wiki/Exponential_distribution">Wikipedia: Exponential distribution</a> @see <a rel="noopener" target="_blank" href="https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/ExponentialDistribution.html">Commons JavaDoc: ExponentialDistribution</a></p>
+<ul>
+<li>
+<p>long -&gt; Exponential(double: mean, String[]...: mods) -&gt; double</p>
+</li>
+<li>
+<p>int -&gt; Exponential(double: mean, String[]...: mods) -&gt; double</p>
+</li>
+</ul>
+<h2 id="f">F</h2>
+<p>@see <a rel="noopener" target="_blank" href="https://en.wikipedia.org/wiki/F-distribution">Wikipedia: F-distribution</a> @see <a rel="noopener" target="_blank" href="https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/FDistribution.html">Commons JavaDoc: FDistribution</a> @see <a rel="noopener" target="_blank" href="http://mathworld.wolfram.com/F-Distribution.html">Mathworld: F-Distribution</a></p>
+<ul>
+<li>
+<p>int -&gt; F(double: numeratorDegreesOfFreedom, double: denominatorDegreesOfFreedom, String[]...: mods) -&gt; double</p>
+</li>
+<li>
+<p>long -&gt; F(double: numeratorDegreesOfFreedom, double: denominatorDegreesOfFreedom, String[]...: mods) -&gt; double</p>
+</li>
+</ul>
+<h2 id="gamma">Gamma</h2>
+<p>@see <a rel="noopener" target="_blank" href="https://en.wikipedia.org/wiki/Gamma_distribution">Wikipedia: Gamma distribution</a> @see <a rel="noopener" target="_blank" href="https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/GammaDistribution.html">Commons JavaDoc: GammaDistribution</a></p>
+<ul>
+<li>
+<p>long -&gt; Gamma(double: shape, double: scale, String[]...: mods) -&gt; double</p>
+</li>
+<li>
+<p>int -&gt; Gamma(double: shape, double: scale, String[]...: mods) -&gt; double</p>
+</li>
+</ul>
+<h2 id="geometric">Geometric</h2>
+<p>@see <a rel="noopener" target="_blank" href="http://en.wikipedia.org/wiki/Geometric_distribution">Wikipedia: Geometric distribution</a> @see <a rel="noopener" target="_blank" href="https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/GeometricDistribution.html">Commons JavaDoc: GeometricDistribution</a></p>
+<ul>
+<li>
+<p>int -&gt; Geometric(double: p, String[]...: modslist) -&gt; int</p>
+</li>
+<li>
+<p>long -&gt; Geometric(double: p, String[]...: modslist) -&gt; long</p>
+</li>
+<li>
+<p>int -&gt; Geometric(double: p, String[]...: modslist) -&gt; long</p>
+</li>
+<li>
+<p>long -&gt; Geometric(double: p, String[]...: modslist) -&gt; int</p>
+</li>
+</ul>
+<h2 id="gumbel">Gumbel</h2>
+<p>@see <a rel="noopener" target="_blank" href="https://en.wikipedia.org/wiki/Gumbel_distribution">Wikipedia: Gumbel distribution</a> @see <a rel="noopener" target="_blank" href="https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/GumbelDistribution.html">Commons JavaDoc: GumbelDistribution</a></p>
+<ul>
+<li>
+<p>long -&gt; Gumbel(double: mu, double: beta, String[]...: mods) -&gt; double</p>
+</li>
+<li>
+<p>int -&gt; Gumbel(double: mu, double: beta, String[]...: mods) -&gt; double</p>
+</li>
+</ul>
+<h2 id="hypergeometric">Hypergeometric</h2>
+<p>@see <a rel="noopener" target="_blank" href="http://en.wikipedia.org/wiki/Hypergeometric_distribution">Wikipedia: Hypergeometric distribution</a> @see <a rel="noopener" target="_blank" href="https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/HypergeometricDistribution.html">Commons JavaDoc: HypergeometricDistribution</a></p>
+<ul>
+<li>
+<p>int -&gt; Hypergeometric(int: populationSize, int: numberOfSuccesses, int: sampleSize, String[]...: modslist) -&gt; int</p>
+</li>
+<li>
+<p>int -&gt; Hypergeometric(int: populationSize, int: numberOfSuccesses, int: sampleSize, String[]...: modslist) -&gt; long</p>
+</li>
+<li>
+<p>long -&gt; Hypergeometric(int: populationSize, int: numberOfSuccesses, int: sampleSize, String[]...: modslist) -&gt; long</p>
+</li>
+<li>
+<p>long -&gt; Hypergeometric(int: populationSize, int: numberOfSuccesses, int: sampleSize, String[]...: modslist) -&gt; int</p>
+</li>
+</ul>
+<h2 id="laplace">Laplace</h2>
+<p>@see <a rel="noopener" target="_blank" href="https://en.wikipedia.org/wiki/Laplace_distribution">Wikipedia: Laplace distribution</a> @see <a rel="noopener" target="_blank" href="https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/LaplaceDistribution.html">Commons JavaDoc: LaplaceDistribution</a></p>
+<ul>
+<li>
+<p>long -&gt; Laplace(double: mu, double: beta, String[]...: mods) -&gt; double</p>
+</li>
+<li>
+<p>int -&gt; Laplace(double: mu, double: beta, String[]...: mods) -&gt; double</p>
+</li>
+</ul>
+<h2 id="levy">Levy</h2>
+<p>@see <a rel="noopener" target="_blank" href="https://en.wikipedia.org/wiki/L%C3%A9vy_distribution">Wikipedia: Lévy distribution</a> @see <a rel="noopener" target="_blank" href="https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/LevyDistribution.html">Commons JavaDoc: LevyDistribution</a></p>
+<ul>
+<li>
+<p>int -&gt; Levy(double: mu, double: c, String[]...: mods) -&gt; double</p>
+</li>
+<li>
+<p>long -&gt; Levy(double: mu, double: c, String[]...: mods) -&gt; double</p>
+</li>
+</ul>
+<h2 id="lognormal">LogNormal</h2>
+<p>@see <a rel="noopener" target="_blank" href="https://en.wikipedia.org/wiki/Log-normal_distribution">Wikipedia: Log-normal distribution</a> @see <a rel="noopener" target="_blank" href="https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/LogNormalDistribution.html">Commons JavaDoc: LogNormalDistribution</a></p>
+<ul>
+<li>
+<p>long -&gt; LogNormal(double: scale, double: shape, String[]...: mods) -&gt; double</p>
+</li>
+<li>
+<p>int -&gt; LogNormal(double: scale, double: shape, String[]...: mods) -&gt; double</p>
+</li>
+</ul>
+<h2 id="logistic">Logistic</h2>
+<p>@see <a rel="noopener" target="_blank" href="https://en.wikipedia.org/wiki/Logistic_distribution">Wikipedia: Logistic distribution</a> @see <a rel="noopener" target="_blank" href="https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/LogisticDistribution.html">Commons JavaDoc: LogisticDistribution</a></p>
+<ul>
+<li>
+<p>int -&gt; Logistic(double: mu, double: scale, String[]...: mods) -&gt; double</p>
+</li>
+<li>
+<p>long -&gt; Logistic(double: mu, double: scale, String[]...: mods) -&gt; double</p>
+</li>
+</ul>
+<h2 id="nakagami">Nakagami</h2>
+<p>@see <a rel="noopener" target="_blank" href="https://en.wikipedia.org/wiki/Nakagami_distribution">Wikipedia: Nakagami distribution</a> @see <a rel="noopener" target="_blank" href="https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/NakagamiDistribution.html">Commons JavaDoc: NakagamiDistribution</a></p>
+<ul>
+<li>
+<p>long -&gt; Nakagami(double: mu, double: omega, String[]...: mods) -&gt; double</p>
+</li>
+<li>
+<p>int -&gt; Nakagami(double: mu, double: omega, String[]...: mods) -&gt; double</p>
+</li>
+</ul>
+<h2 id="normal">Normal</h2>
+<p>@see <a rel="noopener" target="_blank" href="https://en.wikipedia.org/wiki/Normal_distribution">Wikipedia: Normal distribution</a> @see <a rel="noopener" target="_blank" href="https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/NormalDistribution.html">Commons JavaDoc: NormalDistribution</a></p>
+<ul>
+<li>
+<p>long -&gt; Normal(double: mean, double: sd, String[]...: mods) -&gt; double</p>
+</li>
+<li>
+<p>int -&gt; Normal(double: mean, double: sd, String[]...: mods) -&gt; double</p>
+</li>
+</ul>
+<h2 id="pareto">Pareto</h2>
+<p>@see <a rel="noopener" target="_blank" href="https://en.wikipedia.org/wiki/Pareto_distribution">Wikipedia: Pareto distribution</a> @see <a rel="noopener" target="_blank" href="https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/ParetoDistribution.html">Commons JavaDoc: ParetoDistribution</a></p>
+<ul>
+<li>
+<p>int -&gt; Pareto(double: scale, double: shape, String[]...: mods) -&gt; double</p>
+</li>
+<li>
+<p>long -&gt; Pareto(double: scale, double: shape, String[]...: mods) -&gt; double</p>
+</li>
+</ul>
+<h2 id="pascal">Pascal</h2>
+<p>@see <a rel="noopener" target="_blank" href="https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/PascalDistribution.html">Commons JavaDoc: PascalDistribution</a> @see <a rel="noopener" target="_blank" href="https://en.wikipedia.org/wiki/Negative_binomial_distribution">Wikipedia: Negative binomial distribution</a></p>
+<ul>
+<li>
+<p>long -&gt; Pascal(int: r, double: p, String[]...: modslist) -&gt; int</p>
+</li>
+<li>
+<p>int -&gt; Pascal(int: r, double: p, String[]...: modslist) -&gt; long</p>
+</li>
+<li>
+<p>long -&gt; Pascal(int: r, double: p, String[]...: modslist) -&gt; long</p>
+</li>
+<li>
+<p>int -&gt; Pascal(int: r, double: p, String[]...: modslist) -&gt; int</p>
+</li>
+</ul>
+<h2 id="poisson">Poisson</h2>
+<p>@see <a rel="noopener" target="_blank" href="http://en.wikipedia.org/wiki/Poisson_distribution">Wikipedia: Poisson distribution</a> @see <a rel="noopener" target="_blank" href="https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/PoissonDistribution.html">Commons JavaDoc: PoissonDistribution</a></p>
+<ul>
+<li>
+<p>long -&gt; Poisson(double: p, String[]...: modslist) -&gt; long</p>
+</li>
+<li>
+<p>int -&gt; Poisson(double: p, String[]...: modslist) -&gt; long</p>
+</li>
+<li>
+<p>int -&gt; Poisson(double: p, String[]...: modslist) -&gt; int</p>
+</li>
+<li>
+<p>long -&gt; Poisson(double: p, String[]...: modslist) -&gt; int</p>
+</li>
+</ul>
+<h2 id="t">T</h2>
+<p>@see <a rel="noopener" target="_blank" href="https://en.wikipedia.org/wiki/Student&#x27;s_t-distribution">Wikipedia: Student's t-distribution</a> @see <a rel="noopener" target="_blank" href="https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/TDistribution.html">Commons JavaDoc: TDistribution</a></p>
+<ul>
+<li>
+<p>int -&gt; T(double: degreesOfFreedom, String[]...: mods) -&gt; double</p>
+</li>
+<li>
+<p>long -&gt; T(double: degreesOfFreedom, String[]...: mods) -&gt; double</p>
+</li>
+</ul>
+<h2 id="triangular">Triangular</h2>
+<p>@see <a rel="noopener" target="_blank" href="https://en.wikipedia.org/wiki/Triangular_distribution">Wikipedia: Triangular distribution</a> @see <a rel="noopener" target="_blank" href="https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/TriangularDistribution.html">Commons JavaDoc: TriangularDistribution</a></p>
+<ul>
+<li>
+<p>long -&gt; Triangular(double: a, double: c, double: b, String[]...: mods) -&gt; double</p>
+</li>
+<li>
+<p>int -&gt; Triangular(double: a, double: c, double: b, String[]...: mods) -&gt; double</p>
+</li>
+</ul>
+<h2 id="uniform">Uniform</h2>
+<p>@see <a rel="noopener" target="_blank" href="https://en.wikipedia.org/wiki/Uniform_distribution_(continuous)">Wikipedia: Uniform distribution (continuous)</a> @see <a rel="noopener" target="_blank" href="https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/UniformContinuousDistribution.html">Commons JavaDoc: UniformContinuousDistribution</a></p>
+<ul>
+<li>
+<p>int -&gt; Uniform(double: lower, double: upper, String[]...: mods) -&gt; double</p>
+</li>
+<li>
+<p>long -&gt; Uniform(int: lower, int: upper, String[]...: modslist) -&gt; int</p>
+</li>
+<li>
+<p>int -&gt; Uniform(int: lower, int: upper, String[]...: modslist) -&gt; int</p>
+</li>
+<li>
+<p>int -&gt; Uniform(int: lower, int: upper, String[]...: modslist) -&gt; long</p>
+</li>
+<li>
+<p>long -&gt; Uniform(int: lower, int: upper, String[]...: modslist) -&gt; long</p>
+</li>
+<li>
+<p>long -&gt; Uniform(double: lower, double: upper, String[]...: mods) -&gt; double</p>
+</li>
+</ul>
+<h2 id="weibull">Weibull</h2>
+<p>@see <a rel="noopener" target="_blank" href="https://en.wikipedia.org/wiki/Weibull_distribution">Wikipedia: Weibull distribution</a> @see <a rel="noopener" target="_blank" href="http://mathworld.wolfram.com/WeibullDistribution.html">Wolfram Mathworld: Weibull Distribution</a> @see <a rel="noopener" target="_blank" href="https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/WeibullDistribution.html">Commons Javadoc: WeibullDistribution</a></p>
+<ul>
+<li>
+<p>int -&gt; Weibull(double: alpha, double: beta, String[]...: mods) -&gt; double</p>
+</li>
+<li>
+<p>long -&gt; Weibull(double: alpha, double: beta, String[]...: mods) -&gt; double</p>
+</li>
+</ul>
+<h2 id="weightedfuncs">WeightedFuncs</h2>
+<p>Allows for easy branching over multiple functions with specific weights.</p>
+<ul>
+<li>long -&gt; WeightedFuncs(Object[]...: weightsAndFuncs) -&gt; Object</li>
+</ul>
+<h2 id="zipf">Zipf</h2>
+<p>@see <a rel="noopener" target="_blank" href="https://en.wikipedia.org/wiki/Zipf&#x27;s_law">Wikipedia: Zipf's Law</a> @see <a rel="noopener" target="_blank" href="https://commons.apache.org/proper/commons-statistics/commons-statistics-distribution/apidocs/org/apache/commons/statistics/distribution/ZipfDistribution.html">Commons JavaDoc: ZipfDistribution</a></p>
+<ul>
+<li>
+<p>long -&gt; Zipf(int: numberOfElements, double: exponent, String[]...: modslist) -&gt; long</p>
+</li>
+<li>
+<p>int -&gt; Zipf(int: numberOfElements, double: exponent, String[]...: modslist) -&gt; long</p>
+</li>
+<li>
+<p>long -&gt; Zipf(int: numberOfElements, double: exponent, String[]...: modslist) -&gt; int</p>
+</li>
+<li>
+<p>int -&gt; Zipf(int: numberOfElements, double: exponent, String[]...: modslist) -&gt; int</p>
+</li>
+</ul>
+
+<p><b><a href="#">Back to top</a></b></p>
+</article>
+<div class="toc" aria-hidden="true">
+  <div class="toc-sticky">
+    <h5>distribution functions</h5>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-distributions/#continuous-or-discrete">Continuous or Discrete</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-distributions/#continuous-distributions"><small>- Continuous Distributions</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-distributions/#discrete-distributions"><small>- Discrete Distributions</small></a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-distributions/#hashed-or-mapped">Hashed or Mapped</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-distributions/#hashed-samples"><small>- hashed samples</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-distributions/#mapped-samples"><small>- mapped samples</small></a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-distributions/#interpolated-or-computed-samples">Interpolated or Computed Samples</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-distributions/#interpolated-samples"><small>- Interpolated Samples</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-distributions/#computed-samples"><small>- Computed Samples</small></a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-distributions/#input-range">Input Range</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-distributions/#beta">Beta</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-distributions/#binomial">Binomial</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-distributions/#cauchy">Cauchy</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-distributions/#chisquared">ChiSquared</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-distributions/#coinfunc">CoinFunc</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-distributions/#constantcontinuous">ConstantContinuous</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-distributions/#enumerated">Enumerated</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-distributions/#exponential">Exponential</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-distributions/#f">F</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-distributions/#gamma">Gamma</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-distributions/#geometric">Geometric</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-distributions/#gumbel">Gumbel</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-distributions/#hypergeometric">Hypergeometric</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-distributions/#laplace">Laplace</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-distributions/#levy">Levy</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-distributions/#lognormal">LogNormal</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-distributions/#logistic">Logistic</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-distributions/#nakagami">Nakagami</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-distributions/#normal">Normal</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-distributions/#pareto">Pareto</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-distributions/#pascal">Pascal</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-distributions/#poisson">Poisson</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-distributions/#t">T</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-distributions/#triangular">Triangular</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-distributions/#uniform">Uniform</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-distributions/#weibull">Weibull</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-distributions/#weightedfuncs">WeightedFuncs</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-distributions/#zipf">Zipf</a>
+    </div>
+  </div>
+</div>
+  </main>
+  <footer>
+    <hr />
+    <div class="c">
+      <nav>
+        <ul></ul>
+      </nav>
+      <p class="s90">Copyright &copy; 2023-2023 NoSQLBench Project</p>
+    </div>
+  </footer>
+</body>
+</html>

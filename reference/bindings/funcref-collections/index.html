@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script src="https://docs.nosqlbench.io/theme.min.js" integrity="sha384-IpIaa84kOKgkF5EJ0fD/kBe2wtIIsIB60ANGmuJxeA0dz5bSRfwBwp2/QybtQpU2"></script>
+  <link rel="stylesheet" href="https://docs.nosqlbench.io/abridge-switcher.css?h=4238d999f44a7bb130d5" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preload" as="style" class="preStyle" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" crossorigin="anonymous" />
+  <script defer src="https://docs.nosqlbench.io/search_index.en.js?h=ae47d253e455a3aaacb2" integrity="sha384-cP47owL9Iuak1e1AA21cJA4BgagQtaPwAXBQG7QgJeE2JKGgkCBROHbCj/Xym6KC"></script>
+  <script defer src="https://docs.nosqlbench.io/abridge-bundle-nofacade.min.js?h=9bcf621a2fcab7336017" integrity="sha384-u8AROOUG6n2Xjk2+7pvkkfeSIqinjI1tmqeBpZRlZtc5KFO/8DyFfEir6fAE2wcq"></script>
+  <meta name="base" content="https://docs.nosqlbench.io" />
+<meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>collection functions | NoSQLBench Project</title>
+  <meta name="copyright" content="NoSQLBench Project" />
+  <meta name="description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <link rel="canonical" href="https://docs.nosqlbench.io/reference/bindings/funcref-collections/" />
+  <meta name="keywords" content="Abridge, Abridge.css, Zola, Theme, Zola Theme, getzola, Semantic Html, Fast, lightweight" />
+  <meta property="og:url" content="https://docs.nosqlbench.io/reference/bindings/funcref-collections/" />
+  <meta name="twitter:url" content="https://docs.nosqlbench.io/reference/bindings/funcref-collections/" />
+  <meta property="og:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta name="twitter:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta property="og:title" content="collection functions | NoSQLBench Project" />
+  <meta name="twitter:title" content="collection functions | NoSQLBench Project" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:site_name" content="NoSQLBench Project" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://docs.nosqlbench.io/site.webmanifest" />
+  <link rel="mask-icon" href="https://docs.nosqlbench.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://docs.nosqlbench.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://docs.nosqlbench.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://docs.nosqlbench.io/favicon-16x16.png" />
+  <noscript><link rel="stylesheet" href="https://docs.nosqlbench.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://docs.nosqlbench.io/"><img src="https://docs.nosqlbench.io/nb5logo.png" alt="NoSQLBench5" width="32" height="32" />NoSQLBench v5</a></h1></div><div>
+        <ul><li> <h2><a href="https://docs.nosqlbench.io/getting-started/">Getting Started</a></h2> </li><li> <h2><a href="https://docs.nosqlbench.io/release-notes/">Release Notes</a></h2> </li><li class="js"><i type="reset" id="mode" class="svgs adjust"></i></li></ul>
+      </div>
+      <div>
+        <form autocomplete=off class="js" name="goSearch" id="searchbox">
+          <div class="searchd">
+            <input id="searchinput" type="text" placeholder="Search" title="Search" />
+            <button type="submit" title="Search"><i class="svgs search"></i></button>
+          </div>
+          <div><div id="suggestions"></div></div>
+        </form>
+      </div>
+
+      <a href="http://github.com/nosqlbench/nosqlbench-build-docs" title="This doc site's project repo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="1" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+      <a href="http://nosqlbench.io" title="NoSQLBench Project Site">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+    </nav>
+    <hr /><div style="position:sticky"><span><a href="&#x2F;">NB5 Docs► </a></span><span><a href="&#x2F;reference&#x2F;">Reference Section► </a></span><span title="Binding functions are the core of the procedural data generation capabilities of NoSQLBench. They bind generated data to operations in a determinstic way."><a href="&#x2F;reference&#x2F;bindings&#x2F;"><strong>Binding Functions▼</strong> </a></span><span title="[current page]"><a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-collections&#x2F;"><strong>collection functions 🖺</strong></a></span>
+</div></header>
+  <main><!-- active_page: reference&#x2F;bindings&#x2F;funcref_collections.md -->
+<!-- active_section: reference&#x2F;bindings&#x2F;_index.md -->
+
+
+<!-- lower_root: reference&#x2F;_index.md -->
+<!-- >upper_root: reference&#x2F;_index.md -->
+
+<div class="toc" aria-hidden="true" id="">
+<!--  <h4>Binding Functions</h4>--><div class="toc-sticky"><div class="toc-item"title="This section is a specification of the standard workload format."><a href="&#x2F;reference&#x2F;workload_definition&#x2F;">►Workload Specification</a></div><div class="toc-item"title="DriverAdapters allow native drivers or other logic to be plugged into the nb5 engine."><a href="&#x2F;reference&#x2F;drivers&#x2F;">►Drivers</a></div><div class="toc-item"title="Binding functions are the core of the procedural data generation capabilities of NoSQLBench. They bind generated data to operations in a determinstic way."><strong>▼Binding Functions</strong></div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-conversion&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-conversion&#x2F;">conversion functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-general&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-general&#x2F;">general functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-functional&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-functional&#x2F;">flow functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-diagnostics&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-diagnostics&#x2F;">diagnostic functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-objects&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-objects&#x2F;">Distance</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-premade&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-premade&#x2F;">pre-made functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-statistics&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-statistics&#x2F;">LongStats</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-nulls&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-nulls&#x2F;">null functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-distributions&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-distributions&#x2F;">distribution functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-experimental&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-experimental&#x2F;">TokenMapFileCycle</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-state&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-state&#x2F;">state functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-collections&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-collections&#x2F;"><strong>collection functions</strong></a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-datetime&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-datetime&#x2F;">datetime functions</a>
+    </div><div class="toc-item"title="Documentation for bundled applications within NB5."><a href="&#x2F;reference&#x2F;apps&#x2F;">►Bundled Apps</a></div><div class="toc-item"title="Version data for the bundled and imported docs content"><a href="&#x2F;reference&#x2F;versions&#x2F;">►Version Info</a></div></div>
+</div>
+
+<article>
+
+  <p>Collection functions allow you to construct Java Lists, Maps or Sets.
+These functions often take the form of a higher-order function, where
+the inner function definitions are called to determine the size of
+the collection, the individual values to be added, etc.</p>
+<p>For each type of collection, there exists multiple forms which allow you to control how the provided
+function arguments are used to set the values into the collection.</p>
+<h2 id="sized-or-pair-wise-functions">Sized or Pair-wise functions</h2>
+<p>Any function in this category with <code>Sized</code> occuring in its name must be initialized with a sizing
+function as an argument. For example, <code>ListSized(Mod(5),NumberNameToString())</code> will create a list
+which is sized by the first function -- a list between 0 and 4 elements in this case. With an input
+value of <code>3L</code>, the resulting List will contain 3 elements. With an input of <code>7L</code>, it will contain 2
+elements.</p>
+<p>Alternately, when a function does <em>not</em> contain <code>Sized</code> in its name, the arguments provided are used
+as pair-wise mapping functions to the elements in the resulting collection.</p>
+<p>Simply put, a Sized function will always require a sizing function as the first argument.</p>
+<h2 id="stepped-or-hashed-or-same">Stepped or Hashed or Same</h2>
+<p>Any function in this category which contains <code>Stepped</code> in its name will automatically increment the
+input value used for each element in the collection. For example
+<code>ListStepped(NumberNameToString(),NumberNameToString())</code> will always creat a two-element List, but
+the inputs to the provided functions will be i+0, i+1, where i is the input value to the ListStepped
+function.</p>
+<p>Alternately, any function in this category which contains <code>Hashed</code> in its name will automatically
+hash the input value used for each element. This is useful when you want to create values within a
+collection that vary significantly with respect of their common seed value. For example,
+<code>ListHashed(NumberNameToString(),NumberNameToString(),NumberNameToString())</code> will always provide a
+three element List with values that are not obviously related to each other. For each additional
+element added to the collection, the previous input is hashed, so there is a relationship, but it
+will not be obvious nor discernable for most testing purposes.</p>
+<p>If neither <code>Stepped</code> nor <code>Hashed</code> occurs in the function name, then every element function
+gets the exact value given to the main function.</p>
+<h2 id="overview-of-functions">Overview of functions</h2>
+<p>All of the useful collection binding functions follow the same basic patterns above.</p>
+<h3 id="list-functions">List Functions**</h3>
+<table><thead><tr><th></th><th>Same Input</th><th>Stepped Input</th><th>Hashed Input</th></tr></thead><tbody>
+<tr><td><strong>Pair-wise</strong></td><td>ListFunctions(...)</td><td>ListStepped(...)</td><td>ListHashed(...)</td></tr>
+<tr><td><strong>Sized</strong></td><td>ListSized(...)</td><td>ListSizedStepped(...)</td><td>ListSizedHashed(...)</td></tr>
+</tbody></table>
+<p>The name <code>ListFunctions(...)</code> was chosen to avoid clashing with the existing <code>List(...)</code> function.</p>
+<h3 id="set-functions">Set Functions</h3>
+<p>The values produced by the provided element functions for Sets do not check for duplicate values.
+This means that you must ensure that your element functions yield distinct values to insert into
+the collection as it is being built if you want to have a particular cardinality of values in your
+collection.  Overwrites are allowed, although they may not be intended in most cases.</p>
+<table><thead><tr><th></th><th>Same Input</th><th>Stepped Input</th><th>Hashed Input</th></tr></thead><tbody>
+<tr><td><strong>Pair-wise</strong></td><td>SetFunctions(...)</td><td>SetStepped(...)</td><td>SetHashed(...)</td></tr>
+<tr><td><strong>Sized</strong></td><td>SetSized(...)</td><td>SetSizedStepped(...)</td><td>SetSizedHashed(...)</td></tr>
+</tbody></table>
+<p>The name <code>SetFunctions(...)</code> was chosen to avoid clashing with the existing <code>Set(...)</code> function.</p>
+<h3 id="map-functions">Map Functions</h3>
+<p>The values produced by the provided element functions for Maps do not check for duplicate values.
+This means that you must ensure that your element functions yield distinct keys to insert into
+the collection as it is being built if you want to have a particular cardinality of values in your
+collection.  Overwrites are allowed, although they may not be intended in most cases.</p>
+<table><thead><tr><th></th><th>Same Input</th><th>Stepped Input</th><th>Hashed Input</th></tr></thead><tbody>
+<tr><td><strong>Pair-wise</strong></td><td>MapFunctions(...)</td><td>MapStepped(...)</td><td>MapHashed(...)</td></tr>
+<tr><td><strong>Sized</strong></td><td>MapSized(...)</td><td>MapSizedStepped(...)</td><td>MapSizedHashed(...)</td></tr>
+</tbody></table>
+<p>The name <code>MapFunctions(...)</code> was chosen to avoid clashing with the existing <code>Map(...)</code> function.</p>
+<p>For the key and value functions provided to a Map function, they are taken as even-odd pairs (starting
+at zero). For sized functions, the last defined key function will be used for elements past
+the size of the <em>key</em> functions provided. The same is true for the value functions. For example,
+a call to <code>MapSized(3,f(...),g(...),h(...))</code> will use <code>f(...)</code> and <code>g(...)</code> for the first key and value,
+but from that point forward will use <code>h(...)</code> for all keys and <code>g(...)</code> for all values.</p>
+<h2 id="hashedlinetostringlist">HashedLineToStringList</h2>
+<p>Creates a List&lt;String&gt; from a list of words in a file.</p>
+<ul>
+<li>long -&gt; HashedLineToStringList(String: filename, int: minSize, int: maxSize) -&gt; List</li>
+</ul>
+<h2 id="hashedlinetostringset">HashedLineToStringSet</h2>
+<p>Return a pseudo-randomly created Set from the values in the specified file.</p>
+<ul>
+<li>long -&gt; HashedLineToStringSet(String: filename, int: minSize, int: maxSize) -&gt; Set<String>
+<ul>
+<li><em>example:</em> <code>HashedLineToStringSet('data/variable_words.txt',2,10)</code></li>
+<li><em>Create a set of words sized between 2 and 10 elements</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="hashedlinetostringstringmap">HashedLineToStringStringMap</h2>
+<p>Create a String-String map from the specified file, ranging in size from 0 to the specified maximum.</p>
+<ul>
+<li>long -&gt; HashedLineToStringStringMap(String: paramFile, int: maxSize) -&gt; Map&lt;String,String&gt;</li>
+</ul>
+<h2 id="hashedrangetolonglist">HashedRangeToLongList</h2>
+<p>Create a list of longs.</p>
+<ul>
+<li>long -&gt; HashedRangeToLongList(int: minVal, int: maxVal, int: minSize, int: maxSize) -&gt; List<Long></li>
+</ul>
+<h2 id="join">Join</h2>
+<p>This takes any collection and concatenates the String representation with a specified delimiter.</p>
+<ul>
+<li>Collection<T> -&gt; Join(String: delim) -&gt; String
+<ul>
+<li><em>example:</em> <code>Join(',')</code></li>
+<li><em>Concatenate the incoming collection with ','</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="list">List</h2>
+<p>Create a {@code List} from a long input based on two functions, the first to determine the list size, and the second to populate the list with object values. The input fed to the second function is incremented between elements.</p>
+<p>To directly create Lists of Strings from the String version of the same mapping functions, simply use {@link
+StringList} instead.</p>
+<p>This function is not recommended, given that the other List functions are more clear about how they construct values.
+This function may be removed in the next major release, but it will be retained as deprecated for now.</p>
+<ul>
+<li>long -&gt; List(Object: sizeFunc, Object: valueFunc) -&gt; List<Object>
+<ul>
+<li><em>example:</em> <code>List(HashRange(3,7),Add(15L))</code></li>
+<li><em>create a list between 3 and 7 elements of Long values</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="listfunctions">ListFunctions</h2>
+<p>Create a List from a long input based on a set of provided functions. As a 'Pair-wise' function, the size of the resulting collection is determined directly by the number of provided element functions. As neither a 'Stepped' nor a 'Hashed' function, the input value used by each element function is the same as that provided to the outer function.</p>
+<ul>
+<li>long -&gt; ListFunctions(Object[]...: funcs) -&gt; List<Object>
+<ul>
+<li><em>example:</em> <code>ListFunctions(NumberNameToString(),NumberNameToString(),NumberNameToString())</code></li>
+<li><em>Create a list of object values of each function output. Produces values like ['one','one','one']</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="listhashed">ListHashed</h2>
+<p>Create a List from a long input based on a set of provided functions. As a 'Pair-wise' function, the size of the resulting collection is determined directly by the number of provided element functions. As a 'Hashed' function, the input value is hashed again before being used by each element function.</p>
+<ul>
+<li>long -&gt; ListHashed(Object[]...: funcs) -&gt; List<Object>
+<ul>
+<li><em>example:</em> <code>ListHashed(ToString(), WeightedStrings('text:1'))</code></li>
+<li><em>Create a hash list of object values of each function output. ListHashed output ['2945182322382062539','text']</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="listsized">ListSized</h2>
+<p>Create a List from a long input based on a set of provided functions. As a 'Sized' function, the first argument is a function which determines the size of the resulting list. Additional functions provided are used to generate the elements to add to the collection. If the size is larger than the number of provided functions, the last provided function is used repeatedly as needed. As neither a 'Stepped' nor a 'Hashed' function, the input value used by each element function is the same as that provided to the outer function.</p>
+<ul>
+<li>
+<p>long -&gt; ListSized(Object: sizeFunc, Object[]...: funcs) -&gt; List<Object></p>
+<ul>
+<li><em>example:</em> <code>ListSized(FixedValue(5), NumberNameToString(),NumberNameToString(), WeightedStrings('text:1'))</code></li>
+<li><em>Create a sized list of object values of each function output. List size function will recursively call the last function tillend of the list size functions</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; ListSized(int: size, Object[]...: funcs) -&gt; List<Object></p>
+</li>
+</ul>
+<h2 id="listsizedhashed">ListSizedHashed</h2>
+<p>Create a List from a long input based on a set of provided functions. As a 'Sized' function, the first argument is a function which determines the size of the resulting list. Additional functions provided are used to generate the elements to add to the collection. If the size is larger than the number of provided functions, the last provided function is used repeatedly as needed. As a 'Hashed' function, the input value is hashed again before being used by each element function.</p>
+<ul>
+<li>
+<p>long -&gt; ListSizedHashed(Object: sizeFunc, Object[]...: funcs) -&gt; List<Object></p>
+<ul>
+<li><em>example:</em> <code>ListSizedHashed(FixedValue(5),long-&gt;ToString(),long-&gt;WeightedStrings('text:1'),long-&gt;ToString())</code></li>
+<li><em>Create a sized hash list of object values of each function output. List size function will recursively call the last function tillend of the list size functions</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; ListSizedHashed(int: size, Object[]...: funcs) -&gt; List<Object></p>
+</li>
+</ul>
+<h2 id="listsizedstepped">ListSizedStepped</h2>
+<p>Create a List from a long input based on a set of provided functions. As a 'Sized' function, the first argument is a function which determines the size of the resulting list. Additional functions provided are used to generate the elements to add to the collection. If the size is larger than the number of provided functions, the last provided function is used repeatedly as needed. As a 'Stepped' function, the input value is incremented before being used by each element function.</p>
+<ul>
+<li>
+<p>long -&gt; ListSizedStepped(Object: sizeFunc, Object[]...: funcs) -&gt; List<Object></p>
+<ul>
+<li><em>example:</em> <code>ListFunctions(NumberNameToString(),NumberNameToString())</code></li>
+<li><em>Create a list of ['one','one']</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; ListSizedStepped(int: size, Object[]...: funcs) -&gt; List<Object></p>
+</li>
+</ul>
+<h2 id="liststepped">ListStepped</h2>
+<p>Create a List from a long input based on a set of provided functions. As a 'Pair-wise' function, the size of the resulting collection is determined directly by the number of provided element functions. As a 'Stepped' function, the input value is incremented before being used by each element function.</p>
+<ul>
+<li>long -&gt; ListStepped(Object[]...: funcs) -&gt; List<Object>
+<ul>
+<li><em>example:</em> <code>ListStepped(NumberNameToString(),NumberNameToString())</code></li>
+<li><em>Create a list of ['one','two']</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="map">Map</h2>
+<p>Create a {@code Map} from a long input based on three functions, the first to determine the map size, and the second to populate the map with key objects, and the third to populate the map with value objects. The long input fed to the second and third functions is incremented between entries. To directly create Maps with key and value Strings using the same mapping functions, simply use {@link StringMap} instead.</p>
+<ul>
+<li>
+<p>long -&gt; Map(function.LongToIntFunction: sizeFunc, function.LongFunction<Object>: keyFunc, function.LongFunction<Object>: valueFunc) -&gt; Map&lt;Object,Object&gt;</p>
+<ul>
+<li><em>example:</em> <code>Map(HashRange(3,7),NumberNameToString(),HashRange(1300,1700))</code></li>
+<li><em>create a map of size 3-7 entries, with a key of type string and a value of type int (Integer by autoboxing)</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; Map(function.LongFunction<Object>[]...: objfuncs) -&gt; Map&lt;Object,Object&gt;</p>
+<ul>
+<li><em>example:</em> <code>Map(NumberNameToString(),HashRange(1300,1700),NumberNameToString(),HashRange(3,7))</code></li>
+<li><em>create a map of size 2, with a specific function for each key and each value</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="mapfunctions">MapFunctions</h2>
+<p>Create a Map from a long input based on a set of provided key and value functions. Any duplicate entries produced by the key functions are elided. As a 'Pair-wise' function, the size of the resulting collection is determined directly by the number of provided element functions. Since this is a map, the functions come in pairs, each even numbered function is a key function and each odd numbered function is the corresponding value function. As neither a 'Stepped' nor a 'Hashed' function, the input value used by each key and value function is the same as that provided to the outer function.</p>
+<ul>
+<li>long -&gt; MapFunctions(Object[]...: funcs) -&gt; Map&lt;Object,Object&gt;
+<ul>
+<li><em>example:</em> <code>MapFunctions(NumberNameToString(),NumberNameToString(),ToString(),ToString())</code></li>
+<li><em>Create a map of object values. Produces values like {'one':'one'1:1}.</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="maphashed">MapHashed</h2>
+<p>Create a Map from a long input based on a set of provided key and value functions. Any duplicate entries produced by the key functions are elided. As a 'Pair-wise' function, the size of the resulting collection is determined directly by the number of provided element functions. Since this is a map, the functions come in pairs, each even numbered function is a key function and each odd numbered function is the corresponding value function. As a 'Hashed' function, the input value is hashed again before being used by each key and value function.</p>
+<ul>
+<li>long -&gt; MapHashed(Object[]...: funcs) -&gt; Map&lt;Object,Object&gt;
+<ul>
+<li><em>example:</em> <code>MapHashed(NumberNameToString(),NumberNameToString(),ToString(),ToString())</code></li>
+<li><em>Create a map of object values. Produces values like {'one':'one','4464361019114304900','4464361019114304900'}.</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="mapsized">MapSized</h2>
+<p>Create a Map from a long input based on a set of provided key and value functions. Any duplicate entries produced by the key functions are elided. As a 'Sized' function, the first argument is a function which determines the size of the resulting map. Additional functions provided are used to generate the elements to add to the collection, as in the pair-wise mode of {@link MapFunctions}. If the size is larger than the number of provided functions, the last provided function is used repeatedly as needed. (respectively for key functions as well as value functions) As neither a 'Stepped' nor a 'Hashed' function, the input value used by each key and value function is the same as that provided to the outer function.</p>
+<ul>
+<li>
+<p>long -&gt; MapSized(Object: sizeFunc, Object[]...: funcs) -&gt; Map&lt;Object,Object&gt;</p>
+<ul>
+<li><em>example:</em> <code>MapSized(1, NumberNameToString(),NumberNameToString(),ToString(),ToString())</code></li>
+<li><em>Create a map of object values. Produces values like {'one':'one'1:1}.</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; MapSized(int: size, Object[]...: funcs) -&gt; Map&lt;Object,Object&gt;</p>
+</li>
+</ul>
+<h2 id="mapsizedhashed">MapSizedHashed</h2>
+<p>Create a Map from a long input based on a set of provided key and value functions. Any duplicate entries produced by the key functions are elided. As a 'Sized' function, the first argument is a function which determines the size of the resulting map. Additional functions provided are used to generate the elements to add to the collection, as in the pair-wise mode of {@link MapFunctions}. If the size is larger than the number of provided functions, the last provided function is used repeatedly as needed. (respectively for key functions as well as value functions) As a 'Hashed' function, the input value is hashed again before being used by each key and value function.</p>
+<ul>
+<li>
+<p>long -&gt; MapSizedHashed(Object: sizeFunc, Object[]...: funcs) -&gt; Map&lt;Object,Object&gt;</p>
+<ul>
+<li><em>example:</em> <code>MapSizedHashed(1, NumberNameToString(),NumberNameToString(),ToString(),ToString())</code></li>
+<li><em>Create a map of object values. Produces values like {'one':'one'1:1}.</em></li>
+<li><em>example:</em> <code>MapSizedHashed(HashRange(3,5), NumberNameToString(),NumberNameToString())</code></li>
+<li><em>Create a map of object values. Produces values like {'one':'one'1:1}.</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; MapSizedHashed(int: size, Object[]...: funcs) -&gt; Map&lt;Object,Object&gt;</p>
+</li>
+</ul>
+<h2 id="mapsizedstepped">MapSizedStepped</h2>
+<p>Create a Map from a long input based on a set of provided key and value functions. Any duplicate entries produced by the key functions are elided. As a 'Sized' function, the first argument is a function which determines the size of the resulting map. Additional functions provided are used to generate the elements to add to the collection, as in the pair-wise mode of {@link MapFunctions}. If the size is larger than the number of provided functions, the last provided function is used repeatedly as needed. (respectively for key functions as well as value functions) As a 'Stepped' function, the input value is incremented before being used by each key or value function.</p>
+<ul>
+<li>
+<p>long -&gt; MapSizedStepped(Object: sizeFunc, Object[]...: funcs) -&gt; Map&lt;Object,Object&gt;</p>
+<ul>
+<li><em>example:</em> <code>MapSizedStepped(1, NumberNameToString(),NumberNameToString())</code></li>
+<li><em>Create a map of object values. Produces values like {'one':'one'1:1}.</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; MapSizedStepped(int: size, Object[]...: funcs) -&gt; Map&lt;Object,Object&gt;</p>
+</li>
+</ul>
+<h2 id="mapstepped">MapStepped</h2>
+<p>Create a Map from a long input based on a set of provided key and value functions. Any duplicate entries produced by the key functions are elided. As a 'Pair-wise' function, the size of the resulting collection is determined directly by the number of provided element functions. Since this is a map, the functions come in pairs, each even numbered function is a key function and each odd numbered function is the corresponding value function. As a 'Stepped' function, the input value is incremented before being used by each key or value function.</p>
+<ul>
+<li>long -&gt; MapStepped(Object[]...: funcs) -&gt; Map&lt;Object,Object&gt;
+<ul>
+<li><em>example:</em> <code>MapStepped(NumberNameToString(),NumberNameToString(),ToString(),ToString())</code></li>
+<li><em>Create a map of object values. Produces values like {'one':'one'1:1}.</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="set">Set</h2>
+<p>Create a {@code Set} from a long input based on two functions, the first to determine the set size, and the second to populate the set with object values. The input fed to the second function is incremented between elements.</p>
+<p>To create Sets of Strings from the String version of the same mapping functions, simply use {@link StringSet}
+instead.</p>
+<ul>
+<li>
+<p>long -&gt; Set(function.LongToIntFunction: sizeFunc, function.LongFunction<Object>: valueFunc) -&gt; Set<Object></p>
+<ul>
+<li><em>example:</em> <code>Set(HashRange(3,7),Add(15L))</code></li>
+<li><em>create a set between 3 and 7 elements of Long values</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; Set(function.LongToIntFunction: sizeFunc, function.LongUnaryOperator: valueFunc) -&gt; Set<Object></p>
+</li>
+<li>
+<p>long -&gt; Set(function.LongToIntFunction: sizeFunc, function.LongToIntFunction: valueFunc) -&gt; Set<Object></p>
+</li>
+<li>
+<p>long -&gt; Set(function.LongFunction<Object>: sizeFunc, function.LongFunction<Object>: valueFunc) -&gt; Set<Object></p>
+</li>
+<li>
+<p>long -&gt; Set(function.LongFunction<Object>: sizeFunc, function.LongUnaryOperator: valueFunc) -&gt; Set<Object></p>
+</li>
+<li>
+<p>long -&gt; Set(function.LongFunction<Object>: sizeFunc, function.LongToIntFunction: valueFunc) -&gt; Set<Object></p>
+</li>
+<li>
+<p>long -&gt; Set(function.LongUnaryOperator: sizeFunc, function.LongFunction<Object>: valueFunc) -&gt; Set<Object></p>
+</li>
+<li>
+<p>long -&gt; Set(function.LongUnaryOperator: sizeFunc, function.LongUnaryOperator: valueFunc) -&gt; Set<Object></p>
+</li>
+<li>
+<p>long -&gt; Set(function.LongUnaryOperator: sizeFunc, function.LongToIntFunction: valueFunc) -&gt; Set<Object></p>
+</li>
+</ul>
+<h2 id="setfunctions">SetFunctions</h2>
+<p>Create a Set from a long input based on a set of provided functions. Any duplicate values are elided. As a 'Pair-wise' function, the size of the resulting collection is determined directly by the number of provided element functions. As neither a 'Stepped' nor a 'Hashed' function, the input value used by each element function is the same as that provided to the outer function.</p>
+<ul>
+<li>long -&gt; SetFunctions(Object[]...: funcs) -&gt; Set<Object>
+<ul>
+<li><em>example:</em> <code>SetFunctions(NumberNameToString(),NumberNameToString(),NumberNameToString())</code></li>
+<li><em>Create a list of object values of each function output. Produces values like ['one'], as each function produces the same value.</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="sethashed">SetHashed</h2>
+<p>Create a Set from a long input based on a set of provided functions. As a 'Pair-wise' function, the size of the resulting collection is determined directly by the number of provided element functions, assuming no duplicate values. As a 'Hashed' function, the input value is hashed again before being used by each element function.</p>
+<ul>
+<li>long -&gt; SetHashed(Object[]...: funcs) -&gt; Set<Object>
+<ul>
+<li><em>example:</em> <code>SetHashed(ToString(), WeightedStrings('text:1'))</code></li>
+<li><em>Create a hash list of object values of each function output, like ['2945182322382062539','text']</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="setsized">SetSized</h2>
+<p>Create a Set from a long input based on a set of provided functions. As a 'Sized' function, the first argument is a function which determines the size of the resulting set. Additional functions provided are used to generate the elements to add to the collection. If the size is larger than the number of provided functions, the last provided function is used repeatedly as needed. As neither a 'Stepped' nor a 'Hashed' function, the input value used by each element function is the same as that provided to the outer function.</p>
+<ul>
+<li>
+<p>long -&gt; SetSized(Object: sizeFunc, Object[]...: funcs) -&gt; Set<Object></p>
+<ul>
+<li><em>example:</em> <code>SetSized(FixedValue(5), NumberNameToString(), WeightedStrings('text:1'))</code></li>
+<li><em>Create a sized set of object values, like ['one','text'], because 'text' is duplicated 4 times</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; SetSized(int: size, Object[]...: funcs) -&gt; Set<Object></p>
+</li>
+</ul>
+<h2 id="setsizedhashed">SetSizedHashed</h2>
+<p>Create a Set from a long input based on a set of provided functions. As a 'Sized' function, the first argument is a function which determines the size of the resulting set. Additional functions provided are used to generate the elements to add to the collection. If the size is larger than the number of provided functions, the last provided function is used repeatedly as needed. As a 'Hashed' function, the input value is hashed again before being used by each element function.</p>
+<ul>
+<li>
+<p>long -&gt; SetSizedHashed(Object: sizeFunc, Object[]...: funcs) -&gt; Set<Object></p>
+<ul>
+<li><em>example:</em> <code>SetSizedHashed(FixedValue(5),long-&gt;ToString(),long-&gt;WeightedStrings('text:1'),long-&gt;ToString())</code></li>
+<li><em>Create a sized set of values like ['2945182322382062539', 'text', '37945690212757860', '287864597160630738', '3299224200079606887']</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; SetSizedHashed(int: size, Object[]...: funcs) -&gt; Set<Object></p>
+</li>
+</ul>
+<h2 id="setsizedstepped">SetSizedStepped</h2>
+<p>Create a Set from a long input based on a set of provided functions. As a 'Sized' function, the first argument is a function which determines the size of the resulting set. Additional functions provided are used to generate the elements to add to the collection. If the size is larger than the number of provided functions, the last provided function is used repeatedly as needed. As a 'Stepped' function, the input value is incremented before being used by each element function.</p>
+<ul>
+<li>
+<p>long -&gt; SetSizedStepped(Object: sizeFunc, Object[]...: funcs) -&gt; Set<Object></p>
+<ul>
+<li><em>example:</em> <code>SetSizedStepped(Mod(3),NumberNameToString(),NumberNameToString())</code></li>
+<li><em>Create a set, like ['three','four']</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; SetSizedStepped(int: size, Object[]...: funcs) -&gt; Set<Object></p>
+</li>
+</ul>
+<h2 id="setstepped">SetStepped</h2>
+<p>Create a Set from a long input based on a set of provided functions. As a 'Pair-wise' function, the size of the resulting collection is determined directly by the number of provided element functions, assuming no duplicate values. As a 'Stepped' function, the input value is incremented before being used by each element function.</p>
+<ul>
+<li>long -&gt; SetStepped(Object[]...: funcs) -&gt; Set<Object>
+<ul>
+<li><em>example:</em> <code>SetStepped(NumberNameToString(),NumberNameToString())</code></li>
+<li><em>Create a list of ['one','two']</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="stringlist">StringList</h2>
+<p>Create a {@code List} from a long value, based on two functions, the first to determine the list size, and the second to populate the list with String values. The input fed to the second function is incremented between elements. Regardless of the object type provided by the second function, {@link Object#toString()} is used to get the value to add to the list.</p>
+<p>To create Lists of any type of object simply use {@link List} with an specific value mapping function.</p>
+<ul>
+<li>long -&gt; StringList(function.LongToIntFunction: sizeFunc, function.LongFunction<Object>: valueFunc) -&gt; List<String>
+<ul>
+<li><em>example:</em> <code>StringList(HashRange(3,7),Add(15L))</code></li>
+<li><em>create a list between 3 and 7 elements of String representations of Long values</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="stringmap">StringMap</h2>
+<p>Create a {@code Map} from a long input based on three functions, the first to determine the map size, and the second to populate the map with key objects, and the third to populate the map with value objects. The long input fed to the second and third functions is incremented between entries. Regardless of the object type provided by the second and third functions, {@link Object#toString()} is used to determine the key and value to add to the map. To create Maps of any key and value types, simply use {@link Map} with an specific key and value mapping functions.</p>
+<ul>
+<li>
+<p>long -&gt; StringMap(function.LongToIntFunction: sizeFunc, function.LongFunction<Object>: keyFunc, function.LongFunction<Object>: valueFunc) -&gt; Map&lt;String,String&gt;</p>
+<ul>
+<li><em>example:</em> <code>StringMap(HashRange(3,7),NumberNameToString(),HashRange(1300,1700))</code></li>
+<li><em>create a map of size 3-7 entries, with a key of type string and a value of type int (Integer by autoboxing)</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; StringMap(function.LongFunction<Object>[]...: objfuncs) -&gt; Map&lt;String,String&gt;</p>
+<ul>
+<li><em>example:</em> <code>StringMap(NumberNameToString(),HashRange(1300,1700),NumberNameToString(),HashRange(3,7))</code></li>
+<li><em>create a map of size 2, with a specific function for each key and each value</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="stringset">StringSet</h2>
+<p>Create a {@code Set} from a long based on two functions, the first to determine the set size, and the second to populate the set with String values. The input fed to the second function is incremented between elements. Regardless of the object type provided by the second function, {@link Object#toString()} is used to get the value to add to the list. To create Sets of any type of object simply use {@link Set} with a specific value mapping function.</p>
+<ul>
+<li>
+<p>long -&gt; StringSet(function.LongToIntFunction: sizeFunc, function.LongFunction<Object>: valueFunc) -&gt; Set<String></p>
+<ul>
+<li><em>example:</em> <code>StringSet(HashRange(3,7),Add(15L))</code></li>
+<li><em>create a set between 3 and 7 elements of String representations of Long values</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; StringSet(function.LongToIntFunction: sizeFunc, function.LongUnaryOperator: valueFunc) -&gt; Set<String></p>
+</li>
+<li>
+<p>long -&gt; StringSet(function.LongToIntFunction: sizeFunc, function.LongToIntFunction: valueFunc) -&gt; Set<String></p>
+</li>
+<li>
+<p>long -&gt; StringSet(function.LongFunction&lt;?&gt;: sizeFunc, function.LongFunction<Object>: valueFunc) -&gt; Set<String></p>
+</li>
+<li>
+<p>long -&gt; StringSet(function.LongFunction&lt;?&gt;: sizeFunc, function.LongUnaryOperator: valueFunc) -&gt; Set<String></p>
+</li>
+<li>
+<p>long -&gt; StringSet(function.LongFunction&lt;?&gt;: sizeFunc, function.LongToIntFunction: valueFunc) -&gt; Set<String></p>
+</li>
+<li>
+<p>long -&gt; StringSet(function.LongUnaryOperator: sizeFunc, function.LongFunction<Object>: valueFunc) -&gt; Set<String></p>
+</li>
+<li>
+<p>long -&gt; StringSet(function.LongUnaryOperator: sizeFunc, function.LongUnaryOperator: valueFunc) -&gt; Set<String></p>
+</li>
+<li>
+<p>long -&gt; StringSet(function.LongUnaryOperator: sizeFunc, function.LongToIntFunction: valueFunc) -&gt; Set<String></p>
+</li>
+</ul>
+
+<p><b><a href="#">Back to top</a></b></p>
+</article>
+<div class="toc" aria-hidden="true">
+  <div class="toc-sticky">
+    <h5>collection functions</h5>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-collections/#sized-or-pair-wise-functions">Sized or Pair-wise functions</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-collections/#stepped-or-hashed-or-same">Stepped or Hashed or Same</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-collections/#overview-of-functions">Overview of functions</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-collections/#list-functions"><small>- List Functions**</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-collections/#set-functions"><small>- Set Functions</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-collections/#map-functions"><small>- Map Functions</small></a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-collections/#hashedlinetostringlist">HashedLineToStringList</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-collections/#hashedlinetostringset">HashedLineToStringSet</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-collections/#hashedlinetostringstringmap">HashedLineToStringStringMap</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-collections/#hashedrangetolonglist">HashedRangeToLongList</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-collections/#join">Join</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-collections/#list">List</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-collections/#listfunctions">ListFunctions</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-collections/#listhashed">ListHashed</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-collections/#listsized">ListSized</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-collections/#listsizedhashed">ListSizedHashed</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-collections/#listsizedstepped">ListSizedStepped</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-collections/#liststepped">ListStepped</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-collections/#map">Map</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-collections/#mapfunctions">MapFunctions</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-collections/#maphashed">MapHashed</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-collections/#mapsized">MapSized</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-collections/#mapsizedhashed">MapSizedHashed</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-collections/#mapsizedstepped">MapSizedStepped</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-collections/#mapstepped">MapStepped</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-collections/#set">Set</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-collections/#setfunctions">SetFunctions</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-collections/#sethashed">SetHashed</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-collections/#setsized">SetSized</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-collections/#setsizedhashed">SetSizedHashed</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-collections/#setsizedstepped">SetSizedStepped</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-collections/#setstepped">SetStepped</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-collections/#stringlist">StringList</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-collections/#stringmap">StringMap</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-collections/#stringset">StringSet</a>
+    </div>
+  </div>
+</div>
+  </main>
+  <footer>
+    <hr />
+    <div class="c">
+      <nav>
+        <ul></ul>
+      </nav>
+      <p class="s90">Copyright &copy; 2023-2023 NoSQLBench Project</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script src="https://docs.nosqlbench.io/theme.min.js" integrity="sha384-IpIaa84kOKgkF5EJ0fD/kBe2wtIIsIB60ANGmuJxeA0dz5bSRfwBwp2/QybtQpU2"></script>
+  <link rel="stylesheet" href="https://docs.nosqlbench.io/abridge-switcher.css?h=4238d999f44a7bb130d5" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preload" as="style" class="preStyle" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" crossorigin="anonymous" />
+  <script defer src="https://docs.nosqlbench.io/search_index.en.js?h=ae47d253e455a3aaacb2" integrity="sha384-cP47owL9Iuak1e1AA21cJA4BgagQtaPwAXBQG7QgJeE2JKGgkCBROHbCj/Xym6KC"></script>
+  <script defer src="https://docs.nosqlbench.io/abridge-bundle-nofacade.min.js?h=9bcf621a2fcab7336017" integrity="sha384-u8AROOUG6n2Xjk2+7pvkkfeSIqinjI1tmqeBpZRlZtc5KFO/8DyFfEir6fAE2wcq"></script>
+  <meta name="base" content="https://docs.nosqlbench.io" />
+<meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>01 Test Target | NoSQLBench Project</title>
+  <meta name="copyright" content="NoSQLBench Project" />
+  <meta name="description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <link rel="canonical" href="https://docs.nosqlbench.io/getting-started/01-test-target/" />
+  <meta name="keywords" content="Abridge, Abridge.css, Zola, Theme, Zola Theme, getzola, Semantic Html, Fast, lightweight" />
+  <meta property="og:url" content="https://docs.nosqlbench.io/getting-started/01-test-target/" />
+  <meta name="twitter:url" content="https://docs.nosqlbench.io/getting-started/01-test-target/" />
+  <meta property="og:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta name="twitter:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta property="og:title" content="01 Test Target | NoSQLBench Project" />
+  <meta name="twitter:title" content="01 Test Target | NoSQLBench Project" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:site_name" content="NoSQLBench Project" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://docs.nosqlbench.io/site.webmanifest" />
+  <link rel="mask-icon" href="https://docs.nosqlbench.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://docs.nosqlbench.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://docs.nosqlbench.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://docs.nosqlbench.io/favicon-16x16.png" />
+  <noscript><link rel="stylesheet" href="https://docs.nosqlbench.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://docs.nosqlbench.io/"><img src="https://docs.nosqlbench.io/nb5logo.png" alt="NoSQLBench5" width="32" height="32" />NoSQLBench v5</a></h1></div><div>
+        <ul><li> <h2><a href="https://docs.nosqlbench.io/getting-started/">Getting Started</a></h2> </li><li> <h2><a href="https://docs.nosqlbench.io/release-notes/">Release Notes</a></h2> </li><li class="js"><i type="reset" id="mode" class="svgs adjust"></i></li></ul>
+      </div>
+      <div>
+        <form autocomplete=off class="js" name="goSearch" id="searchbox">
+          <div class="searchd">
+            <input id="searchinput" type="text" placeholder="Search" title="Search" />
+            <button type="submit" title="Search"><i class="svgs search"></i></button>
+          </div>
+          <div><div id="suggestions"></div></div>
+        </form>
+      </div>
+
+      <a href="http://github.com/nosqlbench/nosqlbench-build-docs" title="This doc site's project repo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="1" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+      <a href="http://nosqlbench.io" title="NoSQLBench Project Site">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+    </nav>
+    <hr /><div style="position:sticky"><span><a href="&#x2F;">NB5 Docs► </a></span><span title="Getting Started with NoSQLBench"><a href="&#x2F;getting-started&#x2F;"><strong>Getting Started▼</strong> </a></span><span title="[current page]"><a href="&#x2F;getting-started&#x2F;01-test-target&#x2F;"><strong>01 Test Target 🖺</strong></a></span>
+</div></header>
+  <main><!-- active_page: getting-started&#x2F;01-test-target.md -->
+<!-- active_section: getting-started&#x2F;_index.md -->
+
+
+<!-- lower_root: _index.md -->
+<!-- >upper_root: _index.md -->
+
+<div class="toc" aria-hidden="true" id="">
+<!--  <h4>Getting Started</h4>--><div class="toc-sticky"><div class="toc-item"title="Release Notes for each major and some minor releases"><a href="&#x2F;release-notes&#x2F;">►Release Notes</a></div><div class="toc-item"title="An introduction to what makes NoSQLBench Unique"><a href="&#x2F;introduction&#x2F;">►Introduction</a></div><div class="toc-item"title="Getting Started with NoSQLBench"><strong>▼Getting Started</strong></div><!-- subsection_page_path: &#x2F;getting-started&#x2F;00-get-nosqlbench&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;getting-started&#x2F;00-get-nosqlbench&#x2F;">00 Download</a>
+    </div><!-- subsection_page_path: &#x2F;getting-started&#x2F;01-test-target&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;getting-started&#x2F;01-test-target&#x2F;"><strong>01 Test Target</strong></a>
+    </div><!-- subsection_page_path: &#x2F;getting-started&#x2F;02-scenarios&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;getting-started&#x2F;02-scenarios&#x2F;">02 Scenarios</a>
+    </div><!-- subsection_page_path: &#x2F;getting-started&#x2F;03-example-results&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;getting-started&#x2F;03-example-results&#x2F;">03 Results</a>
+    </div><!-- subsection_page_path: &#x2F;getting-started&#x2F;04-reading-metrics&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;getting-started&#x2F;04-reading-metrics&#x2F;">04 Metrics</a>
+    </div><!-- subsection_page_path: &#x2F;getting-started&#x2F;05-next-steps&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;getting-started&#x2F;05-next-steps&#x2F;">05 Next Steps</a>
+    </div><div class="toc-item"title="You can build workloads to simulate real-world data and access patterns."><a href="&#x2F;workloads-101&#x2F;">►Workloads 101</a></div><div class="toc-item"title="Detailed documentation on all options and features of NoSQLBench"><a href="&#x2F;user-guide&#x2F;">►User Guide</a></div><div class="toc-item"title="The NB5 Developer Guide"><a href="&#x2F;dev-guide&#x2F;">►Dev Guide</a></div><div class="toc-item"title="Detailed reference on drivers, formats, bindings, from auto-imported docs"><a href="&#x2F;reference&#x2F;">►Reference Section</a></div></div>
+</div>
+
+<article>
+
+  <p>You need a target system to run your test against. If you already have one, you can skip this 
+section. This tutorial assumes you are testing against a CQL based system. If you need to start 
+something up, you have some options:</p>
+<ul>
+<li><a href="https://docs.nosqlbench.io/getting-started/01-test-target/#run-dse-in-docker">Run DSE in docker</a></li>
+<li><a href="https://docs.nosqlbench.io/getting-started/01-test-target/#run-an-astra-cluster">Run an Astra Cluster (cloud)</a></li>
+<li><a href="https://docs.nosqlbench.io/getting-started/01-test-target/#run-apache-cassandra-in-docker">Run Apache Cassandra in docker</a></li>
+</ul>
+<h1 id="run-dse-in-docker">Run DSE in docker</h1>
+<p>You can start an instance of DSE with this one-liner:</p>
+<pre class="z-code"><code><span class="z-text z-plain">docker run -e DS_LICENSE=accept --name my-dse -p 9042:9042 -d datastax/dse-server:6.8.17-ubi7
+</span></code></pre>
+<p>👉 If you want to see system-level metrics from your cluster, it is possible to get these as
+well as Apache Cassandra level metrics by using the DSE Metrics Collector (if using DSE), or
+by setting up a metrics feed to the Prometheus instance in your local docker stack. You can
+read the
+<a rel="noopener" target="_blank" href="https://docs.datastax.com/en/monitoring/doc/monitoring/metricsCollector/mcExportMetricsDocker.html">DSE Metrics Collector docs</a>.</p>
+<h1 id="run-an-astra-cluster">Run an Astra Cluster</h1>
+<p>You can choose to run a serverless cluster through DataStax AstraDB for functional 
+testing. For tips on how to set-up an Astra DB instance, you can check out this 
+[<a rel="noopener" target="_blank" href="https://github.com/datastaxdevs/workshop-intro-to-cassandra#2-create-a-table">Astra Tutorial</a>].</p>
+<p>If you plan to follow along this tutorial using AstraDB, you will need to follow these steps:</p>
+<ul>
+<li>
+<p>Add a keyspace named 'baselines' to your Astra Database (this is because Astra does not 
+support adding keyspaces through CQLSH), see the following for details:</p>
+<p><img src="../keyspace.png" alt="Keyspace" /></p>
+</li>
+<li>
+<p>In the connect menu of your Astra DB Instance, download your secure connect bundle and make note of its path.</p>
+</li>
+<li>
+<p>In your organization settings, you need to generate a Read/Write token and make note of the Client ID and Client Secret.
+see below for details:</p>
+<p><img src="../token.png" alt="Token" /></p>
+</li>
+</ul>
+<h2 id="configuring-for-astradb">Configuring for AstraDB</h2>
+<p>The following config pattern is often helpful for configuring NB5 for Astra:</p>
+<pre class="z-code"><code><span class="z-text z-plain">... driver=cqld4 scb=&lt;secureconnectbundle&gt; userfile=&lt;userfile&gt; passfile=&lt;passfile&gt; ...
+</span></code></pre>
+<p>This allows you to keep the credentials in files so that they aren't exposed on the console or 
+in log files. It is also convenient to put these into a subdirectory together when you are 
+testing multiple systems, for example:</p>
+<pre class="z-code"><code><span class="z-text z-plain">... driver=cqld4 scb=creds1/scb-somename.zip userfile=creds1/userfile passfile=creds1/passfile ...
+</span></code></pre>
+<p>This makes it easy to manage credentials for multiple endpoints when all you have to do is 
+reference a different directory.</p>
+<p>👉 It might be helpful to refer back to this section later when you learn about activity parameters.</p>
+<h1 id="run-apache-cassandra-in-docker">Run Apache Cassandra in Docker</h1>
+<p>https://hub.docker.com/_/cassandra</p>
+
+<p><b><a href="#">Back to top</a></b></p>
+</article>
+<div class="toc" aria-hidden="true">
+  <div class="toc-sticky">
+    <h5>01 Test Target</h5>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/getting-started/01-test-target/#run-dse-in-docker">Run DSE in docker</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/getting-started/01-test-target/#run-an-astra-cluster">Run an Astra Cluster</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/getting-started/01-test-target/#configuring-for-astradb"><small>- Configuring for AstraDB</small></a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/getting-started/01-test-target/#run-apache-cassandra-in-docker">Run Apache Cassandra in Docker</a>
+    </div>
+  </div>
+</div>
+  </main>
+  <footer>
+    <hr />
+    <div class="c">
+      <nav>
+        <ul></ul>
+      </nav>
+      <p class="s90">Copyright &copy; 2023-2023 NoSQLBench Project</p>
+    </div>
+  </footer>
+</body>
+</html>

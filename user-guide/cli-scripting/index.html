@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script src="https://docs.nosqlbench.io/theme.min.js" integrity="sha384-IpIaa84kOKgkF5EJ0fD/kBe2wtIIsIB60ANGmuJxeA0dz5bSRfwBwp2/QybtQpU2"></script>
+  <link rel="stylesheet" href="https://docs.nosqlbench.io/abridge-switcher.css?h=4238d999f44a7bb130d5" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preload" as="style" class="preStyle" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" crossorigin="anonymous" />
+  <script defer src="https://docs.nosqlbench.io/search_index.en.js?h=ae47d253e455a3aaacb2" integrity="sha384-cP47owL9Iuak1e1AA21cJA4BgagQtaPwAXBQG7QgJeE2JKGgkCBROHbCj/Xym6KC"></script>
+  <script defer src="https://docs.nosqlbench.io/abridge-bundle-nofacade.min.js?h=9bcf621a2fcab7336017" integrity="sha384-u8AROOUG6n2Xjk2+7pvkkfeSIqinjI1tmqeBpZRlZtc5KFO/8DyFfEir6fAE2wcq"></script>
+  <meta name="base" content="https://docs.nosqlbench.io" />
+<meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>CLI Scripting | NoSQLBench Project</title>
+  <meta name="copyright" content="NoSQLBench Project" />
+  <meta name="description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <link rel="canonical" href="https://docs.nosqlbench.io/user-guide/cli-scripting/" />
+  <meta name="keywords" content="Abridge, Abridge.css, Zola, Theme, Zola Theme, getzola, Semantic Html, Fast, lightweight" />
+  <meta property="og:url" content="https://docs.nosqlbench.io/user-guide/cli-scripting/" />
+  <meta name="twitter:url" content="https://docs.nosqlbench.io/user-guide/cli-scripting/" />
+  <meta property="og:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta name="twitter:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta property="og:title" content="CLI Scripting | NoSQLBench Project" />
+  <meta name="twitter:title" content="CLI Scripting | NoSQLBench Project" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:site_name" content="NoSQLBench Project" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://docs.nosqlbench.io/site.webmanifest" />
+  <link rel="mask-icon" href="https://docs.nosqlbench.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://docs.nosqlbench.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://docs.nosqlbench.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://docs.nosqlbench.io/favicon-16x16.png" />
+  <noscript><link rel="stylesheet" href="https://docs.nosqlbench.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://docs.nosqlbench.io/"><img src="https://docs.nosqlbench.io/nb5logo.png" alt="NoSQLBench5" width="32" height="32" />NoSQLBench v5</a></h1></div><div>
+        <ul><li> <h2><a href="https://docs.nosqlbench.io/getting-started/">Getting Started</a></h2> </li><li> <h2><a href="https://docs.nosqlbench.io/release-notes/">Release Notes</a></h2> </li><li class="js"><i type="reset" id="mode" class="svgs adjust"></i></li></ul>
+      </div>
+      <div>
+        <form autocomplete=off class="js" name="goSearch" id="searchbox">
+          <div class="searchd">
+            <input id="searchinput" type="text" placeholder="Search" title="Search" />
+            <button type="submit" title="Search"><i class="svgs search"></i></button>
+          </div>
+          <div><div id="suggestions"></div></div>
+        </form>
+      </div>
+
+      <a href="http://github.com/nosqlbench/nosqlbench-build-docs" title="This doc site's project repo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="1" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+      <a href="http://nosqlbench.io" title="NoSQLBench Project Site">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+    </nav>
+    <hr /><div style="position:sticky"><span><a href="&#x2F;">NB5 Docs► </a></span><span title="Detailed documentation on all options and features of NoSQLBench"><a href="&#x2F;user-guide&#x2F;"><strong>User Guide▼</strong> </a></span><span title="[current page]"><a href="&#x2F;user-guide&#x2F;cli-scripting&#x2F;"><strong>CLI Scripting 🖺</strong></a></span>
+</div></header>
+  <main><!-- active_page: user-guide&#x2F;cli-scripting.md -->
+<!-- active_section: user-guide&#x2F;_index.md -->
+
+
+<!-- lower_root: _index.md -->
+<!-- >upper_root: _index.md -->
+
+<div class="toc" aria-hidden="true" id="">
+<!--  <h4>User Guide</h4>--><div class="toc-sticky"><div class="toc-item"title="Release Notes for each major and some minor releases"><a href="&#x2F;release-notes&#x2F;">►Release Notes</a></div><div class="toc-item"title="An introduction to what makes NoSQLBench Unique"><a href="&#x2F;introduction&#x2F;">►Introduction</a></div><div class="toc-item"title="Getting Started with NoSQLBench"><a href="&#x2F;getting-started&#x2F;">►Getting Started</a></div><div class="toc-item"title="You can build workloads to simulate real-world data and access patterns."><a href="&#x2F;workloads-101&#x2F;">►Workloads 101</a></div><div class="toc-item"title="Detailed documentation on all options and features of NoSQLBench"><strong>▼User Guide</strong></div><!-- subsection_page_path: &#x2F;user-guide&#x2F;cli-options&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;cli-options&#x2F;">CLI Options</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;ssl-options&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;ssl-options&#x2F;">Standard SSL Options</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;cli-scripting&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;cli-scripting&#x2F;"><strong>CLI Scripting</strong></a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;op-templates&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;op-templates&#x2F;">Op Templates</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;core-op-fields&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;core-op-fields&#x2F;">Core Op Fields</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;core-activity-params&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;core-activity-params&#x2F;">Core Activity Params</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;error-handlers&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;error-handlers&#x2F;">Error Handlers</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;standard-metrics&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;standard-metrics&#x2F;">Standard Metrics</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;metrics-options&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;metrics-options&#x2F;">Metrics Options</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;grafana-metrics&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;grafana-metrics&#x2F;">Built-In Grafana Dashboard</a>
+    </div><!-- subsection_page_path: &#x2F;user-guide&#x2F;workloads-intro&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;workloads-intro&#x2F;">Built-In Workloads</a>
+    </div><!-- subsubsection_path: user-guide&#x2F;advanced-topics&#x2F;_index.md --><div class="toc-item-child">
+      <a href="&#x2F;user-guide&#x2F;advanced-topics&#x2F;"title="Detailed documentation on all options and features of NoSQLBench">‣ Advanced Topics</a>
+    </div><div class="toc-item"title="The NB5 Developer Guide"><a href="&#x2F;dev-guide&#x2F;">►Dev Guide</a></div><div class="toc-item"title="Detailed reference on drivers, formats, bindings, from auto-imported docs"><a href="&#x2F;reference&#x2F;">►Reference Section</a></div></div>
+</div>
+
+<article>
+
+  <p>Sometimes you want to run a set of workloads in a particular order, or call other specific test
+setup logic in between activities or workloads. While the full scripting environment allows you 
+to do this and more, it is not necessary to write javascript for every scenario.</p>
+<p>For more basic setup and sequencing needs, you can achieve a fair degree of flexibility on the
+command line. A few key API calls are supported directly on the command line. This guide explains
+each of them, what the do, and how to use them together.</p>
+<h2 id="script-construction">Script Construction</h2>
+<p>As the command line is parsed, from left to right, the scenario script is built in an internal
+scripting buffer. Once the command line is fully parsed, this script is executed. Each of the
+commands below is effectively a macro for a script fragment. It is important to remember that
+order is important.</p>
+<h2 id="command-line-format">Command line format</h2>
+<p>Newlines are not allowed when building scripts from the command line. As long as you follow the
+allowed forms below, you can simply string multiple commands together with spaces between. 
+Single word options without leading dashes, like <code>run</code>, are scenario commands. Subsequent 
+<code>key=value</code> style arguments are their named parameters. Named parameters which follow a scenario 
+command apply to that command only.</p>
+<p>Global options, meaning any argument that starts with a <code>-</code> or <code>--</code>, are applied when NoSQLBench 
+starts up, before any scenario is run. These are automatically taken out of the list of what the 
+scenario scripting sees.</p>
+<h2 id="concurrency-control">Concurrency &amp; Control</h2>
+<p>All activities that run during a scenario run under the control of, parallel to the scenario 
+script. This means that you can have a number of activities running on their own flywheels while 
+the scenario tends to them like an automaton. The scenario only completes when both the 
+scenario script and the activities are finished.</p>
+<h2 id="scenario-commands">Scenario Commands</h2>
+<h3 id="start">start</h3>
+<p>example
+: <code>start driver=&lt;driver&gt; alias=&lt;alias&gt; ...</code></p>
+<p>You can start an activity with this command. At the time this command is evaluated, the activity is
+started, and the script continues without blocking. This is an asynchronous start of an activity. If
+you start multiple activities in this way, they will run concurrently.</p>
+<p>The driver argument is required to identify which nb5 driver to run. The alias parameter is not
+strictly required, unless you want to be able to interact with the started activity later. In any
+case, it is a good idea to name all your activities with a meaningful alias.</p>
+<h3 id="await">await</h3>
+<p>example
+: <code>await &lt;alias&gt;</code></p>
+<p>Await the normal completion of an activity with the given alias. This causes the scenario script to
+pause while it waits for the named activity to finish. This does not tell the activity to stop. It
+simply puts the scenario script into a paused state until the named activity is complete.</p>
+<h3 id="run">run</h3>
+<p>example
+: <code>run driver=&lt;driver&gt; alias=&lt;alias&gt; ...</code></p>
+<p>Run an activity to completion, waiting until it is complete before continuing with the scenario
+script. It is effectively the same as</p>
+<pre class="z-code"><code><span class="z-text z-plain">start driver=&lt;activity type&gt; ... alias=&lt;alias&gt;
+await &lt;alias&gt;
+</span></code></pre>
+<h3 id="stop">stop</h3>
+<p>example
+: <code>stop &lt;alias&gt;</code></p>
+<p>Stop an activity with the given alias. This is synchronous, and causes the scenario to pause until
+the activity is stopped. This means that all threads for the activity have completed and signalled
+that they're in a stopped state. This command allows an activity to stop gracefully if possible. 
+It waits for a number of seconds for all threads to come to a stopped state and will then resort 
+to using forceStop if needed. Threads which are occupied blocking on remote timeouts or blocking 
+behavior can prevent an activity from shutting down gracefully.</p>
+<h3 id="forcestop">forceStop</h3>
+<p>syntax
+: <code>forcestop &lt;alias&gt;</code></p>
+<p>This is like the stop command, except that it doesn't allow the activity to shut down gracefully.
+This command immediately shutdown down the thread pool for a given activity.</p>
+<h3 id="waitmillis">waitmillis</h3>
+<p>example
+: <code>waitmillis &lt;milliseconds&gt;</code></p>
+<p>Pause the scenario script for this many milliseconds. This doesn't affect any running activities 
+directly. This is useful for controlling workload run duration, etc.</p>
+<h3 id="script">script</h3>
+<p>example
+: <code>script &lt;script file&gt;</code></p>
+<p>Add the contents of the named file to the scenario script buffer.</p>
+<h3 id="fragment">fragment</h3>
+<p>example
+: <code>fragment &lt;script text&gt;</code></p>
+<p>Add the contents of the next argument to the scenario script buffer.</p>
+<h1 id="an-example-cli-script">An example CLI script</h1>
+<p>Any sequence of these commands, when strung together, constitutes a scenario script.
+An example of this is: <code>./nb5 start driver=stdout alias=a cycles=100K workload=cql-iot tags=block:main start driver=stdout alias=b cycles=200K workload=cql-iot tags=block:main waitmillis 10000 await a stop b</code></p>
+<p>This is terribly confusing to look at, so we do something like this instead. The backslashes at the end allow you to insert a discarded newline, <em>as long as there are no
+spaces after the backslash.</em></p>
+<pre data-linenos data-lang="shell" class="language-shell z-code"><code class="language-shell" data-lang="shell"><table><tbody><tr><td>1</td><td><span class="z-text z-plain">./nb5 \
+</td></tr><tr><td>2</td><td>start driver=stdout alias=a cycles=100K workload=cql-iot tags=block:main \
+</td></tr><tr><td>3</td><td>start driver=stdout alias=b cycles=200K workload=cql-iot tags=block:main \
+</td></tr><tr><td>4</td><td>waitmillis 10000 \
+</td></tr><tr><td>5</td><td>await a \
+</td></tr><tr><td>6</td><td>stop b
+</td></tr></span></tbody></table></code></pre>
+<p>Here is a narrative of what happens for each line:</p>
+<pre data-linenos class="z-code"><code><table><tbody><tr><td>1</td><td><span class="z-text z-plain"># nb5 is invoked
+</td></tr><tr><td>2</td><td># An activity named &#39;a&#39; is started, with 100K cycles of work.
+</td></tr><tr><td>3</td><td># An activity named &#39;b&#39; is started, with 200K cycles of work.
+</td></tr><tr><td>4</td><td># While these activities run, the scenario script waits for ten seconds.
+</td></tr><tr><td>5</td><td># The scenario blocks, waiting for activity &#39;a&#39; to complete its 100K cycles.
+</td></tr><tr><td>6</td><td># Activity &#39;b&#39; is immediately stopped.
+</td></tr></span></tbody></table></code></pre>
+<p>After the stop command at the end of the scenarios script, the whole scenario exits, because all 
+activities are stopped or complete, <strong>and</strong> the script is complete.</p>
+
+<p><b><a href="#">Back to top</a></b></p>
+</article>
+<div class="toc" aria-hidden="true">
+  <div class="toc-sticky">
+    <h5>CLI Scripting</h5>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/cli-scripting/#script-construction">Script Construction</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/cli-scripting/#command-line-format">Command line format</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/cli-scripting/#concurrency-control">Concurrency &amp; Control</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/cli-scripting/#scenario-commands">Scenario Commands</a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/cli-scripting/#start"><small>- start</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/cli-scripting/#await"><small>- await</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/cli-scripting/#run"><small>- run</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/cli-scripting/#stop"><small>- stop</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/cli-scripting/#forcestop"><small>- forceStop</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/cli-scripting/#waitmillis"><small>- waitmillis</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/cli-scripting/#script"><small>- script</small></a>
+    </div>
+    <div class="toc-item-child">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/cli-scripting/#fragment"><small>- fragment</small></a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/user-guide/cli-scripting/#an-example-cli-script">An example CLI script</a>
+    </div>
+  </div>
+</div>
+  </main>
+  <footer>
+    <hr />
+    <div class="c">
+      <nav>
+        <ul></ul>
+      </nav>
+      <p class="s90">Copyright &copy; 2023-2023 NoSQLBench Project</p>
+    </div>
+  </footer>
+</body>
+</html>

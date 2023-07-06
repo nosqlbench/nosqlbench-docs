@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script src="https://docs.nosqlbench.io/theme.min.js" integrity="sha384-IpIaa84kOKgkF5EJ0fD/kBe2wtIIsIB60ANGmuJxeA0dz5bSRfwBwp2/QybtQpU2"></script>
+  <link rel="stylesheet" href="https://docs.nosqlbench.io/abridge-switcher.css?h=4238d999f44a7bb130d5" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preload" as="style" class="preStyle" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" crossorigin="anonymous" />
+  <script defer src="https://docs.nosqlbench.io/search_index.en.js?h=ae47d253e455a3aaacb2" integrity="sha384-cP47owL9Iuak1e1AA21cJA4BgagQtaPwAXBQG7QgJeE2JKGgkCBROHbCj/Xym6KC"></script>
+  <script defer src="https://docs.nosqlbench.io/abridge-bundle-nofacade.min.js?h=9bcf621a2fcab7336017" integrity="sha384-u8AROOUG6n2Xjk2+7pvkkfeSIqinjI1tmqeBpZRlZtc5KFO/8DyFfEir6fAE2wcq"></script>
+  <meta name="base" content="https://docs.nosqlbench.io" />
+<meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>datetime functions | NoSQLBench Project</title>
+  <meta name="copyright" content="NoSQLBench Project" />
+  <meta name="description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <link rel="canonical" href="https://docs.nosqlbench.io/reference/bindings/funcref-datetime/" />
+  <meta name="keywords" content="Abridge, Abridge.css, Zola, Theme, Zola Theme, getzola, Semantic Html, Fast, lightweight" />
+  <meta property="og:url" content="https://docs.nosqlbench.io/reference/bindings/funcref-datetime/" />
+  <meta name="twitter:url" content="https://docs.nosqlbench.io/reference/bindings/funcref-datetime/" />
+  <meta property="og:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta name="twitter:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta property="og:title" content="datetime functions | NoSQLBench Project" />
+  <meta name="twitter:title" content="datetime functions | NoSQLBench Project" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:site_name" content="NoSQLBench Project" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://docs.nosqlbench.io/site.webmanifest" />
+  <link rel="mask-icon" href="https://docs.nosqlbench.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://docs.nosqlbench.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://docs.nosqlbench.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://docs.nosqlbench.io/favicon-16x16.png" />
+  <noscript><link rel="stylesheet" href="https://docs.nosqlbench.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://docs.nosqlbench.io/"><img src="https://docs.nosqlbench.io/nb5logo.png" alt="NoSQLBench5" width="32" height="32" />NoSQLBench v5</a></h1></div><div>
+        <ul><li> <h2><a href="https://docs.nosqlbench.io/getting-started/">Getting Started</a></h2> </li><li> <h2><a href="https://docs.nosqlbench.io/release-notes/">Release Notes</a></h2> </li><li class="js"><i type="reset" id="mode" class="svgs adjust"></i></li></ul>
+      </div>
+      <div>
+        <form autocomplete=off class="js" name="goSearch" id="searchbox">
+          <div class="searchd">
+            <input id="searchinput" type="text" placeholder="Search" title="Search" />
+            <button type="submit" title="Search"><i class="svgs search"></i></button>
+          </div>
+          <div><div id="suggestions"></div></div>
+        </form>
+      </div>
+
+      <a href="http://github.com/nosqlbench/nosqlbench-build-docs" title="This doc site's project repo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="1" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+      <a href="http://nosqlbench.io" title="NoSQLBench Project Site">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+    </nav>
+    <hr /><div style="position:sticky"><span><a href="&#x2F;">NB5 Docs► </a></span><span><a href="&#x2F;reference&#x2F;">Reference Section► </a></span><span title="Binding functions are the core of the procedural data generation capabilities of NoSQLBench. They bind generated data to operations in a determinstic way."><a href="&#x2F;reference&#x2F;bindings&#x2F;"><strong>Binding Functions▼</strong> </a></span><span title="[current page]"><a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-datetime&#x2F;"><strong>datetime functions 🖺</strong></a></span>
+</div></header>
+  <main><!-- active_page: reference&#x2F;bindings&#x2F;funcref_datetime.md -->
+<!-- active_section: reference&#x2F;bindings&#x2F;_index.md -->
+
+
+<!-- lower_root: reference&#x2F;_index.md -->
+<!-- >upper_root: reference&#x2F;_index.md -->
+
+<div class="toc" aria-hidden="true" id="">
+<!--  <h4>Binding Functions</h4>--><div class="toc-sticky"><div class="toc-item"title="This section is a specification of the standard workload format."><a href="&#x2F;reference&#x2F;workload_definition&#x2F;">►Workload Specification</a></div><div class="toc-item"title="DriverAdapters allow native drivers or other logic to be plugged into the nb5 engine."><a href="&#x2F;reference&#x2F;drivers&#x2F;">►Drivers</a></div><div class="toc-item"title="Binding functions are the core of the procedural data generation capabilities of NoSQLBench. They bind generated data to operations in a determinstic way."><strong>▼Binding Functions</strong></div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-conversion&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-conversion&#x2F;">conversion functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-general&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-general&#x2F;">general functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-functional&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-functional&#x2F;">flow functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-diagnostics&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-diagnostics&#x2F;">diagnostic functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-objects&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-objects&#x2F;">Distance</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-premade&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-premade&#x2F;">pre-made functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-statistics&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-statistics&#x2F;">LongStats</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-nulls&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-nulls&#x2F;">null functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-distributions&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-distributions&#x2F;">distribution functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-experimental&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-experimental&#x2F;">TokenMapFileCycle</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-state&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-state&#x2F;">state functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-collections&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-collections&#x2F;">collection functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-datetime&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-datetime&#x2F;"><strong>datetime functions</strong></a>
+    </div><div class="toc-item"title="Documentation for bundled applications within NB5."><a href="&#x2F;reference&#x2F;apps&#x2F;">►Bundled Apps</a></div><div class="toc-item"title="Version data for the bundled and imported docs content"><a href="&#x2F;reference&#x2F;versions&#x2F;">►Version Info</a></div></div>
+</div>
+
+<article>
+
+  <p>Functions in this category know about times and dates, datetimes, seconds or millisecond epoch times, and so forth.</p>
+<p>Some of the functions in this category are designed to allow testing of UUID types which are usually designed to avoid
+determinism. This makes it possible to test systems which depend on UUIDs but which require determinism in test data.
+This is strictly for testing use. Breaking the universally-unique properties of UUIDs in production systems is a bad
+idea. Yet, in testing, this determinism is quite useful.</p>
+<h2 id="cqldurationfunctions">CqlDurationFunctions</h2>
+<p>Map a long value into a CQL Duration object based on a set of field functions.</p>
+<ul>
+<li>
+<p>long -&gt; CqlDurationFunctions(Object: monthsFunc, Object: daysFunc, Object: nanosFunc) -&gt; com.datastax.oss.driver.api.core.data.CqlDuration</p>
+<ul>
+<li><em>notes:</em> Create a CQL Duration object from the two provided field functions. The months field is always set to
+zero in this form.
+@param monthsFunc A function that will yield the months value
+@param daysFunc A function that will yield the days value
+@param nanosFunc A function that will yeild the nanos value</li>
+</ul>
+</li>
+<li>
+<p>long -&gt; CqlDurationFunctions(Object: daysFunc, Object: nanosFunc) -&gt; com.datastax.oss.driver.api.core.data.CqlDuration</p>
+<ul>
+<li><em>notes:</em> Create a CQL Duration object from the two provided field functions. The months field is always set to
+zero in this form.
+@param daysFunc A function that will yield the days value
+@param nanosFunc A function that will yeild the nanos value</li>
+</ul>
+</li>
+</ul>
+<h2 id="currentepochmillis">CurrentEpochMillis</h2>
+<p>Provide the millisecond epoch time as given by</p>
+<pre class="z-code"><code><span class="z-text z-plain">{@code System.currentTimeMillis()}
+</span></code></pre>
+<p>CAUTION: This does not produce deterministic test data.</p>
+<ul>
+<li>long -&gt; CurrentEpochMillis() -&gt; long</li>
+</ul>
+<h2 id="daterangeduring">DateRangeDuring</h2>
+<p>Takes an input as a reference point in epoch time, and converts it to a DateRange, with the bounds set to the lower and upper timestamps which align to the specified precision. You can use any of these precisions to control the bounds around the provided timestamp: millisecond, second, minute, hour, day, month, or year. If the zoneid is not specified, it defaults to &quot;GMT&quot;. If the zoneid is set to &quot;default&quot;, then the zoneid is set to the default for the JVM. Otherwise, the specified zone is used.</p>
+<ul>
+<li>
+<p>long -&gt; DateRangeDuring(String: precision) -&gt; com.datastax.dse.driver.api.core.data.time.DateRange</p>
+<ul>
+<li><em>example:</em> <code>DateRangeDuring('millisecond')}</code></li>
+<li><em>Convert the incoming millisecond to an equivalent DateRange</em></li>
+<li><em>example:</em> <code>DateRangeDuring('minute')}</code></li>
+<li><em>Convert the incoming millisecond to a DateRange for the minute in which the millisecond falls</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; DateRangeDuring(String: precision, String: zoneid) -&gt; com.datastax.dse.driver.api.core.data.time.DateRange</p>
+</li>
+</ul>
+<h2 id="daterangefunc">DateRangeFunc</h2>
+<p>Uses the precision and the two functions provided to create a DateRange. You can use any of these precisions to control the bounds around the provided timestamp: millisecond, second, minute, hour, day, month, or year. If the zoneid is not specified, it defaults to &quot;GMT&quot;. If the zoneid is set to &quot;default&quot;, then the zoneid is set to the default for the JVM. Otherwise, the specified zone is used.</p>
+<ul>
+<li>
+<p>long -&gt; DateRangeFunc(String: precision, Object: lowerFunc, Object: upperFunc) -&gt; com.datastax.dse.driver.api.core.data.time.DateRange</p>
+<ul>
+<li><em>example:</em> <code>StartingEpochMillis('2017-01-01 23:59:59'); DateRangeFunc('second',Identity(),Add(3600000L)</code></li>
+<li><em>Create 1-minute date ranges starting at 2017-01-01 23:59:59</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; DateRangeFunc(String: precision, Object: lowerFunc, Object: upperFunc, String: zoneid) -&gt; com.datastax.dse.driver.api.core.data.time.DateRange</p>
+</li>
+</ul>
+<h2 id="daterangeonorafter">DateRangeOnOrAfter</h2>
+<p>Takes an input as a reference point in epoch time, and converts it to a DateRange, with the lower bounds set to the lower bound of the precision and millisecond provided, and with no upper bound. You can use any of these precisions to control the bounds around the provided timestamp: millisecond, second, minute, hour, day, month, or year. If the zoneid is not specified, it defaults to &quot;GMT&quot;. If the zoneid is set to &quot;default&quot;, then the zoneid is set to the default for the JVM. Otherwise, the specified zone is used.</p>
+<ul>
+<li>
+<p>long -&gt; DateRangeOnOrAfter(String: precision, String: zoneid) -&gt; com.datastax.dse.driver.api.core.data.time.DateRange</p>
+</li>
+<li>
+<p>long -&gt; DateRangeOnOrAfter(String: precision) -&gt; com.datastax.dse.driver.api.core.data.time.DateRange</p>
+<ul>
+<li><em>example:</em> <code>DateRangeOnOrAfter('millisecond')}</code></li>
+<li><em>Convert the incoming millisecond to an match any time on or after</em></li>
+<li><em>example:</em> <code>DateRangeOnOrAfter('minute')}</code></li>
+<li><em>Convert the incoming millisecond to mach any time on or after the minute in which the millisecond falls</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="daterangeonorbefore">DateRangeOnOrBefore</h2>
+<p>Takes an input as a reference point in epoch time, and converts it to a DateRange, with the upper bound set to the upper bound of the precision and millisecond provided, and with no lower bound. You can use any of these precisions to control the bounds around the provided timestamp: millisecond, second, minute, hour, day, month, or year. If the zoneid is not specified, it defaults to &quot;GMT&quot;. If the zoneid is set to &quot;default&quot;, then the zoneid is set to the default for the JVM. Otherwise, the specified zone is used.</p>
+<ul>
+<li>
+<p>long -&gt; DateRangeOnOrBefore(String: precision) -&gt; com.datastax.dse.driver.api.core.data.time.DateRange</p>
+<ul>
+<li><em>example:</em> <code>DateRangeOnOrBefore('millisecond')}</code></li>
+<li><em>Convert the incoming millisecond to match anything on or before it.</em></li>
+<li><em>example:</em> <code>DateRangeOnOrBefore('minute')}</code></li>
+<li><em>Convert the incoming millisecond to match anything on or before the minute in which the millisecond falls</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; DateRangeOnOrBefore(String: precision, String: zoneid) -&gt; com.datastax.dse.driver.api.core.data.time.DateRange</p>
+</li>
+</ul>
+<h2 id="daterangeparser">DateRangeParser</h2>
+<p>Parses the DateRange format according to [Date Range Formatting](https://lucene.apache.org/solr/guide/6_6/working-with-dates
+.html#WorkingwithDates-DateRangeFormatting). When possible it is more efficient to use the other DateRange methods since they do not require parsing.</p>
+<ul>
+<li>String -&gt; DateRangeParser(String: precision) -&gt; com.datastax.dse.driver.api.core.data.time.DateRange
+<ul>
+<li><em>example:</em> <code>DateRangeParser()}</code></li>
+<li>*Convert inputs like '[1970-01-01T00:00:00 TO 1970-01-01T00:00:00]' into DateRanges *</li>
+</ul>
+</li>
+</ul>
+<h2 id="datetimeparser">DateTimeParser</h2>
+<p>This function will parse a String containing a formatted date time, yielding a DateTime object. If no arguments are provided, then the format is set to &quot;yyyy-MM-dd HH:mm:ss.SSSZ&quot;. For details on formatting options, see @see <a rel="noopener" target="_blank" href="https://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html">DateTimeFormat</a></p>
+<ul>
+<li>
+<p>String -&gt; DateTimeParser() -&gt; org.joda.time.DateTime</p>
+<ul>
+<li>
+<p><em>notes:</em> Initialize the parser with the default pattern of <pre>yyyy-MM-dd HH:mm:ss.SSSZ</pre>.</p>
+</li>
+<li>
+<p><em>example:</em> <code>DateTimeParser()</code></p>
+</li>
+<li>
+<p><em>parse any date in the yyyy-MM-dd HH:mm:ss.SSSZ format</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p>String -&gt; DateTimeParser(String: dateTimePattern) -&gt; org.joda.time.DateTime</p>
+<ul>
+<li>
+<p><em>notes:</em> Initialize the parser with the given pattern. With this form, if any input fails to parse,
+or is null or empty, then an exception is thrown.
+@param dateTimePattern The pattern which represents the incoming format.</p>
+</li>
+<li>
+<p><em>example:</em> <code>DateTimeParser('yyyy-MM-dd')</code></p>
+</li>
+<li>
+<p><em>parse any date in the yyyy-MM-dd format</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p>String -&gt; DateTimeParser(String: dateTimePattern, String: defaultTime) -&gt; org.joda.time.DateTime</p>
+<ul>
+<li>
+<p><em>notes:</em> Initialize the parser with the given pattern and default value. In this form, if any
+input fails to parse, then exceptions are suppressed and the default is provided instead.
+At initialization, the default is parsed as a sanity check.
+@param dateTimePattern The pattern which represents the incoming format.
+@param defaultTime An example of a formatted datetime string which is used as a default.</p>
+</li>
+<li>
+<p><em>example:</em> <code>DateTimeParser('yyyy-MM-dd','1999-12-31')</code></p>
+</li>
+<li>
+<p><em>parse any date in the yyyy-MM-dd format, or return the DateTime represented by 1999-12-31</em></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="epochmillistocqllocaldate">EpochMillisToCqlLocalDate</h2>
+<p>Converts epoch millis to a java.time.LocalDate, which takes the place of the previous CQL-specific LocalDate. if a zoneid of 'default' is provided, then the time zone is set by the default for the JVM. If not, then a valid ZoneId is looked up. The no-args version uses GMT.</p>
+<ul>
+<li>
+<p>long -&gt; EpochMillisToCqlLocalDate(String: zoneid) -&gt; java.time.LocalDate</p>
+</li>
+<li>
+<p>long -&gt; EpochMillisToCqlLocalDate() -&gt; java.time.LocalDate</p>
+<ul>
+<li><em>example:</em> <code>EpochMillisToJavaLocalDate()</code></li>
+<li><em>Yields the LocalDate for the millis in GMT</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="epochmillistojavalocaldate">EpochMillisToJavaLocalDate</h2>
+<p>Converts epoch millis to a java.time.{@link LocalDate} object, using either the system default timezone or the timezone provided. If the specified ZoneId is not the same as the time base of the epoch millis instant, then conversion errors will occur. Short form ZoneId values like 'CST' can be used, although US Domestic names which specify the daylight savings hours are not supported. The full list of short Ids at @see <a rel="noopener" target="_blank" href="https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/time/ZoneId.html#SHORT_IDS">JavaSE ZoneId Ids</a> Any timezone specifier may be used which can be read by {@link ZoneId#of(String)}</p>
+<ul>
+<li>
+<p>long -&gt; EpochMillisToJavaLocalDate() -&gt; java.time.LocalDate</p>
+<ul>
+<li><em>example:</em> <code>EpochMillisToJavaLocalDate()</code></li>
+<li><em>Yields the LocalDate for the system default ZoneId</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; EpochMillisToJavaLocalDate(String: zoneid) -&gt; java.time.LocalDate</p>
+<ul>
+<li><em>example:</em> <code>EpochMillisToJavaLocalDate('ECT')</code></li>
+<li><em>Yields the LocalDate for the ZoneId entry for 'Europe/Paris'</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="epochmillistojavalocaldatetime">EpochMillisToJavaLocalDateTime</h2>
+<p>Converts epoch millis to a java.time.{@link LocalDateTime} object, using either the system default timezone or the timezone provided. If the specified ZoneId is not the same as the time base of the epoch millis instant, then conversion errors will occur. Short form ZoneId values like 'CST' can be used, although US Domestic names which specify the daylight savings hours are not supported. The full list of short Ids at @see <a rel="noopener" target="_blank" href="https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/time/ZoneId.html#SHORT_IDS">JavaSE ZoneId Ids</a> Any timezone specifier may be used which can be read by {@link ZoneId#of(String)}</p>
+<ul>
+<li>
+<p>long -&gt; EpochMillisToJavaLocalDateTime() -&gt; java.time.LocalDateTime</p>
+<ul>
+<li><em>example:</em> <code>EpochMillisToJavaLocalDateTime()</code></li>
+<li><em>Yields the LocalDateTime for the system default ZoneId</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; EpochMillisToJavaLocalDateTime(String: zoneid) -&gt; java.time.LocalDateTime</p>
+<ul>
+<li><em>example:</em> <code>EpochMillisToJavaLocalDateTime('ECT')</code></li>
+<li><em>Yields the LocalDateTime for the ZoneId entry for 'Europe/Paris'</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="longtolocaldatedays">LongToLocalDateDays</h2>
+<p>Days since Jan 1st 1970</p>
+<ul>
+<li>long -&gt; LongToLocalDateDays() -&gt; java.time.LocalDate
+<ul>
+<li><em>example:</em> <code>LongToLocalDateDays()</code></li>
+<li><em>take the cycle number and turn it into a LocalDate based on days since 1970</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="startingepochmillis">StartingEpochMillis</h2>
+<p>This function sets the minimum long value to the equivalent unix epoch time in milliseconds. It simply adds the input value to this base value as determined by the provided time specifier. It wraps any overflow within this range as well.</p>
+<ul>
+<li>long -&gt; StartingEpochMillis(String: baseTimeSpec) -&gt; long
+<ul>
+<li><em>example:</em> <code>StartingEpochMillis('2017-01-01 23:59:59')</code></li>
+<li><em>add the millisecond epoch time of 2017-01-01 23:59:59 to all input values</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="stringdatewrapper">StringDateWrapper</h2>
+<p>This function wraps an epoch time in milliseconds into a String as specified in the format. The valid formatters are documented at @see <a rel="noopener" target="_blank" href="https://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html">DateTimeFormat API Docs</a></p>
+<ul>
+<li>long -&gt; StringDateWrapper(String: format) -&gt; String</li>
+</ul>
+<h2 id="tocqlduration">ToCqlDuration</h2>
+<p>Convert the input double value into a CQL {@link CqlDuration} object, by setting months to zero, and using the fractional part as part of a day, assuming 24-hour days.</p>
+<ul>
+<li>double -&gt; ToCqlDuration() -&gt; com.datastax.oss.driver.api.core.data.CqlDuration</li>
+</ul>
+<h2 id="tocqldurationnanos">ToCqlDurationNanos</h2>
+<p>Convert the input value into a {@link CqlDuration} by reading the input as total nanoseconds, assuming 30-month days.</p>
+<ul>
+<li>long -&gt; ToCqlDurationNanos() -&gt; com.datastax.oss.driver.api.core.data.CqlDuration</li>
+</ul>
+<h2 id="todate">ToDate</h2>
+<p>Convert the input value to a {@code Date}, by multiplying and then dividing the input by the provided parameters.</p>
+<ul>
+<li>
+<p>long -&gt; ToDate(int: millis_multiplier, int: millis_divisor) -&gt; Date</p>
+<ul>
+<li><em>example:</em> <code>ToDate(86400000,2)</code></li>
+<li><em>produce two Date values per day</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; ToDate(int: spacing) -&gt; Date</p>
+<ul>
+<li><em>example:</em> <code>ToDate(86400000)</code></li>
+<li><em>produce a single Date() per day</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; ToDate() -&gt; Date</p>
+</li>
+</ul>
+<h2 id="todatetime">ToDateTime</h2>
+<p>Convert the input value to a {@code org.joda.time.DateTime}</p>
+<ul>
+<li>
+<p>long -&gt; ToDateTime(int: spacing, int: repeat_count) -&gt; org.joda.time.DateTime</p>
+</li>
+<li>
+<p>long -&gt; ToDateTime(String: spacing) -&gt; org.joda.time.DateTime</p>
+</li>
+<li>
+<p>long -&gt; ToDateTime() -&gt; org.joda.time.DateTime</p>
+</li>
+</ul>
+<h2 id="toepochtimeuuid">ToEpochTimeUUID</h2>
+<p>Converts a long UTC timestamp in epoch millis form into a Version 1 TimeUUID according to <a rel="noopener" target="_blank" href="https://www.ietf.org/rfc/rfc4122.txt">RFC 4122</a>. This means that only one unique value for a timeuuid can be generated for each epoch milli value, even though version 1 TimeUUIDs can normally represent up to 10000 distinct values per millisecond. If you need to access this level of resolution for testing purposes, use {@link ToFinestTimeUUID} instead. This method is to support simple mapping to natural timestamps as we often find in the real world.</p>
+<p>For the variants that have a String argument in the constructor, this is
+a parsable datetime that is used as the base time for all produced values.
+Setting this allows you to set the start of the time range for all timeuuid
+values produced. All times are parsed for UTC. All time use ISO date ordering,
+meaning that the most significant fields always go before the others.</p>
+<p>The valid formats, in joda specifier form are:</p>
+<ol>
+<li>yyyy-MM-dd HH:mm:ss.SSSZ, for example: 2015-02-28 23:30:15.223</li>
+<li>yyyy-MM-dd HH:mm:ss, for example 2015-02-28 23:30:15</li>
+<li>yyyyMMdd'T'HHmmss.SSSZ, for example: 20150228T233015.223</li>
+<li>yyyyMMdd'T'HHmmssZ, for example: 20150228T233015</li>
+<li>yyyy-MM-dd, for example: 2015-02-28</li>
+<li>yyyyMMdd, for example: 20150228</li>
+<li>yyyyMM, for example: 201502</li>
+<li>yyyy, for example: 2015</li>
+</ol>
+<ul>
+<li>
+<p>long -&gt; ToEpochTimeUUID() -&gt; UUID</p>
+<ul>
+<li>
+<p><em>notes:</em> Create version 1 timeuuids with a per-host node and empty clock data.
+The node and clock components are seeded from network interface data. In this case,
+the clock data is not seeded uniquely.</p>
+</li>
+<li>
+<p><em>example:</em> <code>ToEpochTimeUUID()</code></p>
+</li>
+<li>
+<p><em>basetime 0, computed node data, empty clock data</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p>long -&gt; ToEpochTimeUUID(long: node) -&gt; UUID</p>
+<ul>
+<li><em>notes:</em> Create version 1 timeuuids with a specific static node and empty clock data.
+This is useful for testing so that you can know that values are verifiable, even though
+in non-testing practice, you would rely on some form of entropy per-system to provide
+more practical dispersion of values over reboots, etc.</li>
+</ul>
+</li>
+</ul>
+<p>@param node a fixture value for testing that replaces node and clock bits</p>
+<ul>
+<li>
+<p><em>example:</em> <code>ToEpochTimeUUID(5234)</code></p>
+</li>
+<li>
+<p><em>basetime 0, specified node data (5234), empty clock data</em></p>
+</li>
+<li>
+<p>long -&gt; ToEpochTimeUUID(long: node, long: clock) -&gt; UUID</p>
+<ul>
+<li><em>notes:</em> Create version 1 timeuuids with a specific static node and specific clock data.
+This is useful for testing so that you can know that values are verifiable, even though
+in non-testing practice, you would rely on some form of entropy per-system to provide
+more practical dispersion of values over reboots, etc.</li>
+</ul>
+</li>
+</ul>
+<p>@param node  a fixture value for testing that replaces node bits
+@param clock a fixture value for testing that replaces clock bits</p>
+<ul>
+<li>
+<p><em>example:</em> <code>ToEpochTimeUUID(31,337)</code></p>
+</li>
+<li>
+<p><em>basetime 0, specified node data (31) and clock data (337)</em></p>
+</li>
+<li>
+<p>long -&gt; ToEpochTimeUUID(String: baseSpec) -&gt; UUID</p>
+<ul>
+<li><em>notes:</em> Create version 1 timeuuids with a per-host node and empty clock data.
+The node and clock components are seeded from network interface data. In this case,
+the clock data is not seeded uniquely.</li>
+</ul>
+</li>
+</ul>
+<p>@param baseSpec - a string specification for the base time value</p>
+<ul>
+<li>
+<p><em>example:</em> <code>ToEpochTimeUUID('2017-01-01T23:59:59')</code></p>
+</li>
+<li>
+<p><em>specified basetime, computed node data, empty clock data</em></p>
+</li>
+<li>
+<p>long -&gt; ToEpochTimeUUID(String: baseSpec, long: node) -&gt; UUID</p>
+<ul>
+<li><em>notes:</em> Create version 1 timeuuids with a specific static node and empty clock data.
+This is useful for testing so that you can know that values are verifiable, even though
+in non-testing practice, you would rely on some form of entropy per-system to provide
+more practical dispersion of values over reboots, etc.</li>
+</ul>
+</li>
+</ul>
+<p>@param baseSpec - a string specification for the base time value
+@param node     a fixture value for testing that replaces node and clock bits</p>
+<ul>
+<li>
+<p><em>example:</em> <code>ToEpochTimeUUID('2012',12345)</code></p>
+</li>
+<li>
+<p><em>basetime at start if 2012, with node data 12345, empty clock data</em></p>
+</li>
+<li>
+<p>long -&gt; ToEpochTimeUUID(String: baseSpec, long: node, long: clock) -&gt; UUID</p>
+<ul>
+<li><em>notes:</em> Create version 1 timeuuids with a specific static node and specific clock data.
+This is useful for testing so that you can know that values are verifiable, even though
+in non-testing practice, you would rely on some form of entropy per-system to provide
+more practical dispersion of values over reboots, etc.</li>
+</ul>
+</li>
+</ul>
+<p>@param baseSpec - a string specification for the base time value
+@param node     a fixture value for testing that replaces node bits
+@param clock    a fixture value for testing that replaces clock bits</p>
+<ul>
+<li><em>example:</em> <code>ToEpochTimeUUID('20171231T1015.243',123,456)</code></li>
+<li><em>ms basetime, specified node and clock data</em></li>
+</ul>
+<h2 id="tofinesttimeuuid">ToFinestTimeUUID</h2>
+<p>Converts a count of 100ns intervals from 1582 Julian to a Type1 TimeUUID according to <a rel="noopener" target="_blank" href="https://www.ietf.org/rfc/rfc4122.txt">RFC 4122</a>. This allows you to access the finest unit of resolution for the purposes of simulating a large set of unique timeuuid values. This offers 10000 times more unique values per ms than {@link ToEpochTimeUUID}. For the variants that have a String argument in the constructor, this is a parsable datetime that is used as the base time for all produced values. Setting this allows you to set the start of the time range for all timeuuid values produced. All times are parsed for UTC. All time use ISO date ordering, meaning that the most significant fields always go before the others. The valid formats, in joda specifier form are:</p>
+<ol>
+<li>yyyy-MM-dd HH:mm:ss.SSSZ, for example: 2015-02-28 23:30:15.223</li>
+<li>yyyy-MM-dd HH:mm:ss, for example 2015-02-28 23:30:15</li>
+<li>yyyyMMdd'T'HHmmss.SSSZ, for example: 20150228T233015.223</li>
+<li>yyyyMMdd'T'HHmmssZ, for example: 20150228T233015</li>
+<li>yyyy-MM-dd, for example: 2015-02-28</li>
+<li>yyyyMMdd, for example: 20150228</li>
+<li>yyyyMM, for example: 201502</li>
+<li>yyyy, for example: 2015</li>
+</ol>
+<ul>
+<li>
+<p>long -&gt; ToFinestTimeUUID() -&gt; UUID</p>
+<ul>
+<li>
+<p><em>notes:</em> Create version 1 timeuuids with a per-host node and empty clock data.
+The node and clock components are seeded from network interface data. In this case,
+the clock data is not seeded uniquely.</p>
+</li>
+<li>
+<p><em>example:</em> <code>ToFinestTimeUUID()</code></p>
+</li>
+<li>
+<p><em>basetime 0, computed node data, empty clock data</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p>long -&gt; ToFinestTimeUUID(long: node) -&gt; UUID</p>
+<ul>
+<li><em>notes:</em> Create version 1 timeuuids with a specific static node and empty clock data.
+This is useful for testing so that you can know that values are verifiable, even though
+in non-testing practice, you would rely on some form of entropy per-system to provide
+more practical dispersion of values over reboots, etc.</li>
+</ul>
+</li>
+</ul>
+<p>@param node a fixture value for testing that replaces node and clock bits</p>
+<ul>
+<li>
+<p><em>example:</em> <code>ToFinestTimeUUID(5234)</code></p>
+</li>
+<li>
+<p><em>basetime 0, specified node data (5234), empty clock data</em></p>
+</li>
+<li>
+<p>long -&gt; ToFinestTimeUUID(long: node, long: clock) -&gt; UUID</p>
+<ul>
+<li><em>notes:</em> Create version 1 timeuuids with a specific static node and specific clock data.
+This is useful for testing so that you can know that values are verifiable, even though
+in non-testing practice, you would rely on some form of entropy per-system to provide
+more practical dispersion of values over reboots, etc.</li>
+</ul>
+</li>
+</ul>
+<p>@param node  a fixture value for testing that replaces node bits
+@param clock a fixture value for testing that replaces clock bits</p>
+<ul>
+<li>
+<p><em>example:</em> <code>ToFinestTimeUUID(31,337)</code></p>
+</li>
+<li>
+<p><em>basetime 0, specified node data (31) and clock data (337)</em></p>
+</li>
+<li>
+<p>long -&gt; ToFinestTimeUUID(String: baseTimeSpec) -&gt; UUID</p>
+<ul>
+<li><em>notes:</em> Create version 1 timeuuids with a per-host node and empty clock data.
+The node and clock components are seeded from network interface data. In this case,
+the clock data is not seeded uniquely.</li>
+</ul>
+</li>
+</ul>
+<p>@param baseTimeSpec - a string specification for the base time value</p>
+<ul>
+<li>
+<p><em>example:</em> <code>ToFinestTimeUUID('2017-01-01T23:59:59')</code></p>
+</li>
+<li>
+<p><em>specified basetime, computed node data, empty clock data</em></p>
+</li>
+<li>
+<p>long -&gt; ToFinestTimeUUID(String: baseTimeSpec, long: node) -&gt; UUID</p>
+<ul>
+<li><em>notes:</em> Create version 1 timeuuids with a specific static node and empty clock data.
+This is useful for testing so that you can know that values are verifiable, even though
+in non-testing practice, you would rely on some form of entropy per-system to provide
+more practical dispersion of values over reboots, etc.</li>
+</ul>
+</li>
+</ul>
+<p>@param baseTimeSpec - a string specification for the base time value
+@param node         a fixture value for testing that replaces node and clock bits</p>
+<ul>
+<li>
+<p><em>example:</em> <code>ToFinestTimeUUID('2012',12345)</code></p>
+</li>
+<li>
+<p><em>basetime at start if 2012, with node data 12345, empty clock data</em></p>
+</li>
+<li>
+<p>long -&gt; ToFinestTimeUUID(String: baseTimeSpec, long: node, long: clock) -&gt; UUID</p>
+<ul>
+<li><em>notes:</em> Create version 1 timeuuids with a specific static node and specific clock data.
+This is useful for testing so that you can know that values are verifiable, even though
+in non-testing practice, you would rely on some form of entropy per-system to provide
+more practical dispersion of values over reboots, etc.</li>
+</ul>
+</li>
+</ul>
+<p>@param node         a fixture value for testing that replaces node bits
+@param clock        a fixture value for testing that replaces clock bits
+@param baseTimeSpec - a string specification for the base time value</p>
+<ul>
+<li><em>example:</em> <code>ToFinestTimeUUID('20171231T1015.243',123,456)</code></li>
+<li><em>ms basetime, specified node and clock data</em></li>
+</ul>
+<h2 id="tojavainstant">ToJavaInstant</h2>
+<p>Convert the input epoch millisecond to a {@code Java Instant}, by multiplying and then dividing by the provided parameters. This is in contrast to the ToJodaInstant function which does the same thing using the Joda API Type.</p>
+<ul>
+<li>
+<p>long -&gt; ToJavaInstant(int: millis_multiplier, int: millis_divisor) -&gt; java.time.Instant</p>
+<ul>
+<li><em>example:</em> <code>ToDate(86400000,2)</code></li>
+<li><em>produce two Date values per day</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; ToJavaInstant(int: spacing) -&gt; java.time.Instant</p>
+<ul>
+<li><em>example:</em> <code>ToDate(86400000)</code></li>
+<li><em>produce a single Date() per day</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; ToJavaInstant() -&gt; java.time.Instant</p>
+</li>
+</ul>
+<h2 id="tojodadatetime">ToJodaDateTime</h2>
+<p>Convert the input value to a {@code org.joda.time.DateTime}</p>
+<ul>
+<li>
+<p>long -&gt; ToJodaDateTime(int: spacing, int: repeat_count) -&gt; org.joda.time.DateTime</p>
+</li>
+<li>
+<p>long -&gt; ToJodaDateTime(String: spacing) -&gt; org.joda.time.DateTime</p>
+</li>
+<li>
+<p>long -&gt; ToJodaDateTime() -&gt; org.joda.time.DateTime</p>
+</li>
+</ul>
+<h2 id="tojodainstant">ToJodaInstant</h2>
+<p>Convert the input epoch millisecond to a {@code JodaTime Instant}, by multiplying and then dividing by the provided parameters. This is in contrast to the ToJavaInstant function which does the same thing, only using the Java API type.</p>
+<ul>
+<li>
+<p>long -&gt; ToJodaInstant(int: millis_multiplier, int: millis_divisor) -&gt; org.joda.time.Instant</p>
+<ul>
+<li><em>example:</em> <code>ToDate(86400000,2)</code></li>
+<li><em>produce two Date values per day</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; ToJodaInstant(int: spacing) -&gt; org.joda.time.Instant</p>
+<ul>
+<li><em>example:</em> <code>ToDate(86400000)</code></li>
+<li><em>produce a single Date() per day</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; ToJodaInstant() -&gt; org.joda.time.Instant</p>
+</li>
+</ul>
+<h2 id="tolocaltime">ToLocalTime</h2>
+<p>Convert the input epoch millisecond to a {@code Java Instant}, by multiplying and then dividing by the provided parameters, then convert the result to a java {@link LocalTime}.</p>
+<ul>
+<li>
+<p>long -&gt; ToLocalTime(int: millis_multiplier, int: millis_divisor, String: zoneid) -&gt; java.time.LocalTime</p>
+</li>
+<li>
+<p>long -&gt; ToLocalTime(int: millis_multiplier, int: millis_divisor) -&gt; java.time.LocalTime</p>
+<ul>
+<li><em>example:</em> <code>ToLocalTime(86400000,2)</code></li>
+<li><em>produce two LocalTime values per day</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; ToLocalTime(int: spacing) -&gt; java.time.LocalTime</p>
+<ul>
+<li><em>example:</em> <code>ToLocalTime(86400000)</code></li>
+<li><em>produce a single LocalTime per day</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; ToLocalTime() -&gt; java.time.LocalTime</p>
+</li>
+</ul>
+<h2 id="tomillisatstartofday">ToMillisAtStartOfDay</h2>
+<p>Return the epoch milliseconds at the start of the day for the given epoch milliseconds.</p>
+<ul>
+<li>
+<p>long -&gt; ToMillisAtStartOfDay() -&gt; long</p>
+<ul>
+<li><em>example:</em> <code>ToMillisAtStartOfDay()</code></li>
+<li><em>return millisecond epoch time of the start of the day of the provided millisecond epoch time, assuming UTC</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; ToMillisAtStartOfDay(String: timezoneId) -&gt; long</p>
+<ul>
+<li><em>example:</em> <code>ToMillisAtStartOfDay('America/Chicago')</code></li>
+<li><em>return millisecond epoch time of the start of the day of the provided millisecond epoch time, using timezone America/Chicago</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="tomillisatstartofhour">ToMillisAtStartOfHour</h2>
+<p>Return the epoch milliseconds at the start of the hour for the given epoch milliseconds.</p>
+<ul>
+<li>
+<p>long -&gt; ToMillisAtStartOfHour() -&gt; long</p>
+<ul>
+<li><em>example:</em> <code>ToMillisAtStartOfHour()</code></li>
+<li><em>return millisecond epoch time of the start of the hour of the provided millisecond epoch time, assuming UTC</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; ToMillisAtStartOfHour(String: timezoneId) -&gt; long</p>
+<ul>
+<li><em>example:</em> <code>ToMillisAtStartOfHour('America/Chicago')</code></li>
+<li><em>return millisecond epoch time of the start of the hour of the provided millisecond epoch time, using timezone America/Chicago</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="tomillisatstartofminute">ToMillisAtStartOfMinute</h2>
+<p>Return the epoch milliseconds at the start of the minute for the given epoch milliseconds.</p>
+<ul>
+<li>
+<p>long -&gt; ToMillisAtStartOfMinute() -&gt; long</p>
+<ul>
+<li><em>example:</em> <code>ToMillisAtStartOfMinute()</code></li>
+<li><em>return millisecond epoch time of the start of the minute of the provided millisecond epoch time, assuming UTC</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; ToMillisAtStartOfMinute(String: timezoneId) -&gt; long</p>
+<ul>
+<li><em>example:</em> <code>ToMillisAtStartOfMinute('America/Chicago')</code></li>
+<li><em>return millisecond epoch time of the start of the minute of the provided millisecond epoch time, using timezone America/Chicago</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="tomillisatstartofmonth">ToMillisAtStartOfMonth</h2>
+<p>Return the epoch milliseconds at the start of the month for the given epoch milliseconds.</p>
+<ul>
+<li>
+<p>long -&gt; ToMillisAtStartOfMonth() -&gt; long</p>
+<ul>
+<li><em>example:</em> <code>ToMillisAtStartOfMonth()</code></li>
+<li><em>return millisecond epoch time of the start of the month of the provided millisecond epoch time, assuming UTC</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; ToMillisAtStartOfMonth(String: timezoneId) -&gt; long</p>
+<ul>
+<li><em>example:</em> <code>ToMillisAtStartOfMonth('America/Chicago')</code></li>
+<li><em>return millisecond epoch time of the start of the month of the provided millisecond epoch time, using timezone America/Chicago</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="tomillisatstartofnamedweekday">ToMillisAtStartOfNamedWeekDay</h2>
+<p>Return the epoch milliseconds at the start of the most recent day that falls on the given weekday for the given epoch milliseconds, including the current day if valid.</p>
+<ul>
+<li>
+<p>long -&gt; ToMillisAtStartOfNamedWeekDay() -&gt; long</p>
+<ul>
+<li><em>example:</em> <code>ToMillisAtStartOfNamedWeekDay()</code></li>
+<li><em>return millisecond epoch time of the start of the most recent Monday (possibly the day-of) of the provided millisecond epoch time, assuming UTC</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; ToMillisAtStartOfNamedWeekDay(String: weekday) -&gt; long</p>
+<ul>
+<li><em>example:</em> <code>ToMillisAtStartOfNamedWeekDay('Wednesday')</code></li>
+<li><em>return millisecond epoch time of the start of the most recent Wednesday (possibly the day-of) of the provided millisecond epoch time, assuming UTC</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; ToMillisAtStartOfNamedWeekDay(String: weekday, String: timezoneId) -&gt; long</p>
+<ul>
+<li><em>example:</em> <code>ToMillisAtStartOfNamedWeekDay('Saturday','America/Chicago'')</code></li>
+<li><em>return millisecond epoch time of the start of the most recent Saturday (possibly the day-of) of the provided millisecond epoch time, using timezone America/Chicago</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="tomillisatstartofnextday">ToMillisAtStartOfNextDay</h2>
+<p>Return the epoch milliseconds at the start of the day after the day for the given epoch milliseconds.</p>
+<ul>
+<li>
+<p>long -&gt; ToMillisAtStartOfNextDay() -&gt; long</p>
+<ul>
+<li><em>example:</em> <code>ToMillisAtStartOfNextDay()</code></li>
+<li><em>return millisecond epoch time of the start of next day (not including day-of) of the provided millisecond epoch time, assuming UTC</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; ToMillisAtStartOfNextDay(String: timezoneId) -&gt; long</p>
+<ul>
+<li><em>example:</em> <code>ToMillisAtStartOfNextDay('America/Chicago')</code></li>
+<li><em>return millisecond epoch time of the start of the next day (not including day-of) of the provided millisecond epoch time, using timezone America/Chicago</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="tomillisatstartofnextnamedweekday">ToMillisAtStartOfNextNamedWeekDay</h2>
+<p>Return the epoch milliseconds at the start of the next day that falls on the given weekday for the given epoch milliseconds, not including the current day.</p>
+<ul>
+<li>
+<p>long -&gt; ToMillisAtStartOfNextNamedWeekDay() -&gt; long</p>
+<ul>
+<li><em>example:</em> <code>ToMillisAtStartOfNextNamedWeekDay()</code></li>
+<li><em>return millisecond epoch time of the start of the next Monday (not the day-of) of the provided millisecond epoch time, assuming UTC</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; ToMillisAtStartOfNextNamedWeekDay(String: weekday) -&gt; long</p>
+<ul>
+<li><em>example:</em> <code>ToMillisAtStartOfNextNamedWeekDay('Wednesday')</code></li>
+<li><em>return millisecond epoch time of the start of the next Wednesday (not the day-of) of the provided millisecond epoch time, assuming UTC</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; ToMillisAtStartOfNextNamedWeekDay(String: weekday, String: timezoneId) -&gt; long</p>
+<ul>
+<li><em>example:</em> <code>ToMillisAtStartOfNextNamedWeekDay('Saturday','America/Chicago'')</code></li>
+<li><em>return millisecond epoch time of the start of the next Saturday (not the day-of) of the provided millisecond epoch time, using timezone America/Chicago</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="tomillisatstartofsecond">ToMillisAtStartOfSecond</h2>
+<p>Return the epoch milliseconds at the start of the second for the given epoch milliseconds.</p>
+<ul>
+<li>
+<p>long -&gt; ToMillisAtStartOfSecond() -&gt; long</p>
+<ul>
+<li><em>example:</em> <code>ToMillisAtStartOfSecond()</code></li>
+<li><em>return millisecond epoch time of the start of the second of the provided millisecond epoch time, assuming UTC</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; ToMillisAtStartOfSecond(String: timezoneId) -&gt; long</p>
+<ul>
+<li><em>example:</em> <code>ToMillisAtStartOfSecond('America/Chicago')</code></li>
+<li><em>return millisecond epoch time of the start of the second of the provided millisecond epoch time, using timezone America/Chicago</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="tomillisatstartofyear">ToMillisAtStartOfYear</h2>
+<p>Return the epoch milliseconds at the start of the year for the given epoch milliseconds.</p>
+<ul>
+<li>
+<p>long -&gt; ToMillisAtStartOfYear() -&gt; long</p>
+<ul>
+<li><em>example:</em> <code>ToMillisAtStartOfYear()</code></li>
+<li><em>return millisecond epoch time of the start of the year of the provided millisecond epoch time, assuming UTC</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; ToMillisAtStartOfYear(String: timezoneId) -&gt; long</p>
+<ul>
+<li><em>example:</em> <code>ToMillisAtStartOfYear('America/Chicago')</code></li>
+<li><em>return millisecond epoch time of the start of the year of the provided millisecond epoch time, using timezone America/Chicago</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="totimeuuidmax">ToTimeUUIDMax</h2>
+<p>Converts a long timestamp in epoch millis form into a Version 1 TimeUUID according to <a rel="noopener" target="_blank" href="https://www.ietf.org/rfc/rfc4122.txt">RFC 4122</a>. This form uses {@link Uuids#endOf(long)} (long)}</p>
+<ul>
+<li>long -&gt; ToTimeUUIDMax() -&gt; UUID</li>
+</ul>
+<h2 id="totimeuuidmin">ToTimeUUIDMin</h2>
+<p>Converts a long timestamp in epoch millis form into a Version 1 TimeUUID according to <a rel="noopener" target="_blank" href="https://www.ietf.org/rfc/rfc4122.txt">RFC 4122</a>. This form uses {@link Uuids#startOf(long)}</p>
+<ul>
+<li>long -&gt; ToTimeUUIDMin() -&gt; UUID</li>
+</ul>
+
+<p><b><a href="#">Back to top</a></b></p>
+</article>
+<div class="toc" aria-hidden="true">
+  <div class="toc-sticky">
+    <h5>datetime functions</h5>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-datetime/#cqldurationfunctions">CqlDurationFunctions</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-datetime/#currentepochmillis">CurrentEpochMillis</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-datetime/#daterangeduring">DateRangeDuring</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-datetime/#daterangefunc">DateRangeFunc</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-datetime/#daterangeonorafter">DateRangeOnOrAfter</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-datetime/#daterangeonorbefore">DateRangeOnOrBefore</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-datetime/#daterangeparser">DateRangeParser</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-datetime/#datetimeparser">DateTimeParser</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-datetime/#epochmillistocqllocaldate">EpochMillisToCqlLocalDate</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-datetime/#epochmillistojavalocaldate">EpochMillisToJavaLocalDate</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-datetime/#epochmillistojavalocaldatetime">EpochMillisToJavaLocalDateTime</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-datetime/#longtolocaldatedays">LongToLocalDateDays</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-datetime/#startingepochmillis">StartingEpochMillis</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-datetime/#stringdatewrapper">StringDateWrapper</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-datetime/#tocqlduration">ToCqlDuration</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-datetime/#tocqldurationnanos">ToCqlDurationNanos</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-datetime/#todate">ToDate</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-datetime/#todatetime">ToDateTime</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-datetime/#toepochtimeuuid">ToEpochTimeUUID</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-datetime/#tofinesttimeuuid">ToFinestTimeUUID</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-datetime/#tojavainstant">ToJavaInstant</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-datetime/#tojodadatetime">ToJodaDateTime</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-datetime/#tojodainstant">ToJodaInstant</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-datetime/#tolocaltime">ToLocalTime</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-datetime/#tomillisatstartofday">ToMillisAtStartOfDay</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-datetime/#tomillisatstartofhour">ToMillisAtStartOfHour</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-datetime/#tomillisatstartofminute">ToMillisAtStartOfMinute</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-datetime/#tomillisatstartofmonth">ToMillisAtStartOfMonth</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-datetime/#tomillisatstartofnamedweekday">ToMillisAtStartOfNamedWeekDay</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-datetime/#tomillisatstartofnextday">ToMillisAtStartOfNextDay</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-datetime/#tomillisatstartofnextnamedweekday">ToMillisAtStartOfNextNamedWeekDay</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-datetime/#tomillisatstartofsecond">ToMillisAtStartOfSecond</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-datetime/#tomillisatstartofyear">ToMillisAtStartOfYear</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-datetime/#totimeuuidmax">ToTimeUUIDMax</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-datetime/#totimeuuidmin">ToTimeUUIDMin</a>
+    </div>
+  </div>
+</div>
+  </main>
+  <footer>
+    <hr />
+    <div class="c">
+      <nav>
+        <ul></ul>
+      </nav>
+      <p class="s90">Copyright &copy; 2023-2023 NoSQLBench Project</p>
+    </div>
+  </footer>
+</body>
+</html>

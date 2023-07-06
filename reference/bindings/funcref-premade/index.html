@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script src="https://docs.nosqlbench.io/theme.min.js" integrity="sha384-IpIaa84kOKgkF5EJ0fD/kBe2wtIIsIB60ANGmuJxeA0dz5bSRfwBwp2/QybtQpU2"></script>
+  <link rel="stylesheet" href="https://docs.nosqlbench.io/abridge-switcher.css?h=4238d999f44a7bb130d5" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preload" as="style" class="preStyle" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" crossorigin="anonymous" />
+  <script defer src="https://docs.nosqlbench.io/search_index.en.js?h=ae47d253e455a3aaacb2" integrity="sha384-cP47owL9Iuak1e1AA21cJA4BgagQtaPwAXBQG7QgJeE2JKGgkCBROHbCj/Xym6KC"></script>
+  <script defer src="https://docs.nosqlbench.io/abridge-bundle-nofacade.min.js?h=9bcf621a2fcab7336017" integrity="sha384-u8AROOUG6n2Xjk2+7pvkkfeSIqinjI1tmqeBpZRlZtc5KFO/8DyFfEir6fAE2wcq"></script>
+  <meta name="base" content="https://docs.nosqlbench.io" />
+<meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>pre-made functions | NoSQLBench Project</title>
+  <meta name="copyright" content="NoSQLBench Project" />
+  <meta name="description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <link rel="canonical" href="https://docs.nosqlbench.io/reference/bindings/funcref-premade/" />
+  <meta name="keywords" content="Abridge, Abridge.css, Zola, Theme, Zola Theme, getzola, Semantic Html, Fast, lightweight" />
+  <meta property="og:url" content="https://docs.nosqlbench.io/reference/bindings/funcref-premade/" />
+  <meta name="twitter:url" content="https://docs.nosqlbench.io/reference/bindings/funcref-premade/" />
+  <meta property="og:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta name="twitter:description" content="NoSQLBench is an Open Source, Multi-Protocol, Pluggable, Scriptable, NoSQL (and more) Testing System." />
+  <meta property="og:title" content="pre-made functions | NoSQLBench Project" />
+  <meta name="twitter:title" content="pre-made functions | NoSQLBench Project" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:image" content="https://docs.nosqlbench.io/nb5banner.png" />
+  <meta property="og:site_name" content="NoSQLBench Project" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://docs.nosqlbench.io/site.webmanifest" />
+  <link rel="mask-icon" href="https://docs.nosqlbench.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://docs.nosqlbench.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://docs.nosqlbench.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://docs.nosqlbench.io/favicon-16x16.png" />
+  <noscript><link rel="stylesheet" href="https://docs.nosqlbench.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://docs.nosqlbench.io/"><img src="https://docs.nosqlbench.io/nb5logo.png" alt="NoSQLBench5" width="32" height="32" />NoSQLBench v5</a></h1></div><div>
+        <ul><li> <h2><a href="https://docs.nosqlbench.io/getting-started/">Getting Started</a></h2> </li><li> <h2><a href="https://docs.nosqlbench.io/release-notes/">Release Notes</a></h2> </li><li class="js"><i type="reset" id="mode" class="svgs adjust"></i></li></ul>
+      </div>
+      <div>
+        <form autocomplete=off class="js" name="goSearch" id="searchbox">
+          <div class="searchd">
+            <input id="searchinput" type="text" placeholder="Search" title="Search" />
+            <button type="submit" title="Search"><i class="svgs search"></i></button>
+          </div>
+          <div><div id="suggestions"></div></div>
+        </form>
+      </div>
+
+      <a href="http://github.com/nosqlbench/nosqlbench-build-docs" title="This doc site's project repo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="1" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+      <a href="http://nosqlbench.io" title="NoSQLBench Project Site">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 18"
+             fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+    </nav>
+    <hr /><div style="position:sticky"><span><a href="&#x2F;">NB5 Docs► </a></span><span><a href="&#x2F;reference&#x2F;">Reference Section► </a></span><span title="Binding functions are the core of the procedural data generation capabilities of NoSQLBench. They bind generated data to operations in a determinstic way."><a href="&#x2F;reference&#x2F;bindings&#x2F;"><strong>Binding Functions▼</strong> </a></span><span title="[current page]"><a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-premade&#x2F;"><strong>pre-made functions 🖺</strong></a></span>
+</div></header>
+  <main><!-- active_page: reference&#x2F;bindings&#x2F;funcref_premade.md -->
+<!-- active_section: reference&#x2F;bindings&#x2F;_index.md -->
+
+
+<!-- lower_root: reference&#x2F;_index.md -->
+<!-- >upper_root: reference&#x2F;_index.md -->
+
+<div class="toc" aria-hidden="true" id="">
+<!--  <h4>Binding Functions</h4>--><div class="toc-sticky"><div class="toc-item"title="This section is a specification of the standard workload format."><a href="&#x2F;reference&#x2F;workload_definition&#x2F;">►Workload Specification</a></div><div class="toc-item"title="DriverAdapters allow native drivers or other logic to be plugged into the nb5 engine."><a href="&#x2F;reference&#x2F;drivers&#x2F;">►Drivers</a></div><div class="toc-item"title="Binding functions are the core of the procedural data generation capabilities of NoSQLBench. They bind generated data to operations in a determinstic way."><strong>▼Binding Functions</strong></div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-conversion&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-conversion&#x2F;">conversion functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-general&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-general&#x2F;">general functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-functional&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-functional&#x2F;">flow functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-diagnostics&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-diagnostics&#x2F;">diagnostic functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-objects&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-objects&#x2F;">Distance</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-premade&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-premade&#x2F;"><strong>pre-made functions</strong></a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-statistics&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-statistics&#x2F;">LongStats</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-nulls&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-nulls&#x2F;">null functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-distributions&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-distributions&#x2F;">distribution functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-experimental&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-experimental&#x2F;">TokenMapFileCycle</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-state&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-state&#x2F;">state functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-collections&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-collections&#x2F;">collection functions</a>
+    </div><!-- subsection_page_path: &#x2F;reference&#x2F;bindings&#x2F;funcref-datetime&#x2F; -->
+    <div class="toc-item-child">
+      <a href="&#x2F;reference&#x2F;bindings&#x2F;funcref-datetime&#x2F;">datetime functions</a>
+    </div><div class="toc-item"title="Documentation for bundled applications within NB5."><a href="&#x2F;reference&#x2F;apps&#x2F;">►Bundled Apps</a></div><div class="toc-item"title="Version data for the bundled and imported docs content"><a href="&#x2F;reference&#x2F;versions&#x2F;">►Version Info</a></div></div>
+</div>
+
+<article>
+
+  <p>Functions in this category are meant to provide easy grab-and-go functions that are tailored for real-world simulation.
+This library will grow over time. These functions are often built directly on top of other functions in the core
+libraries. However, they are provided here for simplicity in workload construction. They perform exactly the same as
+their longer-form equivalents.</p>
+<h2 id="cities">Cities</h2>
+<p>Return a valid city name.</p>
+<ul>
+<li>long -&gt; Cities() -&gt; String
+<ul>
+<li><em>example:</em> <code>Cities()</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="citiesbydensity">CitiesByDensity</h2>
+<p>Return a city name, weighted by population density.</p>
+<ul>
+<li>long -&gt; CitiesByDensity() -&gt; String
+<ul>
+<li><em>example:</em> <code>CitiesByDensity()</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="citiesbypopulation">CitiesByPopulation</h2>
+<p>Return a city name, weighted by total population.</p>
+<ul>
+<li>long -&gt; CitiesByPopulation() -&gt; String
+<ul>
+<li><em>example:</em> <code>CitiesByPopulation()</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="counties">Counties</h2>
+<p>Return a valid county name.</p>
+<ul>
+<li>long -&gt; Counties() -&gt; String
+<ul>
+<li><em>example:</em> <code>Counties()</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="countiesbydensity">CountiesByDensity</h2>
+<p>Return a county name weighted by population density.</p>
+<ul>
+<li>long -&gt; CountiesByDensity() -&gt; String
+<ul>
+<li><em>example:</em> <code>CountiesByDensity()</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="countiesbypopulation">CountiesByPopulation</h2>
+<p>Return a county name weighted by total population.</p>
+<ul>
+<li>long -&gt; CountiesByPopulation() -&gt; String
+<ul>
+<li><em>example:</em> <code>CountiesByPopulation()</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="countrycodes">CountryCodes</h2>
+<p>Return a valid country code.</p>
+<ul>
+<li>long -&gt; CountryCodes() -&gt; String
+<ul>
+<li><em>example:</em> <code>CountryCodes()</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="countrynames">CountryNames</h2>
+<p>Return a valid country name.</p>
+<ul>
+<li>long -&gt; CountryNames() -&gt; String
+<ul>
+<li><em>example:</em> <code>CountryNames()</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="firstnames">FirstNames</h2>
+<p>Return a pseudo-randomly sampled first name from the last US census data on first names occurring more than 100 times. Both male and female names are combined in this function.</p>
+<ul>
+<li>
+<p>long -&gt; FirstNames() -&gt; String</p>
+<ul>
+<li><em>example:</em> <code>FirstNames()</code></li>
+<li><em>select a random first name based on the chance of seeing it in the census data</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; FirstNames(String: modifier) -&gt; String</p>
+<ul>
+<li><em>example:</em> <code>FirstNames('map')</code></li>
+<li><em>select over the first names by probability as input varies from 1L to Long.MAX_VALUE</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="fullnames">FullNames</h2>
+<p>Combines the FirstNames and LastNames functions into one that simply concatenates them with a space between. This function is a shorthand equivalent of {@code Template('{} {}', FirstNames(), LastNames())}</p>
+<ul>
+<li>long -&gt; FullNames() -&gt; String</li>
+</ul>
+<h2 id="lastnames">LastNames</h2>
+<p>Return a pseudo-randomly sampled last name from the last US census data on last names occurring more than 100 times.</p>
+<ul>
+<li>
+<p>long -&gt; LastNames() -&gt; String</p>
+<ul>
+<li><em>example:</em> <code>LastNames()</code></li>
+<li><em>select a random last name based on the chance of seeing it in the census data</em></li>
+</ul>
+</li>
+<li>
+<p>long -&gt; LastNames(String: modifier) -&gt; String</p>
+<ul>
+<li><em>example:</em> <code>LastNames('map')</code></li>
+<li><em>select over the last names by probability as input varies from 1L to Long.MAX_VALUE</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="numbernametostring">NumberNameToString</h2>
+<p>Provides the spelled-out name of a number. For example, an input of 7 would yield &quot;seven&quot;. An input of 4234 yields the value &quot;four thousand thirty four&quot;. The maximum value is limited at 999,999,999.</p>
+<ul>
+<li>long -&gt; NumberNameToString() -&gt; String</li>
+</ul>
+<h2 id="statecodes">StateCodes</h2>
+<p>Return a valid state code. (abbreviation)</p>
+<ul>
+<li>long -&gt; StateCodes() -&gt; String
+<ul>
+<li><em>example:</em> <code>StateCodes()</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="statecodesbydensity">StateCodesByDensity</h2>
+<p>Return a state code (abbreviation), weighted by population density.</p>
+<ul>
+<li>long -&gt; StateCodesByDensity() -&gt; String
+<ul>
+<li><em>example:</em> <code>StateCodesByDensity()</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="statecodesbypopulation">StateCodesByPopulation</h2>
+<p>Return a state code (abbreviation), weighted by population.</p>
+<ul>
+<li>long -&gt; StateCodesByPopulation() -&gt; String
+<ul>
+<li><em>example:</em> <code>StateCodesByPopulation()</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="statenames">StateNames</h2>
+<p>Return a valid state name.</p>
+<ul>
+<li>long -&gt; StateNames() -&gt; String
+<ul>
+<li><em>example:</em> <code>StateNames()</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="statenamesbydensity">StateNamesByDensity</h2>
+<p>Return a state name, weighted by population density.</p>
+<ul>
+<li>long -&gt; StateNamesByDensity() -&gt; String
+<ul>
+<li><em>example:</em> <code>StateNamesByDensity()</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="statenamesbypopulation">StateNamesByPopulation</h2>
+<p>Return a state name, weighted by total population.</p>
+<ul>
+<li>long -&gt; StateNamesByPopulation() -&gt; String
+<ul>
+<li><em>example:</em> <code>StateNamesByPopulation()</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="timezones">TimeZones</h2>
+<p>Return a state name, weighted by population density.</p>
+<ul>
+<li>long -&gt; TimeZones() -&gt; String
+<ul>
+<li><em>example:</em> <code>Timezones()</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="timezonesbydensity">TimeZonesByDensity</h2>
+<p>Return a state name, weighted by population density.</p>
+<ul>
+<li>long -&gt; TimeZonesByDensity() -&gt; String
+<ul>
+<li><em>example:</em> <code>TimezonesByDensity</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="timezonesbypopulation">TimeZonesByPopulation</h2>
+<p>Return a state name, weighted by population.</p>
+<ul>
+<li>long -&gt; TimeZonesByPopulation() -&gt; String
+<ul>
+<li><em>example:</em> <code>TimezonesByPopulation()</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="tomd5bytebuffer">ToMD5ByteBuffer</h2>
+<p>Converts the byte image of the input long to a MD5 digest in ByteBuffer form. Deprecated usage due to unsafe MD5 digest. Replaced with DigestToByteBuffer with MD5 when absolutely needed for existing NB tests. However, stronger encryption algorithms (e.g. SHA-256) are recommended due to MD5's limitations.</p>
+<ul>
+<li>long -&gt; ToMD5ByteBuffer() -&gt; java.nio.ByteBuffer
+<ul>
+<li>
+<p><em>notes:</em> Deprecated usage due to unsafe MD5 digest.
+Use the DigestToByteBuffer with alternatives other than MD5.</p>
+</li>
+<li>
+<p><em>example:</em> <code>MD5ByteBuffer()</code></p>
+</li>
+<li>
+<p><em>convert the a input to an md5 digest of its bytes</em></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="zipcodes">ZipCodes</h2>
+<p>Return a valid zip code.</p>
+<ul>
+<li>long -&gt; ZipCodes() -&gt; String
+<ul>
+<li><em>example:</em> <code>ZipCodes()</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="zipcodesbydensity">ZipCodesByDensity</h2>
+<p>Return a zip code, weighted by population density.</p>
+<ul>
+<li>long -&gt; ZipCodesByDensity() -&gt; String
+<ul>
+<li><em>example:</em> <code>ZipCodesByDensity</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="zipcodesbypopulation">ZipCodesByPopulation</h2>
+<p>Return a zip code, weighted by population.</p>
+<ul>
+<li>long -&gt; ZipCodesByPopulation() -&gt; String
+<ul>
+<li><em>example:</em> <code>ZipCodesByPopulation()</code></li>
+</ul>
+</li>
+</ul>
+
+<p><b><a href="#">Back to top</a></b></p>
+</article>
+<div class="toc" aria-hidden="true">
+  <div class="toc-sticky">
+    <h5>pre-made functions</h5>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-premade/#cities">Cities</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-premade/#citiesbydensity">CitiesByDensity</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-premade/#citiesbypopulation">CitiesByPopulation</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-premade/#counties">Counties</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-premade/#countiesbydensity">CountiesByDensity</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-premade/#countiesbypopulation">CountiesByPopulation</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-premade/#countrycodes">CountryCodes</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-premade/#countrynames">CountryNames</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-premade/#firstnames">FirstNames</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-premade/#fullnames">FullNames</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-premade/#lastnames">LastNames</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-premade/#numbernametostring">NumberNameToString</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-premade/#statecodes">StateCodes</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-premade/#statecodesbydensity">StateCodesByDensity</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-premade/#statecodesbypopulation">StateCodesByPopulation</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-premade/#statenames">StateNames</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-premade/#statenamesbydensity">StateNamesByDensity</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-premade/#statenamesbypopulation">StateNamesByPopulation</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-premade/#timezones">TimeZones</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-premade/#timezonesbydensity">TimeZonesByDensity</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-premade/#timezonesbypopulation">TimeZonesByPopulation</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-premade/#tomd5bytebuffer">ToMD5ByteBuffer</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-premade/#zipcodes">ZipCodes</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-premade/#zipcodesbydensity">ZipCodesByDensity</a>
+    </div>
+    <div class="toc-item">
+      <a class="subtext" href="https://docs.nosqlbench.io/reference/bindings/funcref-premade/#zipcodesbypopulation">ZipCodesByPopulation</a>
+    </div>
+  </div>
+</div>
+  </main>
+  <footer>
+    <hr />
+    <div class="c">
+      <nav>
+        <ul></ul>
+      </nav>
+      <p class="s90">Copyright &copy; 2023-2023 NoSQLBench Project</p>
+    </div>
+  </footer>
+</body>
+</html>
