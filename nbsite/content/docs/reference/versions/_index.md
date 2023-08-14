@@ -1,0 +1,6 @@
++++
+title = "Version Info"
+description = "Version data for the bundled and imported docs content"
+icon = "history"
+weight = 7500
++++

@@ -1,0 +1,169 @@
+baseURL = "/"
+languageCode = "en-GB"
+contentDir = "content"
+enableEmoji = true
+enableGitInfo = true # N.B. .GitInfo does not currently function with git submodule content directories
+
+defaultContentLanguage = 'en'
+[languages]
+    [languages.en]
+        title = "NB5 Docs"
+        languageName = "English"
+        weight = 10
+
+[module]
+    [module.hugoVersion]
+        extended = true
+        min = "0.100.0"
+        replacements = "github.com/colinwilson/lotusdocs -> lotusdocs"
+    [[module.imports]]
+        path = "lotusdocs"
+        disable = false
+    [[module.imports]]
+        path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
+        disable = false
+
+[markup]
+    defaultMarkdownHandler = "goldmark"
+    [markup.tableOfContents]
+        endLevel = 3
+        startLevel = 1
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true # https://jdhao.github.io/2019/12/29/hugo_html_not_shown/
+# [markup.highlight]
+#   codeFences = false # disables Hugo's default syntax highlighting
+# [markup.goldmark.parser]
+#   [markup.goldmark.parser.attribute]
+#     block = true
+#     title = true
+
+[params]
+
+google_fonts = [
+    ["Inter", "300, 400, 600, 700"],
+    ["Fira Code", "500, 700"]
+]
+
+sans_serif_font = "Inter"     # Default is System font
+secondary_font  = "Inter"     # Default is System font
+mono_font       = "Fira Code" # Default is System font
+
+[params.footer]
+    copyright = "© :YEAR: NoSQLBench Project."
+    version = true # includes git commit info
+
+[params.social]
+    github = "nosqlbench/nosqlbench"        # YOUR_GITHUB_ID or YOUR_GITHUB_URL
+    # twitter = ""       # YOUR_TWITTER_ID
+    # instagram = ""     # YOUR_INSTAGRAM_ID
+    # rss = true                    # show rss icon with link
+
+[params.docs] # Parameters for the /docs 'template'
+    title           = "NB Docs Site"           # default html title for documentation pages/sections
+
+    pathName        = "docs"                            # path name for documentation site | default "docs"
+
+    # themeColor      = "cyan"                            # (optional) - Set theme accent colour. Options include: blue (default), green, red, yellow, emerald, cardinal, magenta, cyan
+
+    darkMode        = true                                # enable dark mode option? default false
+
+    prism           = true                                # enable syntax highlighting via Prism
+
+    # gitinfo
+    ghrepo          = "github.com/nosqlbench/nosqlbench-docs"  # Git repository URL for your site
+    editPage        = true                                # enable 'Edit this page' feature - default false
+    lastMod         = true                                # enable 'Last modified' date on pages - default false
+    lastModRelative = true                                # format 'Last modified' time as relative - default true
+
+    sidebarIcons    = true                                # enable sidebar icons? default false
+    breadcrumbs     = true                                # default is true
+    backToTop       = true                                # enable back-to-top button? default true
+
+    # ToC
+    toc             = true                                # enable table of contents? default is true
+    tocMobile       = true                                # enable table of contents in mobile view? default is true
+    scrollSpy       = true                                # enable scrollspy on ToC? default is true
+
+    # front matter
+    descriptions    = true                                # enable front matter descriptions under content title?
+    titleIcon       = true                                # enable front matter icon title prefix? default is false
+
+    # content navigation
+    navDesc         = true                                # include front matter descriptions in Prev/Next navigation cards
+    navDescTrunc    = 30                                  # Number of characters by which to truncate the Prev/Next descriptions
+
+    listDescTrunc   = 100                                 # Number of characters by which to truncate the list card description
+
+
+
+[params.blog] # Parameters for the /releasenotes 'template'
+    title           = "NB5 Blog Articles"           # default html title for documentation pages/sections
+
+    pathName        = "blog"                            # path name for documentation site | default "releasenotes"
+
+    # themeColor      = "cyan"                            # (optional) - Set theme accent colour. Options include: blue (default), green, red, yellow, emerald, cardinal, magenta, cyan
+
+    darkMode        = true                                # enable dark mode option? default false
+
+    prism           = true                                # enable syntax highlighting via Prism
+
+    sidebarIcons    = true                                # enable sidebar icons? default false
+    breadcrumbs     = true                                # default is true
+    backToTop       = true                                # enable back-to-top button? default true
+
+    # ToC
+    toc             = true                                # enable table of contents? default is true
+    tocMobile       = true                                # enable table of contents in mobile view? default is true
+    scrollSpy       = true                                # enable scrollspy on ToC? default is true
+
+    # front matter
+    descriptions    = true                                # enable front matter descriptions under content title?
+    titleIcon       = true                                # enable front matter icon title prefix? default is false
+
+    # content navigation
+    navDesc         = true                                # include front matter descriptions in Prev/Next navigation cards
+    navDescTrunc    = 30                                  # Number of characters by which to truncate the Prev/Next descriptions
+
+    listDescTrunc   = 100                                 # Number of characters by which to truncate the list card description
+
+[params.flexsearch] # Parameters for FlexSearch
+    enabled             = true
+    # tokenize            = "full"
+    # optimize            = true
+    # cache               = 100
+    minQueryChar        = 3 # default is 0 (disabled)
+    maxResult           = 20 # default is 5
+    # searchSectionsIndex = []
+
+[params.docsearch] # Parameters for DocSearch
+    # appID     = "O2QIOCBDAK" # Algolia Application ID
+    # apiKey    = "fdc60eee76a72a35d739b54521498b77" # Algolia Search-Only API (Public) Key
+    # indexName = "prod_lotusdocs.dev" # Index Name to perform search on (or set env variable HUGO_PARAM_DOCSEARCH_indexName)
+
+[params.analytics] # Parameters for Analytics (Google, Plausible)
+    # plausibleURL    = "/docs/s" # (or set via env variable HUGO_PARAM_ANALYTICS_plausibleURL)
+    # plausibleAPI    = "/docs/s" # optional - (or set via env variable HUGO_PARAM_ANALYTICS_plausibleAPI)
+    # plausibleDomain = "lotusdocs.dev"      # (or set via env variable HUGO_PARAM_ANALYTICS_plausibleDomain)
+
+[menu]
+[[menu.primary]]
+    name  = "Release Notes"
+    url = "docs/releasenotes"
+    identifier = "releasenotes"
+    weight = 10
+[[menu.primary]]
+    name  = "NB5 Docs"
+    url = "docs"
+    identifier = "docs"
+    weight = 20
+[[menu.primary]]
+     name  = "Community"
+     url = "https://github.com/nosqlbench/nosqlbench/discussions"
+     identifier = "community"
+     weight = 30
+[[menu.primary]]
+    name  = "Blog"
+    url = "blog"
+    identifier = "blog"
+    weight = 40

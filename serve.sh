@@ -2,11 +2,11 @@
 
 pushd .
 cd bin
-./get_zola
+./get_hugo
 popd
 
 pushd .
-cd site
-../bin/zola serve $*
+cd nbsite
+../bin/hugo serve -D --noHTTPCache $*
 popd
 

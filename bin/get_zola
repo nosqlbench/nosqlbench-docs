@@ -1,8 +1,0 @@
-#!/bin/sh
-cd "$(dirname "$0")"
-sys=$(uname -s)
-
-if [ "$sys" = "Linux" ]
- then
-  exec ./get_zola.Linux
-fi

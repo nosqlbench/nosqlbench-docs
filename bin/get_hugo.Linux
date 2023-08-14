@@ -1,0 +1,41 @@
+#!/bin/bash
+
+set -e  # Exit immediately if a command exits with a non-zero status
+
+if [ "$0" != "./get_hugo.Linux" ]
+then
+ printf "You must run this from the bin directory of the project.\n"
+ exit 3
+fi
+
+if ! which jq > /dev/null 2>&1
+then
+ printf "Install the jq command first\n"
+ exit 2
+fi
+
+if [ -x "./hugo" ]
+then
+ printf "The hugo binary exists. To force fetching it, remove it first.\n"
+ exit 1
+fi
+
+distributor=$(lsb_release -i)
+if ! echo $distributor | grep Ubuntu >/dev/null 2>&1
+then
+ printf "This is not a supported system. Update the script to include your system.\n"
+fi
+
+ORGNAME="gohugoio"
+PROJECT="hugo"
+
+# Fetch the URL of the latest release for Linux-64bit (extended version)
+download_url=$(curl -s https://api.github.com/repos/${ORGNAME}/${PROJECT}/releases/latest | \
+ jq -r '.assets[] | select((.name | contains("Linux-64bit.tar.gz")) and (.name | contains("extended"))) | .browser_download_url')
+
+printf "url: %s\n" ${download_url}
+
+curl -L -O "${download_url}"
+tar -xvf hugo_*_Linux-64bit.tar.gz hugo # Extract only the 'hugo' binary
+rm hugo_*_Linux-64bit.tar.gz
+chmod +x hugo

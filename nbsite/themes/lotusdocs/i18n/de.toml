@@ -1,0 +1,20 @@
+[lang_select_title]
+    other = "Sprache auswählen"
+
+[search_title]
+    other = "Suche"
+
+[search_navigate]
+    other = "zu navigieren"
+
+[search_select]
+    other = "zu auswählen"
+
+[search_close]
+    other = "zu schließen"
+
+[search_cancel]
+    other = "abbrechen"
+
+[search_no_results]
+    other = "Keine Ergebnisse für"

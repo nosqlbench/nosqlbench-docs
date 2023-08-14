@@ -1,0 +1,126 @@
+# Hero
+hero:
+  enable: true
+
+  # badge:
+  #   text: v0.0.2
+  #   color: primary # primary, secondary, success, danger, warning, info, light, dark
+  #   pill: false # boolean
+  #   soft: true # boolean
+
+  title: "NoSQLBench v5"
+  subtitle: NoSQLBench is a serious performance testing tool for the **NoSQL** ecosystem. NoSQLBench brings **advanced testing capabilities** into one tool that are not found in other testing tools.
+
+# MY: Personal note: I would use either the title logo or the image, not both.
+#  titleLogo:
+#    path: "images/logo"
+#    filename: "nb5logo.png"
+#    alt: "Lotus Docs Logo"
+#    height: 80px
+
+  image:
+    path: "images" # path to image under configured assets directory. default 'images'
+    filename: "nb5-logo-512x512.png" # filename of your hero image (including file extension)
+    alt: "NB5 logo" # Optional but recommended
+    boxShadow: true # default 'false' (excludes .svg images)
+    rounded: true # round the image corners? default 'false' (excludes .svg images)
+
+  ctaButton:
+    icon: rocket_launch
+    btnText: "Get Started"
+    url: "/docs"
+  cta2Button:
+    icon: new_releases
+    btnText: "Release Notes"
+    url: "/docs/releasenotes/whatsnew-v5"
+
+  info: "**Open Source** Apache License 2.0"
+
+# Features Grid
+features:
+  enable: true
+
+  title: Why choose NB5?
+  subtitle: NoSQLBench has enjoyed a history of unique innovation, driven by the vision of its users and builders, forged by their need for practical methods to test modern systems.
+
+  items:
+    - title: Easy to use
+      icon: acute
+      description: Run common testing workloads directly from the command line. You can start doing this within 5 minutes of reading this.
+
+    - title: Virtual Data Versatility
+      icon: data_table
+      description: Generate virtual data sets of arbitrary size, with deterministic data and statistically shaped values.
+
+    - title: Custom Workloads
+      icon: instant_mix
+      description: Design custom workloads that emulate your application, contained in a single file, based on statement templates - no IDE or coding required.
+
+    - title: Plots and Metrics
+      icon: query_stats
+      description: Immediately plot your results in a docker and grafana stack on Linux with a single command line option.
+
+    - title: Advanced Capabilities
+      icon: component_exchange
+      description:  Open the access panels and rewire the runtime behavior of NoSQLBench to do advanced testing, including a full scripting environment with Javascript.
+
+    - title: Attention to Detail
+      icon: details
+      description: NB5 has been battle tested within DataStax as a way to help users validate their data models, baseline system performance, and qualify system designs for scale.
+
+# Image compare
+image_compare:
+  enable: false
+
+#  title: Customise The Lotus Docs Appearance
+#  subtitle: Much of Lotus Docs' appearance can be customised. Dark mode is optional (enabled by default) and you can choose a Google font that suites you via a single config setting.
+#
+#  items:
+#    - title: Dark Mode
+#      config: {
+#        startingPoint: 50,
+#        addCircle: true,
+#        addCircleBlur: false,
+#        showLabels: true,
+#        labelOptions: {
+#          before: 'Dark',
+#          after: 'Light',
+#          onHover: false
+#        }
+#      }
+#      imagePath: "images/screenshots"
+#      imageBefore: "lotusdocs_dark.webp"
+#      imageAfter: "lotusdocs_light.webp"
+#
+#    - title: Custom Fonts
+#      config: {
+#        controlColor: "#3C4257",
+#        startingPoint: 38,
+#        addCircle: true,
+#        addCircleBlur: false,
+#        showLabels: true,
+#        labelOptions: {
+#          before: 'Poppins',
+#          after: 'Comic Neue',
+#          onHover: false
+#        }
+#      }
+#      imagePath: "images/screenshots"
+#      imageBefore: "lotusdocs_poppins.webp"
+#      imageAfter: "lotusdocs_comic_neue_.webp"
+#
+#    - title: Accent Color
+#      config: {
+#        startingPoint: 25,
+#        addCircle: true,
+#        addCircleBlur: true,
+#        showLabels: true,
+#        labelOptions: {
+#          before: 'Blue',
+#          after: 'Emerald',
+#          onHover: false
+#        }
+#      }
+#      imagePath: "images/screenshots"
+#      imageBefore: "lotusdocs_blue.webp"
+#      imageAfter: "lotusdocs_emerald.webp"

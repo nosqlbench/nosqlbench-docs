@@ -109,4 +109,5 @@ dist
 /nbdocs_v5.iml
 /.idea/
 /bin/zola
+/bin/hugo
 /import/
