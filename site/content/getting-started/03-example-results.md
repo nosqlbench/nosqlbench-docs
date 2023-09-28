@@ -38,15 +38,9 @@ to consume metrics from NoSQLBench.
 
 We recommend that you use one of these methods, according to your environment or tooling available:
 
-1. `--docker-metrics` with a local docker-based grafana dashboard (See the section on Docker Based
-   Metrics)
-2. `--docker-metrics-at <addr>` with a remote docker-based grafana dashboard that you have 
-   previously 
-   set up.
-2. Send your metrics to a dedicated graphite server with `--report-graphite-to graphitehost`
-3. Record your metrics to local CSV files with `--report-csv-to my_metrics_dir`
-4. Record your metrics to HDR logs with `--log-histograms my_hdr_metrics.log`
-5. Record your metrics to a running docker metrics system with `--docker-metrics-at <host>` 
+1. Send your metrics to a dedicated graphite server with `--report-graphite-to graphitehost`
+2. Record your metrics to local CSV files with `--report-csv-to my_metrics_dir`
+3. Record your metrics to HDR logs with `--log-histograms my_hdr_metrics.log`
 
 See the command line reference for details on how to route your metrics to a metrics collector or
 format of your preference.

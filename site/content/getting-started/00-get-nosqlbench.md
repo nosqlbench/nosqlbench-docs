@@ -81,25 +81,6 @@ Each line does somethign specific:
 5. Sets the cycle rate to 100 per second. 
 6. Tells nb5 to report activity progress to the console every second.
 
-# Dashboards
-
-You can use `--docker-metrics` to stand up a live metrics dashboard at port 3000.
-
-👉In order to use the `--docker-metrics` option, you need to have docker installed on your 
-local system, and your user must have permissions to use it. Typically, this means that your user 
-has been added to the docker group with a command like `sudo usermod $USER -g docker`.
-
-Here is the above command, with built-in dashboarding enabled:
-
-```shell
-./nb5 examples/bindings-basics default \
- filename=exampledata.out \
- format=csv \
- cycles=10000 \
- rate=100 \
- --progress console:1s \
- --docker-metrics
-```
 
 [^1]: The version scheme for NoSQLBench is [major]-[java-lts]-[minor], so nb5 version 5.17.1 
 requires java version 17, which is the latest LTS Java release.

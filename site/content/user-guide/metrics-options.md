@@ -18,13 +18,7 @@ Metrics from a scenario run can be gathered in multiple ways:
 - In HDR histogram logs
 - In Histogram Stats logs (CSV)
 - To a monitoring system via graphite
-- via the `--docker-metrics` option
-- remotely via the `--docker-metrics-at <host>` option
 
-When `--docker-metrics` or `--docker-metrics-at <host>` methods are used, they take over the global
-options for the other methods. Except these, the others may generally be combined and used in
-combination. The command line options for enabling these are documented in the command line docs,
-although some examples of these may be found below.
 
 ## Metrics via Graphite
 

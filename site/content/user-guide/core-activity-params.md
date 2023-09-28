@@ -244,16 +244,6 @@ _default value_ : The name of any provided YAML filename is used as the basis fo
 alias. Otherwise, the activity type name is used. This is a convenience for simple test
 scenarios only.
 
-If you are using the `--docker-metrics` option, then you may want to ensure that you are either
-using named scenarios or setting your activity to use the same alias expansion pattern that it
-does: _WORKLOAD_SCENARIO_STEP_. These values are not interpolated for you at this time.
-
-*examples*
-
-- `alias=mytest2` - set the activity alias to `mystest2`
-- `alias=workload42_scenario20230101_step5` - conform to the current --docker-metrics expansion
-  template
-
 ## instrument
 
 - `instrument=true`
